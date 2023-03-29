@@ -33,6 +33,20 @@ class VehiculeController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $image = $form->get('img')->getData();   
+            
+ 
+            if ($image) {
+                $fichier = md5(uniqid()) . '.' . $image->guessExtension();
+ 
+                $image->move(
+                    $this->getParameter('images_directory'),
+                    $fichier 
+                );
+            dump($image);
+                
+            $vehicule->setImg('http://localhost/img/'.$fichier);}
+           
             $entityManager->persist($vehicule);
             $entityManager->flush();
 

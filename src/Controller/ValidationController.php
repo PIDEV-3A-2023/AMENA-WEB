@@ -2,8 +2,10 @@
 
 namespace App\Controller;
 
+use App\Entity\User;
 use App\Entity\Validation;
 use App\Form\ValidationType;
+use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -29,6 +31,8 @@ class ValidationController extends AbstractController
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
         $validation = new Validation();
+        $user=$entityManager->getRepository(User::class)->find(161);
+        $validation->setIdu($user);
         $form = $this->createForm(ValidationType::class, $validation);
         $form->handleRequest($request);
 

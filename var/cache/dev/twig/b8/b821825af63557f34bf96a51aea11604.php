@@ -86,16 +86,22 @@ class __TwigTemplate_5f68ea12c18bb9001aa85799f3f6fa29 extends Template
 
         // line 6
         echo "<!-- ======= Breadcrumbs ======= -->
-    
+    <div class=\"breadcrumbs d-flex align-items-center\" style=\"background-image: url('assets/img/contact-header.jpg');\">
+      <div class=\"container position-relative d-flex flex-column align-items-center\">
+
+       
+
+      </div>
+    </div><!-- End Breadcrumbs -->
     <h1>Create new User</h1>
 
     ";
-        // line 10
+        // line 16
         echo twig_include($this->env, $context, "user/_form.html.twig");
         echo "
 
     <a href=\"";
-        // line 12
+        // line 18
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_index");
         echo "\">back to list</a>
 ";
@@ -119,7 +125,7 @@ class __TwigTemplate_5f68ea12c18bb9001aa85799f3f6fa29 extends Template
 
     public function getDebugInfo()
     {
-        return array (  99 => 12,  94 => 10,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  105 => 18,  100 => 16,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -130,7 +136,13 @@ class __TwigTemplate_5f68ea12c18bb9001aa85799f3f6fa29 extends Template
 
 {% block body %}
 <!-- ======= Breadcrumbs ======= -->
-    
+    <div class=\"breadcrumbs d-flex align-items-center\" style=\"background-image: url('assets/img/contact-header.jpg');\">
+      <div class=\"container position-relative d-flex flex-column align-items-center\">
+
+       
+
+      </div>
+    </div><!-- End Breadcrumbs -->
     <h1>Create new User</h1>
 
     {{ include('user/_form.html.twig') }}

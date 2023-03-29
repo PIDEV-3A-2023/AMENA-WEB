@@ -125,11 +125,24 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
 
     </div>
   </header><!-- End Header -->
+
+  <!-- ======= Breadcrumbs ======= -->
+    <div class=\"breadcrumbs d-flex align-items-center\" style=\"background-image: url('assets/img/contact-header.jpg');\">
+      <div class=\"container position-relative d-flex flex-column align-items-center\">
+
+        <h2>Contact</h2>
+        <ol>
+          <li><a href=\"index.html\">Home</a></li>
+          <li>Contact</li>
+        </ol>
+
+      </div>
+    </div><!-- End Breadcrumbs -->
    <main id=\"main\">
 \t\t";
-        // line 95
+        // line 108
         $this->displayBlock('body', $context, $blocks);
-        // line 96
+        // line 109
         echo "        </main><!-- End #main -->
 \t\t<!-- ======= Footer ======= -->
 \t\t<footer id=\"footer\" class=\"footer\">
@@ -256,9 +269,9 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
 
 \t\t<div id=\"preloader\"></div>
 \t\t";
-        // line 221
+        // line 234
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 235
+        // line 248
         echo "\t</body>
 </html>
 ";
@@ -323,7 +336,7 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
 
     }
 
-    // line 95
+    // line 108
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -341,7 +354,7 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
 
     }
 
-    // line 221
+    // line 234
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -351,39 +364,39 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 222
+        // line 235
         echo "\t\t\t";
         echo twig_escape_filter($this->env, $this->env->getFunction('encore_entry_script_tags')->getCallable()("app"), "html", null, true);
         echo "
 \t\t\t<!-- Vendor JS Files -->
 \t\t\t<script src=\"";
-        // line 224
+        // line 237
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"), "html", null, true);
         echo "\"></script>
 \t\t\t<script src=\"";
-        // line 225
+        // line 238
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front/assets/vendor/aos/aos.js"), "html", null, true);
         echo "\"></script>
 \t\t\t<script src=\"";
-        // line 226
+        // line 239
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front/assets/vendor/glightbox/js/glightbox.min.js"), "html", null, true);
         echo "\"></script>
 \t\t\t<script src=\"";
-        // line 227
+        // line 240
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front/assets/vendor/swiper/swiper-bundle.min.js"), "html", null, true);
         echo "\"></script>
 \t\t\t<script src=\"";
-        // line 228
+        // line 241
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front/assets/vendor/isotope-layout/isotope.pkgd.min.js"), "html", null, true);
         echo "\"></script>
 \t\t\t<script src=\"";
-        // line 229
+        // line 242
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front/assets/vendor/php-email-form/validate.js"), "html", null, true);
         echo "\"></script>
 
 \t\t\t<!-- Template Main JS File -->
 \t\t\t<script src=\"";
-        // line 232
+        // line 245
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front/assets/js/main.js"), "html", null, true);
         echo "\"></script>
 
@@ -403,7 +416,7 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
 
     public function getDebugInfo()
     {
-        return array (  387 => 232,  381 => 229,  377 => 228,  373 => 227,  369 => 226,  365 => 225,  361 => 224,  355 => 222,  345 => 221,  327 => 95,  314 => 43,  306 => 38,  302 => 37,  298 => 36,  294 => 35,  290 => 34,  284 => 32,  274 => 31,  262 => 235,  260 => 221,  133 => 96,  131 => 95,  80 => 46,  78 => 31,  46 => 1,);
+        return array (  400 => 245,  394 => 242,  390 => 241,  386 => 240,  382 => 239,  378 => 238,  374 => 237,  368 => 235,  358 => 234,  340 => 108,  327 => 43,  319 => 38,  315 => 37,  311 => 36,  307 => 35,  303 => 34,  297 => 32,  287 => 31,  275 => 248,  273 => 234,  146 => 109,  144 => 108,  80 => 46,  78 => 31,  46 => 1,);
     }
 
     public function getSourceContext()
@@ -501,6 +514,19 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
 
     </div>
   </header><!-- End Header -->
+
+  <!-- ======= Breadcrumbs ======= -->
+    <div class=\"breadcrumbs d-flex align-items-center\" style=\"background-image: url('assets/img/contact-header.jpg');\">
+      <div class=\"container position-relative d-flex flex-column align-items-center\">
+
+        <h2>Contact</h2>
+        <ol>
+          <li><a href=\"index.html\">Home</a></li>
+          <li>Contact</li>
+        </ol>
+
+      </div>
+    </div><!-- End Breadcrumbs -->
    <main id=\"main\">
 \t\t{% block body %}{% endblock %}
         </main><!-- End #main -->

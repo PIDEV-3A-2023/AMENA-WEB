@@ -153,18 +153,19 @@ class __TwigTemplate_935f06182045a8612bc184370ea708ff extends Template
             // line 37
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["vehicule"], "prix", [], "any", false, false, false, 37), "html", null, true);
             echo "</td>
-                <td>";
+                <td><img style=\"width:100px;height:100px\" src=\"";
             // line 38
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["vehicule"], "img", [], "any", false, false, false, 38), "html", null, true);
-            echo "</td>
+            echo "\"> </td>
+                
                 <td>
                     <a href=\"";
-            // line 40
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_vehicule_show", ["idv" => twig_get_attribute($this->env, $this->source, $context["vehicule"], "idv", [], "any", false, false, false, 40)]), "html", null, true);
+            // line 41
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_vehicule_show", ["idv" => twig_get_attribute($this->env, $this->source, $context["vehicule"], "idv", [], "any", false, false, false, 41)]), "html", null, true);
             echo "\">show</a>
                     <a href=\"";
-            // line 41
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_vehicule_edit", ["idv" => twig_get_attribute($this->env, $this->source, $context["vehicule"], "idv", [], "any", false, false, false, 41)]), "html", null, true);
+            // line 42
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_vehicule_edit", ["idv" => twig_get_attribute($this->env, $this->source, $context["vehicule"], "idv", [], "any", false, false, false, 42)]), "html", null, true);
             echo "\">edit</a>
                 </td>
             </tr>
@@ -172,7 +173,7 @@ class __TwigTemplate_935f06182045a8612bc184370ea708ff extends Template
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 45
+            // line 46
             echo "            <tr>
                 <td colspan=\"12\">no records found</td>
             </tr>
@@ -181,12 +182,12 @@ class __TwigTemplate_935f06182045a8612bc184370ea708ff extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['vehicule'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 49
+        // line 50
         echo "        </tbody>
     </table>
 
     <a href=\"";
-        // line 52
+        // line 53
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_vehicule_new");
         echo "\">Create new</a>
 ";
@@ -210,7 +211,7 @@ class __TwigTemplate_935f06182045a8612bc184370ea708ff extends Template
 
     public function getDebugInfo()
     {
-        return array (  190 => 52,  185 => 49,  176 => 45,  167 => 41,  163 => 40,  158 => 38,  154 => 37,  150 => 36,  146 => 35,  142 => 34,  138 => 33,  134 => 32,  130 => 31,  126 => 30,  122 => 29,  118 => 28,  115 => 27,  110 => 26,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  191 => 53,  186 => 50,  177 => 46,  168 => 42,  164 => 41,  158 => 38,  154 => 37,  150 => 36,  146 => 35,  142 => 34,  138 => 33,  134 => 32,  130 => 31,  126 => 30,  122 => 29,  118 => 28,  115 => 27,  110 => 26,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -252,7 +253,8 @@ class __TwigTemplate_935f06182045a8612bc184370ea708ff extends Template
                 <td>{{ vehicule.modele }}</td>
                 <td>{{ vehicule.couleur }}</td>
                 <td>{{ vehicule.prix }}</td>
-                <td>{{ vehicule.img }}</td>
+                <td><img style=\"width:100px;height:100px\" src=\"{{ vehicule.img }}\"> </td>
+                
                 <td>
                     <a href=\"{{ path('app_vehicule_show', {'idv': vehicule.idv}) }}\">show</a>
                     <a href=\"{{ path('app_vehicule_edit', {'idv': vehicule.idv}) }}\">edit</a>

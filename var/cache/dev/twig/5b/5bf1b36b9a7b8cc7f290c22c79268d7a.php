@@ -198,7 +198,7 @@ class __TwigTemplate_42a4a492c2c8c938b3db714109d79e7a extends Template
 \t\t\t\t\t\t\t\t<div class=\"list-group\">
 \t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"list-group-item\">
 \t\t\t\t\t\t\t\t\t\t<div class=\"row g-0 align-items-center\">
-\t\t\t\t\t\t\t\t\t\t\t<div class=\"col-2\">
+\t\t\t\t\t\t\t\t\t\t\t<div class=\"col-\">
 \t\t\t\t\t\t\t\t\t\t\t\t<i class=\"text-danger\" data-feather=\"alert-circle\"></i>
 \t\t\t\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t\t\t\t<div class=\"col-10\">
@@ -662,7 +662,7 @@ class __TwigTemplate_42a4a492c2c8c938b3db714109d79e7a extends Template
 \t\t\t\t\t\t\t\t<div class=\"list-group\">
 \t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"list-group-item\">
 \t\t\t\t\t\t\t\t\t\t<div class=\"row g-0 align-items-center\">
-\t\t\t\t\t\t\t\t\t\t\t<div class=\"col-2\">
+\t\t\t\t\t\t\t\t\t\t\t<div class=\"col-\">
 \t\t\t\t\t\t\t\t\t\t\t\t<i class=\"text-danger\" data-feather=\"alert-circle\"></i>
 \t\t\t\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t\t\t\t<div class=\"col-10\">

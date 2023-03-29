@@ -72,6 +72,8 @@ class User
     #[ORM\Column(nullable: true)]
     private ?\DateTime $token_ex = null;
 
+    
+
     public function getId(): ?int
     {
         return $this->id;
@@ -273,5 +275,23 @@ class User
     public function __toString()
     {
         return $this->nom;
+    }
+
+ 
+    public function setValidation(?Validation $validation): self
+    {
+        // unset the owning side of the relation if necessary
+        if ($validation === null && $this->validation !== null) {
+            $this->validation->setIdu(null);
+        }
+
+        // set the owning side of the relation if necessary
+        if ($validation !== null && $validation->getIdu() !== $this) {
+            $validation->setIdu($this);
+        }
+
+        $this->validation = $validation;
+
+        return $this;
     }
 }

@@ -84,21 +84,8 @@ class __TwigTemplate_559b0ac0df39479558519b44f6781b83 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 6
-        echo "
-    <!-- ======= Breadcrumbs ======= -->
-    <div class=\"breadcrumbs d-flex align-items-center\" style=\"background-image: url('assets/img/contact-header.jpg');\">
-      <div class=\"container position-relative d-flex flex-column align-items-center\">
-
-        <h2>Contact</h2>
-        <ol>
-          <li><a href=\"index.html\">Home</a></li>
-          <li>Contact</li>
-        </ol>
-
-      </div>
-    </div><!-- End Breadcrumbs -->
-    <h1>User index</h1>
+        // line 18
+        echo "    <h1>User index</h1>
 
 
 \t\t\t\t<div class=\"container-fluid p-0\">
@@ -138,89 +125,89 @@ class __TwigTemplate_559b0ac0df39479558519b44f6781b83 extends Template
         </thead>
         <tbody>
         ";
-        // line 58
+        // line 57
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new RuntimeError('Variable "users" does not exist.', 58, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new RuntimeError('Variable "users" does not exist.', 57, $this->source); })()));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["user"]) {
-            // line 59
+            // line 58
             echo "            <tr>
                 <td>";
+            // line 59
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 59), "html", null, true);
+            echo "</td>
+                <td>";
             // line 60
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 60), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "nom", [], "any", false, false, false, 60), "html", null, true);
             echo "</td>
                 <td>";
             // line 61
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "nom", [], "any", false, false, false, 61), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "prenom", [], "any", false, false, false, 61), "html", null, true);
             echo "</td>
                 <td>";
             // line 62
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "prenom", [], "any", false, false, false, 62), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "adress", [], "any", false, false, false, 62), "html", null, true);
             echo "</td>
                 <td>";
             // line 63
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "adress", [], "any", false, false, false, 63), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "cin", [], "any", false, false, false, 63), "html", null, true);
             echo "</td>
                 <td>";
             // line 64
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "cin", [], "any", false, false, false, 64), "html", null, true);
+            ((twig_get_attribute($this->env, $this->source, $context["user"], "datenaissance", [], "any", false, false, false, 64)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "datenaissance", [], "any", false, false, false, 64), "Y-m-d"), "html", null, true))) : (print ("")));
             echo "</td>
                 <td>";
             // line 65
-            ((twig_get_attribute($this->env, $this->source, $context["user"], "datenaissance", [], "any", false, false, false, 65)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "datenaissance", [], "any", false, false, false, 65), "Y-m-d"), "html", null, true))) : (print ("")));
+            ((twig_get_attribute($this->env, $this->source, $context["user"], "datecreationc", [], "any", false, false, false, 65)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "datecreationc", [], "any", false, false, false, 65), "Y-m-d"), "html", null, true))) : (print ("")));
             echo "</td>
                 <td>";
             // line 66
-            ((twig_get_attribute($this->env, $this->source, $context["user"], "datecreationc", [], "any", false, false, false, 66)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "datecreationc", [], "any", false, false, false, 66), "Y-m-d"), "html", null, true))) : (print ("")));
+            echo ((twig_get_attribute($this->env, $this->source, $context["user"], "status", [], "any", false, false, false, 66)) ? ("Yes") : ("No"));
             echo "</td>
                 <td>";
             // line 67
-            echo ((twig_get_attribute($this->env, $this->source, $context["user"], "status", [], "any", false, false, false, 67)) ? ("Yes") : ("No"));
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "role", [], "any", false, false, false, 67), "html", null, true);
             echo "</td>
                 <td>";
             // line 68
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "role", [], "any", false, false, false, 68), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "motpass", [], "any", false, false, false, 68), "html", null, true);
             echo "</td>
                 <td>";
             // line 69
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "motpass", [], "any", false, false, false, 69), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "email", [], "any", false, false, false, 69), "html", null, true);
             echo "</td>
                 <td>";
             // line 70
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "email", [], "any", false, false, false, 70), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "token", [], "any", false, false, false, 70), "html", null, true);
             echo "</td>
                 <td>";
             // line 71
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "token", [], "any", false, false, false, 71), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "score", [], "any", false, false, false, 71), "html", null, true);
             echo "</td>
                 <td>";
             // line 72
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "score", [], "any", false, false, false, 72), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 73
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "numtel", [], "any", false, false, false, 73), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "numtel", [], "any", false, false, false, 72), "html", null, true);
             echo "</td>
                 <td><img style=\"width:100px;height:100px\" src=\"";
-            // line 74
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "image", [], "any", false, false, false, 74), "html", null, true);
+            // line 73
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "image", [], "any", false, false, false, 73), "html", null, true);
             echo "\"> </td>
                 <td>";
-            // line 75
-            ((twig_get_attribute($this->env, $this->source, $context["user"], "compteEx", [], "any", false, false, false, 75)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "compteEx", [], "any", false, false, false, 75), "Y-m-d H:i:s"), "html", null, true))) : (print ("")));
+            // line 74
+            ((twig_get_attribute($this->env, $this->source, $context["user"], "compteEx", [], "any", false, false, false, 74)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "compteEx", [], "any", false, false, false, 74), "Y-m-d H:i:s"), "html", null, true))) : (print ("")));
             echo "</td>
                 <td>";
-            // line 76
-            ((twig_get_attribute($this->env, $this->source, $context["user"], "tokenEx", [], "any", false, false, false, 76)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "tokenEx", [], "any", false, false, false, 76), "Y-m-d H:i:s"), "html", null, true))) : (print ("")));
+            // line 75
+            ((twig_get_attribute($this->env, $this->source, $context["user"], "tokenEx", [], "any", false, false, false, 75)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "tokenEx", [], "any", false, false, false, 75), "Y-m-d H:i:s"), "html", null, true))) : (print ("")));
             echo "</td>
                 <td>
                     <a href=\"";
-            // line 78
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_show", ["id" => twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 78)]), "html", null, true);
+            // line 77
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_show", ["id" => twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 77)]), "html", null, true);
             echo "\">show</a>
                     <a href=\"";
-            // line 79
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 79)]), "html", null, true);
+            // line 78
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 78)]), "html", null, true);
             echo "\">edit</a>
                 </td>
             </tr>
@@ -228,7 +215,7 @@ class __TwigTemplate_559b0ac0df39479558519b44f6781b83 extends Template
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 83
+            // line 82
             echo "            <tr>
                 <td colspan=\"18\">no records found</td>
             </tr>
@@ -237,12 +224,12 @@ class __TwigTemplate_559b0ac0df39479558519b44f6781b83 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['user'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 87
+        // line 86
         echo "        </tbody>
     </table>
 
     <a href=\"";
-        // line 90
+        // line 89
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_new");
         echo "\">Create new</a>
 \t\t\t\t\t\t\t\t</div>
@@ -272,7 +259,7 @@ class __TwigTemplate_559b0ac0df39479558519b44f6781b83 extends Template
 
     public function getDebugInfo()
     {
-        return array (  246 => 90,  241 => 87,  232 => 83,  223 => 79,  219 => 78,  214 => 76,  210 => 75,  206 => 74,  202 => 73,  198 => 72,  194 => 71,  190 => 70,  186 => 69,  182 => 68,  178 => 67,  174 => 66,  170 => 65,  166 => 64,  162 => 63,  158 => 62,  154 => 61,  150 => 60,  147 => 59,  142 => 58,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  233 => 89,  228 => 86,  219 => 82,  210 => 78,  206 => 77,  201 => 75,  197 => 74,  193 => 73,  189 => 72,  185 => 71,  181 => 70,  177 => 69,  173 => 68,  169 => 67,  165 => 66,  161 => 65,  157 => 64,  153 => 63,  149 => 62,  145 => 61,  141 => 60,  137 => 59,  134 => 58,  129 => 57,  88 => 18,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -282,8 +269,7 @@ class __TwigTemplate_559b0ac0df39479558519b44f6781b83 extends Template
 {% block title %}User index{% endblock %}
 
 {% block body %}
-
-    <!-- ======= Breadcrumbs ======= -->
+{#<!-- ======= Breadcrumbs ======= -->
     <div class=\"breadcrumbs d-flex align-items-center\" style=\"background-image: url('assets/img/contact-header.jpg');\">
       <div class=\"container position-relative d-flex flex-column align-items-center\">
 
@@ -294,7 +280,7 @@ class __TwigTemplate_559b0ac0df39479558519b44f6781b83 extends Template
         </ol>
 
       </div>
-    </div><!-- End Breadcrumbs -->
+    </div><!-- End Breadcrumbs -->#}
     <h1>User index</h1>
 
 

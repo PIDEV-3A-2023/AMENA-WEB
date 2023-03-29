@@ -50,7 +50,7 @@ class UserType extends AbstractType
                             'image/jpeg',
                             'image/png',
                         ],
-                        'mimeTypesMessage' => 'Please upload a valid PDF document',
+                        'mimeTypesMessage' => 'Please upload a valid Image document',
                     ])
                 ],
             ])
