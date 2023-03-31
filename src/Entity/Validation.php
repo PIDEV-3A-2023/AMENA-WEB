@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Entity;
+
 use App\Repository\ValidationRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
@@ -20,23 +21,25 @@ class Validation
     #[ORM\Column]
     private ?int $id = null;
 
-
-
-   
-    #[ORM\Column(length: 255,name:"imageA")]
+    #[ORM\Column(length: 255, name: "imageA")]
+    #[Assert\NotBlank]
+    #[Assert\Url]
     private ?string $imagea = null;
 
-    #[ORM\Column(length: 255,name:"imageB")]
+    #[ORM\Column(length: 255, name: "imageB")]
+    #[Assert\NotBlank]
+    #[Assert\Url]
     private ?string $imageb = null;
 
-     #[ORM\Column(name:"valide")]
+    #[ORM\Column(name: "valide")]
     private ?bool $valide = null;
 
-     #[ORM\ManyToOne]
-     #[ORM\JoinColumn(nullable: false, name:"idu")]
-     private ?User $idu = null;
+    #[ORM\ManyToOne]
+    #[ORM\JoinColumn(nullable: false, name: "idu")]
+    private ?User $idu = null;
 
-    
+
+
 
     public function getId(): ?int
     {
@@ -90,6 +93,4 @@ class Validation
 
         return $this;
     }
-
-
 }

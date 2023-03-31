@@ -330,6 +330,13 @@
       <tag name="controller.service_arguments"/>
       <tag name="routing.route_loader"/>
     </service>
+    <service id="App\Controller\AnnoncesController" class="App\Controller\AnnoncesController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.mx0UMmY.App\Controller\AnnoncesController"/>
+      </call>
+    </service>
     <service id="App\Controller\ColisController" class="App\Controller\ColisController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -365,6 +372,9 @@
         <argument type="service" id=".service_locator.mx0UMmY.App\Controller\VehiculeController"/>
       </call>
     </service>
+    <service id="App\Form\AnnoncesType" class="App\Form\AnnoncesType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
     <service id="App\Form\ColisType" class="App\Form\ColisType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
@@ -379,6 +389,22 @@
     </service>
     <service id="App\Form\VehiculeType" class="App\Form\VehiculeType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
+    </service>
+    <service id="App\Repository\AnnonceRepository" class="App\Repository\AnnonceRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\AnnoncesRepository" class="App\Repository\AnnoncesRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\ColisRepository" class="App\Repository\ColisRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\IdccRepository" class="App\Repository\IdccRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
     </service>
     <service id="App\Repository\IduRepository" class="App\Repository\IduRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
@@ -1173,6 +1199,7 @@
         <argument>Symfony\Bridge\Doctrine\Form\Type</argument>
       </argument>
       <argument type="collection">
+        <argument>App\Form\AnnoncesType</argument>
         <argument>App\Form\ColisType</argument>
         <argument>App\Form\MessageType</argument>
         <argument>App\Form\UserType</argument>
@@ -3317,7 +3344,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension">
-      <argument type="service" id=".service_locator.96H2dLl"/>
+      <argument type="service" id=".service_locator.2decY23"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -4204,7 +4231,7 @@
     <service id="doctrine.orm.configuration" class="Doctrine\ORM\Configuration" abstract="true"/>
     <service id="doctrine.orm.entity_manager.abstract" class="Doctrine\ORM\EntityManager" lazy="true" abstract="true"/>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory">
-      <argument type="service" id=".service_locator.6odiYou"/>
+      <argument type="service" id=".service_locator.6BwCKt0"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -6158,6 +6185,9 @@
     <service id="framework_extra_bundle.argument_name_convertor" class="Sensio\Bundle\FrameworkExtraBundle\Request\ArgumentNameConverter">
       <argument type="service" id="argument_metadata_factory"/>
     </service>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\AnnoncesController" class="App\Controller\AnnoncesController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\AnnoncesController" class="App\Controller\AnnoncesController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\AnnoncesController" class="App\Controller\AnnoncesController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ColisController" class="App\Controller\ColisController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ColisController" class="App\Controller\ColisController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\ColisController" class="App\Controller\ColisController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -6173,6 +6203,8 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\VehiculeController" class="App\Controller\VehiculeController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\VehiculeController" class="App\Controller\VehiculeController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\VehiculeController" class="App\Controller\VehiculeController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\AnnoncesType" class="App\Form\AnnoncesType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\AnnoncesType" class="App\Form\AnnoncesType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ColisType" class="App\Form\ColisType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\ColisType" class="App\Form\ColisType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\MessageType" class="App\Form\MessageType" autowire="true" abstract="true"/>
@@ -6183,6 +6215,14 @@
     <service id=".abstract.instanceof.App\Form\ValidationType" class="App\Form\ValidationType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\VehiculeType" class="App\Form\VehiculeType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\VehiculeType" class="App\Form\VehiculeType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\AnnonceRepository" class="App\Repository\AnnonceRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\AnnonceRepository" class="App\Repository\AnnonceRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\AnnoncesRepository" class="App\Repository\AnnoncesRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\AnnoncesRepository" class="App\Repository\AnnoncesRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ColisRepository" class="App\Repository\ColisRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\ColisRepository" class="App\Repository\ColisRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\IdccRepository" class="App\Repository\IdccRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\IdccRepository" class="App\Repository\IdccRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\IduRepository" class="App\Repository\IduRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\IduRepository" class="App\Repository\IduRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\UserRepository" class="App\Repository\UserRepository" autowire="true" abstract="true"/>
@@ -6526,6 +6566,32 @@
         <argument key="loader" type="service_closure" id=".errored..service_locator.xUrKPVU.Symfony\Component\Config\Loader\LoaderInterface"/>
       </argument>
     </service>
+    <service id=".service_locator.Tr_CAXc" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="annoncesRepository" type="service_closure" id="App\Repository\AnnoncesRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.7CqYoho" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="annoncesRepository" type="service_closure" id="App\Repository\AnnoncesRepository"/>
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+      </argument>
+    </service>
+    <service id=".service_locator.ECpDOfk" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="annonce" type="service_closure" id=".errored..service_locator.ECpDOfk.App\Entity\Annonces"/>
+      </argument>
+    </service>
+    <service id=".service_locator.CjLvgM8" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="annonce" type="service_closure" id=".errored..service_locator.CjLvgM8.App\Entity\Annonces"/>
+        <argument key="annoncesRepository" type="service_closure" id="App\Repository\AnnoncesRepository"/>
+      </argument>
+    </service>
     <service id=".service_locator.aKM6MDa" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -6597,9 +6663,14 @@
         <argument key="vehicule" type="service_closure" id=".errored..service_locator.iVJ8gI9.App\Entity\Vehicule"/>
       </argument>
     </service>
-    <service id=".service_locator.nvxtKAE" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.QWMQaeR" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Controller\AnnoncesController::delete" type="service_closure" id=".service_locator.CjLvgM8"/>
+        <argument key="App\Controller\AnnoncesController::edit" type="service_closure" id=".service_locator.CjLvgM8"/>
+        <argument key="App\Controller\AnnoncesController::index" type="service_closure" id=".service_locator.Tr_CAXc"/>
+        <argument key="App\Controller\AnnoncesController::new" type="service_closure" id=".service_locator.7CqYoho"/>
+        <argument key="App\Controller\AnnoncesController::show" type="service_closure" id=".service_locator.ECpDOfk"/>
         <argument key="App\Controller\ColisController::delete" type="service_closure" id=".service_locator..RZQcAD"/>
         <argument key="App\Controller\ColisController::edit" type="service_closure" id=".service_locator..RZQcAD"/>
         <argument key="App\Controller\ColisController::index" type="service_closure" id=".service_locator.aKM6MDa"/>
@@ -6629,6 +6700,11 @@
         <argument key="App\Kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.xUrKPVU"/>
         <argument key="kernel::loadRoutes" type="service_closure" id=".service_locator.xUrKPVU"/>
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.xUrKPVU"/>
+        <argument key="App\Controller\AnnoncesController:delete" type="service_closure" id=".service_locator.CjLvgM8"/>
+        <argument key="App\Controller\AnnoncesController:edit" type="service_closure" id=".service_locator.CjLvgM8"/>
+        <argument key="App\Controller\AnnoncesController:index" type="service_closure" id=".service_locator.Tr_CAXc"/>
+        <argument key="App\Controller\AnnoncesController:new" type="service_closure" id=".service_locator.7CqYoho"/>
+        <argument key="App\Controller\AnnoncesController:show" type="service_closure" id=".service_locator.ECpDOfk"/>
         <argument key="App\Controller\ColisController:delete" type="service_closure" id=".service_locator..RZQcAD"/>
         <argument key="App\Controller\ColisController:edit" type="service_closure" id=".service_locator..RZQcAD"/>
         <argument key="App\Controller\ColisController:index" type="service_closure" id=".service_locator.aKM6MDa"/>
@@ -6717,9 +6793,10 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.96H2dLl" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.2decY23" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Form\AnnoncesType" type="service_closure" id="App\Form\AnnoncesType"/>
         <argument key="App\Form\ColisType" type="service_closure" id="App\Form\ColisType"/>
         <argument key="App\Form\MessageType" type="service_closure" id="App\Form\MessageType"/>
         <argument key="App\Form\UserType" type="service_closure" id="App\Form\UserType"/>
@@ -6810,9 +6887,13 @@
         <argument key="doctrine.orm.messenger.doctrine_schema_subscriber" type="service_closure" id="doctrine.orm.messenger.doctrine_schema_subscriber"/>
       </argument>
     </service>
-    <service id=".service_locator.6odiYou" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.6BwCKt0" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Repository\AnnonceRepository" type="service_closure" id="App\Repository\AnnonceRepository"/>
+        <argument key="App\Repository\AnnoncesRepository" type="service_closure" id="App\Repository\AnnoncesRepository"/>
+        <argument key="App\Repository\ColisRepository" type="service_closure" id="App\Repository\ColisRepository"/>
+        <argument key="App\Repository\IdccRepository" type="service_closure" id="App\Repository\IdccRepository"/>
         <argument key="App\Repository\IduRepository" type="service_closure" id="App\Repository\IduRepository"/>
         <argument key="App\Repository\UserRepository" type="service_closure" id="App\Repository\UserRepository"/>
         <argument key="App\Repository\ValidationRepository" type="service_closure" id="App\Repository\ValidationRepository"/>
@@ -7085,6 +7166,12 @@
         <argument key="twig" type="service_closure" id="twig" on-invalid="ignore"/>
       </argument>
     </service>
+    <service id=".service_locator.mx0UMmY.App\Controller\AnnoncesController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\AnnoncesController"/>
+      <argument>App\Controller\AnnoncesController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.mx0UMmY" method="withContext"/>
+    </service>
     <service id=".service_locator.mx0UMmY.App\Controller\ColisController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\ColisController"/>
       <argument>App\Controller\ColisController</argument>
@@ -7297,12 +7384,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.nvxtKAE"/>
+      <argument type="service" id=".service_locator.QWMQaeR"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.nvxtKAE"/>
+      <argument type="service" id=".service_locator.QWMQaeR"/>
     </service>
     <service id="debug.traced.messenger.bus.default.inner" class="Symfony\Component\Messenger\MessageBus">
       <argument type="iterator">
@@ -7322,6 +7409,8 @@
       </call>
     </service>
     <service id=".errored..service_locator.xUrKPVU.Symfony\Component\Config\Loader\LoaderInterface" class="Symfony\Component\Config\Loader\LoaderInterface"/>
+    <service id=".errored..service_locator.ECpDOfk.App\Entity\Annonces" class="App\Entity\Annonces"/>
+    <service id=".errored..service_locator.CjLvgM8.App\Entity\Annonces" class="App\Entity\Annonces"/>
     <service id=".errored..service_locator.tkJC0R2.App\Entity\Colis" class="App\Entity\Colis"/>
     <service id=".errored..service_locator..RZQcAD.App\Entity\Colis" class="App\Entity\Colis"/>
     <service id=".errored..service_locator.MjFFzS6.App\Entity\Message" class="App\Entity\Message"/>
@@ -8276,7 +8365,7 @@
     <service id="sensio_framework_extra.security.expression_language" alias="sensio_framework_extra.security.expression_language.default"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.nvxtKAE"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.QWMQaeR"/>
     <service id="session" alias=".session.do-not-use" public="true">
       <deprecated package="symfony/framework-bundle" version="5.3">The "%alias_id%" service and "SessionInterface" alias are deprecated, use "$requestStack-&gt;getSession()" instead.</deprecated>
     </service>
@@ -8304,9 +8393,9 @@
     <service id=".service_locator.b76MKMg" alias=".service_locator.GPGtF8v"/>
     <service id=".service_locator.zilqhMR" alias=".service_locator.Q1EeZWh"/>
     <service id=".service_locator.gPjNq68" alias=".service_locator.iVJ8gI9"/>
-    <service id=".service_locator.Tic5.aF" alias=".service_locator.nvxtKAE"/>
+    <service id=".service_locator.L.cTJuJ" alias=".service_locator.QWMQaeR"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
-    <service id=".service_locator.MNxDaTF" alias=".service_locator.96H2dLl"/>
+    <service id=".service_locator.yaDP.q3" alias=".service_locator.2decY23"/>
     <service id=".service_locator.nk0lT0X" alias=".service_locator.1kmbKC8"/>
     <service id=".service_locator.O24_MAy" alias=".service_locator.yY.p4P7"/>
     <service id=".service_locator.0ghLsew" alias=".service_locator.mx0UMmY"/>
@@ -8332,6 +8421,10 @@
     <service id="messenger.bus.default" alias="debug.traced.messenger.bus.default"/>
     <service id="doctrine.orm.default_metadata_driver" alias=".doctrine.orm.default_metadata_driver"/>
     <service id=".service_locator.uo5c0SP" alias=".service_locator.xUrKPVU"/>
+    <service id=".service_locator.pYjUS3E" alias=".service_locator.Tr_CAXc"/>
+    <service id=".service_locator.ZqwPee9" alias=".service_locator.7CqYoho"/>
+    <service id=".service_locator.Lf1y6gR" alias=".service_locator.ECpDOfk"/>
+    <service id=".service_locator.vKdUTAa" alias=".service_locator.CjLvgM8"/>
     <service id=".service_locator.bInR.ll" alias=".service_locator.aKM6MDa"/>
     <service id=".service_locator.i8LFTD5" alias=".service_locator.tkJC0R2"/>
     <service id=".service_locator.6EXcT0r" alias=".service_locator..RZQcAD"/>

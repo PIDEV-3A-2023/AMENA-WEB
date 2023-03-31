@@ -31,12 +31,41 @@ class ValidationController extends AbstractController
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
         $validation = new Validation();
-        $user=$entityManager->getRepository(User::class)->find(161);
+        $user = $entityManager->getRepository(User::class)->find(161);
         $validation->setIdu($user);
         $form = $this->createForm(ValidationType::class, $validation);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $image = $form->get('imagea')->getData();
+
+
+            if ($image) {
+                $fichier = md5(uniqid()) . '.' . $image->guessExtension();
+
+                $image->move(
+                    $this->getParameter('images_directory'),
+                    $fichier
+                );
+                dump($image);
+
+                $validation->setImagea('http://localhost/img/' . $fichier);
+            }
+            $image = $form->get('imageb')->getData();
+
+
+            if ($image) {
+                $fichier = md5(uniqid()) . '.' . $image->guessExtension();
+
+                $image->move(
+                    $this->getParameter('images_directory'),
+                    $fichier
+                );
+                dump($image);
+
+                $validation->setImageb('http://localhost/img/' . $fichier);
+            }
             $entityManager->persist($validation);
             $entityManager->flush();
 
@@ -78,7 +107,7 @@ class ValidationController extends AbstractController
     #[Route('/{id}', name: 'app_validation_delete', methods: ['POST'])]
     public function delete(Request $request, Validation $validation, EntityManagerInterface $entityManager): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$validation->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $validation->getId(), $request->request->get('_token'))) {
             $entityManager->remove($validation);
             $entityManager->flush();
         }
