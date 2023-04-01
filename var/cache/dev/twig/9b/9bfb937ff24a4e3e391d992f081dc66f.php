@@ -90,14 +90,14 @@ class __TwigTemplate_52b7dfb0d9bfc8324ed42a03c9df377b extends Template
     <table class=\"table\">
         <thead>
             <tr>
-                <th>IdColis</th>
-                <th>Nomexpediteur</th>
-                <th>Adresseexpediteur</th>
-                <th>Nomdestinataire</th>
-                <th>Adressedestinataire</th>
+                <th>Id</th>
+                <th>NomExpediteur</th>
+                <th>AdresseExpediteur</th>
+                <th>NomDestinataire</th>
+                <th>AdresseDestinataire</th>
                 <th>Poids</th>
                 <th>Statut</th>
-                <th>Dateexpedition</th>
+                <th>DateExpedition</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -112,23 +112,23 @@ class __TwigTemplate_52b7dfb0d9bfc8324ed42a03c9df377b extends Template
             echo "            <tr>
                 <td>";
             // line 25
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["coli"], "idColis", [], "any", false, false, false, 25), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["coli"], "id", [], "any", false, false, false, 25), "html", null, true);
             echo "</td>
                 <td>";
             // line 26
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["coli"], "nomexpediteur", [], "any", false, false, false, 26), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["coli"], "nomExpediteur", [], "any", false, false, false, 26), "html", null, true);
             echo "</td>
                 <td>";
             // line 27
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["coli"], "adresseexpediteur", [], "any", false, false, false, 27), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["coli"], "adresseExpediteur", [], "any", false, false, false, 27), "html", null, true);
             echo "</td>
                 <td>";
             // line 28
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["coli"], "nomdestinataire", [], "any", false, false, false, 28), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["coli"], "nomDestinataire", [], "any", false, false, false, 28), "html", null, true);
             echo "</td>
                 <td>";
             // line 29
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["coli"], "adressedestinataire", [], "any", false, false, false, 29), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["coli"], "adresseDestinataire", [], "any", false, false, false, 29), "html", null, true);
             echo "</td>
                 <td>";
             // line 30
@@ -140,16 +140,16 @@ class __TwigTemplate_52b7dfb0d9bfc8324ed42a03c9df377b extends Template
             echo "</td>
                 <td>";
             // line 32
-            ((twig_get_attribute($this->env, $this->source, $context["coli"], "dateexpedition", [], "any", false, false, false, 32)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["coli"], "dateexpedition", [], "any", false, false, false, 32), "Y-m-d"), "html", null, true))) : (print ("")));
+            ((twig_get_attribute($this->env, $this->source, $context["coli"], "dateExpedition", [], "any", false, false, false, 32)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["coli"], "dateExpedition", [], "any", false, false, false, 32), "Y-m-d"), "html", null, true))) : (print ("")));
             echo "</td>
                 <td>
                     <a href=\"";
             // line 34
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_colis_show", ["idColis" => twig_get_attribute($this->env, $this->source, $context["coli"], "idColis", [], "any", false, false, false, 34)]), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_colis_show", ["id" => twig_get_attribute($this->env, $this->source, $context["coli"], "id", [], "any", false, false, false, 34)]), "html", null, true);
             echo "\">show</a>
                     <a href=\"";
             // line 35
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_colis_edit", ["idColis" => twig_get_attribute($this->env, $this->source, $context["coli"], "idColis", [], "any", false, false, false, 35)]), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_colis_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["coli"], "id", [], "any", false, false, false, 35)]), "html", null, true);
             echo "\">edit</a>
                 </td>
             </tr>
@@ -210,31 +210,31 @@ class __TwigTemplate_52b7dfb0d9bfc8324ed42a03c9df377b extends Template
     <table class=\"table\">
         <thead>
             <tr>
-                <th>IdColis</th>
-                <th>Nomexpediteur</th>
-                <th>Adresseexpediteur</th>
-                <th>Nomdestinataire</th>
-                <th>Adressedestinataire</th>
+                <th>Id</th>
+                <th>NomExpediteur</th>
+                <th>AdresseExpediteur</th>
+                <th>NomDestinataire</th>
+                <th>AdresseDestinataire</th>
                 <th>Poids</th>
                 <th>Statut</th>
-                <th>Dateexpedition</th>
+                <th>DateExpedition</th>
                 <th>actions</th>
             </tr>
         </thead>
         <tbody>
         {% for coli in colis %}
             <tr>
-                <td>{{ coli.idColis }}</td>
-                <td>{{ coli.nomexpediteur }}</td>
-                <td>{{ coli.adresseexpediteur }}</td>
-                <td>{{ coli.nomdestinataire }}</td>
-                <td>{{ coli.adressedestinataire }}</td>
+                <td>{{ coli.id }}</td>
+                <td>{{ coli.nomExpediteur }}</td>
+                <td>{{ coli.adresseExpediteur }}</td>
+                <td>{{ coli.nomDestinataire }}</td>
+                <td>{{ coli.adresseDestinataire }}</td>
                 <td>{{ coli.poids }}</td>
                 <td>{{ coli.statut }}</td>
-                <td>{{ coli.dateexpedition ? coli.dateexpedition|date('Y-m-d') : '' }}</td>
+                <td>{{ coli.dateExpedition ? coli.dateExpedition|date('Y-m-d') : '' }}</td>
                 <td>
-                    <a href=\"{{ path('app_colis_show', {'idColis': coli.idColis}) }}\">show</a>
-                    <a href=\"{{ path('app_colis_edit', {'idColis': coli.idColis}) }}\">edit</a>
+                    <a href=\"{{ path('app_colis_show', {'id': coli.id}) }}\">show</a>
+                    <a href=\"{{ path('app_colis_edit', {'id': coli.id}) }}\">edit</a>
                 </td>
             </tr>
         {% else %}
@@ -247,6 +247,6 @@ class __TwigTemplate_52b7dfb0d9bfc8324ed42a03c9df377b extends Template
 
     <a href=\"{{ path('app_colis_new') }}\">Create new</a>
 {% endblock %}
-", "colis/index.html.twig", "C:\\Users\\aymen\\Desktop\\amena\\Amena\\templates\\colis\\index.html.twig");
+", "colis/index.html.twig", "C:\\Users\\aymen\\Desktop\\digidreamers\\digidreamers\\templates\\colis\\index.html.twig");
     }
 }

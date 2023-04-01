@@ -847,6 +847,6 @@ class __TwigTemplate_42a4a492c2c8c938b3db714109d79e7a extends Template
 \t</body>
 
 </html>
-", "baseadmin.html.twig", "C:\\Users\\aymen\\Desktop\\amena\\Amena\\templates\\baseadmin.html.twig");
+", "baseadmin.html.twig", "C:\\Users\\aymen\\Desktop\\digidreamers\\digidreamers\\templates\\baseadmin.html.twig");
     }
 }

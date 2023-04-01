@@ -13,13 +13,13 @@ class AnnoncesType extends AbstractType
     {
         $builder
             ->add('type')
-            ->add('villeDep')
-            ->add('villeArr')
-            ->add('dateDep')
-            ->add('dateArr')
+            ->add('ville_dep')
+            ->add('ville_arr')
+            ->add('date_dep')
+            ->add('date_arr')
             ->add('prix')
             ->add('description')
-           
+            
         ;
     }
 

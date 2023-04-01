@@ -133,6 +133,6 @@ class __TwigTemplate_34292f1018d134ac93be2e0f88bdea7d extends Template
 
     <a href=\"{{ path('app_message_index') }}\">back to list</a>
 {% endblock %}
-", "message/new.html.twig", "C:\\Users\\aymen\\Desktop\\amena\\Amena\\templates\\message\\new.html.twig");
+", "message/new.html.twig", "C:\\Users\\aymen\\Desktop\\digidreamers\\digidreamers\\templates\\message\\new.html.twig");
     }
 }

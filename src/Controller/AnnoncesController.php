@@ -1,16 +1,20 @@
 <?php
 
 namespace App\Controller;
-use App\Entity\User;
+
 use App\Entity\Annonces;
-use App\Entity\Colis;
 use App\Form\AnnoncesType;
 use App\Repository\AnnoncesRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Entity\Colis;
+use App\Entity\User;
 use Doctrine\ORM\EntityManagerInterface;
+
+
+
 
 #[Route('/annonces')]
 class AnnoncesController extends AbstractController
@@ -24,19 +28,21 @@ class AnnoncesController extends AbstractController
     }
 
     #[Route('/new', name: 'app_annonces_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, AnnoncesRepository $annoncesRepository,EntityManagerInterface $entityManager): Response
-    { 
+    public function new(Request $request, AnnoncesRepository $annoncesRepository, EntityManagerInterface $entityManager): Response
+    {
         $annonce = new Annonces();
-      
+        $colis = $entityManager->getRepository(Colis::class)->find(2);
+        var_dump($colis);
+        $annonce->setIdcolis($colis);
         $user = $entityManager->getRepository(User::class)->find(162);
-        $colis = $entityManager->getRepository(Colis::class)->find(37);
-       
-        $annonce->addIdu($user);
-        $annonce->addIdc($colis);
+        $annonce->setIda_U($user);
+
         
+
+
         $form = $this->createForm(AnnoncesType::class, $annonce);
         $form->handleRequest($request);
-      
+
         if ($form->isSubmitted() && $form->isValid()) {
             $annoncesRepository->save($annonce, true);
 
@@ -49,7 +55,7 @@ class AnnoncesController extends AbstractController
         ]);
     }
 
-    #[Route('/{idAnnonce}', name: 'app_annonces_show', methods: ['GET'])]
+    #[Route('/{id}', name: 'app_annonces_show', methods: ['GET'])]
     public function show(Annonces $annonce): Response
     {
         return $this->render('annonces/show.html.twig', [
@@ -57,7 +63,7 @@ class AnnoncesController extends AbstractController
         ]);
     }
 
-    #[Route('/{idAnnonce}/edit', name: 'app_annonces_edit', methods: ['GET', 'POST'])]
+    #[Route('/{id}/edit', name: 'app_annonces_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Annonces $annonce, AnnoncesRepository $annoncesRepository): Response
     {
         $form = $this->createForm(AnnoncesType::class, $annonce);
@@ -75,10 +81,10 @@ class AnnoncesController extends AbstractController
         ]);
     }
 
-    #[Route('/{idAnnonce}', name: 'app_annonces_delete', methods: ['POST'])]
+    #[Route('/{id}', name: 'app_annonces_delete', methods: ['POST'])]
     public function delete(Request $request, Annonces $annonce, AnnoncesRepository $annoncesRepository): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$annonce->getIdAnnonce(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $annonce->getId(), $request->request->get('_token'))) {
             $annoncesRepository->remove($annonce, true);
         }
 

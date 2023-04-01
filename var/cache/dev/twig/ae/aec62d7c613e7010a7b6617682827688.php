@@ -337,6 +337,6 @@ class __TwigTemplate_c4b193a064447672ab03149809eb37fb extends Template
 
     {{ include('user/_delete_form.html.twig') }}
 {% endblock %}
-", "user/show.html.twig", "C:\\Users\\aymen\\Desktop\\amena\\Amena\\templates\\user\\show.html.twig");
+", "user/show.html.twig", "C:\\Users\\aymen\\Desktop\\digidreamers\\digidreamers\\templates\\user\\show.html.twig");
     }
 }

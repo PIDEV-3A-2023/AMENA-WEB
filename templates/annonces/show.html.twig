@@ -8,27 +8,27 @@
     <table class="table">
         <tbody>
             <tr>
-                <th>IdAnnonce</th>
-                <td>{{ annonce.idAnnonce }}</td>
+                <th>Id</th>
+                <td>{{ annonce.id }}</td>
             </tr>
             <tr>
                 <th>Type</th>
                 <td>{{ annonce.type }}</td>
             </tr>
             <tr>
-                <th>VilleDep</th>
+                <th>Ville_dep</th>
                 <td>{{ annonce.villeDep }}</td>
             </tr>
             <tr>
-                <th>VilleArr</th>
+                <th>Ville_arr</th>
                 <td>{{ annonce.villeArr }}</td>
             </tr>
             <tr>
-                <th>DateDep</th>
+                <th>Date_dep</th>
                 <td>{{ annonce.dateDep }}</td>
             </tr>
             <tr>
-                <th>DateArr</th>
+                <th>Date_arr</th>
                 <td>{{ annonce.dateArr }}</td>
             </tr>
             <tr>
@@ -44,7 +44,7 @@
 
     <a href="{{ path('app_annonces_index') }}">back to list</a>
 
-    <a href="{{ path('app_annonces_edit', {'idAnnonce': annonce.idAnnonce}) }}">edit</a>
+    <a href="{{ path('app_annonces_edit', {'id': annonce.id}) }}">edit</a>
 
     {{ include('annonces/_delete_form.html.twig') }}
 {% endblock %}

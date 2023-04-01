@@ -67,10 +67,10 @@ class User extends \App\Entity\User implements \Doctrine\ORM\Proxy\Proxy
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\User' . "\0" . 'id', '' . "\0" . 'App\\Entity\\User' . "\0" . 'nom', '' . "\0" . 'App\\Entity\\User' . "\0" . 'prenom', '' . "\0" . 'App\\Entity\\User' . "\0" . 'adress', '' . "\0" . 'App\\Entity\\User' . "\0" . 'cin', '' . "\0" . 'App\\Entity\\User' . "\0" . 'dateNaissance', '' . "\0" . 'App\\Entity\\User' . "\0" . 'dateCreationC', '' . "\0" . 'App\\Entity\\User' . "\0" . 'status', '' . "\0" . 'App\\Entity\\User' . "\0" . 'role', '' . "\0" . 'App\\Entity\\User' . "\0" . 'motPass', '' . "\0" . 'App\\Entity\\User' . "\0" . 'email', '' . "\0" . 'App\\Entity\\User' . "\0" . 'Token', '' . "\0" . 'App\\Entity\\User' . "\0" . 'score', '' . "\0" . 'App\\Entity\\User' . "\0" . 'numtel', '' . "\0" . 'App\\Entity\\User' . "\0" . 'image', '' . "\0" . 'App\\Entity\\User' . "\0" . 'Compte_ex', '' . "\0" . 'App\\Entity\\User' . "\0" . 'token_ex'];
+            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\User' . "\0" . 'id', '' . "\0" . 'App\\Entity\\User' . "\0" . 'nom', '' . "\0" . 'App\\Entity\\User' . "\0" . 'prenom', '' . "\0" . 'App\\Entity\\User' . "\0" . 'adress', '' . "\0" . 'App\\Entity\\User' . "\0" . 'cin', '' . "\0" . 'App\\Entity\\User' . "\0" . 'dateNaissance', '' . "\0" . 'App\\Entity\\User' . "\0" . 'dateCreationC', '' . "\0" . 'App\\Entity\\User' . "\0" . 'status', '' . "\0" . 'App\\Entity\\User' . "\0" . 'role', '' . "\0" . 'App\\Entity\\User' . "\0" . 'motPass', '' . "\0" . 'App\\Entity\\User' . "\0" . 'email', '' . "\0" . 'App\\Entity\\User' . "\0" . 'Token', '' . "\0" . 'App\\Entity\\User' . "\0" . 'score', '' . "\0" . 'App\\Entity\\User' . "\0" . 'numtel', '' . "\0" . 'App\\Entity\\User' . "\0" . 'image', '' . "\0" . 'App\\Entity\\User' . "\0" . 'Compte_ex', '' . "\0" . 'App\\Entity\\User' . "\0" . 'token_ex', '' . "\0" . 'App\\Entity\\User' . "\0" . 'annonces', '' . "\0" . 'App\\Entity\\User' . "\0" . 'colis'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\User' . "\0" . 'id', '' . "\0" . 'App\\Entity\\User' . "\0" . 'nom', '' . "\0" . 'App\\Entity\\User' . "\0" . 'prenom', '' . "\0" . 'App\\Entity\\User' . "\0" . 'adress', '' . "\0" . 'App\\Entity\\User' . "\0" . 'cin', '' . "\0" . 'App\\Entity\\User' . "\0" . 'dateNaissance', '' . "\0" . 'App\\Entity\\User' . "\0" . 'dateCreationC', '' . "\0" . 'App\\Entity\\User' . "\0" . 'status', '' . "\0" . 'App\\Entity\\User' . "\0" . 'role', '' . "\0" . 'App\\Entity\\User' . "\0" . 'motPass', '' . "\0" . 'App\\Entity\\User' . "\0" . 'email', '' . "\0" . 'App\\Entity\\User' . "\0" . 'Token', '' . "\0" . 'App\\Entity\\User' . "\0" . 'score', '' . "\0" . 'App\\Entity\\User' . "\0" . 'numtel', '' . "\0" . 'App\\Entity\\User' . "\0" . 'image', '' . "\0" . 'App\\Entity\\User' . "\0" . 'Compte_ex', '' . "\0" . 'App\\Entity\\User' . "\0" . 'token_ex'];
+        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\User' . "\0" . 'id', '' . "\0" . 'App\\Entity\\User' . "\0" . 'nom', '' . "\0" . 'App\\Entity\\User' . "\0" . 'prenom', '' . "\0" . 'App\\Entity\\User' . "\0" . 'adress', '' . "\0" . 'App\\Entity\\User' . "\0" . 'cin', '' . "\0" . 'App\\Entity\\User' . "\0" . 'dateNaissance', '' . "\0" . 'App\\Entity\\User' . "\0" . 'dateCreationC', '' . "\0" . 'App\\Entity\\User' . "\0" . 'status', '' . "\0" . 'App\\Entity\\User' . "\0" . 'role', '' . "\0" . 'App\\Entity\\User' . "\0" . 'motPass', '' . "\0" . 'App\\Entity\\User' . "\0" . 'email', '' . "\0" . 'App\\Entity\\User' . "\0" . 'Token', '' . "\0" . 'App\\Entity\\User' . "\0" . 'score', '' . "\0" . 'App\\Entity\\User' . "\0" . 'numtel', '' . "\0" . 'App\\Entity\\User' . "\0" . 'image', '' . "\0" . 'App\\Entity\\User' . "\0" . 'Compte_ex', '' . "\0" . 'App\\Entity\\User' . "\0" . 'token_ex', '' . "\0" . 'App\\Entity\\User' . "\0" . 'annonces', '' . "\0" . 'App\\Entity\\User' . "\0" . 'colis'];
     }
 
     /**
@@ -564,6 +564,72 @@ class User extends \App\Entity\User implements \Doctrine\ORM\Proxy\Proxy
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'setValidation', [$validation]);
 
         return parent::setValidation($validation);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getAnnonces(): \Doctrine\Common\Collections\Collection
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getAnnonces', []);
+
+        return parent::getAnnonces();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function addAnnonce(\App\Entity\Annonces $annonce): \App\Entity\User
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addAnnonce', [$annonce]);
+
+        return parent::addAnnonce($annonce);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function removeAnnonce(\App\Entity\Annonces $annonce): \App\Entity\User
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeAnnonce', [$annonce]);
+
+        return parent::removeAnnonce($annonce);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getColis(): \Doctrine\Common\Collections\Collection
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getColis', []);
+
+        return parent::getColis();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function addColi(\App\Entity\Colis $coli): \App\Entity\User
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addColi', [$coli]);
+
+        return parent::addColi($coli);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function removeColi(\App\Entity\Colis $coli): \App\Entity\User
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeColi', [$coli]);
+
+        return parent::removeColi($coli);
     }
 
 }

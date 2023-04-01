@@ -2,134 +2,117 @@
 
 namespace App\Entity;
 
+use App\Repository\ColisRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * Colis
- *
- * @ORM\Table(name="colis", indexes={@ORM\Index(name="c_idu", columns={"id_u"})})
- * @ORM\Entity
- */
+use App\Repository\UserRepository;
+
+
+use Symfony\Component\Validator\Constraints as Assert;
+
+
+#[ORM\Table(name: '`colis`')]
+#[ORM\Entity(repositoryClass: ColisRepository::class)]
 class Colis
 {
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="id_Colis", type="integer", nullable=false)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
-     */
-    private $idColis;
+    #[ORM\Id]
+    #[ORM\GeneratedValue]
+    #[ORM\Column(name: "id")]
+    private ?int $id = null;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="nomExpediteur", type="string", length=50, nullable=false)
-     */
-    private $nomexpediteur;
+    #[ORM\Column(length: 50, name: "nomExpediteur")]
+    private ?string $nomExpediteur = null;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="adresseExpediteur", type="string", length=50, nullable=false)
-     */
-    private $adresseexpediteur;
+    #[ORM\Column(length: 50, name: "adresseExpediteur")]
+    private ?string $adresseExpediteur = null;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="nomDestinataire", type="string", length=50, nullable=false)
-     */
-    private $nomdestinataire;
+    #[ORM\Column(length: 50, name: "nomDestinataire")]
+    private ?string $nomDestinataire = null;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="adresseDestinataire", type="string", length=50, nullable=false)
-     */
-    private $adressedestinataire;
+    #[ORM\Column(length: 50, name: "adresseDestinataire")]
+    private ?string $adresseDestinataire = null;
 
-    /**
-     * @var float
-     *
-     * @ORM\Column(name="poids", type="float", precision=10, scale=0, nullable=false)
-     */
-    private $poids;
+    #[ORM\Column(name: "poids")]
+    private ?float $poids = null;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="statut", type="string", length=30, nullable=false)
-     */
-    private $statut;
+    #[ORM\Column(length: 30, name: "statut")]
+    private ?string $statut = null;
 
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="dateExpedition", type="date", nullable=false)
-     */
-    private $dateexpedition;
+    #[ORM\Column(type: Types::DATE_MUTABLE, name: "dateExpedition")]
+    private ?\DateTimeInterface $dateExpedition = null;
 
-    /**
-     * @var User
-     *
-     * @ORM\ManyToOne(targetEntity="User")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="id_u", referencedColumnName="id")
-     * })
-     */
-    private $idU;
 
-    public function getIdColis(): ?int
+
+
+    #[ORM\ManyToOne]
+    #[ORM\JoinColumn(nullable: false, name: "id_u ")]
+    private ?User $id_u  = null;
+
+
+    #[ORM\OneToMany(mappedBy: 'idColis', targetEntity: Annonces::class)]
+    private Collection $annonces;
+
+    #[ORM\OneToMany(mappedBy: 'idcolis', targetEntity: Annonces::class)]
+    private Collection $idcccc;
+
+    public function __construct()
     {
-        return $this->idColis;
+        $this->annonces = new ArrayCollection();
+        $this->idcccc = new ArrayCollection();
     }
 
-    public function getNomexpediteur(): ?string
+    public function getId(): ?int
     {
-        return $this->nomexpediteur;
+        return $this->id;
     }
 
-    public function setNomexpediteur(string $nomexpediteur): self
+    public function getNomExpediteur(): ?string
     {
-        $this->nomexpediteur = $nomexpediteur;
+        return $this->nomExpediteur;
+    }
+
+    public function setNomExpediteur(string $nomExpediteur): self
+    {
+        $this->nomExpediteur = $nomExpediteur;
 
         return $this;
     }
 
-    public function getAdresseexpediteur(): ?string
+    public function getAdresseExpediteur(): ?string
     {
-        return $this->adresseexpediteur;
+        return $this->adresseExpediteur;
     }
 
-    public function setAdresseexpediteur(string $adresseexpediteur): self
+    public function setAdresseExpediteur(string $adresseExpediteur): self
     {
-        $this->adresseexpediteur = $adresseexpediteur;
+        $this->adresseExpediteur = $adresseExpediteur;
 
         return $this;
     }
 
-    public function getNomdestinataire(): ?string
+    public function getNomDestinataire(): ?string
     {
-        return $this->nomdestinataire;
+        return $this->nomDestinataire;
     }
 
-    public function setNomdestinataire(string $nomdestinataire): self
+    public function setNomDestinataire(string $nomDestinataire): self
     {
-        $this->nomdestinataire = $nomdestinataire;
+        $this->nomDestinataire = $nomDestinataire;
 
         return $this;
     }
 
-    public function getAdressedestinataire(): ?string
+    public function getAdresseDestinataire(): ?string
     {
-        return $this->adressedestinataire;
+        return $this->adresseDestinataire;
     }
 
-    public function setAdressedestinataire(string $adressedestinataire): self
+    public function setAdresseDestinataire(string $adresseDestinataire): self
     {
-        $this->adressedestinataire = $adressedestinataire;
+        $this->adresseDestinataire = $adresseDestinataire;
 
         return $this;
     }
@@ -158,29 +141,92 @@ class Colis
         return $this;
     }
 
-    public function getDateexpedition(): ?\DateTimeInterface
+    public function getDateExpedition(): ?\DateTimeInterface
     {
-        return $this->dateexpedition;
+        return $this->dateExpedition;
     }
 
-    public function setDateexpedition(\DateTimeInterface $dateexpedition): self
+    public function setDateExpedition(\DateTimeInterface $dateExpedition): self
     {
-        $this->dateexpedition = $dateexpedition;
+        $this->dateExpedition = $dateExpedition;
 
         return $this;
     }
 
     public function getIdU(): ?User
     {
-        return $this->idU;
+        return $this->id_u;
     }
 
-    public function setIdU(?User $idU): self
+    public function setIdU(?User $id_u): self
     {
-        $this->idU = $idU;
+        $this->id_u = $id_u;
 
         return $this;
     }
 
+    /**
+     * @return Collection<int, Annonces>
+     */
+    public function getAnnonces(): Collection
+    {
+        return $this->annonces;
+    }
 
+    public function addAnnonce(Annonces $annonce): self
+    {
+        if (!$this->annonces->contains($annonce)) {
+            $this->annonces->add($annonce);
+            $annonce->setIdColis($this);
+        }
+
+        return $this;
+    }
+
+    public function removeAnnonce(Annonces $annonce): self
+    {
+        if ($this->annonces->removeElement($annonce)) {
+            // set the owning side to null (unless already changed)
+            if ($annonce->getIdColis() === $this) {
+                $annonce->setIdColis(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Annonces>
+     */
+    public function getIdcccc(): Collection
+    {
+        return $this->idcccc;
+    }
+
+    public function addIdcccc(Annonces $idcccc): self
+    {
+        if (!$this->idcccc->contains($idcccc)) {
+            $this->idcccc->add($idcccc);
+            $idcccc->setIdcolis($this);
+        }
+
+        return $this;
+    }
+
+    public function removeIdcccc(Annonces $idcccc): self
+    {
+        if ($this->idcccc->removeElement($idcccc)) {
+            // set the owning side to null (unless already changed)
+            if ($idcccc->getIdcolis() === $this) {
+                $idcccc->setIdcolis(null);
+            }
+        }
+
+        return $this;
+    }
+
+public function __toString()
+    {
+        return $this->nomExpediteur;
+    }
 }

@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -94,6 +96,18 @@ class User
 
     #[ORM\Column(nullable: true)]
     private ?\DateTime $token_ex = null;
+
+    #[ORM\OneToMany(mappedBy: 'ida_U', targetEntity: Annonces::class)]
+    private Collection $annonces;
+
+    #[ORM\OneToMany(mappedBy: 'id_u', targetEntity: Colis::class)]
+    private Collection $colis;
+
+    public function __construct()
+    {
+        $this->annonces = new ArrayCollection();
+        $this->colis = new ArrayCollection();
+    }
 
 
 
@@ -314,6 +328,66 @@ class User
         }
 
         $this->validation = $validation;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Annonces>
+     */
+    public function getAnnonces(): Collection
+    {
+        return $this->annonces;
+    }
+
+    public function addAnnonce(Annonces $annonce): self
+    {
+        if (!$this->annonces->contains($annonce)) {
+            $this->annonces->add($annonce);
+            $annonce->setIdaU($this);
+        }
+
+        return $this;
+    }
+
+    public function removeAnnonce(Annonces $annonce): self
+    {
+        if ($this->annonces->removeElement($annonce)) {
+            // set the owning side to null (unless already changed)
+            if ($annonce->getIdaU() === $this) {
+                $annonce->setIdaU(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Colis>
+     */
+    public function getColis(): Collection
+    {
+        return $this->colis;
+    }
+
+    public function addColi(Colis $coli): self
+    {
+        if (!$this->colis->contains($coli)) {
+            $this->colis->add($coli);
+            $coli->setIdU($this);
+        }
+
+        return $this;
+    }
+
+    public function removeColi(Colis $coli): self
+    {
+        if ($this->colis->removeElement($coli)) {
+            // set the owning side to null (unless already changed)
+            if ($coli->getIdU() === $this) {
+                $coli->setIdU(null);
+            }
+        }
 
         return $this;
     }

@@ -270,6 +270,6 @@ class __TwigTemplate_935f06182045a8612bc184370ea708ff extends Template
 
     <a href=\"{{ path('app_vehicule_new') }}\">Create new</a>
 {% endblock %}
-", "vehicule/index.html.twig", "C:\\Users\\aymen\\Desktop\\amena\\Amena\\templates\\vehicule\\index.html.twig");
+", "vehicule/index.html.twig", "C:\\Users\\aymen\\Desktop\\digidreamers\\digidreamers\\templates\\vehicule\\index.html.twig");
     }
 }

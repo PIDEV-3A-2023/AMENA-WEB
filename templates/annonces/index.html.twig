@@ -8,12 +8,12 @@
     <table class="table">
         <thead>
             <tr>
-                <th>IdAnnonce</th>
+                <th>Id</th>
                 <th>Type</th>
-                <th>VilleDep</th>
-                <th>VilleArr</th>
-                <th>DateDep</th>
-                <th>DateArr</th>
+                <th>Ville_dep</th>
+                <th>Ville_arr</th>
+                <th>Date_dep</th>
+                <th>Date_arr</th>
                 <th>Prix</th>
                 <th>Description</th>
                 <th>actions</th>
@@ -22,7 +22,7 @@
         <tbody>
         {% for annonce in annonces %}
             <tr>
-                <td>{{ annonce.idAnnonce }}</td>
+                <td>{{ annonce.id }}</td>
                 <td>{{ annonce.type }}</td>
                 <td>{{ annonce.villeDep }}</td>
                 <td>{{ annonce.villeArr }}</td>
@@ -31,8 +31,8 @@
                 <td>{{ annonce.prix }}</td>
                 <td>{{ annonce.description }}</td>
                 <td>
-                    <a href="{{ path('app_annonces_show', {'idAnnonce': annonce.idAnnonce}) }}">show</a>
-                    <a href="{{ path('app_annonces_edit', {'idAnnonce': annonce.idAnnonce}) }}">edit</a>
+                    <a href="{{ path('app_annonces_show', {'id': annonce.id}) }}">show</a>
+                    <a href="{{ path('app_annonces_edit', {'id': annonce.id}) }}">edit</a>
                 </td>
             </tr>
         {% else %}

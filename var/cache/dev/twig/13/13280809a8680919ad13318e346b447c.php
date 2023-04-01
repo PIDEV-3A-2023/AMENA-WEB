@@ -90,38 +90,38 @@ class __TwigTemplate_34ce6ff320c2a43d4c6b157ce3f1fa3c extends Template
     <table class=\"table\">
         <tbody>
             <tr>
-                <th>IdColis</th>
+                <th>Id</th>
                 <td>";
         // line 12
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["coli"]) || array_key_exists("coli", $context) ? $context["coli"] : (function () { throw new RuntimeError('Variable "coli" does not exist.', 12, $this->source); })()), "idColis", [], "any", false, false, false, 12), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["coli"]) || array_key_exists("coli", $context) ? $context["coli"] : (function () { throw new RuntimeError('Variable "coli" does not exist.', 12, $this->source); })()), "id", [], "any", false, false, false, 12), "html", null, true);
         echo "</td>
             </tr>
             <tr>
-                <th>Nomexpediteur</th>
+                <th>NomExpediteur</th>
                 <td>";
         // line 16
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["coli"]) || array_key_exists("coli", $context) ? $context["coli"] : (function () { throw new RuntimeError('Variable "coli" does not exist.', 16, $this->source); })()), "nomexpediteur", [], "any", false, false, false, 16), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["coli"]) || array_key_exists("coli", $context) ? $context["coli"] : (function () { throw new RuntimeError('Variable "coli" does not exist.', 16, $this->source); })()), "nomExpediteur", [], "any", false, false, false, 16), "html", null, true);
         echo "</td>
             </tr>
             <tr>
-                <th>Adresseexpediteur</th>
+                <th>AdresseExpediteur</th>
                 <td>";
         // line 20
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["coli"]) || array_key_exists("coli", $context) ? $context["coli"] : (function () { throw new RuntimeError('Variable "coli" does not exist.', 20, $this->source); })()), "adresseexpediteur", [], "any", false, false, false, 20), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["coli"]) || array_key_exists("coli", $context) ? $context["coli"] : (function () { throw new RuntimeError('Variable "coli" does not exist.', 20, $this->source); })()), "adresseExpediteur", [], "any", false, false, false, 20), "html", null, true);
         echo "</td>
             </tr>
             <tr>
-                <th>Nomdestinataire</th>
+                <th>NomDestinataire</th>
                 <td>";
         // line 24
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["coli"]) || array_key_exists("coli", $context) ? $context["coli"] : (function () { throw new RuntimeError('Variable "coli" does not exist.', 24, $this->source); })()), "nomdestinataire", [], "any", false, false, false, 24), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["coli"]) || array_key_exists("coli", $context) ? $context["coli"] : (function () { throw new RuntimeError('Variable "coli" does not exist.', 24, $this->source); })()), "nomDestinataire", [], "any", false, false, false, 24), "html", null, true);
         echo "</td>
             </tr>
             <tr>
-                <th>Adressedestinataire</th>
+                <th>AdresseDestinataire</th>
                 <td>";
         // line 28
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["coli"]) || array_key_exists("coli", $context) ? $context["coli"] : (function () { throw new RuntimeError('Variable "coli" does not exist.', 28, $this->source); })()), "adressedestinataire", [], "any", false, false, false, 28), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["coli"]) || array_key_exists("coli", $context) ? $context["coli"] : (function () { throw new RuntimeError('Variable "coli" does not exist.', 28, $this->source); })()), "adresseDestinataire", [], "any", false, false, false, 28), "html", null, true);
         echo "</td>
             </tr>
             <tr>
@@ -139,10 +139,10 @@ class __TwigTemplate_34ce6ff320c2a43d4c6b157ce3f1fa3c extends Template
         echo "</td>
             </tr>
             <tr>
-                <th>Dateexpedition</th>
+                <th>DateExpedition</th>
                 <td>";
         // line 40
-        ((twig_get_attribute($this->env, $this->source, (isset($context["coli"]) || array_key_exists("coli", $context) ? $context["coli"] : (function () { throw new RuntimeError('Variable "coli" does not exist.', 40, $this->source); })()), "dateexpedition", [], "any", false, false, false, 40)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["coli"]) || array_key_exists("coli", $context) ? $context["coli"] : (function () { throw new RuntimeError('Variable "coli" does not exist.', 40, $this->source); })()), "dateexpedition", [], "any", false, false, false, 40), "Y-m-d"), "html", null, true))) : (print ("")));
+        ((twig_get_attribute($this->env, $this->source, (isset($context["coli"]) || array_key_exists("coli", $context) ? $context["coli"] : (function () { throw new RuntimeError('Variable "coli" does not exist.', 40, $this->source); })()), "dateExpedition", [], "any", false, false, false, 40)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["coli"]) || array_key_exists("coli", $context) ? $context["coli"] : (function () { throw new RuntimeError('Variable "coli" does not exist.', 40, $this->source); })()), "dateExpedition", [], "any", false, false, false, 40), "Y-m-d"), "html", null, true))) : (print ("")));
         echo "</td>
             </tr>
         </tbody>
@@ -155,7 +155,7 @@ class __TwigTemplate_34ce6ff320c2a43d4c6b157ce3f1fa3c extends Template
 
     <a href=\"";
         // line 47
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_colis_edit", ["idColis" => twig_get_attribute($this->env, $this->source, (isset($context["coli"]) || array_key_exists("coli", $context) ? $context["coli"] : (function () { throw new RuntimeError('Variable "coli" does not exist.', 47, $this->source); })()), "idColis", [], "any", false, false, false, 47)]), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_colis_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["coli"]) || array_key_exists("coli", $context) ? $context["coli"] : (function () { throw new RuntimeError('Variable "coli" does not exist.', 47, $this->source); })()), "id", [], "any", false, false, false, 47)]), "html", null, true);
         echo "\">edit</a>
 
     ";
@@ -198,24 +198,24 @@ class __TwigTemplate_34ce6ff320c2a43d4c6b157ce3f1fa3c extends Template
     <table class=\"table\">
         <tbody>
             <tr>
-                <th>IdColis</th>
-                <td>{{ coli.idColis }}</td>
+                <th>Id</th>
+                <td>{{ coli.id }}</td>
             </tr>
             <tr>
-                <th>Nomexpediteur</th>
-                <td>{{ coli.nomexpediteur }}</td>
+                <th>NomExpediteur</th>
+                <td>{{ coli.nomExpediteur }}</td>
             </tr>
             <tr>
-                <th>Adresseexpediteur</th>
-                <td>{{ coli.adresseexpediteur }}</td>
+                <th>AdresseExpediteur</th>
+                <td>{{ coli.adresseExpediteur }}</td>
             </tr>
             <tr>
-                <th>Nomdestinataire</th>
-                <td>{{ coli.nomdestinataire }}</td>
+                <th>NomDestinataire</th>
+                <td>{{ coli.nomDestinataire }}</td>
             </tr>
             <tr>
-                <th>Adressedestinataire</th>
-                <td>{{ coli.adressedestinataire }}</td>
+                <th>AdresseDestinataire</th>
+                <td>{{ coli.adresseDestinataire }}</td>
             </tr>
             <tr>
                 <th>Poids</th>
@@ -226,18 +226,18 @@ class __TwigTemplate_34ce6ff320c2a43d4c6b157ce3f1fa3c extends Template
                 <td>{{ coli.statut }}</td>
             </tr>
             <tr>
-                <th>Dateexpedition</th>
-                <td>{{ coli.dateexpedition ? coli.dateexpedition|date('Y-m-d') : '' }}</td>
+                <th>DateExpedition</th>
+                <td>{{ coli.dateExpedition ? coli.dateExpedition|date('Y-m-d') : '' }}</td>
             </tr>
         </tbody>
     </table>
 
     <a href=\"{{ path('app_colis_index') }}\">back to list</a>
 
-    <a href=\"{{ path('app_colis_edit', {'idColis': coli.idColis}) }}\">edit</a>
+    <a href=\"{{ path('app_colis_edit', {'id': coli.id}) }}\">edit</a>
 
     {{ include('colis/_delete_form.html.twig') }}
 {% endblock %}
-", "colis/show.html.twig", "C:\\Users\\aymen\\Desktop\\amena\\Amena\\templates\\colis\\show.html.twig");
+", "colis/show.html.twig", "C:\\Users\\aymen\\Desktop\\digidreamers\\digidreamers\\templates\\colis\\show.html.twig");
     }
 }

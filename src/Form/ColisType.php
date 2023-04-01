@@ -12,14 +12,14 @@ class ColisType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('nomexpediteur')
-            ->add('adresseexpediteur')
-            ->add('nomdestinataire')
-            ->add('adressedestinataire')
+            ->add('nomExpediteur')
+            ->add('adresseExpediteur')
+            ->add('nomDestinataire')
+            ->add('adresseDestinataire')
             ->add('poids')
             ->add('statut')
-            ->add('dateexpedition')
-            ->add('idU')
+            ->add('dateExpedition')
+            ->add('id_u')
         ;
     }
 

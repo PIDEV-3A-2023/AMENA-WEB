@@ -360,6 +360,6 @@ class __TwigTemplate_559b0ac0df39479558519b44f6781b83 extends Template
 
 \t\t\t\t</div>
 {% endblock %}
-", "user/index.html.twig", "C:\\Users\\aymen\\Desktop\\amena\\Amena\\templates\\user\\index.html.twig");
+", "user/index.html.twig", "C:\\Users\\aymen\\Desktop\\digidreamers\\digidreamers\\templates\\user\\index.html.twig");
     }
 }
