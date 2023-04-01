@@ -20,7 +20,7 @@ class Colis
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
-    #[ORM\Column(name: "id")]
+    #[ORM\Column]
     private ?int $id = null;
 
     #[ORM\Column(length: 50, name: "nomExpediteur")]
@@ -51,18 +51,26 @@ class Colis
     #[ORM\JoinColumn(nullable: false, name: "id_u ")]
     private ?User $id_u  = null;
 
-
     #[ORM\OneToMany(mappedBy: 'idColis', targetEntity: Annonces::class)]
     private Collection $annonces;
-
-    #[ORM\OneToMany(mappedBy: 'idcolis', targetEntity: Annonces::class)]
-    private Collection $idcccc;
 
     public function __construct()
     {
         $this->annonces = new ArrayCollection();
-        $this->idcccc = new ArrayCollection();
     }
+
+
+    /*#[ORM\OneToMany(mappedBy: 'idColis', targetEntity: Annonces::class)]
+    private Collection $annonces;*/
+
+    /*#[ORM\OneToMany(mappedBy: 'idcolis', targetEntity: Annonces::class)]
+    private Collection $idcccc;*/
+
+   /* public function __construct()
+    {
+        $this->annonces = new ArrayCollection();
+       // $this->idcccc = new ArrayCollection();
+    }*/
 
     public function getId(): ?int
     {
@@ -165,6 +173,69 @@ class Colis
         return $this;
     }
 
+  
+    /*public function getAnnonces(): Collection
+    {
+        return $this->annonces;
+    }*/
+
+    /*public function addAnnonce(Annonces $annonce): self
+    {
+        if (!$this->annonces->contains($annonce)) {
+            $this->annonces->add($annonce);
+            $annonce->setIdColis($this);
+        }
+
+        return $this;
+    }
+
+    public function removeAnnonce(Annonces $annonce): self
+    {
+        if ($this->annonces->removeElement($annonce)) {
+            // set the owning side to null (unless already changed)
+            if ($annonce->getIdColis() === $this) {
+                $annonce->setIdColis(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Annonces>
+     */
+   /* public function getIdcccc(): Collection
+    {
+        return $this->idcccc;
+    }
+
+    public function addIdcccc(Annonces $idcccc): self
+    {
+        if (!$this->idcccc->contains($idcccc)) {
+            $this->idcccc->add($idcccc);
+            $idcccc->setIdcolis($this);
+        }
+
+        return $this;
+    }
+
+    public function removeIdcccc(Annonces $idcccc): self
+    {
+        if ($this->idcccc->removeElement($idcccc)) {
+            // set the owning side to null (unless already changed)
+            if ($idcccc->getIdcolis() === $this) {
+                $idcccc->setIdcolis(null);
+            }
+        }
+
+        return $this;
+    }
+*/
+    public function __toString()
+    {
+        return $this->nomExpediteur;
+    }
+
     /**
      * @return Collection<int, Annonces>
      */
@@ -193,40 +264,5 @@ class Colis
         }
 
         return $this;
-    }
-
-    /**
-     * @return Collection<int, Annonces>
-     */
-    public function getIdcccc(): Collection
-    {
-        return $this->idcccc;
-    }
-
-    public function addIdcccc(Annonces $idcccc): self
-    {
-        if (!$this->idcccc->contains($idcccc)) {
-            $this->idcccc->add($idcccc);
-            $idcccc->setIdcolis($this);
-        }
-
-        return $this;
-    }
-
-    public function removeIdcccc(Annonces $idcccc): self
-    {
-        if ($this->idcccc->removeElement($idcccc)) {
-            // set the owning side to null (unless already changed)
-            if ($idcccc->getIdcolis() === $this) {
-                $idcccc->setIdcolis(null);
-            }
-        }
-
-        return $this;
-    }
-
-public function __toString()
-    {
-        return $this->nomExpediteur;
     }
 }

@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Entity;
+use App\Entity\Colis;
 
 use App\Repository\AnnoncesRepository;
 use Doctrine\ORM\Mapping as ORM;
@@ -41,9 +42,12 @@ class Annonces
     #[ORM\JoinColumn(nullable: false, name: "ida_U")]
     private ?User $ida_U = null;
 
-    #[ORM\ManyToOne]
+    #[ORM\ManyToOne(inversedBy: 'annonces')]
+    private ?Colis $idColis = null;
+
+    /*#[ORM\ManyToOne]
     #[ORM\JoinColumn(nullable: false, name: "idColis")]
-    private ?Colis $idcolis = null;
+    private ?Colis $idcolis = null;*/
 
     public function getId(): ?int
     {
@@ -146,7 +150,7 @@ class Annonces
         return $this;
     }
 
-    public function getIdcolis(): ?Colis
+   /* public function getIdcolis(): ?Colis
     {
         return $this->idcolis;
     }
@@ -157,10 +161,21 @@ class Annonces
 
         return $this;
     }
+*/
 
+   public function getIdColis(): ?Colis
+   {
+       return $this->idColis;
+   }
+
+   public function setIdColis(?Colis $idColis): self
+   {
+       $this->idColis = $idColis;
+
+       return $this;
+   }
     
 
-   
    
 
   

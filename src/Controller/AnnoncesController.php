@@ -22,8 +22,11 @@ class AnnoncesController extends AbstractController
     #[Route('/', name: 'app_annonces_index', methods: ['GET'])]
     public function index(AnnoncesRepository $annoncesRepository): Response
     {
+        $annonces=$annoncesRepository->findAll();
+        //dd('end');
+        //dd($annonces);
         return $this->render('annonces/index.html.twig', [
-            'annonces' => $annoncesRepository->findAll(),
+            'annonces' => $annonces,
         ]);
     }
 
@@ -31,21 +34,26 @@ class AnnoncesController extends AbstractController
     public function new(Request $request, AnnoncesRepository $annoncesRepository, EntityManagerInterface $entityManager): Response
     {
         $annonce = new Annonces();
-        $colis = $entityManager->getRepository(Colis::class)->find(2);
-        var_dump($colis);
-        $annonce->setIdcolis($colis);
-        $user = $entityManager->getRepository(User::class)->find(162);
-        $annonce->setIda_U($user);
 
         
-
-
+       // $colis = $entityManager->getRepository(Colis::class)->find(1);
+        
+       // $annonce->setIdcolis($colis);
+        
+        
+       // $user = $entityManager->getRepository(User::class)->find(1);
+        //$annonce->setIdaU($user);
+        
+        
+        
+        dump($annonce);
+        //dd('end');
         $form = $this->createForm(AnnoncesType::class, $annonce);
         $form->handleRequest($request);
-
+        
         if ($form->isSubmitted() && $form->isValid()) {
             $annoncesRepository->save($annonce, true);
-
+            
             return $this->redirectToRoute('app_annonces_index', [], Response::HTTP_SEE_OTHER);
         }
 

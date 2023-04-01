@@ -19,6 +19,8 @@ class AnnoncesType extends AbstractType
             ->add('date_arr')
             ->add('prix')
             ->add('description')
+            ->add('ida_U')
+            ->add('idColis')
             
         ;
     }
