@@ -94,7 +94,7 @@ class __TwigTemplate_559b0ac0df39479558519b44f6781b83 extends Template
 
 \t\t\t\t\t<div class=\"row\">
 \t\t\t\t\t\t<div class=\"col-12\" style=\"overflow-x: scroll\">
-\t\t\t\t\t\t\t<div class=\"card\" style=\"width: 2300px;\">
+\t\t\t\t\t\t\t<div class=\"card\" style=\"width: 4300px;\">
 \t\t\t\t\t\t\t\t<div class=\"card-header\">
 \t\t\t\t\t\t\t\t\t<h5 class=\"card-title mb-0\">Empty card</h5>
 \t\t\t\t\t\t\t\t</div>
@@ -290,7 +290,7 @@ class __TwigTemplate_559b0ac0df39479558519b44f6781b83 extends Template
 
 \t\t\t\t\t<div class=\"row\">
 \t\t\t\t\t\t<div class=\"col-12\" style=\"overflow-x: scroll\">
-\t\t\t\t\t\t\t<div class=\"card\" style=\"width: 2300px;\">
+\t\t\t\t\t\t\t<div class=\"card\" style=\"width: 4300px;\">
 \t\t\t\t\t\t\t\t<div class=\"card-header\">
 \t\t\t\t\t\t\t\t\t<h5 class=\"card-title mb-0\">Empty card</h5>
 \t\t\t\t\t\t\t\t</div>

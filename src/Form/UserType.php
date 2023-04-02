@@ -28,7 +28,7 @@ class UserType extends AbstractType
             ->add('role')
             ->add('motpass')
             ->add('email')
-            ->add('token')
+          
             ->add('score')
             ->add('numtel')
             ->add('image',FileType::class,[
