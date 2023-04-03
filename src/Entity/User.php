@@ -87,7 +87,7 @@ class User
     #[ORM\Column(length: 255)]
     private ?string $image = null;
 
-////bbbbbbbbb
+
 
     #[ORM\Column(nullable: true)]
     private ?\DateTime $Compte_ex = null;
