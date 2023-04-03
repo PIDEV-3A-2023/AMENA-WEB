@@ -982,3 +982,14 @@ c2d72b,127.0.0.1,GET,http://127.0.0.1:8000/validation/Reseau%202022-10-25%200932
 da658a,127.0.0.1,GET,http://127.0.0.1:8000/validation/Capture%20d%E2%80%99%C3%A9cran%202022-10-28%20065558.png,1680542807,,404
 c77e26,127.0.0.1,GET,http://127.0.0.1:8000/validation/assets/img/contact-header.jpg,1680542807,725191,404
 725191,127.0.0.1,GET,http://127.0.0.1:8000/validation/assets/img/contact-header.jpg,1680542807,,404
+e43d7f,127.0.0.1,GET,http://127.0.0.1:8000/validation/,1680542876,,200
+3b0aca,127.0.0.1,GET,http://127.0.0.1:8000/validation/front/assets/vendor/remixicon/remixicon.css,1680542877,02a656,404
+02a656,127.0.0.1,GET,http://127.0.0.1:8000/validation/front/assets/vendor/remixicon/remixicon.css,1680542877,,404
+7061b2,127.0.0.1,GET,http://127.0.0.1:8000/validation/Capture%20d%E2%80%99%C3%A9cran%202022-10-28%20065558.png,1680542877,ad9711,404
+ad9711,127.0.0.1,GET,http://127.0.0.1:8000/validation/Capture%20d%E2%80%99%C3%A9cran%202022-10-28%20065558.png,1680542877,,404
+c898da,127.0.0.1,GET,http://127.0.0.1:8000/validation/Capture%20d%E2%80%99%C3%A9cran%202023-01-25%20191122.png,1680542877,cd9e37,404
+cd9e37,127.0.0.1,GET,http://127.0.0.1:8000/validation/Capture%20d%E2%80%99%C3%A9cran%202023-01-25%20191122.png,1680542877,,404
+9de0f8,127.0.0.1,GET,http://127.0.0.1:8000/validation/Reseau%202022-10-25%20093212.png,1680542878,d911f8,404
+d911f8,127.0.0.1,GET,http://127.0.0.1:8000/validation/Reseau%202022-10-25%20093212.png,1680542878,,404
+8c668e,127.0.0.1,GET,http://127.0.0.1:8000/validation/assets/img/contact-header.jpg,1680542878,9bd550,404
+9bd550,127.0.0.1,GET,http://127.0.0.1:8000/validation/assets/img/contact-header.jpg,1680542878,,404
