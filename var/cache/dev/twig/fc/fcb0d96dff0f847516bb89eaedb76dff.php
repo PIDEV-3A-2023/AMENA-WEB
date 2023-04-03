@@ -231,12 +231,11 @@ class __TwigTemplate_559b0ac0df39479558519b44f6781b83 extends Template
     <a href=\"";
         // line 89
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_new");
-        echo "\">Create new</a>
+        echo "\">Register</a>
 \t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t</div>
 \t\t\t\t\t</div>
-
 \t\t\t\t</div>
 ";
         
@@ -323,7 +322,7 @@ class __TwigTemplate_559b0ac0df39479558519b44f6781b83 extends Template
         {% for user in users %}
             <tr>
                 <td>{{ user.id }}</td>
-                <td>{{ user.nom }}</td>
+                <td>{{ user.nom}}</td>
                 <td>{{ user.prenom }}</td>
                 <td>{{ user.adress }}</td>
                 <td>{{ user.cin }}</td>
@@ -352,12 +351,11 @@ class __TwigTemplate_559b0ac0df39479558519b44f6781b83 extends Template
         </tbody>
     </table>
 
-    <a href=\"{{ path('app_user_new') }}\">Create new</a>
+    <a href=\"{{ path('app_user_new') }}\">Register</a>
 \t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t</div>
 \t\t\t\t\t</div>
-
 \t\t\t\t</div>
 {% endblock %}
 ", "user/index.html.twig", "C:\\Users\\aymen\\Desktop\\digidreamers\\digidreamers\\templates\\user\\index.html.twig");
