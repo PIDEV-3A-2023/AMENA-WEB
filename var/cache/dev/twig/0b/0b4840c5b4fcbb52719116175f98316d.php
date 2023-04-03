@@ -49,7 +49,7 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
 \t\t<meta charset=\"utf-8\">
 \t\t<meta content=\"width=device-width, initial-scale=1.0\" name=\"viewport\">
 
-\t\t<title>Nova Bootstrap Template - Contact</title>
+\t\t<title>Amena Bootstrap Template - Contact</title>
 \t\t<meta content=\"\" name=\"description\">
 \t\t<meta
 \t\tcontent=\"\" name=\"keywords\">
@@ -248,7 +248,7 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
 \t\t\t\t\t<div class=\"copyright\">
 \t\t\t\t\t\t&copy; Copyright
 \t\t\t\t\t\t<strong>
-\t\t\t\t\t\t\t<span>Nova</span>
+\t\t\t\t\t\t\t<span>Amena</span>
 \t\t\t\t\t\t</strong>. All Rights Reserved
 \t\t\t\t\t</div>
 \t\t\t\t\t<div class=\"credits\">
@@ -427,7 +427,7 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
 \t\t<meta charset=\"utf-8\">
 \t\t<meta content=\"width=device-width, initial-scale=1.0\" name=\"viewport\">
 
-\t\t<title>Nova Bootstrap Template - Contact</title>
+\t\t<title>Amena Bootstrap Template - Contact</title>
 \t\t<meta content=\"\" name=\"description\">
 \t\t<meta
 \t\tcontent=\"\" name=\"keywords\">
@@ -634,7 +634,7 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
 \t\t\t\t\t<div class=\"copyright\">
 \t\t\t\t\t\t&copy; Copyright
 \t\t\t\t\t\t<strong>
-\t\t\t\t\t\t\t<span>Nova</span>
+\t\t\t\t\t\t\t<span>Amena</span>
 \t\t\t\t\t\t</strong>. All Rights Reserved
 \t\t\t\t\t</div>
 \t\t\t\t\t<div class=\"credits\">
