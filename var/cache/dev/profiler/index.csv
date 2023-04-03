@@ -351,6 +351,7 @@ bfdad4,127.0.0.1,GET,http://127.0.0.1:8000/user/11,1680399456,,404
 5334bf,127.0.0.1,GET,http://127.0.0.1:8000/user/11,1680399479,,404
 766f70,127.0.0.1,GET,http://127.0.0.1:8000/user/pages-profile.html,1680399483,334ef7,404
 334ef7,127.0.0.1,GET,http://127.0.0.1:8000/user/pages-profile.html,1680399483,,404
+<<<<<<< Updated upstream
 db7443,127.0.0.1,GET,http://127.0.0.1:8000/user/,1680533836,,200
 4298e5,127.0.0.1,GET,http://127.0.0.1:8000/user/r,1680533836,88fa8f,404
 88fa8f,127.0.0.1,GET,http://127.0.0.1:8000/user/r,1680533836,,404
@@ -982,3 +983,16 @@ c2d72b,127.0.0.1,GET,http://127.0.0.1:8000/validation/Reseau%202022-10-25%200932
 da658a,127.0.0.1,GET,http://127.0.0.1:8000/validation/Capture%20d%E2%80%99%C3%A9cran%202022-10-28%20065558.png,1680542807,,404
 c77e26,127.0.0.1,GET,http://127.0.0.1:8000/validation/assets/img/contact-header.jpg,1680542807,725191,404
 725191,127.0.0.1,GET,http://127.0.0.1:8000/validation/assets/img/contact-header.jpg,1680542807,,404
+=======
+b4db44,127.0.0.1,GET,http://127.0.0.1:8000/validation/,1680543878,,200
+798cda,127.0.0.1,GET,http://127.0.0.1:8000/validation/front/assets/vendor/remixicon/remixicon.css,1680543878,03db40,404
+03db40,127.0.0.1,GET,http://127.0.0.1:8000/validation/front/assets/vendor/remixicon/remixicon.css,1680543878,,404
+5e2996,127.0.0.1,GET,http://127.0.0.1:8000/validation/Capture%20d%E2%80%99%C3%A9cran%202023-01-25%20191122.png,1680543879,67c8ac,404
+67c8ac,127.0.0.1,GET,http://127.0.0.1:8000/validation/Capture%20d%E2%80%99%C3%A9cran%202023-01-25%20191122.png,1680543879,,404
+b5598f,127.0.0.1,GET,http://127.0.0.1:8000/validation/Reseau%202022-10-25%20093212.png,1680543879,d68014,404
+d68014,127.0.0.1,GET,http://127.0.0.1:8000/validation/Reseau%202022-10-25%20093212.png,1680543879,,404
+f5b447,127.0.0.1,GET,http://127.0.0.1:8000/validation/Capture%20d%E2%80%99%C3%A9cran%202022-10-28%20065558.png,1680543879,cc428b,404
+cc428b,127.0.0.1,GET,http://127.0.0.1:8000/validation/Capture%20d%E2%80%99%C3%A9cran%202022-10-28%20065558.png,1680543879,,404
+92872a,127.0.0.1,GET,http://127.0.0.1:8000/validation/assets/img/contact-header.jpg,1680543879,394741,404
+394741,127.0.0.1,GET,http://127.0.0.1:8000/validation/assets/img/contact-header.jpg,1680543879,,404
+>>>>>>> Stashed changes
