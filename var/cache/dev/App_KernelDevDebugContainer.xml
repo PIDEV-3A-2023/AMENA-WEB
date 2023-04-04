@@ -6561,13 +6561,6 @@
         <argument key="annoncesRepository" type="service_closure" id="App\Repository\AnnoncesRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.7CqYoho" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="annoncesRepository" type="service_closure" id="App\Repository\AnnoncesRepository"/>
-        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
-      </argument>
-    </service>
     <service id=".service_locator.ECpDOfk" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -6626,6 +6619,12 @@
         <argument key="message" type="service_closure" id=".errored..service_locator.R7OaP6G.App\Entity\Message"/>
       </argument>
     </service>
+    <service id=".service_locator.D1oHzKR" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="registry" type="service_closure" id="doctrine"/>
+      </argument>
+    </service>
     <service id=".service_locator.4T4EJFR" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -6659,13 +6658,13 @@
         <argument key="vehicule" type="service_closure" id=".errored..service_locator.iVJ8gI9.App\Entity\Vehicule"/>
       </argument>
     </service>
-    <service id=".service_locator.tIl3vpN" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.DY1X0hM" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\AnnoncesController::delete" type="service_closure" id=".service_locator.CjLvgM8"/>
         <argument key="App\Controller\AnnoncesController::edit" type="service_closure" id=".service_locator.CjLvgM8"/>
         <argument key="App\Controller\AnnoncesController::index" type="service_closure" id=".service_locator.Tr_CAXc"/>
-        <argument key="App\Controller\AnnoncesController::new" type="service_closure" id=".service_locator.7CqYoho"/>
+        <argument key="App\Controller\AnnoncesController::new" type="service_closure" id=".service_locator.Tr_CAXc"/>
         <argument key="App\Controller\AnnoncesController::show" type="service_closure" id=".service_locator.ECpDOfk"/>
         <argument key="App\Controller\ColisController::delete" type="service_closure" id=".service_locator.S8.Ozi0"/>
         <argument key="App\Controller\ColisController::edit" type="service_closure" id=".service_locator.S8.Ozi0"/>
@@ -6679,7 +6678,7 @@
         <argument key="App\Controller\MessageController::show" type="service_closure" id=".service_locator.MjFFzS6"/>
         <argument key="App\Controller\UserController::delete" type="service_closure" id=".service_locator.GPGtF8v"/>
         <argument key="App\Controller\UserController::edit" type="service_closure" id=".service_locator.GPGtF8v"/>
-        <argument key="App\Controller\UserController::index" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\UserController::index" type="service_closure" id=".service_locator.D1oHzKR"/>
         <argument key="App\Controller\UserController::new" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\UserController::show" type="service_closure" id=".service_locator.4T4EJFR"/>
         <argument key="App\Controller\ValidationController::delete" type="service_closure" id=".service_locator.Q1EeZWh"/>
@@ -6699,7 +6698,7 @@
         <argument key="App\Controller\AnnoncesController:delete" type="service_closure" id=".service_locator.CjLvgM8"/>
         <argument key="App\Controller\AnnoncesController:edit" type="service_closure" id=".service_locator.CjLvgM8"/>
         <argument key="App\Controller\AnnoncesController:index" type="service_closure" id=".service_locator.Tr_CAXc"/>
-        <argument key="App\Controller\AnnoncesController:new" type="service_closure" id=".service_locator.7CqYoho"/>
+        <argument key="App\Controller\AnnoncesController:new" type="service_closure" id=".service_locator.Tr_CAXc"/>
         <argument key="App\Controller\AnnoncesController:show" type="service_closure" id=".service_locator.ECpDOfk"/>
         <argument key="App\Controller\ColisController:delete" type="service_closure" id=".service_locator.S8.Ozi0"/>
         <argument key="App\Controller\ColisController:edit" type="service_closure" id=".service_locator.S8.Ozi0"/>
@@ -6713,7 +6712,7 @@
         <argument key="App\Controller\MessageController:show" type="service_closure" id=".service_locator.MjFFzS6"/>
         <argument key="App\Controller\UserController:delete" type="service_closure" id=".service_locator.GPGtF8v"/>
         <argument key="App\Controller\UserController:edit" type="service_closure" id=".service_locator.GPGtF8v"/>
-        <argument key="App\Controller\UserController:index" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\UserController:index" type="service_closure" id=".service_locator.D1oHzKR"/>
         <argument key="App\Controller\UserController:new" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\UserController:show" type="service_closure" id=".service_locator.4T4EJFR"/>
         <argument key="App\Controller\ValidationController:delete" type="service_closure" id=".service_locator.Q1EeZWh"/>
@@ -7377,12 +7376,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.tIl3vpN"/>
+      <argument type="service" id=".service_locator.DY1X0hM"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.tIl3vpN"/>
+      <argument type="service" id=".service_locator.DY1X0hM"/>
     </service>
     <service id="debug.traced.messenger.bus.default.inner" class="Symfony\Component\Messenger\MessageBus">
       <argument type="iterator">
@@ -8357,7 +8356,7 @@
     <service id="sensio_framework_extra.security.expression_language" alias="sensio_framework_extra.security.expression_language.default"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.tIl3vpN"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.DY1X0hM"/>
     <service id="session" alias=".session.do-not-use" public="true">
       <deprecated package="symfony/framework-bundle" version="5.3">The "%alias_id%" service and "SessionInterface" alias are deprecated, use "$requestStack-&gt;getSession()" instead.</deprecated>
     </service>
@@ -8385,7 +8384,7 @@
     <service id=".service_locator.b76MKMg" alias=".service_locator.GPGtF8v"/>
     <service id=".service_locator.zilqhMR" alias=".service_locator.Q1EeZWh"/>
     <service id=".service_locator.gPjNq68" alias=".service_locator.iVJ8gI9"/>
-    <service id=".service_locator.2IVZSzW" alias=".service_locator.tIl3vpN"/>
+    <service id=".service_locator.5jadg8t" alias=".service_locator.DY1X0hM"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
     <service id=".service_locator.yaDP.q3" alias=".service_locator.2decY23"/>
     <service id=".service_locator.nk0lT0X" alias=".service_locator.1kmbKC8"/>
@@ -8414,7 +8413,6 @@
     <service id="doctrine.orm.default_metadata_driver" alias=".doctrine.orm.default_metadata_driver"/>
     <service id=".service_locator.uo5c0SP" alias=".service_locator.xUrKPVU"/>
     <service id=".service_locator.pYjUS3E" alias=".service_locator.Tr_CAXc"/>
-    <service id=".service_locator.ZqwPee9" alias=".service_locator.7CqYoho"/>
     <service id=".service_locator.Lf1y6gR" alias=".service_locator.ECpDOfk"/>
     <service id=".service_locator.vKdUTAa" alias=".service_locator.CjLvgM8"/>
     <service id=".service_locator.jcCblf." alias=".service_locator.XnXXhVu"/>
@@ -8424,6 +8422,7 @@
     <service id=".service_locator.bInR.ll" alias=".service_locator.aKM6MDa"/>
     <service id=".service_locator.2yFtcCD" alias=".service_locator.MjFFzS6"/>
     <service id=".service_locator.Kk2TRjM" alias=".service_locator.R7OaP6G"/>
+    <service id=".service_locator.M_.yFWB" alias=".service_locator.D1oHzKR"/>
     <service id=".service_locator.Zp0NSXM" alias=".service_locator.4T4EJFR"/>
     <service id=".service_locator.O99ujjA" alias=".service_locator.GPGtF8v"/>
     <service id=".service_locator.yhUZf7r" alias=".service_locator.Q1EeZWh"/>

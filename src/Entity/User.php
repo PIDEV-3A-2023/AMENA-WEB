@@ -97,16 +97,18 @@ class User
     #[ORM\Column(nullable: true)]
     private ?\DateTime $token_ex = null;
 
-    #[ORM\OneToMany(mappedBy: 'ida_U', targetEntity: Annonces::class)]
-    private Collection $annonces;
 
     #[ORM\OneToMany(mappedBy: 'id_u', targetEntity: Colis::class)]
     private Collection $colis;
 
+    #[ORM\OneToMany(mappedBy: 'ida_U', targetEntity: Annonces::class)]
+    private Collection $annonces;
+
     public function __construct()
     {
-        $this->annonces = new ArrayCollection();
+       
         $this->colis = new ArrayCollection();
+        $this->annonces = new ArrayCollection();
     }
 
 
@@ -332,35 +334,9 @@ class User
         return $this;
     }
 
-    /**
-     * @return Collection<int, Annonces>
-     */
-    public function getAnnonces(): Collection
-    {
-        return $this->annonces;
-    }
+   
+   
 
-    public function addAnnonce(Annonces $annonce): self
-    {
-        if (!$this->annonces->contains($annonce)) {
-            $this->annonces->add($annonce);
-            $annonce->setIdaU($this);
-        }
-
-        return $this;
-    }
-
-    public function removeAnnonce(Annonces $annonce): self
-    {
-        if ($this->annonces->removeElement($annonce)) {
-            // set the owning side to null (unless already changed)
-            if ($annonce->getIdaU() === $this) {
-                $annonce->setIdaU(null);
-            }
-        }
-
-        return $this;
-    }
 
     /**
      * @return Collection<int, Colis>
@@ -386,6 +362,36 @@ class User
             // set the owning side to null (unless already changed)
             if ($coli->getIdU() === $this) {
                 $coli->setIdU(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Annonces>
+     */
+    public function getAnnonces(): Collection
+    {
+        return $this->annonces;
+    }
+
+    public function addAnnonce(Annonces $annonce): self
+    {
+        if (!$this->annonces->contains($annonce)) {
+            $this->annonces->add($annonce);
+            $annonce->setIdaU($this);
+        }
+
+        return $this;
+    }
+
+    public function removeAnnonce(Annonces $annonce): self
+    {
+        if ($this->annonces->removeElement($annonce)) {
+            // set the owning side to null (unless already changed)
+            if ($annonce->getIdaU() === $this) {
+                $annonce->setIdaU(null);
             }
         }
 

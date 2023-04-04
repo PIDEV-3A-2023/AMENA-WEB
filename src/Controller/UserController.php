@@ -10,23 +10,23 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Validator\Constraints\Uuid;
+use Doctrine\Persistence\ManagerRegistry;
 
 #[Route('/user')]
 class UserController extends AbstractController
 {
     #[Route('/', name: 'app_user_index', methods: ['GET'])]
-    public function index(EntityManagerInterface $entityManager): Response
+    public function index(Request $request, ManagerRegistry $registry): Response
     {
-        $users = $entityManager
-            ->getRepository(User::class)
-            ->findAll();
+        $query = $request->query->get('q');
+
+        $users = $registry->getRepository(User::class)
+            ->findBySearchQuery($query);
 
         return $this->render('user/index.html.twig', [
             'users' => $users,
         ]);
     }
-
-
     #[Route('/new', name: 'app_user_new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {

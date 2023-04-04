@@ -21,7 +21,6 @@ class AnnoncesType extends AbstractType
             ->add('description')
             ->add('ida_U')
             ->add('idColis')
-            
         ;
     }
 
