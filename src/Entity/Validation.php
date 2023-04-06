@@ -2,55 +2,44 @@
 
 namespace App\Entity;
 
+use App\Repository\ValidationRepository;
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
-/**
- * Validation
- *
- * @ORM\Table(name="validation", indexes={@ORM\Index(name="C_idim", columns={"idu"})})
- * @ORM\Entity
- */
+
+#[ORM\Entity(repositoryClass: ValidationRepository::class)]
+#[ORM\Table(name: '`validation`')]
+
+
+
+
 class Validation
 {
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="id", type="integer", nullable=false)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
-     */
-    private $id;
+    #[ORM\Id]
+    #[ORM\GeneratedValue]
+    #[ORM\Column]
+    private ?int $id = null;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="imageA", type="string", length=255, nullable=false)
-     */
-    private $imagea;
+    #[ORM\Column(length: 255, name: "imageA")]
+    #[Assert\NotBlank]
+    #[Assert\Url]
+    private ?string $imagea = null;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="imageB", type="string", length=255, nullable=false)
-     */
-    private $imageb;
+    #[ORM\Column(length: 255, name: "imageB")]
+    #[Assert\NotBlank]
+    #[Assert\Url]
+    private ?string $imageb = null;
 
-    /**
-     * @var bool
-     *
-     * @ORM\Column(name="valide", type="boolean", nullable=false)
-     */
-    private $valide;
+    #[ORM\Column(name: "valide")]
+    private ?bool $valide = null;
 
-    /**
-     * @var \User
-     *
-     * @ORM\ManyToOne(targetEntity="User")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="idu", referencedColumnName="id")
-     * })
-     */
-    private $idu;
+    #[ORM\ManyToOne]
+    #[ORM\JoinColumn(nullable: false, name: "idu")]
+    private ?User $idu = null;
+
+
+
 
     public function getId(): ?int
     {
@@ -104,6 +93,4 @@ class Validation
 
         return $this;
     }
-
-
 }

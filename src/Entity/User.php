@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -18,21 +20,25 @@ class User
     #[ORM\GeneratedValue]
     #[ORM\Column]
     private ?int $id = null;
+
     #[ORM\Column(length: 255)]
-    #[Assert\NotBlank(message:"nom obligatoire")]
-    //#[Assert\Length((min:10,message:"Votre mot de passe ne contient pas {{limit }} caractères."))]
+    #[Assert\NotBlank(message: "Nom obligatoire")]
+    #[Assert\Length(min: 2, minMessage: "Le nom doit contenir au moins {{ limit }} caractères")]
     private ?string $nom = null;
-   
+
+
     #[ORM\Column(length: 255)]
-    #[Assert\NotBlank(message:"prenom obligatoire")]
+    #[Assert\NotBlank(message: "Prénom obligatoire")]
+    #[Assert\Length(min: 2, minMessage: "Le prénom doit contenir au moins {{ limit }} caractères")]
     private ?string $prenom = null;
 
     #[ORM\Column(length: 255)]
     private ?string $adress = null;
 
 
-
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message: "CIN obligatoire")]
+    #[Assert\Regex(pattern: "/^\d{8}$/", message: "CIN invalide")]
     private ?string $cin = null;
 
 
@@ -48,29 +54,62 @@ class User
     #[ORM\Column(length: 255)]
     private ?string $role = null;
 
-    #[ORM\Column(length: 255, name: "motPass")]
-    private ?string $motPass = null;
 
+    #[ORM\Column(length: 255, name: "motPass")]
+    #[Assert\NotBlank(message: "Mot de passe obligatoire")]
+    #[Assert\Regex(pattern: "/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/", message: "Le mot de passe doit contenir au moins 8 caractères dont une lettre et un chiffre")]
+
+    private ?string $motPass = null;
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message: "Adresse e-mail obligatoire")]
+    #[Assert\Email(message: "Adresse e-mail invalide")]
     private ?string $email = null;
+
+
 
     #[ORM\Column(length: 255)]
     private ?string $Token = null;
 
+
+
     #[ORM\Column(length: 8)]
+    #[Assert\NotBlank(message: "Score obligatoire")]
+    #[Assert\Regex(pattern: "/^\d{8}$/", message: "Score invalide")]
     private ?string $score = null;
 
+
     #[ORM\Column(length: 11)]
+    #[Assert\Regex(pattern: "/^05\d{8}$/", message: "Numéro de téléphone invalide")]
     private ?string $numtel = null;
+
+
 
     #[ORM\Column(length: 255)]
     private ?string $image = null;
 
+
+
     #[ORM\Column(nullable: true)]
     private ?\DateTime $Compte_ex = null;
 
+    
+
     #[ORM\Column(nullable: true)]
     private ?\DateTime $token_ex = null;
+
+    #[ORM\OneToMany(mappedBy: 'ida_U', targetEntity: Annonces::class)]
+    private Collection $annonces;
+
+    #[ORM\OneToMany(mappedBy: 'id_u', targetEntity: Colis::class)]
+    private Collection $colis;
+
+    public function __construct()
+    {
+        $this->annonces = new ArrayCollection();
+        $this->colis = new ArrayCollection();
+    }
+
+
 
     public function getId(): ?int
     {
@@ -273,5 +312,83 @@ class User
     public function __toString()
     {
         return $this->nom;
+    }
+
+
+    public function setValidation(?Validation $validation): self
+    {
+        // unset the owning side of the relation if necessary
+        if ($validation === null && $this->validation !== null) {
+            $this->validation->setIdu(null);
+        }
+
+        // set the owning side of the relation if necessary
+        if ($validation !== null && $validation->getIdu() !== $this) {
+            $validation->setIdu($this);
+        }
+
+        $this->validation = $validation;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Annonces>
+     */
+    public function getAnnonces(): Collection
+    {
+        return $this->annonces;
+    }
+
+    public function addAnnonce(Annonces $annonce): self
+    {
+        if (!$this->annonces->contains($annonce)) {
+            $this->annonces->add($annonce);
+            $annonce->setIdaU($this);
+        }
+
+        return $this;
+    }
+
+    public function removeAnnonce(Annonces $annonce): self
+    {
+        if ($this->annonces->removeElement($annonce)) {
+            // set the owning side to null (unless already changed)
+            if ($annonce->getIdaU() === $this) {
+                $annonce->setIdaU(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Colis>
+     */
+    public function getColis(): Collection
+    {
+        return $this->colis;
+    }
+
+    public function addColi(Colis $coli): self
+    {
+        if (!$this->colis->contains($coli)) {
+            $this->colis->add($coli);
+            $coli->setIdU($this);
+        }
+
+        return $this;
+    }
+
+    public function removeColi(Colis $coli): self
+    {
+        if ($this->colis->removeElement($coli)) {
+            // set the owning side to null (unless already changed)
+            if ($coli->getIdU() === $this) {
+                $coli->setIdU(null);
+            }
+        }
+
+        return $this;
     }
 }
