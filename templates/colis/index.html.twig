@@ -8,31 +8,31 @@
     <table class="table">
         <thead>
             <tr>
-                <th>IdColis</th>
-                <th>Nomexpediteur</th>
-                <th>Adresseexpediteur</th>
-                <th>Nomdestinataire</th>
-                <th>Adressedestinataire</th>
+                <th>Id</th>
+                <th>NomExpediteur</th>
+                <th>AdresseExpediteur</th>
+                <th>NomDestinataire</th>
+                <th>AdresseDestinataire</th>
                 <th>Poids</th>
                 <th>Statut</th>
-                <th>Dateexpedition</th>
+                <th>DateExpedition</th>
                 <th>actions</th>
             </tr>
         </thead>
         <tbody>
         {% for coli in colis %}
             <tr>
-                <td>{{ coli.idColis }}</td>
-                <td>{{ coli.nomexpediteur }}</td>
-                <td>{{ coli.adresseexpediteur }}</td>
-                <td>{{ coli.nomdestinataire }}</td>
-                <td>{{ coli.adressedestinataire }}</td>
+                <td>{{ coli.id }}</td>
+                <td>{{ coli.nomExpediteur }}</td>
+                <td>{{ coli.adresseExpediteur }}</td>
+                <td>{{ coli.nomDestinataire }}</td>
+                <td>{{ coli.adresseDestinataire }}</td>
                 <td>{{ coli.poids }}</td>
                 <td>{{ coli.statut }}</td>
-                <td>{{ coli.dateexpedition ? coli.dateexpedition|date('Y-m-d') : '' }}</td>
+                <td>{{ coli.dateExpedition ? coli.dateExpedition|date('Y-m-d') : '' }}</td>
                 <td>
-                    <a href="{{ path('app_colis_show', {'idColis': coli.idColis}) }}">show</a>
-                    <a href="{{ path('app_colis_edit', {'idColis': coli.idColis}) }}">edit</a>
+                    <a href="{{ path('app_colis_show', {'id': coli.id}) }}">show</a>
+                    <a href="{{ path('app_colis_edit', {'id': coli.id}) }}">edit</a>
                 </td>
             </tr>
         {% else %}
