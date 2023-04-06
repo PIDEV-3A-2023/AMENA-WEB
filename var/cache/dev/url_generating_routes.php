@@ -24,6 +24,7 @@ return [
     'app_user_show' => [['id'], ['_controller' => 'App\\Controller\\UserController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/user']], [], [], []],
     'app_user_edit' => [['id'], ['_controller' => 'App\\Controller\\UserController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id', true], ['text', '/user']], [], [], []],
     'app_user_delete' => [['id'], ['_controller' => 'App\\Controller\\UserController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/user']], [], [], []],
+    'app_user_profile' => [['id'], ['_controller' => 'App\\Controller\\UserController::showUser'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/user/profile']], [], [], []],
     'app_validation_index' => [[], ['_controller' => 'App\\Controller\\ValidationController::index'], [], [['text', '/validation/']], [], [], []],
     'app_validation_new' => [[], ['_controller' => 'App\\Controller\\ValidationController::new'], [], [['text', '/validation/new']], [], [], []],
     'app_validation_show' => [['id'], ['_controller' => 'App\\Controller\\ValidationController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/validation']], [], [], []],
