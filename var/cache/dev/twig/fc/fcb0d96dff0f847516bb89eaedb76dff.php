@@ -116,24 +116,26 @@ class __TwigTemplate_559b0ac0df39479558519b44f6781b83 extends Template
 \t\t\t\t\t\t<table class=\"table\">
 \t\t\t\t\t\t\t<thead>
 \t\t\t\t\t\t\t\t<tr>
-\t\t\t\t\t\t\t\t\t<th>Id</th>
+\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t<th>Nom</th>
 \t\t\t\t\t\t\t\t\t<th>Prenom</th>
 \t\t\t\t\t\t\t\t\t<th>Adress</th>
 \t\t\t\t\t\t\t\t\t<th>Cin</th>
-\t\t\t\t\t\t\t\t\t<th>Datenaissance</th>
-\t\t\t\t\t\t\t\t\t<th>Datecreationc</th>
-\t\t\t\t\t\t\t\t\t<th>Status</th>
+\t\t\t\t\t\t\t\t\t";
+        // line 51
+        echo "\t\t\t\t\t\t\t\t\t<th>Status</th>
 \t\t\t\t\t\t\t\t\t<th>Role</th>
 \t\t\t\t\t\t\t\t\t<th>Motpass</th>
 \t\t\t\t\t\t\t\t\t<th>Email</th>
-\t\t\t\t\t\t\t\t\t<th>Token</th>
-\t\t\t\t\t\t\t\t\t<th>Score</th>
+\t\t\t\t\t\t\t\t\t";
+        // line 56
+        echo " 
 \t\t\t\t\t\t\t\t\t<th>Numtel</th>
 \t\t\t\t\t\t\t\t\t<th>Image</th>
 \t\t\t\t\t\t\t\t\t<th>CompteEx</th>
-\t\t\t\t\t\t\t\t\t<th>TokenEx</th>
-\t\t\t\t\t\t\t\t\t<th>actions</th>
+\t\t\t\t\t\t\t\t\t";
+        // line 61
+        echo "\t\t\t\t\t\t\t\t\t<th>actions</th>
 \t\t\t\t\t\t\t\t</tr>
 \t\t\t\t\t\t\t</thead>
 \t\t\t\t\t\t\t<tbody>
@@ -145,10 +147,7 @@ class __TwigTemplate_559b0ac0df39479558519b44f6781b83 extends Template
         foreach ($context['_seq'] as $context["_key"] => $context["user"]) {
             // line 66
             echo "\t\t\t\t\t\t\t\t\t<tr>
-\t\t\t\t\t\t\t\t\t\t<td>";
-            // line 67
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 67), "html", null, true);
-            echo "</td>
+\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t\t<td>";
             // line 68
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "nom", [], "any", false, false, false, 68), "html", null, true);
@@ -165,16 +164,9 @@ class __TwigTemplate_559b0ac0df39479558519b44f6781b83 extends Template
             // line 71
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "cin", [], "any", false, false, false, 71), "html", null, true);
             echo "</td>
-\t\t\t\t\t\t\t\t\t\t<td>";
-            // line 72
-            ((twig_get_attribute($this->env, $this->source, $context["user"], "datenaissance", [], "any", false, false, false, 72)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "datenaissance", [], "any", false, false, false, 72), "Y-m-d"), "html", null, true))) : (print ("")));
-            echo "</td>
-\t\t\t\t\t\t\t\t\t\t<td>";
-            // line 73
-            ((twig_get_attribute($this->env, $this->source, $context["user"], "datecreationc", [], "any", false, false, false, 73)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "datecreationc", [], "any", false, false, false, 73), "Y-m-d"), "html", null, true))) : (print ("")));
-            echo "</td>
-\t\t\t\t\t\t\t\t\t\t<td>";
+\t\t\t\t\t\t\t\t\t\t";
             // line 74
+            echo "\t\t\t\t\t\t\t\t\t\t<td>";
             echo ((twig_get_attribute($this->env, $this->source, $context["user"], "status", [], "any", false, false, false, 74)) ? ("Yes") : ("No"));
             echo "</td>
 \t\t\t\t\t\t\t\t\t\t<td>";
@@ -189,16 +181,9 @@ class __TwigTemplate_559b0ac0df39479558519b44f6781b83 extends Template
             // line 77
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "email", [], "any", false, false, false, 77), "html", null, true);
             echo "</td>
-\t\t\t\t\t\t\t\t\t\t<td>";
-            // line 78
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "token", [], "any", false, false, false, 78), "html", null, true);
-            echo "</td>
-\t\t\t\t\t\t\t\t\t\t<td>";
-            // line 79
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "score", [], "any", false, false, false, 79), "html", null, true);
-            echo "</td>
-\t\t\t\t\t\t\t\t\t\t<td>";
+\t\t\t\t\t\t\t\t\t\t";
             // line 80
+            echo "\t\t\t\t\t\t\t\t\t\t<td>";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "numtel", [], "any", false, false, false, 80), "html", null, true);
             echo "</td>
 \t\t\t\t\t\t\t\t\t\t<td><img style=\"width:100px;height:100px\" src=\"";
@@ -210,11 +195,9 @@ class __TwigTemplate_559b0ac0df39479558519b44f6781b83 extends Template
             // line 83
             ((twig_get_attribute($this->env, $this->source, $context["user"], "compteEx", [], "any", false, false, false, 83)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "compteEx", [], "any", false, false, false, 83), "Y-m-d H:i:s"), "html", null, true))) : (print ("")));
             echo "</td>
-\t\t\t\t\t\t\t\t\t\t<td>";
-            // line 84
-            ((twig_get_attribute($this->env, $this->source, $context["user"], "tokenEx", [], "any", false, false, false, 84)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "tokenEx", [], "any", false, false, false, 84), "Y-m-d H:i:s"), "html", null, true))) : (print ("")));
-            echo "</td>
-\t\t\t\t\t\t\t\t\t\t<td>
+\t\t\t\t\t\t\t\t\t\t";
+            // line 85
+            echo "\t\t\t\t\t\t\t\t\t\t<td>
 \t\t\t\t\t\t\t\t\t\t\t<a href=\"";
             // line 86
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_show", ["id" => twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 86)]), "html", null, true);
@@ -272,7 +255,7 @@ class __TwigTemplate_559b0ac0df39479558519b44f6781b83 extends Template
 
     public function getDebugInfo()
     {
-        return array (  247 => 98,  242 => 95,  233 => 91,  224 => 87,  220 => 86,  215 => 84,  211 => 83,  206 => 81,  202 => 80,  198 => 79,  194 => 78,  190 => 77,  186 => 76,  182 => 75,  178 => 74,  174 => 73,  170 => 72,  166 => 71,  162 => 70,  158 => 69,  154 => 68,  150 => 67,  147 => 66,  142 => 65,  94 => 20,  91 => 19,  89 => 7,  79 => 6,  59 => 3,  36 => 1,);
+        return array (  230 => 98,  225 => 95,  216 => 91,  207 => 87,  203 => 86,  200 => 85,  196 => 83,  191 => 81,  186 => 80,  182 => 77,  178 => 76,  174 => 75,  169 => 74,  165 => 71,  161 => 70,  157 => 69,  153 => 68,  149 => 66,  144 => 65,  138 => 61,  132 => 56,  126 => 51,  94 => 20,  91 => 19,  89 => 7,  79 => 6,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -320,47 +303,47 @@ class __TwigTemplate_559b0ac0df39479558519b44f6781b83 extends Template
 \t\t\t\t\t\t<table class=\"table\">
 \t\t\t\t\t\t\t<thead>
 \t\t\t\t\t\t\t\t<tr>
-\t\t\t\t\t\t\t\t\t<th>Id</th>
+\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t<th>Nom</th>
 \t\t\t\t\t\t\t\t\t<th>Prenom</th>
 \t\t\t\t\t\t\t\t\t<th>Adress</th>
 \t\t\t\t\t\t\t\t\t<th>Cin</th>
-\t\t\t\t\t\t\t\t\t<th>Datenaissance</th>
-\t\t\t\t\t\t\t\t\t<th>Datecreationc</th>
+\t\t\t\t\t\t\t\t\t{# <th>Datenaissance</th>
+\t\t\t\t\t\t\t\t\t<th>Datecreationc</th> #}
 \t\t\t\t\t\t\t\t\t<th>Status</th>
 \t\t\t\t\t\t\t\t\t<th>Role</th>
 \t\t\t\t\t\t\t\t\t<th>Motpass</th>
 \t\t\t\t\t\t\t\t\t<th>Email</th>
-\t\t\t\t\t\t\t\t\t<th>Token</th>
-\t\t\t\t\t\t\t\t\t<th>Score</th>
+\t\t\t\t\t\t\t\t\t{# <th>Token</th>
+\t\t\t\t\t\t\t\t\t{# <th>Score</th> #} 
 \t\t\t\t\t\t\t\t\t<th>Numtel</th>
 \t\t\t\t\t\t\t\t\t<th>Image</th>
 \t\t\t\t\t\t\t\t\t<th>CompteEx</th>
-\t\t\t\t\t\t\t\t\t<th>TokenEx</th>
+\t\t\t\t\t\t\t\t\t{# <th>TokenEx</th> #}
 \t\t\t\t\t\t\t\t\t<th>actions</th>
 \t\t\t\t\t\t\t\t</tr>
 \t\t\t\t\t\t\t</thead>
 \t\t\t\t\t\t\t<tbody>
 \t\t\t\t\t\t\t\t{% for user in users %}
 \t\t\t\t\t\t\t\t\t<tr>
-\t\t\t\t\t\t\t\t\t\t<td>{{ user.id }}</td>
+\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t\t<td>{{ user.nom}}</td>
 \t\t\t\t\t\t\t\t\t\t<td>{{ user.prenom }}</td>
 \t\t\t\t\t\t\t\t\t\t<td>{{ user.adress }}</td>
 \t\t\t\t\t\t\t\t\t\t<td>{{ user.cin }}</td>
-\t\t\t\t\t\t\t\t\t\t<td>{{ user.datenaissance ? user.datenaissance|date('Y-m-d') : '' }}</td>
-\t\t\t\t\t\t\t\t\t\t<td>{{ user.datecreationc ? user.datecreationc|date('Y-m-d') : '' }}</td>
+\t\t\t\t\t\t\t\t\t\t{# <td>{{ user.datenaissance ? user.datenaissance|date('Y-m-d') : '' }}</td>
+\t\t\t\t\t\t\t\t\t\t<td>{{ user.datecreationc ? user.datecreationc|date('Y-m-d') : '' }}</td> #}
 \t\t\t\t\t\t\t\t\t\t<td>{{ user.status ? 'Yes' : 'No' }}</td>
 \t\t\t\t\t\t\t\t\t\t<td>{{ user.role }}</td>
 \t\t\t\t\t\t\t\t\t\t<td>{{ user.motpass }}</td>
 \t\t\t\t\t\t\t\t\t\t<td>{{ user.email }}</td>
-\t\t\t\t\t\t\t\t\t\t<td>{{ user.token }}</td>
-\t\t\t\t\t\t\t\t\t\t<td>{{ user.score }}</td>
+\t\t\t\t\t\t\t\t\t\t{# <td>{{ user.token }}</td>
+\t\t\t\t\t\t\t\t\t\t<td>{{ user.score }}</td> #}
 \t\t\t\t\t\t\t\t\t\t<td>{{ user.numtel }}</td>
 \t\t\t\t\t\t\t\t\t\t<td><img style=\"width:100px;height:100px\" src=\"{{ user.image }}\">
 \t\t\t\t\t\t\t\t\t\t</td>
 \t\t\t\t\t\t\t\t\t\t<td>{{ user.compteEx ? user.compteEx|date('Y-m-d H:i:s') : '' }}</td>
-\t\t\t\t\t\t\t\t\t\t<td>{{ user.tokenEx ? user.tokenEx|date('Y-m-d H:i:s') : '' }}</td>
+\t\t\t\t\t\t\t\t\t\t{# <td>{{ user.tokenEx ? user.tokenEx|date('Y-m-d H:i:s') : '' }}</td> #}
 \t\t\t\t\t\t\t\t\t\t<td>
 \t\t\t\t\t\t\t\t\t\t\t<a href=\"{{ path('app_user_show', {'id': user.id}) }}\">show</a>
 \t\t\t\t\t\t\t\t\t\t\t<a href=\"{{ path('app_user_edit', {'id': user.id}) }}\">edit</a>

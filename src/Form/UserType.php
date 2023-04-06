@@ -9,6 +9,7 @@ use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TimeType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\File;
@@ -55,8 +56,8 @@ class UserType extends AbstractType
                 ],
             ])
             
-            ->add('compteEx',DateTimeType::class)
-            ->add('tokenEx',DateTimeType::class)
+          //  ->add('compteEx',DateTimeType::class)
+           // ->add('tokenEx',DateTimeType::class)
             ->add('save',SubmitType::class)
         ;
     }

@@ -13,6 +13,7 @@ return [
     'app_colis_show' => [['id'], ['_controller' => 'App\\Controller\\ColisController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/colis']], [], [], []],
     'app_colis_edit' => [['id'], ['_controller' => 'App\\Controller\\ColisController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id', true], ['text', '/colis']], [], [], []],
     'app_colis_delete' => [['id'], ['_controller' => 'App\\Controller\\ColisController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/colis']], [], [], []],
+    'app_login' => [[], ['_controller' => 'App\\Controller\\LoginController::login'], [], [['text', '/login']], [], [], []],
     'app_message_index' => [[], ['_controller' => 'App\\Controller\\MessageController::index'], [], [['text', '/message/']], [], [], []],
     'app_message_new' => [[], ['_controller' => 'App\\Controller\\MessageController::new'], [], [['text', '/message/new']], [], [], []],
     'app_message_show' => [['id'], ['_controller' => 'App\\Controller\\MessageController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/message']], [], [], []],

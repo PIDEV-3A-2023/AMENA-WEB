@@ -344,6 +344,13 @@
         <argument type="service" id=".service_locator.mx0UMmY.App\Controller\ColisController"/>
       </call>
     </service>
+    <service id="App\Controller\LoginController" class="App\Controller\LoginController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.mx0UMmY.App\Controller\LoginController"/>
+      </call>
+    </service>
     <service id="App\Controller\MessageController" class="App\Controller\MessageController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -6186,6 +6193,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ColisController" class="App\Controller\ColisController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ColisController" class="App\Controller\ColisController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\ColisController" class="App\Controller\ColisController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\LoginController" class="App\Controller\LoginController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\LoginController" class="App\Controller\LoginController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\LoginController" class="App\Controller\LoginController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\MessageController" class="App\Controller\MessageController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\MessageController" class="App\Controller\MessageController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\MessageController" class="App\Controller\MessageController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -6658,7 +6668,7 @@
         <argument key="vehicule" type="service_closure" id=".errored..service_locator.iVJ8gI9.App\Entity\Vehicule"/>
       </argument>
     </service>
-    <service id=".service_locator.DY1X0hM" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.9ybeLW3" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\AnnoncesController::delete" type="service_closure" id=".service_locator.CjLvgM8"/>
@@ -6671,6 +6681,7 @@
         <argument key="App\Controller\ColisController::index" type="service_closure" id=".service_locator.XnXXhVu"/>
         <argument key="App\Controller\ColisController::new" type="service_closure" id=".service_locator.6pzvAnp"/>
         <argument key="App\Controller\ColisController::show" type="service_closure" id=".service_locator.tkJC0R2"/>
+        <argument key="App\Controller\LoginController::login" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\MessageController::delete" type="service_closure" id=".service_locator.R7OaP6G"/>
         <argument key="App\Controller\MessageController::edit" type="service_closure" id=".service_locator.R7OaP6G"/>
         <argument key="App\Controller\MessageController::index" type="service_closure" id=".service_locator.aKM6MDa"/>
@@ -6705,6 +6716,7 @@
         <argument key="App\Controller\ColisController:index" type="service_closure" id=".service_locator.XnXXhVu"/>
         <argument key="App\Controller\ColisController:new" type="service_closure" id=".service_locator.6pzvAnp"/>
         <argument key="App\Controller\ColisController:show" type="service_closure" id=".service_locator.tkJC0R2"/>
+        <argument key="App\Controller\LoginController:login" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\MessageController:delete" type="service_closure" id=".service_locator.R7OaP6G"/>
         <argument key="App\Controller\MessageController:edit" type="service_closure" id=".service_locator.R7OaP6G"/>
         <argument key="App\Controller\MessageController:index" type="service_closure" id=".service_locator.aKM6MDa"/>
@@ -7170,6 +7182,12 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.mx0UMmY" method="withContext"/>
     </service>
+    <service id=".service_locator.mx0UMmY.App\Controller\LoginController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\LoginController"/>
+      <argument>App\Controller\LoginController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.mx0UMmY" method="withContext"/>
+    </service>
     <service id=".service_locator.mx0UMmY.App\Controller\MessageController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\MessageController"/>
       <argument>App\Controller\MessageController</argument>
@@ -7376,12 +7394,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.DY1X0hM"/>
+      <argument type="service" id=".service_locator.9ybeLW3"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.DY1X0hM"/>
+      <argument type="service" id=".service_locator.9ybeLW3"/>
     </service>
     <service id="debug.traced.messenger.bus.default.inner" class="Symfony\Component\Messenger\MessageBus">
       <argument type="iterator">
@@ -8356,7 +8374,7 @@
     <service id="sensio_framework_extra.security.expression_language" alias="sensio_framework_extra.security.expression_language.default"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.DY1X0hM"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.9ybeLW3"/>
     <service id="session" alias=".session.do-not-use" public="true">
       <deprecated package="symfony/framework-bundle" version="5.3">The "%alias_id%" service and "SessionInterface" alias are deprecated, use "$requestStack-&gt;getSession()" instead.</deprecated>
     </service>
@@ -8384,7 +8402,7 @@
     <service id=".service_locator.b76MKMg" alias=".service_locator.GPGtF8v"/>
     <service id=".service_locator.zilqhMR" alias=".service_locator.Q1EeZWh"/>
     <service id=".service_locator.gPjNq68" alias=".service_locator.iVJ8gI9"/>
-    <service id=".service_locator.5jadg8t" alias=".service_locator.DY1X0hM"/>
+    <service id=".service_locator.GGjeZGt" alias=".service_locator.9ybeLW3"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
     <service id=".service_locator.yaDP.q3" alias=".service_locator.2decY23"/>
     <service id=".service_locator.nk0lT0X" alias=".service_locator.1kmbKC8"/>

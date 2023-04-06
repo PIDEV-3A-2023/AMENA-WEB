@@ -9,6 +9,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Validator\Constraints\DateTime;
 use Symfony\Component\Validator\Constraints\Uuid;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -42,6 +43,9 @@ class UserController extends AbstractController
             return base64_encode($encodedhash);
         }
         $user = new User();
+        $user->setScore(0);
+        $user->setDatecreationc(new \DateTime()); // set the creation date to the system date
+
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
 
@@ -119,4 +123,5 @@ class UserController extends AbstractController
 
         return $this->redirectToRoute('app_user_index', [], Response::HTTP_SEE_OTHER);
     }
+
 }

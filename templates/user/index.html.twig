@@ -41,47 +41,47 @@
 						<table class="table">
 							<thead>
 								<tr>
-									<th>Id</th>
+							
 									<th>Nom</th>
 									<th>Prenom</th>
 									<th>Adress</th>
 									<th>Cin</th>
-									<th>Datenaissance</th>
-									<th>Datecreationc</th>
+									{# <th>Datenaissance</th>
+									<th>Datecreationc</th> #}
 									<th>Status</th>
 									<th>Role</th>
 									<th>Motpass</th>
 									<th>Email</th>
-									<th>Token</th>
-									<th>Score</th>
+									{# <th>Token</th>
+									{# <th>Score</th> #} 
 									<th>Numtel</th>
 									<th>Image</th>
 									<th>CompteEx</th>
-									<th>TokenEx</th>
+									{# <th>TokenEx</th> #}
 									<th>actions</th>
 								</tr>
 							</thead>
 							<tbody>
 								{% for user in users %}
 									<tr>
-										<td>{{ user.id }}</td>
+								
 										<td>{{ user.nom}}</td>
 										<td>{{ user.prenom }}</td>
 										<td>{{ user.adress }}</td>
 										<td>{{ user.cin }}</td>
-										<td>{{ user.datenaissance ? user.datenaissance|date('Y-m-d') : '' }}</td>
-										<td>{{ user.datecreationc ? user.datecreationc|date('Y-m-d') : '' }}</td>
+										{# <td>{{ user.datenaissance ? user.datenaissance|date('Y-m-d') : '' }}</td>
+										<td>{{ user.datecreationc ? user.datecreationc|date('Y-m-d') : '' }}</td> #}
 										<td>{{ user.status ? 'Yes' : 'No' }}</td>
 										<td>{{ user.role }}</td>
 										<td>{{ user.motpass }}</td>
 										<td>{{ user.email }}</td>
-										<td>{{ user.token }}</td>
-										<td>{{ user.score }}</td>
+										{# <td>{{ user.token }}</td>
+										<td>{{ user.score }}</td> #}
 										<td>{{ user.numtel }}</td>
 										<td><img style="width:100px;height:100px" src="{{ user.image }}">
 										</td>
 										<td>{{ user.compteEx ? user.compteEx|date('Y-m-d H:i:s') : '' }}</td>
-										<td>{{ user.tokenEx ? user.tokenEx|date('Y-m-d H:i:s') : '' }}</td>
+										{# <td>{{ user.tokenEx ? user.tokenEx|date('Y-m-d H:i:s') : '' }}</td> #}
 										<td>
 											<a href="{{ path('app_user_show', {'id': user.id}) }}">show</a>
 											<a href="{{ path('app_user_edit', {'id': user.id}) }}">edit</a>

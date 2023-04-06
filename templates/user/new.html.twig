@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{#{% extends 'base.html.twig' %}
 
 {% block title %}New User{% endblock %}
 
@@ -10,4 +10,104 @@
     {{ include('user/_form.html.twig') }}
 
     <a href="{{ path('app_user_index') }}">back to list</a>
+{% endblock %}
+#}
+{% extends 'base.html.twig' %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+
+{% block title %}New User
+{% endblock %}
+
+{% block body %}
+	<!-- ======= Breadcrumbs ======= -->
+	<div class="breadcrumbs d-flex align-items-center" style="background-image: url('assets/img/contact-header.jpg');">
+		<div class="container position-relative d-flex flex-column align-items-center">
+
+			<h2>Contact</h2>
+			<ol>
+				<li>
+					<a href="index.html">Home</a>
+				</li>
+				<li>Contact</li>
+			</ol>
+
+		</div>
+	</div>
+	<!-- End Breadcrumbs -->
+	{{ form_start(form) }}
+	<div class="offset-3 col-3">
+		<div class="form-group">
+			{{ form_label(form.nom) }}
+			{{ form_widget(form.nom) }}
+			<!--{{form_errors(form.nom)}}-->
+		</div>
+
+		<div class="form-group">
+			{{ form_label(form.prenom) }}
+			{{ form_widget(form.prenom) }}
+			{{ form_errors(form.prenom) }}
+		</div>
+
+		<div class="form-group">
+			{{ form_label(form.adress) }}
+			{{ form_widget(form.adress) }}
+			{{ form_errors(form.adress) }}
+		</div>
+
+		<div class="form-group">
+			{{ form_label(form.cin) }}
+			{{ form_widget(form.cin) }}
+			{{ form_errors(form.cin) }}
+		</div>
+
+		<div class="form-group">
+			{{ form_label(form.datenaissance) }}
+			{{ form_widget(form.datenaissance) }}
+			{{ form_errors(form.datenaissance) }}
+		</div>
+
+
+		<div class="form-group">
+			{{ form_label(form.status) }}
+			{{ form_widget(form.status) }}
+			{{ form_errors(form.status) }}
+		</div>
+
+		<div class="form-group">
+			{{ form_label(form.role) }}
+			{{ form_widget(form.role) }}
+			{{ form_errors(form.role) }}
+		</div>
+
+		<div class="form-group">
+			{{ form_label(form.motpass) }}
+			{{ form_widget(form.motpass) }}
+			{{ form_errors(form.motpass) }}
+		</div>
+
+		<div class="form-group">
+			{{ form_label(form.email) }}
+			{{ form_widget(form.email) }}
+			{{ form_errors(form.email) }}
+		</div>
+
+
+		<div class="form-group">
+			{{ form_label(form.numtel) }}
+			{{ form_widget(form.numtel) }}
+			{{ form_errors(form.numtel) }}
+		</div>
+
+		<div class="form-group">
+			{{ form_label(form.image) }}
+			{{ form_widget(form.image) }}
+			{{ form_errors(form.image) }}
+		</div>
+
+
+		<button type="submit" class="btn btn-primary">Create</button>
+
+
+		<a href="{{ path('app_user_index') }}">back to list</a>
+	</div>
 {% endblock %}
