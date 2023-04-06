@@ -86,6 +86,7 @@ class User
 
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message: "insert une image obligatoire")]
     private ?string $image = null;
 
 

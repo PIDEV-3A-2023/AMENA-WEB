@@ -74,7 +74,7 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
 \t</head>
 \t<body>
 \t\t<!-- ======= Header ======= -->
-\t\t<header id=\"header\" class=\"header d-flex align-items-center fixed-top\">
+\t\t<header id=\"header\" class=\"header d-flex align-items-center fixed-top\" style=\"margin-bottom:8%;background: rgba(27, 47, 69, 0.9);padding: 15px;\">
 \t\t\t<div class=\"container-fluid container-xl d-flex align-items-center justify-content-between\">
 
 \t\t\t\t<a href=\"index.html\" class=\"logo d-flex align-items-center\">
@@ -157,7 +157,7 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
         echo "\t\t\t</main>
 \t\t\t<!-- End #main -->
 \t\t\t<!-- ======= Footer ======= -->
-\t\t\t<footer id=\"footer\" class=\"footer\">
+\t\t\t<footer id=\"footer\" class=\"footer\" style=\"margin-top:38%\">
 
 \t\t\t\t<div class=\"footer-content\">
 \t\t\t\t\t<div class=\"container\">
@@ -255,7 +255,7 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
 \t\t\t\t\t</div>
 \t\t\t\t</div>
 
-\t\t\t\t<div class=\"footer-legal\">
+\t\t\t\t<div class=\"footer-legal\" >
 \t\t\t\t\t<div class=\"container\">
 \t\t\t\t\t\t<div class=\"copyright\">
 \t\t\t\t\t\t\t&copy; Copyright
@@ -473,7 +473,7 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
 \t</head>
 \t<body>
 \t\t<!-- ======= Header ======= -->
-\t\t<header id=\"header\" class=\"header d-flex align-items-center fixed-top\">
+\t\t<header id=\"header\" class=\"header d-flex align-items-center fixed-top\" style=\"margin-bottom:8%;background: rgba(27, 47, 69, 0.9);padding: 15px;\">
 \t\t\t<div class=\"container-fluid container-xl d-flex align-items-center justify-content-between\">
 
 \t\t\t\t<a href=\"index.html\" class=\"logo d-flex align-items-center\">
@@ -553,7 +553,7 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
 \t\t\t</main>
 \t\t\t<!-- End #main -->
 \t\t\t<!-- ======= Footer ======= -->
-\t\t\t<footer id=\"footer\" class=\"footer\">
+\t\t\t<footer id=\"footer\" class=\"footer\" style=\"margin-top:38%\">
 
 \t\t\t\t<div class=\"footer-content\">
 \t\t\t\t\t<div class=\"container\">
@@ -651,7 +651,7 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
 \t\t\t\t\t</div>
 \t\t\t\t</div>
 
-\t\t\t\t<div class=\"footer-legal\">
+\t\t\t\t<div class=\"footer-legal\" >
 \t\t\t\t\t<div class=\"container\">
 \t\t\t\t\t\t<div class=\"copyright\">
 \t\t\t\t\t\t\t&copy; Copyright

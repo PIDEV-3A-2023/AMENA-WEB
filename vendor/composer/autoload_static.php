@@ -582,7 +582,9 @@ class ComposerStaticInit826290eec1cbd744c9221a3e1f5a65c8
     );
 
     public static $classMap = array (
+        'App\\Controller\\AnnoncesController' => __DIR__ . '/../..' . '/src/Controller/AnnoncesController.php',
         'App\\Controller\\ColisController' => __DIR__ . '/../..' . '/src/Controller/ColisController.php',
+        'App\\Controller\\LoginController' => __DIR__ . '/../..' . '/src/Controller/LoginController.php',
         'App\\Controller\\MessageController' => __DIR__ . '/../..' . '/src/Controller/MessageController.php',
         'App\\Controller\\UserController' => __DIR__ . '/../..' . '/src/Controller/UserController.php',
         'App\\Controller\\ValidationController' => __DIR__ . '/../..' . '/src/Controller/ValidationController.php',
@@ -600,6 +602,7 @@ class ComposerStaticInit826290eec1cbd744c9221a3e1f5a65c8
         'App\\Entity\\User' => __DIR__ . '/../..' . '/src/Entity/User.php',
         'App\\Entity\\Validation' => __DIR__ . '/../..' . '/src/Entity/Validation.php',
         'App\\Entity\\Vehicule' => __DIR__ . '/../..' . '/src/Entity/Vehicule.php',
+        'App\\Form\\AnnoncesType' => __DIR__ . '/../..' . '/src/Form/AnnoncesType.php',
         'App\\Form\\ColisType' => __DIR__ . '/../..' . '/src/Form/ColisType.php',
         'App\\Form\\MessageType' => __DIR__ . '/../..' . '/src/Form/MessageType.php',
         'App\\Form\\UserType' => __DIR__ . '/../..' . '/src/Form/UserType.php',

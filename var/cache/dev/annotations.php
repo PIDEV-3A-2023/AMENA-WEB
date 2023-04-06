@@ -62,6 +62,18 @@ return [[
 '[C]Symfony%5CBundle%5CFrameworkBundle%5CController%5CAbstractController%23addLink' => 1,
 'Symfony%5CBundle%5CFrameworkBundle%5CController%5CAbstractController%24container' => 0,
 '[C]Symfony%5CBundle%5CFrameworkBundle%5CController%5CAbstractController%24container' => 1,
+'App%5CController%5CAnnoncesController' => 0,
+'[C]App%5CController%5CAnnoncesController' => 1,
+'App%5CController%5CAnnoncesController%23index' => 0,
+'[C]App%5CController%5CAnnoncesController%23index' => 1,
+'App%5CController%5CAnnoncesController%23new' => 0,
+'[C]App%5CController%5CAnnoncesController%23new' => 1,
+'App%5CController%5CAnnoncesController%23show' => 0,
+'[C]App%5CController%5CAnnoncesController%23show' => 1,
+'App%5CController%5CAnnoncesController%23edit' => 0,
+'[C]App%5CController%5CAnnoncesController%23edit' => 1,
+'App%5CController%5CAnnoncesController%23delete' => 0,
+'[C]App%5CController%5CAnnoncesController%23delete' => 1,
 'App%5CController%5CColisController' => 0,
 '[C]App%5CController%5CColisController' => 1,
 'App%5CController%5CColisController%23index' => 0,
@@ -74,6 +86,10 @@ return [[
 '[C]App%5CController%5CColisController%23edit' => 1,
 'App%5CController%5CColisController%23delete' => 0,
 '[C]App%5CController%5CColisController%23delete' => 1,
+'App%5CController%5CLoginController' => 0,
+'[C]App%5CController%5CLoginController' => 1,
+'App%5CController%5CLoginController%23login' => 0,
+'[C]App%5CController%5CLoginController%23login' => 1,
 'App%5CController%5CMessageController' => 0,
 '[C]App%5CController%5CMessageController' => 1,
 'App%5CController%5CMessageController%23index' => 0,
@@ -1254,7 +1270,7 @@ return [[
 ], [
 
 0 => [],
-1 => 1680631246,
+1 => 1680800213,
 2 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [

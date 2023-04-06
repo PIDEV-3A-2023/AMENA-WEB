@@ -6,7 +6,9 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\Controller\\AnnoncesController' => $baseDir . '/src/Controller/AnnoncesController.php',
     'App\\Controller\\ColisController' => $baseDir . '/src/Controller/ColisController.php',
+    'App\\Controller\\LoginController' => $baseDir . '/src/Controller/LoginController.php',
     'App\\Controller\\MessageController' => $baseDir . '/src/Controller/MessageController.php',
     'App\\Controller\\UserController' => $baseDir . '/src/Controller/UserController.php',
     'App\\Controller\\ValidationController' => $baseDir . '/src/Controller/ValidationController.php',
@@ -24,6 +26,7 @@ return array(
     'App\\Entity\\User' => $baseDir . '/src/Entity/User.php',
     'App\\Entity\\Validation' => $baseDir . '/src/Entity/Validation.php',
     'App\\Entity\\Vehicule' => $baseDir . '/src/Entity/Vehicule.php',
+    'App\\Form\\AnnoncesType' => $baseDir . '/src/Form/AnnoncesType.php',
     'App\\Form\\ColisType' => $baseDir . '/src/Form/ColisType.php',
     'App\\Form\\MessageType' => $baseDir . '/src/Form/MessageType.php',
     'App\\Form\\UserType' => $baseDir . '/src/Form/UserType.php',
