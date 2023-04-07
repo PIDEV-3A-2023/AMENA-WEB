@@ -2,79 +2,87 @@
 
 namespace App\Entity;
 
+use App\Repository\MessageRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * Message
- *
- * @ORM\Table(name="message")
- * @ORM\Entity
- */
+#[ORM\Entity(repositoryClass: MessageRepository::class)]
 class Message
 {
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="id", type="integer", nullable=false)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
-     */
-    private $id;
+    #[ORM\Id]
+    #[ORM\GeneratedValue]
+    #[ORM\Column]
+    private ?int $id = null;
 
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="senderId", type="integer", nullable=false)
-     */
-    private $senderid;
+    #[ORM\ManyToMany(targetEntity: User::class, inversedBy: 'messages')]
+    private Collection $senderid;
 
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="receiverId", type="integer", nullable=false)
-     */
-    private $receiverid;
+    #[ORM\ManyToMany(targetEntity: User::class, inversedBy: 'messages')]
+    private Collection $receiverId;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="content", type="string", length=255, nullable=false)
-     */
-    private $content;
+    #[ORM\Column(length: 255)]
+    private ?string $content = null;
 
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="timestamp", type="date", nullable=false)
-     */
-    private $timestamp;
+    #[ORM\Column(type: Types::DATE_MUTABLE)]
+    private ?\DateTimeInterface $timestamp = null;
+
+    public function __construct()
+    {
+        $this->senderid = new ArrayCollection();
+        $this->receiverId = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getSenderid(): ?int
+    /**
+     * @return Collection<int, User>
+     */
+    public function getSenderid(): Collection
     {
         return $this->senderid;
     }
 
-    public function setSenderid(int $senderid): self
+    public function addSenderid(User $senderid): self
     {
-        $this->senderid = $senderid;
+        if (!$this->senderid->contains($senderid)) {
+            $this->senderid->add($senderid);
+        }
 
         return $this;
     }
 
-    public function getReceiverid(): ?int
+    public function removeSenderid(User $senderid): self
     {
-        return $this->receiverid;
+        $this->senderid->removeElement($senderid);
+
+        return $this;
     }
 
-    public function setReceiverid(int $receiverid): self
+    /**
+     * @return Collection<int, User>
+     */
+    public function getReceiverId(): Collection
     {
-        $this->receiverid = $receiverid;
+        return $this->receiverId;
+    }
+
+    public function addReceiverId(User $receiverId): self
+    {
+        if (!$this->receiverId->contains($receiverId)) {
+            $this->receiverId->add($receiverId);
+        }
+
+        return $this;
+    }
+
+    public function removeReceiverId(User $receiverId): self
+    {
+        $this->receiverId->removeElement($receiverId);
 
         return $this;
     }
@@ -102,6 +110,4 @@ class Message
 
         return $this;
     }
-
-
 }

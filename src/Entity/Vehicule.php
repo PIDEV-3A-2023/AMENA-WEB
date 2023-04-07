@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Entity;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 
 use Doctrine\ORM\Mapping as ORM;
@@ -48,6 +50,14 @@ class Vehicule
 
     #[ORM\Column(length: 150)]
     private ?string $img = null ;
+
+    #[ORM\OneToMany(mappedBy: 'idre', targetEntity: Reservation::class)]
+    private Collection $reservations;
+
+    public function __construct()
+    {
+        $this->reservations = new ArrayCollection();
+    }
  
 
     public function getIdv(): ?int
@@ -171,6 +181,36 @@ class Vehicule
     public function setImg(string $img): self
     {
         $this->img = $img;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Reservation>
+     */
+    public function getReservations(): Collection
+    {
+        return $this->reservations;
+    }
+
+    public function addReservation(Reservation $reservation): self
+    {
+        if (!$this->reservations->contains($reservation)) {
+            $this->reservations->add($reservation);
+            $reservation->setIdre($this);
+        }
+
+        return $this;
+    }
+
+    public function removeReservation(Reservation $reservation): self
+    {
+        if ($this->reservations->removeElement($reservation)) {
+            // set the owning side to null (unless already changed)
+            if ($reservation->getIdre() === $this) {
+                $reservation->setIdre(null);
+            }
+        }
 
         return $this;
     }

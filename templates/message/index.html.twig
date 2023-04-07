@@ -9,8 +9,6 @@
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Senderid</th>
-                <th>Receiverid</th>
                 <th>Content</th>
                 <th>Timestamp</th>
                 <th>actions</th>
@@ -20,8 +18,6 @@
         {% for message in messages %}
             <tr>
                 <td>{{ message.id }}</td>
-                <td>{{ message.senderid }}</td>
-                <td>{{ message.receiverid }}</td>
                 <td>{{ message.content }}</td>
                 <td>{{ message.timestamp ? message.timestamp|date('Y-m-d') : '' }}</td>
                 <td>
@@ -31,7 +27,7 @@
             </tr>
         {% else %}
             <tr>
-                <td colspan="6">no records found</td>
+                <td colspan="4">no records found</td>
             </tr>
         {% endfor %}
         </tbody>

@@ -91,8 +91,6 @@ class __TwigTemplate_3bc9783dc5245ec0599a60a072757b09 extends Template
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Senderid</th>
-                <th>Receiverid</th>
                 <th>Content</th>
                 <th>Timestamp</th>
                 <th>actions</th>
@@ -100,41 +98,33 @@ class __TwigTemplate_3bc9783dc5245ec0599a60a072757b09 extends Template
         </thead>
         <tbody>
         ";
-        // line 20
+        // line 18
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["messages"]) || array_key_exists("messages", $context) ? $context["messages"] : (function () { throw new RuntimeError('Variable "messages" does not exist.', 20, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["messages"]) || array_key_exists("messages", $context) ? $context["messages"] : (function () { throw new RuntimeError('Variable "messages" does not exist.', 18, $this->source); })()));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
-            // line 21
+            // line 19
             echo "            <tr>
                 <td>";
+            // line 20
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["message"], "id", [], "any", false, false, false, 20), "html", null, true);
+            echo "</td>
+                <td>";
+            // line 21
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["message"], "content", [], "any", false, false, false, 21), "html", null, true);
+            echo "</td>
+                <td>";
             // line 22
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["message"], "id", [], "any", false, false, false, 22), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 23
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["message"], "senderid", [], "any", false, false, false, 23), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 24
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["message"], "receiverid", [], "any", false, false, false, 24), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 25
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["message"], "content", [], "any", false, false, false, 25), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 26
-            ((twig_get_attribute($this->env, $this->source, $context["message"], "timestamp", [], "any", false, false, false, 26)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["message"], "timestamp", [], "any", false, false, false, 26), "Y-m-d"), "html", null, true))) : (print ("")));
+            ((twig_get_attribute($this->env, $this->source, $context["message"], "timestamp", [], "any", false, false, false, 22)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["message"], "timestamp", [], "any", false, false, false, 22), "Y-m-d"), "html", null, true))) : (print ("")));
             echo "</td>
                 <td>
                     <a href=\"";
-            // line 28
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_message_show", ["id" => twig_get_attribute($this->env, $this->source, $context["message"], "id", [], "any", false, false, false, 28)]), "html", null, true);
+            // line 24
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_message_show", ["id" => twig_get_attribute($this->env, $this->source, $context["message"], "id", [], "any", false, false, false, 24)]), "html", null, true);
             echo "\">show</a>
                     <a href=\"";
-            // line 29
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_message_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["message"], "id", [], "any", false, false, false, 29)]), "html", null, true);
+            // line 25
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_message_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["message"], "id", [], "any", false, false, false, 25)]), "html", null, true);
             echo "\">edit</a>
                 </td>
             </tr>
@@ -142,21 +132,21 @@ class __TwigTemplate_3bc9783dc5245ec0599a60a072757b09 extends Template
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 33
+            // line 29
             echo "            <tr>
-                <td colspan=\"6\">no records found</td>
+                <td colspan=\"4\">no records found</td>
             </tr>
         ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 37
+        // line 33
         echo "        </tbody>
     </table>
 
     <a href=\"";
-        // line 40
+        // line 36
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_message_new");
         echo "\">Create new</a>
 ";
@@ -180,7 +170,7 @@ class __TwigTemplate_3bc9783dc5245ec0599a60a072757b09 extends Template
 
     public function getDebugInfo()
     {
-        return array (  160 => 40,  155 => 37,  146 => 33,  137 => 29,  133 => 28,  128 => 26,  124 => 25,  120 => 24,  116 => 23,  112 => 22,  109 => 21,  104 => 20,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  150 => 36,  145 => 33,  136 => 29,  127 => 25,  123 => 24,  118 => 22,  114 => 21,  110 => 20,  107 => 19,  102 => 18,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -196,8 +186,6 @@ class __TwigTemplate_3bc9783dc5245ec0599a60a072757b09 extends Template
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Senderid</th>
-                <th>Receiverid</th>
                 <th>Content</th>
                 <th>Timestamp</th>
                 <th>actions</th>
@@ -207,8 +195,6 @@ class __TwigTemplate_3bc9783dc5245ec0599a60a072757b09 extends Template
         {% for message in messages %}
             <tr>
                 <td>{{ message.id }}</td>
-                <td>{{ message.senderid }}</td>
-                <td>{{ message.receiverid }}</td>
                 <td>{{ message.content }}</td>
                 <td>{{ message.timestamp ? message.timestamp|date('Y-m-d') : '' }}</td>
                 <td>
@@ -218,7 +204,7 @@ class __TwigTemplate_3bc9783dc5245ec0599a60a072757b09 extends Template
             </tr>
         {% else %}
             <tr>
-                <td colspan=\"6\">no records found</td>
+                <td colspan=\"4\">no records found</td>
             </tr>
         {% endfor %}
         </tbody>

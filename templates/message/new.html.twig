@@ -1,11 +1,17 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Message{% endblock %}
+{% block title %}New Message
+{% endblock %}
 
 {% block body %}
-    <h1>Create new Message</h1>
 
-    {{ include('message/_form.html.twig') }}
+	<div class="content" style="margin-top: 190px;">
+		<div class="flex-div">
+			<div class="name-content">
+				{{ include('message/_form.html.twig') }}
 
-    <a href="{{ path('app_message_index') }}">back to list</a>
-{% endblock %}
+				<a href="{{ path('app_message_index') }}">back to list</a>
+			</div>
+		</div>
+
+	{% endblock %}
