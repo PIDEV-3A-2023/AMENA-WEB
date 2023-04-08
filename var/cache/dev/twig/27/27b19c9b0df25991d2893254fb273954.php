@@ -40,15 +40,23 @@ class __TwigTemplate_55f50331e15b5d5cb3bb155e27eae249 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "message/_form.html.twig"));
 
         // line 1
-        $this->env->getRuntime("Symfony\\Component\\Form\\FormRenderer")->setTheme((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 1, $this->source); })()), [0 => "bootstrap_4_layout.html.twig"], true);
+        $this->env->getRuntime("Symfony\\Component\\Form\\FormRenderer")->setTheme((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 1, $this->source); })()), [0 => "bootstrap_5_layout.html.twig"], true);
         // line 2
-        echo "<div class=\"offset-3 col-3\">
-";
-        // line 3
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 3, $this->source); })()), 'form', ["attr" => ["novalidate" => "novalidate"]]);
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 2, $this->source); })()), 'form_start');
         echo "
-
-</div>";
+    ";
+        // line 3
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 3, $this->source); })()), 'widget');
+        echo "
+    <button class=\"btn\">";
+        // line 4
+        echo twig_escape_filter($this->env, ((array_key_exists("button_label", $context)) ? (_twig_default_filter((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 4, $this->source); })()), "Save")) : ("Save")), "html", null, true);
+        echo "</button>
+";
+        // line 5
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 5, $this->source); })()), 'form_end');
+        echo "
+";
         
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
 
@@ -69,15 +77,16 @@ class __TwigTemplate_55f50331e15b5d5cb3bb155e27eae249 extends Template
 
     public function getDebugInfo()
     {
-        return array (  48 => 3,  45 => 2,  43 => 1,);
+        return array (  57 => 5,  53 => 4,  49 => 3,  45 => 2,  43 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("{% form_theme form 'bootstrap_4_layout.html.twig' %}
-<div class=\"offset-3 col-3\">
-{{ form(form,{'attr': {'novalidate': 'novalidate'}} ) }}
-
-</div>", "message/_form.html.twig", "C:\\Users\\aymen\\Desktop\\digidreamers\\digidreamers\\templates\\message\\_form.html.twig");
+        return new Source("{% form_theme form 'bootstrap_5_layout.html.twig' %}
+{{ form_start(form) }}
+    {{ form_widget(form) }}
+    <button class=\"btn\">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}
+", "message/_form.html.twig", "C:\\Users\\aymen\\Desktop\\digidreamers\\digidreamers\\templates\\message\\_form.html.twig");
     }
 }

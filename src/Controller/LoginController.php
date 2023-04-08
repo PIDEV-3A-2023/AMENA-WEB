@@ -33,7 +33,7 @@ class LoginController extends AbstractController
                 $hashedPassword = hashPassword($password);
                 if ($hashedPassword === $user->getMotPass()) {
                     // Authentification réussie, rediriger vers la page de profil de l'utilisateur
-                    return $this->redirectToRoute('app_user_show', ['id' => $user->getId()]);
+                    return $this->redirectToRoute('app_user_show1', ['id' => $user->getId()]);
                 } else {
                     $error = "Mot de passe incorrect";
                 }

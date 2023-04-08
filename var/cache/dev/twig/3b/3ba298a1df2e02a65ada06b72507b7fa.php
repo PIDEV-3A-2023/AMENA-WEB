@@ -65,8 +65,7 @@ class __TwigTemplate_34292f1018d134ac93be2e0f88bdea7d extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "New Message
-";
+        echo "New Message";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -75,7 +74,7 @@ class __TwigTemplate_34292f1018d134ac93be2e0f88bdea7d extends Template
 
     }
 
-    // line 6
+    // line 5
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -85,24 +84,19 @@ class __TwigTemplate_34292f1018d134ac93be2e0f88bdea7d extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 7
-        echo "
-\t<div class=\"content\" style=\"margin-top: 190px;\">
-\t\t<div class=\"flex-div\">
-\t\t\t<div class=\"name-content\">
-\t\t\t\t";
-        // line 11
+        // line 6
+        echo "    <h1>Create new Message</h1>
+
+    ";
+        // line 8
         echo twig_include($this->env, $context, "message/_form.html.twig");
         echo "
 
-\t\t\t\t<a href=\"";
-        // line 13
+    <a href=\"";
+        // line 10
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_message_index");
         echo "\">back to list</a>
-\t\t\t</div>
-\t\t</div>
-
-\t";
+";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -123,28 +117,22 @@ class __TwigTemplate_34292f1018d134ac93be2e0f88bdea7d extends Template
 
     public function getDebugInfo()
     {
-        return array (  100 => 13,  95 => 11,  89 => 7,  79 => 6,  59 => 3,  36 => 1,);
+        return array (  97 => 10,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}New Message
-{% endblock %}
+{% block title %}New Message{% endblock %}
 
 {% block body %}
+    <h1>Create new Message</h1>
 
-\t<div class=\"content\" style=\"margin-top: 190px;\">
-\t\t<div class=\"flex-div\">
-\t\t\t<div class=\"name-content\">
-\t\t\t\t{{ include('message/_form.html.twig') }}
+    {{ include('message/_form.html.twig') }}
 
-\t\t\t\t<a href=\"{{ path('app_message_index') }}\">back to list</a>
-\t\t\t</div>
-\t\t</div>
-
-\t{% endblock %}
+    <a href=\"{{ path('app_message_index') }}\">back to list</a>
+{% endblock %}
 ", "message/new.html.twig", "C:\\Users\\aymen\\Desktop\\digidreamers\\digidreamers\\templates\\message\\new.html.twig");
     }
 }

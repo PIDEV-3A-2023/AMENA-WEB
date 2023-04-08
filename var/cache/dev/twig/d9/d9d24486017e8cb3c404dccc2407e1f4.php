@@ -40,7 +40,7 @@ class __TwigTemplate_8bc654c3de071df4d6765284f8e118d3 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "user/_form.html.twig"));
 
         // line 1
-        $this->env->getRuntime("Symfony\\Component\\Form\\FormRenderer")->setTheme((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 1, $this->source); })()), [0 => "bootstrap_4_layout.html.twig"], true);
+        $this->env->getRuntime("Symfony\\Component\\Form\\FormRenderer")->setTheme((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 1, $this->source); })()), [0 => "bootstrap_5_layout.html.twig"], true);
         // line 2
         echo "<div class=\"offset-3 col-3\">
 ";
@@ -74,7 +74,7 @@ class __TwigTemplate_8bc654c3de071df4d6765284f8e118d3 extends Template
 
     public function getSourceContext()
     {
-        return new Source("{% form_theme form 'bootstrap_4_layout.html.twig' %}
+        return new Source("{% form_theme form 'bootstrap_5_layout.html.twig' %}
 <div class=\"offset-3 col-3\">
 {{ form(form,{'attr': {'novalidate': 'novalidate'}} ) }}
 

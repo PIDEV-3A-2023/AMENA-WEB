@@ -34,10 +34,10 @@
 			<form method="post">
 				<input type="text" id="email" name="email" placeholder="Email or Phone Number" required/>
 				<input id="password" name="password" type="password" placeholder="Password" required>
-				<button type="submit" class="login">Log In</button>
+				<button type="submit" class="login" style="background-color: #063970">Log In</button>
 				<a href="#">Forgot Password ?</a>
 				<hr>
-				<button class="create-account">Create New Account</button>
+				<a href="{{ path('app_user_new') }}" class="create-account"style="background-color: #1e81b0">Create New Account</button>
 			</form>
 		</div>
 	</div>

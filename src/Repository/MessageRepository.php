@@ -39,42 +39,50 @@ class MessageRepository extends ServiceEntityRepository
         }
     }
 
-//    /**
-//     * @return Message[] Returns an array of Message objects
-//     */
-//    public function findByExampleField($value): array
-//    {
-//        return $this->createQueryBuilder('m')
-//            ->andWhere('m.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->orderBy('m.id', 'ASC')
-//            ->setMaxResults(10)
-//            ->getQuery()
-//            ->getResult()
-//        ;
-//    }
+    //    /**
+    //     * @return Message[] Returns an array of Message objects
+    //     */
+    //    public function findByExampleField($value): array
+    //    {
+    //        return $this->createQueryBuilder('m')
+    //            ->andWhere('m.exampleField = :val')
+    //            ->setParameter('val', $value)
+    //            ->orderBy('m.id', 'ASC')
+    //            ->setMaxResults(10)
+    //            ->getQuery()
+    //            ->getResult()
+    //        ;
+    //    }
 
-//    public function findOneBySomeField($value): ?Message
-//    {
-//        return $this->createQueryBuilder('m')
-//            ->andWhere('m.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->getQuery()
-//            ->getOneOrNullResult()
-//        ;
-//    }
+    //    public function findOneBySomeField($value): ?Message
+    //    {
+    //        return $this->createQueryBuilder('m')
+    //            ->andWhere('m.exampleField = :val')
+    //            ->setParameter('val', $value)
+    //            ->getQuery()
+    //            ->getOneOrNullResult()
+    //        ;
+    //    }
 
 
-public function getMessagesSentBySender(int $senderId): ArrayCollection
+    /* public function getMessagesSentBySender(int $senderId): ArrayCollection
     {
         $messagesSent = new ArrayCollection();
-        
+
         foreach ($this->messagesSent as $message) {
             if ($message->getSenderId() === $senderId) {
                 $messagesSent->add($message);
             }
         }
-        
+
         return $messagesSent;
     }
+    public function getMessagesBySenderId($senderId)
+    {
+        return $this->createQueryBuilder('m')
+            ->where('m.senderId = :senderId')
+            ->setParameter('senderId', $senderId)
+            ->getQuery()
+            ->getResult();
+    } */
 }

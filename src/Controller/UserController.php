@@ -31,6 +31,8 @@ class UserController extends AbstractController
     #[Route('/new', name: 'app_user_new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
+        $user = new User();
+
         function generateToken($length = 32)
         {
             return base64_encode(random_bytes($length));
@@ -42,15 +44,66 @@ class UserController extends AbstractController
             $encodedhash = hash("sha256", $password, true);
             return base64_encode($encodedhash);
         }
-        $user = new User();
-        $user->setScore(0);
-        $user->setDatecreationc(new \DateTime()); // set the creation date to the system date
+
+
+
 
         $form = $this->createForm(UserType::class, $user);
+     
+        $form->handleRequest($request);
+       
+        if ($form->isSubmitted() && $form->isValid()) {
+
+
+         
+
+            $password = $form->get('motpass')->getData();
+            if ($password !== null) {
+                $hash = hashPassword($password);
+                $user->setMotPass($hash);
+                $token = generateToken();
+                //$user->setScore("0000000"); // Initialisation du score à 0
+                $user->setDatecreationc(new \DateTime());
+                $user->setTokenEx(new \DateTime());
+                $user->setCompteEx(new \DateTime());
+                $user->setToken($token);
+            }
+           
+            $entityManager->persist($user);
+            $entityManager->flush();
+           // dd($user)
+            return $this->redirectToRoute('app_user_index', [], Response::HTTP_SEE_OTHER);
+        } else {
+            dump($form->getErrors(true, true));
+        } 
+
+
+        return $this->renderForm('user/new.html.twig', [
+            'user' => $user,
+            'form' => $form,
+        ]);
+    }
+
+    #[Route('/{id}', name: 'app_user_show', methods: ['GET'])]
+    public function show(User $user): Response
+    {
+        return $this->render('user/profile.html.twig', [
+            'user' => $user,
+        ]);
+    }
+
+    #[Route('/{id}/edit', name: 'app_user_edit', methods: ['GET', 'POST'])]
+    public function edit(Request $request, User $user, EntityManagerInterface $entityManager): Response
+    {
+        $form = $this->createForm(UserType::class, $user);
+
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $image = $form->get('image')->getData();
+
+
+            
+             $image = $form->get('image')->getData();
 
 
             if ($image) {
@@ -65,44 +118,6 @@ class UserController extends AbstractController
                 $user->setImage('http://localhost/img/' . $fichier);
             }
 
-
-            $password = $form->get('motpass')->getData();
-            if ($password !== null) {
-                $hash = hashPassword($password);
-                $user->setMotPass($hash);
-                $token = generateToken();
-                $user->setToken($token);
-            }
-
-            $entityManager->persist($user);
-            $entityManager->flush();
-
-            return $this->redirectToRoute('app_user_index', [], Response::HTTP_SEE_OTHER);
-        }
-
-
-        return $this->renderForm('user/new.html.twig', [
-            'user' => $user,
-            'form' => $form,
-        ]);
-    }
-
-    #[Route('/{id}', name: 'app_user_show', methods: ['GET'])]
-    public function show(User $user): Response
-    {
-        return $this->render('user/show.html.twig', [
-            'user' => $user,
-        ]);
-    }
-
-    #[Route('/{id}/edit', name: 'app_user_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, User $user, EntityManagerInterface $entityManager): Response
-    {
-        $form = $this->createForm(UserType::class, $user);
-        
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->flush();
 
             return $this->redirectToRoute('app_user_index', [], Response::HTTP_SEE_OTHER);

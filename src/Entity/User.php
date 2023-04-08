@@ -43,10 +43,10 @@ class User
     private ?string $cin = null;
 
 
-    #[ORM\Column(type: Types::DATE_MUTABLE, name: "dateNaissance")]
+    #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true, name: "dateNaissance")]
     private ?\DateTimeInterface $dateNaissance = null;
 
-    #[ORM\Column(type: Types::DATE_MUTABLE, name: "dateCreationC")]
+    #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true, name: "dateCreationC")]
     private ?\DateTimeInterface $dateCreationC = null;
 
     #[ORM\Column]
@@ -56,7 +56,7 @@ class User
     private ?string $role = null;
 
 
-    #[ORM\Column(length: 255, name: "motPass")]
+    #[ORM\Column(length: 255, name: "motPass",nullable: false)]
     #[Assert\NotBlank(message: "Mot de passe obligatoire")]
     #[Assert\Regex(pattern: "/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/", message: "Le mot de passe doit contenir au moins 8 caractères dont une lettre et un chiffre")]
 
@@ -75,8 +75,8 @@ class User
 
     #[ORM\Column(length: 8)]
     #[Assert\NotBlank(message: "Score obligatoire")]
-    #[Assert\Regex(pattern: "/^\d{8}$/", message: "Score invalide")]
-    private ?string $score = null;
+   /*  #[Assert\Regex(pattern: "/^\d{8}$/", message: "Score invalide")] */
+    private ?string $score ;
 
 
     #[ORM\Column(length: 11)]
@@ -86,15 +86,15 @@ class User
 
 
     #[ORM\Column(length: 255)]
-    #[Assert\NotBlank(message: "insert une image obligatoire")]
-    private ?string $image = null;
+    
+    private ?string $image = "http://localhost/img/useravatar.jpg";
 
 
 
     #[ORM\Column(nullable: true)]
     private ?\DateTime $Compte_ex = null;
 
-    
+
 
     #[ORM\Column(nullable: true)]
     private ?\DateTime $token_ex = null;
@@ -107,8 +107,9 @@ class User
     private Collection $annonces;
 
     public function __construct()
-    {
-       
+    {  $this->image="http://localhost/img/useravatar.jpg";
+        $this->score = "0";
+        $this->dateCreationC = new \DateTime();
         $this->colis = new ArrayCollection();
         $this->annonces = new ArrayCollection();
     }
@@ -336,8 +337,8 @@ class User
         return $this;
     }
 
-   
-   
+
+
 
 
     /**
