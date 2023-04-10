@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-		<title>Nova Bootstrap Template - Contact</title>
+		<title>AMENA</title>
 		<meta content="" name="description">
 		<meta
 		content="" name="keywords">
@@ -47,6 +47,25 @@
 
 	</head>
 	<body>
+{% for flash_message in app.flashes('success') %}
+    <div class="alert alert-success alert-dismissible fade show" role="alert" id="flash-message">
+        <div class="d-flex align-items-center">
+            <i class="bi bi-check-circle-fill me-2"></i>
+            <span>{{ flash_message }}</span>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+{% endfor %}
+
+<script>
+    // Masquer automatiquement le message de succès après 3 secondes
+    setTimeout(function() {
+        var flashMessage = document.getElementById('flash-message');
+        if (flashMessage !== null) {
+            flashMessage.remove();
+        }
+    }, 3000);
+</script>
     <!-- ======= Header ======= -->
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
@@ -54,7 +73,7 @@
       <a href="index.html" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="front/assets/img/logo.png" alt=""> -->
-        <h1 class="d-flex align-items-center">Nova</h1>
+        <h1 class="d-flex align-items-center">Amena</h1>
       </a>
 
       <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
@@ -91,6 +110,19 @@
 
     </div>
   </header><!-- End Header -->
+
+  <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs d-flex align-items-center" style="background-image: url('assets/img/contact-header.jpg');">
+      <div class="container position-relative d-flex flex-column align-items-center">
+
+        <h2>Contact</h2>
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li>Contact</li>
+        </ol>
+
+      </div>
+    </div><!-- End Breadcrumbs -->
    <main id="main">
 		{% block body %}{% endblock %}
         </main><!-- End #main -->
@@ -102,7 +134,7 @@
 					<div class="row gy-4">
 						<div class="col-lg-5 col-md-12 footer-info">
 							<a href="index.html" class="logo d-flex align-items-center">
-								<span>Nova</span>
+								<span>Amena</span>
 							</a>
 							<p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
 							<div class="social-links d-flex  mt-3">
@@ -198,7 +230,7 @@
 					<div class="copyright">
 						&copy; Copyright
 						<strong>
-							<span>Nova</span>
+							<span>Amena</span>
 						</strong>. All Rights Reserved
 					</div>
 					<div class="credits">

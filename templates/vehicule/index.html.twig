@@ -35,7 +35,8 @@
                 <td>{{ vehicule.modele }}</td>
                 <td>{{ vehicule.couleur }}</td>
                 <td>{{ vehicule.prix }}</td>
-                <td>{{ vehicule.img }}</td>
+                <td><img style="width:100px;height:100px" src="{{ vehicule.img }}"> </td>
+                
                 <td>
                     <a href="{{ path('app_vehicule_show', {'idv': vehicule.idv}) }}">show</a>
                     <a href="{{ path('app_vehicule_edit', {'idv': vehicule.idv}) }}">edit</a>

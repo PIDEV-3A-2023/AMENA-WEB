@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Documentexpedition{% endblock %}
+
+{% block body %}
+    <h1>Documentexpedition</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ documentexpedition.id }}</td>
+            </tr>
+            <tr>
+                <th>Datesignature</th>
+                <td>{{ documentexpedition.datesignature ? documentexpedition.datesignature|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Statut</th>
+                <td>{{ documentexpedition.statut }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_documentexpedition_index') }}">back to list</a>
+
+    <a href="{{ path('app_documentexpedition_edit', {'id': documentexpedition.id}) }}">edit</a>
+
+    {{ include('documentexpedition/_delete_form.html.twig') }}
+{% endblock %}

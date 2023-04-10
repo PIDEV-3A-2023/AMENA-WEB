@@ -1,0 +1,58 @@
+{% extends 'baseadmin.html.twig' %}
+
+{% block title %}Colis index{% endblock %}
+
+{% block body %}
+    <h1>Colis index</h1>
+
+				<div class="container-fluid p-0">
+
+					<h1 class="h3 mb-3">Blank Page</h1>
+
+					<div class="row">
+						<div class="col-12" style="overflow-x: scroll">
+							<div class="card" style="width: 4300px;">
+								<div class="card-header">
+									<h5 class="card-title mb-0">Empty card</h5>
+								</div>
+								<div class="card-body">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>NomExpediteur</th>
+                <th>AdresseExpediteur</th>
+                <th>NomDestinataire</th>
+                <th>AdresseDestinataire</th>
+                <th>Poids</th>
+                <th>Statut</th>
+                <th>DateExpedition</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for coli in colis %}
+            <tr>
+                <td>{{ coli.id }}</td>
+                <td>{{ coli.nomExpediteur }}</td>
+                <td>{{ coli.adresseExpediteur }}</td>
+                <td>{{ coli.nomDestinataire }}</td>
+                <td>{{ coli.adresseDestinataire }}</td>
+                <td>{{ coli.poids }}</td>
+                <td>{{ coli.statut }}</td>
+                <td>{{ coli.dateExpedition ? coli.dateExpedition|date('Y-m-d') : '' }}</td>
+                <td>
+                    <a href="{{ path('app_colis_show', {'id': coli.id}) }}">show</a>
+                    <a href="{{ path('app_colis_edit', {'id': coli.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_colis_new') }}">Create news</a>
+{% endblock %}
