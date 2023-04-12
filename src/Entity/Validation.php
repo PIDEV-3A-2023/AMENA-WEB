@@ -22,12 +22,12 @@ class Validation
     private ?int $id = null;
 
     #[ORM\Column(length: 255, name: "imageA")]
-  
+    #[Assert\NotBlank]
     #[Assert\Url]
     private ?string $imagea = null;
 
     #[ORM\Column(length: 255, name: "imageB")]
-   
+    #[Assert\NotBlank]
     #[Assert\Url]
     private ?string $imageb = null;
 

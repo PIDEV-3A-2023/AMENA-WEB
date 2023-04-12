@@ -7,12 +7,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
-
-use App\Repository\UserRepository;
-
-
 use Symfony\Component\Validator\Constraints as Assert;
-
 
 #[ORM\Table(name: '`colis`')]
 #[ORM\Entity(repositoryClass: ColisRepository::class)]
@@ -24,18 +19,30 @@ class Colis
     private ?int $id = null;
 
     #[ORM\Column(length: 50, name: "nomExpediteur")]
+    #[Assert\NotBlank(message: "Nom de l'expéditeur obligatoire")]
+    #[Assert\Regex(pattern: '/^[a-zA-Z\s]+$/', message: "Le nom de l'expéditeur ne doit contenir que des lettres et des espaces")]
+    #[Assert\Length(max: 50, maxMessage: "Le nom de l'expéditeur ne doit pas dépasser {{ limit }} caractères")]
     private ?string $nomExpediteur = null;
 
     #[ORM\Column(length: 50, name: "adresseExpediteur")]
+    #[Assert\NotBlank(message: "Adresse de l'expéditeur obligatoire")]
+    #[Assert\Length(max: 50, maxMessage: "L'adresse de l'expéditeur ne doit pas dépasser {{ limit }} caractères")]
     private ?string $adresseExpediteur = null;
-
+    
     #[ORM\Column(length: 50, name: "nomDestinataire")]
+    #[Assert\NotBlank(message: "Nom du destinataire obligatoire")]
+    #[Assert\Regex(pattern: '/^[a-zA-Z\s]+$/', message: "Le nom du destinataire ne doit contenir que des lettres et des espaces")]
+    #[Assert\Length(max: 50, maxMessage: "Le nom du destinataire ne doit pas dépasser {{ limit }} caractères")]
     private ?string $nomDestinataire = null;
 
     #[ORM\Column(length: 50, name: "adresseDestinataire")]
+    #[Assert\NotBlank(message: "Adresse du destinataire obligatoire")]
+    #[Assert\Length(max: 50, maxMessage: "L'adresse du destinataire ne doit pas dépasser {{ limit }} caractères")]
     private ?string $adresseDestinataire = null;
 
     #[ORM\Column(name: "poids")]
+    #[Assert\NotBlank(message: "Poids obligatoire")]
+    #[Assert\Positive(message: "Le poids doit être supérieur à 0")]
     private ?float $poids = null;
 
     #[ORM\Column(length: 30, name: "statut")]
@@ -51,12 +58,14 @@ class Colis
     #[ORM\JoinColumn(nullable: false, name: "id_u ")]
     private ?User $id_u  = null;
 
-    #[ORM\OneToMany(mappedBy: 'idColis', targetEntity: Annonces::class)]
-    private Collection $annonces;
+    /*#[ORM\OneToMany(mappedBy: 'idColis', targetEntity: Annonces::class)]
+    private Collection $annonces;*/
 
     public function __construct()
     {
-        $this->annonces = new ArrayCollection();
+       /* $this->annonces = new ArrayCollection();*/
+        $this->dateExpedition = new \DateTimeImmutable('now');
+        $this->statut = 'en attente';
     }
 
 
@@ -236,10 +245,11 @@ class Colis
         return $this->nomExpediteur;
     }
 
+   
     /**
      * @return Collection<int, Annonces>
      */
-    public function getAnnonces(): Collection
+   /*   public function getAnnonces(): Collection
     {
         return $this->annonces;
     }
@@ -264,5 +274,5 @@ class Colis
         }
 
         return $this;
-    }
+    }*/
 }

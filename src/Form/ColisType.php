@@ -6,6 +6,7 @@ use App\Entity\Colis;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class ColisType extends AbstractType
 {
@@ -17,9 +18,7 @@ class ColisType extends AbstractType
             ->add('nomDestinataire')
             ->add('adresseDestinataire')
             ->add('poids')
-            ->add('statut')
-            ->add('dateExpedition')
-            ->add('id_u')
+            ->add('Enregistrer',SubmitType::class)
         ;
     }
 
