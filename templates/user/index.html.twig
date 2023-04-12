@@ -57,7 +57,7 @@
         {% for user in users %}
             <tr>
                 <td>{{ user.id }}</td>
-                <td>{{ user.nom}}</td>
+                <td>{{ user.nom }}</td>
                 <td>{{ user.prenom }}</td>
                 <td>{{ user.adress }}</td>
                 <td>{{ user.cin }}</td>
@@ -86,10 +86,11 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_user_new') }}">Register</a>
+    <a href="{{ path('app_user_new') }}">Create news</a>
 								</div>
 							</div>
 						</div>
 					</div>
+
 				</div>
 {% endblock %}
