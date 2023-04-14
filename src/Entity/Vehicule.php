@@ -16,7 +16,7 @@ class Vehicule
  
    #[ORM\Id]
    #[ORM\GeneratedValue]
-   #[ORM\Column]
+   #[ORM\Column (name:"id")]
    private ?int $idv=null;
 
 

@@ -23,12 +23,12 @@ class User
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    #[Assert\NotBlank(message: "Nom obligatoire")]
+ 
     #[Assert\Length(min: 2, minMessage: "Le nom doit contenir au moins {{ limit }} caractères")]
     private ?string $nom = null;
 
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255,nullable: true)]
     #[Assert\NotBlank(message: "Prénom obligatoire")]
     #[Assert\Length(min: 2, minMessage: "Le prénom doit contenir au moins {{ limit }} caractères")]
     private ?string $prenom = null;
@@ -56,9 +56,9 @@ class User
     private ?string $role = null;
 
 
-    #[ORM\Column(length: 255, name: "motPass",nullable: false)]
-    #[Assert\NotBlank(message: "Mot de passe obligatoire")]
-    #[Assert\Regex(pattern: "/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/", message: "Le mot de passe doit contenir au moins 8 caractères dont une lettre et un chiffre")]
+    #[ORM\Column(length: 255, name: "motPass", nullable: true)]
+
+  
 
     private ?string $motPass = null;
     #[ORM\Column(length: 255)]
@@ -80,7 +80,7 @@ class User
 
 
     #[ORM\Column(length: 11)]
-    #[Assert\Regex(pattern: "/^05\d{8}$/", message: "Numéro de téléphone invalide")]
+    #[Assert\Regex(pattern: "/^216\d{8}$/", message: "Numéro de téléphone invalide")]
     private ?string $numtel = null;
 
 
@@ -106,12 +106,23 @@ class User
     #[ORM\OneToMany(mappedBy: 'ida_U', targetEntity: Annonces::class)]
     private Collection $annonces;
 
+    #[ORM\OneToMany(mappedBy: 'senderId', targetEntity: Message::class, orphanRemoval: true)]
+    private Collection $senderId;
+
+    #[ORM\OneToMany(mappedBy: 'receiverId', targetEntity: Message::class, orphanRemoval: true)]
+    private Collection $receiver;
+
+
     public function __construct()
     {  $this->image="http://localhost/img/useravatar.jpg";
         $this->score = "0";
         $this->dateCreationC = new \DateTime();
         $this->colis = new ArrayCollection();
         $this->annonces = new ArrayCollection();
+       
+       
+        $this->senderId = new ArrayCollection();
+        $this->receiver = new ArrayCollection();
     }
 
 
@@ -200,7 +211,7 @@ class User
 
     public function setStatus(bool $status): self
     {
-        $this->status = $status;
+        $this->status = $status=false;
 
         return $this;
     }
@@ -400,4 +411,76 @@ class User
 
         return $this;
     }
+
+    /**
+     * @return Collection<int, Message>
+     */
+    public function getSenderId(): Collection
+    {
+        return $this->senderId;
+    }
+
+    public function addSenderId(Message $senderId): self
+    {
+        if (!$this->senderId->contains($senderId)) {
+            $this->senderId->add($senderId);
+            $senderId->setSenderId($this);
+        }
+
+        return $this;
+    }
+
+    public function removeSenderId(Message $senderId): self
+    {
+        if ($this->senderId->removeElement($senderId)) {
+            // set the owning side to null (unless already changed)
+            if ($senderId->getSenderId() === $this) {
+                $senderId->setSenderId(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Message>
+     */
+    public function getReceiver(): Collection
+    {
+        return $this->receiver;
+    }
+
+    public function addReceiver(Message $receiver): self
+    {
+        if (!$this->receiver->contains($receiver)) {
+            $this->receiver->add($receiver);
+            $receiver->setReceiverId($this);
+        }
+
+        return $this;
+    }
+
+    public function removeReceiver(Message $receiver): self
+    {
+        if ($this->receiver->removeElement($receiver)) {
+            // set the owning side to null (unless already changed)
+            if ($receiver->getReceiverId() === $this) {
+                $receiver->setReceiverId(null);
+            }
+        }
+
+        return $this;
+    }
+
+   
+
+    
+
+    
+
+    
+
+    
+
+    
 }

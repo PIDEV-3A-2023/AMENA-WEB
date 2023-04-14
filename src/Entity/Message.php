@@ -3,8 +3,6 @@
 namespace App\Entity;
 
 use App\Repository\MessageRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -13,14 +11,16 @@ class Message
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
-    #[ORM\Column]
+    #[ORM\Column(name:"id")]
     private ?int $id = null;
 
-    #[ORM\ManyToMany(targetEntity: User::class, inversedBy: 'messages')]
-    private Collection $senderid;
+    #[ORM\ManyToOne(inversedBy: 'senderId')]
+    #[ORM\JoinColumn(nullable: false,name:"senderId")]
+    private ?User $senderId = null;
 
-    #[ORM\ManyToMany(targetEntity: User::class, inversedBy: 'messages')]
-    private Collection $receiverId;
+    #[ORM\ManyToOne(inversedBy: 'receiver')]
+    #[ORM\JoinColumn(nullable: false,name:"receiverId")]
+    private ?User $receiverId = null;
 
     #[ORM\Column(length: 255)]
     private ?string $content = null;
@@ -28,61 +28,31 @@ class Message
     #[ORM\Column(type: Types::DATE_MUTABLE)]
     private ?\DateTimeInterface $timestamp = null;
 
-    public function __construct()
-    {
-        $this->senderid = new ArrayCollection();
-        $this->receiverId = new ArrayCollection();
-    }
-
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    /**
-     * @return Collection<int, User>
-     */
-    public function getSenderid(): Collection
+    public function getSenderId(): ?User
     {
-        return $this->senderid;
+        return $this->senderId;
     }
 
-    public function addSenderid(User $senderid): self
+    public function setSenderId(?User $senderId): self
     {
-        if (!$this->senderid->contains($senderid)) {
-            $this->senderid->add($senderid);
-        }
+        $this->senderId = $senderId;
 
         return $this;
     }
 
-    public function removeSenderid(User $senderid): self
-    {
-        $this->senderid->removeElement($senderid);
-
-        return $this;
-    }
-
-    /**
-     * @return Collection<int, User>
-     */
-    public function getReceiverId(): Collection
+    public function getReceiverId(): ?User
     {
         return $this->receiverId;
     }
 
-    public function addReceiverId(User $receiverId): self
+    public function setReceiverId(?User $receiverId): self
     {
-        if (!$this->receiverId->contains($receiverId)) {
-            $this->receiverId->add($receiverId);
-        }
-
-        return $this;
-    }
-
-    public function removeReceiverId(User $receiverId): self
-    {
-        $this->receiverId->removeElement($receiverId);
+        $this->receiverId = $receiverId;
 
         return $this;
     }
@@ -110,4 +80,7 @@ class Message
 
         return $this;
     }
-}
+    public function __construct()
+    {  
+        $this->timestamp = new \DateTime();
+}}

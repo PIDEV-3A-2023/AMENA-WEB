@@ -102,12 +102,15 @@ class __TwigTemplate_559b0ac0df39479558519b44f6781b83 extends Template
 \t</form>
 
 \t<div class=\"container-fluid p-0\">
-
+\t\t<a class=\"btn btn-secondary\" href=\"";
+        // line 30
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_new");
+        echo "\">Register</a>
 \t\t<h1 class=\"h3 mb-3\">Blank Page</h1>
 
 \t\t<div class=\"row\">
 \t\t\t<div class=\"col-12\" style=\"overflow-x: scroll\">
-\t\t\t\t<div class=\"card\" style=\"width: 4300px;\">
+\t\t\t\t<div class=\"card\" style=\"width: 1720px;\">
 \t\t\t\t\t<div class=\"card-header\">
 \t\t\t\t\t\t<h5 class=\"card-title mb-0\">Empty card</h5>
 \t\t\t\t\t</div>
@@ -116,124 +119,139 @@ class __TwigTemplate_559b0ac0df39479558519b44f6781b83 extends Template
 \t\t\t\t\t\t<table class=\"table\">
 \t\t\t\t\t\t\t<thead>
 \t\t\t\t\t\t\t\t<tr>
-\t\t\t\t\t\t\t
+
 \t\t\t\t\t\t\t\t\t<th>Nom</th>
-\t\t\t\t\t\t\t\t\t<th>Prenom</th>
-\t\t\t\t\t\t\t\t\t<th>Adress</th>
-\t\t\t\t\t\t\t\t\t<th>Cin</th>
-\t\t\t\t\t\t\t\t\t";
-        // line 51
-        echo "\t\t\t\t\t\t\t\t\t<th>Status</th>
-\t\t\t\t\t\t\t\t\t<th>Role</th>
-\t\t\t\t\t\t\t\t\t<th>Motpass</th>
-\t\t\t\t\t\t\t\t\t<th>Email</th>
-\t\t\t\t\t\t\t\t\t";
-        // line 56
-        echo " 
-\t\t\t\t\t\t\t\t\t<th>Numtel</th>
-\t\t\t\t\t\t\t\t\t<th>Image</th>
-\t\t\t\t\t\t\t\t\t<th>CompteEx</th>
-\t\t\t\t\t\t\t\t\t";
-        // line 61
-        echo "\t\t\t\t\t\t\t\t\t<th>actions</th>
+
 \t\t\t\t\t\t\t\t</tr>
 \t\t\t\t\t\t\t</thead>
 \t\t\t\t\t\t\t<tbody>
-\t\t\t\t\t\t\t\t";
-        // line 65
+\t\t\t\t\t\t\t\t<div>
+\t\t\t\t\t\t\t\t\t";
+        // line 51
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new RuntimeError('Variable "users" does not exist.', 65, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable(twig_array_batch((isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new RuntimeError('Variable "users" does not exist.', 51, $this->source); })()), 3));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["user"]) {
-            // line 66
-            echo "\t\t\t\t\t\t\t\t\t<tr>
-\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t\t\t<td>";
-            // line 68
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "nom", [], "any", false, false, false, 68), "html", null, true);
-            echo "</td>
-\t\t\t\t\t\t\t\t\t\t<td>";
-            // line 69
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "prenom", [], "any", false, false, false, 69), "html", null, true);
-            echo "</td>
-\t\t\t\t\t\t\t\t\t\t<td>";
-            // line 70
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "adress", [], "any", false, false, false, 70), "html", null, true);
-            echo "</td>
-\t\t\t\t\t\t\t\t\t\t<td>";
-            // line 71
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "cin", [], "any", false, false, false, 71), "html", null, true);
-            echo "</td>
-\t\t\t\t\t\t\t\t\t\t";
-            // line 74
-            echo "\t\t\t\t\t\t\t\t\t\t<td>";
-            echo ((twig_get_attribute($this->env, $this->source, $context["user"], "status", [], "any", false, false, false, 74)) ? ("Yes") : ("No"));
-            echo "</td>
-\t\t\t\t\t\t\t\t\t\t<td>";
-            // line 75
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "role", [], "any", false, false, false, 75), "html", null, true);
-            echo "</td>
-\t\t\t\t\t\t\t\t\t\t<td>";
-            // line 76
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "motpass", [], "any", false, false, false, 76), "html", null, true);
-            echo "</td>
-\t\t\t\t\t\t\t\t\t\t<td>";
-            // line 77
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "email", [], "any", false, false, false, 77), "html", null, true);
-            echo "</td>
-\t\t\t\t\t\t\t\t\t\t";
-            // line 80
-            echo "\t\t\t\t\t\t\t\t\t\t<td>";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "numtel", [], "any", false, false, false, 80), "html", null, true);
-            echo "</td>
-\t\t\t\t\t\t\t\t\t\t<td><img style=\"width:100px;height:100px\" src=\"";
-            // line 81
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "image", [], "any", false, false, false, 81), "html", null, true);
-            echo "\">
-\t\t\t\t\t\t\t\t\t\t</td>
-\t\t\t\t\t\t\t\t\t\t<td>";
-            // line 83
-            ((twig_get_attribute($this->env, $this->source, $context["user"], "compteEx", [], "any", false, false, false, 83)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "compteEx", [], "any", false, false, false, 83), "Y-m-d H:i:s"), "html", null, true))) : (print ("")));
-            echo "</td>
-\t\t\t\t\t\t\t\t\t\t";
-            // line 85
-            echo "\t\t\t\t\t\t\t\t\t\t<td>
-\t\t\t\t\t\t\t\t\t\t\t<a href=\"";
-            // line 86
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_show", ["id" => twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 86)]), "html", null, true);
-            echo "\">show</a>
-\t\t\t\t\t\t\t\t\t\t\t<a href=\"";
-            // line 87
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 87)]), "html", null, true);
-            echo "\">edit</a>
-\t\t\t\t\t\t\t\t\t\t</td>
-\t\t\t\t\t\t\t\t\t</tr>
-\t\t\t\t\t\t\t\t";
+            // line 52
+            echo "\t\t\t\t\t\t\t\t\t\t<tr>
+\t\t\t\t\t\t\t\t\t\t\t";
+            // line 53
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable($context["user"]);
+            foreach ($context['_seq'] as $context["_key"] => $context["u"]) {
+                // line 54
+                echo "\t\t\t\t\t\t\t\t\t\t\t\t<td>";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["u"], "nom", [], "any", false, false, false, 54), "html", null, true);
+                echo "
+\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"col-md-6 col-xl-3\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"card m-b-10\" style=\"width: 450px; height: 500px;\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"card-body row\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"col-6\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"\"><img src=\"";
+                // line 59
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["u"], "image", [], "any", false, false, false, 59), "html", null, true);
+                echo "\" alt=\"\" class=\"img-fluid rounded-circle w-40\" height=\"75\" width=\"75\"></a>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"col-6 card-title align-self-center mb-0\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<h5>";
+                // line 62
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["u"], "nom", [], "any", false, false, false, 62), "html", null, true);
+                echo "</h5>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<p class=\"m-0\">";
+                // line 63
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["u"], "role", [], "any", false, false, false, 63), "html", null, true);
+                echo "</p>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<ul class=\"list-group list-group-flush\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"list-group-item\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-envelope float-right\"></i>Email :
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"#\">";
+                // line 69
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["u"], "email", [], "any", false, false, false, 69), "html", null, true);
+                echo "</a>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"list-group-item\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-phone float-right\"></i>Phone :
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t";
+                // line 73
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["u"], "numtel", [], "any", false, false, false, 73), "html", null, true);
+                echo "</li>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</ul>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"card-body\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"float-right btn-group btn-group-sm\" style=\"width: 75px; height: 35px;\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"";
+                // line 77
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_show", ["id" => twig_get_attribute($this->env, $this->source, $context["u"], "id", [], "any", false, false, false, 77)]), "html", null, true);
+                echo "\" class=\"btn btn-primary tooltips\" data-placement=\"top\" data-toggle=\"tooltip\" data-original-title=\"Edit\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-pencil\"></i>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"";
+                // line 80
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_message_new", ["id" => twig_get_attribute($this->env, $this->source, $context["u"], "id", [], "any", false, false, false, 80)]), "html", null, true);
+                echo "\" class=\"btn btn-outline-primary\">Message</a>
+
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"";
+                // line 82
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["u"], "id", [], "any", false, false, false, 82)]), "html", null, true);
+                echo "\" class=\"btn btn-secondary tooltips\" data-placement=\"top\" data-toggle=\"tooltip\" data-original-title=\"Delete\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-times\"></i>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<ul class=\"social-links list-inline mb-0\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"list-inline-item\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a title=\"\" data-placement=\"top\" data-toggle=\"tooltip\" class=\"tooltips\" href=\"\" data-original-title=\"Facebook\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-facebook-f\"></i>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"list-inline-item\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a title=\"\" data-placement=\"top\" data-toggle=\"tooltip\" class=\"tooltips\" href=\"\" data-original-title=\"Twitter\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-twitter\"></i>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"list-inline-item\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a title=\"\" data-placement=\"top\" data-toggle=\"tooltip\" class=\"tooltips\" href=\"\" data-original-title=\"Skype\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-skype\"></i>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</ul>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t\t\t\t</td>
+\t\t\t\t\t\t\t\t\t\t\t";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['u'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 108
+            echo "\t\t\t\t\t\t\t\t\t\t</tr>
+\t\t\t\t\t\t\t\t\t";
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 91
-            echo "\t\t\t\t\t\t\t\t\t<tr>
-\t\t\t\t\t\t\t\t\t\t<td colspan=\"18\">no records found</td>
-\t\t\t\t\t\t\t\t\t</tr>
-\t\t\t\t\t\t\t\t";
+            // line 110
+            echo "\t\t\t\t\t\t\t\t\t\t<tr>
+\t\t\t\t\t\t\t\t\t\t\t<td colspan=\"3\">no records found</td>
+\t\t\t\t\t\t\t\t\t\t</tr>
+\t\t\t\t\t\t\t\t\t";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['user'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 95
-        echo "\t\t\t\t\t\t\t</tbody>
+        // line 114
+        echo "\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t</tbody>
+
 \t\t\t\t\t\t</table>
 
-\t\t\t\t\t\t<a href=\"";
-        // line 98
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_new");
-        echo "\">Register</a>
+
 \t\t\t\t\t</div>
 \t\t\t\t</div>
 \t\t\t</div>
 \t\t</div>
 \t</div>
+
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -255,7 +273,7 @@ class __TwigTemplate_559b0ac0df39479558519b44f6781b83 extends Template
 
     public function getDebugInfo()
     {
-        return array (  230 => 98,  225 => 95,  216 => 91,  207 => 87,  203 => 86,  200 => 85,  196 => 83,  191 => 81,  186 => 80,  182 => 77,  178 => 76,  174 => 75,  169 => 74,  165 => 71,  161 => 70,  157 => 69,  153 => 68,  149 => 66,  144 => 65,  138 => 61,  132 => 56,  126 => 51,  94 => 20,  91 => 19,  89 => 7,  79 => 6,  59 => 3,  36 => 1,);
+        return array (  243 => 114,  234 => 110,  228 => 108,  196 => 82,  191 => 80,  185 => 77,  178 => 73,  171 => 69,  162 => 63,  158 => 62,  152 => 59,  143 => 54,  139 => 53,  136 => 52,  131 => 51,  107 => 30,  94 => 20,  91 => 19,  89 => 7,  79 => 6,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -267,17 +285,17 @@ class __TwigTemplate_559b0ac0df39479558519b44f6781b83 extends Template
 
 {% block body %}
 \t{#<!-- ======= Breadcrumbs ======= -->
-\t    <div class=\"breadcrumbs d-flex align-items-center\" style=\"background-image: url('assets/img/contact-header.jpg');\">
-\t      <div class=\"container position-relative d-flex flex-column align-items-center\">
-\t
-\t        <h2>Contact</h2>
-\t        <ol>
-\t          <li><a href=\"index.html\">Home</a></li>
-\t          <li>Contact</li>
-\t        </ol>
-\t
-\t      </div>
-\t    </div><!-- End Breadcrumbs -->#}
+\t\t\t\t    <div class=\"breadcrumbs d-flex align-items-center\" style=\"background-image: url('assets/img/contact-header.jpg');\">
+\t\t\t\t      <div class=\"container position-relative d-flex flex-column align-items-center\">
+\t\t\t\t
+\t\t\t\t        <h2>Contact</h2>
+\t\t\t\t        <ol>
+\t\t\t\t          <li><a href=\"index.html\">Home</a></li>
+\t\t\t\t          <li>Contact</li>
+\t\t\t\t        </ol>
+\t\t\t\t
+\t\t\t\t      </div>
+\t\t\t\t    </div><!-- End Breadcrumbs -->#}
 \t<h1>User index</h1>
 \t<form method=\"get\" action=\"{{ path('app_user_index') }}\">
 \t\t<div class=\"input-group mb-3\">
@@ -289,12 +307,12 @@ class __TwigTemplate_559b0ac0df39479558519b44f6781b83 extends Template
 \t</form>
 
 \t<div class=\"container-fluid p-0\">
-
+\t\t<a class=\"btn btn-secondary\" href=\"{{ path('app_user_new') }}\">Register</a>
 \t\t<h1 class=\"h3 mb-3\">Blank Page</h1>
 
 \t\t<div class=\"row\">
 \t\t\t<div class=\"col-12\" style=\"overflow-x: scroll\">
-\t\t\t\t<div class=\"card\" style=\"width: 4300px;\">
+\t\t\t\t<div class=\"card\" style=\"width: 1720px;\">
 \t\t\t\t\t<div class=\"card-header\">
 \t\t\t\t\t\t<h5 class=\"card-title mb-0\">Empty card</h5>
 \t\t\t\t\t</div>
@@ -303,66 +321,88 @@ class __TwigTemplate_559b0ac0df39479558519b44f6781b83 extends Template
 \t\t\t\t\t\t<table class=\"table\">
 \t\t\t\t\t\t\t<thead>
 \t\t\t\t\t\t\t\t<tr>
-\t\t\t\t\t\t\t
+
 \t\t\t\t\t\t\t\t\t<th>Nom</th>
-\t\t\t\t\t\t\t\t\t<th>Prenom</th>
-\t\t\t\t\t\t\t\t\t<th>Adress</th>
-\t\t\t\t\t\t\t\t\t<th>Cin</th>
-\t\t\t\t\t\t\t\t\t{# <th>Datenaissance</th>
-\t\t\t\t\t\t\t\t\t<th>Datecreationc</th> #}
-\t\t\t\t\t\t\t\t\t<th>Status</th>
-\t\t\t\t\t\t\t\t\t<th>Role</th>
-\t\t\t\t\t\t\t\t\t<th>Motpass</th>
-\t\t\t\t\t\t\t\t\t<th>Email</th>
-\t\t\t\t\t\t\t\t\t{# <th>Token</th>
-\t\t\t\t\t\t\t\t\t{# <th>Score</th> #} 
-\t\t\t\t\t\t\t\t\t<th>Numtel</th>
-\t\t\t\t\t\t\t\t\t<th>Image</th>
-\t\t\t\t\t\t\t\t\t<th>CompteEx</th>
-\t\t\t\t\t\t\t\t\t{# <th>TokenEx</th> #}
-\t\t\t\t\t\t\t\t\t<th>actions</th>
+
 \t\t\t\t\t\t\t\t</tr>
 \t\t\t\t\t\t\t</thead>
 \t\t\t\t\t\t\t<tbody>
-\t\t\t\t\t\t\t\t{% for user in users %}
-\t\t\t\t\t\t\t\t\t<tr>
-\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t\t\t<td>{{ user.nom}}</td>
-\t\t\t\t\t\t\t\t\t\t<td>{{ user.prenom }}</td>
-\t\t\t\t\t\t\t\t\t\t<td>{{ user.adress }}</td>
-\t\t\t\t\t\t\t\t\t\t<td>{{ user.cin }}</td>
-\t\t\t\t\t\t\t\t\t\t{# <td>{{ user.datenaissance ? user.datenaissance|date('Y-m-d') : '' }}</td>
-\t\t\t\t\t\t\t\t\t\t<td>{{ user.datecreationc ? user.datecreationc|date('Y-m-d') : '' }}</td> #}
-\t\t\t\t\t\t\t\t\t\t<td>{{ user.status ? 'Yes' : 'No' }}</td>
-\t\t\t\t\t\t\t\t\t\t<td>{{ user.role }}</td>
-\t\t\t\t\t\t\t\t\t\t<td>{{ user.motpass }}</td>
-\t\t\t\t\t\t\t\t\t\t<td>{{ user.email }}</td>
-\t\t\t\t\t\t\t\t\t\t{# <td>{{ user.token }}</td>
-\t\t\t\t\t\t\t\t\t\t<td>{{ user.score }}</td> #}
-\t\t\t\t\t\t\t\t\t\t<td>{{ user.numtel }}</td>
-\t\t\t\t\t\t\t\t\t\t<td><img style=\"width:100px;height:100px\" src=\"{{ user.image }}\">
-\t\t\t\t\t\t\t\t\t\t</td>
-\t\t\t\t\t\t\t\t\t\t<td>{{ user.compteEx ? user.compteEx|date('Y-m-d H:i:s') : '' }}</td>
-\t\t\t\t\t\t\t\t\t\t{# <td>{{ user.tokenEx ? user.tokenEx|date('Y-m-d H:i:s') : '' }}</td> #}
-\t\t\t\t\t\t\t\t\t\t<td>
-\t\t\t\t\t\t\t\t\t\t\t<a href=\"{{ path('app_user_show', {'id': user.id}) }}\">show</a>
-\t\t\t\t\t\t\t\t\t\t\t<a href=\"{{ path('app_user_edit', {'id': user.id}) }}\">edit</a>
-\t\t\t\t\t\t\t\t\t\t</td>
-\t\t\t\t\t\t\t\t\t</tr>
-\t\t\t\t\t\t\t\t{% else %}
-\t\t\t\t\t\t\t\t\t<tr>
-\t\t\t\t\t\t\t\t\t\t<td colspan=\"18\">no records found</td>
-\t\t\t\t\t\t\t\t\t</tr>
-\t\t\t\t\t\t\t\t{% endfor %}
+\t\t\t\t\t\t\t\t<div>
+\t\t\t\t\t\t\t\t\t{% for user in users|batch(3) %}
+\t\t\t\t\t\t\t\t\t\t<tr>
+\t\t\t\t\t\t\t\t\t\t\t{% for u in user %}
+\t\t\t\t\t\t\t\t\t\t\t\t<td>{{ u.nom }}
+\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"col-md-6 col-xl-3\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"card m-b-10\" style=\"width: 450px; height: 500px;\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"card-body row\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"col-6\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"\"><img src=\"{{u.image}}\" alt=\"\" class=\"img-fluid rounded-circle w-40\" height=\"75\" width=\"75\"></a>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"col-6 card-title align-self-center mb-0\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<h5>{{ u.nom}}</h5>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<p class=\"m-0\">{{ u.role }}</p>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<ul class=\"list-group list-group-flush\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"list-group-item\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-envelope float-right\"></i>Email :
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"#\">{{ u.email }}</a>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"list-group-item\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-phone float-right\"></i>Phone :
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t{{ u.numtel }}</li>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</ul>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"card-body\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"float-right btn-group btn-group-sm\" style=\"width: 75px; height: 35px;\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"{{ path('app_user_show', {'id': u.id}) }}\" class=\"btn btn-primary tooltips\" data-placement=\"top\" data-toggle=\"tooltip\" data-original-title=\"Edit\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-pencil\"></i>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"{{ path('app_message_new', {'id': u.id} )}}\" class=\"btn btn-outline-primary\">Message</a>
+
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"{{ path('app_user_edit', {'id': u.id}) }}\" class=\"btn btn-secondary tooltips\" data-placement=\"top\" data-toggle=\"tooltip\" data-original-title=\"Delete\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-times\"></i>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<ul class=\"social-links list-inline mb-0\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"list-inline-item\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a title=\"\" data-placement=\"top\" data-toggle=\"tooltip\" class=\"tooltips\" href=\"\" data-original-title=\"Facebook\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-facebook-f\"></i>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"list-inline-item\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a title=\"\" data-placement=\"top\" data-toggle=\"tooltip\" class=\"tooltips\" href=\"\" data-original-title=\"Twitter\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-twitter\"></i>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"list-inline-item\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a title=\"\" data-placement=\"top\" data-toggle=\"tooltip\" class=\"tooltips\" href=\"\" data-original-title=\"Skype\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-skype\"></i>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</ul>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t\t\t\t</td>
+\t\t\t\t\t\t\t\t\t\t\t{% endfor %}
+\t\t\t\t\t\t\t\t\t\t</tr>
+\t\t\t\t\t\t\t\t\t{% else %}
+\t\t\t\t\t\t\t\t\t\t<tr>
+\t\t\t\t\t\t\t\t\t\t\t<td colspan=\"3\">no records found</td>
+\t\t\t\t\t\t\t\t\t\t</tr>
+\t\t\t\t\t\t\t\t\t{% endfor %}
+\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t</tbody>
+
 \t\t\t\t\t\t</table>
 
-\t\t\t\t\t\t<a href=\"{{ path('app_user_new') }}\">Register</a>
+
 \t\t\t\t\t</div>
 \t\t\t\t</div>
 \t\t\t</div>
 \t\t</div>
 \t</div>
+
 {% endblock %}
 ", "user/index.html.twig", "C:\\Users\\aymen\\Desktop\\digidreamers\\digidreamers\\templates\\user\\index.html.twig");
     }

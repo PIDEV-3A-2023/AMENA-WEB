@@ -32,13 +32,13 @@ class UserType extends AbstractType
             ->add('nom', TextType::class, [
                 'constraints' => [
                     new NotBlank(['message' => 'Veuillez remplir le champ .']),
-                    new Length(['min' => 2, 'max' => 50]),
+                    new Length(['min' => 3, 'max' => 50]),
                 ],
             ])
             ->add('prenom', TextType::class, [
                 'constraints' => [
                     new NotBlank(['message' => 'Veuillez remplir le champ .']),
-                    new Length(['min' => 2, 'max' => 50]),
+                    new Length(['min' => 3, 'max' => 50]),
                 ],
             ])
             ->add('adress', TextType::class, [
@@ -64,13 +64,8 @@ class UserType extends AbstractType
                  
                 ],
             ])
-         /*    ->add('datecreationc', DateType::class, [
-                'constraints' => [
-                    new NotBlank(['message' => 'Veuillez remplir le champ .']),
-                    
-                ],
-            ]) */
-            ->add('status')
+      
+            /* ->add('status') */
             ->add('role', ChoiceType::class, [
                 'choices' => [
                     'Transporteur' => 'transporteur',
@@ -79,34 +74,52 @@ class UserType extends AbstractType
                 'expanded' => true,
                 'multiple' => false,
             ])
+         
+
             ->add('motpass', PasswordType::class, [
+                'required' => false,
+                'mapped' => false,
+                'attr' => [
+                    'autocomplete' => 'new-password',
+                    'class' => 'form-control'
+                ],
                 'constraints' => [
-                    new NotBlank(['message' => 'Veuillez remplir le champ .']),
                     new Regex([
                         'pattern' => '/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/',
                         'message' => 'Le mot de passe doit contenir au moins 8 caractères dont une lettre et un chiffre',
                     ]),
+                    new Length([
+                        'min' => 6,
+                        'minMessage' => 'Your password should be at least {{ limit }} characters',
+                        'max' => 255
+                    ])
                 ],
-            ])
-            ->add('email', EmailType::class, [
+                'label' => 'Password',
+                'help' => 'Leave this field empty if you don\'t want to change your password',
+            ]) 
+            /* ->add('email', EmailType::class, [
                 'constraints' => [
                     new NotBlank(['message' => 'Veuillez remplir le champ .']),
                     new Email(),
                 ],
-            ])
-           /*  ->add('token', TextType::class, [
+            ]) */
+            ->add('email', EmailType::class, [
                 'constraints' => [
                     new NotBlank(['message' => 'Veuillez remplir le champ.']),
-
+                    new Email(),
+                    new Regex([
+                        'pattern' => '/^.+@.+\.(com|tn)$/',
+                        'message' => 'L\'adresse email doit être de la forme "adresse@domaine.com" ou "adresse@domaine.tn".'
+                    ]),
                 ],
-            ]) */
+            ])
            
     
             ->add('numtel', TelType::class, [
                 'constraints' => [
                     new NotBlank(['message' => 'Veuillez remplir le champ .']),
                     new Regex([
-                        'pattern' => '/^[0-9]{10}$/',
+                        'pattern' => '/^[0-9]{11}$/',
                         'message' => 'Please enter a valid phone number',
                     ]),
                 ],
@@ -135,8 +148,7 @@ class UserType extends AbstractType
                 ],
             ])
 
-          ->add('compteEx', DateType::class)
-            ->add('tokenEx', DateTimeType::class) 
+         
             ->add('save', SubmitType::class);
     }
 

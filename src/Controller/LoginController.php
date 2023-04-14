@@ -8,7 +8,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\User;
 use Symfony\Component\HttpFoundation\Request;
-
+use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 class LoginController extends AbstractController
 {
     #[Route('/login', name: 'app_login')]
@@ -33,7 +33,7 @@ class LoginController extends AbstractController
                 $hashedPassword = hashPassword($password);
                 if ($hashedPassword === $user->getMotPass()) {
                     // Authentification réussie, rediriger vers la page de profil de l'utilisateur
-                    return $this->redirectToRoute('app_user_show1', ['id' => $user->getId()]);
+                    return $this->redirectToRoute('app_user_Profile', ['id' => $user->getId()]);
                 } else {
                     $error = "Mot de passe incorrect";
                 }

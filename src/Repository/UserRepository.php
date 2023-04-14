@@ -64,6 +64,14 @@ class UserRepository extends ServiceEntityRepository
     //        ;
     //    }
 
+    /* public function findBySearchQuery($query)
+{
+    return $this->createQueryBuilder('u')
+        ->where('u.username LIKE :query')
+        ->setParameter('query', '%'.$query.'%')
+        ->getQuery()
+        ->getResult();
+} */
     public function findBySearchQuery($query)
     {
         $qb = $this->createQueryBuilder('u')
@@ -75,5 +83,5 @@ class UserRepository extends ServiceEntityRepository
             ->setParameter('query', '%' . $query . '%');
 
         return $qb->getQuery()->getResult();
-    }
+    } 
 }

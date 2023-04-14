@@ -62,7 +62,7 @@ class ValidationType extends AbstractType
                 ],
             ])
             ->add('valide')
-            ->add('idu')
+            /* ->add('idu') */
 
             ->add('valider', SubmitType::class);
     }

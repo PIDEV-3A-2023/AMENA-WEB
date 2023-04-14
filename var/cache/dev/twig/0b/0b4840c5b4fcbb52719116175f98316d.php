@@ -79,7 +79,8 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
 
 \t\t\t\t<a href=\"index.html\" class=\"logo d-flex align-items-center\">
 \t\t\t\t\t<!-- Uncomment the line below if you also wish to use an image logo -->
-\t\t\t\t\t<!-- <img src=\"front/assets/img/logo.png\" alt=\"\"> --><h1 class=\"d-flex align-items-center\"> Amena</h1>
+\t\t\t\t\t<!-- <img src=\"front/assets/img/logo.png\" alt=\"\"> -->
+\t\t\t\t\t\t<h1 class=\"d-flex align-items-center\"> Amena</h1>
 \t\t\t\t</a>
 
 \t\t\t\t<i class=\"mobile-nav-toggle mobile-nav-show bi bi-list\"></i>
@@ -88,35 +89,31 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
 \t\t\t\t<nav id=\"navbar\" class=\"navbar\">
 \t\t\t\t\t<ul>
 \t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t<a href=\"index.html\">Home</a>
+\t\t\t\t\t\t\t<a href=\"/web/index.html\">Home</a>
 \t\t\t\t\t\t</li>
 \t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t<a href=\"about.html\">About</a>
+\t\t\t\t\t\t\t<a href=\"/web/about.html\">About</a>
 \t\t\t\t\t\t</li>
+
 \t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t<a href=\"services.html\">Services</a>
+\t\t\t\t\t\t\t<a href=\"/annonces/\">Annonces</a>
 \t\t\t\t\t\t</li>
+
 \t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t<a href=\"portfolio.html\">Portfolio</a>
-\t\t\t\t\t\t</li>
-\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t<a href=\"team.html\">Team</a>
-\t\t\t\t\t\t</li>
-\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t<a href=\"blog.html\">Blog</a>
+\t\t\t\t\t\t\t<a href=\"/web/blog\">Blog</a>
 \t\t\t\t\t\t</li>
 \t\t\t\t\t\t<li class=\"dropdown\">
 \t\t\t\t\t\t\t<a>
-\t\t\t\t\t\t\t\t<span>Dropdown</span>
+\t\t\t\t\t\t\t\t<span>Gestion</span>
 \t\t\t\t\t\t\t\t<i class=\"bi bi-chevron-down dropdown-indicator\"></i>
 \t\t\t\t\t\t\t</a>
 \t\t\t\t\t\t\t<ul>
 \t\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t\t<a>Dropdown 1</a>
+\t\t\t\t\t\t\t\t\t<a>Gestion Colis</a>
 \t\t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t\t<li class=\"dropdown\">
 \t\t\t\t\t\t\t\t\t<a>
-\t\t\t\t\t\t\t\t\t\t<span>Deep Dropdown</span>
+\t\t\t\t\t\t\t\t\t\t<span>Gestion Vehicules</span>
 \t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-chevron-down dropdown-indicator\"></i>
 \t\t\t\t\t\t\t\t\t</a>
 \t\t\t\t\t\t\t\t\t<ul>
@@ -128,14 +125,12 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
 \t\t\t\t\t\t\t\t\t</ul>
 \t\t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t\t<a>Dropdown 2</a>
+\t\t\t\t\t\t\t\t\t<a>Gestion Annonces</a>
 \t\t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t\t<a>Dropdown 3</a>
+\t\t\t\t\t\t\t\t\t<a>Gestion Gamification</a>
 \t\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t\t<a>Dropdown 4</a>
-\t\t\t\t\t\t\t\t</li>
+
 \t\t\t\t\t\t\t</ul>
 \t\t\t\t\t\t</li>
 \t\t\t\t\t\t<li>
@@ -151,9 +146,9 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
 
 
 \t\t<main id=\"main\"> ";
-        // line 119
+        // line 114
         $this->displayBlock('body', $context, $blocks);
-        // line 120
+        // line 115
         echo "\t\t\t</main>
 \t\t\t<!-- End #main -->
 \t\t\t<!-- ======= Footer ======= -->
@@ -255,7 +250,7 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
 \t\t\t\t\t</div>
 \t\t\t\t</div>
 
-\t\t\t\t<div class=\"footer-legal\" >
+\t\t\t\t<div class=\"footer-legal\">
 \t\t\t\t\t<div class=\"container\">
 \t\t\t\t\t\t<div class=\"copyright\">
 \t\t\t\t\t\t\t&copy; Copyright
@@ -279,9 +274,9 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
 
 \t\t\t<div id=\"preloader\"></div>
 \t\t\t";
-        // line 244
+        // line 239
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 258
+        // line 253
         echo "\t\t</body>
 \t</html>
 ";
@@ -328,9 +323,9 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
         // line 30
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front/assets/vendor/swiper/swiper-bundle.min.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
+\t\t\t<link href=\"front/assets/vendor/remixicon/remixicon.css\" rel=\"stylesheet\">
 \t\t\t<link
-\t\t\thref=\"front/assets/vendor/remixicon/remixicon.css\" rel=\"stylesheet\">
-
+\t\t\thref=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css\" rel=\"stylesheet\">
 \t\t\t<!-- Template Main CSS File -->
 \t\t\t<link href=\"";
         // line 35
@@ -346,7 +341,7 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
 
     }
 
-    // line 119
+    // line 114
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -364,7 +359,7 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
 
     }
 
-    // line 244
+    // line 239
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -374,39 +369,39 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 245
+        // line 240
         echo "\t\t\t\t";
         echo twig_escape_filter($this->env, $this->env->getFunction('encore_entry_script_tags')->getCallable()("app"), "html", null, true);
         echo "
 \t\t\t\t<!-- Vendor JS Files -->
 \t\t\t\t<script src=\"";
-        // line 247
+        // line 242
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"), "html", null, true);
         echo "\"></script>
 \t\t\t\t<script src=\"";
-        // line 248
+        // line 243
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front/assets/vendor/aos/aos.js"), "html", null, true);
         echo "\"></script>
 \t\t\t\t<script src=\"";
-        // line 249
+        // line 244
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front/assets/vendor/glightbox/js/glightbox.min.js"), "html", null, true);
         echo "\"></script>
 \t\t\t\t<script src=\"";
-        // line 250
+        // line 245
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front/assets/vendor/swiper/swiper-bundle.min.js"), "html", null, true);
         echo "\"></script>
 \t\t\t\t<script src=\"";
-        // line 251
+        // line 246
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front/assets/vendor/isotope-layout/isotope.pkgd.min.js"), "html", null, true);
         echo "\"></script>
 \t\t\t\t<script src=\"";
-        // line 252
+        // line 247
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front/assets/vendor/php-email-form/validate.js"), "html", null, true);
         echo "\"></script>
 
 \t\t\t\t<!-- Template Main JS File -->
 \t\t\t\t<script src=\"";
-        // line 255
+        // line 250
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front/assets/js/main.js"), "html", null, true);
         echo "\"></script>
 
@@ -426,7 +421,7 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
 
     public function getDebugInfo()
     {
-        return array (  410 => 255,  404 => 252,  400 => 251,  396 => 250,  392 => 249,  388 => 248,  384 => 247,  378 => 245,  368 => 244,  350 => 119,  337 => 35,  329 => 30,  325 => 29,  321 => 28,  317 => 27,  313 => 26,  307 => 24,  297 => 23,  285 => 258,  283 => 244,  157 => 120,  155 => 119,  72 => 38,  70 => 23,  46 => 1,);
+        return array (  405 => 250,  399 => 247,  395 => 246,  391 => 245,  387 => 244,  383 => 243,  379 => 242,  373 => 240,  363 => 239,  345 => 114,  332 => 35,  324 => 30,  320 => 29,  316 => 28,  312 => 27,  308 => 26,  302 => 24,  292 => 23,  280 => 253,  278 => 239,  152 => 115,  150 => 114,  72 => 38,  70 => 23,  46 => 1,);
     }
 
     public function getSourceContext()
@@ -461,9 +456,9 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
 \t\t\t<link href=\"{{asset('front/assets/vendor/aos/aos.css')}}\" rel=\"stylesheet\">
 \t\t\t<link href=\"{{asset('front/assets/vendor/glightbox/css/glightbox.min.css')}}\" rel=\"stylesheet\">
 \t\t\t<link href=\"{{asset('front/assets/vendor/swiper/swiper-bundle.min.css')}}\" rel=\"stylesheet\">
+\t\t\t<link href=\"front/assets/vendor/remixicon/remixicon.css\" rel=\"stylesheet\">
 \t\t\t<link
-\t\t\thref=\"front/assets/vendor/remixicon/remixicon.css\" rel=\"stylesheet\">
-
+\t\t\thref=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css\" rel=\"stylesheet\">
 \t\t\t<!-- Template Main CSS File -->
 \t\t\t<link href=\"{{asset('front/assets/css/main.css')}}\" rel=\"stylesheet\">
 
@@ -478,7 +473,8 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
 
 \t\t\t\t<a href=\"index.html\" class=\"logo d-flex align-items-center\">
 \t\t\t\t\t<!-- Uncomment the line below if you also wish to use an image logo -->
-\t\t\t\t\t<!-- <img src=\"front/assets/img/logo.png\" alt=\"\"> --><h1 class=\"d-flex align-items-center\"> Amena</h1>
+\t\t\t\t\t<!-- <img src=\"front/assets/img/logo.png\" alt=\"\"> -->
+\t\t\t\t\t\t<h1 class=\"d-flex align-items-center\"> Amena</h1>
 \t\t\t\t</a>
 
 \t\t\t\t<i class=\"mobile-nav-toggle mobile-nav-show bi bi-list\"></i>
@@ -487,35 +483,31 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
 \t\t\t\t<nav id=\"navbar\" class=\"navbar\">
 \t\t\t\t\t<ul>
 \t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t<a href=\"index.html\">Home</a>
+\t\t\t\t\t\t\t<a href=\"/web/index.html\">Home</a>
 \t\t\t\t\t\t</li>
 \t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t<a href=\"about.html\">About</a>
+\t\t\t\t\t\t\t<a href=\"/web/about.html\">About</a>
 \t\t\t\t\t\t</li>
+
 \t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t<a href=\"services.html\">Services</a>
+\t\t\t\t\t\t\t<a href=\"/annonces/\">Annonces</a>
 \t\t\t\t\t\t</li>
+
 \t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t<a href=\"portfolio.html\">Portfolio</a>
-\t\t\t\t\t\t</li>
-\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t<a href=\"team.html\">Team</a>
-\t\t\t\t\t\t</li>
-\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t<a href=\"blog.html\">Blog</a>
+\t\t\t\t\t\t\t<a href=\"/web/blog\">Blog</a>
 \t\t\t\t\t\t</li>
 \t\t\t\t\t\t<li class=\"dropdown\">
 \t\t\t\t\t\t\t<a>
-\t\t\t\t\t\t\t\t<span>Dropdown</span>
+\t\t\t\t\t\t\t\t<span>Gestion</span>
 \t\t\t\t\t\t\t\t<i class=\"bi bi-chevron-down dropdown-indicator\"></i>
 \t\t\t\t\t\t\t</a>
 \t\t\t\t\t\t\t<ul>
 \t\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t\t<a>Dropdown 1</a>
+\t\t\t\t\t\t\t\t\t<a>Gestion Colis</a>
 \t\t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t\t<li class=\"dropdown\">
 \t\t\t\t\t\t\t\t\t<a>
-\t\t\t\t\t\t\t\t\t\t<span>Deep Dropdown</span>
+\t\t\t\t\t\t\t\t\t\t<span>Gestion Vehicules</span>
 \t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-chevron-down dropdown-indicator\"></i>
 \t\t\t\t\t\t\t\t\t</a>
 \t\t\t\t\t\t\t\t\t<ul>
@@ -527,14 +519,12 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
 \t\t\t\t\t\t\t\t\t</ul>
 \t\t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t\t<a>Dropdown 2</a>
+\t\t\t\t\t\t\t\t\t<a>Gestion Annonces</a>
 \t\t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t\t<a>Dropdown 3</a>
+\t\t\t\t\t\t\t\t\t<a>Gestion Gamification</a>
 \t\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t\t<a>Dropdown 4</a>
-\t\t\t\t\t\t\t\t</li>
+
 \t\t\t\t\t\t\t</ul>
 \t\t\t\t\t\t</li>
 \t\t\t\t\t\t<li>
@@ -651,7 +641,7 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
 \t\t\t\t\t</div>
 \t\t\t\t</div>
 
-\t\t\t\t<div class=\"footer-legal\" >
+\t\t\t\t<div class=\"footer-legal\">
 \t\t\t\t\t<div class=\"container\">
 \t\t\t\t\t\t<div class=\"copyright\">
 \t\t\t\t\t\t\t&copy; Copyright

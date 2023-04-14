@@ -2,9 +2,12 @@
 
 namespace App\Controller;
 
+use App\Entity\User;
 use App\Entity\Message;
 use App\Form\MessageType;
 use App\Repository\MessageRepository;
+use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Bridge\Doctrine\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -20,15 +23,30 @@ class MessageController extends AbstractController
             'messages' => $messageRepository->findAll(),
         ]);
     }
-
-    #[Route('/new', name: 'app_message_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, MessageRepository $messageRepository): Response
+    #[Route('/{id}/mm', name: 'app_message_mm', methods: ['GET', 'POST'])]
+    public function mm(MessageRepository $messageRepository, EntityManagerInterface $entityManager, $id): Response
     {
+        $user = $entityManager->getRepository(User::class)->find($id);
+        $messages = $messageRepository->findBy(['senderId' => $user->getId()]);
+
+    
+        return $this->render('message/mm.html.twig', [
+            'messages' => $messages,
+        ]);
+    }
+
+    #[Route('/{id}/new', name: 'app_message_new', methods: ['GET', 'POST'])]
+    public function new(Request $request, MessageRepository $messageRepository, EntityManagerInterface $entityManager, $id): Response
+    {
+        $user = $entityManager->getRepository(User::class)->find($id);
+
         $message = new Message();
+       
         $form = $this->createForm(MessageType::class, $message);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $message->setSenderId($user);
             $messageRepository->save($message, true);
 
             return $this->redirectToRoute('app_message_index', [], Response::HTTP_SEE_OTHER);
@@ -69,10 +87,23 @@ class MessageController extends AbstractController
     #[Route('/{id}', name: 'app_message_delete', methods: ['POST'])]
     public function delete(Request $request, Message $message, MessageRepository $messageRepository): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$message->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $message->getId(), $request->request->get('_token'))) {
             $messageRepository->remove($message, true);
         }
 
         return $this->redirectToRoute('app_message_index', [], Response::HTTP_SEE_OTHER);
     }
+
+
+    #[Route('/user/{id}/messages', name: 'app_user_messages', methods: ['GET'])]
+    public function userMessages(User $user, MessageRepository $messageRepository): Response
+    {
+        $messages = $messageRepository->findBy(['receiver' => $user]);
+
+        return $this->render('message/user_messages.html.twig', [
+            'messages' => $messages,
+            'user' => $user,
+        ]);
+    }
+
 }

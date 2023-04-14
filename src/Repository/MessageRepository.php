@@ -64,25 +64,12 @@ class MessageRepository extends ServiceEntityRepository
     //        ;
     //    }
 
-
-    /* public function getMessagesSentBySender(int $senderId): ArrayCollection
-    {
-        $messagesSent = new ArrayCollection();
-
-        foreach ($this->messagesSent as $message) {
-            if ($message->getSenderId() === $senderId) {
-                $messagesSent->add($message);
-            }
-        }
-
-        return $messagesSent;
-    }
-    public function getMessagesBySenderId($senderId)
+    public function findMessagesBySenderId(int $senderId): array
     {
         return $this->createQueryBuilder('m')
-            ->where('m.senderId = :senderId')
+            ->andWhere('m.senderId = :senderId')
             ->setParameter('senderId', $senderId)
             ->getQuery()
             ->getResult();
-    } */
+    }
 }
