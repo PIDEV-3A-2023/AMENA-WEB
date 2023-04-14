@@ -189,7 +189,7 @@ class __TwigTemplate_559b0ac0df39479558519b44f6781b83 extends Template
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"";
                 // line 80
                 echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_message_new", ["id" => twig_get_attribute($this->env, $this->source, $context["u"], "id", [], "any", false, false, false, 80)]), "html", null, true);
-                echo "\" class=\"btn btn-outline-primary\">Message</a>
+                echo "\" class=\"btn btn-outline-primary\">Message  <i class=\"fa fa-pencil\"></i></a>
 
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"";
                 // line 82
@@ -357,7 +357,7 @@ class __TwigTemplate_559b0ac0df39479558519b44f6781b83 extends Template
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"{{ path('app_user_show', {'id': u.id}) }}\" class=\"btn btn-primary tooltips\" data-placement=\"top\" data-toggle=\"tooltip\" data-original-title=\"Edit\">
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-pencil\"></i>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"{{ path('app_message_new', {'id': u.id} )}}\" class=\"btn btn-outline-primary\">Message</a>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"{{ path('app_message_new', {'id': u.id} )}}\" class=\"btn btn-outline-primary\">Message  <i class=\"fa fa-pencil\"></i></a>
 
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"{{ path('app_user_edit', {'id': u.id}) }}\" class=\"btn btn-secondary tooltips\" data-placement=\"top\" data-toggle=\"tooltip\" data-original-title=\"Delete\">
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-times\"></i>
