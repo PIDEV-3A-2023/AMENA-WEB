@@ -23,11 +23,11 @@ class UserController extends AbstractController
     {
         
         $users = $userRepository->findBy([], ['id' => 'DESC']);
-
+/* 
         $query = $request->query->get('q');
 
         $users = $registry->getRepository(User::class)
-            ->findBySearchQuery($query);
+            ->findBySearchQuery($query); */
         return $this->render('user/index.html.twig', [
             'users' => $users,
         ]);

@@ -16,7 +16,7 @@
 				
 				      </div>
 				    </div><!-- End Breadcrumbs -->#}
-	<h1>User index</h1>
+
 	<form method="get" action="{{ path('app_user_index') }}">
 		<div class="input-group mb-3">
 			<input type="text" name="q" class="form-control" placeholder="Search users...">
@@ -56,7 +56,7 @@
 														<div class="card m-b-10" style="width: 450px; height: 500px;">
 															<div class="card-body row">
 																<div class="col-6">
-																	<a href=""><img src="{{u.image}}" alt="" class="img-fluid rounded-circle w-40" height="75" width="75"></a>
+																	<a href=""><img src="{{u.image}}" alt="" class="img-fluid rounded-circle w-40"  width="180" height="180"></a>
 																</div>
 																<div class="col-6 card-title align-self-center mb-0">
 																	<h5>{{ u.nom}}</h5>
@@ -73,16 +73,20 @@
 																	{{ u.numtel }}</li>
 															</ul>
 															<div class="card-body">
-																<div class="float-right btn-group btn-group-sm" style="width: 75px; height: 35px;">
-																	<a href="{{ path('app_user_show', {'id': u.id}) }}" class="btn btn-primary tooltips" data-placement="top" data-toggle="tooltip" data-original-title="Edit">
+																<div class="float-right btn-group btn-group-sm" >
+																	<a href="{{ path('app_user_Profile', {'id': u.id}) }}"class="btn btn-outline-primary">Profil <i class="fa fa-pencil">
 																		<i class="fa fa-pencil"></i>
 																	</a>
-																	<a href="{{ path('app_message_new', {'id': u.id} )}}" class="btn btn-outline-primary">Message  <i class="fa fa-pencil"></i></a>
 
-																	<a href="{{ path('app_user_edit', {'id': u.id}) }}" class="btn btn-secondary tooltips" data-placement="top" data-toggle="tooltip" data-original-title="Delete">
-																		<i class="fa fa-times"></i>
+																	<a href="{{ path('app_user_edit', {'id': u.id}) }}" class="btn btn-outline-primary">Edit <i class="fa fa-pencil">
+																		<i class="fa fa-pencil"></i>
+																	</a>
+																	<a href="{{ path('app_user_delete', {'id': u.id}) }}" class="btn btn-outline-primary">Delete <i class="fa fa-pencil">
+																		<i class="fa fa-pencil"></i>
 																	</a>
 																</div>
+																	<a href="{{ path('app_message_new', {'id': u.id} )}}"class="btn btn-outline-primary">Message  <i class="fa fa-pencil" ></i></a>
+
 																<ul class="social-links list-inline mb-0">
 																	<li class="list-inline-item">
 																		<a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="Facebook">

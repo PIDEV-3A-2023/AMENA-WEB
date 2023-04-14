@@ -88,7 +88,7 @@ class __TwigTemplate_559b0ac0df39479558519b44f6781b83 extends Template
         // line 7
         echo "\t";
         // line 19
-        echo "\t<h1>User index</h1>
+        echo "
 \t<form method=\"get\" action=\"";
         // line 20
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_index");
@@ -150,7 +150,7 @@ class __TwigTemplate_559b0ac0df39479558519b44f6781b83 extends Template
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"\"><img src=\"";
                 // line 59
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["u"], "image", [], "any", false, false, false, 59), "html", null, true);
-                echo "\" alt=\"\" class=\"img-fluid rounded-circle w-40\" height=\"75\" width=\"75\"></a>
+                echo "\" alt=\"\" class=\"img-fluid rounded-circle w-40\"  width=\"180\" height=\"180\"></a>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"col-6 card-title align-self-center mb-0\">
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<h5>";
@@ -179,25 +179,32 @@ class __TwigTemplate_559b0ac0df39479558519b44f6781b83 extends Template
                 echo "</li>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</ul>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"card-body\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"float-right btn-group btn-group-sm\" style=\"width: 75px; height: 35px;\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"float-right btn-group btn-group-sm\" >
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"";
                 // line 77
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_show", ["id" => twig_get_attribute($this->env, $this->source, $context["u"], "id", [], "any", false, false, false, 77)]), "html", null, true);
-                echo "\" class=\"btn btn-primary tooltips\" data-placement=\"top\" data-toggle=\"tooltip\" data-original-title=\"Edit\">
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_Profile", ["id" => twig_get_attribute($this->env, $this->source, $context["u"], "id", [], "any", false, false, false, 77)]), "html", null, true);
+                echo "\"class=\"btn btn-outline-primary\">Profil <i class=\"fa fa-pencil\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-pencil\"></i>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</a>
+
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"";
+                // line 81
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["u"], "id", [], "any", false, false, false, 81)]), "html", null, true);
+                echo "\" class=\"btn btn-outline-primary\">Edit <i class=\"fa fa-pencil\">
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-pencil\"></i>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</a>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"";
-                // line 80
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_message_new", ["id" => twig_get_attribute($this->env, $this->source, $context["u"], "id", [], "any", false, false, false, 80)]), "html", null, true);
-                echo "\" class=\"btn btn-outline-primary\">Message  <i class=\"fa fa-pencil\"></i></a>
-
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"";
-                // line 82
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["u"], "id", [], "any", false, false, false, 82)]), "html", null, true);
-                echo "\" class=\"btn btn-secondary tooltips\" data-placement=\"top\" data-toggle=\"tooltip\" data-original-title=\"Delete\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-times\"></i>
+                // line 84
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_delete", ["id" => twig_get_attribute($this->env, $this->source, $context["u"], "id", [], "any", false, false, false, 84)]), "html", null, true);
+                echo "\" class=\"btn btn-outline-primary\">Delete <i class=\"fa fa-pencil\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-pencil\"></i>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</a>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"";
+                // line 88
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_message_new", ["id" => twig_get_attribute($this->env, $this->source, $context["u"], "id", [], "any", false, false, false, 88)]), "html", null, true);
+                echo "\"class=\"btn btn-outline-primary\">Message  <i class=\"fa fa-pencil\" ></i></a>
+
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<ul class=\"social-links list-inline mb-0\">
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"list-inline-item\">
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a title=\"\" data-placement=\"top\" data-toggle=\"tooltip\" class=\"tooltips\" href=\"\" data-original-title=\"Facebook\">
@@ -224,13 +231,13 @@ class __TwigTemplate_559b0ac0df39479558519b44f6781b83 extends Template
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['u'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 108
+            // line 112
             echo "\t\t\t\t\t\t\t\t\t\t</tr>
 \t\t\t\t\t\t\t\t\t";
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 110
+            // line 114
             echo "\t\t\t\t\t\t\t\t\t\t<tr>
 \t\t\t\t\t\t\t\t\t\t\t<td colspan=\"3\">no records found</td>
 \t\t\t\t\t\t\t\t\t\t</tr>
@@ -239,7 +246,7 @@ class __TwigTemplate_559b0ac0df39479558519b44f6781b83 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['user'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 114
+        // line 118
         echo "\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t</tbody>
 
@@ -273,7 +280,7 @@ class __TwigTemplate_559b0ac0df39479558519b44f6781b83 extends Template
 
     public function getDebugInfo()
     {
-        return array (  243 => 114,  234 => 110,  228 => 108,  196 => 82,  191 => 80,  185 => 77,  178 => 73,  171 => 69,  162 => 63,  158 => 62,  152 => 59,  143 => 54,  139 => 53,  136 => 52,  131 => 51,  107 => 30,  94 => 20,  91 => 19,  89 => 7,  79 => 6,  59 => 3,  36 => 1,);
+        return array (  250 => 118,  241 => 114,  235 => 112,  205 => 88,  198 => 84,  192 => 81,  185 => 77,  178 => 73,  171 => 69,  162 => 63,  158 => 62,  152 => 59,  143 => 54,  139 => 53,  136 => 52,  131 => 51,  107 => 30,  94 => 20,  91 => 19,  89 => 7,  79 => 6,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -296,7 +303,7 @@ class __TwigTemplate_559b0ac0df39479558519b44f6781b83 extends Template
 \t\t\t\t
 \t\t\t\t      </div>
 \t\t\t\t    </div><!-- End Breadcrumbs -->#}
-\t<h1>User index</h1>
+
 \t<form method=\"get\" action=\"{{ path('app_user_index') }}\">
 \t\t<div class=\"input-group mb-3\">
 \t\t\t<input type=\"text\" name=\"q\" class=\"form-control\" placeholder=\"Search users...\">
@@ -336,7 +343,7 @@ class __TwigTemplate_559b0ac0df39479558519b44f6781b83 extends Template
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"card m-b-10\" style=\"width: 450px; height: 500px;\">
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"card-body row\">
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"col-6\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"\"><img src=\"{{u.image}}\" alt=\"\" class=\"img-fluid rounded-circle w-40\" height=\"75\" width=\"75\"></a>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"\"><img src=\"{{u.image}}\" alt=\"\" class=\"img-fluid rounded-circle w-40\"  width=\"180\" height=\"180\"></a>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"col-6 card-title align-self-center mb-0\">
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<h5>{{ u.nom}}</h5>
@@ -353,16 +360,20 @@ class __TwigTemplate_559b0ac0df39479558519b44f6781b83 extends Template
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t{{ u.numtel }}</li>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</ul>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"card-body\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"float-right btn-group btn-group-sm\" style=\"width: 75px; height: 35px;\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"{{ path('app_user_show', {'id': u.id}) }}\" class=\"btn btn-primary tooltips\" data-placement=\"top\" data-toggle=\"tooltip\" data-original-title=\"Edit\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"float-right btn-group btn-group-sm\" >
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"{{ path('app_user_Profile', {'id': u.id}) }}\"class=\"btn btn-outline-primary\">Profil <i class=\"fa fa-pencil\">
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-pencil\"></i>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"{{ path('app_message_new', {'id': u.id} )}}\" class=\"btn btn-outline-primary\">Message  <i class=\"fa fa-pencil\"></i></a>
 
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"{{ path('app_user_edit', {'id': u.id}) }}\" class=\"btn btn-secondary tooltips\" data-placement=\"top\" data-toggle=\"tooltip\" data-original-title=\"Delete\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-times\"></i>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"{{ path('app_user_edit', {'id': u.id}) }}\" class=\"btn btn-outline-primary\">Edit <i class=\"fa fa-pencil\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-pencil\"></i>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"{{ path('app_user_delete', {'id': u.id}) }}\" class=\"btn btn-outline-primary\">Delete <i class=\"fa fa-pencil\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-pencil\"></i>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</a>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"{{ path('app_message_new', {'id': u.id} )}}\"class=\"btn btn-outline-primary\">Message  <i class=\"fa fa-pencil\" ></i></a>
+
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<ul class=\"social-links list-inline mb-0\">
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"list-inline-item\">
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a title=\"\" data-placement=\"top\" data-toggle=\"tooltip\" class=\"tooltips\" href=\"\" data-original-title=\"Facebook\">

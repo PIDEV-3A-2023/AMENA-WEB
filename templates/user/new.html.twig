@@ -19,11 +19,7 @@
 {% endblock %}
 
 {% block body %}
-	{% if form_errors(form) %}
-		<div class="alert alert-danger">
-			{{ form_errors(form) }}
-		</div>
-	{% endif %}
+	
 	{{ form_start(form,{'attr': {'novalidate': 'novalidate'}}
 	) }}
 	<!-- ======= Breadcrumbs ======= -->
@@ -42,17 +38,11 @@
 	</div>
 	<!-- End Breadcrumbs -->
 
-	{% if form_errors(form) %}
-		<div class="alert alert-danger">
-			{{ form_errors(form) }}
-		</div>
-	{% endif %}
-	{{ form_start(form,{'attr': {'novalidate': 'novalidate'}}
-	) }}
-	<section class="contact-form-area section-bg  pt-115 pb-120 fix" src="{{ asset('front/assets/img/baba.jpg') }}" >
-	<img src="{{ asset('front/assets/img/baba.jpg') }}" class="background--page" alt="...">
+	
+	<section class="contact-form-area section-bg  pt-115 pb-120 fix" src="{{ asset('front/assets/img/babva.jpg') }}" >
+	 <img src="{{ asset('front/assets/img/aret.png') }}" class="background--page" alt="..."width="110%"Height="110%">
 
-		<div class="container" style="margin-top:-45%;margin-left:25%;">
+		<div class="container" style="margin-top:-44%;margin-left:25%;">
 			<div
 				class="row justify-content-end">
 				<!-- Contact wrapper -->

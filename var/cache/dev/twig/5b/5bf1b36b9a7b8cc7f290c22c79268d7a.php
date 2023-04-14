@@ -95,9 +95,20 @@ class __TwigTemplate_42a4a492c2c8c938b3db714109d79e7a extends Template
             </a>
 \t\t\t\t\t</li>
 \t\t\t\t\t<li class=\"sidebar-item\">
-\t\t\t\t\t\t";
-        // line 53
-        echo "              <i class=\"align-middle\" data-feather=\"sliders\"></i> <span class=\"align-middle\">Dashboard vehicule</span>
+\t\t\t\t\t\t<a class=\"sidebar-link\" href=\"";
+        // line 52
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getUrl("app_validation_index");
+        echo "\">
+              <i class=\"align-middle\" data-feather=\"sliders\"></i> <span class=\"align-middle\">Dashboard validation</span>
+            </a>
+\t\t\t</a>
+\t\t\t\t\t</li>
+\t\t\t\t\t<li class=\"sidebar-item\">
+\t\t\t\t\t\t<a class=\"sidebar-link\" href=\"";
+        // line 58
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getUrl("app_message_index");
+        echo "\">
+              <i class=\"align-middle\" data-feather=\"sliders\"></i> <span class=\"align-middle\">Dashboard message</span>
             </a>
 \t\t\t\t\t</li>
 
@@ -203,7 +214,7 @@ class __TwigTemplate_42a4a492c2c8c938b3db714109d79e7a extends Template
 \t\t\t\t\t\t\t\t\t\t<div class=\"row g-0 align-items-center\">
 \t\t\t\t\t\t\t\t\t\t\t<div class=\"col-2\">
 \t\t\t\t\t\t\t\t\t\t\t\t<img src=\"";
-        // line 158
+        // line 164
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("back/assets/img/avatars/avatar-5.jpg"), "html", null, true);
         echo "\" class=\"avatar img-fluid rounded-circle\" alt=\"Vanessa Tucker\">
 \t\t\t\t\t\t\t\t\t\t\t</div>
@@ -218,7 +229,7 @@ class __TwigTemplate_42a4a492c2c8c938b3db714109d79e7a extends Template
 \t\t\t\t\t\t\t\t\t\t<div class=\"row g-0 align-items-center\">
 \t\t\t\t\t\t\t\t\t\t\t<div class=\"col-2\">
 \t\t\t\t\t\t\t\t\t\t\t\t<img src=\"";
-        // line 170
+        // line 176
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("back/assets/img/avatars/avatar-2.jpg"), "html", null, true);
         echo "\" class=\"avatar img-fluid rounded-circle\" alt=\"William Harris\">
 \t\t\t\t\t\t\t\t\t\t\t</div>
@@ -233,7 +244,7 @@ class __TwigTemplate_42a4a492c2c8c938b3db714109d79e7a extends Template
 \t\t\t\t\t\t\t\t\t\t<div class=\"row g-0 align-items-center\">
 \t\t\t\t\t\t\t\t\t\t\t<div class=\"col-2\">
 \t\t\t\t\t\t\t\t\t\t\t\t<img src=\"";
-        // line 182
+        // line 188
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("back/assets/img/avatars/avatar-4.jpg"), "html", null, true);
         echo "\" class=\"avatar img-fluid rounded-circle\" alt=\"Christina Mason\">
 \t\t\t\t\t\t\t\t\t\t\t</div>
@@ -248,7 +259,7 @@ class __TwigTemplate_42a4a492c2c8c938b3db714109d79e7a extends Template
 \t\t\t\t\t\t\t\t\t\t<div class=\"row g-0 align-items-center\">
 \t\t\t\t\t\t\t\t\t\t\t<div class=\"col-2\">
 \t\t\t\t\t\t\t\t\t\t\t\t<img src=\"";
-        // line 194
+        // line 200
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("back/assets/img/avatars/avatar-3.jpg"), "html", null, true);
         echo "\" class=\"avatar img-fluid rounded-circle\" alt=\"Sharon Lessman\">
 \t\t\t\t\t\t\t\t\t\t\t</div>
@@ -272,7 +283,7 @@ class __TwigTemplate_42a4a492c2c8c938b3db714109d79e7a extends Template
 
 \t\t\t\t\t\t\t<a class=\"nav-link dropdown-toggle d-none d-sm-inline-block\" href=\"#\" data-bs-toggle=\"dropdown\">
                 <img src=\"";
-        // line 215
+        // line 221
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("back/assets/img/avatars/avatar.jpg"), "html", null, true);
         echo "\" class=\"avatar img-fluid rounded me-1\" alt=\"Charles Hall\" /> <span class=\"text-dark\">Charles Hall</span>
               </a>
@@ -292,9 +303,9 @@ class __TwigTemplate_42a4a492c2c8c938b3db714109d79e7a extends Template
 
     <main class=\"content\">
 \t\t";
-        // line 232
+        // line 238
         $this->displayBlock('body', $context, $blocks);
-        // line 236
+        // line 242
         echo "</main>
 
 \t\t\t<footer class=\"footer\">
@@ -305,9 +316,9 @@ class __TwigTemplate_42a4a492c2c8c938b3db714109d79e7a extends Template
 
 
         ";
-        // line 245
+        // line 251
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 250
+        // line 256
         echo "\t</body>
 
 </html>";
@@ -350,7 +361,7 @@ class __TwigTemplate_42a4a492c2c8c938b3db714109d79e7a extends Template
 
     }
 
-    // line 232
+    // line 238
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -360,7 +371,7 @@ class __TwigTemplate_42a4a492c2c8c938b3db714109d79e7a extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 233
+        // line 239
         echo "        
         
         ";
@@ -372,7 +383,7 @@ class __TwigTemplate_42a4a492c2c8c938b3db714109d79e7a extends Template
 
     }
 
-    // line 245
+    // line 251
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -382,14 +393,14 @@ class __TwigTemplate_42a4a492c2c8c938b3db714109d79e7a extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 246
+        // line 252
         echo "\t\t\t
 \t\t\t";
-        // line 247
+        // line 253
         echo twig_escape_filter($this->env, $this->env->getFunction('encore_entry_script_tags')->getCallable()("app"), "html", null, true);
         echo "
             <script src=\"";
-        // line 248
+        // line 254
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("back/assets/js/app.js"), "html", null, true);
         echo "\"></script>
 \t\t";
@@ -413,7 +424,7 @@ class __TwigTemplate_42a4a492c2c8c938b3db714109d79e7a extends Template
 
     public function getDebugInfo()
     {
-        return array (  393 => 248,  389 => 247,  386 => 246,  376 => 245,  364 => 233,  354 => 232,  340 => 22,  336 => 21,  333 => 20,  323 => 19,  311 => 250,  309 => 245,  298 => 236,  296 => 232,  276 => 215,  252 => 194,  237 => 182,  222 => 170,  207 => 158,  100 => 53,  92 => 47,  86 => 43,  68 => 26,  66 => 19,  46 => 1,);
+        return array (  404 => 254,  400 => 253,  397 => 252,  387 => 251,  375 => 239,  365 => 238,  351 => 22,  347 => 21,  344 => 20,  334 => 19,  322 => 256,  320 => 251,  309 => 242,  307 => 238,  287 => 221,  263 => 200,  248 => 188,  233 => 176,  218 => 164,  109 => 58,  100 => 52,  92 => 47,  86 => 43,  68 => 26,  66 => 19,  46 => 1,);
     }
 
     public function getSourceContext()
@@ -469,8 +480,14 @@ class __TwigTemplate_42a4a492c2c8c938b3db714109d79e7a extends Template
             </a>
 \t\t\t\t\t</li>
 \t\t\t\t\t<li class=\"sidebar-item\">
-\t\t\t\t\t\t{# <a class=\"sidebar-link\" href=\"{{ url('app_vehicule_index') }}\"> #}
-              <i class=\"align-middle\" data-feather=\"sliders\"></i> <span class=\"align-middle\">Dashboard vehicule</span>
+\t\t\t\t\t\t<a class=\"sidebar-link\" href=\"{{ url('app_validation_index') }}\">
+              <i class=\"align-middle\" data-feather=\"sliders\"></i> <span class=\"align-middle\">Dashboard validation</span>
+            </a>
+\t\t\t</a>
+\t\t\t\t\t</li>
+\t\t\t\t\t<li class=\"sidebar-item\">
+\t\t\t\t\t\t<a class=\"sidebar-link\" href=\"{{ url('app_message_index') }}\">
+              <i class=\"align-middle\" data-feather=\"sliders\"></i> <span class=\"align-middle\">Dashboard message</span>
             </a>
 \t\t\t\t\t</li>
 

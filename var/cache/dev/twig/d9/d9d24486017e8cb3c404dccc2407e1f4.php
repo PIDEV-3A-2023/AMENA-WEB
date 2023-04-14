@@ -47,10 +47,7 @@ class __TwigTemplate_8bc654c3de071df4d6765284f8e118d3 extends Template
         // line 3
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 3, $this->source); })()), 'form_start', ["attr" => ["novalidate" => "novalidate"]]);
         echo "
-";
-        // line 4
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 4, $this->source); })()), 'form', ["attr" => ["novalidate" => "novalidate"]]);
-        echo "
+
 
 </div>";
         
@@ -73,7 +70,7 @@ class __TwigTemplate_8bc654c3de071df4d6765284f8e118d3 extends Template
 
     public function getDebugInfo()
     {
-        return array (  52 => 4,  48 => 3,  45 => 2,  43 => 1,);
+        return array (  48 => 3,  45 => 2,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -81,7 +78,7 @@ class __TwigTemplate_8bc654c3de071df4d6765284f8e118d3 extends Template
         return new Source("{% form_theme form 'bootstrap_5_layout.html.twig' %}
 <div class=\"offset-3 col-3\">
 {{ form_start(form,{'attr': {'novalidate': 'novalidate'}} ) }}
-{{ form(form,{'attr': {'novalidate': 'novalidate'}} ) }}
+
 
 </div>", "user/_form.html.twig", "C:\\Users\\aymen\\Desktop\\digidreamers\\digidreamers\\templates\\user\\_form.html.twig");
     }

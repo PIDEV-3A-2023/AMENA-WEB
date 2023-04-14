@@ -24,78 +24,62 @@ class User
 
     #[ORM\Column(length: 255)]
  
-    #[Assert\Length(min: 2, minMessage: "Le nom doit contenir au moins {{ limit }} caractères")]
+    #[Assert\NotBlank(message: "Le nom ne doit pas être vide")]
+    #[Assert\Length(min: 2, max: 255, minMessage: "Le nom doit contenir au moins {{ limit }} caractères")]
     private ?string $nom = null;
 
-
-    #[ORM\Column(length: 255,nullable: true)]
-    #[Assert\NotBlank(message: "Prénom obligatoire")]
-    #[Assert\Length(min: 2, minMessage: "Le prénom doit contenir au moins {{ limit }} caractères")]
+    #[Assert\NotBlank(message: "Le prénom ne doit pas être vide")]
+    #[Assert\Length(min: 2, max: 255, minMessage: "Le prénom doit contenir au moins {{ limit }} caractères")]
     private ?string $prenom = null;
 
-    #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message: "L'adresse ne doit pas être vide")]
+    #[Assert\Length(min: 2, max: 255, minMessage: "L'adresse doit contenir au moins {{ limit }} caractères")]
     private ?string $adress = null;
 
-
-    #[ORM\Column(length: 255)]
-    #[Assert\NotBlank(message: "CIN obligatoire")]
-    #[Assert\Regex(pattern: "/^\d{8}$/", message: "CIN invalide")]
+    #[Assert\NotBlank(message: "Le CIN ne doit pas être vide")]
+    #[Assert\Regex(pattern: "/^\d{8}$/", message: "Le CIN doit contenir exactement 8 chiffres")]
     private ?string $cin = null;
 
-
-    #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true, name: "dateNaissance")]
+    #[Assert\NotBlank(message: "La date de naissance ne doit pas être vide")]
     private ?\DateTimeInterface $dateNaissance = null;
 
-    #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true, name: "dateCreationC")]
+  /*   #[Assert\NotBlank(message: "La date de création ne doit pas être vide")] */
     private ?\DateTimeInterface $dateCreationC = null;
 
-    #[ORM\Column]
+    /* #[Assert\NotNull(message: "Le statut ne doit pas être vide")] */
     private ?bool $status = null;
 
-    #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message: "Le rôle ne doit pas être vide")]
+    #[Assert\Length(min: 2, max: 255, minMessage: "Le rôle doit contenir au moins {{ limit }} caractères")]
     private ?string $role = null;
 
+    /* #[Assert\NotBlank(message: "Le mot de passe ne doit pas être vide")]
+    #[Assert\Length(min: 8, max: 255, minMessage: "Le mot de passe doit contenir au moins {{ limit }} caractères")]
+    */ private ?string $motPass = null;
 
-    #[ORM\Column(length: 255, name: "motPass", nullable: true)]
-
-  
-
-    private ?string $motPass = null;
-    #[ORM\Column(length: 255)]
-    #[Assert\NotBlank(message: "Adresse e-mail obligatoire")]
-    #[Assert\Email(message: "Adresse e-mail invalide")]
+    #[Assert\NotBlank(message: "L'adresse e-mail ne doit pas être vide")]
+    #[Assert\Email(message: "L'adresse e-mail doit être valide")]
     private ?string $email = null;
 
-
-
-    #[ORM\Column(length: 255)]
+    /* #[Assert\NotBlank(message: "Le token ne doit pas être vide")] */
     private ?string $Token = null;
 
+  /*   #[Assert\NotBlank(message: "Le score ne doit pas être vide")]
+    #[Assert\Regex(pattern: "/^\d{8}$/", message: "Le score doit contenir exactement 8 chiffres")] */
+    private ?string $score;
 
-
-    #[ORM\Column(length: 8)]
-    #[Assert\NotBlank(message: "Score obligatoire")]
-   /*  #[Assert\Regex(pattern: "/^\d{8}$/", message: "Score invalide")] */
-    private ?string $score ;
-
-
-    #[ORM\Column(length: 11)]
-    #[Assert\Regex(pattern: "/^216\d{8}$/", message: "Numéro de téléphone invalide")]
+    #[Assert\NotBlank(message: "Le numéro de téléphone ne doit pas être vide")]
+    #[Assert\Regex(pattern: "/^216\d{8}$/", message: "Le numéro de téléphone doit être au format 216xxxxxxxx")]
     private ?string $numtel = null;
 
-
-
-    #[ORM\Column(length: 255)]
-    
+   /*  #[Assert\NotBlank(message: "L'image ne doit pas être vide")]
+    #[Assert\Url(message: "L'image doit être une URL valide")] */
     private ?string $image = "http://localhost/img/useravatar.jpg";
 
-
-
-    #[ORM\Column(nullable: true)]
+   /*  #[Assert\NotNull(message: "La date d'expiration du compte ne doit pas être vide")] */
     private ?\DateTime $Compte_ex = null;
 
-
-
+    /* #[Assert\NotNull] */
     #[ORM\Column(nullable: true)]
     private ?\DateTime $token_ex = null;
 
