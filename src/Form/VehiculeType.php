@@ -8,14 +8,31 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\File;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+
 class VehiculeType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('type')
+            ->add('type',ChoiceType::class, [
+                'choices'  => [
+                    'type' => null,
+                    'Voiture' => 'Voiture',
+                    'Camion' => 'Camion',
+                    'Moto' => 'Moto',
+                    'Velo' => 'Velo'
+                ],
+            ])
             ->add('immat')
-            ->add('etat')
+            ->add('etat',ChoiceType::class, [
+                'choices'  => [
+                    'etat' => null,
+                    'Disponible' => 0,
+                    'Reservé' => 1,
+                ],
+            ])
             ->add('kilometrage')
             ->add('chevaux')
             ->add('marque')
@@ -45,7 +62,8 @@ class VehiculeType extends AbstractType
                     ])
                 ],
             ])
-        ;
+            ->add('save',SubmitType::class)
+            ;
     }
 
     public function configureOptions(OptionsResolver $resolver): void

@@ -41,11 +41,11 @@ class __TwigTemplate_ae9f7441511a4ae0227e9d8a304eb1ae extends Template
 
         // line 1
         echo "<form method=\"post\" action=\"";
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_colis_delete", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["coli"]) || array_key_exists("coli", $context) ? $context["coli"] : (function () { throw new RuntimeError('Variable "coli" does not exist.', 1, $this->source); })()), "id", [], "any", false, false, false, 1)]), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_colis_delete", ["idColis" => twig_get_attribute($this->env, $this->source, (isset($context["coli"]) || array_key_exists("coli", $context) ? $context["coli"] : (function () { throw new RuntimeError('Variable "coli" does not exist.', 1, $this->source); })()), "idColis", [], "any", false, false, false, 1)]), "html", null, true);
         echo "\" onsubmit=\"return confirm('Are you sure you want to delete this item?');\">
     <input type=\"hidden\" name=\"_token\" value=\"";
         // line 2
-        echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken(("delete" . twig_get_attribute($this->env, $this->source, (isset($context["coli"]) || array_key_exists("coli", $context) ? $context["coli"] : (function () { throw new RuntimeError('Variable "coli" does not exist.', 2, $this->source); })()), "id", [], "any", false, false, false, 2))), "html", null, true);
+        echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken(("delete" . twig_get_attribute($this->env, $this->source, (isset($context["coli"]) || array_key_exists("coli", $context) ? $context["coli"] : (function () { throw new RuntimeError('Variable "coli" does not exist.', 2, $this->source); })()), "idColis", [], "any", false, false, false, 2))), "html", null, true);
         echo "\">
     <button class=\"btn\">Delete</button>
 </form>
@@ -75,10 +75,10 @@ class __TwigTemplate_ae9f7441511a4ae0227e9d8a304eb1ae extends Template
 
     public function getSourceContext()
     {
-        return new Source("<form method=\"post\" action=\"{{ path('app_colis_delete', {'id': coli.id}) }}\" onsubmit=\"return confirm('Are you sure you want to delete this item?');\">
-    <input type=\"hidden\" name=\"_token\" value=\"{{ csrf_token('delete' ~ coli.id) }}\">
+        return new Source("<form method=\"post\" action=\"{{ path('app_colis_delete', {'idColis': coli.idColis}) }}\" onsubmit=\"return confirm('Are you sure you want to delete this item?');\">
+    <input type=\"hidden\" name=\"_token\" value=\"{{ csrf_token('delete' ~ coli.idColis) }}\">
     <button class=\"btn\">Delete</button>
 </form>
-", "colis/_delete_form.html.twig", "C:\\Users\\aymen\\Desktop\\digidreamers\\digidreamers\\templates\\colis\\_delete_form.html.twig");
+", "colis/_delete_form.html.twig", "C:\\Users\\klair\\OneDrive\\Bureau\\web pi\\digidreamers\\templates\\colis\\_delete_form.html.twig");
     }
 }

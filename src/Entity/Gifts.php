@@ -3,62 +3,39 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-
-/**
- * Gifts
- *
- * @ORM\Table(name="gifts", indexes={@ORM\Index(name="Fk_CG", columns={"idC"})})
- * @ORM\Entity
- */
+use Symfony\Component\Validator\Constraints as Assert;
+use App\Repository\GiftsRepository ; 
+#[ORM\Table(name: 'Gifts')]
+#[ORM\Entity(repositoryClass :GiftsRepository::class)]
 class Gifts
 {
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="id", type="integer", nullable=false)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
-     */
-    private $id;
+  
+    #[ORM\Id]
+    #[ORM\GeneratedValue]
+    #[ORM\Column]
+    private ?int $id=null;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="name", type="string", length=100, nullable=false)
-     */
-    private $name;
+    #[Assert\NotBlank(message:"Le nom ne doit pas être vide")]
+    #[Assert\Length(max:15,maxMessage:"La longueur maximale du nom est 15")]
+    #[ORM\Column(length:100)]
+    private ?String $name=null;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="description", type="string", length=100, nullable=false)
-     */
-    private $description;
+    #[ORM\Column(length:100)]
+    #[Assert\NotBlank(message:"La description ne doit pas être vide")]
+    #[Assert\Length(max:50,maxMessage:"La longueur maximale du description est 50")]
+    private ?String $description=null;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="value", type="string", length=100, nullable=false)
-     */
-    private $value;
+    #[ORM\Column(length:100)]
+    #[Assert\NotBlank(message:"La valeur ne doit pas être vide")]
+    private ?String  $value=null;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="photo", type="string", length=255, nullable=false)
-     */
-    private $photo;
+    #[ORM\Column(length:100)]
+    private ?String $photo="http://localhost/img/bb.png";
 
-    /**
-     * @var \Competition
-     *
-     * @ORM\ManyToOne(targetEntity="Competition")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="idC", referencedColumnName="id")
-     * })
-     */
-    private $idc;
+    #[ORM\ManyToOne(inversedBy: 'gifts')]
+    private ?Competition $idC = null;
 
+   
     public function getId(): ?int
     {
         return $this->id;
@@ -112,17 +89,19 @@ class Gifts
         return $this;
     }
 
-    public function getIdc(): ?Competition
+    public function getIdC(): ?Competition
     {
-        return $this->idc;
+        return $this->idC;
     }
 
-    public function setIdc(?Competition $idc): self
+    public function setIdC(?Competition $idC): self
     {
-        $this->idc = $idc;
+        $this->idC = $idC;
 
         return $this;
     }
-
-
+    public function __toString(): string
+    {
+        return 'bla bla';
+    }
 }

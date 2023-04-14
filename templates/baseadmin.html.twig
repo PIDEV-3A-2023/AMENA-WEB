@@ -13,7 +13,7 @@
 
 		<link rel="canonical" href="https://demo-basic.adminkit.io/pages-blank.html"/>
 
-		<title>Blank Page | Admin Amena </title>
+		<title>Blank Page | AdminKit Demo</title>
 
 
 		{% block stylesheets %}
@@ -27,39 +27,11 @@
 		
 	</head>
 	<body>
-	{% for flash_message in app.flashes('success') %}
-    <div class="alert alert-success alert-dismissible fade show" role="alert" id="flash-message">
-        <div class="d-flex align-items-center">
-            <i class="bi bi-check-circle-fill me-2"></i>
-            <span>{{ flash_message }}</span>
-        </div>
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
-{% endfor %}
-{% for flash_message in app.flashes('error') %}
-<div class="alert alert-danger alert-dismissible fade show" role="alert" id="flash-message">
-<div class="d-flex align-items-center">
-<i class="bi bi-exclamation-triangle-fill me-2"></i>
-<span>{{ flash_message }}</span>
-</div>
-<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-</div>
-{% endfor %}
-
-<script>
-    // Masquer automatiquement le message de succès après 3 secondes
-    setTimeout(function() {
-        var flashMessage = document.getElementById('flash-message');
-        if (flashMessage !== null) {
-            flashMessage.remove();
-        }
-    }, 3000);
-</script>
 <div class="wrapper">
 		<nav id="sidebar" class="sidebar js-sidebar">
 			<div class="sidebar-content js-simplebar">
-				<a class="sidebar-brand" href="index.html">
-          <span class="align-middle">Admin Amena</span>
+				<a class="sidebar-brand" href="/">
+<img src="{{ asset('back/assets/img/logo.png') }}" alt="" style="width:80px; height:80px;">          <span class="align-middle">Amena</span>
         </a>
 
 				<ul class="sidebar-nav">
@@ -67,98 +39,50 @@
 						Pages
 					</li>
 
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="index.html">
-              <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard</span>
-            </a>
-					</li>
 
 					<li class="sidebar-item">
-						<a class="sidebar-link" href="pages-profile.html">
-              <i class="align-middle" data-feather="user"></i> <span class="align-middle">Profile</span>
+						<a class="sidebar-link" href="#">
+              <i class="align-middle" data-feather="user"></i> <span class="align-middle">Profil</span>
             </a>
 					</li>
+
 
 					<li class="sidebar-item">
-						<a class="sidebar-link" href="pages-sign-in.html">
-              <i class="align-middle" data-feather="log-in"></i> <span class="align-middle">Sign In</span>
+						<a class="sidebar-link" href="#">
+              <i class="align-middle" data-feather="user-plus"></i> <span class="align-middle">Utilisateurs</span>
             </a>
-					</li>
-
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="pages-sign-up.html">
-              <i class="align-middle" data-feather="user-plus"></i> <span class="align-middle">Sign Up</span>
-            </a>
-					</li>
-
-					<li class="sidebar-item active">
-						<a class="sidebar-link" href="pages-blank.html">
-              <i class="align-middle" data-feather="book"></i> <span class="align-middle">Blank</span>
-            </a>
-					</li>
-
-					<li class="sidebar-header">
-						Tools & Components
 					</li>
 
 					<li class="sidebar-item">
 						<a class="sidebar-link" href="ui-buttons.html">
-              <i class="align-middle" data-feather="square"></i> <span class="align-middle">Buttons</span>
+              <i class="align-middle" data-feather="square"></i> <span class="align-middle">Annonces</span>
             </a>
 					</li>
 
 					<li class="sidebar-item">
-						<a class="sidebar-link" href="ui-forms.html">
-              <i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Forms</span>
+						<a class="sidebar-link" href="/colis/">
+              <i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Colis</span>
             </a>
 					</li>
 
 					<li class="sidebar-item">
 						<a class="sidebar-link" href="ui-cards.html">
-              <i class="align-middle" data-feather="grid"></i> <span class="align-middle">Cards</span>
+              <i class="align-middle" data-feather="grid"></i> <span class="align-middle">Véhicules</span>
             </a>
 					</li>
 
 					<li class="sidebar-item">
-						<a class="sidebar-link" href="ui-typography.html">
-              <i class="align-middle" data-feather="align-left"></i> <span class="align-middle">Typography</span>
+						<a class="sidebar-link" href="{{ url('app_competition_index') }}">
+              <i class="align-middle" data-feather="align-left"></i> <span class="align-middle">Gamification</span>
             </a>
 					</li>
 
 					<li class="sidebar-item">
 						<a class="sidebar-link" href="icons-feather.html">
-              <i class="align-middle" data-feather="coffee"></i> <span class="align-middle">Icons</span>
+              <i class="align-middle" data-feather="coffee"></i> <span class="align-middle">Statistiques</span>
             </a>
 					</li>
 
-					<li class="sidebar-header">
-						Plugins & Addons
-					</li>
-
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="charts-chartjs.html">
-              <i class="align-middle" data-feather="bar-chart-2"></i> <span class="align-middle">Charts</span>
-            </a>
-					</li>
-
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="maps-google.html">
-              <i class="align-middle" data-feather="map"></i> <span class="align-middle">Maps</span>
-            </a>
-					</li>
-				</ul>
-
-				<div class="sidebar-cta">
-					<div class="sidebar-cta-content">
-						<strong class="d-inline-block mb-2">Upgrade to Pro</strong>
-						<div class="mb-3 text-sm">
-							Are you looking for more components? Check out our premium version.
-						</div>
-						<div class="d-grid">
-							<a href="upgrade-to-pro.html" class="btn btn-primary">Upgrade to Pro</a>
-						</div>
-					</div>
-				</div>
 			</div>
 		</nav>
 
@@ -184,7 +108,7 @@
 								<div class="list-group">
 									<a href="#" class="list-group-item">
 										<div class="row g-0 align-items-center">
-											<div class="col-">
+											<div class="col-2">
 												<i class="text-danger" data-feather="alert-circle"></i>
 											</div>
 											<div class="col-10">
@@ -308,16 +232,16 @@
               </a>
 
 							<a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
-                <img src="{{asset('back/assets/img/avatars/avatar.jpg')}}" class="avatar img-fluid rounded me-1" alt="Charles Hall" /> <span class="text-dark">Charles Hall</span>
+                <img src="{{asset('back/assets/img/avatars/avatar.jpg')}}" class="avatar img-fluid rounded me-1" alt="Charles Hall" /> <span class="text-dark">Nom</span>
               </a>
 							<div class="dropdown-menu dropdown-menu-end">
-								<a class="dropdown-item" href="pages-profile.html"><i class="align-middle me-1" data-feather="user"></i> Profile</a>
-								<a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="pie-chart"></i> Analytics</a>
+								<a class="dropdown-item" href="pages-profile.html"><i class="align-middle me-1" data-feather="user"></i> Profil</a>
+								<a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="pie-chart"></i> ..</a>
 								<div class="dropdown-divider"></div>
 								<a class="dropdown-item" href="index.html"><i class="align-middle me-1" data-feather="settings"></i> Settings & Privacy</a>
 								<a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="help-circle"></i> Help Center</a>
 								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="#">Log out</a>
+								<a class="dropdown-item" href="#">Déconnexion</a>
 							</div>
 						</li>
 					</ul>
@@ -326,8 +250,8 @@
 
     <main class="content">
 		{% block body %}
-        
-        
+
+
         {% endblock %}
 </main>
 
@@ -336,7 +260,7 @@
 					<div class="row text-muted">
 						<div class="col-6 text-start">
 							<p class="mb-0">
-								<a class="text-muted" href="https://adminkit.io/" target="_blank"><strong>AdminKit</strong></a> - <a class="text-muted" href="https://adminkit.io/" target="_blank"><strong>Bootstrap Admin Template</strong></a>								&copy;
+								<a class="text-muted" href="https://adminkit.io/" target="_blank"><strong>Amena</strong></a> - <a class="text-muted" href="https://adminkit.io/" target="_blank"><strong></strong></a>								&copy;
 							</p>
 						</div>
 						<div class="col-6 text-end">
@@ -363,6 +287,7 @@
 
 
         {% block javascripts %}
+
 			{{ encore_entry_script_tags('app') }}
             <script src="{{asset('back/assets/js/app.js')}}"></script>
 		{% endblock %}

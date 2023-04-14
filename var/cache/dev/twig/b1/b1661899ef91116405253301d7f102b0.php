@@ -162,6 +162,6 @@ class __TwigTemplate_0c1b6787d7a62c311c1aa19b25c1ec49 extends Template
 
     {{ include('user/_delete_form.html.twig') }}
 {% endblock %}
-", "user/edit.html.twig", "C:\\Users\\aymen\\Desktop\\digidreamers\\digidreamers\\templates\\user\\edit.html.twig");
+", "user/edit.html.twig", "C:\\Users\\klair\\OneDrive\\Bureau\\web pi\\digidreamers\\templates\\user\\edit.html.twig");
     }
 }

@@ -2,70 +2,58 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use App\Repository\CompetitionRepository ; 
 
-/**
- * Competition
- *
- * @ORM\Table(name="competition", indexes={@ORM\Index(name="c_iduc", columns={"id_uc"})})
- * @ORM\Entity
- */
+
+#[ORM\Table(name: 'Competition')]
+#[ORM\Entity(repositoryClass :CompetitionRepository::class)]
 class Competition
 {
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="id", type="integer", nullable=false)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
-     */
-    private $id;
+    #[ORM\Id]
+    #[ORM\GeneratedValue]
+    #[ORM\Column]
+    private ?int $id=null;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="title", type="string", length=100, nullable=false)
-     */
-    private $title;
+    #[Assert\NotBlank(message:"Le titre ne doit pas être vide")]
+    #[Assert\Length(max:10,maxMessage:"La longueur maximale du titre est 10")]
+    #[ORM\Column(length:100)]
+    private ?String $title=null;
 
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="date_deb", type="date", nullable=false)
-     */
-    private $dateDeb;
+    #[Assert\NotBlank(message:"La date de début ne doit pas être vide")]
+ //   #[Assert\GreaterThanOrEqual(propertyPath: "dateDeb", message: "La date de début ne peut pas être antérieure à aujourd'hui")]
+    //#[Assert\GreaterThan("today")]
+    #[ORM\Column(nullable : false,type: Types::DATE_MUTABLE)]
+    private ?\DateTimeInterface $dateDeb;
 
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="date_fin", type="date", nullable=false)
-     */
-    private $dateFin;
+   // #[Assert\GreaterThan("dateDeb")]
+    #[Assert\NotBlank(message:"La date de fin ne doit pas être vide")]
+  //  #[Assert\GreaterThan(propertyPath: "dateDeb", message: "La date de fin doit être postérieure à la date de début")]
+    #[ORM\Column(nullable : false,type: Types::DATE_MUTABLE)] 
+    private ?\DateTimeInterface $dateFin;
 
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="type", type="integer", nullable=false)
-     */
-    private $type;
+    #[Assert\NotBlank(message:"Le type ne doit pas être vide")]
+    #[ORM\Column]
+    private ?int $type;
 
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="nbp", type="integer", nullable=false)
-     */
-    private $nbp;
+    #[ORM\Column(nullable : true)]
+    private ?int $nbp = 0 ;
 
-    /**
-     * @var \User
-     *
-     * @ORM\ManyToOne(targetEntity="User")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="id_uc", referencedColumnName="id")
-     * })
-     */
-    private $idUc;
+    #[ORM\Column(name : 'id_uc')]
+    private ?int $id_uc=163 ;
+
+    #[ORM\OneToMany(mappedBy: 'idC', targetEntity: Gifts::class)]
+    private Collection $gifts;
+
+    public function __construct()
+    {
+        $this->gifts = new ArrayCollection();
+    }
+
 
     public function getId(): ?int
     {
@@ -132,17 +120,49 @@ class Competition
         return $this;
     }
 
-    public function getIdUc(): ?User
+    public function getIdUc(): ?int
     {
-        return $this->idUc;
+        return $this->id_uc;
     }
 
-    public function setIdUc(?User $idUc): self
+    public function setIdUc(int $id_uc): self
     {
-        $this->idUc = $idUc;
+        $this->id_uc = $id_uc;
 
         return $this;
     }
 
+    /**
+     * @return Collection<int, Gifts>
+     */
+    public function getGifts(): Collection
+    {
+        return $this->gifts;
+    }
 
+    public function addGift(Gifts $gift): self
+    {
+        if (!$this->gifts->contains($gift)) {
+            $this->gifts->add($gift);
+            $gift->setIdC($this);
+        }
+
+        return $this;
+    }
+
+    public function removeGift(Gifts $gift): self
+    {
+        if ($this->gifts->removeElement($gift)) {
+            // set the owning side to null (unless already changed)
+            if ($gift->getIdC() === $this) {
+                $gift->setIdC(null);
+            }
+        }
+
+        return $this;
+    }
+    public function __toString(): string
+    {
+        return $this->getId();
+    }
 }

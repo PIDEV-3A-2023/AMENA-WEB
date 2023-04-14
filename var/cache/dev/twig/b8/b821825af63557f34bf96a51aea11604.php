@@ -85,8 +85,8 @@ class __TwigTemplate_5f68ea12c18bb9001aa85799f3f6fa29 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "<div class=\"container\">
-   
+        echo "<!-- ======= Breadcrumbs ======= -->
+    
     <h1>Create new User</h1>
 
     ";
@@ -129,14 +129,14 @@ class __TwigTemplate_5f68ea12c18bb9001aa85799f3f6fa29 extends Template
 {% block title %}New User{% endblock %}
 
 {% block body %}
-<div class=\"container\">
-   
+<!-- ======= Breadcrumbs ======= -->
+    
     <h1>Create new User</h1>
 
     {{ include('user/_form.html.twig') }}
 
     <a href=\"{{ path('app_user_index') }}\">back to list</a>
 {% endblock %}
-", "user/new.html.twig", "C:\\Users\\aymen\\Desktop\\digidreamers\\digidreamers\\templates\\user\\new.html.twig");
+", "user/new.html.twig", "C:\\Users\\klair\\OneDrive\\Bureau\\web pi\\digidreamers\\templates\\user\\new.html.twig");
     }
 }

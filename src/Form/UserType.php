@@ -28,7 +28,7 @@ class UserType extends AbstractType
             ->add('role')
             ->add('motpass')
             ->add('email')
-          
+            ->add('token')
             ->add('score')
             ->add('numtel')
             ->add('image',FileType::class,[
@@ -50,7 +50,7 @@ class UserType extends AbstractType
                             'image/jpeg',
                             'image/png',
                         ],
-                        'mimeTypesMessage' => 'Please upload a valid Image document',
+                        'mimeTypesMessage' => 'Please upload a valid PDF document',
                     ])
                 ],
             ])

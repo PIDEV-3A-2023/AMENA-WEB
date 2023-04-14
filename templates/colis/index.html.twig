@@ -8,40 +8,40 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Nom Expediteur</th>
-                <th>Adresse Expediteur</th>
-                <th>Nom Destinataire</th>
-                <th>Adresse Destinataire</th>
+                <th>IdColis</th>
+                <th>Nomexpediteur</th>
+                <th>Adresseexpediteur</th>
+                <th>Nomdestinataire</th>
+                <th>Adressedestinataire</th>
                 <th>Poids</th>
                 <th>Statut</th>
-                <th>Date Expedition</th>
+                <th>Dateexpedition</th>
                 <th>actions</th>
             </tr>
         </thead>
         <tbody>
         {% for coli in colis %}
             <tr>
-                <td>{{ coli.id }}</td>
-                <td>{{ coli.nomExpediteur }}</td>
-                <td>{{ coli.adresseExpediteur }}</td>
-                <td>{{ coli.nomDestinataire }}</td>
-                <td>{{ coli.adresseDestinataire }}</td>
+                <td>{{ coli.idColis }}</td>
+                <td>{{ coli.nomexpediteur }}</td>
+                <td>{{ coli.adresseexpediteur }}</td>
+                <td>{{ coli.nomdestinataire }}</td>
+                <td>{{ coli.adressedestinataire }}</td>
                 <td>{{ coli.poids }}</td>
                 <td>{{ coli.statut }}</td>
-                <td>{{ coli.dateExpedition ? coli.dateExpedition|date('Y-m-d') : '' }}</td>
+                <td>{{ coli.dateexpedition ? coli.dateexpedition|date('Y-m-d') : '' }}</td>
                 <td>
-                    <a href="{{ path('app_colis_show', {'id': coli.id}) }}">Afficher</a>
-                    <a href="{{ path('app_colis_edit', {'id': coli.id}) }}">Modifier</a>
+                    <a href="{{ path('app_colis_show', {'idColis': coli.idColis}) }}">show</a>
+                    <a href="{{ path('app_colis_edit', {'idColis': coli.idColis}) }}">edit</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="9">Aucun colis trouvé</td>
+                <td colspan="9">no records found</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('app_colis_new') }}">Ajouter un nouveau colis </a>
+    <a href="{{ path('app_colis_new') }}">Create new</a>
 {% endblock %}

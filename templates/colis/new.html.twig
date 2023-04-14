@@ -3,11 +3,9 @@
 {% block title %}New Colis{% endblock %}
 
 {% block body %}
-
-<div class="container">
-    <h1>Ajouter un nouveau Colis</h1>
+    <h1>Create new Colis</h1>
 
     {{ include('colis/_form.html.twig') }}
 
-    <a href="{{ path('app_colis_index') }}">Retour à la liste</a>
+    <a href="{{ path('app_colis_index') }}">back to list</a>
 {% endblock %}

@@ -72,8 +72,11 @@ class __TwigTemplate_42a4a492c2c8c938b3db714109d79e7a extends Template
 <div class=\"wrapper\">
 \t\t<nav id=\"sidebar\" class=\"sidebar js-sidebar\">
 \t\t\t<div class=\"sidebar-content js-simplebar\">
-\t\t\t\t<a class=\"sidebar-brand\" href=\"index.html\">
-          <span class=\"align-middle\">AdminKit</span>
+\t\t\t\t<a class=\"sidebar-brand\" href=\"/\">
+<img src=\"";
+        // line 34
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("back/assets/img/logo.png"), "html", null, true);
+        echo "\" alt=\"\" style=\"width:80px; height:80px;\">          <span class=\"align-middle\">Amena</span>
         </a>
 
 \t\t\t\t<ul class=\"sidebar-nav\">
@@ -81,98 +84,53 @@ class __TwigTemplate_42a4a492c2c8c938b3db714109d79e7a extends Template
 \t\t\t\t\t\tPages
 \t\t\t\t\t</li>
 
-\t\t\t\t\t<li class=\"sidebar-item\">
-\t\t\t\t\t\t<a class=\"sidebar-link\" href=\"index.html\">
-              <i class=\"align-middle\" data-feather=\"sliders\"></i> <span class=\"align-middle\">Dashboard</span>
-            </a>
-\t\t\t\t\t</li>
 
 \t\t\t\t\t<li class=\"sidebar-item\">
-\t\t\t\t\t\t<a class=\"sidebar-link\" href=\"pages-profile.html\">
-              <i class=\"align-middle\" data-feather=\"user\"></i> <span class=\"align-middle\">Profile</span>
+\t\t\t\t\t\t<a class=\"sidebar-link\" href=\"#\">
+              <i class=\"align-middle\" data-feather=\"user\"></i> <span class=\"align-middle\">Profil</span>
             </a>
 \t\t\t\t\t</li>
+
 
 \t\t\t\t\t<li class=\"sidebar-item\">
-\t\t\t\t\t\t<a class=\"sidebar-link\" href=\"pages-sign-in.html\">
-              <i class=\"align-middle\" data-feather=\"log-in\"></i> <span class=\"align-middle\">Sign In</span>
+\t\t\t\t\t\t<a class=\"sidebar-link\" href=\"#\">
+              <i class=\"align-middle\" data-feather=\"user-plus\"></i> <span class=\"align-middle\">Utilisateurs</span>
             </a>
-\t\t\t\t\t</li>
-
-\t\t\t\t\t<li class=\"sidebar-item\">
-\t\t\t\t\t\t<a class=\"sidebar-link\" href=\"pages-sign-up.html\">
-              <i class=\"align-middle\" data-feather=\"user-plus\"></i> <span class=\"align-middle\">Sign Up</span>
-            </a>
-\t\t\t\t\t</li>
-
-\t\t\t\t\t<li class=\"sidebar-item active\">
-\t\t\t\t\t\t<a class=\"sidebar-link\" href=\"pages-blank.html\">
-              <i class=\"align-middle\" data-feather=\"book\"></i> <span class=\"align-middle\">Blank</span>
-            </a>
-\t\t\t\t\t</li>
-
-\t\t\t\t\t<li class=\"sidebar-header\">
-\t\t\t\t\t\tTools & Components
 \t\t\t\t\t</li>
 
 \t\t\t\t\t<li class=\"sidebar-item\">
 \t\t\t\t\t\t<a class=\"sidebar-link\" href=\"ui-buttons.html\">
-              <i class=\"align-middle\" data-feather=\"square\"></i> <span class=\"align-middle\">Buttons</span>
+              <i class=\"align-middle\" data-feather=\"square\"></i> <span class=\"align-middle\">Annonces</span>
             </a>
 \t\t\t\t\t</li>
 
 \t\t\t\t\t<li class=\"sidebar-item\">
-\t\t\t\t\t\t<a class=\"sidebar-link\" href=\"ui-forms.html\">
-              <i class=\"align-middle\" data-feather=\"check-square\"></i> <span class=\"align-middle\">Forms</span>
+\t\t\t\t\t\t<a class=\"sidebar-link\" href=\"/colis/\">
+              <i class=\"align-middle\" data-feather=\"check-square\"></i> <span class=\"align-middle\">Colis</span>
             </a>
 \t\t\t\t\t</li>
 
 \t\t\t\t\t<li class=\"sidebar-item\">
 \t\t\t\t\t\t<a class=\"sidebar-link\" href=\"ui-cards.html\">
-              <i class=\"align-middle\" data-feather=\"grid\"></i> <span class=\"align-middle\">Cards</span>
+              <i class=\"align-middle\" data-feather=\"grid\"></i> <span class=\"align-middle\">Véhicules</span>
             </a>
 \t\t\t\t\t</li>
 
 \t\t\t\t\t<li class=\"sidebar-item\">
-\t\t\t\t\t\t<a class=\"sidebar-link\" href=\"ui-typography.html\">
-              <i class=\"align-middle\" data-feather=\"align-left\"></i> <span class=\"align-middle\">Typography</span>
+\t\t\t\t\t\t<a class=\"sidebar-link\" href=\"";
+        // line 75
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getUrl("app_competition_index");
+        echo "\">
+              <i class=\"align-middle\" data-feather=\"align-left\"></i> <span class=\"align-middle\">Gamification</span>
             </a>
 \t\t\t\t\t</li>
 
 \t\t\t\t\t<li class=\"sidebar-item\">
 \t\t\t\t\t\t<a class=\"sidebar-link\" href=\"icons-feather.html\">
-              <i class=\"align-middle\" data-feather=\"coffee\"></i> <span class=\"align-middle\">Icons</span>
+              <i class=\"align-middle\" data-feather=\"coffee\"></i> <span class=\"align-middle\">Statistiques</span>
             </a>
 \t\t\t\t\t</li>
 
-\t\t\t\t\t<li class=\"sidebar-header\">
-\t\t\t\t\t\tPlugins & Addons
-\t\t\t\t\t</li>
-
-\t\t\t\t\t<li class=\"sidebar-item\">
-\t\t\t\t\t\t<a class=\"sidebar-link\" href=\"charts-chartjs.html\">
-              <i class=\"align-middle\" data-feather=\"bar-chart-2\"></i> <span class=\"align-middle\">Charts</span>
-            </a>
-\t\t\t\t\t</li>
-
-\t\t\t\t\t<li class=\"sidebar-item\">
-\t\t\t\t\t\t<a class=\"sidebar-link\" href=\"maps-google.html\">
-              <i class=\"align-middle\" data-feather=\"map\"></i> <span class=\"align-middle\">Maps</span>
-            </a>
-\t\t\t\t\t</li>
-\t\t\t\t</ul>
-
-\t\t\t\t<div class=\"sidebar-cta\">
-\t\t\t\t\t<div class=\"sidebar-cta-content\">
-\t\t\t\t\t\t<strong class=\"d-inline-block mb-2\">Upgrade to Pro</strong>
-\t\t\t\t\t\t<div class=\"mb-3 text-sm\">
-\t\t\t\t\t\t\tAre you looking for more components? Check out our premium version.
-\t\t\t\t\t\t</div>
-\t\t\t\t\t\t<div class=\"d-grid\">
-\t\t\t\t\t\t\t<a href=\"upgrade-to-pro.html\" class=\"btn btn-primary\">Upgrade to Pro</a>
-\t\t\t\t\t\t</div>
-\t\t\t\t\t</div>
-\t\t\t\t</div>
 \t\t\t</div>
 \t\t</nav>
 
@@ -198,7 +156,7 @@ class __TwigTemplate_42a4a492c2c8c938b3db714109d79e7a extends Template
 \t\t\t\t\t\t\t\t<div class=\"list-group\">
 \t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"list-group-item\">
 \t\t\t\t\t\t\t\t\t\t<div class=\"row g-0 align-items-center\">
-\t\t\t\t\t\t\t\t\t\t\t<div class=\"col-\">
+\t\t\t\t\t\t\t\t\t\t\t<div class=\"col-2\">
 \t\t\t\t\t\t\t\t\t\t\t\t<i class=\"text-danger\" data-feather=\"alert-circle\"></i>
 \t\t\t\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t\t\t\t<div class=\"col-10\">
@@ -266,7 +224,7 @@ class __TwigTemplate_42a4a492c2c8c938b3db714109d79e7a extends Template
 \t\t\t\t\t\t\t\t\t\t<div class=\"row g-0 align-items-center\">
 \t\t\t\t\t\t\t\t\t\t\t<div class=\"col-2\">
 \t\t\t\t\t\t\t\t\t\t\t\t<img src=\"";
-        // line 226
+        // line 178
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("back/assets/img/avatars/avatar-5.jpg"), "html", null, true);
         echo "\" class=\"avatar img-fluid rounded-circle\" alt=\"Vanessa Tucker\">
 \t\t\t\t\t\t\t\t\t\t\t</div>
@@ -281,7 +239,7 @@ class __TwigTemplate_42a4a492c2c8c938b3db714109d79e7a extends Template
 \t\t\t\t\t\t\t\t\t\t<div class=\"row g-0 align-items-center\">
 \t\t\t\t\t\t\t\t\t\t\t<div class=\"col-2\">
 \t\t\t\t\t\t\t\t\t\t\t\t<img src=\"";
-        // line 238
+        // line 190
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("back/assets/img/avatars/avatar-2.jpg"), "html", null, true);
         echo "\" class=\"avatar img-fluid rounded-circle\" alt=\"William Harris\">
 \t\t\t\t\t\t\t\t\t\t\t</div>
@@ -296,7 +254,7 @@ class __TwigTemplate_42a4a492c2c8c938b3db714109d79e7a extends Template
 \t\t\t\t\t\t\t\t\t\t<div class=\"row g-0 align-items-center\">
 \t\t\t\t\t\t\t\t\t\t\t<div class=\"col-2\">
 \t\t\t\t\t\t\t\t\t\t\t\t<img src=\"";
-        // line 250
+        // line 202
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("back/assets/img/avatars/avatar-4.jpg"), "html", null, true);
         echo "\" class=\"avatar img-fluid rounded-circle\" alt=\"Christina Mason\">
 \t\t\t\t\t\t\t\t\t\t\t</div>
@@ -311,7 +269,7 @@ class __TwigTemplate_42a4a492c2c8c938b3db714109d79e7a extends Template
 \t\t\t\t\t\t\t\t\t\t<div class=\"row g-0 align-items-center\">
 \t\t\t\t\t\t\t\t\t\t\t<div class=\"col-2\">
 \t\t\t\t\t\t\t\t\t\t\t\t<img src=\"";
-        // line 262
+        // line 214
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("back/assets/img/avatars/avatar-3.jpg"), "html", null, true);
         echo "\" class=\"avatar img-fluid rounded-circle\" alt=\"Sharon Lessman\">
 \t\t\t\t\t\t\t\t\t\t\t</div>
@@ -335,18 +293,18 @@ class __TwigTemplate_42a4a492c2c8c938b3db714109d79e7a extends Template
 
 \t\t\t\t\t\t\t<a class=\"nav-link dropdown-toggle d-none d-sm-inline-block\" href=\"#\" data-bs-toggle=\"dropdown\">
                 <img src=\"";
-        // line 283
+        // line 235
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("back/assets/img/avatars/avatar.jpg"), "html", null, true);
-        echo "\" class=\"avatar img-fluid rounded me-1\" alt=\"Charles Hall\" /> <span class=\"text-dark\">Charles Hall</span>
+        echo "\" class=\"avatar img-fluid rounded me-1\" alt=\"Charles Hall\" /> <span class=\"text-dark\">Nom</span>
               </a>
 \t\t\t\t\t\t\t<div class=\"dropdown-menu dropdown-menu-end\">
-\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"pages-profile.html\"><i class=\"align-middle me-1\" data-feather=\"user\"></i> Profile</a>
-\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\"><i class=\"align-middle me-1\" data-feather=\"pie-chart\"></i> Analytics</a>
+\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"pages-profile.html\"><i class=\"align-middle me-1\" data-feather=\"user\"></i> Profil</a>
+\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\"><i class=\"align-middle me-1\" data-feather=\"pie-chart\"></i> ..</a>
 \t\t\t\t\t\t\t\t<div class=\"dropdown-divider\"></div>
 \t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"index.html\"><i class=\"align-middle me-1\" data-feather=\"settings\"></i> Settings & Privacy</a>
 \t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\"><i class=\"align-middle me-1\" data-feather=\"help-circle\"></i> Help Center</a>
 \t\t\t\t\t\t\t\t<div class=\"dropdown-divider\"></div>
-\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\">Log out</a>
+\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\">Déconnexion</a>
 \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t</li>
 \t\t\t\t\t</ul>
@@ -355,9 +313,9 @@ class __TwigTemplate_42a4a492c2c8c938b3db714109d79e7a extends Template
 
     <main class=\"content\">
 \t\t";
-        // line 300
+        // line 252
         $this->displayBlock('body', $context, $blocks);
-        // line 304
+        // line 256
         echo "</main>
 
 \t\t\t<footer class=\"footer\">
@@ -365,7 +323,7 @@ class __TwigTemplate_42a4a492c2c8c938b3db714109d79e7a extends Template
 \t\t\t\t\t<div class=\"row text-muted\">
 \t\t\t\t\t\t<div class=\"col-6 text-start\">
 \t\t\t\t\t\t\t<p class=\"mb-0\">
-\t\t\t\t\t\t\t\t<a class=\"text-muted\" href=\"https://adminkit.io/\" target=\"_blank\"><strong>AdminKit</strong></a> - <a class=\"text-muted\" href=\"https://adminkit.io/\" target=\"_blank\"><strong>Bootstrap Admin Template</strong></a>\t\t\t\t\t\t\t\t&copy;
+\t\t\t\t\t\t\t\t<a class=\"text-muted\" href=\"https://adminkit.io/\" target=\"_blank\"><strong>Amena</strong></a> - <a class=\"text-muted\" href=\"https://adminkit.io/\" target=\"_blank\"><strong></strong></a>\t\t\t\t\t\t\t\t&copy;
 \t\t\t\t\t\t\t</p>
 \t\t\t\t\t\t</div>
 \t\t\t\t\t\t<div class=\"col-6 text-end\">
@@ -392,9 +350,9 @@ class __TwigTemplate_42a4a492c2c8c938b3db714109d79e7a extends Template
 
 
         ";
-        // line 337
+        // line 289
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 341
+        // line 294
         echo "\t</body>
 
 </html>
@@ -438,7 +396,7 @@ class __TwigTemplate_42a4a492c2c8c938b3db714109d79e7a extends Template
 
     }
 
-    // line 300
+    // line 252
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -448,9 +406,9 @@ class __TwigTemplate_42a4a492c2c8c938b3db714109d79e7a extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 301
-        echo "        
-        
+        // line 253
+        echo "
+
         ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -460,7 +418,7 @@ class __TwigTemplate_42a4a492c2c8c938b3db714109d79e7a extends Template
 
     }
 
-    // line 337
+    // line 289
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -470,12 +428,14 @@ class __TwigTemplate_42a4a492c2c8c938b3db714109d79e7a extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 338
-        echo "\t\t\t";
+        // line 290
+        echo "
+\t\t\t";
+        // line 291
         echo twig_escape_filter($this->env, $this->env->getFunction('encore_entry_script_tags')->getCallable()("app"), "html", null, true);
         echo "
             <script src=\"";
-        // line 339
+        // line 292
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("back/assets/js/app.js"), "html", null, true);
         echo "\"></script>
 \t\t";
@@ -499,7 +459,7 @@ class __TwigTemplate_42a4a492c2c8c938b3db714109d79e7a extends Template
 
     public function getDebugInfo()
     {
-        return array (  479 => 339,  474 => 338,  464 => 337,  452 => 301,  442 => 300,  428 => 22,  424 => 21,  421 => 20,  411 => 19,  398 => 341,  396 => 337,  361 => 304,  359 => 300,  339 => 283,  315 => 262,  300 => 250,  285 => 238,  270 => 226,  68 => 26,  66 => 19,  46 => 1,);
+        return array (  439 => 292,  435 => 291,  432 => 290,  422 => 289,  410 => 253,  400 => 252,  386 => 22,  382 => 21,  379 => 20,  369 => 19,  356 => 294,  354 => 289,  319 => 256,  317 => 252,  297 => 235,  273 => 214,  258 => 202,  243 => 190,  228 => 178,  122 => 75,  78 => 34,  68 => 26,  66 => 19,  46 => 1,);
     }
 
     public function getSourceContext()
@@ -536,8 +496,8 @@ class __TwigTemplate_42a4a492c2c8c938b3db714109d79e7a extends Template
 <div class=\"wrapper\">
 \t\t<nav id=\"sidebar\" class=\"sidebar js-sidebar\">
 \t\t\t<div class=\"sidebar-content js-simplebar\">
-\t\t\t\t<a class=\"sidebar-brand\" href=\"index.html\">
-          <span class=\"align-middle\">AdminKit</span>
+\t\t\t\t<a class=\"sidebar-brand\" href=\"/\">
+<img src=\"{{ asset('back/assets/img/logo.png') }}\" alt=\"\" style=\"width:80px; height:80px;\">          <span class=\"align-middle\">Amena</span>
         </a>
 
 \t\t\t\t<ul class=\"sidebar-nav\">
@@ -545,98 +505,50 @@ class __TwigTemplate_42a4a492c2c8c938b3db714109d79e7a extends Template
 \t\t\t\t\t\tPages
 \t\t\t\t\t</li>
 
-\t\t\t\t\t<li class=\"sidebar-item\">
-\t\t\t\t\t\t<a class=\"sidebar-link\" href=\"index.html\">
-              <i class=\"align-middle\" data-feather=\"sliders\"></i> <span class=\"align-middle\">Dashboard</span>
-            </a>
-\t\t\t\t\t</li>
 
 \t\t\t\t\t<li class=\"sidebar-item\">
-\t\t\t\t\t\t<a class=\"sidebar-link\" href=\"pages-profile.html\">
-              <i class=\"align-middle\" data-feather=\"user\"></i> <span class=\"align-middle\">Profile</span>
+\t\t\t\t\t\t<a class=\"sidebar-link\" href=\"#\">
+              <i class=\"align-middle\" data-feather=\"user\"></i> <span class=\"align-middle\">Profil</span>
             </a>
 \t\t\t\t\t</li>
+
 
 \t\t\t\t\t<li class=\"sidebar-item\">
-\t\t\t\t\t\t<a class=\"sidebar-link\" href=\"pages-sign-in.html\">
-              <i class=\"align-middle\" data-feather=\"log-in\"></i> <span class=\"align-middle\">Sign In</span>
+\t\t\t\t\t\t<a class=\"sidebar-link\" href=\"#\">
+              <i class=\"align-middle\" data-feather=\"user-plus\"></i> <span class=\"align-middle\">Utilisateurs</span>
             </a>
-\t\t\t\t\t</li>
-
-\t\t\t\t\t<li class=\"sidebar-item\">
-\t\t\t\t\t\t<a class=\"sidebar-link\" href=\"pages-sign-up.html\">
-              <i class=\"align-middle\" data-feather=\"user-plus\"></i> <span class=\"align-middle\">Sign Up</span>
-            </a>
-\t\t\t\t\t</li>
-
-\t\t\t\t\t<li class=\"sidebar-item active\">
-\t\t\t\t\t\t<a class=\"sidebar-link\" href=\"pages-blank.html\">
-              <i class=\"align-middle\" data-feather=\"book\"></i> <span class=\"align-middle\">Blank</span>
-            </a>
-\t\t\t\t\t</li>
-
-\t\t\t\t\t<li class=\"sidebar-header\">
-\t\t\t\t\t\tTools & Components
 \t\t\t\t\t</li>
 
 \t\t\t\t\t<li class=\"sidebar-item\">
 \t\t\t\t\t\t<a class=\"sidebar-link\" href=\"ui-buttons.html\">
-              <i class=\"align-middle\" data-feather=\"square\"></i> <span class=\"align-middle\">Buttons</span>
+              <i class=\"align-middle\" data-feather=\"square\"></i> <span class=\"align-middle\">Annonces</span>
             </a>
 \t\t\t\t\t</li>
 
 \t\t\t\t\t<li class=\"sidebar-item\">
-\t\t\t\t\t\t<a class=\"sidebar-link\" href=\"ui-forms.html\">
-              <i class=\"align-middle\" data-feather=\"check-square\"></i> <span class=\"align-middle\">Forms</span>
+\t\t\t\t\t\t<a class=\"sidebar-link\" href=\"/colis/\">
+              <i class=\"align-middle\" data-feather=\"check-square\"></i> <span class=\"align-middle\">Colis</span>
             </a>
 \t\t\t\t\t</li>
 
 \t\t\t\t\t<li class=\"sidebar-item\">
 \t\t\t\t\t\t<a class=\"sidebar-link\" href=\"ui-cards.html\">
-              <i class=\"align-middle\" data-feather=\"grid\"></i> <span class=\"align-middle\">Cards</span>
+              <i class=\"align-middle\" data-feather=\"grid\"></i> <span class=\"align-middle\">Véhicules</span>
             </a>
 \t\t\t\t\t</li>
 
 \t\t\t\t\t<li class=\"sidebar-item\">
-\t\t\t\t\t\t<a class=\"sidebar-link\" href=\"ui-typography.html\">
-              <i class=\"align-middle\" data-feather=\"align-left\"></i> <span class=\"align-middle\">Typography</span>
+\t\t\t\t\t\t<a class=\"sidebar-link\" href=\"{{ url('app_competition_index') }}\">
+              <i class=\"align-middle\" data-feather=\"align-left\"></i> <span class=\"align-middle\">Gamification</span>
             </a>
 \t\t\t\t\t</li>
 
 \t\t\t\t\t<li class=\"sidebar-item\">
 \t\t\t\t\t\t<a class=\"sidebar-link\" href=\"icons-feather.html\">
-              <i class=\"align-middle\" data-feather=\"coffee\"></i> <span class=\"align-middle\">Icons</span>
+              <i class=\"align-middle\" data-feather=\"coffee\"></i> <span class=\"align-middle\">Statistiques</span>
             </a>
 \t\t\t\t\t</li>
 
-\t\t\t\t\t<li class=\"sidebar-header\">
-\t\t\t\t\t\tPlugins & Addons
-\t\t\t\t\t</li>
-
-\t\t\t\t\t<li class=\"sidebar-item\">
-\t\t\t\t\t\t<a class=\"sidebar-link\" href=\"charts-chartjs.html\">
-              <i class=\"align-middle\" data-feather=\"bar-chart-2\"></i> <span class=\"align-middle\">Charts</span>
-            </a>
-\t\t\t\t\t</li>
-
-\t\t\t\t\t<li class=\"sidebar-item\">
-\t\t\t\t\t\t<a class=\"sidebar-link\" href=\"maps-google.html\">
-              <i class=\"align-middle\" data-feather=\"map\"></i> <span class=\"align-middle\">Maps</span>
-            </a>
-\t\t\t\t\t</li>
-\t\t\t\t</ul>
-
-\t\t\t\t<div class=\"sidebar-cta\">
-\t\t\t\t\t<div class=\"sidebar-cta-content\">
-\t\t\t\t\t\t<strong class=\"d-inline-block mb-2\">Upgrade to Pro</strong>
-\t\t\t\t\t\t<div class=\"mb-3 text-sm\">
-\t\t\t\t\t\t\tAre you looking for more components? Check out our premium version.
-\t\t\t\t\t\t</div>
-\t\t\t\t\t\t<div class=\"d-grid\">
-\t\t\t\t\t\t\t<a href=\"upgrade-to-pro.html\" class=\"btn btn-primary\">Upgrade to Pro</a>
-\t\t\t\t\t\t</div>
-\t\t\t\t\t</div>
-\t\t\t\t</div>
 \t\t\t</div>
 \t\t</nav>
 
@@ -662,7 +574,7 @@ class __TwigTemplate_42a4a492c2c8c938b3db714109d79e7a extends Template
 \t\t\t\t\t\t\t\t<div class=\"list-group\">
 \t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"list-group-item\">
 \t\t\t\t\t\t\t\t\t\t<div class=\"row g-0 align-items-center\">
-\t\t\t\t\t\t\t\t\t\t\t<div class=\"col-\">
+\t\t\t\t\t\t\t\t\t\t\t<div class=\"col-2\">
 \t\t\t\t\t\t\t\t\t\t\t\t<i class=\"text-danger\" data-feather=\"alert-circle\"></i>
 \t\t\t\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t\t\t\t<div class=\"col-10\">
@@ -786,16 +698,16 @@ class __TwigTemplate_42a4a492c2c8c938b3db714109d79e7a extends Template
               </a>
 
 \t\t\t\t\t\t\t<a class=\"nav-link dropdown-toggle d-none d-sm-inline-block\" href=\"#\" data-bs-toggle=\"dropdown\">
-                <img src=\"{{asset('back/assets/img/avatars/avatar.jpg')}}\" class=\"avatar img-fluid rounded me-1\" alt=\"Charles Hall\" /> <span class=\"text-dark\">Charles Hall</span>
+                <img src=\"{{asset('back/assets/img/avatars/avatar.jpg')}}\" class=\"avatar img-fluid rounded me-1\" alt=\"Charles Hall\" /> <span class=\"text-dark\">Nom</span>
               </a>
 \t\t\t\t\t\t\t<div class=\"dropdown-menu dropdown-menu-end\">
-\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"pages-profile.html\"><i class=\"align-middle me-1\" data-feather=\"user\"></i> Profile</a>
-\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\"><i class=\"align-middle me-1\" data-feather=\"pie-chart\"></i> Analytics</a>
+\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"pages-profile.html\"><i class=\"align-middle me-1\" data-feather=\"user\"></i> Profil</a>
+\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\"><i class=\"align-middle me-1\" data-feather=\"pie-chart\"></i> ..</a>
 \t\t\t\t\t\t\t\t<div class=\"dropdown-divider\"></div>
 \t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"index.html\"><i class=\"align-middle me-1\" data-feather=\"settings\"></i> Settings & Privacy</a>
 \t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\"><i class=\"align-middle me-1\" data-feather=\"help-circle\"></i> Help Center</a>
 \t\t\t\t\t\t\t\t<div class=\"dropdown-divider\"></div>
-\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\">Log out</a>
+\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\">Déconnexion</a>
 \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t</li>
 \t\t\t\t\t</ul>
@@ -804,8 +716,8 @@ class __TwigTemplate_42a4a492c2c8c938b3db714109d79e7a extends Template
 
     <main class=\"content\">
 \t\t{% block body %}
-        
-        
+
+
         {% endblock %}
 </main>
 
@@ -814,7 +726,7 @@ class __TwigTemplate_42a4a492c2c8c938b3db714109d79e7a extends Template
 \t\t\t\t\t<div class=\"row text-muted\">
 \t\t\t\t\t\t<div class=\"col-6 text-start\">
 \t\t\t\t\t\t\t<p class=\"mb-0\">
-\t\t\t\t\t\t\t\t<a class=\"text-muted\" href=\"https://adminkit.io/\" target=\"_blank\"><strong>AdminKit</strong></a> - <a class=\"text-muted\" href=\"https://adminkit.io/\" target=\"_blank\"><strong>Bootstrap Admin Template</strong></a>\t\t\t\t\t\t\t\t&copy;
+\t\t\t\t\t\t\t\t<a class=\"text-muted\" href=\"https://adminkit.io/\" target=\"_blank\"><strong>Amena</strong></a> - <a class=\"text-muted\" href=\"https://adminkit.io/\" target=\"_blank\"><strong></strong></a>\t\t\t\t\t\t\t\t&copy;
 \t\t\t\t\t\t\t</p>
 \t\t\t\t\t\t</div>
 \t\t\t\t\t\t<div class=\"col-6 text-end\">
@@ -841,12 +753,13 @@ class __TwigTemplate_42a4a492c2c8c938b3db714109d79e7a extends Template
 
 
         {% block javascripts %}
+
 \t\t\t{{ encore_entry_script_tags('app') }}
             <script src=\"{{asset('back/assets/js/app.js')}}\"></script>
 \t\t{% endblock %}
 \t</body>
 
 </html>
-", "baseadmin.html.twig", "C:\\Users\\aymen\\Desktop\\digidreamers\\digidreamers\\templates\\baseadmin.html.twig");
+", "baseadmin.html.twig", "C:\\Users\\majdi\\digidreamers\\templates\\baseadmin.html.twig");
     }
 }

@@ -49,7 +49,7 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
 \t\t<meta charset=\"utf-8\">
 \t\t<meta content=\"width=device-width, initial-scale=1.0\" name=\"viewport\">
 
-\t\t<title>Amena Bootstrap Template - Contact</title>
+\t\t<title>Nova Bootstrap Template - Contact</title>
 \t\t<meta content=\"\" name=\"description\">
 \t\t<meta
 \t\tcontent=\"\" name=\"keywords\">
@@ -248,7 +248,7 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
 \t\t\t\t\t<div class=\"copyright\">
 \t\t\t\t\t\t&copy; Copyright
 \t\t\t\t\t\t<strong>
-\t\t\t\t\t\t\t<span>Amena</span>
+\t\t\t\t\t\t\t<span>Nova</span>
 \t\t\t\t\t\t</strong>. All Rights Reserved
 \t\t\t\t\t</div>
 \t\t\t\t\t<div class=\"credits\">
@@ -273,8 +273,7 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
         $this->displayBlock('javascripts', $context, $blocks);
         // line 248
         echo "\t</body>
-</html>
-";
+</html>";
         
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
 
@@ -416,7 +415,7 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
 
     public function getDebugInfo()
     {
-        return array (  400 => 245,  394 => 242,  390 => 241,  386 => 240,  382 => 239,  378 => 238,  374 => 237,  368 => 235,  358 => 234,  340 => 108,  327 => 43,  319 => 38,  315 => 37,  311 => 36,  307 => 35,  303 => 34,  297 => 32,  287 => 31,  275 => 248,  273 => 234,  146 => 109,  144 => 108,  80 => 46,  78 => 31,  46 => 1,);
+        return array (  399 => 245,  393 => 242,  389 => 241,  385 => 240,  381 => 239,  377 => 238,  373 => 237,  367 => 235,  357 => 234,  339 => 108,  326 => 43,  318 => 38,  314 => 37,  310 => 36,  306 => 35,  302 => 34,  296 => 32,  286 => 31,  275 => 248,  273 => 234,  146 => 109,  144 => 108,  80 => 46,  78 => 31,  46 => 1,);
     }
 
     public function getSourceContext()
@@ -427,7 +426,7 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
 \t\t<meta charset=\"utf-8\">
 \t\t<meta content=\"width=device-width, initial-scale=1.0\" name=\"viewport\">
 
-\t\t<title>Amena Bootstrap Template - Contact</title>
+\t\t<title>Nova Bootstrap Template - Contact</title>
 \t\t<meta content=\"\" name=\"description\">
 \t\t<meta
 \t\tcontent=\"\" name=\"keywords\">
@@ -634,7 +633,7 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
 \t\t\t\t\t<div class=\"copyright\">
 \t\t\t\t\t\t&copy; Copyright
 \t\t\t\t\t\t<strong>
-\t\t\t\t\t\t\t<span>Amena</span>
+\t\t\t\t\t\t\t<span>Nova</span>
 \t\t\t\t\t\t</strong>. All Rights Reserved
 \t\t\t\t\t</div>
 \t\t\t\t\t<div class=\"credits\">
@@ -669,7 +668,6 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
 
 \t\t{% endblock %}
 \t</body>
-</html>
-", "base.html.twig", "C:\\Users\\aymen\\Desktop\\digidreamers\\digidreamers\\templates\\base.html.twig");
+</html>", "base.html.twig", "C:\\Users\\Ahlem\\Desktop\\web pi\\digidreamers\\templates\\base.html.twig");
     }
 }

@@ -94,7 +94,7 @@ class __TwigTemplate_559b0ac0df39479558519b44f6781b83 extends Template
 
 \t\t\t\t\t<div class=\"row\">
 \t\t\t\t\t\t<div class=\"col-12\" style=\"overflow-x: scroll\">
-\t\t\t\t\t\t\t<div class=\"card\" style=\"width: 4300px;\">
+\t\t\t\t\t\t\t<div class=\"card\" style=\"width: 2300px;\">
 \t\t\t\t\t\t\t\t<div class=\"card-header\">
 \t\t\t\t\t\t\t\t\t<h5 class=\"card-title mb-0\">Empty card</h5>
 \t\t\t\t\t\t\t\t</div>
@@ -231,11 +231,12 @@ class __TwigTemplate_559b0ac0df39479558519b44f6781b83 extends Template
     <a href=\"";
         // line 89
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_new");
-        echo "\">Register</a>
+        echo "\">Create new</a>
 \t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t</div>
 \t\t\t\t\t</div>
+
 \t\t\t\t</div>
 ";
         
@@ -289,7 +290,7 @@ class __TwigTemplate_559b0ac0df39479558519b44f6781b83 extends Template
 
 \t\t\t\t\t<div class=\"row\">
 \t\t\t\t\t\t<div class=\"col-12\" style=\"overflow-x: scroll\">
-\t\t\t\t\t\t\t<div class=\"card\" style=\"width: 4300px;\">
+\t\t\t\t\t\t\t<div class=\"card\" style=\"width: 2300px;\">
 \t\t\t\t\t\t\t\t<div class=\"card-header\">
 \t\t\t\t\t\t\t\t\t<h5 class=\"card-title mb-0\">Empty card</h5>
 \t\t\t\t\t\t\t\t</div>
@@ -322,7 +323,7 @@ class __TwigTemplate_559b0ac0df39479558519b44f6781b83 extends Template
         {% for user in users %}
             <tr>
                 <td>{{ user.id }}</td>
-                <td>{{ user.nom}}</td>
+                <td>{{ user.nom }}</td>
                 <td>{{ user.prenom }}</td>
                 <td>{{ user.adress }}</td>
                 <td>{{ user.cin }}</td>
@@ -351,13 +352,14 @@ class __TwigTemplate_559b0ac0df39479558519b44f6781b83 extends Template
         </tbody>
     </table>
 
-    <a href=\"{{ path('app_user_new') }}\">Register</a>
+    <a href=\"{{ path('app_user_new') }}\">Create new</a>
 \t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t</div>
 \t\t\t\t\t</div>
+
 \t\t\t\t</div>
 {% endblock %}
-", "user/index.html.twig", "C:\\Users\\aymen\\Desktop\\digidreamers\\digidreamers\\templates\\user\\index.html.twig");
+", "user/index.html.twig", "C:\\Users\\klair\\OneDrive\\Bureau\\web pi\\digidreamers\\templates\\user\\index.html.twig");
     }
 }

@@ -46,20 +46,18 @@ class VehiculeController extends AbstractController
             dump($image);
                 
             $vehicule->setImg('http://localhost/img/'.$fichier);}
-           
             $entityManager->persist($vehicule);
             $entityManager->flush();
 
             return $this->redirectToRoute('app_vehicule_index', [], Response::HTTP_SEE_OTHER);
         }
-
         return $this->renderForm('vehicule/new.html.twig', [
             'vehicule' => $vehicule,
             'form' => $form,
         ]);
     }
 
-    #[Route('/{idv}', name: 'app_vehicule_show', methods: ['GET'])]
+    #[Route('/{idV}', name: 'app_vehicule_show', methods: ['GET'])]
     public function show(Vehicule $vehicule): Response
     {
         return $this->render('vehicule/show.html.twig', [
@@ -67,7 +65,7 @@ class VehiculeController extends AbstractController
         ]);
     }
 
-    #[Route('/{idv}/edit', name: 'app_vehicule_edit', methods: ['GET', 'POST'])]
+    #[Route('/{idV}/edit', name: 'app_vehicule_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Vehicule $vehicule, EntityManagerInterface $entityManager): Response
     {
         $form = $this->createForm(VehiculeType::class, $vehicule);
@@ -85,7 +83,7 @@ class VehiculeController extends AbstractController
         ]);
     }
 
-    #[Route('/{idv}', name: 'app_vehicule_delete', methods: ['POST'])]
+    #[Route('/{idV}', name: 'app_vehicule_delete', methods: ['POST'])]
     public function delete(Request $request, Vehicule $vehicule, EntityManagerInterface $entityManager): Response
     {
         if ($this->isCsrfTokenValid('delete'.$vehicule->getIdv(), $request->request->get('_token'))) {
