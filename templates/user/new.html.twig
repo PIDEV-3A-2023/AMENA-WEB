@@ -19,7 +19,7 @@
 {% endblock %}
 
 {% block body %}
-	
+
 	{{ form_start(form,{'attr': {'novalidate': 'novalidate'}}
 	) }}
 	<!-- ======= Breadcrumbs ======= -->
@@ -38,9 +38,9 @@
 	</div>
 	<!-- End Breadcrumbs -->
 
-	
-	<section class="contact-form-area section-bg  pt-115 pb-120 fix" src="{{ asset('front/assets/img/babva.jpg') }}" >
-	 <img src="{{ asset('front/assets/img/aret.png') }}" class="background--page" alt="..."width="110%"Height="110%">
+
+	<section class="contact-form-area section-bg  pt-115 pb-120 fix" src="{{ asset('front/assets/img/babva.jpg') }}">
+		<img src="{{ asset('front/assets/img/bac2.jpg') }}" class="background--page" alt="..." width="100%" height="100%">
 
 		<div class="container" style="margin-top:-44%;margin-left:25%;">
 			<div
@@ -85,17 +85,17 @@
 										{{ form_label(form.email) }}
 										{{ form_widget(form.email) }}
 										{{ form_errors(form.email) }}
-										{{ form_label(form.motpass) }}
-										{{ form_widget(form.motpass) }}
-										{{ form_errors(form.motpass) }}
+										{{ form_label(form.password) }}
+										{{ form_widget(form.password) }}
+										{{ form_errors(form.password) }}
 									</div>
 								</div>
 								<div class="col-lg-6">
 									<div class="select-items">
 										<div class="form-group">
-											{{ form_label(form.role) }}
-											{{ form_widget(form.role) }}
-											{{ form_errors(form.role) }}
+											{{ form_label(form.roles) }}
+											{{ form_widget(form.roles) }}
+											{{ form_errors(form.roles) }}
 										</div>
 									</div>
 								</div>
@@ -108,9 +108,11 @@
 								</div>
 								<div class="col-lg-6 col-md-6 col-sm-6">
 									<div class="input-form">
-										{{ form_label(form.datenaissance) }}
-										{{ form_widget(form.datenaissance) }}
-										{{ form_errors(form.datenaissance) }}
+										
+											{{ form_label(form.date_naissance) }}
+											{{ form_widget(form.date_naissance) }}
+											{{ form_errors(form.date_naissance) }}
+									
 									</div>
 								</div>
 								<div class="col-lg-6 col-md-6 col-sm-6">

@@ -89,7 +89,7 @@ class __TwigTemplate_5f68ea12c18bb9001aa85799f3f6fa29 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 22
-        echo "\t
+        echo "
 \t";
         // line 23
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 23, $this->source); })()), 'form_start', ["attr" => ["novalidate" => "novalidate"]]);
@@ -111,15 +111,15 @@ class __TwigTemplate_5f68ea12c18bb9001aa85799f3f6fa29 extends Template
 \t</div>
 \t<!-- End Breadcrumbs -->
 
-\t
+
 \t<section class=\"contact-form-area section-bg  pt-115 pb-120 fix\" src=\"";
         // line 42
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front/assets/img/babva.jpg"), "html", null, true);
-        echo "\" >
-\t <img src=\"";
+        echo "\">
+\t\t<img src=\"";
         // line 43
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front/assets/img/aret.png"), "html", null, true);
-        echo "\" class=\"background--page\" alt=\"...\"width=\"110%\"Height=\"110%\">
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front/assets/img/bac2.jpg"), "html", null, true);
+        echo "\" class=\"background--page\" alt=\"...\" width=\"100%\" height=\"100%\">
 
 \t\t<div class=\"container\" style=\"margin-top:-44%;margin-left:25%;\">
 \t\t\t<div
@@ -193,15 +193,15 @@ class __TwigTemplate_5f68ea12c18bb9001aa85799f3f6fa29 extends Template
         echo "
 \t\t\t\t\t\t\t\t\t\t";
         // line 88
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 88, $this->source); })()), "motpass", [], "any", false, false, false, 88), 'label');
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 88, $this->source); })()), "password", [], "any", false, false, false, 88), 'label');
         echo "
 \t\t\t\t\t\t\t\t\t\t";
         // line 89
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 89, $this->source); })()), "motpass", [], "any", false, false, false, 89), 'widget');
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 89, $this->source); })()), "password", [], "any", false, false, false, 89), 'widget');
         echo "
 \t\t\t\t\t\t\t\t\t\t";
         // line 90
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 90, $this->source); })()), "motpass", [], "any", false, false, false, 90), 'errors');
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 90, $this->source); })()), "password", [], "any", false, false, false, 90), 'errors');
         echo "
 \t\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t</div>
@@ -210,15 +210,15 @@ class __TwigTemplate_5f68ea12c18bb9001aa85799f3f6fa29 extends Template
 \t\t\t\t\t\t\t\t\t\t<div class=\"form-group\">
 \t\t\t\t\t\t\t\t\t\t\t";
         // line 96
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 96, $this->source); })()), "role", [], "any", false, false, false, 96), 'label');
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 96, $this->source); })()), "roles", [], "any", false, false, false, 96), 'label');
         echo "
 \t\t\t\t\t\t\t\t\t\t\t";
         // line 97
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 97, $this->source); })()), "role", [], "any", false, false, false, 97), 'widget');
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 97, $this->source); })()), "roles", [], "any", false, false, false, 97), 'widget');
         echo "
 \t\t\t\t\t\t\t\t\t\t\t";
         // line 98
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 98, $this->source); })()), "role", [], "any", false, false, false, 98), 'errors');
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 98, $this->source); })()), "roles", [], "any", false, false, false, 98), 'errors');
         echo "
 \t\t\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t\t</div>
@@ -241,18 +241,20 @@ class __TwigTemplate_5f68ea12c18bb9001aa85799f3f6fa29 extends Template
 \t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t<div class=\"col-lg-6 col-md-6 col-sm-6\">
 \t\t\t\t\t\t\t\t\t<div class=\"input-form\">
-\t\t\t\t\t\t\t\t\t\t";
-        // line 111
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 111, $this->source); })()), "datenaissance", [], "any", false, false, false, 111), 'label');
-        echo "
-\t\t\t\t\t\t\t\t\t\t";
+\t\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t\t\t";
         // line 112
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 112, $this->source); })()), "datenaissance", [], "any", false, false, false, 112), 'widget');
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 112, $this->source); })()), "date_naissance", [], "any", false, false, false, 112), 'label');
         echo "
-\t\t\t\t\t\t\t\t\t\t";
+\t\t\t\t\t\t\t\t\t\t\t";
         // line 113
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 113, $this->source); })()), "datenaissance", [], "any", false, false, false, 113), 'errors');
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 113, $this->source); })()), "date_naissance", [], "any", false, false, false, 113), 'widget');
         echo "
+\t\t\t\t\t\t\t\t\t\t\t";
+        // line 114
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 114, $this->source); })()), "date_naissance", [], "any", false, false, false, 114), 'errors');
+        echo "
+\t\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t<div class=\"col-lg-6 col-md-6 col-sm-6\">
@@ -262,43 +264,43 @@ class __TwigTemplate_5f68ea12c18bb9001aa85799f3f6fa29 extends Template
 \t\t\t\t\t\t\t\t<div class=\"col-lg-4 col-md-6 col-sm-6\">
 \t\t\t\t\t\t\t\t\t<div class=\"input-form\">
 \t\t\t\t\t\t\t\t\t\t";
-        // line 122
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 122, $this->source); })()), "numtel", [], "any", false, false, false, 122), 'label');
-        echo "
-\t\t\t\t\t\t\t\t\t\t";
-        // line 123
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 123, $this->source); })()), "numtel", [], "any", false, false, false, 123), 'widget');
-        echo "
-\t\t\t\t\t\t\t\t\t\t";
         // line 124
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 124, $this->source); })()), "numtel", [], "any", false, false, false, 124), 'errors');
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 124, $this->source); })()), "numtel", [], "any", false, false, false, 124), 'label');
         echo "
 \t\t\t\t\t\t\t\t\t\t";
         // line 125
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 125, $this->source); })()), "_token", [], "any", false, false, false, 125), 'row');
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 125, $this->source); })()), "numtel", [], "any", false, false, false, 125), 'widget');
+        echo "
+\t\t\t\t\t\t\t\t\t\t";
+        // line 126
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 126, $this->source); })()), "numtel", [], "any", false, false, false, 126), 'errors');
+        echo "
+\t\t\t\t\t\t\t\t\t\t";
+        // line 127
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 127, $this->source); })()), "_token", [], "any", false, false, false, 127), 'row');
         echo "
 \t\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t<div class=\"col-lg-4 col-md-6 col-sm-6\">
 \t\t\t\t\t\t\t\t\t<div class=\"input-form\">
 \t\t\t\t\t\t\t\t\t\t";
-        // line 130
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 130, $this->source); })()), "cin", [], "any", false, false, false, 130), 'label');
-        echo "
-\t\t\t\t\t\t\t\t\t\t";
-        // line 131
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 131, $this->source); })()), "cin", [], "any", false, false, false, 131), 'widget');
-        echo "
-\t\t\t\t\t\t\t\t\t\t";
         // line 132
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 132, $this->source); })()), "cin", [], "any", false, false, false, 132), 'errors');
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 132, $this->source); })()), "cin", [], "any", false, false, false, 132), 'label');
+        echo "
+\t\t\t\t\t\t\t\t\t\t";
+        // line 133
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 133, $this->source); })()), "cin", [], "any", false, false, false, 133), 'widget');
+        echo "
+\t\t\t\t\t\t\t\t\t\t";
+        // line 134
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 134, $this->source); })()), "cin", [], "any", false, false, false, 134), 'errors');
         echo "
 \t\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t<div class=\"col-lg-4 col-md-6 col-sm-6\">
 \t\t\t\t\t\t\t\t\t<div
 \t\t\t\t\t\t\t\t\t\tclass=\"input-form\">";
-        // line 138
+        // line 140
         echo "\t\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t</div>
 
@@ -313,7 +315,7 @@ class __TwigTemplate_5f68ea12c18bb9001aa85799f3f6fa29 extends Template
 \t\t</div>
 \t</section>
 \t<a class=\"btn btn-outline-dark\" href=\"";
-        // line 151
+        // line 153
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_index");
         echo "\">back to list</a>
 ";
@@ -337,7 +339,7 @@ class __TwigTemplate_5f68ea12c18bb9001aa85799f3f6fa29 extends Template
 
     public function getDebugInfo()
     {
-        return array (  317 => 151,  302 => 138,  294 => 132,  290 => 131,  286 => 130,  278 => 125,  274 => 124,  270 => 123,  266 => 122,  254 => 113,  250 => 112,  246 => 111,  238 => 106,  234 => 105,  230 => 104,  221 => 98,  217 => 97,  213 => 96,  204 => 90,  200 => 89,  196 => 88,  192 => 87,  188 => 86,  184 => 85,  175 => 79,  171 => 78,  167 => 77,  158 => 71,  154 => 70,  150 => 69,  121 => 43,  117 => 42,  97 => 24,  95 => 23,  92 => 22,  82 => 21,  62 => 18,  51 => 15,  49 => 16,  36 => 15,);
+        return array (  319 => 153,  304 => 140,  296 => 134,  292 => 133,  288 => 132,  280 => 127,  276 => 126,  272 => 125,  268 => 124,  255 => 114,  251 => 113,  247 => 112,  238 => 106,  234 => 105,  230 => 104,  221 => 98,  217 => 97,  213 => 96,  204 => 90,  200 => 89,  196 => 88,  192 => 87,  188 => 86,  184 => 85,  175 => 79,  171 => 78,  167 => 77,  158 => 71,  154 => 70,  150 => 69,  121 => 43,  117 => 42,  97 => 24,  95 => 23,  92 => 22,  82 => 21,  62 => 18,  51 => 15,  49 => 16,  36 => 15,);
     }
 
     public function getSourceContext()
@@ -363,7 +365,7 @@ class __TwigTemplate_5f68ea12c18bb9001aa85799f3f6fa29 extends Template
 {% endblock %}
 
 {% block body %}
-\t
+
 \t{{ form_start(form,{'attr': {'novalidate': 'novalidate'}}
 \t) }}
 \t<!-- ======= Breadcrumbs ======= -->
@@ -382,9 +384,9 @@ class __TwigTemplate_5f68ea12c18bb9001aa85799f3f6fa29 extends Template
 \t</div>
 \t<!-- End Breadcrumbs -->
 
-\t
-\t<section class=\"contact-form-area section-bg  pt-115 pb-120 fix\" src=\"{{ asset('front/assets/img/babva.jpg') }}\" >
-\t <img src=\"{{ asset('front/assets/img/aret.png') }}\" class=\"background--page\" alt=\"...\"width=\"110%\"Height=\"110%\">
+
+\t<section class=\"contact-form-area section-bg  pt-115 pb-120 fix\" src=\"{{ asset('front/assets/img/babva.jpg') }}\">
+\t\t<img src=\"{{ asset('front/assets/img/bac2.jpg') }}\" class=\"background--page\" alt=\"...\" width=\"100%\" height=\"100%\">
 
 \t\t<div class=\"container\" style=\"margin-top:-44%;margin-left:25%;\">
 \t\t\t<div
@@ -429,17 +431,17 @@ class __TwigTemplate_5f68ea12c18bb9001aa85799f3f6fa29 extends Template
 \t\t\t\t\t\t\t\t\t\t{{ form_label(form.email) }}
 \t\t\t\t\t\t\t\t\t\t{{ form_widget(form.email) }}
 \t\t\t\t\t\t\t\t\t\t{{ form_errors(form.email) }}
-\t\t\t\t\t\t\t\t\t\t{{ form_label(form.motpass) }}
-\t\t\t\t\t\t\t\t\t\t{{ form_widget(form.motpass) }}
-\t\t\t\t\t\t\t\t\t\t{{ form_errors(form.motpass) }}
+\t\t\t\t\t\t\t\t\t\t{{ form_label(form.password) }}
+\t\t\t\t\t\t\t\t\t\t{{ form_widget(form.password) }}
+\t\t\t\t\t\t\t\t\t\t{{ form_errors(form.password) }}
 \t\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t<div class=\"col-lg-6\">
 \t\t\t\t\t\t\t\t\t<div class=\"select-items\">
 \t\t\t\t\t\t\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t\t\t\t\t\t\t{{ form_label(form.role) }}
-\t\t\t\t\t\t\t\t\t\t\t{{ form_widget(form.role) }}
-\t\t\t\t\t\t\t\t\t\t\t{{ form_errors(form.role) }}
+\t\t\t\t\t\t\t\t\t\t\t{{ form_label(form.roles) }}
+\t\t\t\t\t\t\t\t\t\t\t{{ form_widget(form.roles) }}
+\t\t\t\t\t\t\t\t\t\t\t{{ form_errors(form.roles) }}
 \t\t\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t</div>
@@ -452,9 +454,11 @@ class __TwigTemplate_5f68ea12c18bb9001aa85799f3f6fa29 extends Template
 \t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t<div class=\"col-lg-6 col-md-6 col-sm-6\">
 \t\t\t\t\t\t\t\t\t<div class=\"input-form\">
-\t\t\t\t\t\t\t\t\t\t{{ form_label(form.datenaissance) }}
-\t\t\t\t\t\t\t\t\t\t{{ form_widget(form.datenaissance) }}
-\t\t\t\t\t\t\t\t\t\t{{ form_errors(form.datenaissance) }}
+\t\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t\t\t{{ form_label(form.date_naissance) }}
+\t\t\t\t\t\t\t\t\t\t\t{{ form_widget(form.date_naissance) }}
+\t\t\t\t\t\t\t\t\t\t\t{{ form_errors(form.date_naissance) }}
+\t\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t<div class=\"col-lg-6 col-md-6 col-sm-6\">

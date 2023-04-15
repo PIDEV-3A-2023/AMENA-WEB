@@ -22,23 +22,23 @@ class Validation
     private ?int $id = null;
 
     #[ORM\Column(length: 255, name: "imageA")]
-  
+
     #[Assert\Url]
     private ?string $imagea = null;
 
     #[ORM\Column(length: 255, name: "imageB")]
-   
+
     #[Assert\Url]
     private ?string $imageb = null;
 
     #[ORM\Column(name: "valide")]
     private ?bool $valide = null;
-
+/* 
     #[ORM\ManyToOne]
     #[ORM\JoinColumn(nullable: false, name: "idu")]
     private ?User $idu = null;
 
-
+ */
 
 
     public function getId(): ?int
@@ -82,15 +82,4 @@ class Validation
         return $this;
     }
 
-    public function getIdu(): ?User
-    {
-        return $this->idu;
-    }
-
-    public function setIdu(?User $idu): self
-    {
-        $this->idu = $idu;
-
-        return $this;
-    }
 }

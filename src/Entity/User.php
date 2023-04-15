@@ -3,117 +3,190 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
-#[ORM\Table(name: '`user`')]
-
-
-
-class User
+#[UniqueEntity(fields: ['email'], message: 'There is already an account with this email')]
+class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 255)]
- 
-    #[Assert\NotBlank(message: "Le nom ne doit pas être vide")]
-    #[Assert\Length(min: 2, max: 255, minMessage: "Le nom doit contenir au moins {{ limit }} caractères")]
-    private ?string $nom = null;
-
-    #[Assert\NotBlank(message: "Le prénom ne doit pas être vide")]
-    #[Assert\Length(min: 2, max: 255, minMessage: "Le prénom doit contenir au moins {{ limit }} caractères")]
-    private ?string $prenom = null;
-
-    #[Assert\NotBlank(message: "L'adresse ne doit pas être vide")]
-    #[Assert\Length(min: 2, max: 255, minMessage: "L'adresse doit contenir au moins {{ limit }} caractères")]
-    private ?string $adress = null;
-
-    #[Assert\NotBlank(message: "Le CIN ne doit pas être vide")]
-    #[Assert\Regex(pattern: "/^\d{8}$/", message: "Le CIN doit contenir exactement 8 chiffres")]
-    private ?string $cin = null;
-
-    #[Assert\NotBlank(message: "La date de naissance ne doit pas être vide")]
-    private ?\DateTimeInterface $dateNaissance = null;
-
-  /*   #[Assert\NotBlank(message: "La date de création ne doit pas être vide")] */
-    private ?\DateTimeInterface $dateCreationC = null;
-
-    /* #[Assert\NotNull(message: "Le statut ne doit pas être vide")] */
-    private ?bool $status = null;
-
-    #[Assert\NotBlank(message: "Le rôle ne doit pas être vide")]
-    #[Assert\Length(min: 2, max: 255, minMessage: "Le rôle doit contenir au moins {{ limit }} caractères")]
-    private ?string $role = null;
-
-    /* #[Assert\NotBlank(message: "Le mot de passe ne doit pas être vide")]
-    #[Assert\Length(min: 8, max: 255, minMessage: "Le mot de passe doit contenir au moins {{ limit }} caractères")]
-    */ private ?string $motPass = null;
-
-    #[Assert\NotBlank(message: "L'adresse e-mail ne doit pas être vide")]
-    #[Assert\Email(message: "L'adresse e-mail doit être valide")]
+    #[ORM\Column(length: 180, unique: true)]
+    #[Assert\NotBlank(message: 'L\'adresse e-mail est obligatoire')]
+    #[Assert\Regex(
+        pattern: '/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/',
+        message: 'L\'adresse e-mail doit être valide et contenir un nom de domaine valide'
+    )]
     private ?string $email = null;
 
-    /* #[Assert\NotBlank(message: "Le token ne doit pas être vide")] */
-    private ?string $Token = null;
+    #[ORM\Column]
+    private array $roles = [];
 
-  /*   #[Assert\NotBlank(message: "Le score ne doit pas être vide")]
-    #[Assert\Regex(pattern: "/^\d{8}$/", message: "Le score doit contenir exactement 8 chiffres")] */
-    private ?string $score;
+    /**
+     * @var string The hashed password
+     */
+    #[ORM\Column]
+    private ?string $password = null;
 
-    #[Assert\NotBlank(message: "Le numéro de téléphone ne doit pas être vide")]
-    #[Assert\Regex(pattern: "/^216\d{8}$/", message: "Le numéro de téléphone doit être au format 216xxxxxxxx")]
+    #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message: 'Le nom est obligatoire')]
+    #[Assert\Length(
+        min: 2,
+        minMessage: 'Le nom doit comporter au moins {{ limit }} caractères'
+    )]
+    private ?string $nom = null;
+
+    #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message: 'Le prenom est obligatoire')]
+    #[Assert\Length(
+        min: 2,
+        minMessage: 'Le prenom doit comporter au moins {{ limit }} caractères'
+    )]
+    private ?string $prenom = null;
+
+    #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message: 'L\'adresse est obligatoire')]
+    #[Assert\Length(
+        min: 2,
+        minMessage: 'L\'adresse doit comporter au moins {{ limit }} caractères'
+    )]
+    private ?string $adress = null;
+
+    #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message: 'Le numéro de CIN est obligatoire')]
+    #[Assert\Length(
+        min: 8,
+        minMessage: 'Le numéro de CIN doit comporter au moins {{ limit }} caractères'
+    )]
+    private ?string $cin = null;
+
+    #[ORM\Column(type: Types::DATE_MUTABLE)]
+    private ?\DateTimeInterface $date_naissance = null;
+
+    #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
+    private ?\DateTimeInterface $date_creation_c = null;
+
+    #[ORM\Column]
+    private ?bool $status = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $token = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $score = null;
+
+    #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message: 'Le numéro de téléphone est obligatoire')]
+    #[Assert\Regex(
+        pattern: '/^\+216\d{8}$/',
+        message: 'Le numéro de téléphone doit commencer par +216 et être suivi de 8 chiffres'
+    )]
     private ?string $numtel = null;
 
-   /*  #[Assert\NotBlank(message: "L'image ne doit pas être vide")]
-    #[Assert\Url(message: "L'image doit être une URL valide")] */
-    private ?string $image = "http://localhost/img/useravatar.jpg";
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $image = null;
 
-   /*  #[Assert\NotNull(message: "La date d'expiration du compte ne doit pas être vide")] */
-    private ?\DateTime $Compte_ex = null;
+    #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
+    private ?\DateTimeInterface $compte_ex = null;
 
-    /* #[Assert\NotNull] */
-    #[ORM\Column(nullable: true)]
-    private ?\DateTime $token_ex = null;
-
-
-    #[ORM\OneToMany(mappedBy: 'id_u', targetEntity: Colis::class)]
-    private Collection $colis;
-
-    #[ORM\OneToMany(mappedBy: 'ida_U', targetEntity: Annonces::class)]
-    private Collection $annonces;
-
-    #[ORM\OneToMany(mappedBy: 'senderId', targetEntity: Message::class, orphanRemoval: true)]
-    private Collection $senderId;
-
-    #[ORM\OneToMany(mappedBy: 'receiverId', targetEntity: Message::class, orphanRemoval: true)]
-    private Collection $receiver;
-
-
-    public function __construct()
-    {  $this->image="http://localhost/img/useravatar.jpg";
-        $this->score = "0";
-        $this->dateCreationC = new \DateTime();
-        $this->colis = new ArrayCollection();
-        $this->annonces = new ArrayCollection();
-       
-       
-        $this->senderId = new ArrayCollection();
-        $this->receiver = new ArrayCollection();
-    }
-
-
+    #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
+    private ?\DateTimeInterface $token_ex = null;
 
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    public function getEmail(): ?string
+    {
+        return $this->email;
+    }
+
+    public function setEmail(string $email): self
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    /**
+     * A visual identifier that represents this user.
+     *
+     * @see UserInterface
+     */
+    public function getUserIdentifier(): string
+    {
+        return (string) $this->email;
+    }
+
+    /**
+     * @deprecated since Symfony 5.3, use getUserIdentifier instead
+     */
+    public function getUsername(): string
+    {
+        return (string) $this->email;
+    }
+
+    /**
+     * @see UserInterface
+     */
+    public function getRoles(): array
+    {
+        $roles = $this->roles;
+        // guarantee every user at least has ROLE_USER
+        $roles[] = 'ROLE_USER';
+
+        return array_unique($roles);
+    }
+
+    public function setRoles(array $roles): self
+    {
+        $this->roles = $roles;
+
+        return $this;
+    }
+
+    /**
+     * @see PasswordAuthenticatedUserInterface
+     */
+    public function getPassword(): string
+    {
+        return $this->password;
+    }
+
+    public function setPassword(string $password): self
+    {
+        $this->password = $password;
+
+        return $this;
+    }
+
+    /**
+     * Returning a salt is only needed, if you are not using a modern
+     * hashing algorithm (e.g. bcrypt or sodium) in your security.yaml.
+     *
+     * @see UserInterface
+     */
+    public function getSalt(): ?string
+    {
+        return null;
+    }
+
+    /**
+     * @see UserInterface
+     */
+    public function eraseCredentials()
+    {
+        // If you store any temporary, sensitive data on the user, clear it here
+        // $this->plainPassword = null;
     }
 
     public function getNom(): ?string
@@ -164,26 +237,26 @@ class User
         return $this;
     }
 
-    public function getDatenaissance(): ?\DateTimeInterface
+    public function getDateNaissance(): ?\DateTimeInterface
     {
-        return $this->dateNaissance;
+        return $this->date_naissance;
     }
 
-    public function setDatenaissance(\DateTimeInterface $datenaissance): self
+    public function setDateNaissance(\DateTimeInterface $date_naissance): self
     {
-        $this->dateNaissance = $datenaissance;
+        $this->date_naissance = $date_naissance;
 
         return $this;
     }
 
-    public function getDatecreationc(): ?\DateTimeInterface
+    public function getDateCreationC(): ?\DateTimeInterface
     {
-        return $this->dateCreationC;
+        return $this->date_creation_c;
     }
 
-    public function setDatecreationc(\DateTimeInterface $dateCreationC): self
+    public function setDateCreationC(?\DateTimeInterface $date_creation_c): self
     {
-        $this->dateCreationC = $dateCreationC;
+        $this->date_creation_c = $date_creation_c;
 
         return $this;
     }
@@ -195,55 +268,19 @@ class User
 
     public function setStatus(bool $status): self
     {
-        $this->status = $status=false;
-
-        return $this;
-    }
-
-    public function getRole(): ?string
-    {
-        return $this->role;
-    }
-
-    public function setRole(string $role): self
-    {
-        $this->role = $role;
-
-        return $this;
-    }
-
-    public function getMotpass(): ?string
-    {
-        return $this->motPass;
-    }
-
-    public function setMotpass(string $motpass): self
-    {
-        $this->motPass = $motpass;
-
-        return $this;
-    }
-
-    public function getEmail(): ?string
-    {
-        return $this->email;
-    }
-
-    public function setEmail(string $email): self
-    {
-        $this->email = $email;
+        $this->status = $status;
 
         return $this;
     }
 
     public function getToken(): ?string
     {
-        return $this->Token;
+        return $this->token;
     }
 
     public function setToken(string $token): self
     {
-        $this->Token = $token;
+        $this->token = $token;
 
         return $this;
     }
@@ -253,7 +290,7 @@ class User
         return $this->score;
     }
 
-    public function setScore(string $score): self
+    public function setScore(?string $score): self
     {
         $this->score = $score;
 
@@ -277,7 +314,7 @@ class User
         return $this->image;
     }
 
-    public function setImage(string $image): self
+    public function setImage(?string $image): self
     {
         $this->image = $image;
 
@@ -286,12 +323,12 @@ class User
 
     public function getCompteEx(): ?\DateTimeInterface
     {
-        return $this->Compte_ex;
+        return $this->compte_ex;
     }
 
-    public function setCompteEx(?\DateTimeInterface $compteEx): self
+    public function setCompteEx(?\DateTimeInterface $compte_ex): self
     {
-        $this->Compte_ex = $compteEx;
+        $this->compte_ex = $compte_ex;
 
         return $this;
     }
@@ -301,170 +338,10 @@ class User
         return $this->token_ex;
     }
 
-    public function setTokenEx(?\DateTimeInterface $tokenEx): self
+    public function setTokenEx(?\DateTimeInterface $token_ex): self
     {
-        $this->token_ex = $tokenEx;
+        $this->token_ex = $token_ex;
 
         return $this;
     }
-
-
-    public function __toString()
-    {
-        return $this->nom;
-    }
-
-
-    public function setValidation(?Validation $validation): self
-    {
-        // unset the owning side of the relation if necessary
-        if ($validation === null && $this->validation !== null) {
-            $this->validation->setIdu(null);
-        }
-
-        // set the owning side of the relation if necessary
-        if ($validation !== null && $validation->getIdu() !== $this) {
-            $validation->setIdu($this);
-        }
-
-        $this->validation = $validation;
-
-        return $this;
-    }
-
-
-
-
-
-    /**
-     * @return Collection<int, Colis>
-     */
-    public function getColis(): Collection
-    {
-        return $this->colis;
-    }
-
-    public function addColi(Colis $coli): self
-    {
-        if (!$this->colis->contains($coli)) {
-            $this->colis->add($coli);
-            $coli->setIdU($this);
-        }
-
-        return $this;
-    }
-
-    public function removeColi(Colis $coli): self
-    {
-        if ($this->colis->removeElement($coli)) {
-            // set the owning side to null (unless already changed)
-            if ($coli->getIdU() === $this) {
-                $coli->setIdU(null);
-            }
-        }
-
-        return $this;
-    }
-
-    /**
-     * @return Collection<int, Annonces>
-     */
-    public function getAnnonces(): Collection
-    {
-        return $this->annonces;
-    }
-
-    public function addAnnonce(Annonces $annonce): self
-    {
-        if (!$this->annonces->contains($annonce)) {
-            $this->annonces->add($annonce);
-            $annonce->setIdaU($this);
-        }
-
-        return $this;
-    }
-
-    public function removeAnnonce(Annonces $annonce): self
-    {
-        if ($this->annonces->removeElement($annonce)) {
-            // set the owning side to null (unless already changed)
-            if ($annonce->getIdaU() === $this) {
-                $annonce->setIdaU(null);
-            }
-        }
-
-        return $this;
-    }
-
-    /**
-     * @return Collection<int, Message>
-     */
-    public function getSenderId(): Collection
-    {
-        return $this->senderId;
-    }
-
-    public function addSenderId(Message $senderId): self
-    {
-        if (!$this->senderId->contains($senderId)) {
-            $this->senderId->add($senderId);
-            $senderId->setSenderId($this);
-        }
-
-        return $this;
-    }
-
-    public function removeSenderId(Message $senderId): self
-    {
-        if ($this->senderId->removeElement($senderId)) {
-            // set the owning side to null (unless already changed)
-            if ($senderId->getSenderId() === $this) {
-                $senderId->setSenderId(null);
-            }
-        }
-
-        return $this;
-    }
-
-    /**
-     * @return Collection<int, Message>
-     */
-    public function getReceiver(): Collection
-    {
-        return $this->receiver;
-    }
-
-    public function addReceiver(Message $receiver): self
-    {
-        if (!$this->receiver->contains($receiver)) {
-            $this->receiver->add($receiver);
-            $receiver->setReceiverId($this);
-        }
-
-        return $this;
-    }
-
-    public function removeReceiver(Message $receiver): self
-    {
-        if ($this->receiver->removeElement($receiver)) {
-            // set the owning side to null (unless already changed)
-            if ($receiver->getReceiverId() === $this) {
-                $receiver->setReceiverId(null);
-            }
-        }
-
-        return $this;
-    }
-
-   
-
-    
-
-    
-
-    
-
-    
-
-    
 }

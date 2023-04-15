@@ -11,7 +11,7 @@ class Annonces
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
-    #[ORM\Column(name:'id_annonce')]
+    #[ORM\Column(name:'id')]
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
@@ -37,10 +37,6 @@ class Annonces
 
  
 
-
-    #[ORM\ManyToOne(inversedBy: 'annonces')]
-    #[ORM\JoinColumn(nullable: false, name: "ida_U")]
-    private ?User $ida_U ;
 
 
     
@@ -140,17 +136,7 @@ class Annonces
         return $this;
     }
 
-    public function getIdaU(): ?User
-    {
-        return $this->ida_U;
-    }
 
-    public function setIdaU(?User $ida_U): self
-    {
-        $this->ida_U = $ida_U;
-
-        return $this;
-    }
 
     public function getIdColis(): ?Colis
     {

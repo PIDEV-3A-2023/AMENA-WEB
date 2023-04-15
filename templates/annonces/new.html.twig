@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
-{% form_theme form 'bootstrap_5_layout.html.twig' %}
-{% block body %}
 
+{% block body %}
+{{ include('user/_form.html.twig') }}
 	<div style="margin-top:8%">
 		<h1>Nouvelle annonce</h1>
 		<div class="offset-3 col-3">

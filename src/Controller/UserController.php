@@ -5,90 +5,70 @@ namespace App\Controller;
 use App\Entity\User;
 use App\Form\UserType;
 use App\Repository\UserRepository;
-use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\FormError;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
-
 use Doctrine\Persistence\ManagerRegistry;
-
-
 #[Route('/user')]
 class UserController extends AbstractController
 {
     #[Route('/', name: 'app_user_index', methods: ['GET'])]
-    public function index(Request $request, ManagerRegistry $registry,UserRepository $userRepository): Response
-    {
-        
-        $users = $userRepository->findBy([], ['id' => 'DESC']);
-/* 
-        $query = $request->query->get('q');
+    public function index(Request $request,ManagerRegistry $registry,UserRepository $userRepository): Response
+    {$query = $request->query->get('q');
 
         $users = $registry->getRepository(User::class)
-            ->findBySearchQuery($query); */
+            ->findBySearchQuery($query);
         return $this->render('user/index.html.twig', [
             'users' => $users,
+            //'users' => $userRepository->findBy([], ['id' => 'DESC']),
         ]);
     }
-    #[Route('/new', name: 'app_user_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, EntityManagerInterface $entityManager): Response
-    {
-        $user = new User();
 
+    #[Route('/new', name: 'app_user_new', methods: ['GET', 'POST'])]
+    public function new(Request $request, UserRepository $userRepository, UserPasswordHasherInterface $userPasswordHasher): Response
+    {
         function generateToken($length = 32)
         {
             return base64_encode(random_bytes($length));
         }
 
-
-        function hashPassword($password)
-        {
-            $encodedhash = hash("sha256", $password, true);
-            return base64_encode($encodedhash);
-        }
-
-
-
-
+        $user = new User();
         $form = $this->createForm(UserType::class, $user);
-
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-
-
-
-
-            $password = $form->get('motpass')->getData();
             if (empty($password)) {
-                $form->get('motpass')->addError(new FormError('Veuillez entrer un mot de passe.'));
+                $form->get('password')->addError(new FormError('Veuillez entrer un mot de passe.'));
                 return $this->renderForm('user/new.html.twig', [
                     'user' => $user,
                     'form' => $form,
                 ]);
             }
-            if ($password !== null) {
-                $hash = hashPassword($password);
-                $user->setMotPass($hash);
-                $token = generateToken();
-                $user->setStatus(false);
-                //$user->setScore("0000000"); // Initialisation du score à 0
-                $user->setDatecreationc(new \DateTime());
-                $user->setTokenEx(new \DateTime());
-                $user->setCompteEx(new \DateTime());
-                $user->setToken($token);
-            }
+            $user->setImage("http://localhost/img/useravatar.jpg");
+            $token = generateToken();
+            $user->setToken($token);
+            $user->setScore("00");
+            $user->setCompteEx(new \DateTime());
+            $user->setDatecreationc(new \DateTime());
+            $user->setTokenEx(new \DateTime());
+            $user->setPassword(
+                $userPasswordHasher->hashPassword(
+                    $user,
+                    $form->get('password')->getData()
+                )
+            );
 
-            $entityManager->persist($user);
-            $entityManager->flush();
-            // dd($user)
+
+            $image = $form->get('image')->getData();
+
+
+            $userRepository->save($user, true);
+
             return $this->redirectToRoute('app_user_index', [], Response::HTTP_SEE_OTHER);
-        } else {
-            dump($form->getErrors(true, true));
         }
-
 
         return $this->renderForm('user/new.html.twig', [
             'user' => $user,
@@ -105,34 +85,26 @@ class UserController extends AbstractController
     }
 
     #[Route('/{id}/edit', name: 'app_user_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, User $user, EntityManagerInterface $entityManager): Response
+    public function edit(Request $request, User $user, UserRepository $userRepository,UserPasswordHasherInterface $userPasswordHasher): Response
     {
-
-        function phashPassword($password)
-        {
-            $encodedhash = hash("sha256", $password, true);
-            return base64_encode($encodedhash);
-        }
         $form = $this->createForm(UserType::class, $user);
-
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             // Get the submitted password value
-            $newPassword = $form->get('motpass')->getData();
+            $newPassword = $form->get('password')->getData();
 
             // Check if the password field is not empty
 
 
             if (!empty($newPassword)) {
-                // If the password field is not empty, update the user's password
-
-                $hash = phashPassword($newPassword);
-                $user->setMotpass($hash);
+                $user->setPassword(
+                    $userPasswordHasher->hashPassword(
+                        $user,
+                        $form->get('password')->getData()
+                    )
+                );
             }
-
-
-
             $image = $form->get('image')->getData();
 
 
@@ -148,9 +120,13 @@ class UserController extends AbstractController
                 $user->setImage('http://localhost/img/' . $fichier);
             }
 
-            $entityManager->flush();
+            
 
-            return $this->redirectToRoute('app_user_Profile', ['id' => $user->getId()]);
+
+
+            $userRepository->save($user, true);
+
+            return $this->redirectToRoute('app_user_index', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('user/edit.html.twig', [
@@ -159,29 +135,13 @@ class UserController extends AbstractController
         ]);
     }
 
-
     #[Route('/{id}', name: 'app_user_delete', methods: ['POST'])]
-    public function delete(Request $request, User $user, EntityManagerInterface $entityManager): Response
+    public function delete(Request $request, User $user, UserRepository $userRepository): Response
     {
         if ($this->isCsrfTokenValid('delete' . $user->getId(), $request->request->get('_token'))) {
-            $entityManager->remove($user);
-            $entityManager->flush();
+            $userRepository->remove($user, true);
         }
 
         return $this->redirectToRoute('app_user_index', [], Response::HTTP_SEE_OTHER);
-    }
-
-
-
-
-    #[Route('/profile/{id}', name: 'app_user_Profile', methods: ['GET'])]
-
-    public function showUser($id): Response
-    {
-        $user = $this->getDoctrine()->getRepository(User::class)->find($id);
-        return $this->render('user/profile.html.twig', [
-            'user' => $user,
-            'form'
-        ]);
     }
 }
