@@ -140,7 +140,7 @@ class __TwigTemplate_c4b193a064447672ab03149809eb37fb extends Template
         // line 35
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 35, $this->source); })()), "score", [], "any", false, false, false, 35), "html", null, true);
         echo "</h4>
-\t\t\t\t\t\t\t\t\t<p class=\"text-secondary mb-1\">F
+\t\t\t\t\t\t\t\t\t<p class=\"text-secondary mb-1\">
 \t\t\t\t\t\t\t\t\t\t";
         // line 37
         if (twig_get_attribute($this->env, $this->source, ($context["user"] ?? null), "roles", [], "any", true, true, false, 37)) {
@@ -378,7 +378,7 @@ class __TwigTemplate_c4b193a064447672ab03149809eb37fb extends Template
 \t\t\t\t\t\t\t\t<img src=\"{{user.image}}\" alt=\"Admin\" class=\"rounded-circle p-1 bg-primary\" width=\"180\" height=\"180\">
 \t\t\t\t\t\t\t\t<div class=\"mt-3\">
 \t\t\t\t\t\t\t\t\t<h4>{{ user.score }}</h4>
-\t\t\t\t\t\t\t\t\t<p class=\"text-secondary mb-1\">F
+\t\t\t\t\t\t\t\t\t<p class=\"text-secondary mb-1\">
 \t\t\t\t\t\t\t\t\t\t{% if user.roles is defined %}
 \t\t\t\t\t\t\t\t\t\t\t<p class=\"m-0\">{{ user.roles|json_encode }}</p>
 \t\t\t\t\t\t\t\t\t\t{% endif %}

@@ -94,17 +94,17 @@
 
 {% block body %}
 	{#<!-- ======= Breadcrumbs ======= -->
-	<div class="breadcrumbs d-flex align-items-center" style="background-image: url('assets/img/contact-header.jpg');">
-		<div class="container position-relative d-flex flex-column align-items-center">
-	
-			<h2>Contact</h2>
-			<ol>
-				<li><a href="index.html">Home</a></li>
-				<li>Contact</li>
-			</ol>
-	
-		</div>
-	</div><!-- End Breadcrumbs -->#}
+		<div class="breadcrumbs d-flex align-items-center" style="background-image: url('assets/img/contact-header.jpg');">
+			<div class="container position-relative d-flex flex-column align-items-center">
+		
+				<h2>Contact</h2>
+				<ol>
+					<li><a href="index.html">Home</a></li>
+					<li>Contact</li>
+				</ol>
+		
+			</div>
+		</div><!-- End Breadcrumbs -->#}
 
 	<form method="get" action="{{ path('app_user_index') }}">
 		<div class="input-group mb-3">
@@ -122,7 +122,7 @@
 		<div class="row">
 			<div class="col-12" style="overflow-x: scroll">
 				<div class="card" style="width: 1720px;">
-					
+
 					<div class="card-body">
 
 						<table class="table">
@@ -141,9 +141,10 @@
 												<td>{{ u.nom }}
 													<div class="col-md-6 col-xl-3">
 														<div class="card m-b-10" style="width: 450px; height: 500px;">
+                                                        
 															<div class="card-body row">
 																<div class="col-6">
-																	<a href=""><img src="{{u.image}}" alt="" class="img-fluid rounded-circle w-40" width="180" height="180"></a>
+																	<img src="{{u.image}}" alt="Admin" class="rounded-circle p-1 bg-primary" width="180" height="180">
 																</div>
 																<div class="col-6 card-title align-self-center mb-0">
 																	<h5>{{ u.nom}}</h5>
@@ -165,6 +166,9 @@
 																</li>
 															</ul>
 															<div class="card-body">
+																<div class="float-right btn-group btn-group-sm" style="width: 75px; height: 35px;">
+																	
+																</div>
 																<div class="float-right btn-group btn-group-sm">
 																	<a href="{{ path('app_user_show', {'id': u.id}) }}" class="btn btn-outline-primary">Profil
 																		<i class="fa fa-pencil">

@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
@@ -33,7 +35,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     /**
      * @var string The hashed password
      */
-    #[ORM\Column]
+    #[ORM\Column(nullable: true)]
     private ?string $password = null;
 
     #[ORM\Column(length: 255)]
@@ -99,6 +101,22 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
     private ?\DateTimeInterface $token_ex = null;
+
+    #[ORM\OneToMany(mappedBy: 'receiverId', targetEntity: Message::class, orphanRemoval: true)]
+    private Collection $receiverId;
+
+    #[ORM\OneToMany(mappedBy: 'senderId', targetEntity: Message::class, orphanRemoval: true)]
+    private Collection $senderId;
+
+    #[ORM\OneToMany(mappedBy: 'idu', targetEntity: Validation::class, orphanRemoval: true)]
+    private Collection $validations;
+
+    public function __construct()
+    {
+        $this->receiverId = new ArrayCollection();
+        $this->senderId = new ArrayCollection();
+        $this->validations = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -341,6 +359,99 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setTokenEx(?\DateTimeInterface $token_ex): self
     {
         $this->token_ex = $token_ex;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Message>
+     */
+    public function getReceiverId(): Collection
+    {
+        return $this->receiverId;
+    }
+
+    public function addReceiverId(Message $receiverId): self
+    {
+        if (!$this->receiverId->contains($receiverId)) {
+            $this->receiverId->add($receiverId);
+            $receiverId->setReceiverId($this);
+        }
+
+        return $this;
+    }
+
+    public function removeReceiverId(Message $receiverId): self
+    {
+        if ($this->receiverId->removeElement($receiverId)) {
+            // set the owning side to null (unless already changed)
+            if ($receiverId->getReceiverId() === $this) {
+                $receiverId->setReceiverId(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Message>
+     */
+    public function getSenderId(): Collection
+    {
+        return $this->senderId;
+    }
+
+    public function addSenderId(Message $senderId): self
+    {
+        if (!$this->senderId->contains($senderId)) {
+            $this->senderId->add($senderId);
+            $senderId->setSenderId($this);
+        }
+
+        return $this;
+    }
+
+    public function removeSenderId(Message $senderId): self
+    {
+        if ($this->senderId->removeElement($senderId)) {
+            // set the owning side to null (unless already changed)
+            if ($senderId->getSenderId() === $this) {
+                $senderId->setSenderId(null);
+            }
+        }
+
+        return $this;
+    }public function __toString()
+    {
+        return $this->getNom();
+    }
+
+    /**
+     * @return Collection<int, Validation>
+     */
+    public function getValidations(): Collection
+    {
+        return $this->validations;
+    }
+
+    public function addValidation(Validation $validation): self
+    {
+        if (!$this->validations->contains($validation)) {
+            $this->validations->add($validation);
+            $validation->setIdu($this);
+        }
+
+        return $this;
+    }
+
+    public function removeValidation(Validation $validation): self
+    {
+        if ($this->validations->removeElement($validation)) {
+            // set the owning side to null (unless already changed)
+            if ($validation->getIdu() === $this) {
+                $validation->setIdu(null);
+            }
+        }
 
         return $this;
     }

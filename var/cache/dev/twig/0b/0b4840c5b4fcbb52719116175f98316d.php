@@ -134,7 +134,7 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
 \t\t\t\t\t\t\t</ul>
 \t\t\t\t\t\t</li>
 \t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t<a href=\"contact.html\" class=\"active\">Contact</a>
+\t\t\t\t\t\t\t<a href=\"/logout/\" class=\"active\">logout</a>
 \t\t\t\t\t\t</li>
 \t\t\t\t\t</ul>
 \t\t\t\t</nav>
@@ -528,7 +528,7 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
 \t\t\t\t\t\t\t</ul>
 \t\t\t\t\t\t</li>
 \t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t<a href=\"contact.html\" class=\"active\">Contact</a>
+\t\t\t\t\t\t\t<a href=\"/logout/\" class=\"active\">logout</a>
 \t\t\t\t\t\t</li>
 \t\t\t\t\t</ul>
 \t\t\t\t</nav>

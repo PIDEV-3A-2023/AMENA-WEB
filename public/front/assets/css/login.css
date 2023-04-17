@@ -92,7 +92,7 @@ form hr {
 form .create-account {
   outline: none;
   border: none;
-  background: #06b909;
+  background: #6008a8;
   padding: 0.8rem 1rem;
   border-radius: 0.4rem;
   font-size: 1.1rem;
@@ -102,7 +102,7 @@ form .create-account {
 }
 
 form .create-account:hover {
-  background: #03ad06;
+  background: #4208ad;
   cursor: pointer;
 }
 

@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\Message;
+use App\Entity\User;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -63,4 +64,14 @@ class MessageRepository extends ServiceEntityRepository
 //            ->getOneOrNullResult()
 //        ;
 //    }
+
+
+public function findByReceiver(User $user): array
+{
+    return $this->createQueryBuilder('m')
+        ->where('m.receiverId = :user')
+        ->setParameter('user', $user)
+        ->getQuery()
+        ->getResult();
+}
 }

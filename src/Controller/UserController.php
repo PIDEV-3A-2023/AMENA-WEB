@@ -12,12 +12,22 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Doctrine\Persistence\ManagerRegistry;
+
+use App\Form\ResetPasswordType;
+use App\Form\ResetRequestType;
+
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use Symfony\Component\Security\Core\Exception\AccessDeniedException;
+use Symfony\Component\Security\Csrf\TokenGenerator\TokenGeneratorInterface;
+
 #[Route('/user')]
 class UserController extends AbstractController
+
 {
     #[Route('/', name: 'app_user_index', methods: ['GET'])]
-    public function index(Request $request,ManagerRegistry $registry,UserRepository $userRepository): Response
-    {$query = $request->query->get('q');
+    public function index(Request $request, ManagerRegistry $registry, UserRepository $userRepository): Response
+    {
+        $query = $request->query->get('q');
 
         $users = $registry->getRepository(User::class)
             ->findBySearchQuery($query);
@@ -40,6 +50,7 @@ class UserController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $password = $form->get('password')->getData();
             if (empty($password)) {
                 $form->get('password')->addError(new FormError('Veuillez entrer un mot de passe.'));
                 return $this->renderForm('user/new.html.twig', [
@@ -79,13 +90,15 @@ class UserController extends AbstractController
     #[Route('/{id}', name: 'app_user_show', methods: ['GET'])]
     public function show(User $user): Response
     {
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+        $user = $this->getUser();
         return $this->render('user/show.html.twig', [
             'user' => $user,
         ]);
     }
 
     #[Route('/{id}/edit', name: 'app_user_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, User $user, UserRepository $userRepository,UserPasswordHasherInterface $userPasswordHasher): Response
+    public function edit(Request $request, User $user, UserRepository $userRepository, UserPasswordHasherInterface $userPasswordHasher): Response
     {
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
@@ -95,8 +108,6 @@ class UserController extends AbstractController
             $newPassword = $form->get('password')->getData();
 
             // Check if the password field is not empty
-
-
             if (!empty($newPassword)) {
                 $user->setPassword(
                     $userPasswordHasher->hashPassword(
@@ -120,7 +131,7 @@ class UserController extends AbstractController
                 $user->setImage('http://localhost/img/' . $fichier);
             }
 
-            
+
 
 
 
