@@ -35,15 +35,6 @@ class Evaluation
      */
     private $note;
 
-    /**
-     * @var \User
-     *
-     * @ORM\ManyToOne(targetEntity="User")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="idClient", referencedColumnName="id")
-     * })
-     */
-    private $idclient;
 
     public function getId(): ?int
     {
@@ -74,17 +65,7 @@ class Evaluation
         return $this;
     }
 
-    public function getIdclient(): ?User
-    {
-        return $this->idclient;
-    }
-
-    public function setIdclient(?User $idclient): self
-    {
-        $this->idclient = $idclient;
-
-        return $this;
-    }
+    
 
 
 }

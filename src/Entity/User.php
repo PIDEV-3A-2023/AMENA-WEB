@@ -1,119 +1,210 @@
 <?php
 
 namespace App\Entity;
-
+use App\Entity\Colis;
 use App\Repository\UserRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
+use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
-#[ORM\Table(name: '`user`')]
-
-
-
-class User
+#[UniqueEntity(fields: ['email'], message: 'There is already an account with this email')]
+class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
     private ?int $id = null;
 
+    #[ORM\Column(length: 180, unique: true)]
+    #[Assert\NotBlank(message: 'L\'adresse e-mail est obligatoire')]
+    #[Assert\Regex(
+        pattern: '/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/',
+        message: 'L\'adresse e-mail doit être valide et contenir un nom de domaine valide'
+    )]
+    private ?string $email = null;
+
+    #[ORM\Column]
+    private array $roles = [];
+
+    /**
+     * @var string The hashed password
+     */
+    #[ORM\Column(nullable: true)]
+    private ?string $password = null;
+
     #[ORM\Column(length: 255)]
-    #[Assert\NotBlank(message: "Nom obligatoire")]
-    #[Assert\Length(min: 2, minMessage: "Le nom doit contenir au moins {{ limit }} caractères")]
+    #[Assert\NotBlank(message: 'Le nom est obligatoire')]
+    #[Assert\Length(
+        min: 2,
+        minMessage: 'Le nom doit comporter au moins {{ limit }} caractères'
+    )]
     private ?string $nom = null;
 
-
     #[ORM\Column(length: 255)]
-    #[Assert\NotBlank(message: "Prénom obligatoire")]
-    #[Assert\Length(min: 2, minMessage: "Le prénom doit contenir au moins {{ limit }} caractères")]
+    #[Assert\NotBlank(message: 'Le prenom est obligatoire')]
+    #[Assert\Length(
+        min: 2,
+        minMessage: 'Le prenom doit comporter au moins {{ limit }} caractères'
+    )]
     private ?string $prenom = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message: 'L\'adresse est obligatoire')]
+    #[Assert\Length(
+        min: 2,
+        minMessage: 'L\'adresse doit comporter au moins {{ limit }} caractères'
+    )]
     private ?string $adress = null;
 
-
     #[ORM\Column(length: 255)]
-    #[Assert\NotBlank(message: "CIN obligatoire")]
-    #[Assert\Regex(pattern: "/^\d{8}$/", message: "CIN invalide")]
+    #[Assert\NotBlank(message: 'Le numéro de CIN est obligatoire')]
+    #[Assert\Length(
+        min: 8,
+        minMessage: 'Le numéro de CIN doit comporter au moins {{ limit }} caractères'
+    )]
     private ?string $cin = null;
 
+    #[ORM\Column(type: Types::DATE_MUTABLE)]
+    private ?\DateTimeInterface $date_naissance = null;
 
-    #[ORM\Column(type: Types::DATE_MUTABLE, name: "dateNaissance")]
-    private ?\DateTimeInterface $dateNaissance = null;
-
-    #[ORM\Column(type: Types::DATE_MUTABLE, name: "dateCreationC")]
-    private ?\DateTimeInterface $dateCreationC = null;
+    #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
+    private ?\DateTimeInterface $date_creation_c = null;
 
     #[ORM\Column]
     private ?bool $status = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $role = null;
+    private ?string $token = null;
 
-
-    #[ORM\Column(length: 255, name: "motPass")]
-    #[Assert\NotBlank(message: "Mot de passe obligatoire")]
-    #[Assert\Regex(pattern: "/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/", message: "Le mot de passe doit contenir au moins 8 caractères dont une lettre et un chiffre")]
-
-    private ?string $motPass = null;
-    #[ORM\Column(length: 255)]
-    #[Assert\NotBlank(message: "Adresse e-mail obligatoire")]
-    #[Assert\Email(message: "Adresse e-mail invalide")]
-    private ?string $email = null;
-
-
-
-    #[ORM\Column(length: 255)]
-    private ?string $Token = null;
-
-
-
-    #[ORM\Column(length: 8)]
-    #[Assert\NotBlank(message: "Score obligatoire")]
-    #[Assert\Regex(pattern: "/^\d{8}$/", message: "Score invalide")]
+    #[ORM\Column(length: 255, nullable: true)]
     private ?string $score = null;
 
-
-    #[ORM\Column(length: 11)]
-    #[Assert\Regex(pattern: "/^05\d{8}$/", message: "Numéro de téléphone invalide")]
+    #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message: 'Le numéro de téléphone est obligatoire')]
+    #[Assert\Regex(
+        pattern: '/^\+216\d{8}$/',
+        message: 'Le numéro de téléphone doit commencer par +216 et être suivi de 8 chiffres'
+    )]
     private ?string $numtel = null;
 
-
-
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255, nullable: true)]
     private ?string $image = null;
 
+    #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
+    private ?\DateTimeInterface $compte_ex = null;
 
+    #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
+    private ?\DateTimeInterface $token_ex = null;
 
-    #[ORM\Column(nullable: true)]
-    private ?\DateTime $Compte_ex = null;
+    #[ORM\OneToMany(mappedBy: 'receiverId', targetEntity: Message::class, orphanRemoval: true)]
+    private Collection $receiverId;
 
-    
+    #[ORM\OneToMany(mappedBy: 'senderId', targetEntity: Message::class, orphanRemoval: true)]
+    private Collection $senderId;
 
-    #[ORM\Column(nullable: true)]
-    private ?\DateTime $token_ex = null;
-
-    #[ORM\OneToMany(mappedBy: 'ida_U', targetEntity: Annonces::class)]
-    private Collection $annonces;
-
-    #[ORM\OneToMany(mappedBy: 'id_u', targetEntity: Colis::class)]
-    private Collection $colis;
+    #[ORM\OneToMany(mappedBy: 'idu', targetEntity: Validation::class, orphanRemoval: true)]
+    private Collection $validations;
 
     public function __construct()
     {
-        $this->annonces = new ArrayCollection();
-        $this->colis = new ArrayCollection();
+        $this->receiverId = new ArrayCollection();
+        $this->senderId = new ArrayCollection();
+        $this->validations = new ArrayCollection();
     }
-
-
 
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    public function getEmail(): ?string
+    {
+        return $this->email;
+    }
+
+    public function setEmail(string $email): self
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    /**
+     * A visual identifier that represents this user.
+     *
+     * @see UserInterface
+     */
+    public function getUserIdentifier(): string
+    {
+        return (string) $this->email;
+    }
+
+    /**
+     * @deprecated since Symfony 5.3, use getUserIdentifier instead
+     */
+    public function getUsername(): string
+    {
+        return (string) $this->email;
+    }
+
+    /**
+     * @see UserInterface
+     */
+    public function getRoles(): array
+    {
+        $roles = $this->roles;
+        // guarantee every user at least has ROLE_USER
+        $roles[] = 'ROLE_USER';
+
+        return array_unique($roles);
+    }
+
+    public function setRoles(array $roles): self
+    {
+        $this->roles = $roles;
+
+        return $this;
+    }
+
+    /**
+     * @see PasswordAuthenticatedUserInterface
+     */
+    public function getPassword(): string
+    {
+        return $this->password;
+    }
+
+    public function setPassword(string $password): self
+    {
+        $this->password = $password;
+
+        return $this;
+    }
+
+    /**
+     * Returning a salt is only needed, if you are not using a modern
+     * hashing algorithm (e.g. bcrypt or sodium) in your security.yaml.
+     *
+     * @see UserInterface
+     */
+    public function getSalt(): ?string
+    {
+        return null;
+    }
+
+    /**
+     * @see UserInterface
+     */
+    public function eraseCredentials()
+    {
+        // If you store any temporary, sensitive data on the user, clear it here
+        // $this->plainPassword = null;
     }
 
     public function getNom(): ?string
@@ -164,26 +255,26 @@ class User
         return $this;
     }
 
-    public function getDatenaissance(): ?\DateTimeInterface
+    public function getDateNaissance(): ?\DateTimeInterface
     {
-        return $this->dateNaissance;
+        return $this->date_naissance;
     }
 
-    public function setDatenaissance(\DateTimeInterface $datenaissance): self
+    public function setDateNaissance(\DateTimeInterface $date_naissance): self
     {
-        $this->dateNaissance = $datenaissance;
+        $this->date_naissance = $date_naissance;
 
         return $this;
     }
 
-    public function getDatecreationc(): ?\DateTimeInterface
+    public function getDateCreationC(): ?\DateTimeInterface
     {
-        return $this->dateCreationC;
+        return $this->date_creation_c;
     }
 
-    public function setDatecreationc(\DateTimeInterface $dateCreationC): self
+    public function setDateCreationC(?\DateTimeInterface $date_creation_c): self
     {
-        $this->dateCreationC = $dateCreationC;
+        $this->date_creation_c = $date_creation_c;
 
         return $this;
     }
@@ -200,50 +291,14 @@ class User
         return $this;
     }
 
-    public function getRole(): ?string
-    {
-        return $this->role;
-    }
-
-    public function setRole(string $role): self
-    {
-        $this->role = $role;
-
-        return $this;
-    }
-
-    public function getMotpass(): ?string
-    {
-        return $this->motPass;
-    }
-
-    public function setMotpass(string $motpass): self
-    {
-        $this->motPass = $motpass;
-
-        return $this;
-    }
-
-    public function getEmail(): ?string
-    {
-        return $this->email;
-    }
-
-    public function setEmail(string $email): self
-    {
-        $this->email = $email;
-
-        return $this;
-    }
-
     public function getToken(): ?string
     {
-        return $this->Token;
+        return $this->token;
     }
 
     public function setToken(string $token): self
     {
-        $this->Token = $token;
+        $this->token = $token;
 
         return $this;
     }
@@ -253,7 +308,7 @@ class User
         return $this->score;
     }
 
-    public function setScore(string $score): self
+    public function setScore(?string $score): self
     {
         $this->score = $score;
 
@@ -277,7 +332,7 @@ class User
         return $this->image;
     }
 
-    public function setImage(string $image): self
+    public function setImage(?string $image): self
     {
         $this->image = $image;
 
@@ -286,12 +341,12 @@ class User
 
     public function getCompteEx(): ?\DateTimeInterface
     {
-        return $this->Compte_ex;
+        return $this->compte_ex;
     }
 
-    public function setCompteEx(?\DateTimeInterface $compteEx): self
+    public function setCompteEx(?\DateTimeInterface $compte_ex): self
     {
-        $this->Compte_ex = $compteEx;
+        $this->compte_ex = $compte_ex;
 
         return $this;
     }
@@ -301,67 +356,105 @@ class User
         return $this->token_ex;
     }
 
-    public function setTokenEx(?\DateTimeInterface $tokenEx): self
+    public function setTokenEx(?\DateTimeInterface $token_ex): self
     {
-        $this->token_ex = $tokenEx;
-
-        return $this;
-    }
-
-
-    public function __toString()
-    {
-        return $this->nom;
-    }
-
-
-    public function setValidation(?Validation $validation): self
-    {
-        // unset the owning side of the relation if necessary
-        if ($validation === null && $this->validation !== null) {
-            $this->validation->setIdu(null);
-        }
-
-        // set the owning side of the relation if necessary
-        if ($validation !== null && $validation->getIdu() !== $this) {
-            $validation->setIdu($this);
-        }
-
-        $this->validation = $validation;
+        $this->token_ex = $token_ex;
 
         return $this;
     }
 
     /**
-     * @return Collection<int, Annonces>
+     * @return Collection<int, Message>
      */
-    public function getAnnonces(): Collection
+    public function getReceiverId(): Collection
     {
-        return $this->annonces;
+        return $this->receiverId;
     }
 
-    public function addAnnonce(Annonces $annonce): self
+    public function addReceiverId(Message $receiverId): self
     {
-        if (!$this->annonces->contains($annonce)) {
-            $this->annonces->add($annonce);
-            $annonce->setIdaU($this);
+        if (!$this->receiverId->contains($receiverId)) {
+            $this->receiverId->add($receiverId);
+            $receiverId->setReceiverId($this);
         }
 
         return $this;
     }
 
-    public function removeAnnonce(Annonces $annonce): self
+    public function removeReceiverId(Message $receiverId): self
     {
-        if ($this->annonces->removeElement($annonce)) {
+        if ($this->receiverId->removeElement($receiverId)) {
             // set the owning side to null (unless already changed)
-            if ($annonce->getIdaU() === $this) {
-                $annonce->setIdaU(null);
+            if ($receiverId->getReceiverId() === $this) {
+                $receiverId->setReceiverId(null);
             }
         }
 
         return $this;
     }
 
+    /**
+     * @return Collection<int, Message>
+     */
+    public function getSenderId(): Collection
+    {
+        return $this->senderId;
+    }
+
+    public function addSenderId(Message $senderId): self
+    {
+        if (!$this->senderId->contains($senderId)) {
+            $this->senderId->add($senderId);
+            $senderId->setSenderId($this);
+        }
+
+        return $this;
+    }
+
+    public function removeSenderId(Message $senderId): self
+    {
+        if ($this->senderId->removeElement($senderId)) {
+            // set the owning side to null (unless already changed)
+            if ($senderId->getSenderId() === $this) {
+                $senderId->setSenderId(null);
+            }
+        }
+
+        return $this;
+    }public function __toString()
+    {
+        return $this->getNom();
+    }
+
+    /**
+     * @return Collection<int, Validation>
+     */
+    public function getValidations(): Collection
+    {
+        return $this->validations;
+    }
+
+    public function addValidation(Validation $validation): self
+    {
+        if (!$this->validations->contains($validation)) {
+            $this->validations->add($validation);
+            $validation->setIdu($this);
+        }
+
+        return $this;
+    }
+
+    public function removeValidation(Validation $validation): self
+    {
+        if ($this->validations->removeElement($validation)) {
+            // set the owning side to null (unless already changed)
+            if ($validation->getIdu() === $this) {
+                $validation->setIdu(null);
+            }
+        }
+
+        return $this;
+    }
     /**
      * @return Collection<int, Colis>
      */
@@ -391,4 +484,6 @@ class User
 
         return $this;
     }
+    #[ORM\OneToMany(mappedBy: 'id_u', targetEntity: Colis::class)]
+    private Collection $colis;
 }

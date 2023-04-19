@@ -22,23 +22,29 @@ class Validation
     private ?int $id = null;
 
     #[ORM\Column(length: 255, name: "imageA")]
+<<<<<<< HEAD
     #[Assert\NotBlank]
+=======
+
+>>>>>>> 1b9c83bb09edfda666f414a2ec8b0b82973f62fa
     #[Assert\Url]
     private ?string $imagea = null;
 
     #[ORM\Column(length: 255, name: "imageB")]
+<<<<<<< HEAD
     #[Assert\NotBlank]
+=======
+
+>>>>>>> 1b9c83bb09edfda666f414a2ec8b0b82973f62fa
     #[Assert\Url]
     private ?string $imageb = null;
 
     #[ORM\Column(name: "valide")]
     private ?bool $valide = null;
 
-    #[ORM\ManyToOne]
-    #[ORM\JoinColumn(nullable: false, name: "idu")]
+    #[ORM\ManyToOne(inversedBy: 'validations')]
+    #[ORM\JoinColumn(nullable: false,name:"idu")]
     private ?User $idu = null;
-
-
 
 
     public function getId(): ?int
@@ -93,4 +99,5 @@ class Validation
 
         return $this;
     }
+
 }

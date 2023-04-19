@@ -62,9 +62,15 @@ class ValidationType extends AbstractType
                 ],
             ])
             ->add('valide')
+<<<<<<< HEAD
             
             ->add('valider',SubmitType::class)
         ;
+=======
+            /* ->add('idu') */
+
+            ->add('valider', SubmitType::class);
+>>>>>>> 1b9c83bb09edfda666f414a2ec8b0b82973f62fa
     }
 
     public function configureOptions(OptionsResolver $resolver): void

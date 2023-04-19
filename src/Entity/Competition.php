@@ -57,14 +57,7 @@ class Competition
      */
     private $nbp;
 
-    /**
-     * @var \User
-     *
-     * @ORM\ManyToOne(targetEntity="User")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="id_uc", referencedColumnName="id")
-     * })
-     */
+   
     private $idUc;
 
     public function getId(): ?int
@@ -132,17 +125,7 @@ class Competition
         return $this;
     }
 
-    public function getIdUc(): ?User
-    {
-        return $this->idUc;
-    }
-
-    public function setIdUc(?User $idUc): self
-    {
-        $this->idUc = $idUc;
-
-        return $this;
-    }
+   
 
 
 }

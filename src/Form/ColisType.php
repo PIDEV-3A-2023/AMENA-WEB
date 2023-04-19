@@ -18,7 +18,13 @@ class ColisType extends AbstractType
             ->add('nomDestinataire')
             ->add('adresseDestinataire')
             ->add('poids')
+<<<<<<< HEAD
             ->add('Enregistrer',SubmitType::class)
+=======
+            ->add('statut')
+            ->add('dateExpedition')
+          
+>>>>>>> 1b9c83bb09edfda666f414a2ec8b0b82973f62fa
         ;
     }
 

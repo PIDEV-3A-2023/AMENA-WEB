@@ -1,47 +1,49 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Annonces index{% endblock %}
 
 {% block body %}
-    <h1>Annonces index</h1>
+	<h1>Annonces index</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Type</th>
-                <th>Ville_dep</th>
-                <th>Ville_arr</th>
-                <th>Date_dep</th>
-                <th>Date_arr</th>
-                <th>Prix</th>
-                <th>Description</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for annonce in annonces %}
-            <tr>
-                <td>{{ annonce.id }}</td>
-                <td>{{ annonce.type }}</td>
-                <td>{{ annonce.villeDep }}</td>
-                <td>{{ annonce.villeArr }}</td>
-                <td>{{ annonce.dateDep }}</td>
-                <td>{{ annonce.dateArr }}</td>
-                <td>{{ annonce.prix }}</td>
-                <td>{{ annonce.description }}</td>
-                <td>
-                    <a href="{{ path('app_annonces_show', {'id': annonce.id}) }}">show</a>
-                    <a href="{{ path('app_annonces_edit', {'id': annonce.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="9">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+	<table class="table">
 
-    <a href="{{ path('app_annonces_new') }}">Create new</a>
+		<tbody>
+			{% for annonce in annonces|batch(3) %}
+				<tr>
+					{% for a in annonce %}
+						<td>
+							{{ a.Type }}
+							<div class="col-md-6 col-xl-3">
+								<div class="card m-b-10" style="width: 450px; height: 500px;">
+									<div class="card-body row">
+
+										<div class="col-6 card-title align-self-center mb-0">
+											<h5>La ville de depart :</h5>
+											<h5>{{ a.villeDep}}</h5>
+											<h5>La ville d'arrivee :</h5>
+											<h5>{{ a.villeArr}}</h5>
+											<h5>La Date de depart :</h5>
+											<h5>{{ a.DateDep}}</h5>
+											<h5>La Date d'arrivee :</h5>
+											<h5>{{ a.DateArr}}</h5>
+											<h5>Description :</h5>
+											<h5>{{ a.Description}}</h5>
+										</div>
+									</div>
+									<div class="float-right btn-group btn-group-sm" style="width: 75px; height: 35px;">
+										<a href="{{ path('app_annonces_show', {'id': a.id}) }}" class="btn btn-primary tooltips" data-placement="top" data-toggle="tooltip" data-original-title="Edit">
+											<i class="fa fa-pencil"></i>
+										</a>
+										<a href="{{ path('app_annonces_delete', {'id': a.id}) }}" class="btn btn-secondary tooltips" data-placement="top" data-toggle="tooltip" data-original-title="Delete">
+											<i class="fa fa-times"></i>
+										</a>
+									</div>
+								</div>
+							</div>
+						</td>
+					{% endfor %}
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+	<a href="{{ path('app_annonces_new') }}">Create new</a>
 {% endblock %}

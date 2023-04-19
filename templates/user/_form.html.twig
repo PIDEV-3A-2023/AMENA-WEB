@@ -1,5 +1,10 @@
-{% form_theme form 'bootstrap_4_layout.html.twig' %}
 <div class="offset-3 col-3">
-{{ form(form,{'attr': {'novalidate': 'novalidate'}} ) }}
+{{ form_start(form,{'attr': {'novalidate': 'novalidate'}} ) }}
+    {{ form_widget(form) }}
+    <button class="btn">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}
+
+
+
 
 </div>

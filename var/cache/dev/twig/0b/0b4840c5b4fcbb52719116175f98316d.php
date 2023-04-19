@@ -62,187 +62,195 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
 \t\t<!-- Google Fonts -->
 \t\t<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">
 \t\t<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>
-\t\t<link
-\t\thref=\"https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap\" rel=\"stylesheet\">
+\t\t<link href=\"https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap\" rel=\"stylesheet\">
 
 
-\t\t<!-- =======================================================
-\t\t\t\t\t\t  * Template Name: Nova
-\t\t\t\t\t\t  * Updated: Mar 10 2023 with Bootstrap v5.2.3
-\t\t\t\t\t\t  * Template URL: https://bootstrapmade.com/nova-bootstrap-business-template/
-\t\t\t\t\t\t  * Author: BootstrapMade.com
-\t\t\t\t\t\t  * License: https://bootstrapmade.com/license/
-\t\t\t\t\t\t  ======================================================== -->
 \t\t";
-        // line 31
+        // line 23
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 46
+        // line 38
         echo "
 
 \t</head>
 \t<body>
-    <!-- ======= Header ======= -->
-  <header id=\"header\" class=\"header d-flex align-items-center fixed-top\">
-    <div class=\"container-fluid container-xl d-flex align-items-center justify-content-between\">
+\t\t<!-- ======= Header ======= -->
+\t\t<header id=\"header\" class=\"header d-flex align-items-center fixed-top\" style=\"margin-bottom:8%;background: rgba(27, 47, 69, 0.9);padding: 15px;\">
+\t\t\t<div class=\"container-fluid container-xl d-flex align-items-center justify-content-between\">
 
-      <a href=\"index.html\" class=\"logo d-flex align-items-center\">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src=\"front/assets/img/logo.png\" alt=\"\"> -->
-        <h1 class=\"d-flex align-items-center\">Nova</h1>
-      </a>
+\t\t\t\t<a href=\"index.html\" class=\"logo d-flex align-items-center\">
+\t\t\t\t\t<!-- Uncomment the line below if you also wish to use an image logo -->
+\t\t\t\t\t<!-- <img src=\"front/assets/img/logo.png\" alt=\"\"> -->
+\t\t\t\t\t\t<h1 class=\"d-flex align-items-center\"> Amena</h1>
+\t\t\t\t</a>
 
-      <i class=\"mobile-nav-toggle mobile-nav-show bi bi-list\"></i>
-      <i class=\"mobile-nav-toggle mobile-nav-hide d-none bi bi-x\"></i>
+\t\t\t\t<i class=\"mobile-nav-toggle mobile-nav-show bi bi-list\"></i>
+\t\t\t\t<i class=\"mobile-nav-toggle mobile-nav-hide d-none bi bi-x\"></i>
 
-      <nav id=\"navbar\" class=\"navbar\">
-        <ul>
-          <li><a href=\"index.html\">Home</a></li>
-          <li><a href=\"about.html\">About</a></li>
-          <li><a href=\"services.html\">Services</a></li>
-          <li><a href=\"portfolio.html\">Portfolio</a></li>
-          <li><a href=\"team.html\">Team</a></li>
-          <li><a href=\"blog.html\">Blog</a></li>
-          <li class=\"dropdown\"><a ><span>Dropdown</span> <i class=\"bi bi-chevron-down dropdown-indicator\"></i></a>
-            <ul>
-              <li><a >Dropdown 1</a></li>
-              <li class=\"dropdown\"><a ><span>Deep Dropdown</span> <i class=\"bi bi-chevron-down dropdown-indicator\"></i></a>
-                <ul>
-                  <li><a >Deep Dropdown 1</a></li>
-                  <li><a >Deep Dropdown 2</a></li>
-                  <li><a >Deep Dropdown 3</a></li>
-                  <li><a >Deep Dropdown 4</a></li>
-                  <li><a >Deep Dropdown 5</a></li>
-                </ul>
-              </li>
-              <li><a >Dropdown 2</a></li>
-              <li><a >Dropdown 3</a></li>
-              <li><a >Dropdown 4</a></li>
-            </ul>
-          </li>
-          <li><a href=\"contact.html\" class=\"active\">Contact</a></li>
-        </ul>
-      </nav><!-- .navbar -->
+\t\t\t\t<nav id=\"navbar\" class=\"navbar\">
+\t\t\t\t\t<ul>
+\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t<a href=\"/web/index.html\">Home</a>
+\t\t\t\t\t\t</li>
+\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t<a href=\"/web/about.html\">About</a>
+\t\t\t\t\t\t</li>
 
-    </div>
-  </header><!-- End Header -->
+\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t<a href=\"/annonces/\">Annonces</a>
+\t\t\t\t\t\t</li>
 
-  <!-- ======= Breadcrumbs ======= -->
-    <div class=\"breadcrumbs d-flex align-items-center\" style=\"background-image: url('assets/img/contact-header.jpg');\">
-      <div class=\"container position-relative d-flex flex-column align-items-center\">
-
-        <h2>Contact</h2>
-        <ol>
-          <li><a href=\"index.html\">Home</a></li>
-          <li>Contact</li>
-        </ol>
-
-      </div>
-    </div><!-- End Breadcrumbs -->
-   <main id=\"main\">
-\t\t";
-        // line 108
-        $this->displayBlock('body', $context, $blocks);
-        // line 109
-        echo "        </main><!-- End #main -->
-\t\t<!-- ======= Footer ======= -->
-\t\t<footer id=\"footer\" class=\"footer\">
-
-\t\t\t<div class=\"footer-content\">
-\t\t\t\t<div class=\"container\">
-\t\t\t\t\t<div class=\"row gy-4\">
-\t\t\t\t\t\t<div class=\"col-lg-5 col-md-12 footer-info\">
-\t\t\t\t\t\t\t<a href=\"index.html\" class=\"logo d-flex align-items-center\">
-\t\t\t\t\t\t\t\t<span>Nova</span>
+\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t<a href=\"/web/blog\">Blog</a>
+\t\t\t\t\t\t</li>
+\t\t\t\t\t\t<li class=\"dropdown\">
+\t\t\t\t\t\t\t<a>
+\t\t\t\t\t\t\t\t<span>Gestion</span>
+\t\t\t\t\t\t\t\t<i class=\"bi bi-chevron-down dropdown-indicator\"></i>
 \t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t<p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
-\t\t\t\t\t\t\t<div class=\"social-links d-flex  mt-3\">
-\t\t\t\t\t\t\t\t<a  class=\"twitter\">
-\t\t\t\t\t\t\t\t\t<i class=\"bi bi-twitter\"></i>
+\t\t\t\t\t\t\t<ul>
+\t\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t\t\t<a>Gestion Colis</a>
+\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t<li class=\"dropdown\">
+\t\t\t\t\t\t\t\t\t<a>
+\t\t\t\t\t\t\t\t\t\t<span>Gestion Vehicules</span>
+\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-chevron-down dropdown-indicator\"></i>
+\t\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t\t\t<ul>
+\t\t\t\t\t\t\t\t\t\t<li><a>Deep Dropdown 1</a></li>
+\t\t\t\t\t\t\t\t\t\t<li><a>Deep Dropdown 2</a></li>
+\t\t\t\t\t\t\t\t\t\t<li><a>Deep Dropdown 3</a></li>
+\t\t\t\t\t\t\t\t\t\t<li><a>Deep Dropdown 4</a></li>
+\t\t\t\t\t\t\t\t\t\t<li><a>Deep Dropdown 5</a></li>
+\t\t\t\t\t\t\t\t\t</ul>
+\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t\t\t<a>Gestion Annonces</a>
+\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t\t\t<a>Gestion Gamification</a>
+\t\t\t\t\t\t\t\t</li>
+
+\t\t\t\t\t\t\t</ul>
+\t\t\t\t\t\t</li>
+\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t<a href=\"/logout/\" class=\"active\">logout</a>
+\t\t\t\t\t\t</li>
+\t\t\t\t\t</ul>
+\t\t\t\t</nav>
+\t\t\t\t<!-- .navbar -->
+
+\t\t\t</div>
+\t\t</header>
+\t\t<!-- End Header -->
+
+
+\t\t<main id=\"main\"> ";
+        // line 114
+        $this->displayBlock('body', $context, $blocks);
+        // line 115
+        echo "\t\t\t</main>
+\t\t\t<!-- End #main -->
+\t\t\t<!-- ======= Footer ======= -->
+\t\t\t<footer id=\"footer\" class=\"footer\" style=\"margin-top:38%\">
+
+\t\t\t\t<div class=\"footer-content\">
+\t\t\t\t\t<div class=\"container\">
+\t\t\t\t\t\t<div class=\"row gy-4\">
+\t\t\t\t\t\t\t<div class=\"col-lg-5 col-md-12 footer-info\">
+\t\t\t\t\t\t\t\t<a href=\"index.html\" class=\"logo d-flex align-items-center\">
+\t\t\t\t\t\t\t\t\t<span>Amena</span>
 \t\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t\t<a  class=\"facebook\">
-\t\t\t\t\t\t\t\t\t<i class=\"bi bi-facebook\"></i>
-\t\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t\t<a  class=\"instagram\">
-\t\t\t\t\t\t\t\t\t<i class=\"bi bi-instagram\"></i>
-\t\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t\t<a  class=\"linkedin\">
-\t\t\t\t\t\t\t\t\t<i class=\"bi bi-linkedin\"></i>
-\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t\t<p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
+\t\t\t\t\t\t\t\t<div class=\"social-links d-flex  mt-3\">
+\t\t\t\t\t\t\t\t\t<a class=\"twitter\">
+\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-twitter\"></i>
+\t\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t\t\t<a class=\"facebook\">
+\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-facebook\"></i>
+\t\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t\t\t<a class=\"instagram\">
+\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-instagram\"></i>
+\t\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t\t\t<a class=\"linkedin\">
+\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-linkedin\"></i>
+\t\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t</div>
+
+\t\t\t\t\t\t\t<div class=\"col-lg-2 col-6 footer-links\">
+\t\t\t\t\t\t\t\t<h4>Useful Links</h4>
+\t\t\t\t\t\t\t\t<ul>
+\t\t\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
+\t\t\t\t\t\t\t\t\t\t<a>Home</a>
+\t\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
+\t\t\t\t\t\t\t\t\t\t<a>About us</a>
+\t\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
+\t\t\t\t\t\t\t\t\t\t<a>Services</a>
+\t\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
+\t\t\t\t\t\t\t\t\t\t<a>Terms of service</a>
+\t\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
+\t\t\t\t\t\t\t\t\t\t<a>Privacy policy</a>
+\t\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t</ul>
+\t\t\t\t\t\t\t</div>
+
+\t\t\t\t\t\t\t<div class=\"col-lg-2 col-6 footer-links\">
+\t\t\t\t\t\t\t\t<h4>Our Services</h4>
+\t\t\t\t\t\t\t\t<ul>
+\t\t\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
+\t\t\t\t\t\t\t\t\t\t<a>Web Design</a>
+\t\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
+\t\t\t\t\t\t\t\t\t\t<a>Web Development</a>
+\t\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
+\t\t\t\t\t\t\t\t\t\t<a>Product Management</a>
+\t\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
+\t\t\t\t\t\t\t\t\t\t<a>Marketing</a>
+\t\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
+\t\t\t\t\t\t\t\t\t\t<a>Graphic Design</a>
+\t\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t</ul>
+\t\t\t\t\t\t\t</div>
+
+\t\t\t\t\t\t\t<div class=\"col-lg-3 col-md-12 footer-contact text-center text-md-start\">
+\t\t\t\t\t\t\t\t<h4>Contact Us</h4>
+\t\t\t\t\t\t\t\t<p>
+\t\t\t\t\t\t\t\t\tA108 Adam Street
+\t\t\t\t\t\t\t\t\t<br>
+\t\t\t\t\t\t\t\t\tNew York, NY 535022<br>
+\t\t\t\t\t\t\t\t\tUnited States
+\t\t\t\t\t\t\t\t\t<br><br>
+\t\t\t\t\t\t\t\t\t<strong>Phone:</strong>
+\t\t\t\t\t\t\t\t\t+1 5589 55488 55<br>
+\t\t\t\t\t\t\t\t\t<strong>Email:</strong>
+\t\t\t\t\t\t\t\t\tinfo@example.com<br>
+\t\t\t\t\t\t\t\t</p>
+
+\t\t\t\t\t\t\t</div>
+
 \t\t\t\t\t\t</div>
-
-\t\t\t\t\t\t<div class=\"col-lg-2 col-6 footer-links\">
-\t\t\t\t\t\t\t<h4>Useful Links</h4>
-\t\t\t\t\t\t\t<ul>
-\t\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
-\t\t\t\t\t\t\t\t\t<a >Home</a>
-\t\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
-\t\t\t\t\t\t\t\t\t<a >About us</a>
-\t\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
-\t\t\t\t\t\t\t\t\t<a >Services</a>
-\t\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
-\t\t\t\t\t\t\t\t\t<a >Terms of service</a>
-\t\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
-\t\t\t\t\t\t\t\t\t<a >Privacy policy</a>
-\t\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t</ul>
-\t\t\t\t\t\t</div>
-
-\t\t\t\t\t\t<div class=\"col-lg-2 col-6 footer-links\">
-\t\t\t\t\t\t\t<h4>Our Services</h4>
-\t\t\t\t\t\t\t<ul>
-\t\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
-\t\t\t\t\t\t\t\t\t<a >Web Design</a>
-\t\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
-\t\t\t\t\t\t\t\t\t<a >Web Development</a>
-\t\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
-\t\t\t\t\t\t\t\t\t<a >Product Management</a>
-\t\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
-\t\t\t\t\t\t\t\t\t<a >Marketing</a>
-\t\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
-\t\t\t\t\t\t\t\t\t<a >Graphic Design</a>
-\t\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t</ul>
-\t\t\t\t\t\t</div>
-
-\t\t\t\t\t\t<div class=\"col-lg-3 col-md-12 footer-contact text-center text-md-start\">
-\t\t\t\t\t\t\t<h4>Contact Us</h4>
-\t\t\t\t\t\t\t<p>
-\t\t\t\t\t\t\t\tA108 Adam Street
-\t\t\t\t\t\t\t\t<br>
-\t\t\t\t\t\t\t\tNew York, NY 535022<br>
-\t\t\t\t\t\t\t\tUnited States
-\t\t\t\t\t\t\t\t<br><br>
-\t\t\t\t\t\t\t\t<strong>Phone:</strong>
-\t\t\t\t\t\t\t\t+1 5589 55488 55<br>
-\t\t\t\t\t\t\t\t<strong>Email:</strong>
-\t\t\t\t\t\t\t\tinfo@example.com<br>
-\t\t\t\t\t\t\t</p>
-
-\t\t\t\t\t\t</div>
-
 \t\t\t\t\t</div>
 \t\t\t\t</div>
-\t\t\t</div>
 
+<<<<<<< HEAD
 \t\t\t<div class=\"footer-legal\">
 \t\t\t\t<div class=\"container\">
 \t\t\t\t\t<div class=\"copyright\">
@@ -257,23 +265,37 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
 \t\t\t\t\t\t<!-- Licensing information: https://bootstrapmade.com/license/ -->
 \t\t\t\t\t\t<!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nova-bootstrap-business-template/ -->
 \t\t\t\t\t\tDesigned by<a href=\"https://bootstrapmade.com/\"> BootstrapMade</a>
+=======
+\t\t\t\t<div class=\"footer-legal\">
+\t\t\t\t\t<div class=\"container\">
+\t\t\t\t\t\t<div class=\"copyright\">
+\t\t\t\t\t\t\t&copy; Copyright
+\t\t\t\t\t\t\t<strong>
+\t\t\t\t\t\t\t\t<span>Amena</span>
+\t\t\t\t\t\t\t</strong>. All Rights Reserved
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t<div class=\"credits\">
+\t\t\t\t\t\t\tDesigned by<a href=\"https://bootstrapmade.com/\">
+\t\t\t\t\t\t\t\tBootstrapMade</a>
+\t\t\t\t\t\t</div>
+>>>>>>> 1b9c83bb09edfda666f414a2ec8b0b82973f62fa
 \t\t\t\t\t</div>
 \t\t\t\t</div>
-\t\t\t</div>
-\t\t</footer><!-- End Footer -->
-\t\t<!-- End Footer -->
+\t\t\t</footer>
+\t\t\t<!-- End Footer -->
+\t\t\t<!-- End Footer -->
 
-\t\t<a  class=\"scroll-top d-flex align-items-center justify-content-center\">
-\t\t\t<i class=\"bi bi-arrow-up-short\"></i>
-\t\t</a>
+\t\t\t<a class=\"scroll-top d-flex align-items-center justify-content-center\">
+\t\t\t\t<i class=\"bi bi-arrow-up-short\"></i>
+\t\t\t</a>
 
-\t\t<div id=\"preloader\"></div>
-\t\t";
-        // line 234
+\t\t\t<div id=\"preloader\"></div>
+\t\t\t";
+        // line 239
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 248
-        echo "\t</body>
-</html>
+        // line 253
+        echo "\t\t</body>
+\t</html>
 ";
         
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
@@ -283,7 +305,7 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
 
     }
 
-    // line 31
+    // line 23
     public function block_stylesheets($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -293,37 +315,37 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
 
-        // line 32
+        // line 24
         echo "\t\t\t";
         echo twig_escape_filter($this->env, $this->env->getFunction('encore_entry_link_tags')->getCallable()("app"), "html", null, true);
         echo "
 \t\t\t<!-- Vendor CSS Files -->
 \t\t\t<link href=\"";
-        // line 34
+        // line 26
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front/assets/vendor/bootstrap/css/bootstrap.min.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
 \t\t\t<link href=\"";
-        // line 35
+        // line 27
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front/assets/vendor/bootstrap-icons/bootstrap-icons.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
 \t\t\t<link href=\"";
-        // line 36
+        // line 28
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front/assets/vendor/aos/aos.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
 \t\t\t<link href=\"";
-        // line 37
+        // line 29
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front/assets/vendor/glightbox/css/glightbox.min.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
 \t\t\t<link href=\"";
-        // line 38
+        // line 30
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front/assets/vendor/swiper/swiper-bundle.min.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
+\t\t\t<link href=\"front/assets/vendor/remixicon/remixicon.css\" rel=\"stylesheet\">
 \t\t\t<link
-\t\t\thref=\"front/assets/vendor/remixicon/remixicon.css\" rel=\"stylesheet\">
-
+\t\t\thref=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css\" rel=\"stylesheet\">
 \t\t\t<!-- Template Main CSS File -->
 \t\t\t<link href=\"";
-        // line 43
+        // line 35
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front/assets/css/main.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
 
@@ -336,7 +358,7 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
 
     }
 
-    // line 108
+    // line 114
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -354,7 +376,7 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
 
     }
 
-    // line 234
+    // line 239
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -364,43 +386,43 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 235
-        echo "\t\t\t";
+        // line 240
+        echo "\t\t\t\t";
         echo twig_escape_filter($this->env, $this->env->getFunction('encore_entry_script_tags')->getCallable()("app"), "html", null, true);
         echo "
-\t\t\t<!-- Vendor JS Files -->
-\t\t\t<script src=\"";
-        // line 237
+\t\t\t\t<!-- Vendor JS Files -->
+\t\t\t\t<script src=\"";
+        // line 242
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"), "html", null, true);
         echo "\"></script>
-\t\t\t<script src=\"";
-        // line 238
+\t\t\t\t<script src=\"";
+        // line 243
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front/assets/vendor/aos/aos.js"), "html", null, true);
         echo "\"></script>
-\t\t\t<script src=\"";
-        // line 239
+\t\t\t\t<script src=\"";
+        // line 244
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front/assets/vendor/glightbox/js/glightbox.min.js"), "html", null, true);
         echo "\"></script>
-\t\t\t<script src=\"";
-        // line 240
+\t\t\t\t<script src=\"";
+        // line 245
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front/assets/vendor/swiper/swiper-bundle.min.js"), "html", null, true);
         echo "\"></script>
-\t\t\t<script src=\"";
-        // line 241
+\t\t\t\t<script src=\"";
+        // line 246
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front/assets/vendor/isotope-layout/isotope.pkgd.min.js"), "html", null, true);
         echo "\"></script>
-\t\t\t<script src=\"";
-        // line 242
+\t\t\t\t<script src=\"";
+        // line 247
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front/assets/vendor/php-email-form/validate.js"), "html", null, true);
         echo "\"></script>
 
-\t\t\t<!-- Template Main JS File -->
-\t\t\t<script src=\"";
-        // line 245
+\t\t\t\t<!-- Template Main JS File -->
+\t\t\t\t<script src=\"";
+        // line 250
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front/assets/js/main.js"), "html", null, true);
         echo "\"></script>
 
-\t\t";
+\t\t\t";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -416,7 +438,7 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
 
     public function getDebugInfo()
     {
-        return array (  400 => 245,  394 => 242,  390 => 241,  386 => 240,  382 => 239,  378 => 238,  374 => 237,  368 => 235,  358 => 234,  340 => 108,  327 => 43,  319 => 38,  315 => 37,  311 => 36,  307 => 35,  303 => 34,  297 => 32,  287 => 31,  275 => 248,  273 => 234,  146 => 109,  144 => 108,  80 => 46,  78 => 31,  46 => 1,);
+        return array (  405 => 250,  399 => 247,  395 => 246,  391 => 245,  387 => 244,  383 => 243,  379 => 242,  373 => 240,  363 => 239,  345 => 114,  332 => 35,  324 => 30,  320 => 29,  316 => 28,  312 => 27,  308 => 26,  302 => 24,  292 => 23,  280 => 253,  278 => 239,  152 => 115,  150 => 114,  72 => 38,  70 => 23,  46 => 1,);
     }
 
     public function getSourceContext()
@@ -440,17 +462,9 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
 \t\t<!-- Google Fonts -->
 \t\t<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">
 \t\t<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>
-\t\t<link
-\t\thref=\"https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap\" rel=\"stylesheet\">
+\t\t<link href=\"https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap\" rel=\"stylesheet\">
 
 
-\t\t<!-- =======================================================
-\t\t\t\t\t\t  * Template Name: Nova
-\t\t\t\t\t\t  * Updated: Mar 10 2023 with Bootstrap v5.2.3
-\t\t\t\t\t\t  * Template URL: https://bootstrapmade.com/nova-bootstrap-business-template/
-\t\t\t\t\t\t  * Author: BootstrapMade.com
-\t\t\t\t\t\t  * License: https://bootstrapmade.com/license/
-\t\t\t\t\t\t  ======================================================== -->
 \t\t{% block stylesheets %}
 \t\t\t{{ encore_entry_link_tags('app') }}
 \t\t\t<!-- Vendor CSS Files -->
@@ -459,9 +473,9 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
 \t\t\t<link href=\"{{asset('front/assets/vendor/aos/aos.css')}}\" rel=\"stylesheet\">
 \t\t\t<link href=\"{{asset('front/assets/vendor/glightbox/css/glightbox.min.css')}}\" rel=\"stylesheet\">
 \t\t\t<link href=\"{{asset('front/assets/vendor/swiper/swiper-bundle.min.css')}}\" rel=\"stylesheet\">
+\t\t\t<link href=\"front/assets/vendor/remixicon/remixicon.css\" rel=\"stylesheet\">
 \t\t\t<link
-\t\t\thref=\"front/assets/vendor/remixicon/remixicon.css\" rel=\"stylesheet\">
-
+\t\t\thref=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css\" rel=\"stylesheet\">
 \t\t\t<!-- Template Main CSS File -->
 \t\t\t<link href=\"{{asset('front/assets/css/main.css')}}\" rel=\"stylesheet\">
 
@@ -470,165 +484,181 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
 
 \t</head>
 \t<body>
-    <!-- ======= Header ======= -->
-  <header id=\"header\" class=\"header d-flex align-items-center fixed-top\">
-    <div class=\"container-fluid container-xl d-flex align-items-center justify-content-between\">
+\t\t<!-- ======= Header ======= -->
+\t\t<header id=\"header\" class=\"header d-flex align-items-center fixed-top\" style=\"margin-bottom:8%;background: rgba(27, 47, 69, 0.9);padding: 15px;\">
+\t\t\t<div class=\"container-fluid container-xl d-flex align-items-center justify-content-between\">
 
-      <a href=\"index.html\" class=\"logo d-flex align-items-center\">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src=\"front/assets/img/logo.png\" alt=\"\"> -->
-        <h1 class=\"d-flex align-items-center\">Nova</h1>
-      </a>
+\t\t\t\t<a href=\"index.html\" class=\"logo d-flex align-items-center\">
+\t\t\t\t\t<!-- Uncomment the line below if you also wish to use an image logo -->
+\t\t\t\t\t<!-- <img src=\"front/assets/img/logo.png\" alt=\"\"> -->
+\t\t\t\t\t\t<h1 class=\"d-flex align-items-center\"> Amena</h1>
+\t\t\t\t</a>
 
-      <i class=\"mobile-nav-toggle mobile-nav-show bi bi-list\"></i>
-      <i class=\"mobile-nav-toggle mobile-nav-hide d-none bi bi-x\"></i>
+\t\t\t\t<i class=\"mobile-nav-toggle mobile-nav-show bi bi-list\"></i>
+\t\t\t\t<i class=\"mobile-nav-toggle mobile-nav-hide d-none bi bi-x\"></i>
 
-      <nav id=\"navbar\" class=\"navbar\">
-        <ul>
-          <li><a href=\"index.html\">Home</a></li>
-          <li><a href=\"about.html\">About</a></li>
-          <li><a href=\"services.html\">Services</a></li>
-          <li><a href=\"portfolio.html\">Portfolio</a></li>
-          <li><a href=\"team.html\">Team</a></li>
-          <li><a href=\"blog.html\">Blog</a></li>
-          <li class=\"dropdown\"><a ><span>Dropdown</span> <i class=\"bi bi-chevron-down dropdown-indicator\"></i></a>
-            <ul>
-              <li><a >Dropdown 1</a></li>
-              <li class=\"dropdown\"><a ><span>Deep Dropdown</span> <i class=\"bi bi-chevron-down dropdown-indicator\"></i></a>
-                <ul>
-                  <li><a >Deep Dropdown 1</a></li>
-                  <li><a >Deep Dropdown 2</a></li>
-                  <li><a >Deep Dropdown 3</a></li>
-                  <li><a >Deep Dropdown 4</a></li>
-                  <li><a >Deep Dropdown 5</a></li>
-                </ul>
-              </li>
-              <li><a >Dropdown 2</a></li>
-              <li><a >Dropdown 3</a></li>
-              <li><a >Dropdown 4</a></li>
-            </ul>
-          </li>
-          <li><a href=\"contact.html\" class=\"active\">Contact</a></li>
-        </ul>
-      </nav><!-- .navbar -->
+\t\t\t\t<nav id=\"navbar\" class=\"navbar\">
+\t\t\t\t\t<ul>
+\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t<a href=\"/web/index.html\">Home</a>
+\t\t\t\t\t\t</li>
+\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t<a href=\"/web/about.html\">About</a>
+\t\t\t\t\t\t</li>
 
-    </div>
-  </header><!-- End Header -->
+\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t<a href=\"/annonces/\">Annonces</a>
+\t\t\t\t\t\t</li>
 
-  <!-- ======= Breadcrumbs ======= -->
-    <div class=\"breadcrumbs d-flex align-items-center\" style=\"background-image: url('assets/img/contact-header.jpg');\">
-      <div class=\"container position-relative d-flex flex-column align-items-center\">
-
-        <h2>Contact</h2>
-        <ol>
-          <li><a href=\"index.html\">Home</a></li>
-          <li>Contact</li>
-        </ol>
-
-      </div>
-    </div><!-- End Breadcrumbs -->
-   <main id=\"main\">
-\t\t{% block body %}{% endblock %}
-        </main><!-- End #main -->
-\t\t<!-- ======= Footer ======= -->
-\t\t<footer id=\"footer\" class=\"footer\">
-
-\t\t\t<div class=\"footer-content\">
-\t\t\t\t<div class=\"container\">
-\t\t\t\t\t<div class=\"row gy-4\">
-\t\t\t\t\t\t<div class=\"col-lg-5 col-md-12 footer-info\">
-\t\t\t\t\t\t\t<a href=\"index.html\" class=\"logo d-flex align-items-center\">
-\t\t\t\t\t\t\t\t<span>Nova</span>
+\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t<a href=\"/web/blog\">Blog</a>
+\t\t\t\t\t\t</li>
+\t\t\t\t\t\t<li class=\"dropdown\">
+\t\t\t\t\t\t\t<a>
+\t\t\t\t\t\t\t\t<span>Gestion</span>
+\t\t\t\t\t\t\t\t<i class=\"bi bi-chevron-down dropdown-indicator\"></i>
 \t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t<p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
-\t\t\t\t\t\t\t<div class=\"social-links d-flex  mt-3\">
-\t\t\t\t\t\t\t\t<a  class=\"twitter\">
-\t\t\t\t\t\t\t\t\t<i class=\"bi bi-twitter\"></i>
+\t\t\t\t\t\t\t<ul>
+\t\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t\t\t<a>Gestion Colis</a>
+\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t<li class=\"dropdown\">
+\t\t\t\t\t\t\t\t\t<a>
+\t\t\t\t\t\t\t\t\t\t<span>Gestion Vehicules</span>
+\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-chevron-down dropdown-indicator\"></i>
+\t\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t\t\t<ul>
+\t\t\t\t\t\t\t\t\t\t<li><a>Deep Dropdown 1</a></li>
+\t\t\t\t\t\t\t\t\t\t<li><a>Deep Dropdown 2</a></li>
+\t\t\t\t\t\t\t\t\t\t<li><a>Deep Dropdown 3</a></li>
+\t\t\t\t\t\t\t\t\t\t<li><a>Deep Dropdown 4</a></li>
+\t\t\t\t\t\t\t\t\t\t<li><a>Deep Dropdown 5</a></li>
+\t\t\t\t\t\t\t\t\t</ul>
+\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t\t\t<a>Gestion Annonces</a>
+\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t\t\t<a>Gestion Gamification</a>
+\t\t\t\t\t\t\t\t</li>
+
+\t\t\t\t\t\t\t</ul>
+\t\t\t\t\t\t</li>
+\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t<a href=\"/logout/\" class=\"active\">logout</a>
+\t\t\t\t\t\t</li>
+\t\t\t\t\t</ul>
+\t\t\t\t</nav>
+\t\t\t\t<!-- .navbar -->
+
+\t\t\t</div>
+\t\t</header>
+\t\t<!-- End Header -->
+
+
+\t\t<main id=\"main\"> {% block body %}{% endblock %}
+\t\t\t</main>
+\t\t\t<!-- End #main -->
+\t\t\t<!-- ======= Footer ======= -->
+\t\t\t<footer id=\"footer\" class=\"footer\" style=\"margin-top:38%\">
+
+\t\t\t\t<div class=\"footer-content\">
+\t\t\t\t\t<div class=\"container\">
+\t\t\t\t\t\t<div class=\"row gy-4\">
+\t\t\t\t\t\t\t<div class=\"col-lg-5 col-md-12 footer-info\">
+\t\t\t\t\t\t\t\t<a href=\"index.html\" class=\"logo d-flex align-items-center\">
+\t\t\t\t\t\t\t\t\t<span>Amena</span>
 \t\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t\t<a  class=\"facebook\">
-\t\t\t\t\t\t\t\t\t<i class=\"bi bi-facebook\"></i>
-\t\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t\t<a  class=\"instagram\">
-\t\t\t\t\t\t\t\t\t<i class=\"bi bi-instagram\"></i>
-\t\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t\t<a  class=\"linkedin\">
-\t\t\t\t\t\t\t\t\t<i class=\"bi bi-linkedin\"></i>
-\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t\t<p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
+\t\t\t\t\t\t\t\t<div class=\"social-links d-flex  mt-3\">
+\t\t\t\t\t\t\t\t\t<a class=\"twitter\">
+\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-twitter\"></i>
+\t\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t\t\t<a class=\"facebook\">
+\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-facebook\"></i>
+\t\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t\t\t<a class=\"instagram\">
+\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-instagram\"></i>
+\t\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t\t\t<a class=\"linkedin\">
+\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-linkedin\"></i>
+\t\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t</div>
+
+\t\t\t\t\t\t\t<div class=\"col-lg-2 col-6 footer-links\">
+\t\t\t\t\t\t\t\t<h4>Useful Links</h4>
+\t\t\t\t\t\t\t\t<ul>
+\t\t\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
+\t\t\t\t\t\t\t\t\t\t<a>Home</a>
+\t\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
+\t\t\t\t\t\t\t\t\t\t<a>About us</a>
+\t\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
+\t\t\t\t\t\t\t\t\t\t<a>Services</a>
+\t\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
+\t\t\t\t\t\t\t\t\t\t<a>Terms of service</a>
+\t\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
+\t\t\t\t\t\t\t\t\t\t<a>Privacy policy</a>
+\t\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t</ul>
+\t\t\t\t\t\t\t</div>
+
+\t\t\t\t\t\t\t<div class=\"col-lg-2 col-6 footer-links\">
+\t\t\t\t\t\t\t\t<h4>Our Services</h4>
+\t\t\t\t\t\t\t\t<ul>
+\t\t\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
+\t\t\t\t\t\t\t\t\t\t<a>Web Design</a>
+\t\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
+\t\t\t\t\t\t\t\t\t\t<a>Web Development</a>
+\t\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
+\t\t\t\t\t\t\t\t\t\t<a>Product Management</a>
+\t\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
+\t\t\t\t\t\t\t\t\t\t<a>Marketing</a>
+\t\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
+\t\t\t\t\t\t\t\t\t\t<a>Graphic Design</a>
+\t\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t</ul>
+\t\t\t\t\t\t\t</div>
+
+\t\t\t\t\t\t\t<div class=\"col-lg-3 col-md-12 footer-contact text-center text-md-start\">
+\t\t\t\t\t\t\t\t<h4>Contact Us</h4>
+\t\t\t\t\t\t\t\t<p>
+\t\t\t\t\t\t\t\t\tA108 Adam Street
+\t\t\t\t\t\t\t\t\t<br>
+\t\t\t\t\t\t\t\t\tNew York, NY 535022<br>
+\t\t\t\t\t\t\t\t\tUnited States
+\t\t\t\t\t\t\t\t\t<br><br>
+\t\t\t\t\t\t\t\t\t<strong>Phone:</strong>
+\t\t\t\t\t\t\t\t\t+1 5589 55488 55<br>
+\t\t\t\t\t\t\t\t\t<strong>Email:</strong>
+\t\t\t\t\t\t\t\t\tinfo@example.com<br>
+\t\t\t\t\t\t\t\t</p>
+
+\t\t\t\t\t\t\t</div>
+
 \t\t\t\t\t\t</div>
-
-\t\t\t\t\t\t<div class=\"col-lg-2 col-6 footer-links\">
-\t\t\t\t\t\t\t<h4>Useful Links</h4>
-\t\t\t\t\t\t\t<ul>
-\t\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
-\t\t\t\t\t\t\t\t\t<a >Home</a>
-\t\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
-\t\t\t\t\t\t\t\t\t<a >About us</a>
-\t\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
-\t\t\t\t\t\t\t\t\t<a >Services</a>
-\t\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
-\t\t\t\t\t\t\t\t\t<a >Terms of service</a>
-\t\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
-\t\t\t\t\t\t\t\t\t<a >Privacy policy</a>
-\t\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t</ul>
-\t\t\t\t\t\t</div>
-
-\t\t\t\t\t\t<div class=\"col-lg-2 col-6 footer-links\">
-\t\t\t\t\t\t\t<h4>Our Services</h4>
-\t\t\t\t\t\t\t<ul>
-\t\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
-\t\t\t\t\t\t\t\t\t<a >Web Design</a>
-\t\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
-\t\t\t\t\t\t\t\t\t<a >Web Development</a>
-\t\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
-\t\t\t\t\t\t\t\t\t<a >Product Management</a>
-\t\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
-\t\t\t\t\t\t\t\t\t<a >Marketing</a>
-\t\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
-\t\t\t\t\t\t\t\t\t<a >Graphic Design</a>
-\t\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t</ul>
-\t\t\t\t\t\t</div>
-
-\t\t\t\t\t\t<div class=\"col-lg-3 col-md-12 footer-contact text-center text-md-start\">
-\t\t\t\t\t\t\t<h4>Contact Us</h4>
-\t\t\t\t\t\t\t<p>
-\t\t\t\t\t\t\t\tA108 Adam Street
-\t\t\t\t\t\t\t\t<br>
-\t\t\t\t\t\t\t\tNew York, NY 535022<br>
-\t\t\t\t\t\t\t\tUnited States
-\t\t\t\t\t\t\t\t<br><br>
-\t\t\t\t\t\t\t\t<strong>Phone:</strong>
-\t\t\t\t\t\t\t\t+1 5589 55488 55<br>
-\t\t\t\t\t\t\t\t<strong>Email:</strong>
-\t\t\t\t\t\t\t\tinfo@example.com<br>
-\t\t\t\t\t\t\t</p>
-
-\t\t\t\t\t\t</div>
-
 \t\t\t\t\t</div>
 \t\t\t\t</div>
-\t\t\t</div>
 
+<<<<<<< HEAD
 \t\t\t<div class=\"footer-legal\">
 \t\t\t\t<div class=\"container\">
 \t\t\t\t\t<div class=\"copyright\">
@@ -643,33 +673,47 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
 \t\t\t\t\t\t<!-- Licensing information: https://bootstrapmade.com/license/ -->
 \t\t\t\t\t\t<!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nova-bootstrap-business-template/ -->
 \t\t\t\t\t\tDesigned by<a href=\"https://bootstrapmade.com/\"> BootstrapMade</a>
+=======
+\t\t\t\t<div class=\"footer-legal\">
+\t\t\t\t\t<div class=\"container\">
+\t\t\t\t\t\t<div class=\"copyright\">
+\t\t\t\t\t\t\t&copy; Copyright
+\t\t\t\t\t\t\t<strong>
+\t\t\t\t\t\t\t\t<span>Amena</span>
+\t\t\t\t\t\t\t</strong>. All Rights Reserved
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t<div class=\"credits\">
+\t\t\t\t\t\t\tDesigned by<a href=\"https://bootstrapmade.com/\">
+\t\t\t\t\t\t\t\tBootstrapMade</a>
+\t\t\t\t\t\t</div>
+>>>>>>> 1b9c83bb09edfda666f414a2ec8b0b82973f62fa
 \t\t\t\t\t</div>
 \t\t\t\t</div>
-\t\t\t</div>
-\t\t</footer><!-- End Footer -->
-\t\t<!-- End Footer -->
+\t\t\t</footer>
+\t\t\t<!-- End Footer -->
+\t\t\t<!-- End Footer -->
 
-\t\t<a  class=\"scroll-top d-flex align-items-center justify-content-center\">
-\t\t\t<i class=\"bi bi-arrow-up-short\"></i>
-\t\t</a>
+\t\t\t<a class=\"scroll-top d-flex align-items-center justify-content-center\">
+\t\t\t\t<i class=\"bi bi-arrow-up-short\"></i>
+\t\t\t</a>
 
-\t\t<div id=\"preloader\"></div>
-\t\t{% block javascripts %}
-\t\t\t{{ encore_entry_script_tags('app') }}
-\t\t\t<!-- Vendor JS Files -->
-\t\t\t<script src=\"{{asset('front/assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}\"></script>
-\t\t\t<script src=\"{{asset('front/assets/vendor/aos/aos.js')}}\"></script>
-\t\t\t<script src=\"{{asset('front/assets/vendor/glightbox/js/glightbox.min.js')}}\"></script>
-\t\t\t<script src=\"{{asset('front/assets/vendor/swiper/swiper-bundle.min.js')}}\"></script>
-\t\t\t<script src=\"{{asset('front/assets/vendor/isotope-layout/isotope.pkgd.min.js')}}\"></script>
-\t\t\t<script src=\"{{asset('front/assets/vendor/php-email-form/validate.js')}}\"></script>
+\t\t\t<div id=\"preloader\"></div>
+\t\t\t{% block javascripts %}
+\t\t\t\t{{ encore_entry_script_tags('app') }}
+\t\t\t\t<!-- Vendor JS Files -->
+\t\t\t\t<script src=\"{{asset('front/assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}\"></script>
+\t\t\t\t<script src=\"{{asset('front/assets/vendor/aos/aos.js')}}\"></script>
+\t\t\t\t<script src=\"{{asset('front/assets/vendor/glightbox/js/glightbox.min.js')}}\"></script>
+\t\t\t\t<script src=\"{{asset('front/assets/vendor/swiper/swiper-bundle.min.js')}}\"></script>
+\t\t\t\t<script src=\"{{asset('front/assets/vendor/isotope-layout/isotope.pkgd.min.js')}}\"></script>
+\t\t\t\t<script src=\"{{asset('front/assets/vendor/php-email-form/validate.js')}}\"></script>
 
-\t\t\t<!-- Template Main JS File -->
-\t\t\t<script src=\"{{asset('front/assets/js/main.js')}}\"></script>
+\t\t\t\t<!-- Template Main JS File -->
+\t\t\t\t<script src=\"{{asset('front/assets/js/main.js')}}\"></script>
 
-\t\t{% endblock %}
-\t</body>
-</html>
+\t\t\t{% endblock %}
+\t\t</body>
+\t</html>
 ", "base.html.twig", "C:\\Users\\aymen\\Desktop\\digidreamers\\digidreamers\\templates\\base.html.twig");
     }
 }

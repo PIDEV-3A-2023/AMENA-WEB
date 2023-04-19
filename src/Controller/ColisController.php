@@ -11,6 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\Security\Core\Security;
 
 #[Route('/colis')]
 /**
@@ -18,9 +19,17 @@ use Doctrine\ORM\EntityManagerInterface;
  */
 class ColisController extends AbstractController
 {
+    private $security;
+    public function __construct(Security $security)
+    {
+        // Avoid calling getUser() in the constructor: auth may not
+        // be complete yet. Instead, store the entire Security object.
+        $this->security = $security;
+    }
+    
     #[Route('/', name: 'app_colis_index', methods: ['GET'])]
     public function index(ColisRepository $colisRepository): Response
-    {
+    {   $user = $this->security->getUser();
         return $this->render('colis/index.html.twig', [
             'colis' => $colisRepository->findAll(),
         ]);
@@ -28,9 +37,11 @@ class ColisController extends AbstractController
 
     #[Route('/new', name: 'app_colis_new', methods: ['GET', 'POST'])]
     public function new(Request $request, ColisRepository $colisRepository,EntityManagerInterface $entityManager): Response
-    {    
+    {    $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+        $user = $this->security->getUser();
+      
         $coli = new Colis();
-        $user = $entityManager->getRepository(User::class)->find(161);
+        
         $coli->setIdu($user);
         
         $form = $this->createForm(ColisType::class, $coli);
@@ -60,11 +71,14 @@ class ColisController extends AbstractController
 
     #[Route('/{id}/edit', name: 'app_colis_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Colis $coli, ColisRepository $colisRepository): Response
-    {
+    { $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+        $user = $this->security->getUser();
         $form = $this->createForm(ColisType::class, $coli);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $coli->setIdu($user);
+            
             $colisRepository->save($coli, true);
             $this->addFlash('success', 'Le colis a été modifié avec succès.');
 

@@ -1,109 +1,63 @@
 <?php
 
 namespace App\Entity;
-
+use App\Entity\User ;
+use App\Entity\Vehicule ;
+use App\Repository\ReservationRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
-
-/**
- * Reservation
- *
- * @ORM\Table(name="reservation", indexes={@ORM\Index(name="fk_RV", columns={"idVeh"}), @ORM\Index(name="idTrans", columns={"idTrans"})})
- * @ORM\Entity
- */
+#[ORM\Table(name : 'reservation')]
+#[ORM\Entity(repositoryClass: ReservationRepository::class)]
 class Reservation
 {
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="idRes", type="integer", nullable=false)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
-     */
-    private $idres;
+    #[ORM\Id]
+    #[ORM\GeneratedValue]
+    #[ORM\Column (name:"id")]
+    private ?int $id = null;
 
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="idVeh", type="integer", nullable=false)
-     */
-    private $idveh;
+    #[ORM\Column(type: Types::DATE_MUTABLE)]
+    private ?\DateTimeInterface $date_deb = null;
 
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="date_deb", type="date", nullable=false)
-     */
-    private $dateDeb;
+    #[ORM\Column(type: Types::DATE_MUTABLE)]
+    private ?\DateTimeInterface $date_fin = null;
 
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="date_fin", type="date", nullable=false)
-     */
-    private $dateFin;
+    #[ORM\Column]
+    private ?float $somme = null;
 
-    /**
-     * @var float
-     *
-     * @ORM\Column(name="somme", type="float", precision=10, scale=0, nullable=false)
-     */
-    private $somme;
+    #[ORM\Column(length: 30)]
+    private ?string $etat = null;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="etat", type="string", length=30, nullable=false)
-     */
-    private $etat;
+    #[ORM\ManyToOne(inversedBy: 'reservations')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Vehicule $idre = null;
 
-    /**
-     * @var \User
-     *
-     * @ORM\ManyToOne(targetEntity="User")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="idTrans", referencedColumnName="id")
-     * })
-     */
-    private $idtrans;
+    
 
-    public function getIdres(): ?int
-    {
-        return $this->idres;
-    }
 
-    public function getIdveh(): ?int
-    {
-        return $this->idveh;
-    }
-
-    public function setIdveh(int $idveh): self
-    {
-        $this->idveh = $idveh;
-
-        return $this;
-    }
+    
 
     public function getDateDeb(): ?\DateTimeInterface
     {
-        return $this->dateDeb;
+        return $this->date_deb;
     }
 
-    public function setDateDeb(\DateTimeInterface $dateDeb): self
+    public function setDateDeb(\DateTimeInterface $date_deb): self
     {
-        $this->dateDeb = $dateDeb;
+        $this->date_deb = $date_deb;
 
         return $this;
     }
 
     public function getDateFin(): ?\DateTimeInterface
     {
-        return $this->dateFin;
+        return $this->date_fin;
     }
 
-    public function setDateFin(\DateTimeInterface $dateFin): self
+    public function setDateFin(\DateTimeInterface $date_fin): self
     {
-        $this->dateFin = $dateFin;
+        $this->date_fin = $date_fin;
 
         return $this;
     }
@@ -132,17 +86,38 @@ class Reservation
         return $this;
     }
 
-    public function getIdtrans(): ?User
+   
+    public function __toString(): string
     {
-        return $this->idtrans;
+        return $this->etat;
     }
 
-    public function setIdtrans(?User $idtrans): self
+    public function getIdVeh(): ?Vehicule
     {
-        $this->idtrans = $idtrans;
+        return $this->idVeh;
+    }
+
+    public function setIdVeh(?Vehicule $idVeh): self
+    {
+        $this->idVeh = $idVeh;
 
         return $this;
     }
 
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
 
+    public function getIdre(): ?Vehicule
+    {
+        return $this->idre;
+    }
+
+    public function setIdre(?Vehicule $idre): self
+    {
+        $this->idre = $idre;
+
+        return $this;
+    }
 }

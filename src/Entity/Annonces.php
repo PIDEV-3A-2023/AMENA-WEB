@@ -1,53 +1,56 @@
 <?php
 
 namespace App\Entity;
-use App\Entity\Colis;
 
 use App\Repository\AnnoncesRepository;
 use Doctrine\ORM\Mapping as ORM;
-
-
+use App\Entity\User;
 #[ORM\Table(name: '`annonces`')]
 #[ORM\Entity(repositoryClass: AnnoncesRepository::class)]
 class Annonces
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
-    #[ORM\Column(name:"id_annonce")]
+    #[ORM\Column(name:'id')]
     private ?int $id = null;
 
-    #[ORM\Column(length: 20)]
+    #[ORM\Column(length: 255)]
     private ?string $type = null;
 
-    #[ORM\Column(length: 20)]
+    #[ORM\Column(length: 255)]
     private ?string $ville_dep = null;
 
-    #[ORM\Column(length: 20)]
+    #[ORM\Column(length: 255)]
     private ?string $ville_arr = null;
 
-    #[ORM\Column(length: 20)]
+    #[ORM\Column(length: 255)]
     private ?string $date_dep = null;
 
-    #[ORM\Column(length: 20)]
+    #[ORM\Column(length: 255)]
     private ?string $date_arr = null;
 
     #[ORM\Column]
     private ?int $prix = null;
 
-    #[ORM\Column(length: 100)]
+    #[ORM\Column(length: 255)]
     private ?string $description = null;
 
+ 
 
-    #[ORM\ManyToOne]
-    #[ORM\JoinColumn(nullable: false, name: "ida_U")]
-    private ?User $ida_U = null;
 
+<<<<<<< HEAD
     /*#[ORM\ManyToOne(inversedBy: 'annonces')]
     private ?Colis $idColis = null;
+=======
 
-    /*#[ORM\ManyToOne]
-    #[ORM\JoinColumn(nullable: false, name: "idColis")]
-    private ?Colis $idcolis = null;*/
+    
+
+   
+    #[ORM\ManyToOne(inversedBy: 'annonces')]
+    #[ORM\JoinColumn(nullable: false, name: "id_colis_id")]
+>>>>>>> 1b9c83bb09edfda666f414a2ec8b0b82973f62fa
+
+    private ?Colis $idColis = null;
 
     public function getId(): ?int
     {
@@ -138,17 +141,20 @@ class Annonces
         return $this;
     }
 
-    public function getIdaU(): ?User
+
+
+    public function getIdColis(): ?Colis
     {
-        return $this->ida_U;
+        return $this->idColis;
     }
 
-    public function setIdaU(?User $ida_U): self
+    public function setIdColis(?Colis $idColis): self
     {
-        $this->ida_U = $ida_U;
+        $this->idColis = $idColis;
 
         return $this;
     }
+<<<<<<< HEAD
 
    /* public function getIdcolis(): ?Colis
     {
@@ -180,4 +186,6 @@ class Annonces
 
   
     
+=======
+>>>>>>> 1b9c83bb09edfda666f414a2ec8b0b82973f62fa
 }

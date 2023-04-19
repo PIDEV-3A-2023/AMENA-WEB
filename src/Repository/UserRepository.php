@@ -63,4 +63,16 @@ class UserRepository extends ServiceEntityRepository
 //            ->getOneOrNullResult()
 //        ;
 //    }
+public function findBySearchQuery($query)
+    {
+        $qb = $this->createQueryBuilder('u')
+            ->where('u.nom LIKE :query')
+            ->orWhere('u.prenom LIKE :query')
+            ->orWhere('u.adress LIKE :query')
+            ->orWhere('u.cin LIKE :query')
+            ->orWhere('u.email LIKE :query')
+            ->setParameter('query', '%' . $query . '%');
+
+        return $qb->getQuery()->getResult();
+    } 
 }

@@ -3,35 +3,69 @@
 namespace App\Form;
 
 use App\Entity\User;
-use DateTime;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
-use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TelType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\File;
+
+use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Validator\Constraints\Length;
+use Symfony\Component\Validator\Constraints\Regex;
 
 class UserType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
+            ->add('email',EmailType::class)
+            ->add('roles', ChoiceType::class, [
+                'choices' => [
+                    'ROLE_ADMIN' => 'ROLE_ADMIN',
+                    'ROLE_USER' => 'ROLE_USER',
+                    // add more roles here as needed
+                ],
+                'multiple' => true, // set this to false to allow only one option to be selected
+                'expanded' => false,
+            ])
+            ->add('password', PasswordType::class, [
+                'required' => false,
+                'mapped' => false,
+                'attr' => [
+                    'autocomplete' => 'new-password',
+                    'class' => 'form-control'
+                ],
+                'constraints' => [
+                    new Regex([
+                        'pattern' => '/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/',
+                        'message' => 'Le mot de passe doit contenir au moins 8 caractères dont une lettre et un chiffre',
+                    ]),
+                    new Length([
+                        'min' => 6,
+                        'minMessage' => 'Your password should be at least {{ limit }} characters',
+                        'max' => 255
+                    ])
+                ],
+                'label' => 'Password',
+                'help' => 'Leave this field empty if you don\'t want to change your password',
+            ])
+            
             ->add('nom')
             ->add('prenom')
             ->add('adress')
             ->add('cin')
-            ->add('datenaissance',DateType::class)
-            ->add('datecreationc',DateType::class)
+            ->add('date_naissance',DateType::class,)
+            
             ->add('status')
-            ->add('role')
-            ->add('motpass')
-            ->add('email')
-          
+         
             ->add('score')
-            ->add('numtel')
-            ->add('image',FileType::class,[
+            ->add('numtel',TelType::class)
+            ->add('image', FileType::class, [
                 'label' => 'image',
 
                 // unmapped means that this field is not associated to any entity property
@@ -54,10 +88,12 @@ class UserType extends AbstractType
                     ])
                 ],
             ])
+
+         
+           
             
-            ->add('compteEx',DateTimeType::class)
-            ->add('tokenEx',DateTimeType::class)
-            ->add('save',SubmitType::class)
+            
+            ->add('save', SubmitType::class);
         ;
     }
 

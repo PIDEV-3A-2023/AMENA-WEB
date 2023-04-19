@@ -85,17 +85,19 @@ class __TwigTemplate_20b2a0f2672354edb1d95847306b00a4 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <h1>Create new Colis</h1>
+        echo "<div  style=\"margin-top: 50px;\">
+    <h1>Create new Colis</h1>
 
     ";
-        // line 8
+        // line 9
         echo twig_include($this->env, $context, "colis/_form.html.twig");
         echo "
 
     <a href=\"";
-        // line 10
+        // line 11
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_colis_index");
         echo "\">back to list</a>
+    </div>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -117,7 +119,7 @@ class __TwigTemplate_20b2a0f2672354edb1d95847306b00a4 extends Template
 
     public function getDebugInfo()
     {
-        return array (  97 => 10,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  98 => 11,  93 => 9,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -127,11 +129,13 @@ class __TwigTemplate_20b2a0f2672354edb1d95847306b00a4 extends Template
 {% block title %}New Colis{% endblock %}
 
 {% block body %}
+<div  style=\"margin-top: 50px;\">
     <h1>Create new Colis</h1>
 
     {{ include('colis/_form.html.twig') }}
 
     <a href=\"{{ path('app_colis_index') }}\">back to list</a>
+    </div>
 {% endblock %}
 ", "colis/new.html.twig", "C:\\Users\\aymen\\Desktop\\digidreamers\\digidreamers\\templates\\colis\\new.html.twig");
     }
