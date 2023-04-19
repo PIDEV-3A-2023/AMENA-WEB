@@ -1,0 +1,39 @@
+{% extends 'baseadmin.html.twig' %}
+
+{% block title %}Reservation index{% endblock %}
+
+{% block body %}
+    <h1>Liste des locations</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Date debut</th>
+                <th>Date fin</th>
+                <th>Somme</th>
+                <th>Etat</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for reservation in reservations %}
+            <tr>
+                <td>{{ reservation.dateDeb ? reservation.dateDeb|date('Y-m-d') : '' }}</td>
+                <td>{{ reservation.dateFin ? reservation.dateFin|date('Y-m-d') : '' }}</td>
+                <td>{{ reservation.somme }}</td>
+                <td>{{ reservation.etat }}</td>
+                <td>
+                    <a href="{{ path('app_reservation_show', {'id': reservation.id}) }}">Afficher</a>
+                    <a href="{{ path('app_reservation_edit', {'id': reservation.id}) }}">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_reservation_new') }}">Ajouter location</a>
+{% endblock %}

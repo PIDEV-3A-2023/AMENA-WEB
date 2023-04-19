@@ -33,7 +33,7 @@ class __TwigTemplate_faac476623f254d5148a18b12845c4e5 extends Template
     protected function doGetParent(array $context)
     {
         // line 1
-        return "base.html.twig";
+        return "baseadmin.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = [])
@@ -45,7 +45,7 @@ class __TwigTemplate_faac476623f254d5148a18b12845c4e5 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "vehicule/new.html.twig"));
 
-        $this->parent = $this->loadTemplate("base.html.twig", "vehicule/new.html.twig", 1);
+        $this->parent = $this->loadTemplate("baseadmin.html.twig", "vehicule/new.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
@@ -65,7 +65,7 @@ class __TwigTemplate_faac476623f254d5148a18b12845c4e5 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "New Vehicule";
+        echo "Ajouter Vehicule";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -85,7 +85,7 @@ class __TwigTemplate_faac476623f254d5148a18b12845c4e5 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <h1>Create new Vehicule</h1>
+        echo "    <h1>Ajouter vehicule</h1>
 
     ";
         // line 8
@@ -95,7 +95,7 @@ class __TwigTemplate_faac476623f254d5148a18b12845c4e5 extends Template
     <a href=\"";
         // line 10
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_vehicule_index");
-        echo "\">back to list</a>
+        echo "\">Retourner</a>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -122,17 +122,17 @@ class __TwigTemplate_faac476623f254d5148a18b12845c4e5 extends Template
 
     public function getSourceContext()
     {
-        return new Source("{% extends 'base.html.twig' %}
+        return new Source("{% extends 'baseadmin.html.twig' %}
 
-{% block title %}New Vehicule{% endblock %}
+{% block title %}Ajouter Vehicule{% endblock %}
 
 {% block body %}
-    <h1>Create new Vehicule</h1>
+    <h1>Ajouter vehicule</h1>
 
     {{ include('vehicule/_form.html.twig') }}
 
-    <a href=\"{{ path('app_vehicule_index') }}\">back to list</a>
+    <a href=\"{{ path('app_vehicule_index') }}\">Retourner</a>
 {% endblock %}
-", "vehicule/new.html.twig", "C:\\Users\\aymen\\Desktop\\amena\\Amena\\templates\\vehicule\\new.html.twig");
+", "vehicule/new.html.twig", "C:\\Users\\klair\\OneDrive\\Bureau\\web pi\\digidreamers\\templates\\vehicule\\new.html.twig");
     }
 }

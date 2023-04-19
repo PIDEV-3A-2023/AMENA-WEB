@@ -642,6 +642,6 @@ class __TwigTemplate_f0c87d6e022a29930219fd3ecd23a77a extends Template
         }());
     </script>
 {% endblock %}
-", "@WebProfiler/Profiler/layout.html.twig", "C:\\Users\\aymen\\Desktop\\amena\\Amena\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Profiler\\layout.html.twig");
+", "@WebProfiler/Profiler/layout.html.twig", "C:\\Users\\klair\\OneDrive\\Bureau\\web pi\\digidreamers\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Profiler\\layout.html.twig");
     }
 }

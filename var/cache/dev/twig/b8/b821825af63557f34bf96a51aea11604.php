@@ -137,6 +137,6 @@ class __TwigTemplate_5f68ea12c18bb9001aa85799f3f6fa29 extends Template
 
     <a href=\"{{ path('app_user_index') }}\">back to list</a>
 {% endblock %}
-", "user/new.html.twig", "C:\\Users\\aymen\\Desktop\\amena\\Amena\\templates\\user\\new.html.twig");
+", "user/new.html.twig", "C:\\Users\\klair\\OneDrive\\Bureau\\web pi\\digidreamers\\templates\\user\\new.html.twig");
     }
 }

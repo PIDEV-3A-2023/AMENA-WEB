@@ -52,58 +52,5 @@ class Validation
      */
     private $idu;
 
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
-
-    public function getImagea(): ?string
-    {
-        return $this->imagea;
-    }
-
-    public function setImagea(string $imagea): self
-    {
-        $this->imagea = $imagea;
-
-        return $this;
-    }
-
-    public function getImageb(): ?string
-    {
-        return $this->imageb;
-    }
-
-    public function setImageb(string $imageb): self
-    {
-        $this->imageb = $imageb;
-
-        return $this;
-    }
-
-    public function isValide(): ?bool
-    {
-        return $this->valide;
-    }
-
-    public function setValide(bool $valide): self
-    {
-        $this->valide = $valide;
-
-        return $this;
-    }
-
-    public function getIdu(): ?User
-    {
-        return $this->idu;
-    }
-
-    public function setIdu(?User $idu): self
-    {
-        $this->idu = $idu;
-
-        return $this;
-    }
-
 
 }

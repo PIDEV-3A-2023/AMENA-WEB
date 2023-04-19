@@ -1,8 +1,10 @@
 <?php
 
 namespace App\Entity;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
-
+use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\VehiculeRepository ; 
 #[ORM\Table(name: '`vehicule`')]
@@ -10,55 +12,79 @@ use App\Repository\VehiculeRepository ;
 #[ORM\Entity(repositoryClass :VehiculeRepository::class)]
 class Vehicule
 {
-   
- 
+
+
    #[ORM\Id]
    #[ORM\GeneratedValue]
-   #[ORM\Column]
-   private ?int $idv=null;
+   #[ORM\Column (name:"id")]
+   private ?int $idV=null;
 
 
     #[ORM\Column(length: 30)]
+    #[Assert\NotBlank(message:"Le type ne doit pas être vide")]
     private ?string $type = null ; 
 
     #[ORM\Column(length: 30)]
+    #[Assert\NotBlank(message:"L'immatiricule ne doit pas être vide")]
     private ?string $immat = null ; 
 
     #[ORM\Column]
-    private ?bool $etat=false ;
+    #[Assert\NotBlank(message:"L'etat ne doit pas être vide")]
+    private ?int $etat ;
 
     #[ORM\Column(length: 30)]
+    #[Assert\NotBlank(message:"La valeur de la Kilometrage doit être remplie")]
+    #[Assert\Positive(message:"La valeur de la Kilometrage doit être positive")]
     private ?string $kilometrage = null ; 
   
     #[ORM\Column]
+    #[Assert\NotBlank(message:"La valeur des chevaux ne doit pas être vide")]
+    #[Assert\Positive(message:"La valeur des cheveaux doit être positive")]
     private ?int $chevaux=0 ;
 
     #[ORM\Column(length: 30)]
+    #[Assert\NotBlank(message:"La valeur de la marque doit être remplie")]
     private ?string $marque = null ;
     
     #[ORM\Column(length: 30)]
+    #[Assert\NotBlank(message:"La valeur de la modele doit être remplie")]
     private ?string $modele = null ;
     
     #[ORM\Column(length: 15)]
+    #[Assert\NotBlank(message:"La valeur de la couleur doit être remplie")]
     private ?string $couleur = null ;
 
-   
     #[ORM\Column]
+    #[Assert\NotBlank(message:"La valeur de la prix doit être remplie")]
     private ?float $prix = null ;
 
-    #[ORM\Column(length: 150)]
+    #[ORM\Column(length: 150,name : 'img')]
     private ?string $img = null ;
- 
 
-    public function getIdv(): ?int
+    #[ORM\OneToMany(mappedBy: 'idVeh', targetEntity: Reservation::class)]
+    private Collection $reservations;
+
+    public function __construct()
     {
-        return $this->idv;
+        $this->reservations = new ArrayCollection();
+    }
+
+    
+    
+
+
+   
+
+
+    public function getidV(): ?int
+    {
+        return $this->idV;
     }
 
     public function getType(): ?string
     {
         return $this->type;
-    }
+}
 
     public function setType(string $type): self
     {
@@ -79,12 +105,12 @@ class Vehicule
         return $this;
     }
 
-    public function isEtat(): ?bool
+    public function isEtat(): ?int
     {
         return $this->etat;
     }
 
-    public function setEtat(bool $etat): self
+    public function setEtat(int $etat): self
     {
         $this->etat = $etat;
 
@@ -175,5 +201,47 @@ class Vehicule
         return $this;
     }
 
+    
+    public function __toString(): string
+    {
+        return $this->immat;
+    }
+
+    /**
+     * @return Collection<int, Reservation>
+     */
+    public function getReservations(): Collection
+    {
+        return $this->reservations;
+    }
+
+    public function addReservation(Reservation $reservation): self
+    {
+        if (!$this->reservations->contains($reservation)) {
+            $this->reservations->add($reservation);
+            $reservation->setIdVeh($this);
+        }
+
+        return $this;
+    }
+
+    public function removeReservation(Reservation $reservation): self
+    {
+        if ($this->reservations->removeElement($reservation)) {
+            // set the owning side to null (unless already changed)
+            if ($reservation->getIdVeh() === $this) {
+                $reservation->setIdVeh(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function getEtat(): ?int
+    {
+        return $this->etat;
+    }
+
+    
 
 }

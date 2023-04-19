@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Colisr
  *
- * @ORM\Table(name="colisr", indexes={@ORM\Index(name="fk_c1", columns={"id_c"}), @ORM\Index(name="fk_user", columns={"id_u"})})
+ * @ORM\Table(name="colisr", indexes={@ORM\Index(name="fk_user", columns={"id_u"}), @ORM\Index(name="fk_c1", columns={"id_c"})})
  * @ORM\Entity
  */
 class Colisr
@@ -22,16 +22,6 @@ class Colisr
     private $id;
 
     /**
-     * @var \User
-     *
-     * @ORM\ManyToOne(targetEntity="User")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="id_u", referencedColumnName="id")
-     * })
-     */
-    private $idU;
-
-    /**
      * @var \Colis
      *
      * @ORM\ManyToOne(targetEntity="Colis")
@@ -41,34 +31,15 @@ class Colisr
      */
     private $idC;
 
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
-
-    public function getIdU(): ?User
-    {
-        return $this->idU;
-    }
-
-    public function setIdU(?User $idU): self
-    {
-        $this->idU = $idU;
-
-        return $this;
-    }
-
-    public function getIdC(): ?Colis
-    {
-        return $this->idC;
-    }
-
-    public function setIdC(?Colis $idC): self
-    {
-        $this->idC = $idC;
-
-        return $this;
-    }
+    /**
+     * @var \User
+     *
+     * @ORM\ManyToOne(targetEntity="User")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_u", referencedColumnName="id")
+     * })
+     */
+    private $idU;
 
 
 }

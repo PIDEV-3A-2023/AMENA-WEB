@@ -45,46 +45,5 @@ class Evaluation
      */
     private $idclient;
 
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
-
-    public function getIdtransporteur(): ?int
-    {
-        return $this->idtransporteur;
-    }
-
-    public function setIdtransporteur(int $idtransporteur): self
-    {
-        $this->idtransporteur = $idtransporteur;
-
-        return $this;
-    }
-
-    public function getNote(): ?float
-    {
-        return $this->note;
-    }
-
-    public function setNote(float $note): self
-    {
-        $this->note = $note;
-
-        return $this;
-    }
-
-    public function getIdclient(): ?User
-    {
-        return $this->idclient;
-    }
-
-    public function setIdclient(?User $idclient): self
-    {
-        $this->idclient = $idclient;
-
-        return $this;
-    }
-
 
 }

@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Véhicules à louer{% endblock %}
+
+
+{% block body %}
+
+  <main id="main">
+
+<section id="portfolio" class="portfolio">
+      <div class="container" data-aos="fade-up">
+
+        <div class="portfolio-isotope" data-portfolio-filter="*" data-portfolio-layout="masonry" data-portfolio-sort="original-order">
+
+          <ul class="portfolio-flters" data-aos="fade-up" data-aos-delay="100">
+            <li data-filter="*" class="filter-active">All</li>
+            <li data-filter=".filter-app">Voiture</li>
+            <li data-filter=".filter-product">Camion</li>
+            <li data-filter=".filter-branding">Moto</li>
+            <li data-filter=".filter-books">Velo</li>
+          </ul><!-- End Portfolio Filters -->
+
+          <div class="row gy-4 portfolio-container" data-aos="fade-up" data-aos-delay="300">
+
+
+
+<div class="row">
+    {% for vehicule in vehicules %}
+        <div class="row gy-4 portfolio-container" data-aos="fade-up" data-aos-delay="300">
+            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+              <img src="{{ vehicule.img }}" class="img-fluid" alt="" style="width: 500px; height: 250px;">
+              <div class="portfolio-info">
+                <h4>{{ vehicule.marque }}</h4>
+                <p>{{ vehicule.modele }}</p>
+                <a href="{{ vehicule.img }}" title={{ vehicule.marque }} data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a  href="{{ path('app_interface_reservation', {'idV': vehicule.idV}) }}" title="Reserver" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div><!-- End Portfolio Item -->
+    {% endfor %}
+</div>
+
+          </div><!-- End Portfolio Container -->
+
+        </div>
+
+      </div>
+    </section><!-- End Portfolio Section -->
+      </main><!-- End #main -->
+
+{% endblock %}

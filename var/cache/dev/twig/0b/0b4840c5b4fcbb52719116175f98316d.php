@@ -81,6 +81,38 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
 
 \t</head>
 \t<body>
+\t";
+        // line 50
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 50, $this->source); })()), "flashes", [0 => "success"], "method", false, false, false, 50));
+        foreach ($context['_seq'] as $context["_key"] => $context["flash_message"]) {
+            // line 51
+            echo "    <div class=\"alert alert-success alert-dismissible fade show\" role=\"alert\" id=\"flash-message\">
+        <div class=\"d-flex align-items-center\">
+            <i class=\"bi bi-check-circle-fill me-2\"></i>
+            <span>";
+            // line 54
+            echo twig_escape_filter($this->env, $context["flash_message"], "html", null, true);
+            echo "</span>
+        </div>
+        <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\" aria-label=\"Close\"></button>
+    </div>
+";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['flash_message'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 59
+        echo "
+<script>
+    // Masquer automatiquement le message de succès après 3 secondes
+    setTimeout(function() {
+        var flashMessage = document.getElementById('flash-message');
+        if (flashMessage !== null) {
+            flashMessage.remove();
+        }
+    }, 3000);
+</script>
     <!-- ======= Header ======= -->
   <header id=\"header\" class=\"header d-flex align-items-center fixed-top\">
     <div class=\"container-fluid container-xl d-flex align-items-center justify-content-between\">
@@ -88,7 +120,7 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
       <a href=\"index.html\" class=\"logo d-flex align-items-center\">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src=\"front/assets/img/logo.png\" alt=\"\"> -->
-        <h1 class=\"d-flex align-items-center\">Nova</h1>
+        <h1 class=\"d-flex align-items-center\">Amena</h1>
       </a>
 
       <i class=\"mobile-nav-toggle mobile-nav-show bi bi-list\"></i>
@@ -119,17 +151,44 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
               <li><a >Dropdown 4</a></li>
             </ul>
           </li>
-          <li><a href=\"contact.html\" class=\"active\">Contact</a></li>
+          <li><a href=\"contact.html\" class=\"active\">Location des vehicules</a></li>
         </ul>
       </nav><!-- .navbar -->
 
     </div>
   </header><!-- End Header -->
+
+  <!-- ======= Breadcrumbs ======= -->
+    <div class=\"breadcrumbs d-flex align-items-center\" style=\"background-image: url('assets/img/contact-header.jpg');\">
+      <div class=\"container position-relative d-flex flex-column align-items-center\">
+
+        <h2>Location des vehicules</h2>
+      </div>
+    </div><!-- End Breadcrumbs -->
    <main id=\"main\">
+   ";
+        // line 122
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 122, $this->source); })()), "session", [], "any", false, false, false, 122), "flashbag", [], "any", false, false, false, 122), "get", [0 => "success"], "method", false, false, false, 122));
+        foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
+            // line 123
+            echo "    <div class=\"alert alert-success\" role=\"alert\">
+        <i class=\"fas fa-check-circle mr-2\"></i>";
+            // line 124
+            echo twig_escape_filter($this->env, $context["message"], "html", null, true);
+            echo "
+    </div>
+";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 127
+        echo " 
 \t\t";
-        // line 95
+        // line 128
         $this->displayBlock('body', $context, $blocks);
-        // line 96
+        // line 129
         echo "        </main><!-- End #main -->
 \t\t<!-- ======= Footer ======= -->
 \t\t<footer id=\"footer\" class=\"footer\">
@@ -256,12 +315,11 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
 
 \t\t<div id=\"preloader\"></div>
 \t\t";
-        // line 221
+        // line 254
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 235
+        // line 268
         echo "\t</body>
-</html>
-";
+</html>";
         
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
 
@@ -323,7 +381,7 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
 
     }
 
-    // line 95
+    // line 128
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -341,7 +399,7 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
 
     }
 
-    // line 221
+    // line 254
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -351,39 +409,39 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 222
+        // line 255
         echo "\t\t\t";
         echo twig_escape_filter($this->env, $this->env->getFunction('encore_entry_script_tags')->getCallable()("app"), "html", null, true);
         echo "
 \t\t\t<!-- Vendor JS Files -->
 \t\t\t<script src=\"";
-        // line 224
+        // line 257
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"), "html", null, true);
         echo "\"></script>
 \t\t\t<script src=\"";
-        // line 225
+        // line 258
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front/assets/vendor/aos/aos.js"), "html", null, true);
         echo "\"></script>
 \t\t\t<script src=\"";
-        // line 226
+        // line 259
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front/assets/vendor/glightbox/js/glightbox.min.js"), "html", null, true);
         echo "\"></script>
 \t\t\t<script src=\"";
-        // line 227
+        // line 260
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front/assets/vendor/swiper/swiper-bundle.min.js"), "html", null, true);
         echo "\"></script>
 \t\t\t<script src=\"";
-        // line 228
+        // line 261
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front/assets/vendor/isotope-layout/isotope.pkgd.min.js"), "html", null, true);
         echo "\"></script>
 \t\t\t<script src=\"";
-        // line 229
+        // line 262
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front/assets/vendor/php-email-form/validate.js"), "html", null, true);
         echo "\"></script>
 
 \t\t\t<!-- Template Main JS File -->
 \t\t\t<script src=\"";
-        // line 232
+        // line 265
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front/assets/js/main.js"), "html", null, true);
         echo "\"></script>
 
@@ -401,9 +459,14 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
         return "base.html.twig";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  387 => 232,  381 => 229,  377 => 228,  373 => 227,  369 => 226,  365 => 225,  361 => 224,  355 => 222,  345 => 221,  327 => 95,  314 => 43,  306 => 38,  302 => 37,  298 => 36,  294 => 35,  290 => 34,  284 => 32,  274 => 31,  262 => 235,  260 => 221,  133 => 96,  131 => 95,  80 => 46,  78 => 31,  46 => 1,);
+        return array (  445 => 265,  439 => 262,  435 => 261,  431 => 260,  427 => 259,  423 => 258,  419 => 257,  413 => 255,  403 => 254,  385 => 128,  372 => 43,  364 => 38,  360 => 37,  356 => 36,  352 => 35,  348 => 34,  342 => 32,  332 => 31,  321 => 268,  319 => 254,  192 => 129,  190 => 128,  187 => 127,  178 => 124,  175 => 123,  171 => 122,  106 => 59,  95 => 54,  90 => 51,  86 => 50,  80 => 46,  78 => 31,  46 => 1,);
     }
 
     public function getSourceContext()
@@ -457,6 +520,25 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
 
 \t</head>
 \t<body>
+\t{% for flash_message in app.flashes('success') %}
+    <div class=\"alert alert-success alert-dismissible fade show\" role=\"alert\" id=\"flash-message\">
+        <div class=\"d-flex align-items-center\">
+            <i class=\"bi bi-check-circle-fill me-2\"></i>
+            <span>{{ flash_message }}</span>
+        </div>
+        <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\" aria-label=\"Close\"></button>
+    </div>
+{% endfor %}
+
+<script>
+    // Masquer automatiquement le message de succès après 3 secondes
+    setTimeout(function() {
+        var flashMessage = document.getElementById('flash-message');
+        if (flashMessage !== null) {
+            flashMessage.remove();
+        }
+    }, 3000);
+</script>
     <!-- ======= Header ======= -->
   <header id=\"header\" class=\"header d-flex align-items-center fixed-top\">
     <div class=\"container-fluid container-xl d-flex align-items-center justify-content-between\">
@@ -464,7 +546,7 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
       <a href=\"index.html\" class=\"logo d-flex align-items-center\">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src=\"front/assets/img/logo.png\" alt=\"\"> -->
-        <h1 class=\"d-flex align-items-center\">Nova</h1>
+        <h1 class=\"d-flex align-items-center\">Amena</h1>
       </a>
 
       <i class=\"mobile-nav-toggle mobile-nav-show bi bi-list\"></i>
@@ -495,13 +577,27 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
               <li><a >Dropdown 4</a></li>
             </ul>
           </li>
-          <li><a href=\"contact.html\" class=\"active\">Contact</a></li>
+          <li><a href=\"contact.html\" class=\"active\">Location des vehicules</a></li>
         </ul>
       </nav><!-- .navbar -->
 
     </div>
   </header><!-- End Header -->
+
+  <!-- ======= Breadcrumbs ======= -->
+    <div class=\"breadcrumbs d-flex align-items-center\" style=\"background-image: url('assets/img/contact-header.jpg');\">
+      <div class=\"container position-relative d-flex flex-column align-items-center\">
+
+        <h2>Location des vehicules</h2>
+      </div>
+    </div><!-- End Breadcrumbs -->
    <main id=\"main\">
+   {% for message in app.session.flashbag.get('success') %}
+    <div class=\"alert alert-success\" role=\"alert\">
+        <i class=\"fas fa-check-circle mr-2\"></i>{{ message }}
+    </div>
+{% endfor %}
+ 
 \t\t{% block body %}{% endblock %}
         </main><!-- End #main -->
 \t\t<!-- ======= Footer ======= -->
@@ -643,7 +739,6 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
 
 \t\t{% endblock %}
 \t</body>
-</html>
-", "base.html.twig", "C:\\Users\\aymen\\Desktop\\amena\\Amena\\templates\\base.html.twig");
+</html>", "base.html.twig", "C:\\Users\\klair\\OneDrive\\Bureau\\web pi\\digidreamers\\templates\\base.html.twig");
     }
 }

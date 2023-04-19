@@ -1,0 +1,42 @@
+{% extends 'baseadmin.html.twig' %}
+
+{% block title %}Gifts index{% endblock %}
+
+{% block body %}
+    <h1>Gifts index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Value</th>
+                <th>Photo</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for gift in gifts %}
+            <tr>
+                <td>{{ gift.id }}</td>
+                <td>{{ gift.name }}</td>
+                <td>{{ gift.description }}</td>
+                <td>{{ gift.value }}</td>
+                <td><img style="width:75px;height:75px" src="{{  gift.photo }}"> </td>
+
+                <td>
+                    <a href="{{ path('app_gifts_show', {'id': gift.id}) }}">show</a>
+                    <a href="{{ path('app_gifts_edit', {'id': gift.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_gifts_new') }}">Create new</a>
+{% endblock %}

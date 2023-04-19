@@ -2,7 +2,6 @@
 
 namespace App\Entity;
 
-use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -72,7 +71,7 @@ class Colis
     private $dateexpedition;
 
     /**
-     * @var User
+     * @var \User
      *
      * @ORM\ManyToOne(targetEntity="User")
      * @ORM\JoinColumns({
@@ -80,107 +79,6 @@ class Colis
      * })
      */
     private $idU;
-
-    public function getIdColis(): ?int
-    {
-        return $this->idColis;
-    }
-
-    public function getNomexpediteur(): ?string
-    {
-        return $this->nomexpediteur;
-    }
-
-    public function setNomexpediteur(string $nomexpediteur): self
-    {
-        $this->nomexpediteur = $nomexpediteur;
-
-        return $this;
-    }
-
-    public function getAdresseexpediteur(): ?string
-    {
-        return $this->adresseexpediteur;
-    }
-
-    public function setAdresseexpediteur(string $adresseexpediteur): self
-    {
-        $this->adresseexpediteur = $adresseexpediteur;
-
-        return $this;
-    }
-
-    public function getNomdestinataire(): ?string
-    {
-        return $this->nomdestinataire;
-    }
-
-    public function setNomdestinataire(string $nomdestinataire): self
-    {
-        $this->nomdestinataire = $nomdestinataire;
-
-        return $this;
-    }
-
-    public function getAdressedestinataire(): ?string
-    {
-        return $this->adressedestinataire;
-    }
-
-    public function setAdressedestinataire(string $adressedestinataire): self
-    {
-        $this->adressedestinataire = $adressedestinataire;
-
-        return $this;
-    }
-
-    public function getPoids(): ?float
-    {
-        return $this->poids;
-    }
-
-    public function setPoids(float $poids): self
-    {
-        $this->poids = $poids;
-
-        return $this;
-    }
-
-    public function getStatut(): ?string
-    {
-        return $this->statut;
-    }
-
-    public function setStatut(string $statut): self
-    {
-        $this->statut = $statut;
-
-        return $this;
-    }
-
-    public function getDateexpedition(): ?\DateTimeInterface
-    {
-        return $this->dateexpedition;
-    }
-
-    public function setDateexpedition(\DateTimeInterface $dateexpedition): self
-    {
-        $this->dateexpedition = $dateexpedition;
-
-        return $this;
-    }
-
-    public function getIdU(): ?User
-    {
-        return $this->idU;
-    }
-
-    public function setIdU(?User $idU): self
-    {
-        $this->idU = $idU;
-
-        return $this;
-    }
 
 
 }

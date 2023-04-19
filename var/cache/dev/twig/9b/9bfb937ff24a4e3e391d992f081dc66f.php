@@ -247,6 +247,6 @@ class __TwigTemplate_52b7dfb0d9bfc8324ed42a03c9df377b extends Template
 
     <a href=\"{{ path('app_colis_new') }}\">Create new</a>
 {% endblock %}
-", "colis/index.html.twig", "C:\\Users\\aymen\\Desktop\\amena\\Amena\\templates\\colis\\index.html.twig");
+", "colis/index.html.twig", "C:\\Users\\klair\\OneDrive\\Bureau\\web pi\\digidreamers\\templates\\colis\\index.html.twig");
     }
 }
