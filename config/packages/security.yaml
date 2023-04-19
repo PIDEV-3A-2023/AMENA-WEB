@@ -2,16 +2,14 @@ security:
     enable_authenticator_manager: true
     # https://symfony.com/doc/current/security.html#registering-the-user-hashing-passwords
     password_hashers:
-        legacy:
+        App\Security\Sha256PasswordEncoder:
             algorithm: sha256
             encode_as_base64: true
             iterations: 1
         App\Entity\User:
-            # the new hasher, along with its options
-            algorithm: sodium
-            migrate_from:
-                - bcrypt # uses the "bcrypt" hasher with the default options
-                - legacy # uses the "legacy" hasher configured above
+            algorithm: sha256
+            encode_as_base64: true
+            iterations: 1
         #Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface: 'sha256'
     # https://symfony.com/doc/current/security.html#loading-the-user-the-user-provider
     providers:

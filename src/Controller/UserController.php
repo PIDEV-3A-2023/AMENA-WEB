@@ -75,10 +75,10 @@ class UserController extends AbstractController
 
             $image = $form->get('image')->getData();
 
-
+          
             $userRepository->save($user, true);
 
-            return $this->redirectToRoute('app_user_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_login', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('user/new.html.twig', [
@@ -87,19 +87,26 @@ class UserController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'app_user_show', methods: ['GET'])]
-    public function show(User $user): Response
+    #[Route('/profil', name: 'app_user_show', methods: ['GET'])]
+    public function show(): Response
     {
+        //die("tes");
         $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         $user = $this->getUser();
+        /* dump($user);
+        die(); */
         return $this->render('user/show.html.twig', [
             'user' => $user,
         ]);
     }
 
     #[Route('/{id}/edit', name: 'app_user_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, User $user, UserRepository $userRepository, UserPasswordHasherInterface $userPasswordHasher): Response
+    public function edit(Request $request, UserRepository $userRepository, UserPasswordHasherInterface $userPasswordHasher): Response
     {
+
+
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+        $user = $this->getUser();
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
 
@@ -146,13 +153,18 @@ class UserController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'app_user_delete', methods: ['POST'])]
-    public function delete(Request $request, User $user, UserRepository $userRepository): Response
+    #[Route('/{id}', name: 'app_user_delete', methods: ['GET', 'POST'])]
+    public function delete(Request $request, UserRepository $userRepository, $id): Response
     {
-        if ($this->isCsrfTokenValid('delete' . $user->getId(), $request->request->get('_token'))) {
-            $userRepository->remove($user, true);
+        $user = $this->getUser();
+        if ($user && $user->getRoles()[0] == "ROLE_ADMIN") {
+            // dump($user);
+            // die("test");
+            $userRepository->remove($userRepository->find($id), true);
         }
-
+        /*  if ($this->isCsrfTokenValid('delete' . $user->getId(), $request->request->get('_token'))) {
+        }
+ */
         return $this->redirectToRoute('app_user_index', [], Response::HTTP_SEE_OTHER);
     }
 }

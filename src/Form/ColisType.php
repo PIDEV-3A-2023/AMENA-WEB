@@ -19,7 +19,7 @@ class ColisType extends AbstractType
             ->add('poids')
             ->add('statut')
             ->add('dateExpedition')
-            ->add('id_u')
+          
         ;
     }
 

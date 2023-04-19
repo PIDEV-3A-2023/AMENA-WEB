@@ -119,7 +119,7 @@ class __TwigTemplate_5f68ea12c18bb9001aa85799f3f6fa29 extends Template
 \t\t<img src=\"";
         // line 43
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front/assets/img/bac2.jpg"), "html", null, true);
-        echo "\" class=\"background--page\" alt=\"...\" width=\"100%\" height=\"100%\">
+        echo "\" class=\"background--page\" alt=\"...\" width=\"50%\" height=\"100%\">
 
 \t\t<div class=\"container\" style=\"margin-top:-44%;margin-left:25%;\">
 \t\t\t<div
@@ -386,7 +386,7 @@ class __TwigTemplate_5f68ea12c18bb9001aa85799f3f6fa29 extends Template
 
 
 \t<section class=\"contact-form-area section-bg  pt-115 pb-120 fix\" src=\"{{ asset('front/assets/img/babva.jpg') }}\">
-\t\t<img src=\"{{ asset('front/assets/img/bac2.jpg') }}\" class=\"background--page\" alt=\"...\" width=\"100%\" height=\"100%\">
+\t\t<img src=\"{{ asset('front/assets/img/bac2.jpg') }}\" class=\"background--page\" alt=\"...\" width=\"50%\" height=\"100%\">
 
 \t\t<div class=\"container\" style=\"margin-top:-44%;margin-left:25%;\">
 \t\t\t<div

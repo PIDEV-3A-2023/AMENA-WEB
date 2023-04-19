@@ -122,7 +122,7 @@ class __TwigTemplate_42a4a492c2c8c938b3db714109d79e7a extends Template
 \t\t<li class=\"sidebar-item\">
 \t\t\t<a class=\"sidebar-link\" href=\"";
         // line 71
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_show", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 71, $this->source); })()), "user", [], "any", false, false, false, 71), "id", [], "any", false, false, false, 71)]), "html", null, true);
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_show");
         echo "\">
 
 \t\t\t\t<i class=\"align-middle\" data-feather=\"user\"></i>
@@ -506,7 +506,7 @@ class __TwigTemplate_42a4a492c2c8c938b3db714109d79e7a extends Template
 \t\t</li>
 
 \t\t<li class=\"sidebar-item\">
-\t\t\t<a class=\"sidebar-link\" href=\"{{ path('app_user_show', {'id': app.user.id }) }}\">
+\t\t\t<a class=\"sidebar-link\" href=\"{{ path('app_user_show') }}\">
 
 \t\t\t\t<i class=\"align-middle\" data-feather=\"user\"></i>
 \t\t\t\t<span class=\"align-middle\">Profile</span>

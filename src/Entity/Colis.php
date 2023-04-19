@@ -7,35 +7,42 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
-
-use App\Repository\UserRepository;
-
-
 use Symfony\Component\Validator\Constraints as Assert;
 
-
-#[ORM\Table(name: '`colis`')]
+#[ORM\Table(name: 'colis')]
 #[ORM\Entity(repositoryClass: ColisRepository::class)]
 class Colis
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
-    #[ORM\Column(name:"id")]
+    #[ORM\Column]
     private ?int $id = null;
 
     #[ORM\Column(length: 50, name: "nomExpediteur")]
+    #[Assert\NotBlank(message: "Nom de l'expéditeur obligatoire")]
+    #[Assert\Regex(pattern: '/^[a-zA-Z\s]+$/', message: "Le nom de l'expéditeur ne doit contenir que des lettres et des espaces")]
+    #[Assert\Length(max: 50, maxMessage: "Le nom de l'expéditeur ne doit pas dépasser {{ limit }} caractères")]
     private ?string $nomExpediteur = null;
 
     #[ORM\Column(length: 50, name: "adresseExpediteur")]
+    #[Assert\NotBlank(message: "Adresse de l'expéditeur obligatoire")]
+    #[Assert\Length(max: 50, maxMessage: "L'adresse de l'expéditeur ne doit pas dépasser {{ limit }} caractères")]
     private ?string $adresseExpediteur = null;
-
+    
     #[ORM\Column(length: 50, name: "nomDestinataire")]
+    #[Assert\NotBlank(message: "Nom du destinataire obligatoire")]
+    #[Assert\Regex(pattern: '/^[a-zA-Z\s]+$/', message: "Le nom du destinataire ne doit contenir que des lettres et des espaces")]
+    #[Assert\Length(max: 50, maxMessage: "Le nom du destinataire ne doit pas dépasser {{ limit }} caractères")]
     private ?string $nomDestinataire = null;
 
     #[ORM\Column(length: 50, name: "adresseDestinataire")]
+    #[Assert\NotBlank(message: "Adresse du destinataire obligatoire")]
+    #[Assert\Length(max: 50, maxMessage: "L'adresse du destinataire ne doit pas dépasser {{ limit }} caractères")]
     private ?string $adresseDestinataire = null;
 
     #[ORM\Column(name: "poids")]
+    #[Assert\NotBlank(message: "Poids obligatoire")]
+    #[Assert\Positive(message: "Le poids doit être supérieur à 0")]
     private ?float $poids = null;
 
     #[ORM\Column(length: 30, name: "statut")]
@@ -47,17 +54,32 @@ class Colis
 
 
 
-   
-    #[ORM\OneToMany(mappedBy: 'idColis', targetEntity: Annonces::class)]
-    private Collection $annonces;
+    #[ORM\ManyToOne]
+    #[ORM\JoinColumn(nullable: false, name: "id_u")]
+    private ?User $id_u  = null;
+
+    /*#[ORM\OneToMany(mappedBy: 'idColis', targetEntity: Annonces::class)]
+    private Collection $annonces;*/
 
     public function __construct()
     {
-        $this->annonces = new ArrayCollection();
+       /* $this->annonces = new ArrayCollection();*/
+        $this->dateExpedition = new \DateTimeImmutable('now');
+        $this->statut = 'en attente';
     }
 
-   
 
+    /*#[ORM\OneToMany(mappedBy: 'idColis', targetEntity: Annonces::class)]
+    private Collection $annonces;*/
+
+    /*#[ORM\OneToMany(mappedBy: 'idcolis', targetEntity: Annonces::class)]
+    private Collection $idcccc;*/
+
+   /* public function __construct()
+    {
+        $this->annonces = new ArrayCollection();
+       // $this->idcccc = new ArrayCollection();
+    }*/
 
     public function getId(): ?int
     {
@@ -148,19 +170,86 @@ class Colis
         return $this;
     }
 
-   
+    public function getIdU(): ?User
+    {
+        return $this->id_u;
+    }
 
+    public function setIdU(?User $id_u): self
+    {
+        $this->id_u = $id_u;
+
+        return $this;
+    }
 
   
-    public function __toString()
+    /*public function getAnnonces(): Collection
     {
-        return $this->nomExpediteur;
+        return $this->annonces;
+    }*/
+
+    /*public function addAnnonce(Annonces $annonce): self
+    {
+        if (!$this->annonces->contains($annonce)) {
+            $this->annonces->add($annonce);
+            $annonce->setIdColis($this);
+        }
+
+        return $this;
+    }
+
+    public function removeAnnonce(Annonces $annonce): self
+    {
+        if ($this->annonces->removeElement($annonce)) {
+            // set the owning side to null (unless already changed)
+            if ($annonce->getIdColis() === $this) {
+                $annonce->setIdColis(null);
+            }
+        }
+
+        return $this;
     }
 
     /**
      * @return Collection<int, Annonces>
      */
-    public function getAnnonces(): Collection
+   /* public function getIdcccc(): Collection
+    {
+        return $this->idcccc;
+    }
+
+    public function addIdcccc(Annonces $idcccc): self
+    {
+        if (!$this->idcccc->contains($idcccc)) {
+            $this->idcccc->add($idcccc);
+            $idcccc->setIdcolis($this);
+        }
+
+        return $this;
+    }
+
+    public function removeIdcccc(Annonces $idcccc): self
+    {
+        if ($this->idcccc->removeElement($idcccc)) {
+            // set the owning side to null (unless already changed)
+            if ($idcccc->getIdcolis() === $this) {
+                $idcccc->setIdcolis(null);
+            }
+        }
+
+        return $this;
+    }
+*/
+    public function __toString()
+    {
+        return $this->nomExpediteur;
+    }
+
+   
+    /**
+     * @return Collection<int, Annonces>
+     */
+   /*   public function getAnnonces(): Collection
     {
         return $this->annonces;
     }
@@ -185,6 +274,5 @@ class Colis
         }
 
         return $this;
-    }
-
+    }*/
 }

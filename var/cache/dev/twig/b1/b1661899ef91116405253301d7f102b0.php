@@ -245,10 +245,7 @@ class __TwigTemplate_0c1b6787d7a62c311c1aa19b25c1ec49 extends Template
         // line 131
         echo "
 \t\t\t\t\t\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t\t\t\t\t\t";
-        // line 133
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 133, $this->source); })()), "roles", [], "any", false, false, false, 133), 'label');
-        echo "
+\t\t\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t\t\t";
         // line 134
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 134, $this->source); })()), "roles", [], "any", false, false, false, 134), 'widget');
@@ -347,7 +344,7 @@ class __TwigTemplate_0c1b6787d7a62c311c1aa19b25c1ec49 extends Template
 
     public function getDebugInfo()
     {
-        return array (  303 => 153,  299 => 152,  295 => 151,  288 => 147,  284 => 146,  280 => 145,  273 => 141,  269 => 140,  265 => 139,  258 => 135,  254 => 134,  250 => 133,  246 => 131,  240 => 123,  236 => 122,  232 => 121,  224 => 116,  220 => 115,  216 => 114,  209 => 110,  205 => 109,  201 => 108,  194 => 104,  190 => 103,  186 => 102,  179 => 98,  175 => 97,  171 => 96,  165 => 93,  161 => 92,  158 => 91,  152 => 88,  149 => 87,  147 => 86,  135 => 76,  129 => 33,  122 => 24,  118 => 23,  114 => 22,  109 => 20,  97 => 10,  95 => 9,  92 => 8,  82 => 7,  62 => 4,  51 => 1,  49 => 6,  36 => 1,);
+        return array (  300 => 153,  296 => 152,  292 => 151,  285 => 147,  281 => 146,  277 => 145,  270 => 141,  266 => 140,  262 => 139,  255 => 135,  251 => 134,  246 => 131,  240 => 123,  236 => 122,  232 => 121,  224 => 116,  220 => 115,  216 => 114,  209 => 110,  205 => 109,  201 => 108,  194 => 104,  190 => 103,  186 => 102,  179 => 98,  175 => 97,  171 => 96,  165 => 93,  161 => 92,  158 => 91,  152 => 88,  149 => 87,  147 => 86,  135 => 76,  129 => 33,  122 => 24,  118 => 23,  114 => 22,  109 => 20,  97 => 10,  95 => 9,  92 => 8,  82 => 7,  62 => 4,  51 => 1,  49 => 6,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -484,7 +481,7 @@ class __TwigTemplate_0c1b6787d7a62c311c1aa19b25c1ec49 extends Template
 \t\t\t\t\t\t\t\t\t</div> #}
 
 \t\t\t\t\t\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t\t\t\t\t\t{{ form_label(form.roles) }}
+\t\t\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t\t\t{{ form_widget(form.roles) }}
 \t\t\t\t\t\t\t\t\t\t\t{{ form_errors(form.roles) }}
 \t\t\t\t\t\t\t\t\t</div>

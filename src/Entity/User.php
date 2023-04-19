@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Entity;
-
+use App\Entity\Colis;
 use App\Repository\UserRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
@@ -455,4 +455,35 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
         return $this;
     }
+    /**
+     * @return Collection<int, Colis>
+     */
+    public function getColis(): Collection
+    {
+        return $this->colis;
+    }
+
+    public function addColi(Colis $coli): self
+    {
+        if (!$this->colis->contains($coli)) {
+            $this->colis->add($coli);
+            $coli->setIdU($this);
+        }
+
+        return $this;
+    }
+
+    public function removeColi(Colis $coli): self
+    {
+        if ($this->colis->removeElement($coli)) {
+            // set the owning side to null (unless already changed)
+            if ($coli->getIdU() === $this) {
+                $coli->setIdU(null);
+            }
+        }
+
+        return $this;
+    }
+    #[ORM\OneToMany(mappedBy: 'id_u', targetEntity: Colis::class)]
+    private Collection $colis;
 }

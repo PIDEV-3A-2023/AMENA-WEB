@@ -83,6 +83,7 @@ class ComposerStaticInit826290eec1cbd744c9221a3e1f5a65c8
             'Symfony\\Component\\Messenger\\Bridge\\Doctrine\\' => 44,
             'Symfony\\Component\\Messenger\\Bridge\\Amqp\\' => 40,
             'Symfony\\Component\\Messenger\\' => 28,
+            'Symfony\\Component\\Mailer\\Bridge\\Sendgrid\\' => 41,
             'Symfony\\Component\\Mailer\\' => 25,
             'Symfony\\Component\\Intl\\' => 23,
             'Symfony\\Component\\HttpKernel\\' => 29,
@@ -344,6 +345,10 @@ class ComposerStaticInit826290eec1cbd744c9221a3e1f5a65c8
         'Symfony\\Component\\Messenger\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/messenger',
+        ),
+        'Symfony\\Component\\Mailer\\Bridge\\Sendgrid\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/sendgrid-mailer',
         ),
         'Symfony\\Component\\Mailer\\' => 
         array (
@@ -4662,6 +4667,9 @@ class ComposerStaticInit826290eec1cbd744c9221a3e1f5a65c8
         'Symfony\\Component\\Intl\\Util\\IcuVersion' => __DIR__ . '/..' . '/symfony/intl/Util/IcuVersion.php',
         'Symfony\\Component\\Intl\\Util\\IntlTestHelper' => __DIR__ . '/..' . '/symfony/intl/Util/IntlTestHelper.php',
         'Symfony\\Component\\Intl\\Util\\Version' => __DIR__ . '/..' . '/symfony/intl/Util/Version.php',
+        'Symfony\\Component\\Mailer\\Bridge\\Sendgrid\\Transport\\SendgridApiTransport' => __DIR__ . '/..' . '/symfony/sendgrid-mailer/Transport/SendgridApiTransport.php',
+        'Symfony\\Component\\Mailer\\Bridge\\Sendgrid\\Transport\\SendgridSmtpTransport' => __DIR__ . '/..' . '/symfony/sendgrid-mailer/Transport/SendgridSmtpTransport.php',
+        'Symfony\\Component\\Mailer\\Bridge\\Sendgrid\\Transport\\SendgridTransportFactory' => __DIR__ . '/..' . '/symfony/sendgrid-mailer/Transport/SendgridTransportFactory.php',
         'Symfony\\Component\\Mailer\\DataCollector\\MessageDataCollector' => __DIR__ . '/..' . '/symfony/mailer/DataCollector/MessageDataCollector.php',
         'Symfony\\Component\\Mailer\\DelayedEnvelope' => __DIR__ . '/..' . '/symfony/mailer/DelayedEnvelope.php',
         'Symfony\\Component\\Mailer\\Envelope' => __DIR__ . '/..' . '/symfony/mailer/Envelope.php',
