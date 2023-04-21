@@ -133,6 +133,6 @@ class __TwigTemplate_faac476623f254d5148a18b12845c4e5 extends Template
 
     <a href=\"{{ path('app_vehicule_index') }}\">Retourner</a>
 {% endblock %}
-", "vehicule/new.html.twig", "C:\\Users\\klair\\OneDrive\\Bureau\\web pi\\digidreamers\\templates\\vehicule\\new.html.twig");
+", "vehicule/new.html.twig", "C:\\Users\\klair\\OneDrive\\Bureau\\web integré\\digidreamers\\templates\\vehicule\\new.html.twig");
     }
 }

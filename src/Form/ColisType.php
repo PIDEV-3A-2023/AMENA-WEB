@@ -6,20 +6,19 @@ use App\Entity\Colis;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class ColisType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('nomexpediteur')
-            ->add('adresseexpediteur')
-            ->add('nomdestinataire')
-            ->add('adressedestinataire')
+            ->add('nomExpediteur')
+            ->add('adresseExpediteur')
+            ->add('nomDestinataire')
+            ->add('adresseDestinataire')
             ->add('poids')
-            ->add('statut')
-            ->add('dateexpedition')
-            ->add('idU')
+            ->add('Enregistrer',SubmitType::class)
         ;
     }
 

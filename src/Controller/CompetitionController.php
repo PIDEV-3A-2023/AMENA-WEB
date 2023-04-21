@@ -16,8 +16,9 @@ class CompetitionController extends AbstractController
     #[Route('/', name: 'app_competition_index', methods: ['GET'])]
     public function index(CompetitionRepository $competitionRepository): Response
     {
+       $competition = $competitionRepository->findBy([],['id' =>'DESC']);
         return $this->render('competition/index.html.twig', [
-            'competitions' => $competitionRepository->findAll(),
+            'competitions' => $competition,
         ]);
     }
 

@@ -1,9 +1,9 @@
 {% extends 'baseadmin.html.twig' %}
 
-{% block title %}Competition{% endblock %}
+{% block title %}Compétition{% endblock %}
 
 {% block body %}
-    <h1>Competition</h1>
+    <h1>Compétition</h1>
 
     <table class="table">
         <tbody>
@@ -12,15 +12,15 @@
                 <td>{{ competition.id }}</td>
             </tr>
             <tr>
-                <th>Title</th>
+                <th>Titre</th>
                 <td>{{ competition.title }}</td>
             </tr>
             <tr>
-                <th>DateDeb</th>
+                <th>Date de Début</th>
                 <td>{{ competition.dateDeb ? competition.dateDeb|date('Y-m-d H:i:s') : '' }}</td>
             </tr>
             <tr>
-                <th>DateFin</th>
+                <th>Date de Fin</th>
                 <td>{{ competition.dateFin ? competition.dateFin|date('Y-m-d H:i:s') : '' }}</td>
             </tr>
             <tr>
@@ -28,15 +28,15 @@
                 <td>{{ competition.type }}</td>
             </tr>
             <tr>
-                <th>Nbp</th>
+                <th>Nombre de participants</th>
                 <td>{{ competition.nbp }}</td>
             </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('app_competition_index') }}">back to list</a>
+    <a href="{{ path('app_competition_index') }}">Retourner à la liste des compétitions</a>
 
-    <a href="{{ path('app_competition_edit', {'id': competition.id}) }}">edit</a>
+    <a href="{{ path('app_competition_edit', {'id': competition.id}) }}">Modifier</a>
 
     {{ include('competition/_delete_form.html.twig') }}
 {% endblock %}

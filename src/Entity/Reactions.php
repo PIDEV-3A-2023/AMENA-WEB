@@ -42,5 +42,46 @@ class Reactions
      */
     private $idC;
 
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
+
+    public function getIdA(): ?int
+    {
+        return $this->idA;
+    }
+
+    public function setIdA(int $idA): self
+    {
+        $this->idA = $idA;
+
+        return $this;
+    }
+
+    public function getIdU(): ?int
+    {
+        return $this->idU;
+    }
+
+    public function setIdU(int $idU): self
+    {
+        $this->idU = $idU;
+
+        return $this;
+    }
+
+    public function getIdC(): ?int
+    {
+        return $this->idC;
+    }
+
+    public function setIdC(int $idC): self
+    {
+        $this->idC = $idC;
+
+        return $this;
+    }
+
 
 }

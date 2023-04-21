@@ -675,6 +675,6 @@ class __TwigTemplate_42a4a492c2c8c938b3db714109d79e7a extends Template
 \t</body>
 
 </html>
-", "baseadmin.html.twig", "C:\\Users\\klair\\OneDrive\\Bureau\\web pi\\digidreamers\\templates\\baseadmin.html.twig");
+", "baseadmin.html.twig", "C:\\Users\\klair\\OneDrive\\Bureau\\web integré\\digidreamers\\templates\\baseadmin.html.twig");
     }
 }

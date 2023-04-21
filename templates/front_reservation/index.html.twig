@@ -7,7 +7,7 @@
 
   <main id="main">
 
-<section id="portfolio" class="portfolio">
+<section id="portfolio" class="portfolio1">
       <div class="container" data-aos="fade-up">
 
         <div class="portfolio-isotope" data-portfolio-filter="*" data-portfolio-layout="masonry" data-portfolio-sort="original-order">
@@ -46,5 +46,10 @@
       </div>
     </section><!-- End Portfolio Section -->
       </main><!-- End #main -->
+
+{% endblock %}
+{% block stylesheets %}
+	{{parent()}}
+	<link href="{{asset('front/assets/css/main2.css')}}" rel="stylesheet">
 
 {% endblock %}

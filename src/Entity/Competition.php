@@ -25,22 +25,23 @@ class Competition
     private ?String $title=null;
 
     #[Assert\NotBlank(message:"La date de début ne doit pas être vide")]
-  //  #[Assert\GreaterThanOrEqual(propertyPath: "now", message: "La date de début ne peut pas être antérieure à aujourd'hui")]
-    #[ORM\Column(nullable : false)] 
-    private ?\DateTime $dateDeb;
+ //   #[Assert\GreaterThanOrEqual(propertyPath: "dateDeb", message: "La date de début ne peut pas être antérieure à aujourd'hui")]
+    //#[Assert\GreaterThan("today")]
+    #[ORM\Column(nullable : false,type: Types::DATE_MUTABLE)]
+    private ?\DateTimeInterface $dateDeb;
 
+   // #[Assert\GreaterThan("dateDeb")]
     #[Assert\NotBlank(message:"La date de fin ne doit pas être vide")]
   //  #[Assert\GreaterThan(propertyPath: "dateDeb", message: "La date de fin doit être postérieure à la date de début")]
-    #[ORM\Column(nullable : false)] 
-    private ?\DateTime $dateFin;
+    #[ORM\Column(nullable : false,type: Types::DATE_MUTABLE)] 
+    private ?\DateTimeInterface $dateFin;
 
     #[Assert\NotBlank(message:"Le type ne doit pas être vide")]
     #[ORM\Column]
     private ?int $type;
 
-    #[Assert\NotBlank(message:"Le nombre de participants ne doit pas être vide")]
     #[ORM\Column(nullable : true)]
-    private ?int $nbp ;
+    private ?int $nbp = 0 ;
 
     #[ORM\Column(name : 'id_uc')]
     private ?int $id_uc=163 ;

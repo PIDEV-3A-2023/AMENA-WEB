@@ -3,32 +3,30 @@
 {% block title %}Competition index{% endblock %}
 
 {% block body %}
-    <h1>Competition index</h1>
+    <a href="{{ path('app_competition_index') }}" style="color: #00b4d8; font-size: 2.0em; text-decoration: none;">Compétition</a>
 
     <table class="table">
-        <thead>
+        <thead  style="font-weight: bold">
             <tr>
-                <th>Id</th>
-                <th>Title</th>
-                <th>DateDeb</th>
-                <th>DateFin</th>
+                <th>Titre</th>
+                <th>Date de début</th>
+                <th>Date de fin</th>
                 <th>Type</th>
-                <th>Nbp</th>
+                <th>Nombre de participants</th>
                 <th>actions</th>
             </tr>
         </thead>
         <tbody>
         {% for competition in competitions %}
             <tr>
-                <td>{{ competition.id }}</td>
                 <td>{{ competition.title }}</td>
                 <td>{{ competition.dateDeb ? competition.dateDeb|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ competition.dateFin ? competition.dateFin|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ competition.type }}</td>
                 <td>{{ competition.nbp }}</td>
                 <td>
-                    <a href="{{ path('app_competition_show', {'id': competition.id}) }}">show</a>
-                    <a href="{{ path('app_competition_edit', {'id': competition.id}) }}">edit</a>
+                    <a href="{{ path('app_competition_show', {'id': competition.id}) }}" class="btn btn-outline-light" style="background-color:#00b4d8 " >Afficher</a>
+                    <a href="{{ path('app_competition_edit', {'id': competition.id}) }}" class="btn btn-outline-light" style="background-color:#00b4d8 " >Modifier</a>
                 </td>
             </tr>
         {% else %}
@@ -39,5 +37,16 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_competition_new') }}">Create new</a>
+<di>
+        <a href="{{ path('app_competition_new') }}" class="btn btn-outline-light" style="background-color:#00b4d8 " >+ Nouvelle Compétition</a>
+</di>
+    <div style="margin-top: 75px">
+        <a href="{{ path('app_gifts_index') }}" style="color: #00b4d8; font-size: 2.0em; text-decoration: none; display: inline-block;">
+            <img style="width:38px;height:25px; vertical-align: middle;" src="{{ asset('back/assets/img/gift.png') }}">
+            <span style="vertical-align: middle;">Cadeaux</span>
+        </a>
+    </div>
+
+
+
 {% endblock %}

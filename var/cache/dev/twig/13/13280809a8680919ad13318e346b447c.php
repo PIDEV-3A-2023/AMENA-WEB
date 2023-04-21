@@ -27,6 +27,7 @@ class __TwigTemplate_34ce6ff320c2a43d4c6b157ce3f1fa3c extends Template
         $this->blocks = [
             'title' => [$this, 'block_title'],
             'body' => [$this, 'block_body'],
+            'stylesheets' => [$this, 'block_stylesheets'],
         ];
     }
 
@@ -85,83 +86,144 @@ class __TwigTemplate_34ce6ff320c2a43d4c6b157ce3f1fa3c extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <h1>Colis</h1>
-
-    <table class=\"table\">
-        <tbody>
-            <tr>
-                <th>IdColis</th>
-                <td>";
-        // line 12
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["coli"]) || array_key_exists("coli", $context) ? $context["coli"] : (function () { throw new RuntimeError('Variable "coli" does not exist.', 12, $this->source); })()), "idColis", [], "any", false, false, false, 12), "html", null, true);
+        echo "    <div class=\"container my-5\">
+        <div class=\"row justify-content-center\">
+            <div class=\"col-lg-8\">
+                <div class=\"card\">
+                    <div class=\"card-header\">
+                        <h4>Colis</h4>
+                    </div>
+                    <div class=\"card-body\">
+                        <table class=\"table\">
+                            <tbody>
+                                <tr>
+                                    <th>Id</th>
+                                    <td>";
+        // line 18
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["coli"]) || array_key_exists("coli", $context) ? $context["coli"] : (function () { throw new RuntimeError('Variable "coli" does not exist.', 18, $this->source); })()), "id", [], "any", false, false, false, 18), "html", null, true);
         echo "</td>
-            </tr>
-            <tr>
-                <th>Nomexpediteur</th>
-                <td>";
-        // line 16
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["coli"]) || array_key_exists("coli", $context) ? $context["coli"] : (function () { throw new RuntimeError('Variable "coli" does not exist.', 16, $this->source); })()), "nomexpediteur", [], "any", false, false, false, 16), "html", null, true);
+                                </tr>
+                                <tr>
+                                    <th>Nom de l'expéditeur</th>
+                                    <td>";
+        // line 22
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["coli"]) || array_key_exists("coli", $context) ? $context["coli"] : (function () { throw new RuntimeError('Variable "coli" does not exist.', 22, $this->source); })()), "nomExpediteur", [], "any", false, false, false, 22), "html", null, true);
         echo "</td>
-            </tr>
-            <tr>
-                <th>Adresseexpediteur</th>
-                <td>";
-        // line 20
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["coli"]) || array_key_exists("coli", $context) ? $context["coli"] : (function () { throw new RuntimeError('Variable "coli" does not exist.', 20, $this->source); })()), "adresseexpediteur", [], "any", false, false, false, 20), "html", null, true);
+                                </tr>
+                                <tr>
+                                    <th>Adresse de l'expéditeur</th>
+                                    <td>";
+        // line 26
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["coli"]) || array_key_exists("coli", $context) ? $context["coli"] : (function () { throw new RuntimeError('Variable "coli" does not exist.', 26, $this->source); })()), "adresseExpediteur", [], "any", false, false, false, 26), "html", null, true);
         echo "</td>
-            </tr>
-            <tr>
-                <th>Nomdestinataire</th>
-                <td>";
-        // line 24
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["coli"]) || array_key_exists("coli", $context) ? $context["coli"] : (function () { throw new RuntimeError('Variable "coli" does not exist.', 24, $this->source); })()), "nomdestinataire", [], "any", false, false, false, 24), "html", null, true);
+                                </tr>
+                                <tr>
+                                    <th>Nom du destinataire</th>
+                                    <td>";
+        // line 30
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["coli"]) || array_key_exists("coli", $context) ? $context["coli"] : (function () { throw new RuntimeError('Variable "coli" does not exist.', 30, $this->source); })()), "nomDestinataire", [], "any", false, false, false, 30), "html", null, true);
         echo "</td>
-            </tr>
-            <tr>
-                <th>Adressedestinataire</th>
-                <td>";
-        // line 28
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["coli"]) || array_key_exists("coli", $context) ? $context["coli"] : (function () { throw new RuntimeError('Variable "coli" does not exist.', 28, $this->source); })()), "adressedestinataire", [], "any", false, false, false, 28), "html", null, true);
+                                </tr>
+                                <tr>
+                                    <th>Adresse du destinataire</th>
+                                    <td>";
+        // line 34
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["coli"]) || array_key_exists("coli", $context) ? $context["coli"] : (function () { throw new RuntimeError('Variable "coli" does not exist.', 34, $this->source); })()), "adresseDestinataire", [], "any", false, false, false, 34), "html", null, true);
         echo "</td>
-            </tr>
-            <tr>
-                <th>Poids</th>
-                <td>";
-        // line 32
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["coli"]) || array_key_exists("coli", $context) ? $context["coli"] : (function () { throw new RuntimeError('Variable "coli" does not exist.', 32, $this->source); })()), "poids", [], "any", false, false, false, 32), "html", null, true);
+                                </tr>
+                                <tr>
+                                    <th>Poids</th>
+                                    <td>";
+        // line 38
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["coli"]) || array_key_exists("coli", $context) ? $context["coli"] : (function () { throw new RuntimeError('Variable "coli" does not exist.', 38, $this->source); })()), "poids", [], "any", false, false, false, 38), "html", null, true);
         echo "</td>
-            </tr>
-            <tr>
-                <th>Statut</th>
-                <td>";
-        // line 36
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["coli"]) || array_key_exists("coli", $context) ? $context["coli"] : (function () { throw new RuntimeError('Variable "coli" does not exist.', 36, $this->source); })()), "statut", [], "any", false, false, false, 36), "html", null, true);
+                                </tr>
+                                <tr>
+                                    <th>Statut</th>
+                                    <td>";
+        // line 42
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["coli"]) || array_key_exists("coli", $context) ? $context["coli"] : (function () { throw new RuntimeError('Variable "coli" does not exist.', 42, $this->source); })()), "statut", [], "any", false, false, false, 42), "html", null, true);
         echo "</td>
-            </tr>
-            <tr>
-                <th>Dateexpedition</th>
-                <td>";
-        // line 40
-        ((twig_get_attribute($this->env, $this->source, (isset($context["coli"]) || array_key_exists("coli", $context) ? $context["coli"] : (function () { throw new RuntimeError('Variable "coli" does not exist.', 40, $this->source); })()), "dateexpedition", [], "any", false, false, false, 40)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["coli"]) || array_key_exists("coli", $context) ? $context["coli"] : (function () { throw new RuntimeError('Variable "coli" does not exist.', 40, $this->source); })()), "dateexpedition", [], "any", false, false, false, 40), "Y-m-d"), "html", null, true))) : (print ("")));
+                                </tr>
+                                <tr>
+                                    <th>Date d'expédition</th>
+                                    <td>";
+        // line 46
+        ((twig_get_attribute($this->env, $this->source, (isset($context["coli"]) || array_key_exists("coli", $context) ? $context["coli"] : (function () { throw new RuntimeError('Variable "coli" does not exist.', 46, $this->source); })()), "dateExpedition", [], "any", false, false, false, 46)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["coli"]) || array_key_exists("coli", $context) ? $context["coli"] : (function () { throw new RuntimeError('Variable "coli" does not exist.', 46, $this->source); })()), "dateExpedition", [], "any", false, false, false, 46), "d/m/Y"), "html", null, true))) : (print ("")));
         echo "</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <a href=\"";
-        // line 45
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class=\"card-footer\">
+                        <a href=\"";
+        // line 52
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_colis_index");
-        echo "\">back to list</a>
-
-    <a href=\"";
-        // line 47
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_colis_edit", ["idColis" => twig_get_attribute($this->env, $this->source, (isset($context["coli"]) || array_key_exists("coli", $context) ? $context["coli"] : (function () { throw new RuntimeError('Variable "coli" does not exist.', 47, $this->source); })()), "idColis", [], "any", false, false, false, 47)]), "html", null, true);
-        echo "\">edit</a>
-
-    ";
-        // line 49
+        echo "\" class=\"btn btn-secondary\">Retour à la liste</a>
+                        <a href=\"";
+        // line 53
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_colis_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["coli"]) || array_key_exists("coli", $context) ? $context["coli"] : (function () { throw new RuntimeError('Variable "coli" does not exist.', 53, $this->source); })()), "id", [], "any", false, false, false, 53)]), "html", null, true);
+        echo "\" class=\"btn btn-primary\">Modifier</a>
+                        ";
+        // line 54
         echo twig_include($this->env, $context, "colis/_delete_form.html.twig");
         echo "
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+";
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+    }
+
+    // line 62
+    public function block_stylesheets($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
+
+        // line 63
+        echo "    ";
+        $this->displayParentBlock("stylesheets", $context, $blocks);
+        echo "
+    <link href=\"";
+        // line 64
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front/assets/vendor/bootstrap/css/bootstrap.min.css"), "html", null, true);
+        echo "\" rel=\"stylesheet\">
+    <link href=\"";
+        // line 65
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front/assets/vendor/bootstrap-icons/bootstrap-icons.css"), "html", null, true);
+        echo "\" rel=\"stylesheet\">
+    <link href=\"";
+        // line 66
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front/assets/vendor/aos/aos.css"), "html", null, true);
+        echo "\" rel=\"stylesheet\">
+    <link href=\"";
+        // line 67
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front/assets/vendor/glightbox/css/glightbox.min.css"), "html", null, true);
+        echo "\" rel=\"stylesheet\">
+    <link href=\"";
+        // line 68
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front/assets/vendor/swiper/swiper-bundle.min.css"), "html", null, true);
+        echo "\" rel=\"stylesheet\">
+    <link href=\"";
+        // line 69
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front/assets/vendor/remixicon/remixicon.css"), "html", null, true);
+        echo "\" rel=\"stylesheet\">
+    <link href=\"";
+        // line 70
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front/assets/css/main.css"), "html", null, true);
+        echo "\" rel=\"stylesheet\">
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -183,7 +245,7 @@ class __TwigTemplate_34ce6ff320c2a43d4c6b157ce3f1fa3c extends Template
 
     public function getDebugInfo()
     {
-        return array (  163 => 49,  158 => 47,  153 => 45,  145 => 40,  138 => 36,  131 => 32,  124 => 28,  117 => 24,  110 => 20,  103 => 16,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  225 => 70,  221 => 69,  217 => 68,  213 => 67,  209 => 66,  205 => 65,  201 => 64,  196 => 63,  186 => 62,  169 => 54,  165 => 53,  161 => 52,  152 => 46,  145 => 42,  138 => 38,  131 => 34,  124 => 30,  117 => 26,  110 => 22,  103 => 18,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -193,51 +255,72 @@ class __TwigTemplate_34ce6ff320c2a43d4c6b157ce3f1fa3c extends Template
 {% block title %}Colis{% endblock %}
 
 {% block body %}
-    <h1>Colis</h1>
-
-    <table class=\"table\">
-        <tbody>
-            <tr>
-                <th>IdColis</th>
-                <td>{{ coli.idColis }}</td>
-            </tr>
-            <tr>
-                <th>Nomexpediteur</th>
-                <td>{{ coli.nomexpediteur }}</td>
-            </tr>
-            <tr>
-                <th>Adresseexpediteur</th>
-                <td>{{ coli.adresseexpediteur }}</td>
-            </tr>
-            <tr>
-                <th>Nomdestinataire</th>
-                <td>{{ coli.nomdestinataire }}</td>
-            </tr>
-            <tr>
-                <th>Adressedestinataire</th>
-                <td>{{ coli.adressedestinataire }}</td>
-            </tr>
-            <tr>
-                <th>Poids</th>
-                <td>{{ coli.poids }}</td>
-            </tr>
-            <tr>
-                <th>Statut</th>
-                <td>{{ coli.statut }}</td>
-            </tr>
-            <tr>
-                <th>Dateexpedition</th>
-                <td>{{ coli.dateexpedition ? coli.dateexpedition|date('Y-m-d') : '' }}</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <a href=\"{{ path('app_colis_index') }}\">back to list</a>
-
-    <a href=\"{{ path('app_colis_edit', {'idColis': coli.idColis}) }}\">edit</a>
-
-    {{ include('colis/_delete_form.html.twig') }}
+    <div class=\"container my-5\">
+        <div class=\"row justify-content-center\">
+            <div class=\"col-lg-8\">
+                <div class=\"card\">
+                    <div class=\"card-header\">
+                        <h4>Colis</h4>
+                    </div>
+                    <div class=\"card-body\">
+                        <table class=\"table\">
+                            <tbody>
+                                <tr>
+                                    <th>Id</th>
+                                    <td>{{ coli.id }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Nom de l'expéditeur</th>
+                                    <td>{{ coli.nomExpediteur }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Adresse de l'expéditeur</th>
+                                    <td>{{ coli.adresseExpediteur }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Nom du destinataire</th>
+                                    <td>{{ coli.nomDestinataire }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Adresse du destinataire</th>
+                                    <td>{{ coli.adresseDestinataire }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Poids</th>
+                                    <td>{{ coli.poids }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Statut</th>
+                                    <td>{{ coli.statut }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Date d'expédition</th>
+                                    <td>{{ coli.dateExpedition ? coli.dateExpedition|date('d/m/Y') : '' }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class=\"card-footer\">
+                        <a href=\"{{ path('app_colis_index') }}\" class=\"btn btn-secondary\">Retour à la liste</a>
+                        <a href=\"{{ path('app_colis_edit', {'id': coli.id}) }}\" class=\"btn btn-primary\">Modifier</a>
+                        {{ include('colis/_delete_form.html.twig') }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
-", "colis/show.html.twig", "C:\\Users\\klair\\OneDrive\\Bureau\\web pi\\digidreamers\\templates\\colis\\show.html.twig");
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link href=\"{{asset('front/assets/vendor/bootstrap/css/bootstrap.min.css')}}\" rel=\"stylesheet\">
+    <link href=\"{{asset('front/assets/vendor/bootstrap-icons/bootstrap-icons.css')}}\" rel=\"stylesheet\">
+    <link href=\"{{asset('front/assets/vendor/aos/aos.css')}}\" rel=\"stylesheet\">
+    <link href=\"{{asset('front/assets/vendor/glightbox/css/glightbox.min.css')}}\" rel=\"stylesheet\">
+    <link href=\"{{asset('front/assets/vendor/swiper/swiper-bundle.min.css')}}\" rel=\"stylesheet\">
+    <link href=\"{{asset('front/assets/vendor/remixicon/remixicon.css')}}\" rel=\"stylesheet\">
+    <link href=\"{{asset('front/assets/css/main.css')}}\" rel=\"stylesheet\">
+{% endblock %}
+", "colis/show.html.twig", "C:\\Users\\klair\\OneDrive\\Bureau\\web integré\\digidreamers\\templates\\colis\\show.html.twig");
     }
 }

@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+{{ include('user/_form.html.twig') }}
+	<div style="margin-top:8%">
+		<h1>Nouvelle annonce</h1>
+		<div class="offset-3 col-3">
+			{% if form_errors(form) %}
+				<div class="alert alert-danger">
+					{{ form_errors(form) }}
+				</div>
+			{% endif %}
+			{{ form_start(form,{'attr': {'novalidate': 'novalidate'}}
+			) }}
+			{{ form_row(form._token) }}
+			{{ form_row(form.type) }}
+			{{ form_row(form.ville_dep) }}
+			{{ form_row(form.ville_arr) }}
+			{{ form_row(form.date_dep) }}
+			{{ form_row(form.date_arr) }}
+			{{ form_row(form.prix) }}
+			{{ form_row(form.description) }}
+
+
+			{{ form_end(form) }}
+		</div>
+	</div>
+{% endblock %}

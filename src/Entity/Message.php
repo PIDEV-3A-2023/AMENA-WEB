@@ -2,52 +2,83 @@
 
 namespace App\Entity;
 
+use App\Repository\MessageRepository;
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * Message
- *
- * @ORM\Table(name="message")
- * @ORM\Entity
- */
+#[ORM\Entity(repositoryClass: MessageRepository::class)]
 class Message
 {
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="id", type="integer", nullable=false)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
-     */
-    private $id;
+    #[ORM\Id]
+    #[ORM\GeneratedValue]
+    #[ORM\Column]
+    private ?int $id = null;
 
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="senderId", type="integer", nullable=false)
-     */
-    private $senderid;
+    #[ORM\ManyToOne(inversedBy: 'receiverId')]
+    #[ORM\JoinColumn(nullable: false,name:"receiverId")]
+    private ?User $receiverId = null;
 
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="receiverId", type="integer", nullable=false)
-     */
-    private $receiverid;
+    #[ORM\ManyToOne(inversedBy: 'senderId')]
+    #[ORM\JoinColumn(nullable: false,name:"senderId")]
+    private ?User $senderId = null;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="content", type="string", length=255, nullable=false)
-     */
-    private $content;
+    #[ORM\Column(length: 255)]
+    private ?string $content = null;
 
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="timestamp", type="date", nullable=false)
-     */
-    private $timestamp;
+    #[ORM\Column(name:"timestamp",type: Types::DATETIME_MUTABLE)]
+    private ?\DateTimeInterface $timestamp = null;
 
+   
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
 
+    public function getReceiverId(): ?User
+    {
+        return $this->receiverId;
+    }
+
+    public function setReceiverId(?User $receiverId): self
+    {
+        $this->receiverId = $receiverId;
+
+        return $this;
+    }
+
+    public function getSenderId(): ?User
+    {
+        return $this->senderId;
+    }
+
+    public function setSenderId(?User $senderId): self
+    {
+        $this->senderId = $senderId;
+
+        return $this;
+    }
+
+    public function getContent(): ?string
+    {
+        return $this->content;
+    }
+
+    public function setContent(string $content): self
+    {
+        $this->content = $content;
+
+        return $this;
+    }
+
+    public function getTimestamp(): ?\DateTimeInterface
+    {
+        return $this->timestamp;
+    }
+
+    public function setTimestamp(\DateTimeInterface $timestamp): self
+    {
+        $this->timestamp = $timestamp;
+
+        return $this;
+    }
 }

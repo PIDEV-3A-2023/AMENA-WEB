@@ -9,14 +9,20 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Validator\Constraints\File;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+
 class GiftsType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('name')
+            ->add('name',TextType::class,[
+                'label'=>'Nom'
+            ])
             ->add('description')
-            ->add('value')
+            ->add('value',TextType::class,[
+                'label'=>'Valeur'
+            ])
             ->add('photo',FileType::class,[
                 'label' => 'image',
 
@@ -35,11 +41,13 @@ class GiftsType extends AbstractType
                         'mimeTypes' => [
                             'image/jpeg',
                             'image/png',
+                            
                         ],
                         'mimeTypesMessage' => 'Please upload a valid Image document',
                     ])
                 ],
             ])
+            ->add('idC')
             ->add('idC')
             ->add('save',SubmitType::class)
 

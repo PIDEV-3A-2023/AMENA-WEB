@@ -97,7 +97,7 @@ class __TwigTemplate_935f06182045a8612bc184370ea708ff extends Template
                 <th>Chevaux</th>
                 <th>Marque</th>
                 <th>Modele</th>
-                <th>Couleur</th>
+                <th>Lieu de prise en charge </th>
                 <th>Prix</th>
                 <th>Img</th>
                 <th>actions</th>
@@ -142,7 +142,7 @@ class __TwigTemplate_935f06182045a8612bc184370ea708ff extends Template
             echo "</td>
                 <td>";
             // line 34
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["vehicule"], "couleur", [], "any", false, false, false, 34), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["vehicule"], "lpec", [], "any", false, false, false, 34), "html", null, true);
             echo "</td>
                 <td>";
             // line 35
@@ -227,7 +227,7 @@ class __TwigTemplate_935f06182045a8612bc184370ea708ff extends Template
                 <th>Chevaux</th>
                 <th>Marque</th>
                 <th>Modele</th>
-                <th>Couleur</th>
+                <th>Lieu de prise en charge </th>
                 <th>Prix</th>
                 <th>Img</th>
                 <th>actions</th>
@@ -243,7 +243,7 @@ class __TwigTemplate_935f06182045a8612bc184370ea708ff extends Template
                 <td>{{ vehicule.chevaux }}</td>
                 <td>{{ vehicule.marque }}</td>
                 <td>{{ vehicule.modele }}</td>
-                <td>{{ vehicule.couleur }}</td>
+                <td>{{ vehicule.lpec }}</td>
                 <td>{{ vehicule.prix }}</td>
                 <td><img style=\"width:75px;height:75px\" src=\"{{ vehicule.img }}\"> </td>
 
@@ -261,6 +261,6 @@ class __TwigTemplate_935f06182045a8612bc184370ea708ff extends Template
     </table>
     <a href=\"{{ path('app_vehicule_new') }}\">Ajouter vehicule</a>
 {% endblock %}
-", "vehicule/index.html.twig", "C:\\Users\\klair\\OneDrive\\Bureau\\web pi\\digidreamers\\templates\\vehicule\\index.html.twig");
+", "vehicule/index.html.twig", "C:\\Users\\klair\\OneDrive\\Bureau\\web integré\\digidreamers\\templates\\vehicule\\index.html.twig");
     }
 }

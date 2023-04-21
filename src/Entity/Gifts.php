@@ -29,7 +29,7 @@ class Gifts
     #[Assert\NotBlank(message:"La valeur ne doit pas être vide")]
     private ?String  $value=null;
 
-    #[ORM\Column(length:100)]
+    #[ORM\Column(length:100,name : 'photo')]
     private ?String $photo=null;
 
     #[ORM\ManyToOne(inversedBy: 'gifts')]

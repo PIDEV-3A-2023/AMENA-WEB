@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}La liste des compétitions{% endblock %}
+
+{% block body %}
+    <a href="{{ path('app_competition_index') }}" style="color: #00b4d8; font-size: 2.0em; text-decoration: none;">Compétition</a>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        {% for competition in competitions %}
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ competition.title }}</h5>
+                        <p class="card-text">{{ competition.type }}</p>
+                        <p class="card-text"><strong>Début : </strong>{{ competition.dateDeb ? competition.dateDeb|date('Y-m-d H:i:s') : '' }}</p>
+                        <p class="card-text"><strong>Fin : </strong>{{ competition.dateFin ? competition.dateFin|date('Y-m-d H:i:s') : '' }}</p>
+                        <p class="card-text"><strong>Nombre de participants : </strong>{{ competition.nbp }}</p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="d-grid gap-2">
+                            <a class="btn btn-outline-light" style="background-color:#00b4d8 " >Participer</a>
+                            <a class="btn btn-outline-light" style="background-color:#00b4d8 " >Cadeaux</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% else %}
+            <p>Il n'y a aucune compétition disponible.</p>
+        {% endfor %}
+    </div>
+
+{% endblock %}  
