@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services https://symfony.com/schema/dic/services/services-1.0.xsd">
   <parameters>
-    <parameter key="kernel.project_dir">C:\Users\aymen\Desktop\digidreamers\digidreamers</parameter>
+    <parameter key="kernel.project_dir">C:\Users\aymen\Desktop\gitprojet\digidreamers</parameter>
     <parameter key="kernel.environment">dev</parameter>
     <parameter key="kernel.runtime_environment">%env(default:kernel.environment:APP_RUNTIME_ENV)%</parameter>
     <parameter key="kernel.debug">true</parameter>
-    <parameter key="kernel.build_dir">C:\Users\aymen\Desktop\digidreamers\digidreamers\var\cache\dev</parameter>
-    <parameter key="kernel.cache_dir">C:\Users\aymen\Desktop\digidreamers\digidreamers\var\cache\dev</parameter>
-    <parameter key="kernel.logs_dir">C:\Users\aymen\Desktop\digidreamers\digidreamers\var\log</parameter>
+    <parameter key="kernel.build_dir">C:/Users/aymen/Desktop/gitprojet/digidreamers/var/cache/dev</parameter>
+    <parameter key="kernel.cache_dir">C:/Users/aymen/Desktop/gitprojet/digidreamers/var/cache/dev</parameter>
+    <parameter key="kernel.logs_dir">C:\Users\aymen\Desktop\gitprojet\digidreamers\var\log</parameter>
     <parameter key="kernel.bundles" type="collection">
       <parameter key="FrameworkBundle">Symfony\Bundle\FrameworkBundle\FrameworkBundle</parameter>
       <parameter key="DoctrineBundle">Doctrine\Bundle\DoctrineBundle\DoctrineBundle</parameter>
@@ -23,63 +23,68 @@
       <parameter key="SymfonyCastsVerifyEmailBundle">SymfonyCasts\Bundle\VerifyEmail\SymfonyCastsVerifyEmailBundle</parameter>
       <parameter key="SwiftmailerBundle">Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle</parameter>
       <parameter key="SymfonyCastsResetPasswordBundle">SymfonyCasts\Bundle\ResetPassword\SymfonyCastsResetPasswordBundle</parameter>
+      <parameter key="KnpPaginatorBundle">Knp\Bundle\PaginatorBundle\KnpPaginatorBundle</parameter>
     </parameter>
     <parameter key="kernel.bundles_metadata" type="collection">
       <parameter key="FrameworkBundle" type="collection">
-        <parameter key="path">C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\framework-bundle</parameter>
+        <parameter key="path">C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\framework-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\FrameworkBundle</parameter>
       </parameter>
       <parameter key="DoctrineBundle" type="collection">
-        <parameter key="path">C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\doctrine\doctrine-bundle</parameter>
+        <parameter key="path">C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\doctrine\doctrine-bundle</parameter>
         <parameter key="namespace">Doctrine\Bundle\DoctrineBundle</parameter>
       </parameter>
       <parameter key="DoctrineMigrationsBundle" type="collection">
-        <parameter key="path">C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\doctrine\doctrine-migrations-bundle</parameter>
+        <parameter key="path">C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\doctrine\doctrine-migrations-bundle</parameter>
         <parameter key="namespace">Doctrine\Bundle\MigrationsBundle</parameter>
       </parameter>
       <parameter key="DebugBundle" type="collection">
-        <parameter key="path">C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\debug-bundle</parameter>
+        <parameter key="path">C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\debug-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\DebugBundle</parameter>
       </parameter>
       <parameter key="TwigBundle" type="collection">
-        <parameter key="path">C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\twig-bundle</parameter>
+        <parameter key="path">C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\twig-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\TwigBundle</parameter>
       </parameter>
       <parameter key="WebProfilerBundle" type="collection">
-        <parameter key="path">C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\web-profiler-bundle</parameter>
+        <parameter key="path">C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\web-profiler-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\WebProfilerBundle</parameter>
       </parameter>
       <parameter key="TwigExtraBundle" type="collection">
-        <parameter key="path">C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\twig\extra-bundle</parameter>
+        <parameter key="path">C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\twig\extra-bundle</parameter>
         <parameter key="namespace">Twig\Extra\TwigExtraBundle</parameter>
       </parameter>
       <parameter key="SecurityBundle" type="collection">
-        <parameter key="path">C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-bundle</parameter>
+        <parameter key="path">C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\SecurityBundle</parameter>
       </parameter>
       <parameter key="MonologBundle" type="collection">
-        <parameter key="path">C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\monolog-bundle</parameter>
+        <parameter key="path">C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\monolog-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\MonologBundle</parameter>
       </parameter>
       <parameter key="MakerBundle" type="collection">
-        <parameter key="path">C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\maker-bundle\src</parameter>
+        <parameter key="path">C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\maker-bundle\src</parameter>
         <parameter key="namespace">Symfony\Bundle\MakerBundle</parameter>
       </parameter>
       <parameter key="SensioFrameworkExtraBundle" type="collection">
-        <parameter key="path">C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\sensio\framework-extra-bundle\src</parameter>
+        <parameter key="path">C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\sensio\framework-extra-bundle\src</parameter>
         <parameter key="namespace">Sensio\Bundle\FrameworkExtraBundle</parameter>
       </parameter>
       <parameter key="SymfonyCastsVerifyEmailBundle" type="collection">
-        <parameter key="path">C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\verify-email-bundle\src</parameter>
+        <parameter key="path">C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfonycasts\verify-email-bundle\src</parameter>
         <parameter key="namespace">SymfonyCasts\Bundle\VerifyEmail</parameter>
       </parameter>
       <parameter key="SwiftmailerBundle" type="collection">
-        <parameter key="path">C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\swiftmailer-bundle</parameter>
+        <parameter key="path">C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\swiftmailer-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\SwiftmailerBundle</parameter>
       </parameter>
       <parameter key="SymfonyCastsResetPasswordBundle" type="collection">
-        <parameter key="path">C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\reset-password-bundle\src</parameter>
+        <parameter key="path">C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfonycasts\reset-password-bundle\src</parameter>
         <parameter key="namespace">SymfonyCasts\Bundle\ResetPassword</parameter>
+      </parameter>
+      <parameter key="KnpPaginatorBundle" type="collection">
+        <parameter key="path">C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\knplabs\knp-paginator-bundle</parameter>
+        <parameter key="namespace">Knp\Bundle\PaginatorBundle</parameter>
       </parameter>
     </parameter>
     <parameter key="kernel.charset">UTF-8</parameter>
@@ -120,17 +125,17 @@
     <parameter key="asset.request_context.base_path">null</parameter>
     <parameter key="asset.request_context.secure">null</parameter>
     <parameter key="translator.logging">false</parameter>
-    <parameter key="translator.default_path">C:\Users\aymen\Desktop\digidreamers\digidreamers/translations</parameter>
+    <parameter key="translator.default_path">C:\Users\aymen\Desktop\gitprojet\digidreamers/translations</parameter>
     <parameter key="debug.error_handler.throw_at">-1</parameter>
-    <parameter key="debug.container.dump">C:\Users\aymen\Desktop\digidreamers\digidreamers\var\cache\dev/App_KernelDevDebugContainer.xml</parameter>
+    <parameter key="debug.container.dump">C:/Users/aymen/Desktop/gitprojet/digidreamers/var/cache/dev/App_KernelDevDebugContainer.xml</parameter>
     <parameter key="router.request_context.host">localhost</parameter>
     <parameter key="router.request_context.scheme">http</parameter>
     <parameter key="router.request_context.base_url"></parameter>
     <parameter key="router.resource">kernel::loadRoutes</parameter>
     <parameter key="request_listener.http_port">80</parameter>
     <parameter key="request_listener.https_port">443</parameter>
-    <parameter key="serializer.mapping.cache.file">C:\Users\aymen\Desktop\digidreamers\digidreamers\var\cache\dev/serialization.php</parameter>
-    <parameter key="cache.prefix.seed">_C:\Users\aymen\Desktop\digidreamers\digidreamers.App_KernelDevDebugContainer</parameter>
+    <parameter key="serializer.mapping.cache.file">C:/Users/aymen/Desktop/gitprojet/digidreamers/var/cache/dev/serialization.php</parameter>
+    <parameter key="cache.prefix.seed">_C:\Users\aymen\Desktop\gitprojet\digidreamers.App_KernelDevDebugContainer</parameter>
     <parameter key="session.metadata.storage_key">_sf2_meta</parameter>
     <parameter key="session.storage.options" type="collection">
       <parameter key="cache_limiter" type="string">0</parameter>
@@ -143,11 +148,11 @@
     <parameter key="session.metadata.update_threshold">0</parameter>
     <parameter key="form.type_extension.csrf.enabled">true</parameter>
     <parameter key="form.type_extension.csrf.field_name">_token</parameter>
-    <parameter key="validator.mapping.cache.file">C:\Users\aymen\Desktop\digidreamers\digidreamers\var\cache\dev/validation.php</parameter>
+    <parameter key="validator.mapping.cache.file">C:/Users/aymen/Desktop/gitprojet/digidreamers/var/cache/dev/validation.php</parameter>
     <parameter key="validator.translation_domain">validators</parameter>
     <parameter key="profiler_listener.only_exceptions">false</parameter>
     <parameter key="profiler_listener.only_main_requests">false</parameter>
-    <parameter key="profiler.storage.dsn">file:C:\Users\aymen\Desktop\digidreamers\digidreamers\var\cache\dev/profiler</parameter>
+    <parameter key="profiler.storage.dsn">file:C:/Users/aymen/Desktop/gitprojet/digidreamers/var/cache/dev/profiler</parameter>
     <parameter key="doctrine.dbal.configuration.class">Doctrine\DBAL\Configuration</parameter>
     <parameter key="doctrine.data_collector.class">Doctrine\Bundle\DoctrineBundle\DataCollector\DoctrineDataCollector</parameter>
     <parameter key="doctrine.dbal.connection.event_manager.class">Symfony\Bridge\Doctrine\ContainerAwareEventManager</parameter>
@@ -212,7 +217,7 @@
     <parameter key="doctrine.orm.second_level_cache.regions_configuration.class">Doctrine\ORM\Cache\RegionsConfiguration</parameter>
     <parameter key="doctrine.orm.auto_generate_proxy_classes">true</parameter>
     <parameter key="doctrine.orm.enable_lazy_ghost_objects">false</parameter>
-    <parameter key="doctrine.orm.proxy_dir">C:\Users\aymen\Desktop\digidreamers\digidreamers\var\cache\dev/doctrine/orm/Proxies</parameter>
+    <parameter key="doctrine.orm.proxy_dir">C:/Users/aymen/Desktop/gitprojet/digidreamers/var/cache/dev/doctrine/orm/Proxies</parameter>
     <parameter key="doctrine.orm.proxy_namespace">Proxies</parameter>
     <parameter key="doctrine.migrations.preferred_em">null</parameter>
     <parameter key="doctrine.migrations.preferred_connection">null</parameter>
@@ -220,7 +225,7 @@
     <parameter key="twig.form.resources" type="collection">
       <parameter>form_div_layout.html.twig</parameter>
     </parameter>
-    <parameter key="twig.default_path">C:\Users\aymen\Desktop\digidreamers\digidreamers/templates</parameter>
+    <parameter key="twig.default_path">C:\Users\aymen\Desktop\gitprojet\digidreamers/templates</parameter>
     <parameter key="web_profiler.debug_toolbar.intercept_redirects">false</parameter>
     <parameter key="web_profiler.debug_toolbar.mode">2</parameter>
     <parameter key="security.role_hierarchy.roles" type="collection"/>
@@ -262,7 +267,7 @@
     <parameter key="swiftmailer.mailer.default.transport.smtp.source_ip">null</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.local_domain">null</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.stream_options" type="collection"/>
-    <parameter key="swiftmailer.spool.default.file.path">C:\Users\aymen\Desktop\digidreamers\digidreamers\var\cache\dev/swiftmailer/spool/default</parameter>
+    <parameter key="swiftmailer.spool.default.file.path">C:/Users/aymen/Desktop/gitprojet/digidreamers/var/cache/dev/swiftmailer/spool/default</parameter>
     <parameter key="swiftmailer.mailer.default.spool.enabled">true</parameter>
     <parameter key="swiftmailer.mailer.default.plugin.impersonate">null</parameter>
     <parameter key="swiftmailer.mailer.default.single_address">null</parameter>
@@ -274,6 +279,11 @@
       <parameter key="default">swiftmailer.mailer.default</parameter>
     </parameter>
     <parameter key="swiftmailer.default_mailer">default</parameter>
+    <parameter key="knp_paginator.template.pagination">/others/twitter_bootstrap_v4_pagination.html.twig</parameter>
+    <parameter key="knp_paginator.template.filtration">@KnpPaginator/Pagination/filtration.html.twig</parameter>
+    <parameter key="knp_paginator.template.sortable">@KnpPaginator/Pagination/sortable_link.html.twig</parameter>
+    <parameter key="knp_paginator.page_range">5</parameter>
+    <parameter key="knp_paginator.page_limit">null</parameter>
     <parameter key="data_collector.templates" type="collection">
       <parameter key="data_collector.request" type="collection">
         <parameter>request</parameter>
@@ -586,7 +596,7 @@
       </argument>
     </service>
     <service id="http_cache.store" class="Symfony\Component\HttpKernel\HttpCache\Store">
-      <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\var\cache\dev/http_cache</argument>
+      <argument>C:/Users/aymen/Desktop/gitprojet/digidreamers/var/cache/dev/http_cache</argument>
     </service>
     <service id="url_helper" class="Symfony\Component\HttpFoundation\UrlHelper">
       <argument type="service" id="request_stack"/>
@@ -596,7 +606,7 @@
       <tag name="container.no_preload"/>
       <argument type="tagged_iterator" tag="kernel.cache_warmer"/>
       <argument>true</argument>
-      <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\var\cache\dev/App_KernelDevDebugContainerDeprecations.log</argument>
+      <argument>C:/Users/aymen/Desktop/gitprojet/digidreamers/var/cache/dev/App_KernelDevDebugContainerDeprecations.log</argument>
     </service>
     <service id="cache_clearer" class="Symfony\Component\HttpKernel\CacheClearer\ChainCacheClearer" public="true">
       <tag name="container.private" package="symfony/framework-bundle" version="5.2"/>
@@ -800,7 +810,7 @@
       </argument>
       <argument>UTF-8</argument>
       <argument type="service" id="debug.file_link_formatter" on-invalid="null"/>
-      <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers</argument>
+      <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers</argument>
       <argument type="service">
         <service>
           <argument type="service" id="request_stack"/>
@@ -833,7 +843,7 @@
       <tag name="console.command"/>
       <tag name="container.no_preload"/>
       <argument type="service" id="filesystem"/>
-      <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers</argument>
+      <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers</argument>
       <call method="setName">
         <argument>assets:install</argument>
       </call>
@@ -1002,7 +1012,7 @@
       <tag name="console.command"/>
       <tag name="container.no_preload"/>
       <argument>dev</argument>
-      <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers</argument>
+      <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers</argument>
       <call method="setName">
         <argument>debug:dotenv</argument>
       </call>
@@ -1177,16 +1187,16 @@
       <argument type="service" id="translator.data_collector"/>
       <argument type="service" id="translation.reader"/>
       <argument type="service" id="translation.extractor"/>
-      <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers/translations</argument>
-      <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers/templates</argument>
+      <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers/translations</argument>
+      <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers/templates</argument>
       <argument type="collection">
-        <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations</argument>
-        <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations</argument>
-        <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations</argument>
+        <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations</argument>
+        <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\form/Resources/translations</argument>
+        <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations</argument>
       </argument>
       <argument type="collection">
-        <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\twig-bridge/Resources/views/Email</argument>
-        <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\twig-bridge/Resources/views/Form</argument>
+        <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\twig-bridge/Resources/views/Email</argument>
+        <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\twig-bridge/Resources/views/Form</argument>
       </argument>
       <argument type="collection"/>
       <call method="setName">
@@ -1203,16 +1213,16 @@
       <argument type="service" id="translation.reader"/>
       <argument type="service" id="translation.extractor"/>
       <argument>en</argument>
-      <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers/translations</argument>
-      <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers/templates</argument>
+      <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers/translations</argument>
+      <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers/templates</argument>
       <argument type="collection">
-        <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations</argument>
-        <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations</argument>
-        <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations</argument>
+        <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations</argument>
+        <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\form/Resources/translations</argument>
+        <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations</argument>
       </argument>
       <argument type="collection">
-        <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\twig-bridge/Resources/views/Email</argument>
-        <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\twig-bridge/Resources/views/Form</argument>
+        <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\twig-bridge/Resources/views/Email</argument>
+        <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\twig-bridge/Resources/views/Form</argument>
       </argument>
       <argument type="collection"/>
       <call method="setName">
@@ -1452,7 +1462,7 @@
       <argument></argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\var\cache\dev/pools/system</argument>
+      <argument>C:/Users/aymen/Desktop/gitprojet/digidreamers/var/cache/dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -1482,7 +1492,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\var\cache\dev/pools/app</argument>
+      <argument>C:/Users/aymen/Desktop/gitprojet/digidreamers/var/cache/dev/pools/app</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
@@ -1773,370 +1783,405 @@
         </argument>
       </argument>
       <argument type="collection">
-        <argument key="cache_dir">C:\Users\aymen\Desktop\digidreamers\digidreamers\var\cache\dev/translations</argument>
+        <argument key="cache_dir">C:/Users/aymen/Desktop/gitprojet/digidreamers/var/cache/dev/translations</argument>
         <argument key="debug">true</argument>
         <argument key="resource_files" type="collection">
           <argument key="af" type="collection">
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.af.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.af.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.af.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.af.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\form/Resources/translations\validators.af.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.af.xlf</argument>
           </argument>
           <argument key="ar" type="collection">
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.ar.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.ar.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.ar.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.ar.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.ar.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.ar.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\form/Resources/translations\validators.ar.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.ar.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.ar.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.ar.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.ar.xliff</argument>
           </argument>
           <argument key="az" type="collection">
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.az.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.az.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.az.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.az.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\form/Resources/translations\validators.az.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.az.xlf</argument>
           </argument>
           <argument key="be" type="collection">
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.be.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.be.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.be.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.be.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\form/Resources/translations\validators.be.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.be.xlf</argument>
           </argument>
           <argument key="bg" type="collection">
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.bg.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.bg.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.bg.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.bg.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\form/Resources/translations\validators.bg.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.bg.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.bg.xliff</argument>
           </argument>
           <argument key="bs" type="collection">
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.bs.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.bs.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.bs.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.bs.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\form/Resources/translations\validators.bs.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.bs.xlf</argument>
           </argument>
           <argument key="ca" type="collection">
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.ca.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.ca.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.ca.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.ca.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.ca.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.ca.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\form/Resources/translations\validators.ca.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.ca.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.ca.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.ca.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.ca.xliff</argument>
           </argument>
           <argument key="cs" type="collection">
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.cs.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.cs.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.cs.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.cs.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.cs.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.cs.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\form/Resources/translations\validators.cs.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.cs.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.cs.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.cs.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.cs.xliff</argument>
           </argument>
           <argument key="cy" type="collection">
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.cy.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.cy.xlf</argument>
           </argument>
           <argument key="da" type="collection">
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.da.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.da.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.da.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.da.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\form/Resources/translations\validators.da.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.da.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.da.xliff</argument>
           </argument>
           <argument key="de" type="collection">
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.de.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.de.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.de.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.de.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.de.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.de.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\form/Resources/translations\validators.de.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.de.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.de.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.de.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.de.xliff</argument>
           </argument>
           <argument key="el" type="collection">
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.el.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.el.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.el.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.el.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\form/Resources/translations\validators.el.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.el.xlf</argument>
           </argument>
           <argument key="en" type="collection">
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.en.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.en.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.en.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.en.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.en.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.en.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\form/Resources/translations\validators.en.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.en.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.en.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.en.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.en.xliff</argument>
           </argument>
           <argument key="es" type="collection">
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.es.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.es.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.es.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.es.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.es.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.es.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\form/Resources/translations\validators.es.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.es.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.es.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.es.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.es.xliff</argument>
           </argument>
           <argument key="et" type="collection">
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.et.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.et.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.et.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.et.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\form/Resources/translations\validators.et.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.et.xlf</argument>
           </argument>
           <argument key="eu" type="collection">
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.eu.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.eu.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.eu.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.eu.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\form/Resources/translations\validators.eu.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.eu.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.eu.xliff</argument>
           </argument>
           <argument key="fa" type="collection">
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.fa.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.fa.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.fa.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.fa.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\form/Resources/translations\validators.fa.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.fa.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.fa.xliff</argument>
           </argument>
           <argument key="fi" type="collection">
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.fi.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.fi.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.fi.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.fi.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.fi.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.fi.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\form/Resources/translations\validators.fi.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.fi.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.fi.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.fi.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.fi.xliff</argument>
           </argument>
           <argument key="fr" type="collection">
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.fr.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.fr.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.fr.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.fr.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.fr.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.fr.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\form/Resources/translations\validators.fr.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.fr.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.fr.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.fr.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.fr.xliff</argument>
           </argument>
           <argument key="gl" type="collection">
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.gl.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.gl.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.gl.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.gl.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\form/Resources/translations\validators.gl.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.gl.xlf</argument>
           </argument>
           <argument key="he" type="collection">
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.he.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.he.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.he.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.he.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\form/Resources/translations\validators.he.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.he.xlf</argument>
           </argument>
           <argument key="hr" type="collection">
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.hr.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.hr.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.hr.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.hr.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\form/Resources/translations\validators.hr.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.hr.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.hr.xliff</argument>
           </argument>
           <argument key="hu" type="collection">
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.hu.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.hu.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.hu.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.hu.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.hu.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.hu.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\form/Resources/translations\validators.hu.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.hu.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.hu.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.hu.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.hu.xliff</argument>
           </argument>
           <argument key="hy" type="collection">
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.hy.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.hy.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.hy.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.hy.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\form/Resources/translations\validators.hy.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.hy.xlf</argument>
           </argument>
           <argument key="id" type="collection">
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.id.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.id.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.id.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.id.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.id.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\form/Resources/translations\validators.id.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.id.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.id.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.id.xliff</argument>
           </argument>
           <argument key="it" type="collection">
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.it.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.it.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.it.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.it.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.it.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.it.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\form/Resources/translations\validators.it.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.it.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.it.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.it.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.it.xliff</argument>
           </argument>
           <argument key="ja" type="collection">
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.ja.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.ja.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.ja.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.ja.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.ja.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.ja.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\form/Resources/translations\validators.ja.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.ja.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.ja.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.ja.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.ja.xliff</argument>
           </argument>
           <argument key="lb" type="collection">
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.lb.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.lb.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.lb.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.lb.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\form/Resources/translations\validators.lb.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.lb.xlf</argument>
           </argument>
           <argument key="lt" type="collection">
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.lt.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.lt.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.lt.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.lt.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\form/Resources/translations\validators.lt.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.lt.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.lt.xliff</argument>
           </argument>
           <argument key="lv" type="collection">
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.lv.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.lv.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.lv.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.lv.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\form/Resources/translations\validators.lv.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.lv.xlf</argument>
           </argument>
           <argument key="mn" type="collection">
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.mn.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.mn.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.mn.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.mn.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\form/Resources/translations\validators.mn.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.mn.xlf</argument>
           </argument>
           <argument key="my" type="collection">
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.my.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.my.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.my.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.my.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\form/Resources/translations\validators.my.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.my.xlf</argument>
           </argument>
           <argument key="nb" type="collection">
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.nb.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.nb.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.nb.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.nb.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\form/Resources/translations\validators.nb.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.nb.xlf</argument>
           </argument>
           <argument key="nl" type="collection">
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.nl.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.nl.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.nl.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle+intl-icu.nl.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle+intl-icu.nl.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.nl.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\form/Resources/translations\validators.nl.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.nl.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle+intl-icu.nl.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle+intl-icu.nl.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.nl.xliff</argument>
           </argument>
           <argument key="nn" type="collection">
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.nn.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.nn.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.nn.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.nn.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\form/Resources/translations\validators.nn.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.nn.xlf</argument>
           </argument>
           <argument key="no" type="collection">
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.no.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.no.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.no.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.no.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\form/Resources/translations\validators.no.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.no.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.no.xliff</argument>
           </argument>
           <argument key="pl" type="collection">
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.pl.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.pl.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.pl.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.pl.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.pl.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.pl.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\form/Resources/translations\validators.pl.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.pl.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.pl.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.pl.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.pl.xliff</argument>
           </argument>
           <argument key="pt" type="collection">
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.pt.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.pt.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.pt.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.pt.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.pt.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.pt.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\form/Resources/translations\validators.pt.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.pt.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.pt.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.pt.xlf</argument>
           </argument>
           <argument key="pt_BR" type="collection">
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.pt_BR.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.pt_BR.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.pt_BR.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.pt_BR.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\form/Resources/translations\validators.pt_BR.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.pt_BR.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.pt_BR.xliff</argument>
           </argument>
           <argument key="ro" type="collection">
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.ro.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.ro.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.ro.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.ro.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.ro.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\form/Resources/translations\validators.ro.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.ro.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.ro.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.ro.xliff</argument>
           </argument>
           <argument key="ru" type="collection">
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.ru.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.ru.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.ru.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.ru.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.ru.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.ru.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\form/Resources/translations\validators.ru.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.ru.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.ru.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.ru.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.ru.xliff</argument>
           </argument>
           <argument key="sk" type="collection">
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.sk.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.sk.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.sk.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.sk.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.sk.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.sk.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\form/Resources/translations\validators.sk.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.sk.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.sk.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.sk.xlf</argument>
           </argument>
           <argument key="sl" type="collection">
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.sl.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.sl.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.sl.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.sl.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\form/Resources/translations\validators.sl.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.sl.xlf</argument>
           </argument>
           <argument key="sq" type="collection">
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.sq.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.sq.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.sq.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.sq.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\form/Resources/translations\validators.sq.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.sq.xlf</argument>
           </argument>
           <argument key="sr_Cyrl" type="collection">
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.sr_Cyrl.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.sr_Cyrl.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.sr_Cyrl.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.sr_Cyrl.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\form/Resources/translations\validators.sr_Cyrl.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.sr_Cyrl.xlf</argument>
           </argument>
           <argument key="sr_Latn" type="collection">
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.sr_Latn.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.sr_Latn.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.sr_Latn.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.sr_Latn.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\form/Resources/translations\validators.sr_Latn.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.sr_Latn.xlf</argument>
           </argument>
           <argument key="sv" type="collection">
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.sv.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.sv.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.sv.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.sv.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\form/Resources/translations\validators.sv.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.sv.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.sv.xliff</argument>
           </argument>
           <argument key="th" type="collection">
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.th.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.th.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.th.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.th.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\form/Resources/translations\validators.th.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.th.xlf</argument>
           </argument>
           <argument key="tl" type="collection">
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.tl.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.tl.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.tl.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.tl.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\form/Resources/translations\validators.tl.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.tl.xlf</argument>
           </argument>
           <argument key="tr" type="collection">
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.tr.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.tr.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.tr.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.tr.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.tr.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.tr.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\form/Resources/translations\validators.tr.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.tr.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.tr.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.tr.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.tr.xliff</argument>
           </argument>
           <argument key="uk" type="collection">
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.uk.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.uk.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.uk.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.uk.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.uk.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.uk.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\form/Resources/translations\validators.uk.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.uk.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.uk.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.uk.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.uk.xliff</argument>
           </argument>
           <argument key="ur" type="collection">
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.ur.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.ur.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.ur.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.ur.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\form/Resources/translations\validators.ur.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.ur.xlf</argument>
           </argument>
           <argument key="uz" type="collection">
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.uz.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.uz.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.uz.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.uz.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\form/Resources/translations\validators.uz.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.uz.xlf</argument>
           </argument>
           <argument key="vi" type="collection">
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.vi.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.vi.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.vi.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.vi.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\form/Resources/translations\validators.vi.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.vi.xlf</argument>
           </argument>
           <argument key="zh_CN" type="collection">
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.zh_CN.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.zh_CN.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.zh_CN.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.zh_CN.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\form/Resources/translations\validators.zh_CN.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.zh_CN.xlf</argument>
           </argument>
           <argument key="zh_TW" type="collection">
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.zh_TW.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.zh_TW.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.zh_TW.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.zh_TW.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\form/Resources/translations\validators.zh_TW.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.zh_TW.xlf</argument>
           </argument>
           <argument key="sr" type="collection">
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.sr.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.sr.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.sr.xlf</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.sr.xlf</argument>
+          </argument>
+          <argument key="ky" type="collection">
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.ky.xliff</argument>
+          </argument>
+          <argument key="sw" type="collection">
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.sw.xliff</argument>
           </argument>
         </argument>
         <argument key="scanned_directories" type="collection">
-          <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations</argument>
-          <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations</argument>
-          <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations</argument>
-          <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations</argument>
-          <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations</argument>
-          <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers/translations</argument>
-          <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\framework-bundle/translations</argument>
-          <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\doctrine\doctrine-bundle/translations</argument>
-          <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\doctrine\doctrine-migrations-bundle/translations</argument>
-          <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\debug-bundle/translations</argument>
-          <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\twig-bundle/translations</argument>
-          <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\web-profiler-bundle/translations</argument>
-          <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\twig\extra-bundle/translations</argument>
-          <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-bundle/translations</argument>
-          <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\monolog-bundle/translations</argument>
-          <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\maker-bundle\src/translations</argument>
-          <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\sensio\framework-extra-bundle\src/translations</argument>
-          <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\swiftmailer-bundle/translations</argument>
+          <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations</argument>
+          <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\form/Resources/translations</argument>
+          <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations</argument>
+          <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations</argument>
+          <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations</argument>
+          <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\knplabs\knp-paginator-bundle/translations</argument>
+          <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers/translations</argument>
+          <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\framework-bundle/translations</argument>
+          <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\doctrine\doctrine-bundle/translations</argument>
+          <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\doctrine\doctrine-migrations-bundle/translations</argument>
+          <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\debug-bundle/translations</argument>
+          <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\twig-bundle/translations</argument>
+          <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\web-profiler-bundle/translations</argument>
+          <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\twig\extra-bundle/translations</argument>
+          <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-bundle/translations</argument>
+          <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\monolog-bundle/translations</argument>
+          <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\maker-bundle\src/translations</argument>
+          <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\sensio\framework-extra-bundle\src/translations</argument>
+          <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\swiftmailer-bundle/translations</argument>
         </argument>
         <argument key="cache_vary" type="collection">
           <argument key="scanned_directories" type="collection">
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\form/Resources/translations</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\knplabs\knp-paginator-bundle/translations</argument>
             <argument>translations</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\framework-bundle/translations</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\doctrine\doctrine-bundle/translations</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\doctrine\doctrine-migrations-bundle/translations</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\debug-bundle/translations</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\twig-bundle/translations</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\web-profiler-bundle/translations</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\twig\extra-bundle/translations</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-bundle/translations</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\monolog-bundle/translations</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\maker-bundle\src/translations</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\sensio\framework-extra-bundle\src/translations</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\swiftmailer-bundle/translations</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\framework-bundle/translations</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\doctrine\doctrine-bundle/translations</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\doctrine\doctrine-migrations-bundle/translations</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\debug-bundle/translations</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\twig-bundle/translations</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\web-profiler-bundle/translations</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\twig\extra-bundle/translations</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-bundle/translations</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\monolog-bundle/translations</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\maker-bundle\src/translations</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\sensio\framework-extra-bundle\src/translations</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\swiftmailer-bundle/translations</argument>
           </argument>
         </argument>
       </argument>
@@ -2369,7 +2414,7 @@
     <service id="debug.file_link_formatter" class="Symfony\Component\HttpKernel\Debug\FileLinkFormatter">
       <argument>null</argument>
       <argument type="service" id="request_stack" on-invalid="ignore"/>
-      <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers</argument>
+      <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers</argument>
       <argument type="service_closure" id="debug.file_link_formatter.url_format"/>
     </service>
     <service id="debug.stopwatch" class="Symfony\Component\Stopwatch\Stopwatch">
@@ -2406,6 +2451,14 @@
         <argument type="collection">
           <argument type="service_closure" id="security.context_listener.0"/>
           <argument>onKernelResponse</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListener">
+        <argument>kernel.request</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="knp_paginator.subscriber.sliding_pagination"/>
+          <argument>onKernelRequest</argument>
         </argument>
         <argument>0</argument>
       </call>
@@ -2954,6 +3007,46 @@
         <argument>0</argument>
       </call>
       <call method="addListener">
+        <argument>knp_pager.before</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="knp_paginator.subscriber.paginate"/>
+          <argument>before</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListener">
+        <argument>knp_pager.pagination</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="knp_paginator.subscriber.paginate"/>
+          <argument>pagination</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListener">
+        <argument>knp_pager.before</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="knp_paginator.subscriber.sortable"/>
+          <argument>before</argument>
+        </argument>
+        <argument>1</argument>
+      </call>
+      <call method="addListener">
+        <argument>knp_pager.before</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="knp_paginator.subscriber.filtration"/>
+          <argument>before</argument>
+        </argument>
+        <argument>1</argument>
+      </call>
+      <call method="addListener">
+        <argument>knp_pager.pagination</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="knp_paginator.subscriber.sliding_pagination"/>
+          <argument>pagination</argument>
+        </argument>
+        <argument>1</argument>
+      </call>
+      <call method="addListener">
         <argument>Symfony\Component\Security\Http\Event\CheckPassportEvent</argument>
         <argument type="collection">
           <argument type="service_closure" id="security.listener.csrf_protection"/>
@@ -3054,7 +3147,7 @@
       <argument type="service" id=".service_locator.NUKe30Y.router.default"/>
       <argument>kernel::loadRoutes</argument>
       <argument type="collection">
-        <argument key="cache_dir">C:\Users\aymen\Desktop\digidreamers\digidreamers\var\cache\dev</argument>
+        <argument key="cache_dir">C:/Users/aymen/Desktop/gitprojet/digidreamers/var/cache/dev</argument>
         <argument key="debug">true</argument>
         <argument key="generator_class">Symfony\Component\Routing\Generator\CompiledUrlGenerator</argument>
         <argument key="generator_dumper_class">Symfony\Component\Routing\Generator\Dumper\CompiledUrlGeneratorDumper</argument>
@@ -3104,7 +3197,7 @@
       <argument type="service" id="request_stack"/>
       <argument type="service" id="router.request_context" on-invalid="ignore"/>
       <argument type="service" id="monolog.logger.request" on-invalid="ignore"/>
-      <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers</argument>
+      <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers</argument>
       <argument>true</argument>
     </service>
     <service id="Symfony\Bundle\FrameworkBundle\Controller\RedirectController" class="Symfony\Bundle\FrameworkBundle\Controller\RedirectController" public="true">
@@ -3167,13 +3260,13 @@
     <service id="annotations.cache_warmer" class="Symfony\Bundle\FrameworkBundle\CacheWarmer\AnnotationsCacheWarmer">
       <tag name="kernel.cache_warmer"/>
       <argument type="service" id="annotations.reader"/>
-      <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\var\cache\dev/annotations.php</argument>
+      <argument>C:/Users/aymen/Desktop/gitprojet/digidreamers/var/cache/dev/annotations.php</argument>
       <argument>#^Symfony\\(?:Component\\HttpKernel\\|Bundle\\FrameworkBundle\\Controller\\(?!.*Controller$))#</argument>
       <argument>true</argument>
     </service>
     <service id="annotations.cache_adapter" class="Symfony\Component\Cache\Adapter\PhpArrayAdapter">
       <tag name="container.hot_path"/>
-      <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\var\cache\dev/annotations.php</argument>
+      <argument>C:/Users/aymen/Desktop/gitprojet/digidreamers/var/cache/dev/annotations.php</argument>
       <argument type="service" id="cache.annotations"/>
       <factory class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" method="create"/>
     </service>
@@ -3191,7 +3284,7 @@
     </service>
     <service id="secrets.vault" class="Symfony\Bundle\FrameworkBundle\Secrets\SodiumVault">
       <tag name="container.env_var_loader"/>
-      <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers/config/secrets/%env(default:kernel.environment:APP_RUNTIME_ENV)%</argument>
+      <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers/config/secrets/%env(default:kernel.environment:APP_RUNTIME_ENV)%</argument>
       <argument type="service" id="secrets.decryption_key" on-invalid="ignore"/>
     </service>
     <service id="secrets.decryption_key" class="Symfony\Component\String\LazyString">
@@ -3200,7 +3293,7 @@
       <factory class="Symfony\Component\String\LazyString" method="fromCallable"/>
     </service>
     <service id="secrets.local_vault" class="Symfony\Bundle\FrameworkBundle\Secrets\DotenvVault">
-      <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers/.env.dev.local</argument>
+      <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers/.env.dev.local</argument>
     </service>
     <service id="serializer" class="Symfony\Component\Serializer\Serializer" public="true">
       <tag name="container.private" package="symfony/framework-bundle" version="5.2"/>
@@ -3312,10 +3405,10 @@
           </service>
         </argument>
       </argument>
-      <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\var\cache\dev/serialization.php</argument>
+      <argument>C:/Users/aymen/Desktop/gitprojet/digidreamers/var/cache/dev/serialization.php</argument>
     </service>
     <service id="serializer.mapping.cache.symfony" class="Psr\Cache\CacheItemPoolInterface">
-      <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\var\cache\dev/serialization.php</argument>
+      <argument>C:/Users/aymen/Desktop/gitprojet/digidreamers/var/cache/dev/serialization.php</argument>
       <argument type="service" id="cache.serializer"/>
       <factory class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" method="create"/>
     </service>
@@ -3454,7 +3547,7 @@
       <argument>true</argument>
     </service>
     <service id="session.storage.factory.mock_file" class="Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorageFactory">
-      <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\var\cache\dev/sessions</argument>
+      <argument>C:/Users/aymen/Desktop/gitprojet/digidreamers/var/cache/dev/sessions</argument>
       <argument>MOCKSESSID</argument>
       <argument type="service">
         <service class="Symfony\Component\HttpFoundation\Session\Storage\MetadataBag">
@@ -3650,7 +3743,7 @@
       </call>
       <call method="addXmlMappings">
         <argument type="collection">
-          <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/config/validation.xml</argument>
+          <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\form/Resources/config/validation.xml</argument>
         </argument>
       </call>
       <call method="enableAnnotationMapping">
@@ -3678,10 +3771,10 @@
     <service id="validator.mapping.cache_warmer" class="Symfony\Bundle\FrameworkBundle\CacheWarmer\ValidatorCacheWarmer">
       <tag name="kernel.cache_warmer"/>
       <argument type="service" id="validator.builder"/>
-      <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\var\cache\dev/validation.php</argument>
+      <argument>C:/Users/aymen/Desktop/gitprojet/digidreamers/var/cache/dev/validation.php</argument>
     </service>
     <service id="validator.mapping.cache.adapter" class="Symfony\Component\Cache\Adapter\PhpArrayAdapter">
-      <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\var\cache\dev/validation.php</argument>
+      <argument>C:/Users/aymen/Desktop/gitprojet/digidreamers/var/cache/dev/validation.php</argument>
       <argument type="service" id="cache.validator"/>
       <factory class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" method="create"/>
     </service>
@@ -4068,7 +4161,7 @@
       </call>
     </service>
     <service id="profiler.storage" class="Symfony\Component\HttpKernel\Profiler\FileProfilerStorage">
-      <argument>file:C:\Users\aymen\Desktop\digidreamers\digidreamers\var\cache\dev/profiler</argument>
+      <argument>file:C:/Users/aymen/Desktop/gitprojet/digidreamers/var/cache/dev/profiler</argument>
     </service>
     <service id="profiler_listener" class="Symfony\Component\HttpKernel\EventListener\ProfilerListener">
       <tag name="kernel.event_subscriber"/>
@@ -4115,7 +4208,7 @@
       <tag name="monolog.logger" channel="profiler"/>
       <tag name="data_collector" template="@WebProfiler/Collector/logger.html.twig" id="logger" priority="300"/>
       <argument type="service" id="monolog.logger.profiler" on-invalid="ignore"/>
-      <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\var\cache\dev/App_KernelDevDebugContainer</argument>
+      <argument>C:/Users/aymen/Desktop/gitprojet/digidreamers/var/cache/dev/App_KernelDevDebugContainer</argument>
       <argument type="service" id="request_stack" on-invalid="ignore"/>
     </service>
     <service id="data_collector.time" class="Symfony\Component\HttpKernel\DataCollector\TimeDataCollector">
@@ -4414,7 +4507,7 @@
       <tag name="doctrine.event_subscriber"/>
       <argument type="tagged_iterator" tag="messenger.receiver"/>
     </service>
-    <service id=".1_ServiceLocator~8CnrRQi" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".1_ServiceLocator~WpFW5nM" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <argument type="collection"/>
     </service>
     <service id="doctrine.orm.proxy_cache_warmer" class="Symfony\Bridge\Doctrine\CacheWarmer\ProxyCacheWarmer">
@@ -4623,7 +4716,7 @@
         <argument type="service" id=".doctrine.orm.default_metadata_driver"/>
       </call>
       <call method="setProxyDir">
-        <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\var\cache\dev/doctrine/orm/Proxies</argument>
+        <argument>C:/Users/aymen/Desktop/gitprojet/digidreamers/var/cache/dev/doctrine/orm/Proxies</argument>
       </call>
       <call method="setProxyNamespace">
         <argument>Proxies</argument>
@@ -4658,7 +4751,7 @@
     </service>
     <service id="doctrine.orm.default_attribute_metadata_driver" class="Doctrine\ORM\Mapping\Driver\AttributeDriver">
       <argument type="collection">
-        <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\src\Entity</argument>
+        <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\src\Entity</argument>
       </argument>
     </service>
     <service id="cache.doctrine.orm.default.metadata" class="Symfony\Component\Cache\Adapter\ArrayAdapter"/>
@@ -4723,7 +4816,7 @@
     <service id="doctrine.migrations.configuration" class="Doctrine\Migrations\Configuration\Configuration">
       <call method="addMigrationsDirectory">
         <argument>DoctrineMigrations</argument>
-        <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers/migrations</argument>
+        <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers/migrations</argument>
       </call>
       <call method="setAllOrNothing">
         <argument>false</argument>
@@ -4902,7 +4995,7 @@
         <argument key="source" type="service">
           <service class="Symfony\Component\VarDumper\Dumper\ContextProvider\SourceContextProvider">
             <argument>UTF-8</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers</argument>
             <argument type="service" id="debug.file_link_formatter" on-invalid="null"/>
           </service>
         </argument>
@@ -4924,7 +5017,7 @@
         <argument key="source" type="service">
           <service class="Symfony\Component\VarDumper\Dumper\ContextProvider\SourceContextProvider">
             <argument>UTF-8</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers</argument>
             <argument type="service" id="debug.file_link_formatter" on-invalid="null"/>
           </service>
         </argument>
@@ -4989,7 +5082,7 @@
       <argument type="service" id="twig.loader.native_filesystem"/>
       <argument type="collection">
         <argument key="autoescape">name</argument>
-        <argument key="cache">C:\Users\aymen\Desktop\digidreamers\digidreamers\var\cache\dev/twig</argument>
+        <argument key="cache">C:/Users/aymen/Desktop/gitprojet/digidreamers/var/cache/dev/twig</argument>
         <argument key="charset">UTF-8</argument>
         <argument key="debug">true</argument>
         <argument key="strict_variables">true</argument>
@@ -5051,6 +5144,9 @@
       <call method="addExtension">
         <argument type="service" id="twig.extension.webprofiler"/>
       </call>
+      <call method="addExtension">
+        <argument type="service" id="knp_paginator.twig.extension.pagination"/>
+      </call>
       <call method="addGlobal">
         <argument>app</argument>
         <argument type="service" id="twig.app_variable"/>
@@ -5095,10 +5191,10 @@
     <service id="twig.template_iterator" class="Symfony\Bundle\TwigBundle\TemplateIterator">
       <argument type="service" id="kernel"/>
       <argument type="collection">
-        <argument key="C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\twig-bridge/Resources/views/Email">email</argument>
-        <argument key="C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\twig-bridge/Resources/views/Form">null</argument>
+        <argument key="C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\twig-bridge/Resources/views/Email">email</argument>
+        <argument key="C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\twig-bridge/Resources/views/Form">null</argument>
       </argument>
-      <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers/templates</argument>
+      <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers/templates</argument>
     </service>
     <service id="twig.template_cache_warmer" class="Symfony\Bundle\TwigBundle\CacheWarmer\TemplateCacheWarmer">
       <tag name="kernel.cache_warmer"/>
@@ -5109,68 +5205,76 @@
     <service id="twig.loader.native_filesystem" class="Twig\Loader\FilesystemLoader">
       <tag name="twig.loader"/>
       <argument type="collection"/>
-      <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers</argument>
+      <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers</argument>
       <call method="addPath">
-        <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\doctrine\doctrine-bundle/Resources/views</argument>
+        <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\doctrine\doctrine-bundle/Resources/views</argument>
         <argument>Doctrine</argument>
       </call>
       <call method="addPath">
-        <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\doctrine\doctrine-bundle/Resources/views</argument>
+        <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\doctrine\doctrine-bundle/Resources/views</argument>
         <argument>!Doctrine</argument>
       </call>
       <call method="addPath">
-        <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\doctrine\doctrine-migrations-bundle/Resources/views</argument>
+        <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\doctrine\doctrine-migrations-bundle/Resources/views</argument>
         <argument>DoctrineMigrations</argument>
       </call>
       <call method="addPath">
-        <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\doctrine\doctrine-migrations-bundle/Resources/views</argument>
+        <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\doctrine\doctrine-migrations-bundle/Resources/views</argument>
         <argument>!DoctrineMigrations</argument>
       </call>
       <call method="addPath">
-        <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\debug-bundle/Resources/views</argument>
+        <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\debug-bundle/Resources/views</argument>
         <argument>Debug</argument>
       </call>
       <call method="addPath">
-        <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\debug-bundle/Resources/views</argument>
+        <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\debug-bundle/Resources/views</argument>
         <argument>!Debug</argument>
       </call>
       <call method="addPath">
-        <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\web-profiler-bundle/Resources/views</argument>
+        <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\web-profiler-bundle/Resources/views</argument>
         <argument>WebProfiler</argument>
       </call>
       <call method="addPath">
-        <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\web-profiler-bundle/Resources/views</argument>
+        <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\web-profiler-bundle/Resources/views</argument>
         <argument>!WebProfiler</argument>
       </call>
       <call method="addPath">
-        <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-bundle/Resources/views</argument>
+        <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-bundle/Resources/views</argument>
         <argument>Security</argument>
       </call>
       <call method="addPath">
-        <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-bundle/Resources/views</argument>
+        <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-bundle/Resources/views</argument>
         <argument>!Security</argument>
       </call>
       <call method="addPath">
-        <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\swiftmailer-bundle/Resources/views</argument>
+        <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\swiftmailer-bundle/Resources/views</argument>
         <argument>Swiftmailer</argument>
       </call>
       <call method="addPath">
-        <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\swiftmailer-bundle/Resources/views</argument>
+        <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\swiftmailer-bundle/Resources/views</argument>
         <argument>!Swiftmailer</argument>
       </call>
       <call method="addPath">
-        <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers/templates</argument>
+        <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\knplabs\knp-paginator-bundle/templates</argument>
+        <argument>KnpPaginator</argument>
       </call>
       <call method="addPath">
-        <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\twig-bridge/Resources/views/Email</argument>
+        <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\knplabs\knp-paginator-bundle/templates</argument>
+        <argument>!KnpPaginator</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers/templates</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\twig-bridge/Resources/views/Email</argument>
         <argument>email</argument>
       </call>
       <call method="addPath">
-        <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\twig-bridge/Resources/views/Email</argument>
+        <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\twig-bridge/Resources/views/Email</argument>
         <argument>!email</argument>
       </call>
       <call method="addPath">
-        <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\twig-bridge/Resources/views/Form</argument>
+        <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\twig-bridge/Resources/views/Form</argument>
       </call>
     </service>
     <service id="twig.loader.chain" class="Twig\Loader\ChainLoader"/>
@@ -5196,7 +5300,7 @@
     <service id="twig.extension.code" class="Symfony\Bridge\Twig\Extension\CodeExtension">
       <tag name="twig.extension"/>
       <argument type="service" id="debug.file_link_formatter" on-invalid="ignore"/>
-      <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers</argument>
+      <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers</argument>
       <argument>UTF-8</argument>
     </service>
     <service id="twig.extension.routing" class="Symfony\Bridge\Twig\Extension\RoutingExtension">
@@ -5282,9 +5386,9 @@
       <tag name="console.command"/>
       <tag name="container.no_preload"/>
       <argument type="service" id="twig"/>
-      <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers</argument>
+      <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers</argument>
       <argument>%kernel.bundles_metadata%</argument>
-      <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers/templates</argument>
+      <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers/templates</argument>
       <argument type="service" id="debug.file_link_formatter" on-invalid="null"/>
       <call method="setName">
         <argument>debug:twig</argument>
@@ -5318,7 +5422,7 @@
       <argument type="service" id="twig"/>
       <argument>%data_collector.templates%</argument>
       <argument type="service" id="web_profiler.csp.handler"/>
-      <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers</argument>
+      <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers</argument>
     </service>
     <service id="web_profiler.controller.router" class="Symfony\Bundle\WebProfilerBundle\Controller\RouterController" public="true">
       <argument type="service" id="profiler" on-invalid="null"/>
@@ -6252,7 +6356,7 @@
     <service id="monolog.processor.psr_log_message" class="Monolog\Processor\PsrLogMessageProcessor"/>
     <service id="monolog.handler.main" class="Monolog\Handler\StreamHandler">
       <tag name="kernel.reset" method="reset"/>
-      <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\var\log/dev.log</argument>
+      <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\var\log/dev.log</argument>
       <argument>100</argument>
       <argument>true</argument>
       <argument>null</argument>
@@ -6274,8 +6378,8 @@
       <argument type="service" id="filesystem"/>
       <argument type="service" id="maker.autoloader_util"/>
       <argument type="service" id="maker.file_link_formatter"/>
-      <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers</argument>
-      <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers/templates</argument>
+      <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers</argument>
+      <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers/templates</argument>
     </service>
     <service id="maker.autoloader_finder" class="Symfony\Bundle\MakerBundle\Util\ComposerAutoloaderFinder">
       <argument>App</argument>
@@ -6435,7 +6539,7 @@
     </service>
     <service id="maker.maker.make_migration" class="Symfony\Bundle\MakerBundle\Maker\MakeMigration">
       <tag name="maker.command"/>
-      <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers</argument>
+      <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers</argument>
     </service>
     <service id="maker.maker.make_stimulus_controller" class="Symfony\Bundle\MakerBundle\Maker\MakeStimulusController">
       <tag name="maker.command"/>
@@ -6525,10 +6629,10 @@
       <argument type="service" id="symfonycasts.verify_email.token_generator"/>
       <argument>3600</argument>
     </service>
-    <service id=".4_Swift_Transport_Esmtp_Auth_NTLMAuthenticator~7uDSmLr" class="Swift_Transport_Esmtp_Auth_NTLMAuthenticator"/>
-    <service id=".3_Swift_Transport_Esmtp_Auth_PlainAuthenticator~7uDSmLr" class="Swift_Transport_Esmtp_Auth_PlainAuthenticator"/>
-    <service id=".2_Swift_Transport_Esmtp_Auth_LoginAuthenticator~7uDSmLr" class="Swift_Transport_Esmtp_Auth_LoginAuthenticator"/>
-    <service id=".1_Swift_Transport_Esmtp_Auth_CramMd5Authenticator~7uDSmLr" class="Swift_Transport_Esmtp_Auth_CramMd5Authenticator"/>
+    <service id=".4_Swift_Transport_Esmtp_Auth_NTLMAuthenticator~9cxAaS5" class="Swift_Transport_Esmtp_Auth_NTLMAuthenticator"/>
+    <service id=".3_Swift_Transport_Esmtp_Auth_PlainAuthenticator~9cxAaS5" class="Swift_Transport_Esmtp_Auth_PlainAuthenticator"/>
+    <service id=".2_Swift_Transport_Esmtp_Auth_LoginAuthenticator~9cxAaS5" class="Swift_Transport_Esmtp_Auth_LoginAuthenticator"/>
+    <service id=".1_Swift_Transport_Esmtp_Auth_CramMd5Authenticator~9cxAaS5" class="Swift_Transport_Esmtp_Auth_CramMd5Authenticator"/>
     <service id="swiftmailer.mailer.abstract" class="Swift_Mailer" public="true" abstract="true">
       <argument type="service" id="swiftmailer.mailer.default.transport.spool"/>
     </service>
@@ -6541,10 +6645,10 @@
     </service>
     <service id="swiftmailer.transport.authhandler.abstract" class="Swift_Transport_Esmtp_AuthHandler" abstract="true">
       <argument type="collection">
-        <argument type="service" id=".1_Swift_Transport_Esmtp_Auth_CramMd5Authenticator~7uDSmLr"/>
-        <argument type="service" id=".2_Swift_Transport_Esmtp_Auth_LoginAuthenticator~7uDSmLr"/>
-        <argument type="service" id=".3_Swift_Transport_Esmtp_Auth_PlainAuthenticator~7uDSmLr"/>
-        <argument type="service" id=".4_Swift_Transport_Esmtp_Auth_NTLMAuthenticator~7uDSmLr"/>
+        <argument type="service" id=".1_Swift_Transport_Esmtp_Auth_CramMd5Authenticator~9cxAaS5"/>
+        <argument type="service" id=".2_Swift_Transport_Esmtp_Auth_LoginAuthenticator~9cxAaS5"/>
+        <argument type="service" id=".3_Swift_Transport_Esmtp_Auth_PlainAuthenticator~9cxAaS5"/>
+        <argument type="service" id=".4_Swift_Transport_Esmtp_Auth_NTLMAuthenticator~9cxAaS5"/>
       </argument>
     </service>
     <service id="swiftmailer.transport.eventdispatcher.abstract" class="Swift_Events_SimpleEventDispatcher" abstract="true"/>
@@ -6593,10 +6697,10 @@
     <service id="swiftmailer.mailer.default.transport.eventdispatcher" class="Swift_Events_SimpleEventDispatcher"/>
     <service id="swiftmailer.mailer.default.transport.authhandler" class="Swift_Transport_Esmtp_AuthHandler">
       <argument type="collection">
-        <argument type="service" id=".1_Swift_Transport_Esmtp_Auth_CramMd5Authenticator~7uDSmLr"/>
-        <argument type="service" id=".2_Swift_Transport_Esmtp_Auth_LoginAuthenticator~7uDSmLr"/>
-        <argument type="service" id=".3_Swift_Transport_Esmtp_Auth_PlainAuthenticator~7uDSmLr"/>
-        <argument type="service" id=".4_Swift_Transport_Esmtp_Auth_NTLMAuthenticator~7uDSmLr"/>
+        <argument type="service" id=".1_Swift_Transport_Esmtp_Auth_CramMd5Authenticator~9cxAaS5"/>
+        <argument type="service" id=".2_Swift_Transport_Esmtp_Auth_LoginAuthenticator~9cxAaS5"/>
+        <argument type="service" id=".3_Swift_Transport_Esmtp_Auth_PlainAuthenticator~9cxAaS5"/>
+        <argument type="service" id=".4_Swift_Transport_Esmtp_Auth_NTLMAuthenticator~9cxAaS5"/>
       </argument>
       <call method="setUsername">
         <argument>aymen.zouaoui@esprit.tn</argument>
@@ -6642,7 +6746,7 @@
       <argument type="service" id="swiftmailer.mailer.default.transport.spool"/>
     </service>
     <service id="swiftmailer.mailer.default.spool.file" class="Swift_FileSpool">
-      <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\var\cache\dev/swiftmailer/spool/default</argument>
+      <argument>C:/Users/aymen/Desktop/gitprojet/digidreamers/var/cache/dev/swiftmailer/spool/default</argument>
     </service>
     <service id="swiftmailer.mailer.default.transport.spool" class="Swift_Transport_SpoolTransport">
       <argument type="service" id="swiftmailer.mailer.default.transport.eventdispatcher"/>
@@ -6678,6 +6782,52 @@
       <argument type="service" id="App\Repository\ResetPasswordRequestRepository"/>
       <argument>3600</argument>
       <argument>3600</argument>
+    </service>
+    <service id="knp_paginator" class="Knp\Component\Pager\Paginator" public="true" lazy="true">
+      <tag name="proxy" interface="Knp\Component\Pager\PaginatorInterface"/>
+      <argument type="service" id="debug.event_dispatcher"/>
+      <argument type="service" id="request_stack"/>
+      <call method="setDefaultPaginatorOptions">
+        <argument type="collection">
+          <argument key="pageParameterName">page</argument>
+          <argument key="sortFieldParameterName">sort</argument>
+          <argument key="sortDirectionParameterName">direction</argument>
+          <argument key="filterFieldParameterName">filterField</argument>
+          <argument key="filterValueParameterName">filterValue</argument>
+          <argument key="distinct">true</argument>
+          <argument key="pageOutOfRange">ignore</argument>
+          <argument key="defaultLimit">10</argument>
+        </argument>
+      </call>
+    </service>
+    <service id="knp_paginator.subscriber.paginate" class="Knp\Component\Pager\Event\Subscriber\Paginate\PaginationSubscriber">
+      <tag name="kernel.event_subscriber"/>
+    </service>
+    <service id="knp_paginator.subscriber.sortable" class="Knp\Component\Pager\Event\Subscriber\Sortable\SortableSubscriber">
+      <tag name="kernel.event_subscriber"/>
+    </service>
+    <service id="knp_paginator.subscriber.filtration" class="Knp\Component\Pager\Event\Subscriber\Filtration\FiltrationSubscriber">
+      <tag name="kernel.event_subscriber"/>
+    </service>
+    <service id="knp_paginator.subscriber.sliding_pagination" class="Knp\Bundle\PaginatorBundle\Subscriber\SlidingPaginationSubscriber">
+      <tag name="kernel.event_subscriber"/>
+      <tag name="kernel.event_listener" event="kernel.request" method="onKernelRequest"/>
+      <tag name="container.hot_path"/>
+      <argument type="collection">
+        <argument key="defaultPaginationTemplate">/others/twitter_bootstrap_v4_pagination.html.twig</argument>
+        <argument key="defaultSortableTemplate">@KnpPaginator/Pagination/sortable_link.html.twig</argument>
+        <argument key="defaultFiltrationTemplate">@KnpPaginator/Pagination/filtration.html.twig</argument>
+        <argument key="defaultPageRange">5</argument>
+        <argument key="defaultPageLimit">null</argument>
+      </argument>
+    </service>
+    <service id="knp_paginator.helper.processor" class="Knp\Bundle\PaginatorBundle\Helper\Processor">
+      <argument type="service" id="router.default"/>
+      <argument type="service" id="translator.data_collector"/>
+    </service>
+    <service id="knp_paginator.twig.extension.pagination" class="Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension">
+      <tag name="twig.extension"/>
+      <argument type="service" id="knp_paginator.helper.processor"/>
     </service>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\AdminController" class="App\Controller\AdminController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\AdminController" class="App\Controller\AdminController" autowire="true" abstract="true"/>
@@ -7083,6 +7233,12 @@
         <argument key="loader" type="service_closure" id=".errored..service_locator.xUrKPVU.Symfony\Component\Config\Loader\LoaderInterface"/>
       </argument>
     </service>
+    <service id=".service_locator.i9GOSYV" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="Normalizer" type="service_closure" id="serializer"/>
+      </argument>
+    </service>
     <service id=".service_locator.Q1F27w5" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -7201,9 +7357,10 @@
         <argument key="translator" type="service_closure" id="translator.data_collector"/>
       </argument>
     </service>
-    <service id=".service_locator.aIvvw8v" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator._yIf3yV" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="paginator" type="service_closure" id="knp_paginator"/>
         <argument key="registry" type="service_closure" id="doctrine"/>
         <argument key="userRepository" type="service_closure" id="App\Repository\UserRepository"/>
       </argument>
@@ -7241,13 +7398,14 @@
         <argument key="vehicule" type="service_closure" id=".errored..service_locator.iVJ8gI9.App\Entity\Vehicule"/>
       </argument>
     </service>
-    <service id=".service_locator.UNpy9zS" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.cQH9d3U" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\AdminController::delete" type="service_closure" id=".service_locator.9uW928t"/>
         <argument key="App\Controller\AdminController::edit" type="service_closure" id=".service_locator.9uW928t"/>
         <argument key="App\Controller\AdminController::index" type="service_closure" id=".service_locator.Q1F27w5"/>
         <argument key="App\Controller\AdminController::new" type="service_closure" id=".service_locator.Q1F27w5"/>
+        <argument key="App\Controller\AdminController::searchStudentx" type="service_closure" id=".service_locator.i9GOSYV"/>
         <argument key="App\Controller\AdminController::show" type="service_closure" id=".service_locator.4T4EJFR"/>
         <argument key="App\Controller\AnnoncesController::delete" type="service_closure" id=".service_locator.CjLvgM8"/>
         <argument key="App\Controller\AnnoncesController::edit" type="service_closure" id=".service_locator.CjLvgM8"/>
@@ -7271,8 +7429,9 @@
         <argument key="App\Controller\ResetPasswordController::reset" type="service_closure" id=".service_locator.kdKsWx5"/>
         <argument key="App\Controller\UserController::delete" type="service_closure" id=".service_locator.Q1F27w5"/>
         <argument key="App\Controller\UserController::edit" type="service_closure" id=".service_locator.001ztJT"/>
-        <argument key="App\Controller\UserController::index" type="service_closure" id=".service_locator.aIvvw8v"/>
+        <argument key="App\Controller\UserController::index" type="service_closure" id=".service_locator._yIf3yV"/>
         <argument key="App\Controller\UserController::new" type="service_closure" id=".service_locator.001ztJT"/>
+        <argument key="App\Controller\UserController::searchStudentx" type="service_closure" id=".service_locator.i9GOSYV"/>
         <argument key="App\Controller\ValidationController::delete" type="service_closure" id=".service_locator.Q1EeZWh"/>
         <argument key="App\Controller\ValidationController::edit" type="service_closure" id=".service_locator.Q1EeZWh"/>
         <argument key="App\Controller\ValidationController::index" type="service_closure" id=".service_locator.aKM6MDa"/>
@@ -7291,6 +7450,7 @@
         <argument key="App\Controller\AdminController:edit" type="service_closure" id=".service_locator.9uW928t"/>
         <argument key="App\Controller\AdminController:index" type="service_closure" id=".service_locator.Q1F27w5"/>
         <argument key="App\Controller\AdminController:new" type="service_closure" id=".service_locator.Q1F27w5"/>
+        <argument key="App\Controller\AdminController:searchStudentx" type="service_closure" id=".service_locator.i9GOSYV"/>
         <argument key="App\Controller\AdminController:show" type="service_closure" id=".service_locator.4T4EJFR"/>
         <argument key="App\Controller\AnnoncesController:delete" type="service_closure" id=".service_locator.CjLvgM8"/>
         <argument key="App\Controller\AnnoncesController:edit" type="service_closure" id=".service_locator.CjLvgM8"/>
@@ -7314,8 +7474,9 @@
         <argument key="App\Controller\ResetPasswordController:reset" type="service_closure" id=".service_locator.kdKsWx5"/>
         <argument key="App\Controller\UserController:delete" type="service_closure" id=".service_locator.Q1F27w5"/>
         <argument key="App\Controller\UserController:edit" type="service_closure" id=".service_locator.001ztJT"/>
-        <argument key="App\Controller\UserController:index" type="service_closure" id=".service_locator.aIvvw8v"/>
+        <argument key="App\Controller\UserController:index" type="service_closure" id=".service_locator._yIf3yV"/>
         <argument key="App\Controller\UserController:new" type="service_closure" id=".service_locator.001ztJT"/>
+        <argument key="App\Controller\UserController:searchStudentx" type="service_closure" id=".service_locator.i9GOSYV"/>
         <argument key="App\Controller\ValidationController:delete" type="service_closure" id=".service_locator.Q1EeZWh"/>
         <argument key="App\Controller\ValidationController:edit" type="service_closure" id=".service_locator.Q1EeZWh"/>
         <argument key="App\Controller\ValidationController:index" type="service_closure" id=".service_locator.aKM6MDa"/>
@@ -8014,12 +8175,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.UNpy9zS"/>
+      <argument type="service" id=".service_locator.cQH9d3U"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.UNpy9zS"/>
+      <argument type="service" id=".service_locator.cQH9d3U"/>
     </service>
     <service id="debug.traced.messenger.bus.default.inner" class="Symfony\Component\Messenger\MessageBus">
       <argument type="iterator">
@@ -8754,78 +8915,78 @@
       </argument>
     </service>
     <service id="cache.app.recorder_inner" class="Symfony\Component\Cache\Adapter\FilesystemAdapter">
-      <argument>Klt5Jf8udF</argument>
+      <argument>LLOnKeQG-g</argument>
       <argument>0</argument>
-      <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\var\cache\dev/pools/app</argument>
+      <argument>C:/Users/aymen/Desktop/gitprojet/digidreamers/var/cache/dev/pools/app</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       </call>
     </service>
     <service id="cache.system.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface">
-      <argument>Oq+q-Tgu9d</argument>
+      <argument>D7QvTAqTre</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\var\cache\dev/pools/system</argument>
+      <argument>C:/Users/aymen/Desktop/gitprojet/digidreamers/var/cache/dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.validator.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface">
-      <argument>cEAcO5h1QY</argument>
+      <argument>cCzz7EvyPe</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\var\cache\dev/pools/system</argument>
+      <argument>C:/Users/aymen/Desktop/gitprojet/digidreamers/var/cache/dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.serializer.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface">
-      <argument>GFEnZIgbEa</argument>
+      <argument>LNGww7LRia</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\var\cache\dev/pools/system</argument>
+      <argument>C:/Users/aymen/Desktop/gitprojet/digidreamers/var/cache/dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.annotations.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface">
-      <argument>qE3BQpdnjJ</argument>
+      <argument>ADkihWdibs</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\var\cache\dev/pools/system</argument>
+      <argument>C:/Users/aymen/Desktop/gitprojet/digidreamers/var/cache/dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.property_info.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface">
-      <argument>xaUtYretr7</argument>
+      <argument>l39lo8xfsR</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\var\cache\dev/pools/system</argument>
+      <argument>C:/Users/aymen/Desktop/gitprojet/digidreamers/var/cache/dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.messenger.restart_workers_signal.recorder_inner" class="Symfony\Component\Cache\Adapter\FilesystemAdapter">
-      <argument>dPjV7NqjJY</argument>
+      <argument>oImOSvnY+n</argument>
       <argument>0</argument>
-      <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\var\cache\dev/pools/app</argument>
+      <argument>C:/Users/aymen/Desktop/gitprojet/digidreamers/var/cache/dev/pools/app</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       </call>
     </service>
     <service id="cache.validator_expression_language.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface">
-      <argument>IJcy6jTHP6</argument>
+      <argument>lIGMje74Vc</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\var\cache\dev/pools/system</argument>
+      <argument>C:/Users/aymen/Desktop/gitprojet/digidreamers/var/cache/dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.doctrine.orm.default.result.recorder_inner" class="Symfony\Component\Cache\Adapter\ArrayAdapter"/>
     <service id="cache.doctrine.orm.default.query.recorder_inner" class="Symfony\Component\Cache\Adapter\ArrayAdapter"/>
     <service id="cache.security_expression_language.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface">
-      <argument>vTMkE85+lE</argument>
+      <argument>aQAGtgHMME</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\var\cache\dev/pools/system</argument>
+      <argument>C:/Users/aymen/Desktop/gitprojet/digidreamers/var/cache/dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -9013,9 +9174,10 @@
     <service id="Swift_Mailer" alias="swiftmailer.mailer.default"/>
     <service id="Swift_Transport" alias="swiftmailer.mailer.default.transport.spool"/>
     <service id="SymfonyCasts\Bundle\ResetPassword\ResetPasswordHelperInterface" alias="symfonycasts.reset_password.helper"/>
+    <service id="Knp\Component\Pager\PaginatorInterface" alias="knp_paginator"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.UNpy9zS"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.cQH9d3U"/>
     <service id="session" alias=".session.do-not-use" public="true">
       <deprecated package="symfony/framework-bundle" version="5.3">The "%alias_id%" service and "SessionInterface" alias are deprecated, use "$requestStack-&gt;getSession()" instead.</deprecated>
     </service>
@@ -9041,10 +9203,11 @@
     <service id=".service_locator.0GV1BZZ" alias=".service_locator.gSv9zYw"/>
     <service id=".service_locator.vEbnrl2" alias=".service_locator.7B8MPwp"/>
     <service id=".service_locator.riGN6sa" alias=".service_locator.YU8H6ve"/>
+    <service id=".service_locator.pc.B9w." alias=".service_locator._yIf3yV"/>
     <service id=".service_locator.pFaEqBs" alias=".service_locator.001ztJT"/>
     <service id=".service_locator.zilqhMR" alias=".service_locator.Q1EeZWh"/>
     <service id=".service_locator.gPjNq68" alias=".service_locator.iVJ8gI9"/>
-    <service id=".service_locator.sXrxwuu" alias=".service_locator.UNpy9zS"/>
+    <service id=".service_locator.y12xz.." alias=".service_locator.cQH9d3U"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
     <service id=".service_locator.OxvPipC" alias=".service_locator.AreSYUU"/>
     <service id=".service_locator.nk0lT0X" alias=".service_locator.1kmbKC8"/>
@@ -9072,6 +9235,7 @@
     <service id="messenger.bus.default" alias="debug.traced.messenger.bus.default"/>
     <service id="doctrine.orm.default_metadata_driver" alias=".doctrine.orm.default_metadata_driver"/>
     <service id=".service_locator.uo5c0SP" alias=".service_locator.xUrKPVU"/>
+    <service id=".service_locator.5kp8gXO" alias=".service_locator.i9GOSYV"/>
     <service id=".service_locator.HO7.gFw" alias=".service_locator.Q1F27w5"/>
     <service id=".service_locator.Zp0NSXM" alias=".service_locator.4T4EJFR"/>
     <service id=".service_locator.S89QQxH" alias=".service_locator.9uW928t"/>
@@ -9090,7 +9254,7 @@
     <service id=".service_locator.DoCD.2o" alias=".service_locator.YU8H6ve"/>
     <service id=".service_locator.vmloCRj" alias=".service_locator.pXhSQsU"/>
     <service id=".service_locator.Gf4Gasx" alias=".service_locator.kdKsWx5"/>
-    <service id=".service_locator.z7AlSxk" alias=".service_locator.aIvvw8v"/>
+    <service id=".service_locator.yelrjaX" alias=".service_locator._yIf3yV"/>
     <service id=".service_locator..LnKcTa" alias=".service_locator.001ztJT"/>
     <service id=".service_locator.bInR.ll" alias=".service_locator.aKM6MDa"/>
     <service id=".service_locator.yhUZf7r" alias=".service_locator.Q1EeZWh"/>

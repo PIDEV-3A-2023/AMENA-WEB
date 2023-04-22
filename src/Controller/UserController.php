@@ -12,6 +12,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Doctrine\Persistence\ManagerRegistry;
+use Knp\Component\Pager\PaginatorInterface;
 
 use App\Form\ResetPasswordType;
 use App\Form\ResetRequestType;
@@ -19,23 +20,38 @@ use App\Form\ResetRequestType;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 use Symfony\Component\Security\Csrf\TokenGenerator\TokenGeneratorInterface;
+use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 
 #[Route('/user')]
 class UserController extends AbstractController
 
 {
     #[Route('/', name: 'app_user_index', methods: ['GET'])]
-    public function index(Request $request, ManagerRegistry $registry, UserRepository $userRepository): Response
+    public function index(Request $request, ManagerRegistry $registry, PaginatorInterface $paginator, UserRepository $userRepository): Response
     {
         $query = $request->query->get('q');
 
         $users = $registry->getRepository(User::class)
             ->findBySearchQuery($query);
-        return $this->render('user/index.html.twig', [
-            'users' => $users,
-            //'users' => $userRepository->findBy([], ['id' => 'DESC']),
-        ]);
+        $pagination = $paginator->paginate(
+            $users, /* query NOT result */
+            $request->query->getInt('page', 1), /*page number*/
+            4 /*limit per page*/
+        );
+        return $this->render('user/index.html.twig', ['users' => $users, 'pagination' => $pagination]);
     }
+    #[Route('/search', name: 'app_user_search', methods: ['GET'])]
+    public function searchStudentx(Request $request, NormalizerInterface $Normalizer)
+    {
+        //die("test");
+        $repository = $this->getDoctrine()->getRepository(User::class);
+        $requestString = $request->get('searchValue');
+        $users = $repository->findBySearchQuerya($requestString);
+        $jsonContent = $Normalizer->normalize($users, 'json', ['groups'=>'user']);
+        $retour = json_encode($jsonContent);
+        return new Response($retour);
+    }
+
 
     #[Route('/new', name: 'app_user_new', methods: ['GET', 'POST'])]
     public function new(Request $request, UserRepository $userRepository, UserPasswordHasherInterface $userPasswordHasher): Response
@@ -65,6 +81,12 @@ class UserController extends AbstractController
             $user->setCompteEx(new \DateTime());
             $user->setDatecreationc(new \DateTime());
             $user->setTokenEx(new \DateTime());
+            $roles = [];
+            $roles = $form->get('roles')->getData();
+            $user->setRoles($roles);
+            /* dump($form->get('roles')->getData());
+            dump($user->getRoles());
+            die("end"); */
             $user->setPassword(
                 $userPasswordHasher->hashPassword(
                     $user,
@@ -75,7 +97,7 @@ class UserController extends AbstractController
 
             $image = $form->get('image')->getData();
 
-          
+
             $userRepository->save($user, true);
 
             return $this->redirectToRoute('app_login', [], Response::HTTP_SEE_OTHER);
@@ -100,7 +122,7 @@ class UserController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}/edit', name: 'app_user_edit', methods: ['GET', 'POST'])]
+    #[Route('/edit/{id}', name: 'app_user_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, UserRepository $userRepository, UserPasswordHasherInterface $userPasswordHasher): Response
     {
 
@@ -153,15 +175,16 @@ class UserController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'app_user_delete', methods: ['GET', 'POST'])]
+    #[Route('/delete/{id}', name: 'app_user_delete', methods: ['GET', 'POST'])]
     public function delete(Request $request, UserRepository $userRepository, $id): Response
     {
+        
         $user = $this->getUser();
         if ($user && $user->getRoles()[0] == "ROLE_ADMIN") {
             // dump($user);
             // die("test");
             $userRepository->remove($userRepository->find($id), true);
-        }
+        } 
         /*  if ($this->isCsrfTokenValid('delete' . $user->getId(), $request->request->get('_token'))) {
         }
  */

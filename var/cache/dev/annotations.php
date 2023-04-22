@@ -64,6 +64,8 @@ return [[
 '[C]Symfony%5CBundle%5CFrameworkBundle%5CController%5CAbstractController%24container' => 1,
 'App%5CController%5CAdminController' => 0,
 '[C]App%5CController%5CAdminController' => 1,
+'App%5CController%5CAdminController%23searchStudentx' => 0,
+'[C]App%5CController%5CAdminController%23searchStudentx' => 1,
 'App%5CController%5CAdminController%23index' => 0,
 '[C]App%5CController%5CAdminController%23index' => 1,
 'App%5CController%5CAdminController%23new' => 0,
@@ -170,6 +172,8 @@ return [[
 '[C]App%5CController%5CUserController' => 1,
 'App%5CController%5CUserController%23index' => 0,
 '[C]App%5CController%5CUserController%23index' => 1,
+'App%5CController%5CUserController%23searchStudentx' => 0,
+'[C]App%5CController%5CUserController%23searchStudentx' => 1,
 'App%5CController%5CUserController%23new' => 0,
 '[C]App%5CController%5CUserController%23new' => 1,
 'App%5CController%5CUserController%23show' => 0,
@@ -1378,7 +1382,7 @@ return [[
 ], [
 
 0 => [],
-1 => 1681942349,
+1 => 1682167786,
 2 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [

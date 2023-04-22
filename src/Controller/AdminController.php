@@ -9,11 +9,22 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 
 #[Route('/admin')]
 class AdminController extends AbstractController
 {    
-
+    #[Route('/search', name: 'app_admin_search', methods: ['GET'])]
+    public function searchStudentx(Request $request, NormalizerInterface $Normalizer)
+    {
+        //die("test");
+        $repository = $this->getDoctrine()->getRepository(User::class);
+        $requestString = $request->get('searchValue');
+        $users = $repository->findBySearchQuerya($requestString);
+        $jsonContent = $Normalizer->normalize($users, 'json', ['groups'=>'user']);
+        $retour = json_encode($jsonContent);
+        return new Response($retour);
+    }
 
     
     #[Route('/', name: 'app_admin_index', methods: ['GET'])]

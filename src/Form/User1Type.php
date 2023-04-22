@@ -21,7 +21,7 @@ class User1Type extends AbstractType
                     // add more roles here as needed
                 ],
                 'multiple' => true, // set this to false to allow only one option to be selected
-                'expanded' => true,
+                'expanded' => false,
             ])
             ->add('password')
             ->add('nom')

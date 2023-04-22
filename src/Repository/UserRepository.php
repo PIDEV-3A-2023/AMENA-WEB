@@ -75,4 +75,12 @@ public function findBySearchQuery($query)
 
         return $qb->getQuery()->getResult();
     } 
+
+public function findBySearchQuerya($nsc){
+    return $this->createQueryBuilder('user')
+    ->where('user.email LIKE :email')
+    ->setParameter('email', '%'.$nsc.'%')
+    ->getQuery()
+    ->getResult();
+    }
 }
