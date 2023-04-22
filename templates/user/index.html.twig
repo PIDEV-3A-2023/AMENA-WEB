@@ -1,5 +1,4 @@
 {% extends 'baseadmin.html.twig' %}
-
 {% block title %}User index
 {% endblock %}
 
@@ -23,7 +22,6 @@
 		<a href="{{ path('app_user_new') }}">Create new</a>
 		<input type="text" id="search" class="form-control" placeholder="Search"><br>
 		<a class="btn btn-secondary" href="{{ path('app_user_new') }}">Register</a>
-
 		<h1 class="h3 mb-3">Blank Page</h1>
 		<div class="row">
 			{% for u in pagination %}
