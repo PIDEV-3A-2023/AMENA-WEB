@@ -118,7 +118,7 @@ class __TwigTemplate_bd561efa7e4cae75a47345e04d55f4d8 extends Template
                 <td>actions</td>
             </tr>
         </thead>
-       <tbody id=\"all\">
+      <tbody id=\"all\">
         ";
         // line 39
         $context['_parent'] = $context;
@@ -126,82 +126,84 @@ class __TwigTemplate_bd561efa7e4cae75a47345e04d55f4d8 extends Template
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["user"]) {
             // line 40
-            echo "            <tr>
-                <td>";
-            // line 41
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 41), "html", null, true);
-            echo "</td>
+            echo "        
+            <tr>
                 <td>";
             // line 42
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "email", [], "any", false, false, false, 42), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 42), "html", null, true);
             echo "</td>
                 <td>";
             // line 43
-            echo "FFFFFF</td>
-                <td>";
-            // line 44
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "password", [], "any", false, false, false, 44), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "email", [], "any", false, false, false, 43), "html", null, true);
             echo "</td>
+                <td> ";
+            // line 44
+            ((twig_get_attribute($this->env, $this->source, $context["user"], "roles", [], "any", false, false, false, 44)) ? (print (twig_escape_filter($this->env, json_encode(twig_get_attribute($this->env, $this->source, $context["user"], "roles", [], "any", false, false, false, 44)), "html", null, true))) : (print ("")));
+            echo " </td>
                 <td>";
             // line 45
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "nom", [], "any", false, false, false, 45), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "password", [], "any", false, false, false, 45), "html", null, true);
             echo "</td>
                 <td>";
             // line 46
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "prenom", [], "any", false, false, false, 46), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "nom", [], "any", false, false, false, 46), "html", null, true);
             echo "</td>
                 <td>";
             // line 47
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "adress", [], "any", false, false, false, 47), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "prenom", [], "any", false, false, false, 47), "html", null, true);
             echo "</td>
                 <td>";
             // line 48
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "cin", [], "any", false, false, false, 48), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "adress", [], "any", false, false, false, 48), "html", null, true);
             echo "</td>
                 <td>";
             // line 49
-            ((twig_get_attribute($this->env, $this->source, $context["user"], "dateNaissance", [], "any", false, false, false, 49)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "dateNaissance", [], "any", false, false, false, 49), "Y-m-d"), "html", null, true))) : (print ("")));
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "cin", [], "any", false, false, false, 49), "html", null, true);
             echo "</td>
                 <td>";
             // line 50
-            ((twig_get_attribute($this->env, $this->source, $context["user"], "dateCreationC", [], "any", false, false, false, 50)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "dateCreationC", [], "any", false, false, false, 50), "Y-m-d"), "html", null, true))) : (print ("")));
+            ((twig_get_attribute($this->env, $this->source, $context["user"], "dateNaissance", [], "any", false, false, false, 50)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "dateNaissance", [], "any", false, false, false, 50), "Y-m-d"), "html", null, true))) : (print ("")));
             echo "</td>
                 <td>";
             // line 51
-            echo ((twig_get_attribute($this->env, $this->source, $context["user"], "status", [], "any", false, false, false, 51)) ? ("Yes") : ("No"));
+            ((twig_get_attribute($this->env, $this->source, $context["user"], "dateCreationC", [], "any", false, false, false, 51)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "dateCreationC", [], "any", false, false, false, 51), "Y-m-d"), "html", null, true))) : (print ("")));
             echo "</td>
                 <td>";
             // line 52
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "token", [], "any", false, false, false, 52), "html", null, true);
+            echo ((twig_get_attribute($this->env, $this->source, $context["user"], "status", [], "any", false, false, false, 52)) ? ("Yes") : ("No"));
             echo "</td>
                 <td>";
             // line 53
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "score", [], "any", false, false, false, 53), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "token", [], "any", false, false, false, 53), "html", null, true);
             echo "</td>
                 <td>";
             // line 54
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "numtel", [], "any", false, false, false, 54), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "score", [], "any", false, false, false, 54), "html", null, true);
             echo "</td>
                 <td>";
             // line 55
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "image", [], "any", false, false, false, 55), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "numtel", [], "any", false, false, false, 55), "html", null, true);
             echo "</td>
                 <td>";
             // line 56
-            ((twig_get_attribute($this->env, $this->source, $context["user"], "compteEx", [], "any", false, false, false, 56)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "compteEx", [], "any", false, false, false, 56), "Y-m-d"), "html", null, true))) : (print ("")));
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "image", [], "any", false, false, false, 56), "html", null, true);
             echo "</td>
                 <td>";
             // line 57
-            ((twig_get_attribute($this->env, $this->source, $context["user"], "tokenEx", [], "any", false, false, false, 57)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "tokenEx", [], "any", false, false, false, 57), "Y-m-d"), "html", null, true))) : (print ("")));
+            ((twig_get_attribute($this->env, $this->source, $context["user"], "compteEx", [], "any", false, false, false, 57)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "compteEx", [], "any", false, false, false, 57), "Y-m-d"), "html", null, true))) : (print ("")));
+            echo "</td>
+                <td>";
+            // line 58
+            ((twig_get_attribute($this->env, $this->source, $context["user"], "tokenEx", [], "any", false, false, false, 58)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "tokenEx", [], "any", false, false, false, 58), "Y-m-d"), "html", null, true))) : (print ("")));
             echo "</td>
                 <td>
                     <a href=\"";
-            // line 59
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_admin_show", ["id" => twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 59)]), "html", null, true);
+            // line 60
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_admin_show", ["id" => twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 60)]), "html", null, true);
             echo "\">show</a>
                     <a href=\"";
-            // line 60
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_admin_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 60)]), "html", null, true);
+            // line 61
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_admin_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 61)]), "html", null, true);
             echo "\">edit</a>
                 </td>
             </tr>
@@ -209,7 +211,7 @@ class __TwigTemplate_bd561efa7e4cae75a47345e04d55f4d8 extends Template
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 64
+            // line 65
             echo "            <tr>
                 <td colspan=\"18\">no records found</td>
             </tr>
@@ -218,7 +220,7 @@ class __TwigTemplate_bd561efa7e4cae75a47345e04d55f4d8 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['user'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 68
+        // line 69
         echo "        </tbody>
         <tbody id=\"searchtab\">
 \t\t\t\t<td>ss</td>
@@ -226,7 +228,7 @@ class __TwigTemplate_bd561efa7e4cae75a47345e04d55f4d8 extends Template
     </table>
 
     <a href=\"";
-        // line 74
+        // line 75
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_admin_new");
         echo "\">Create new</a>
 ";
@@ -238,7 +240,7 @@ class __TwigTemplate_bd561efa7e4cae75a47345e04d55f4d8 extends Template
 
     }
 
-    // line 76
+    // line 77
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -248,7 +250,7 @@ class __TwigTemplate_bd561efa7e4cae75a47345e04d55f4d8 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 77
+        // line 78
         echo "\t";
         $this->displayParentBlock("javascripts", $context, $blocks);
         echo "
@@ -270,7 +272,7 @@ console.log(\"value : \")
 \t\t\t\t\t\t6
 \t\t\t\t\t\tenvoyée */
 url: \"";
-        // line 95
+        // line 96
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_admin_search");
         echo "\",
 /* La méthode utilisée pour transférer les données est
@@ -291,7 +293,7 @@ if (retour) {
 \$.each(JSON.parse(retour), function (i, obj) {
 \$('#t tbody#all').hide();
 
-\$('#t tbody#searchtab').append('<tr><td>' + obj.id + '</td><td> ' + obj.email + ' </td><td>' + obj.roles + '</td><td>' + obj.Password + '</td><td>' + obj.nom+ '</td><td>' + obj.prenom+'</td><td>' + obj.adress + '</td><td>' + obj.cin + '</td><td>' + obj.dateNaissance + '</td><td>' + obj.dateCreationC+ '</td><td>' + obj.status+ '</td><td>' + obj.token + '</td><td>' + obj.score+ '</td><td>' + obj.numtel + '</td><td>' + obj.image + '</td><td>' + obj.compteEx + '</td><td>' + obj.tokenEx+ '</td><td><a href=\"' + obj.id + 'edit/\">modifier</a> </br><a\thref=\"' + obj.id + 'delete/\">supprimer</a></td></tr>');
+\$('#t tbody#searchtab').append('<tr><td>' + obj.id + '</td><td> ' + obj.email + ' </td><td>' + obj.roles + '</td><td>' + obj.password + '</td><td>' + obj.nom+ '</td><td>' + obj.prenom+'</td><td>' + obj.adress + '</td><td>' + obj.cin + '</td><td>' + obj.dateNaissance + '</td><td>' + obj.dateCreationC+ '</td><td>' + obj.status+ '</td><td>' + obj.token + '</td><td>' + obj.score+ '</td><td>' + obj.numtel + '</td><td>' + obj.image + '</td><td>' + obj.compteEx + '</td><td>' + obj.tokenEx+ '</td><td><a href=\"' + obj.id + 'edit/\">modifier</a> </br><a\thref=\"' + obj.id + 'delete/\">supprimer</a></td></tr>');
 });
 } else {
 \$('#t tbody#all').show();
@@ -326,7 +328,7 @@ return false;
 
     public function getDebugInfo()
     {
-        return array (  274 => 95,  252 => 77,  242 => 76,  230 => 74,  222 => 68,  213 => 64,  204 => 60,  200 => 59,  195 => 57,  191 => 56,  187 => 55,  183 => 54,  179 => 53,  175 => 52,  171 => 51,  167 => 50,  163 => 49,  159 => 48,  155 => 47,  151 => 46,  147 => 45,  143 => 44,  140 => 43,  136 => 42,  132 => 41,  129 => 40,  124 => 39,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  276 => 96,  254 => 78,  244 => 77,  232 => 75,  224 => 69,  215 => 65,  206 => 61,  202 => 60,  197 => 58,  193 => 57,  189 => 56,  185 => 55,  181 => 54,  177 => 53,  173 => 52,  169 => 51,  165 => 50,  161 => 49,  157 => 48,  153 => 47,  149 => 46,  145 => 45,  141 => 44,  137 => 43,  133 => 42,  129 => 40,  124 => 39,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -368,12 +370,13 @@ return false;
                 <td>actions</td>
             </tr>
         </thead>
-       <tbody id=\"all\">
+      <tbody id=\"all\">
         {% for user in users %}
+        
             <tr>
                 <td>{{ user.id }}</td>
                 <td>{{ user.email }}</td>
-                <td>{# {{ user.roles ? user.roles|json_encode : '' }} #}FFFFFF</td>
+                <td> {{ user.roles ? user.roles|json_encode : '' }} </td>
                 <td>{{ user.password }}</td>
                 <td>{{ user.nom }}</td>
                 <td>{{ user.prenom }}</td>
@@ -444,7 +447,7 @@ if (retour) {
 \$.each(JSON.parse(retour), function (i, obj) {
 \$('#t tbody#all').hide();
 
-\$('#t tbody#searchtab').append('<tr><td>' + obj.id + '</td><td> ' + obj.email + ' </td><td>' + obj.roles + '</td><td>' + obj.Password + '</td><td>' + obj.nom+ '</td><td>' + obj.prenom+'</td><td>' + obj.adress + '</td><td>' + obj.cin + '</td><td>' + obj.dateNaissance + '</td><td>' + obj.dateCreationC+ '</td><td>' + obj.status+ '</td><td>' + obj.token + '</td><td>' + obj.score+ '</td><td>' + obj.numtel + '</td><td>' + obj.image + '</td><td>' + obj.compteEx + '</td><td>' + obj.tokenEx+ '</td><td><a href=\"' + obj.id + 'edit/\">modifier</a> </br><a\thref=\"' + obj.id + 'delete/\">supprimer</a></td></tr>');
+\$('#t tbody#searchtab').append('<tr><td>' + obj.id + '</td><td> ' + obj.email + ' </td><td>' + obj.roles + '</td><td>' + obj.password + '</td><td>' + obj.nom+ '</td><td>' + obj.prenom+'</td><td>' + obj.adress + '</td><td>' + obj.cin + '</td><td>' + obj.dateNaissance + '</td><td>' + obj.dateCreationC+ '</td><td>' + obj.status+ '</td><td>' + obj.token + '</td><td>' + obj.score+ '</td><td>' + obj.numtel + '</td><td>' + obj.image + '</td><td>' + obj.compteEx + '</td><td>' + obj.tokenEx+ '</td><td><a href=\"' + obj.id + 'edit/\">modifier</a> </br><a\thref=\"' + obj.id + 'delete/\">supprimer</a></td></tr>');
 });
 } else {
 \$('#t tbody#all').show();

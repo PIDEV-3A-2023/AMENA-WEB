@@ -35,12 +35,13 @@
                 <td>actions</td>
             </tr>
         </thead>
-       <tbody id="all">
+      <tbody id="all">
         {% for user in users %}
+        
             <tr>
                 <td>{{ user.id }}</td>
                 <td>{{ user.email }}</td>
-                <td>{# {{ user.roles ? user.roles|json_encode : '' }} #}FFFFFF</td>
+                <td> {{ user.roles ? user.roles|json_encode : '' }} </td>
                 <td>{{ user.password }}</td>
                 <td>{{ user.nom }}</td>
                 <td>{{ user.prenom }}</td>
@@ -111,7 +112,7 @@ $('#t tbody#searchtab').empty();
 $.each(JSON.parse(retour), function (i, obj) {
 $('#t tbody#all').hide();
 
-$('#t tbody#searchtab').append('<tr><td>' + obj.id + '</td><td> ' + obj.email + ' </td><td>' + obj.roles + '</td><td>' + obj.Password + '</td><td>' + obj.nom+ '</td><td>' + obj.prenom+'</td><td>' + obj.adress + '</td><td>' + obj.cin + '</td><td>' + obj.dateNaissance + '</td><td>' + obj.dateCreationC+ '</td><td>' + obj.status+ '</td><td>' + obj.token + '</td><td>' + obj.score+ '</td><td>' + obj.numtel + '</td><td>' + obj.image + '</td><td>' + obj.compteEx + '</td><td>' + obj.tokenEx+ '</td><td><a href="' + obj.id + 'edit/">modifier</a> </br><a	href="' + obj.id + 'delete/">supprimer</a></td></tr>');
+$('#t tbody#searchtab').append('<tr><td>' + obj.id + '</td><td> ' + obj.email + ' </td><td>' + obj.roles + '</td><td>' + obj.password + '</td><td>' + obj.nom+ '</td><td>' + obj.prenom+'</td><td>' + obj.adress + '</td><td>' + obj.cin + '</td><td>' + obj.dateNaissance + '</td><td>' + obj.dateCreationC+ '</td><td>' + obj.status+ '</td><td>' + obj.token + '</td><td>' + obj.score+ '</td><td>' + obj.numtel + '</td><td>' + obj.image + '</td><td>' + obj.compteEx + '</td><td>' + obj.tokenEx+ '</td><td><a href="' + obj.id + 'edit/">modifier</a> </br><a	href="' + obj.id + 'delete/">supprimer</a></td></tr>');
 });
 } else {
 $('#t tbody#all').show();

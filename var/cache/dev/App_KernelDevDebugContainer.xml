@@ -83,11 +83,7 @@
         <parameter key="namespace">SymfonyCasts\Bundle\ResetPassword</parameter>
       </parameter>
       <parameter key="KnpPaginatorBundle" type="collection">
-<<<<<<< HEAD
         <parameter key="path">C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\knplabs\knp-paginator-bundle</parameter>
-=======
-        <parameter key="path">C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\knplabs\knp-paginator-bundle</parameter>
->>>>>>> 356715fc1b01048a35b73ff32ba5ad2501fe27ea
         <parameter key="namespace">Knp\Bundle\PaginatorBundle</parameter>
       </parameter>
     </parameter>
@@ -1796,21 +1792,12 @@
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.af.xlf</argument>
           </argument>
           <argument key="ar" type="collection">
-<<<<<<< HEAD
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.ar.xlf</argument>
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\form/Resources/translations\validators.ar.xlf</argument>
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.ar.xlf</argument>
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.ar.xlf</argument>
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.ar.xlf</argument>
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.ar.xliff</argument>
-=======
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.ar.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.ar.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.ar.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.ar.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.ar.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.ar.xliff</argument>
->>>>>>> 356715fc1b01048a35b73ff32ba5ad2501fe27ea
           </argument>
           <argument key="az" type="collection">
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.az.xlf</argument>
@@ -1823,17 +1810,10 @@
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.be.xlf</argument>
           </argument>
           <argument key="bg" type="collection">
-<<<<<<< HEAD
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.bg.xlf</argument>
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\form/Resources/translations\validators.bg.xlf</argument>
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.bg.xlf</argument>
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.bg.xliff</argument>
-=======
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.bg.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.bg.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.bg.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.bg.xliff</argument>
->>>>>>> 356715fc1b01048a35b73ff32ba5ad2501fe27ea
           </argument>
           <argument key="bs" type="collection">
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.bs.xlf</argument>
@@ -1841,7 +1821,6 @@
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.bs.xlf</argument>
           </argument>
           <argument key="ca" type="collection">
-<<<<<<< HEAD
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.ca.xlf</argument>
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\form/Resources/translations\validators.ca.xlf</argument>
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.ca.xlf</argument>
@@ -1856,28 +1835,11 @@
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.cs.xlf</argument>
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.cs.xlf</argument>
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.cs.xliff</argument>
-=======
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.ca.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.ca.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.ca.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.ca.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.ca.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.ca.xliff</argument>
-          </argument>
-          <argument key="cs" type="collection">
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.cs.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.cs.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.cs.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.cs.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.cs.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.cs.xliff</argument>
->>>>>>> 356715fc1b01048a35b73ff32ba5ad2501fe27ea
           </argument>
           <argument key="cy" type="collection">
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.cy.xlf</argument>
           </argument>
           <argument key="da" type="collection">
-<<<<<<< HEAD
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.da.xlf</argument>
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\form/Resources/translations\validators.da.xlf</argument>
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.da.xlf</argument>
@@ -1890,20 +1852,6 @@
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.de.xlf</argument>
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.de.xlf</argument>
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.de.xliff</argument>
-=======
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.da.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.da.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.da.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.da.xliff</argument>
-          </argument>
-          <argument key="de" type="collection">
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.de.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.de.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.de.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.de.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.de.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.de.xliff</argument>
->>>>>>> 356715fc1b01048a35b73ff32ba5ad2501fe27ea
           </argument>
           <argument key="el" type="collection">
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.el.xlf</argument>
@@ -1911,7 +1859,6 @@
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.el.xlf</argument>
           </argument>
           <argument key="en" type="collection">
-<<<<<<< HEAD
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.en.xlf</argument>
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\form/Resources/translations\validators.en.xlf</argument>
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.en.xlf</argument>
@@ -1926,22 +1873,6 @@
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.es.xlf</argument>
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.es.xlf</argument>
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.es.xliff</argument>
-=======
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.en.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.en.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.en.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.en.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.en.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.en.xliff</argument>
-          </argument>
-          <argument key="es" type="collection">
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.es.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.es.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.es.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.es.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.es.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.es.xliff</argument>
->>>>>>> 356715fc1b01048a35b73ff32ba5ad2501fe27ea
           </argument>
           <argument key="et" type="collection">
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.et.xlf</argument>
@@ -1949,7 +1880,6 @@
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.et.xlf</argument>
           </argument>
           <argument key="eu" type="collection">
-<<<<<<< HEAD
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.eu.xlf</argument>
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\form/Resources/translations\validators.eu.xlf</argument>
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.eu.xlf</argument>
@@ -1976,34 +1906,6 @@
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.fr.xlf</argument>
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.fr.xlf</argument>
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.fr.xliff</argument>
-=======
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.eu.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.eu.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.eu.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.eu.xliff</argument>
-          </argument>
-          <argument key="fa" type="collection">
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.fa.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.fa.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.fa.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.fa.xliff</argument>
-          </argument>
-          <argument key="fi" type="collection">
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.fi.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.fi.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.fi.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.fi.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.fi.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.fi.xliff</argument>
-          </argument>
-          <argument key="fr" type="collection">
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.fr.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.fr.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.fr.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.fr.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.fr.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.fr.xliff</argument>
->>>>>>> 356715fc1b01048a35b73ff32ba5ad2501fe27ea
           </argument>
           <argument key="gl" type="collection">
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.gl.xlf</argument>
@@ -2016,7 +1918,6 @@
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.he.xlf</argument>
           </argument>
           <argument key="hr" type="collection">
-<<<<<<< HEAD
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.hr.xlf</argument>
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\form/Resources/translations\validators.hr.xlf</argument>
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.hr.xlf</argument>
@@ -2029,20 +1930,6 @@
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.hu.xlf</argument>
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.hu.xlf</argument>
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.hu.xliff</argument>
-=======
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.hr.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.hr.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.hr.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.hr.xliff</argument>
-          </argument>
-          <argument key="hu" type="collection">
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.hu.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.hu.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.hu.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.hu.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.hu.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.hu.xliff</argument>
->>>>>>> 356715fc1b01048a35b73ff32ba5ad2501fe27ea
           </argument>
           <argument key="hy" type="collection">
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.hy.xlf</argument>
@@ -2050,7 +1937,6 @@
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.hy.xlf</argument>
           </argument>
           <argument key="id" type="collection">
-<<<<<<< HEAD
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.id.xlf</argument>
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\form/Resources/translations\validators.id.xlf</argument>
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.id.xlf</argument>
@@ -2072,29 +1958,6 @@
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.ja.xlf</argument>
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.ja.xlf</argument>
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.ja.xliff</argument>
-=======
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.id.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.id.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.id.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.id.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.id.xliff</argument>
-          </argument>
-          <argument key="it" type="collection">
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.it.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.it.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.it.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.it.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.it.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.it.xliff</argument>
-          </argument>
-          <argument key="ja" type="collection">
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.ja.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.ja.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.ja.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.ja.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.ja.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.ja.xliff</argument>
->>>>>>> 356715fc1b01048a35b73ff32ba5ad2501fe27ea
           </argument>
           <argument key="lb" type="collection">
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.lb.xlf</argument>
@@ -2102,17 +1965,10 @@
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.lb.xlf</argument>
           </argument>
           <argument key="lt" type="collection">
-<<<<<<< HEAD
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.lt.xlf</argument>
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\form/Resources/translations\validators.lt.xlf</argument>
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.lt.xlf</argument>
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.lt.xliff</argument>
-=======
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.lt.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.lt.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.lt.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.lt.xliff</argument>
->>>>>>> 356715fc1b01048a35b73ff32ba5ad2501fe27ea
           </argument>
           <argument key="lv" type="collection">
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.lv.xlf</argument>
@@ -2135,21 +1991,12 @@
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.nb.xlf</argument>
           </argument>
           <argument key="nl" type="collection">
-<<<<<<< HEAD
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.nl.xlf</argument>
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\form/Resources/translations\validators.nl.xlf</argument>
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.nl.xlf</argument>
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle+intl-icu.nl.xlf</argument>
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle+intl-icu.nl.xlf</argument>
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.nl.xliff</argument>
-=======
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.nl.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.nl.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.nl.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle+intl-icu.nl.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle+intl-icu.nl.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.nl.xliff</argument>
->>>>>>> 356715fc1b01048a35b73ff32ba5ad2501fe27ea
           </argument>
           <argument key="nn" type="collection">
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.nn.xlf</argument>
@@ -2157,7 +2004,6 @@
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.nn.xlf</argument>
           </argument>
           <argument key="no" type="collection">
-<<<<<<< HEAD
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.no.xlf</argument>
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\form/Resources/translations\validators.no.xlf</argument>
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.no.xlf</argument>
@@ -2170,20 +2016,6 @@
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.pl.xlf</argument>
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.pl.xlf</argument>
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.pl.xliff</argument>
-=======
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.no.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.no.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.no.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.no.xliff</argument>
-          </argument>
-          <argument key="pl" type="collection">
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.pl.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.pl.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.pl.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.pl.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.pl.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.pl.xliff</argument>
->>>>>>> 356715fc1b01048a35b73ff32ba5ad2501fe27ea
           </argument>
           <argument key="pt" type="collection">
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.pt.xlf</argument>
@@ -2193,7 +2025,6 @@
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.pt.xlf</argument>
           </argument>
           <argument key="pt_BR" type="collection">
-<<<<<<< HEAD
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.pt_BR.xlf</argument>
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\form/Resources/translations\validators.pt_BR.xlf</argument>
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.pt_BR.xlf</argument>
@@ -2213,27 +2044,6 @@
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.ru.xlf</argument>
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.ru.xlf</argument>
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.ru.xliff</argument>
-=======
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.pt_BR.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.pt_BR.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.pt_BR.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.pt_BR.xliff</argument>
-          </argument>
-          <argument key="ro" type="collection">
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.ro.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.ro.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.ro.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.ro.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.ro.xliff</argument>
-          </argument>
-          <argument key="ru" type="collection">
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.ru.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.ru.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.ru.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.ru.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.ru.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.ru.xliff</argument>
->>>>>>> 356715fc1b01048a35b73ff32ba5ad2501fe27ea
           </argument>
           <argument key="sk" type="collection">
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.sk.xlf</argument>
@@ -2263,17 +2073,10 @@
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.sr_Latn.xlf</argument>
           </argument>
           <argument key="sv" type="collection">
-<<<<<<< HEAD
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.sv.xlf</argument>
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\form/Resources/translations\validators.sv.xlf</argument>
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.sv.xlf</argument>
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.sv.xliff</argument>
-=======
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.sv.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.sv.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.sv.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.sv.xliff</argument>
->>>>>>> 356715fc1b01048a35b73ff32ba5ad2501fe27ea
           </argument>
           <argument key="th" type="collection">
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.th.xlf</argument>
@@ -2286,7 +2089,6 @@
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.tl.xlf</argument>
           </argument>
           <argument key="tr" type="collection">
-<<<<<<< HEAD
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.tr.xlf</argument>
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\form/Resources/translations\validators.tr.xlf</argument>
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations\security.tr.xlf</argument>
@@ -2301,22 +2103,6 @@
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.uk.xlf</argument>
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.uk.xlf</argument>
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.uk.xliff</argument>
-=======
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.tr.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.tr.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.tr.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.tr.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.tr.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.tr.xliff</argument>
-          </argument>
-          <argument key="uk" type="collection">
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations\validators.uk.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations\validators.uk.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations\security.uk.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.uk.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.uk.xlf</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.uk.xliff</argument>
->>>>>>> 356715fc1b01048a35b73ff32ba5ad2501fe27ea
           </argument>
           <argument key="ur" type="collection">
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations\validators.ur.xlf</argument>
@@ -2353,15 +2139,8 @@
           <argument key="sw" type="collection">
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.sw.xliff</argument>
           </argument>
-          <argument key="ky" type="collection">
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.ky.xliff</argument>
-          </argument>
-          <argument key="sw" type="collection">
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.sw.xliff</argument>
-          </argument>
         </argument>
         <argument key="scanned_directories" type="collection">
-<<<<<<< HEAD
           <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\validator/Resources/translations</argument>
           <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\form/Resources/translations</argument>
           <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\security-core/Resources/translations</argument>
@@ -2390,36 +2169,6 @@
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations</argument>
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations</argument>
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\knplabs\knp-paginator-bundle/translations</argument>
-=======
-          <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations</argument>
-          <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations</argument>
-          <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations</argument>
-          <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations</argument>
-          <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations</argument>
-          <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\knplabs\knp-paginator-bundle/translations</argument>
-          <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers/translations</argument>
-          <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\framework-bundle/translations</argument>
-          <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\doctrine\doctrine-bundle/translations</argument>
-          <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\doctrine\doctrine-migrations-bundle/translations</argument>
-          <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\debug-bundle/translations</argument>
-          <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\twig-bundle/translations</argument>
-          <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\web-profiler-bundle/translations</argument>
-          <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\twig\extra-bundle/translations</argument>
-          <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-bundle/translations</argument>
-          <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\monolog-bundle/translations</argument>
-          <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\maker-bundle\src/translations</argument>
-          <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\sensio\framework-extra-bundle\src/translations</argument>
-          <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\swiftmailer-bundle/translations</argument>
-        </argument>
-        <argument key="cache_vary" type="collection">
-          <argument key="scanned_directories" type="collection">
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\validator/Resources/translations</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\form/Resources/translations</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfony\security-core/Resources/translations</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations</argument>
-            <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\knplabs\knp-paginator-bundle/translations</argument>
->>>>>>> 356715fc1b01048a35b73ff32ba5ad2501fe27ea
             <argument>translations</argument>
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\framework-bundle/translations</argument>
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\doctrine\doctrine-bundle/translations</argument>
@@ -5506,20 +5255,8 @@
         <argument>!Swiftmailer</argument>
       </call>
       <call method="addPath">
-<<<<<<< HEAD
         <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\knplabs\knp-paginator-bundle/templates</argument>
         <argument>KnpPaginator</argument>
-=======
-        <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\knplabs\knp-paginator-bundle/templates</argument>
-        <argument>KnpPaginator</argument>
-      </call>
-      <call method="addPath">
-        <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers\vendor\knplabs\knp-paginator-bundle/templates</argument>
-        <argument>!KnpPaginator</argument>
-      </call>
-      <call method="addPath">
-        <argument>C:\Users\aymen\Desktop\digidreamers\digidreamers/templates</argument>
->>>>>>> 356715fc1b01048a35b73ff32ba5ad2501fe27ea
       </call>
       <call method="addPath">
         <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\knplabs\knp-paginator-bundle/templates</argument>
@@ -7661,11 +7398,7 @@
         <argument key="vehicule" type="service_closure" id=".errored..service_locator.iVJ8gI9.App\Entity\Vehicule"/>
       </argument>
     </service>
-<<<<<<< HEAD
     <service id=".service_locator.cQH9d3U" class="Symfony\Component\DependencyInjection\ServiceLocator">
-=======
-    <service id=".service_locator.rSkQV1f" class="Symfony\Component\DependencyInjection\ServiceLocator">
->>>>>>> 356715fc1b01048a35b73ff32ba5ad2501fe27ea
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\AdminController::delete" type="service_closure" id=".service_locator.9uW928t"/>
@@ -8442,20 +8175,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-<<<<<<< HEAD
       <argument type="service" id=".service_locator.cQH9d3U"/>
-=======
-      <argument type="service" id=".service_locator.rSkQV1f"/>
->>>>>>> 356715fc1b01048a35b73ff32ba5ad2501fe27ea
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-<<<<<<< HEAD
       <argument type="service" id=".service_locator.cQH9d3U"/>
-=======
-      <argument type="service" id=".service_locator.rSkQV1f"/>
->>>>>>> 356715fc1b01048a35b73ff32ba5ad2501fe27ea
     </service>
     <service id="debug.traced.messenger.bus.default.inner" class="Symfony\Component\Messenger\MessageBus">
       <argument type="iterator">
@@ -9452,11 +9177,7 @@
     <service id="Knp\Component\Pager\PaginatorInterface" alias="knp_paginator"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-<<<<<<< HEAD
     <service id="argument_resolver.controller_locator" alias=".service_locator.cQH9d3U"/>
-=======
-    <service id="argument_resolver.controller_locator" alias=".service_locator.rSkQV1f"/>
->>>>>>> 356715fc1b01048a35b73ff32ba5ad2501fe27ea
     <service id="session" alias=".session.do-not-use" public="true">
       <deprecated package="symfony/framework-bundle" version="5.3">The "%alias_id%" service and "SessionInterface" alias are deprecated, use "$requestStack-&gt;getSession()" instead.</deprecated>
     </service>
@@ -9486,11 +9207,7 @@
     <service id=".service_locator.pFaEqBs" alias=".service_locator.001ztJT"/>
     <service id=".service_locator.zilqhMR" alias=".service_locator.Q1EeZWh"/>
     <service id=".service_locator.gPjNq68" alias=".service_locator.iVJ8gI9"/>
-<<<<<<< HEAD
     <service id=".service_locator.y12xz.." alias=".service_locator.cQH9d3U"/>
-=======
-    <service id=".service_locator.5Jj52m3" alias=".service_locator.rSkQV1f"/>
->>>>>>> 356715fc1b01048a35b73ff32ba5ad2501fe27ea
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
     <service id=".service_locator.OxvPipC" alias=".service_locator.AreSYUU"/>
     <service id=".service_locator.nk0lT0X" alias=".service_locator.1kmbKC8"/>

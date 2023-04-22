@@ -5,17 +5,17 @@
 {% block body %}
 
 	{#<!-- ======= Breadcrumbs ======= -->
-																				<div class="breadcrumbs d-flex align-items-center" style="background-image: url('assets/img/contact-header.jpg');">
-																					<div class="container position-relative d-flex flex-column align-items-center">
-																				
-																						<h2>Contact</h2>
-																						<ol>
-																							<li><a href="index.html">Home</a></li>
-																							<li>Contact</li>
-																						</ol>
-																				
-																					</div>
-																				</div><!-- End Breadcrumbs -->#}
+																						<div class="breadcrumbs d-flex align-items-center" style="background-image: url('assets/img/contact-header.jpg');">
+																							<div class="container position-relative d-flex flex-column align-items-center">
+																						
+																								<h2>Contact</h2>
+																								<ol>
+																									<li><a href="index.html">Home</a></li>
+																									<li>Contact</li>
+																								</ol>
+																						
+																							</div>
+																						</div><!-- End Breadcrumbs -->#}
 
 
 	<div class="container-fluid p-0">
@@ -23,9 +23,10 @@
 		<input type="text" id="search" class="form-control" placeholder="Search"><br>
 		<a class="btn btn-secondary" href="{{ path('app_user_new') }}">Register</a>
 		<h1 class="h3 mb-3">Blank Page</h1>
-		<div class="row">
+		<div class="row" id="alldiv">
+		
 			{% for u in pagination %}
-				<div class="card col-5 offset-3 m-1 p-5">
+				<div class="card col-5 offset-3 m-1 p-5" >
 
 					<div class="card-body row">
 						<div class="col-6">
@@ -74,30 +75,46 @@
 							<i class="fa fa-pencil"></i>
 						</a>
 
-					
+
 					</div>
 				</div>
 
 
 			{% endfor %}
-
+			
 
 			<div class="navigation">
 				{{ knp_pagination_render(pagination) }}
 			</div>
 
-
+		
 		</div>
 	</div>
-
-	<div>
-		<table border="1" id="t" class="table table-hover table-dark">
+	
+	<div class="row" id="searchdiv">
+			</div>
+	<div  style="display:none">
+		<table  border="1" id="t" class="table table-hover table-dark">
 			<thead class="thead-dark">
 				<tr>
-					<td>ID</td>
+					<td>Id</td>
 					<td>Email</td>
-					<td>password</td>
-					<td>Editer</td>
+					<td>Roles</td>
+					<td>Password</td>
+					<td>Nom</td>
+					<td>Prenom</td>
+					<td>Adress</td>
+					<td>Cin</td>
+					<td>Date_naissance</td>
+					<td>Date_creation_c</td>
+					<td>Status</td>
+					<td>Token</td>
+					<td>Score</td>
+					<td>Numtel</td>
+					<td>Image</td>
+					<td>Compte_ex</td>
+					<td>Token_ex</td>
+					<td>actions</td>
 				</tr>
 			</thead>
 			<tbody id="all">
@@ -106,13 +123,13 @@
 						<td>
 							{{ u.id }}
 						</td>
-<td>
+						<td>
 							{{ u.email }}
 						</td>
 						<td>
 							{{ u.password }}
 						</td>
-						
+
 						<td>
 							<a href="{{ path('app_user_edit', {'id':u.id}) }}">
 								modifier</a>
@@ -137,42 +154,38 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script>
 		$(document).ready(function () {
-$("#search").keyup(function () { /* La variable value va prendre la valeur insérer dans le
-						champ de texte
-						afin d’effectuer la recherche */
+$("#search").keyup(function () { 
 var value = $(this).val();
-console.log("value : ")
-/* Ajax est lancé lors du remplissage du champ texte dont
-						l’id est
-						« search » pour faire la recherche */
-$.ajax({ /* l’url est une chaine de caractères contenant
-						l’adresse où la requête est
-						6
-						envoyée */
-url: "{{ path('app_user_search') }}",
-/* La méthode utilisée pour transférer les données est
-						GET */
+console.log("value : "+value)
+
+$.ajax({ 
+url: "{{ path('app_admin_search') }}",
+
 type: 'GET',
-/*Ici search value va prendre la chaine entrée par un
-						utilisateur dans la
-						zone de recherche et sera placée après l’url */
+
 data: {
 'searchValue': value
 },
-/*Cette fonction permet de vider le contenu du tableau
-						pour recevoir le
-						nouveau contenu*/
+
 success: function (retour) {
 if (retour) {
 $('#t tbody#searchtab').empty();
+$('#searchdiv').empty();
 $.each(JSON.parse(retour), function (i, obj) {
 $('#t tbody#all').hide();
-$('#t tbody#searchtab').append('<tr><td>' + obj.id + '</td><td>' + obj.email + '</td><td> ' + obj.password + ' </td><td><a href="edit/' + obj.id + '">modifier</a> </br><a	href="deleteStudent/' + obj.id + '">supprimer</a></td></tr>');
+//$('#alldiv').hide();
+
+$('#t tbody#searchtab').append('<tr><td>' + obj.id + '</td><td> ' + obj.email + ' </td><td>' + obj.roles + '</td><td>' + obj.password + '</td><td>' + obj.nom+ '</td><td>' + obj.prenom+'</td><td>' + obj.adress + '</td><td>' + obj.cin + '</td><td>' + obj.dateNaissance + '</td><td>' + obj.dateCreationC+ '</td><td>' + obj.status+ '</td><td>' + obj.token + '</td><td>' + obj.score+ '</td><td>' + obj.numtel + '</td><td>' + obj.image + '</td><td>' + obj.compteEx + '</td><td>' + obj.tokenEx+ '</td><td><a href="' + obj.id + 'edit/">modifier</a> </br><a	href="' + obj.id + 'delete/">supprimer</a></td></tr>');
+$('#searchdiv').append('<div class="card col-5 offset-3 m-1 p-5" ><div class="card-body row"><div class="col-6"><img src="'+obj.image+'" alt="Admin" class="rounded-circle p-1 bg-primary" width="180" height="180"></div><div class="col-6 card-title align-self-center mb-0"><h5>'+obj.nom+'</h5></div></div><ul class="list-group list-group-flush"><li class="list-group-item"><i class="fa fa-envelope float-right"></i>Email :<a href="#">'+ obj.email+ '</a></li><li class="list-group-item"><i class="fa fa-phone float-right"></i>Phone : '+obj.numtel+'</li></ul><div class="float-right btn-group btn-group-sm"><a href="{{ path('app_user_show', {'id': '+obj.id+'}) }}" class="btn btn-outline-primary">Profil<i class="fa fa-pencil"><i class="fa fa-pencil"></i></i></a><a href="{{ path('app_user_edit', {'id': '+obj.id+'}) }}" class="btn btn-outline-primary">Edit<i class="fa fa-pencil"><i class="fa fa-pencil"></i></i></a><a href="{{ path('app_user_delete', {'id': '+obj.id+'}) }}" class="btn btn-outline-primary">Delete<i class="fa fa-pencil"><i class="fa fa-pencil"></i></i></a><a href="{{ path('app_message_new', {'id': '+obj.id+'} )}}" class="btn btn-outline-primary">Message<i class="fa fa-pencil"></i></a></div></div>');
 });
 } else {
 $('#t tbody#all').show();
+$('#alldiv').show();
+console.log("test")
 $('#t tbody#searchtab').empty();
+$('#searchdiv').empty();
 $('#t tbody#searchtab').fadeIn('fast');
+$('#searchdiv').fadeIn('fast');
 }
 }
 });
@@ -180,5 +193,18 @@ return false;
 });
 });
 	</script>
+
+<script>
+$("#search").keyup(function () {
+	if($(this).val()===""){
+	console.log("test")
+	$('#alldiv').show();
+	$('#searchdiv').hide();
+	}else{
+		$('#alldiv').hide();
+		$('#searchdiv').show();
+	}
+})
+</script>
 
 {% endblock %}

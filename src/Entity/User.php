@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Entity;
+
 use App\Entity\Colis;
 use App\Repository\UserRepository;
 use Doctrine\Common\Collections\ArrayCollection;
@@ -33,6 +34,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private ?string $email = null;
 
     #[ORM\Column]
+    #[Groups("user")]
     private array $roles = [];
 
     /**
@@ -48,6 +50,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         min: 2,
         minMessage: 'Le nom doit comporter au moins {{ limit }} caractères'
     )]
+    #[Groups("user")]
     private ?string $nom = null;
 
     #[ORM\Column(length: 255)]
@@ -56,9 +59,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         min: 2,
         minMessage: 'Le prenom doit comporter au moins {{ limit }} caractères'
     )]
+    #[Groups("user")]
     private ?string $prenom = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups("user")]
     #[Assert\NotBlank(message: 'L\'adresse est obligatoire')]
     #[Assert\Length(
         min: 2,
@@ -67,30 +72,39 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private ?string $adress = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups("user")]
     #[Assert\NotBlank(message: 'Le numéro de CIN est obligatoire')]
     #[Assert\Length(
         min: 8,
         minMessage: 'Le numéro de CIN doit comporter au moins {{ limit }} caractères'
     )]
     private ?string $cin = null;
-
+    #[Groups("user")]
     #[ORM\Column(type: Types::DATE_MUTABLE)]
+   
     private ?\DateTimeInterface $date_naissance = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
+    #[Groups("user")]
     private ?\DateTimeInterface $date_creation_c = null;
 
     #[ORM\Column]
+    #[Groups("user")]
     private ?bool $status = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups("user")]
     private ?string $token = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Groups("user")]
+
     private ?string $score = null;
 
     #[ORM\Column(length: 255)]
     #[Assert\NotBlank(message: 'Le numéro de téléphone est obligatoire')]
+    #[Groups("user")]
+
     #[Assert\Regex(
         pattern: '/^\+216\d{8}$/',
         message: 'Le numéro de téléphone doit commencer par +216 et être suivi de 8 chiffres'
@@ -98,12 +112,16 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private ?string $numtel = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Groups("user")]
+
     private ?string $image = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
+    #[Groups("user")]
     private ?\DateTimeInterface $compte_ex = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
+    #[Groups("user")]
     private ?\DateTimeInterface $token_ex = null;
 
     #[ORM\OneToMany(mappedBy: 'receiverId', targetEntity: Message::class, orphanRemoval: true)]
@@ -425,7 +443,8 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         }
 
         return $this;
-    }public function __toString()
+    }
+    public function __toString()
     {
         return $this->getNom();
     }
