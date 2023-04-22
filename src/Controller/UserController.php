@@ -12,6 +12,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Doctrine\Persistence\ManagerRegistry;
+use Knp\Component\Pager\PaginatorInterface;
 
 use App\Form\ResetPasswordType;
 use App\Form\ResetRequestType;
@@ -23,19 +24,21 @@ use Symfony\Component\Security\Csrf\TokenGenerator\TokenGeneratorInterface;
 #[Route('/user')]
 class UserController extends AbstractController
 
-{
-    #[Route('/', name: 'app_user_index', methods: ['GET'])]
-    public function index(Request $request, ManagerRegistry $registry, UserRepository $userRepository): Response
+{#[Route('/', name: 'app_user_index', methods: ['GET'])]
+    public function index(Request $request, ManagerRegistry $registry,PaginatorInterface $paginator, UserRepository $userRepository): Response
     {
         $query = $request->query->get('q');
 
         $users = $registry->getRepository(User::class)
             ->findBySearchQuery($query);
-        return $this->render('user/index.html.twig', [
-            'users' => $users,
-            //'users' => $userRepository->findBy([], ['id' => 'DESC']),
-        ]);
+            $pagination = $paginator->paginate(
+                $users, /* query NOT result */
+                $request->query->getInt('page', 1), /*page number*/
+                3 /*limit per page*/
+            );
+        return $this->render('user/index.html.twig', ['pagination' => $pagination]);
     }
+   
 
     #[Route('/new', name: 'app_user_new', methods: ['GET', 'POST'])]
     public function new(Request $request, UserRepository $userRepository, UserPasswordHasherInterface $userPasswordHasher): Response
@@ -65,6 +68,12 @@ class UserController extends AbstractController
             $user->setCompteEx(new \DateTime());
             $user->setDatecreationc(new \DateTime());
             $user->setTokenEx(new \DateTime());
+            $roles=[];
+            $roles=$form->get('roles')->getData();
+            $user->setRoles($roles);
+            /* dump($form->get('roles')->getData());
+            dump($user->getRoles());
+            die("end"); */
             $user->setPassword(
                 $userPasswordHasher->hashPassword(
                     $user,

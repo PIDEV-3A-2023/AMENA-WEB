@@ -38,7 +38,7 @@
 
 				<button type="submit" class="login" style="background-color: #063970">login</button>
 
-				<a href="#">Forgot Password ?</a>
+				<a href='{{ path('app_forgot_password_request') }}'">Forgot Password ?</a>
 				<hr>
 				<button type="button" onclick="window.location.href='{{ path('app_user_new') }}'" class="create-account" style="background-color: #1e81b0; width: 160px;height:36px;">Create </button>
 			</form>
