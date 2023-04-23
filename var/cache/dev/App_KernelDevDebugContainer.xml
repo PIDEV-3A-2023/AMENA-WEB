@@ -24,6 +24,7 @@
       <parameter key="SwiftmailerBundle">Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle</parameter>
       <parameter key="SymfonyCastsResetPasswordBundle">SymfonyCasts\Bundle\ResetPassword\SymfonyCastsResetPasswordBundle</parameter>
       <parameter key="KnpPaginatorBundle">Knp\Bundle\PaginatorBundle\KnpPaginatorBundle</parameter>
+      <parameter key="EndroidQrCodeBundle">Endroid\QrCodeBundle\EndroidQrCodeBundle</parameter>
     </parameter>
     <parameter key="kernel.bundles_metadata" type="collection">
       <parameter key="FrameworkBundle" type="collection">
@@ -86,6 +87,10 @@
         <parameter key="path">C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\knplabs\knp-paginator-bundle</parameter>
         <parameter key="namespace">Knp\Bundle\PaginatorBundle</parameter>
       </parameter>
+      <parameter key="EndroidQrCodeBundle" type="collection">
+        <parameter key="path">C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\endroid\qr-code-bundle\src</parameter>
+        <parameter key="namespace">Endroid\QrCodeBundle</parameter>
+      </parameter>
     </parameter>
     <parameter key="kernel.charset">UTF-8</parameter>
     <parameter key="kernel.container_class">App_KernelDevDebugContainer</parameter>
@@ -120,7 +125,7 @@
     <parameter key="kernel.trusted_hosts" type="collection"/>
     <parameter key="kernel.default_locale">en</parameter>
     <parameter key="kernel.enabled_locales" type="collection"/>
-    <parameter key="kernel.error_controller">error_controller</parameter>
+    <parameter key="kernel.error_controller">App\Controller\ErrorController::show</parameter>
     <parameter key="debug.file_link_format">null</parameter>
     <parameter key="asset.request_context.base_path">null</parameter>
     <parameter key="asset.request_context.secure">null</parameter>
@@ -404,6 +409,13 @@
         <argument type="service" id=".service_locator.mx0UMmY.App\Controller\ColisController"/>
       </call>
     </service>
+    <service id="App\Controller\ErrorController" class="App\Controller\ErrorController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.mx0UMmY.App\Controller\ErrorController"/>
+      </call>
+    </service>
     <service id="App\Controller\LoginController" class="App\Controller\LoginController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -526,6 +538,9 @@
       <argument type="service" id="doctrine"/>
     </service>
     <service id="App\Security\Sha256PasswordEncoder" class="App\Security\Sha256PasswordEncoder" autowire="true" autoconfigure="true"/>
+    <service id="App\Serializer\MyCustomProblemNormalizer" class="App\Serializer\MyCustomProblemNormalizer" autowire="true" autoconfigure="true">
+      <tag name="serializer.normalizer"/>
+    </service>
     <service id="App\Security\CustomPasswordEncoder" class="App\Security\CustomPasswordEncoder" autowire="true" autoconfigure="true"/>
     <service id="argument_metadata_factory" class="Symfony\Component\HttpKernel\ControllerMetadata\ArgumentMetadataFactory"/>
     <service id="response_listener" class="Symfony\Component\HttpKernel\EventListener\ResponseListener">
@@ -559,7 +574,7 @@
     </service>
     <service id="error_controller" class="Symfony\Component\HttpKernel\Controller\ErrorController" public="true">
       <argument type="service" id="http_kernel"/>
-      <argument>error_controller</argument>
+      <argument>App\Controller\ErrorController::show</argument>
       <argument type="service" id="error_handler.error_renderer.serializer"/>
     </service>
     <service id="exception_listener" class="Symfony\Component\HttpKernel\EventListener\ErrorListener">
@@ -567,7 +582,7 @@
       <tag name="monolog.logger" channel="request"/>
       <tag name="container.hot_path"/>
       <tag name="container.hot_path"/>
-      <argument>error_controller</argument>
+      <argument>App\Controller\ErrorController::show</argument>
       <argument type="service" id="monolog.logger.request" on-invalid="null"/>
       <argument>true</argument>
       <argument type="collection"/>
@@ -2160,6 +2175,7 @@
           <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\maker-bundle\src/translations</argument>
           <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\sensio\framework-extra-bundle\src/translations</argument>
           <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\swiftmailer-bundle/translations</argument>
+          <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\endroid\qr-code-bundle\src/translations</argument>
         </argument>
         <argument key="cache_vary" type="collection">
           <argument key="scanned_directories" type="collection">
@@ -2182,6 +2198,7 @@
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\maker-bundle\src/translations</argument>
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\sensio\framework-extra-bundle\src/translations</argument>
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\swiftmailer-bundle/translations</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\endroid\qr-code-bundle\src/translations</argument>
           </argument>
         </argument>
       </argument>
@@ -3299,6 +3316,7 @@
       <tag name="container.private" package="symfony/framework-bundle" version="5.2"/>
       <argument type="collection">
         <argument type="service" id="serializer.denormalizer.unwrapping"/>
+        <argument type="service" id="App\Serializer\MyCustomProblemNormalizer"/>
         <argument type="service" id="serializer.normalizer.flatten_exception"/>
         <argument type="service" id="serializer.normalizer.problem"/>
         <argument type="service" id="serializer.normalizer.uid"/>
@@ -5147,6 +5165,9 @@
       <call method="addExtension">
         <argument type="service" id="knp_paginator.twig.extension.pagination"/>
       </call>
+      <call method="addExtension">
+        <argument type="service" id="Endroid\QrCodeBundle\Twig\QrCodeExtension"/>
+      </call>
       <call method="addGlobal">
         <argument>app</argument>
         <argument type="service" id="twig.app_variable"/>
@@ -5348,7 +5369,7 @@
       <argument>,</argument>
     </service>
     <service id="twig.runtime_loader" class="Twig\RuntimeLoader\ContainerRuntimeLoader">
-      <argument type="service" id=".service_locator.pTeli0u"/>
+      <argument type="service" id=".service_locator.8QzOt3J"/>
     </service>
     <service id="twig.error_renderer.html" class="Symfony\Bridge\Twig\ErrorRenderer\TwigErrorRenderer">
       <argument type="service" id="twig"/>
@@ -5704,7 +5725,30 @@
         </service>
       </argument>
     </service>
-    <service id="security.access_map" class="Symfony\Component\Security\Http\AccessMap"/>
+    <service id="security.access_map" class="Symfony\Component\Security\Http\AccessMap">
+      <call method="add">
+        <argument type="service" id=".security.request_matcher.5dJADCx"/>
+        <argument type="collection">
+          <argument>ROLE_ADMIN</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
+      <call method="add">
+        <argument type="service" id=".security.request_matcher.5dJADCx"/>
+        <argument type="collection">
+          <argument>IS_AUTHENTICATED_FULLY</argument>
+          <argument>ROLE_ADMIN</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
+      <call method="add">
+        <argument type="service" id=".security.request_matcher.k4QsZh_"/>
+        <argument type="collection">
+          <argument>ROLE_USER</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
+    </service>
     <service id="security.context_listener" class="Symfony\Component\Security\Http\Firewall\ContextListener">
       <tag name="monolog.logger" channel="security"/>
       <argument type="service" id="security.untracked_token_storage"/>
@@ -6282,6 +6326,12 @@
         <argument key="security.firewall.map.context.main" type="service_closure" id="security.firewall.map.context.main"/>
       </argument>
     </service>
+    <service id=".security.request_matcher.5dJADCx" class="Symfony\Component\HttpFoundation\RequestMatcher">
+      <argument>^/admin</argument>
+    </service>
+    <service id=".security.request_matcher.k4QsZh_" class="Symfony\Component\HttpFoundation\RequestMatcher">
+      <argument>^/api/(post|comment)/\d+$</argument>
+    </service>
     <service id="security.command.user_password_encoder" class="Symfony\Bundle\SecurityBundle\Command\UserPasswordEncoderCommand">
       <tag name="console.command" command="security:encode-password"/>
       <tag name="container.no_preload"/>
@@ -6829,6 +6879,96 @@
       <tag name="twig.extension"/>
       <argument type="service" id="knp_paginator.helper.processor"/>
     </service>
+    <service id="Endroid\QrCodeBundle\Controller\GenerateController" class="Endroid\QrCodeBundle\Controller\GenerateController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <argument type="service" id="Endroid\QrCode\Builder\BuilderRegistry"/>
+    </service>
+    <service id="Endroid\QrCode\Writer\BinaryWriter" class="Endroid\QrCode\Writer\BinaryWriter" autowire="true" autoconfigure="true"/>
+    <service id="Endroid\QrCode\Writer\DebugWriter" class="Endroid\QrCode\Writer\DebugWriter" autowire="true" autoconfigure="true"/>
+    <service id="Endroid\QrCode\Writer\EpsWriter" class="Endroid\QrCode\Writer\EpsWriter" autowire="true" autoconfigure="true"/>
+    <service id="Endroid\QrCode\Writer\GifWriter" class="Endroid\QrCode\Writer\GifWriter" autowire="true" autoconfigure="true"/>
+    <service id="Endroid\QrCode\Writer\PdfWriter" class="Endroid\QrCode\Writer\PdfWriter" autowire="true" autoconfigure="true"/>
+    <service id="Endroid\QrCode\Writer\PngWriter" class="Endroid\QrCode\Writer\PngWriter" autowire="true" autoconfigure="true"/>
+    <service id="Endroid\QrCode\Writer\SvgWriter" class="Endroid\QrCode\Writer\SvgWriter" autowire="true" autoconfigure="true"/>
+    <service id="Endroid\QrCode\Writer\WebPWriter" class="Endroid\QrCode\Writer\WebPWriter" autowire="true" autoconfigure="true"/>
+    <service id="Endroid\QrCode\Builder\Builder" class="Endroid\QrCode\Builder\Builder" autowire="true" autoconfigure="true"/>
+    <service id="Endroid\QrCode\Builder\BuilderRegistry" class="Endroid\QrCode\Builder\BuilderRegistry" autowire="true" autoconfigure="true">
+      <call method="addBuilder">
+        <argument>default</argument>
+        <argument type="service">
+          <service class="Endroid\QrCode\Builder\Builder" public="true" autowire="true">
+            <call method="writer">
+              <argument type="service" id="Endroid\QrCode\Writer\PngWriter"/>
+            </call>
+            <call method="size">
+              <argument>300</argument>
+            </call>
+            <call method="margin">
+              <argument>10</argument>
+            </call>
+            <call method="encoding">
+              <argument type="service">
+                <service class="Endroid\QrCode\Encoding\Encoding">
+                  <argument>UTF-8</argument>
+                </service>
+              </argument>
+            </call>
+            <call method="errorCorrectionLevel">
+              <argument type="service">
+                <service class="Endroid\QrCode\ErrorCorrectionLevel\ErrorCorrectionLevelLow"/>
+              </argument>
+            </call>
+            <call method="roundBlockSizeMode">
+              <argument type="service">
+                <service class="Endroid\QrCode\RoundBlockSizeMode\RoundBlockSizeModeMargin"/>
+              </argument>
+            </call>
+            <call method="validateResult">
+              <argument>false</argument>
+            </call>
+          </service>
+        </argument>
+      </call>
+    </service>
+    <service id="Endroid\QrCodeBundle\Twig\QrCodeExtension" class="Endroid\QrCodeBundle\Twig\QrCodeExtension" autowire="true" autoconfigure="true">
+      <tag name="twig.extension"/>
+    </service>
+    <service id="Endroid\QrCodeBundle\Twig\QrCodeRuntime" class="Endroid\QrCodeBundle\Twig\QrCodeRuntime" autowire="true" autoconfigure="true">
+      <tag name="twig.runtime"/>
+      <argument type="service" id="Endroid\QrCode\Builder\BuilderRegistry"/>
+      <argument type="service" id="router.default"/>
+    </service>
+    <service id="endroid_qr_code.default_builder" class="Endroid\QrCode\Builder\Builder" public="true" autowire="true">
+      <call method="writer">
+        <argument type="service" id="Endroid\QrCode\Writer\PngWriter"/>
+      </call>
+      <call method="size">
+        <argument>300</argument>
+      </call>
+      <call method="margin">
+        <argument>10</argument>
+      </call>
+      <call method="encoding">
+        <argument type="service">
+          <service class="Endroid\QrCode\Encoding\Encoding">
+            <argument>UTF-8</argument>
+          </service>
+        </argument>
+      </call>
+      <call method="errorCorrectionLevel">
+        <argument type="service">
+          <service class="Endroid\QrCode\ErrorCorrectionLevel\ErrorCorrectionLevelLow"/>
+        </argument>
+      </call>
+      <call method="roundBlockSizeMode">
+        <argument type="service">
+          <service class="Endroid\QrCode\RoundBlockSizeMode\RoundBlockSizeModeMargin"/>
+        </argument>
+      </call>
+      <call method="validateResult">
+        <argument>false</argument>
+      </call>
+    </service>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\AdminController" class="App\Controller\AdminController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\AdminController" class="App\Controller\AdminController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\AdminController" class="App\Controller\AdminController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -6838,6 +6978,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ColisController" class="App\Controller\ColisController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ColisController" class="App\Controller\ColisController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\ColisController" class="App\Controller\ColisController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ErrorController" class="App\Controller\ErrorController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ErrorController" class="App\Controller\ErrorController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ErrorController" class="App\Controller\ErrorController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\LoginController" class="App\Controller\LoginController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\LoginController" class="App\Controller\LoginController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\LoginController" class="App\Controller\LoginController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -6898,6 +7041,12 @@
     <service id=".abstract.instanceof.App\Repository\ValidationRepository" class="App\Repository\ValidationRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\VehiculeRepository" class="App\Repository\VehiculeRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\VehiculeRepository" class="App\Repository\VehiculeRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Serializer\Normalizer\NormalizerInterface.0.App\Serializer\MyCustomProblemNormalizer" class="App\Serializer\MyCustomProblemNormalizer" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Serializer\MyCustomProblemNormalizer" class="App\Serializer\MyCustomProblemNormalizer" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Twig\Extension\ExtensionInterface.0.Endroid\QrCodeBundle\Twig\QrCodeExtension" class="Endroid\QrCodeBundle\Twig\QrCodeExtension" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.Endroid\QrCodeBundle\Twig\QrCodeExtension" class="Endroid\QrCodeBundle\Twig\QrCodeExtension" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Twig\Extension\RuntimeExtensionInterface.0.Endroid\QrCodeBundle\Twig\QrCodeRuntime" class="Endroid\QrCodeBundle\Twig\QrCodeRuntime" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.Endroid\QrCodeBundle\Twig\QrCodeRuntime" class="Endroid\QrCodeBundle\Twig\QrCodeRuntime" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".service_locator.gSv9zYw" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -7398,7 +7547,7 @@
         <argument key="vehicule" type="service_closure" id=".errored..service_locator.iVJ8gI9.App\Entity\Vehicule"/>
       </argument>
     </service>
-    <service id=".service_locator.cQH9d3U" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.oCX7Dl2" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\AdminController::delete" type="service_closure" id=".service_locator.9uW928t"/>
@@ -7432,6 +7581,7 @@
         <argument key="App\Controller\UserController::index" type="service_closure" id=".service_locator._yIf3yV"/>
         <argument key="App\Controller\UserController::new" type="service_closure" id=".service_locator.001ztJT"/>
         <argument key="App\Controller\UserController::searchStudentx" type="service_closure" id=".service_locator.i9GOSYV"/>
+        <argument key="App\Controller\UserController::showp" type="service_closure" id=".service_locator.4T4EJFR"/>
         <argument key="App\Controller\ValidationController::delete" type="service_closure" id=".service_locator.Q1EeZWh"/>
         <argument key="App\Controller\ValidationController::edit" type="service_closure" id=".service_locator.Q1EeZWh"/>
         <argument key="App\Controller\ValidationController::index" type="service_closure" id=".service_locator.aKM6MDa"/>
@@ -7477,6 +7627,7 @@
         <argument key="App\Controller\UserController:index" type="service_closure" id=".service_locator._yIf3yV"/>
         <argument key="App\Controller\UserController:new" type="service_closure" id=".service_locator.001ztJT"/>
         <argument key="App\Controller\UserController:searchStudentx" type="service_closure" id=".service_locator.i9GOSYV"/>
+        <argument key="App\Controller\UserController:showp" type="service_closure" id=".service_locator.4T4EJFR"/>
         <argument key="App\Controller\ValidationController:delete" type="service_closure" id=".service_locator.Q1EeZWh"/>
         <argument key="App\Controller\ValidationController:edit" type="service_closure" id=".service_locator.Q1EeZWh"/>
         <argument key="App\Controller\ValidationController:index" type="service_closure" id=".service_locator.aKM6MDa"/>
@@ -7945,6 +8096,12 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.mx0UMmY" method="withContext"/>
     </service>
+    <service id=".service_locator.mx0UMmY.App\Controller\ErrorController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\ErrorController"/>
+      <argument>App\Controller\ErrorController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.mx0UMmY" method="withContext"/>
+    </service>
     <service id=".service_locator.mx0UMmY.App\Controller\LoginController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\LoginController"/>
       <argument>App\Controller\LoginController</argument>
@@ -8175,12 +8332,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.cQH9d3U"/>
+      <argument type="service" id=".service_locator.oCX7Dl2"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.cQH9d3U"/>
+      <argument type="service" id=".service_locator.oCX7Dl2"/>
     </service>
     <service id="debug.traced.messenger.bus.default.inner" class="Symfony\Component\Messenger\MessageBus">
       <argument type="iterator">
@@ -8990,13 +9147,14 @@
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
-    <service id=".service_locator.pTeli0u" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.8QzOt3J" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="Symfony\Bridge\Twig\Extension\CsrfRuntime" type="service_closure" id="twig.runtime.security_csrf"/>
         <argument key="Symfony\Bridge\Twig\Extension\HttpKernelRuntime" type="service_closure" id="twig.runtime.httpkernel"/>
         <argument key="Symfony\Bridge\Twig\Extension\SerializerRuntime" type="service_closure" id="twig.runtime.serializer"/>
         <argument key="Symfony\Component\Form\FormRenderer" type="service_closure" id="twig.form.renderer"/>
+        <argument key="Endroid\QrCodeBundle\Twig\QrCodeRuntime" type="service_closure" id="Endroid\QrCodeBundle\Twig\QrCodeRuntime"/>
       </argument>
     </service>
     <service id="Psr\Container\ContainerInterface" alias="service_container">
@@ -9175,9 +9333,12 @@
     <service id="Swift_Transport" alias="swiftmailer.mailer.default.transport.spool"/>
     <service id="SymfonyCasts\Bundle\ResetPassword\ResetPasswordHelperInterface" alias="symfonycasts.reset_password.helper"/>
     <service id="Knp\Component\Pager\PaginatorInterface" alias="knp_paginator"/>
+    <service id="Endroid\QrCode\Builder\BuilderInterface" alias="Endroid\QrCode\Builder\Builder"/>
+    <service id="Endroid\QrCode\Builder\BuilderRegistryInterface" alias="Endroid\QrCode\Builder\BuilderRegistry"/>
+    <service id="Endroid\QrCode\Builder\BuilderInterface $defaultQrCodeBuilder" alias="endroid_qr_code.default_builder"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.cQH9d3U"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.oCX7Dl2"/>
     <service id="session" alias=".session.do-not-use" public="true">
       <deprecated package="symfony/framework-bundle" version="5.3">The "%alias_id%" service and "SessionInterface" alias are deprecated, use "$requestStack-&gt;getSession()" instead.</deprecated>
     </service>
@@ -9207,7 +9368,7 @@
     <service id=".service_locator.pFaEqBs" alias=".service_locator.001ztJT"/>
     <service id=".service_locator.zilqhMR" alias=".service_locator.Q1EeZWh"/>
     <service id=".service_locator.gPjNq68" alias=".service_locator.iVJ8gI9"/>
-    <service id=".service_locator.y12xz.." alias=".service_locator.cQH9d3U"/>
+    <service id=".service_locator.OUhY6CS" alias=".service_locator.oCX7Dl2"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
     <service id=".service_locator.OxvPipC" alias=".service_locator.AreSYUU"/>
     <service id=".service_locator.nk0lT0X" alias=".service_locator.1kmbKC8"/>

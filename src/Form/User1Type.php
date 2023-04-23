@@ -16,12 +16,13 @@ class User1Type extends AbstractType
             ->add('email')
             ->add('roles', ChoiceType::class, [
                 'choices' => [
-                    'ROLE_ADMIN' => 'ROLE_ADMIN',
+                  
                     'ROLE_USER' => 'ROLE_USER',
+                    'ROLE_TRANSPORTEUR' => 'ROLE_TRANSPORTEUR',
                     // add more roles here as needed
                 ],
                 'multiple' => true, // set this to false to allow only one option to be selected
-                'expanded' => false,
+                'expanded' => true, // set this to true to display checkboxes
             ])
             ->add('password')
             ->add('nom')

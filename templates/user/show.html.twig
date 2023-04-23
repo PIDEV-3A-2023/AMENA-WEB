@@ -35,7 +35,7 @@
 									<h4>{{ user.score }}</h4>
 									<p class="text-secondary mb-1">
 										{% if user.roles is defined %}
-											<p class="m-0">{{ user.roles|json_encode }}</p>
+											<p class="m-0">{{ user.roles[0] }}</p>
 										{% endif %}
 									</p>
 									<p class="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
@@ -120,10 +120,10 @@
 							</div>
 							<hr>
 							<div class="row">
-								<div class="col-sm-12">
+								{# <div class="col-sm-12">
 
 									<a class="btn btn-info " target="__blank" href="{{ path('app_user_edit', {'id': user.id}) }}">Edit</a>
-								</div>
+								</div> #}
 							</div>
 						</div>
 					</div>

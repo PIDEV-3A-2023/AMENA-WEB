@@ -1,9 +1,14 @@
-{% extends 'baseadmin.html.twig' %}
+{% extends 'base.html.twig' %}
 {% block title %}User index
 {% endblock %}
 
 {% block body %}
-
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 	{#<!-- ======= Breadcrumbs ======= -->
 																						<div class="breadcrumbs d-flex align-items-center" style="background-image: url('assets/img/contact-header.jpg');">
 																							<div class="container position-relative d-flex flex-column align-items-center">
@@ -19,10 +24,10 @@
 
 
 	<div class="container-fluid p-0">
-		<a href="{{ path('app_user_new') }}">Create new</a>
+		
 		<input type="text" id="search" class="form-control" placeholder="Search"><br>
 		<a class="btn btn-secondary" href="{{ path('app_user_new') }}">Register</a>
-		<h1 class="h3 mb-3">Blank Page</h1>
+		<h1 class="h3 mb-3">Transporteur</h1>
 		<div class="row" id="alldiv">
 		
 			{% for u in pagination %}
@@ -50,29 +55,29 @@
 							<i class="fa fa-phone float-right"></i>Phone :
 							{{ u.numtel }}
 						</li>
-					</ul>*
+					</ul>
 
 					<div class="float-right btn-group btn-group-sm">
-						<a href="{{ path('app_user_show', {'id': u.id}) }}" class="btn btn-outline-primary">Profil
-							<i class="fa fa-pencil">
-								<i class="fa fa-pencil"></i>
+						<a href="{{ path('app_user_showp', {'id': u.id}) }}" class="btn btn-outline-primary">Profil
+							<i class="fa fa-user-circle" ></i>
+								
 							</i>
 						</a>
 
-
+{# 
 						<a href="{{ path('app_user_edit', {'id': u.id}) }}" class="btn btn-outline-primary">Edit
 							<i class="fa fa-pencil">
-								<i class="fa fa-pencil"></i>
+								
 							</i>
 						</a>
 						<a href="{{ path('app_user_delete', {'id': u.id}) }}" class="btn btn-outline-primary">Delete
 							<i class="fa fa-pencil">
-								<i class="fa fa-pencil"></i>
+								
 							</i>
-						</a>
+						</a> #}
 
 						<a href="{{ path('app_message_new', {'id': u.id} )}}" class="btn btn-outline-primary">Message
-							<i class="fa fa-pencil"></i>
+							<i class="fa fa-m"></i>
 						</a>
 
 

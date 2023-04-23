@@ -121,6 +121,15 @@ class UserController extends AbstractController
             'user' => $user,
         ]);
     }
+    #[Route('/{id}', name: 'app_user_showp', methods: ['GET'])]
+    
+
+    public function showp(User $user): Response
+    {
+        return $this->render('user/show.html.twig', [
+            'user' => $user,
+        ]);
+    }
 
     #[Route('/edit/{id}', name: 'app_user_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, UserRepository $userRepository, UserPasswordHasherInterface $userPasswordHasher): Response
