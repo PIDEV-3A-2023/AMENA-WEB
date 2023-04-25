@@ -14,14 +14,14 @@ class LoginController extends AbstractController
     public function index(AuthenticationUtils $authenticationUtils,MailerInterface $mailer): Response
     {
        
-        $email = (new Email())
+       /*  $email = (new Email())
         ->from('aymen.zouaoui@esprit.tn')
         ->to('aymen.zouaoui@esprit.tn')
         ->subject('Test email')
         ->text('This is a test email');
         
 
-    $mailer->send($email);
+    $mailer->send($email); */
         $error = $authenticationUtils->getLastAuthenticationError();
         $lastUsername = $authenticationUtils->getLastUsername();
         return $this->render('login/index.html.twig', [

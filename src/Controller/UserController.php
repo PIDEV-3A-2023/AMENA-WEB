@@ -47,7 +47,7 @@ class UserController extends AbstractController
         $repository = $this->getDoctrine()->getRepository(User::class);
         $requestString = $request->get('searchValue');
         $users = $repository->findBySearchQuerya($requestString);
-        $jsonContent = $Normalizer->normalize($users, 'json', ['groups'=>'user']);
+        $jsonContent = $Normalizer->normalize($users, 'json', ['groups' => 'user']);
         $retour = json_encode($jsonContent);
         return new Response($retour);
     }
@@ -122,7 +122,7 @@ class UserController extends AbstractController
         ]);
     }
     #[Route('/{id}', name: 'app_user_showp', methods: ['GET'])]
-    
+
 
     public function showp(User $user): Response
     {
@@ -144,7 +144,9 @@ class UserController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             // Get the submitted password value
             $newPassword = $form->get('password')->getData();
-
+            $roles = [];
+            $roles = $form->get('roles')->getData();
+            $user->setRoles($roles);
             // Check if the password field is not empty
             if (!empty($newPassword)) {
                 $user->setPassword(
@@ -187,13 +189,13 @@ class UserController extends AbstractController
     #[Route('/delete/{id}', name: 'app_user_delete', methods: ['GET', 'POST'])]
     public function delete(Request $request, UserRepository $userRepository, $id): Response
     {
-        
+
         $user = $this->getUser();
         if ($user && $user->getRoles()[0] == "ROLE_ADMIN") {
             // dump($user);
             // die("test");
             $userRepository->remove($userRepository->find($id), true);
-        } 
+        }
         /*  if ($this->isCsrfTokenValid('delete' . $user->getId(), $request->request->get('_token'))) {
         }
  */

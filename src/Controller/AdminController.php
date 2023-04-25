@@ -5,9 +5,12 @@ namespace App\Controller;
 use App\Entity\User;
 use App\Form\User1Type;
 use App\Repository\UserRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Form\FormError;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 
@@ -41,23 +44,59 @@ class AdminController extends AbstractController
     }
 
     #[Route('/new', name: 'app_admin_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, UserRepository $userRepository): Response
-    { {
-            $user = new User();
-            $form = $this->createForm(User1Type::class, $user);
-            $form->handleRequest($request);
+    public function new(Request $request, UserRepository $userRepository,UserPasswordHasherInterface $userPasswordHasher,EntityManagerInterface $entityManager): Response
+    {
+        function generateToken($length = 32)
+        {
+            return base64_encode(random_bytes($length));
+        }
+        
+        $user=$this->getUser();
+        if($user && $user->getRoles()[0]=="ROLE_ADMIN"){
+        $user = new User();
+        $form = $this->createForm(User1Type::class, $user);
+        $form->handleRequest($request);
 
-            if ($form->isSubmitted() && $form->isValid()) {
-                $userRepository->save($user, true);
-
-                return $this->redirectToRoute('app_admin_index', [], Response::HTTP_SEE_OTHER);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $password = $form->get('password')->getData();
+            if (empty($password)) {
+                $form->get('password')->addError(new FormError('Veuillez entrer un mot de passe.'));
+                return $this->renderForm('user/new.html.twig', [
+                    'user' => $user,
+                    'form' => $form,
+                ]);
             }
 
-            return $this->renderForm('admin/new.html.twig', [
-                'user' => $user,
-                'form' => $form,
-            ]);
+            
+            $token = generateToken();
+            $user->setToken($token);
+            $user->setScore("00");
+            $user->setCompteEx(new \DateTime());
+            $user->setDatecreationc(new \DateTime());
+            $user->setTokenEx(new \DateTime());
+            $roles = [];
+            $roles = $form->get('roles')->getData();
+            $user->setRoles($roles);
+            $user->setPassword(
+                $userPasswordHasher->hashPassword(
+                    $user,
+                    $form->get('password')->getData()
+                )
+            );
+
+            $image = $form->get('image')->getData();
+            $entityManager->persist($user);
+            $entityManager->flush();
+            $userRepository->save($user, true);
+
+            return $this->redirectToRoute('app_admin_index', [], Response::HTTP_SEE_OTHER);
         }
+
+        return $this->renderForm('admin/new.html.twig', [
+            'user' => $user,
+            'form' => $form,
+        ]);
+    }
     }
     #[Route('/{id}', name: 'app_admin_show', methods: ['GET'])]
 
@@ -69,14 +108,30 @@ class AdminController extends AbstractController
     }
 
     #[Route('/edit/{id}', name: 'app_admin_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, User $user, UserRepository $userRepository): Response
+    public function edit(Request $request, User $user, UserRepository $userRepository,EntityManagerInterface $entityManager): Response
     {
         $form = $this->createForm(User1Type::class, $user);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $userRepository->save($user, true);
+            $image = $form->get('image')->getData();
 
+
+            if ($image) {
+                $fichier = md5(uniqid()) . '.' . $image->guessExtension();
+
+                $image->move(
+                    $this->getParameter('images_directory'),
+                    $fichier
+                );
+                dump($image);
+
+                $user->setImage('http://localhost/img/' . $fichier);
+                $entityManager->persist($user);
+                $entityManager->flush();
+                $userRepository->save($user, true);
+            }
             return $this->redirectToRoute('app_admin_index', [], Response::HTTP_SEE_OTHER);
         }
 

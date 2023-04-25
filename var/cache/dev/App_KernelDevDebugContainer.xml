@@ -5,8 +5,8 @@
     <parameter key="kernel.environment">dev</parameter>
     <parameter key="kernel.runtime_environment">%env(default:kernel.environment:APP_RUNTIME_ENV)%</parameter>
     <parameter key="kernel.debug">true</parameter>
-    <parameter key="kernel.build_dir">C:/Users/aymen/Desktop/gitprojet/digidreamers/var/cache/dev</parameter>
-    <parameter key="kernel.cache_dir">C:/Users/aymen/Desktop/gitprojet/digidreamers/var/cache/dev</parameter>
+    <parameter key="kernel.build_dir">C:\Users\aymen\Desktop\gitprojet\digidreamers\var\cache\dev</parameter>
+    <parameter key="kernel.cache_dir">C:\Users\aymen\Desktop\gitprojet\digidreamers\var\cache\dev</parameter>
     <parameter key="kernel.logs_dir">C:\Users\aymen\Desktop\gitprojet\digidreamers\var\log</parameter>
     <parameter key="kernel.bundles" type="collection">
       <parameter key="FrameworkBundle">Symfony\Bundle\FrameworkBundle\FrameworkBundle</parameter>
@@ -125,21 +125,21 @@
     <parameter key="kernel.trusted_hosts" type="collection"/>
     <parameter key="kernel.default_locale">en</parameter>
     <parameter key="kernel.enabled_locales" type="collection"/>
-    <parameter key="kernel.error_controller">App\Controller\ErrorController::show</parameter>
+    <parameter key="kernel.error_controller">error_controller</parameter>
     <parameter key="debug.file_link_format">null</parameter>
     <parameter key="asset.request_context.base_path">null</parameter>
     <parameter key="asset.request_context.secure">null</parameter>
     <parameter key="translator.logging">false</parameter>
     <parameter key="translator.default_path">C:\Users\aymen\Desktop\gitprojet\digidreamers/translations</parameter>
     <parameter key="debug.error_handler.throw_at">-1</parameter>
-    <parameter key="debug.container.dump">C:/Users/aymen/Desktop/gitprojet/digidreamers/var/cache/dev/App_KernelDevDebugContainer.xml</parameter>
+    <parameter key="debug.container.dump">C:\Users\aymen\Desktop\gitprojet\digidreamers\var\cache\dev/App_KernelDevDebugContainer.xml</parameter>
     <parameter key="router.request_context.host">localhost</parameter>
     <parameter key="router.request_context.scheme">http</parameter>
     <parameter key="router.request_context.base_url"></parameter>
     <parameter key="router.resource">kernel::loadRoutes</parameter>
     <parameter key="request_listener.http_port">80</parameter>
     <parameter key="request_listener.https_port">443</parameter>
-    <parameter key="serializer.mapping.cache.file">C:/Users/aymen/Desktop/gitprojet/digidreamers/var/cache/dev/serialization.php</parameter>
+    <parameter key="serializer.mapping.cache.file">C:\Users\aymen\Desktop\gitprojet\digidreamers\var\cache\dev/serialization.php</parameter>
     <parameter key="cache.prefix.seed">_C:\Users\aymen\Desktop\gitprojet\digidreamers.App_KernelDevDebugContainer</parameter>
     <parameter key="session.metadata.storage_key">_sf2_meta</parameter>
     <parameter key="session.storage.options" type="collection">
@@ -153,11 +153,11 @@
     <parameter key="session.metadata.update_threshold">0</parameter>
     <parameter key="form.type_extension.csrf.enabled">true</parameter>
     <parameter key="form.type_extension.csrf.field_name">_token</parameter>
-    <parameter key="validator.mapping.cache.file">C:/Users/aymen/Desktop/gitprojet/digidreamers/var/cache/dev/validation.php</parameter>
+    <parameter key="validator.mapping.cache.file">C:\Users\aymen\Desktop\gitprojet\digidreamers\var\cache\dev/validation.php</parameter>
     <parameter key="validator.translation_domain">validators</parameter>
     <parameter key="profiler_listener.only_exceptions">false</parameter>
     <parameter key="profiler_listener.only_main_requests">false</parameter>
-    <parameter key="profiler.storage.dsn">file:C:/Users/aymen/Desktop/gitprojet/digidreamers/var/cache/dev/profiler</parameter>
+    <parameter key="profiler.storage.dsn">file:C:\Users\aymen\Desktop\gitprojet\digidreamers\var\cache\dev/profiler</parameter>
     <parameter key="doctrine.dbal.configuration.class">Doctrine\DBAL\Configuration</parameter>
     <parameter key="doctrine.data_collector.class">Doctrine\Bundle\DoctrineBundle\DataCollector\DoctrineDataCollector</parameter>
     <parameter key="doctrine.dbal.connection.event_manager.class">Symfony\Bridge\Doctrine\ContainerAwareEventManager</parameter>
@@ -222,7 +222,7 @@
     <parameter key="doctrine.orm.second_level_cache.regions_configuration.class">Doctrine\ORM\Cache\RegionsConfiguration</parameter>
     <parameter key="doctrine.orm.auto_generate_proxy_classes">true</parameter>
     <parameter key="doctrine.orm.enable_lazy_ghost_objects">false</parameter>
-    <parameter key="doctrine.orm.proxy_dir">C:/Users/aymen/Desktop/gitprojet/digidreamers/var/cache/dev/doctrine/orm/Proxies</parameter>
+    <parameter key="doctrine.orm.proxy_dir">C:\Users\aymen\Desktop\gitprojet\digidreamers\var\cache\dev/doctrine/orm/Proxies</parameter>
     <parameter key="doctrine.orm.proxy_namespace">Proxies</parameter>
     <parameter key="doctrine.migrations.preferred_em">null</parameter>
     <parameter key="doctrine.migrations.preferred_connection">null</parameter>
@@ -272,7 +272,7 @@
     <parameter key="swiftmailer.mailer.default.transport.smtp.source_ip">null</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.local_domain">null</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.stream_options" type="collection"/>
-    <parameter key="swiftmailer.spool.default.file.path">C:/Users/aymen/Desktop/gitprojet/digidreamers/var/cache/dev/swiftmailer/spool/default</parameter>
+    <parameter key="swiftmailer.spool.default.file.path">C:\Users\aymen\Desktop\gitprojet\digidreamers\var\cache\dev/swiftmailer/spool/default</parameter>
     <parameter key="swiftmailer.mailer.default.spool.enabled">true</parameter>
     <parameter key="swiftmailer.mailer.default.plugin.impersonate">null</parameter>
     <parameter key="swiftmailer.mailer.default.single_address">null</parameter>
@@ -409,13 +409,6 @@
         <argument type="service" id=".service_locator.mx0UMmY.App\Controller\ColisController"/>
       </call>
     </service>
-    <service id="App\Controller\ErrorController" class="App\Controller\ErrorController" public="true" autowire="true" autoconfigure="true">
-      <tag name="controller.service_arguments"/>
-      <tag name="container.service_subscriber"/>
-      <call method="setContainer">
-        <argument type="service" id=".service_locator.mx0UMmY.App\Controller\ErrorController"/>
-      </call>
-    </service>
     <service id="App\Controller\LoginController" class="App\Controller\LoginController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -538,9 +531,6 @@
       <argument type="service" id="doctrine"/>
     </service>
     <service id="App\Security\Sha256PasswordEncoder" class="App\Security\Sha256PasswordEncoder" autowire="true" autoconfigure="true"/>
-    <service id="App\Serializer\MyCustomProblemNormalizer" class="App\Serializer\MyCustomProblemNormalizer" autowire="true" autoconfigure="true">
-      <tag name="serializer.normalizer"/>
-    </service>
     <service id="App\Security\CustomPasswordEncoder" class="App\Security\CustomPasswordEncoder" autowire="true" autoconfigure="true"/>
     <service id="argument_metadata_factory" class="Symfony\Component\HttpKernel\ControllerMetadata\ArgumentMetadataFactory"/>
     <service id="response_listener" class="Symfony\Component\HttpKernel\EventListener\ResponseListener">
@@ -574,7 +564,7 @@
     </service>
     <service id="error_controller" class="Symfony\Component\HttpKernel\Controller\ErrorController" public="true">
       <argument type="service" id="http_kernel"/>
-      <argument>App\Controller\ErrorController::show</argument>
+      <argument>error_controller</argument>
       <argument type="service" id="error_handler.error_renderer.serializer"/>
     </service>
     <service id="exception_listener" class="Symfony\Component\HttpKernel\EventListener\ErrorListener">
@@ -582,7 +572,7 @@
       <tag name="monolog.logger" channel="request"/>
       <tag name="container.hot_path"/>
       <tag name="container.hot_path"/>
-      <argument>App\Controller\ErrorController::show</argument>
+      <argument>error_controller</argument>
       <argument type="service" id="monolog.logger.request" on-invalid="null"/>
       <argument>true</argument>
       <argument type="collection"/>
@@ -611,7 +601,7 @@
       </argument>
     </service>
     <service id="http_cache.store" class="Symfony\Component\HttpKernel\HttpCache\Store">
-      <argument>C:/Users/aymen/Desktop/gitprojet/digidreamers/var/cache/dev/http_cache</argument>
+      <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\var\cache\dev/http_cache</argument>
     </service>
     <service id="url_helper" class="Symfony\Component\HttpFoundation\UrlHelper">
       <argument type="service" id="request_stack"/>
@@ -621,7 +611,7 @@
       <tag name="container.no_preload"/>
       <argument type="tagged_iterator" tag="kernel.cache_warmer"/>
       <argument>true</argument>
-      <argument>C:/Users/aymen/Desktop/gitprojet/digidreamers/var/cache/dev/App_KernelDevDebugContainerDeprecations.log</argument>
+      <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\var\cache\dev/App_KernelDevDebugContainerDeprecations.log</argument>
     </service>
     <service id="cache_clearer" class="Symfony\Component\HttpKernel\CacheClearer\ChainCacheClearer" public="true">
       <tag name="container.private" package="symfony/framework-bundle" version="5.2"/>
@@ -1477,7 +1467,7 @@
       <argument></argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:/Users/aymen/Desktop/gitprojet/digidreamers/var/cache/dev/pools/system</argument>
+      <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\var\cache\dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -1507,7 +1497,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>C:/Users/aymen/Desktop/gitprojet/digidreamers/var/cache/dev/pools/app</argument>
+      <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\var\cache\dev/pools/app</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
@@ -1798,7 +1788,7 @@
         </argument>
       </argument>
       <argument type="collection">
-        <argument key="cache_dir">C:/Users/aymen/Desktop/gitprojet/digidreamers/var/cache/dev/translations</argument>
+        <argument key="cache_dir">C:\Users\aymen\Desktop\gitprojet\digidreamers\var\cache\dev/translations</argument>
         <argument key="debug">true</argument>
         <argument key="resource_files" type="collection">
           <argument key="af" type="collection">
@@ -3164,7 +3154,7 @@
       <argument type="service" id=".service_locator.NUKe30Y.router.default"/>
       <argument>kernel::loadRoutes</argument>
       <argument type="collection">
-        <argument key="cache_dir">C:/Users/aymen/Desktop/gitprojet/digidreamers/var/cache/dev</argument>
+        <argument key="cache_dir">C:\Users\aymen\Desktop\gitprojet\digidreamers\var\cache\dev</argument>
         <argument key="debug">true</argument>
         <argument key="generator_class">Symfony\Component\Routing\Generator\CompiledUrlGenerator</argument>
         <argument key="generator_dumper_class">Symfony\Component\Routing\Generator\Dumper\CompiledUrlGeneratorDumper</argument>
@@ -3277,13 +3267,13 @@
     <service id="annotations.cache_warmer" class="Symfony\Bundle\FrameworkBundle\CacheWarmer\AnnotationsCacheWarmer">
       <tag name="kernel.cache_warmer"/>
       <argument type="service" id="annotations.reader"/>
-      <argument>C:/Users/aymen/Desktop/gitprojet/digidreamers/var/cache/dev/annotations.php</argument>
+      <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\var\cache\dev/annotations.php</argument>
       <argument>#^Symfony\\(?:Component\\HttpKernel\\|Bundle\\FrameworkBundle\\Controller\\(?!.*Controller$))#</argument>
       <argument>true</argument>
     </service>
     <service id="annotations.cache_adapter" class="Symfony\Component\Cache\Adapter\PhpArrayAdapter">
       <tag name="container.hot_path"/>
-      <argument>C:/Users/aymen/Desktop/gitprojet/digidreamers/var/cache/dev/annotations.php</argument>
+      <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\var\cache\dev/annotations.php</argument>
       <argument type="service" id="cache.annotations"/>
       <factory class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" method="create"/>
     </service>
@@ -3316,7 +3306,6 @@
       <tag name="container.private" package="symfony/framework-bundle" version="5.2"/>
       <argument type="collection">
         <argument type="service" id="serializer.denormalizer.unwrapping"/>
-        <argument type="service" id="App\Serializer\MyCustomProblemNormalizer"/>
         <argument type="service" id="serializer.normalizer.flatten_exception"/>
         <argument type="service" id="serializer.normalizer.problem"/>
         <argument type="service" id="serializer.normalizer.uid"/>
@@ -3423,10 +3412,10 @@
           </service>
         </argument>
       </argument>
-      <argument>C:/Users/aymen/Desktop/gitprojet/digidreamers/var/cache/dev/serialization.php</argument>
+      <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\var\cache\dev/serialization.php</argument>
     </service>
     <service id="serializer.mapping.cache.symfony" class="Psr\Cache\CacheItemPoolInterface">
-      <argument>C:/Users/aymen/Desktop/gitprojet/digidreamers/var/cache/dev/serialization.php</argument>
+      <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\var\cache\dev/serialization.php</argument>
       <argument type="service" id="cache.serializer"/>
       <factory class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" method="create"/>
     </service>
@@ -3565,7 +3554,7 @@
       <argument>true</argument>
     </service>
     <service id="session.storage.factory.mock_file" class="Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorageFactory">
-      <argument>C:/Users/aymen/Desktop/gitprojet/digidreamers/var/cache/dev/sessions</argument>
+      <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\var\cache\dev/sessions</argument>
       <argument>MOCKSESSID</argument>
       <argument type="service">
         <service class="Symfony\Component\HttpFoundation\Session\Storage\MetadataBag">
@@ -3789,10 +3778,10 @@
     <service id="validator.mapping.cache_warmer" class="Symfony\Bundle\FrameworkBundle\CacheWarmer\ValidatorCacheWarmer">
       <tag name="kernel.cache_warmer"/>
       <argument type="service" id="validator.builder"/>
-      <argument>C:/Users/aymen/Desktop/gitprojet/digidreamers/var/cache/dev/validation.php</argument>
+      <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\var\cache\dev/validation.php</argument>
     </service>
     <service id="validator.mapping.cache.adapter" class="Symfony\Component\Cache\Adapter\PhpArrayAdapter">
-      <argument>C:/Users/aymen/Desktop/gitprojet/digidreamers/var/cache/dev/validation.php</argument>
+      <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\var\cache\dev/validation.php</argument>
       <argument type="service" id="cache.validator"/>
       <factory class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" method="create"/>
     </service>
@@ -4179,7 +4168,7 @@
       </call>
     </service>
     <service id="profiler.storage" class="Symfony\Component\HttpKernel\Profiler\FileProfilerStorage">
-      <argument>file:C:/Users/aymen/Desktop/gitprojet/digidreamers/var/cache/dev/profiler</argument>
+      <argument>file:C:\Users\aymen\Desktop\gitprojet\digidreamers\var\cache\dev/profiler</argument>
     </service>
     <service id="profiler_listener" class="Symfony\Component\HttpKernel\EventListener\ProfilerListener">
       <tag name="kernel.event_subscriber"/>
@@ -4226,7 +4215,7 @@
       <tag name="monolog.logger" channel="profiler"/>
       <tag name="data_collector" template="@WebProfiler/Collector/logger.html.twig" id="logger" priority="300"/>
       <argument type="service" id="monolog.logger.profiler" on-invalid="ignore"/>
-      <argument>C:/Users/aymen/Desktop/gitprojet/digidreamers/var/cache/dev/App_KernelDevDebugContainer</argument>
+      <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\var\cache\dev/App_KernelDevDebugContainer</argument>
       <argument type="service" id="request_stack" on-invalid="ignore"/>
     </service>
     <service id="data_collector.time" class="Symfony\Component\HttpKernel\DataCollector\TimeDataCollector">
@@ -4734,7 +4723,7 @@
         <argument type="service" id=".doctrine.orm.default_metadata_driver"/>
       </call>
       <call method="setProxyDir">
-        <argument>C:/Users/aymen/Desktop/gitprojet/digidreamers/var/cache/dev/doctrine/orm/Proxies</argument>
+        <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\var\cache\dev/doctrine/orm/Proxies</argument>
       </call>
       <call method="setProxyNamespace">
         <argument>Proxies</argument>
@@ -5100,7 +5089,7 @@
       <argument type="service" id="twig.loader.native_filesystem"/>
       <argument type="collection">
         <argument key="autoescape">name</argument>
-        <argument key="cache">C:/Users/aymen/Desktop/gitprojet/digidreamers/var/cache/dev/twig</argument>
+        <argument key="cache">C:\Users\aymen\Desktop\gitprojet\digidreamers\var\cache\dev/twig</argument>
         <argument key="charset">UTF-8</argument>
         <argument key="debug">true</argument>
         <argument key="strict_variables">true</argument>
@@ -5250,6 +5239,14 @@
       <call method="addPath">
         <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\debug-bundle/Resources/views</argument>
         <argument>!Debug</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers/templates/bundles/TwigBundle</argument>
+        <argument>Twig</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers/templates/bundles/TwigBundle</argument>
+        <argument>!Twig</argument>
       </call>
       <call method="addPath">
         <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\web-profiler-bundle/Resources/views</argument>
@@ -6796,7 +6793,7 @@
       <argument type="service" id="swiftmailer.mailer.default.transport.spool"/>
     </service>
     <service id="swiftmailer.mailer.default.spool.file" class="Swift_FileSpool">
-      <argument>C:/Users/aymen/Desktop/gitprojet/digidreamers/var/cache/dev/swiftmailer/spool/default</argument>
+      <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\var\cache\dev/swiftmailer/spool/default</argument>
     </service>
     <service id="swiftmailer.mailer.default.transport.spool" class="Swift_Transport_SpoolTransport">
       <argument type="service" id="swiftmailer.mailer.default.transport.eventdispatcher"/>
@@ -6978,9 +6975,6 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ColisController" class="App\Controller\ColisController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ColisController" class="App\Controller\ColisController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\ColisController" class="App\Controller\ColisController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ErrorController" class="App\Controller\ErrorController" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ErrorController" class="App\Controller\ErrorController" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\ErrorController" class="App\Controller\ErrorController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\LoginController" class="App\Controller\LoginController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\LoginController" class="App\Controller\LoginController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\LoginController" class="App\Controller\LoginController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -7041,8 +7035,6 @@
     <service id=".abstract.instanceof.App\Repository\ValidationRepository" class="App\Repository\ValidationRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\VehiculeRepository" class="App\Repository\VehiculeRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\VehiculeRepository" class="App\Repository\VehiculeRepository" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Component\Serializer\Normalizer\NormalizerInterface.0.App\Serializer\MyCustomProblemNormalizer" class="App\Serializer\MyCustomProblemNormalizer" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Serializer\MyCustomProblemNormalizer" class="App\Serializer\MyCustomProblemNormalizer" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Twig\Extension\ExtensionInterface.0.Endroid\QrCodeBundle\Twig\QrCodeExtension" class="Endroid\QrCodeBundle\Twig\QrCodeExtension" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.Endroid\QrCodeBundle\Twig\QrCodeExtension" class="Endroid\QrCodeBundle\Twig\QrCodeExtension" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Twig\Extension\RuntimeExtensionInterface.0.Endroid\QrCodeBundle\Twig\QrCodeRuntime" class="Endroid\QrCodeBundle\Twig\QrCodeRuntime" autowire="true" abstract="true"/>
@@ -7394,10 +7386,26 @@
         <argument key="userRepository" type="service_closure" id="App\Repository\UserRepository"/>
       </argument>
     </service>
+    <service id=".service_locator.D0T2yQY" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+        <argument key="userPasswordHasher" type="service_closure" id="security.user_password_hasher"/>
+        <argument key="userRepository" type="service_closure" id="App\Repository\UserRepository"/>
+      </argument>
+    </service>
     <service id=".service_locator.4T4EJFR" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="user" type="service_closure" id=".errored..service_locator.4T4EJFR.App\Entity\User"/>
+      </argument>
+    </service>
+    <service id=".service_locator.bsljZSk" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+        <argument key="user" type="service_closure" id=".errored..service_locator.bsljZSk.App\Entity\User"/>
+        <argument key="userRepository" type="service_closure" id="App\Repository\UserRepository"/>
       </argument>
     </service>
     <service id=".service_locator.9uW928t" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -7547,13 +7555,13 @@
         <argument key="vehicule" type="service_closure" id=".errored..service_locator.iVJ8gI9.App\Entity\Vehicule"/>
       </argument>
     </service>
-    <service id=".service_locator.oCX7Dl2" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.4IJyzFY" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\AdminController::delete" type="service_closure" id=".service_locator.9uW928t"/>
-        <argument key="App\Controller\AdminController::edit" type="service_closure" id=".service_locator.9uW928t"/>
+        <argument key="App\Controller\AdminController::edit" type="service_closure" id=".service_locator.bsljZSk"/>
         <argument key="App\Controller\AdminController::index" type="service_closure" id=".service_locator.Q1F27w5"/>
-        <argument key="App\Controller\AdminController::new" type="service_closure" id=".service_locator.Q1F27w5"/>
+        <argument key="App\Controller\AdminController::new" type="service_closure" id=".service_locator.D0T2yQY"/>
         <argument key="App\Controller\AdminController::searchStudentx" type="service_closure" id=".service_locator.i9GOSYV"/>
         <argument key="App\Controller\AdminController::show" type="service_closure" id=".service_locator.4T4EJFR"/>
         <argument key="App\Controller\AnnoncesController::delete" type="service_closure" id=".service_locator.CjLvgM8"/>
@@ -7597,9 +7605,9 @@
         <argument key="kernel::loadRoutes" type="service_closure" id=".service_locator.xUrKPVU"/>
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.xUrKPVU"/>
         <argument key="App\Controller\AdminController:delete" type="service_closure" id=".service_locator.9uW928t"/>
-        <argument key="App\Controller\AdminController:edit" type="service_closure" id=".service_locator.9uW928t"/>
+        <argument key="App\Controller\AdminController:edit" type="service_closure" id=".service_locator.bsljZSk"/>
         <argument key="App\Controller\AdminController:index" type="service_closure" id=".service_locator.Q1F27w5"/>
-        <argument key="App\Controller\AdminController:new" type="service_closure" id=".service_locator.Q1F27w5"/>
+        <argument key="App\Controller\AdminController:new" type="service_closure" id=".service_locator.D0T2yQY"/>
         <argument key="App\Controller\AdminController:searchStudentx" type="service_closure" id=".service_locator.i9GOSYV"/>
         <argument key="App\Controller\AdminController:show" type="service_closure" id=".service_locator.4T4EJFR"/>
         <argument key="App\Controller\AnnoncesController:delete" type="service_closure" id=".service_locator.CjLvgM8"/>
@@ -8096,12 +8104,6 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.mx0UMmY" method="withContext"/>
     </service>
-    <service id=".service_locator.mx0UMmY.App\Controller\ErrorController" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\ErrorController"/>
-      <argument>App\Controller\ErrorController</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.mx0UMmY" method="withContext"/>
-    </service>
     <service id=".service_locator.mx0UMmY.App\Controller\LoginController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\LoginController"/>
       <argument>App\Controller\LoginController</argument>
@@ -8332,12 +8334,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.oCX7Dl2"/>
+      <argument type="service" id=".service_locator.4IJyzFY"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.oCX7Dl2"/>
+      <argument type="service" id=".service_locator.4IJyzFY"/>
     </service>
     <service id="debug.traced.messenger.bus.default.inner" class="Symfony\Component\Messenger\MessageBus">
       <argument type="iterator">
@@ -8358,6 +8360,7 @@
     </service>
     <service id=".errored..service_locator.xUrKPVU.Symfony\Component\Config\Loader\LoaderInterface" class="Symfony\Component\Config\Loader\LoaderInterface"/>
     <service id=".errored..service_locator.4T4EJFR.App\Entity\User" class="App\Entity\User"/>
+    <service id=".errored..service_locator.bsljZSk.App\Entity\User" class="App\Entity\User"/>
     <service id=".errored..service_locator.9uW928t.App\Entity\User" class="App\Entity\User"/>
     <service id=".errored..service_locator.ECpDOfk.App\Entity\Annonces" class="App\Entity\Annonces"/>
     <service id=".errored..service_locator.CjLvgM8.App\Entity\Annonces" class="App\Entity\Annonces"/>
@@ -9074,7 +9077,7 @@
     <service id="cache.app.recorder_inner" class="Symfony\Component\Cache\Adapter\FilesystemAdapter">
       <argument>LLOnKeQG-g</argument>
       <argument>0</argument>
-      <argument>C:/Users/aymen/Desktop/gitprojet/digidreamers/var/cache/dev/pools/app</argument>
+      <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\var\cache\dev/pools/app</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
@@ -9084,7 +9087,7 @@
       <argument>D7QvTAqTre</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:/Users/aymen/Desktop/gitprojet/digidreamers/var/cache/dev/pools/system</argument>
+      <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\var\cache\dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -9092,7 +9095,7 @@
       <argument>cCzz7EvyPe</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:/Users/aymen/Desktop/gitprojet/digidreamers/var/cache/dev/pools/system</argument>
+      <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\var\cache\dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -9100,7 +9103,7 @@
       <argument>LNGww7LRia</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:/Users/aymen/Desktop/gitprojet/digidreamers/var/cache/dev/pools/system</argument>
+      <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\var\cache\dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -9108,7 +9111,7 @@
       <argument>ADkihWdibs</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:/Users/aymen/Desktop/gitprojet/digidreamers/var/cache/dev/pools/system</argument>
+      <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\var\cache\dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -9116,14 +9119,14 @@
       <argument>l39lo8xfsR</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:/Users/aymen/Desktop/gitprojet/digidreamers/var/cache/dev/pools/system</argument>
+      <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\var\cache\dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.messenger.restart_workers_signal.recorder_inner" class="Symfony\Component\Cache\Adapter\FilesystemAdapter">
       <argument>oImOSvnY+n</argument>
       <argument>0</argument>
-      <argument>C:/Users/aymen/Desktop/gitprojet/digidreamers/var/cache/dev/pools/app</argument>
+      <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\var\cache\dev/pools/app</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
@@ -9133,7 +9136,7 @@
       <argument>lIGMje74Vc</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:/Users/aymen/Desktop/gitprojet/digidreamers/var/cache/dev/pools/system</argument>
+      <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\var\cache\dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -9143,7 +9146,7 @@
       <argument>aQAGtgHMME</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:/Users/aymen/Desktop/gitprojet/digidreamers/var/cache/dev/pools/system</argument>
+      <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\var\cache\dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -9338,7 +9341,7 @@
     <service id="Endroid\QrCode\Builder\BuilderInterface $defaultQrCodeBuilder" alias="endroid_qr_code.default_builder"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.oCX7Dl2"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.4IJyzFY"/>
     <service id="session" alias=".session.do-not-use" public="true">
       <deprecated package="symfony/framework-bundle" version="5.3">The "%alias_id%" service and "SessionInterface" alias are deprecated, use "$requestStack-&gt;getSession()" instead.</deprecated>
     </service>
@@ -9362,13 +9365,15 @@
     <service id=".service_locator.80edgLI" alias="messenger.receiver_locator"/>
     <service id=".service_locator.h8Jkkd2" alias="messenger.retry_strategy_locator"/>
     <service id=".service_locator.0GV1BZZ" alias=".service_locator.gSv9zYw"/>
+    <service id=".service_locator.oYdWrmM" alias=".service_locator.D0T2yQY"/>
+    <service id=".service_locator.jYO2.AM" alias=".service_locator.bsljZSk"/>
     <service id=".service_locator.vEbnrl2" alias=".service_locator.7B8MPwp"/>
     <service id=".service_locator.riGN6sa" alias=".service_locator.YU8H6ve"/>
     <service id=".service_locator.pc.B9w." alias=".service_locator._yIf3yV"/>
     <service id=".service_locator.pFaEqBs" alias=".service_locator.001ztJT"/>
     <service id=".service_locator.zilqhMR" alias=".service_locator.Q1EeZWh"/>
     <service id=".service_locator.gPjNq68" alias=".service_locator.iVJ8gI9"/>
-    <service id=".service_locator.OUhY6CS" alias=".service_locator.oCX7Dl2"/>
+    <service id=".service_locator.A8ZcZS9" alias=".service_locator.4IJyzFY"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
     <service id=".service_locator.OxvPipC" alias=".service_locator.AreSYUU"/>
     <service id=".service_locator.nk0lT0X" alias=".service_locator.1kmbKC8"/>
@@ -9398,7 +9403,9 @@
     <service id=".service_locator.uo5c0SP" alias=".service_locator.xUrKPVU"/>
     <service id=".service_locator.5kp8gXO" alias=".service_locator.i9GOSYV"/>
     <service id=".service_locator.HO7.gFw" alias=".service_locator.Q1F27w5"/>
+    <service id=".service_locator._243469" alias=".service_locator.D0T2yQY"/>
     <service id=".service_locator.Zp0NSXM" alias=".service_locator.4T4EJFR"/>
+    <service id=".service_locator.MgzX1Qf" alias=".service_locator.bsljZSk"/>
     <service id=".service_locator.S89QQxH" alias=".service_locator.9uW928t"/>
     <service id=".service_locator.pYjUS3E" alias=".service_locator.Tr_CAXc"/>
     <service id=".service_locator.Lf1y6gR" alias=".service_locator.ECpDOfk"/>
