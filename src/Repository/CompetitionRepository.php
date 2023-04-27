@@ -54,13 +54,13 @@ class CompetitionRepository extends ServiceEntityRepository
 //        ;
 //    }
 
-//    public function findOneBySomeField($value): ?Competition
-//    {
-//        return $this->createQueryBuilder('c')
-//            ->andWhere('c.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->getQuery()
-//            ->getOneOrNullResult()
-//        ;
-//    }
+    public function findOneById($value): ?Competition
+    {
+       return $this->createQueryBuilder('c')
+           ->andWhere('c.id = :val')
+           ->setParameter('val', $value)
+           ->getQuery()
+           ->getOneOrNullResult()
+       ;
+   }
 }

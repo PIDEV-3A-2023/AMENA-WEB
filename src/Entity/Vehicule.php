@@ -34,10 +34,12 @@ class Vehicule
 
     #[ORM\Column(length: 30)]
     #[Assert\NotBlank(message:"La valeur de la Kilometrage doit être remplie")]
+    #[Assert\Positive(message:"La valeur de la Kilometrage doit être positive")]
     private ?string $kilometrage = null ; 
   
     #[ORM\Column]
     #[Assert\NotBlank(message:"La valeur des chevaux ne doit pas être vide")]
+    #[Assert\Positive(message:"La valeur des cheveaux doit être positive")]
     private ?int $chevaux=0 ;
 
     #[ORM\Column(length: 30)]
@@ -49,9 +51,8 @@ class Vehicule
     private ?string $modele = null ;
     
     #[ORM\Column(length: 15)]
-    #[Assert\NotBlank(message:"La valeur de la couleur doit être remplie")]
-    private ?string $couleur = null ;
-
+    #[Assert\NotBlank(message:"La valeur de la lpec doit être remplie")]
+    private ?string $lpec = null ;
 
     #[ORM\Column]
     #[Assert\NotBlank(message:"La valeur de la prix doit être remplie")]
@@ -164,14 +165,14 @@ class Vehicule
         return $this;
     }
 
-    public function getCouleur(): ?string
+    public function getlpec(): ?string
     {
-        return $this->couleur;
+        return $this->lpec;
     }
 
-    public function setCouleur(string $couleur): self
+    public function setlpec(string $lpec): self
     {
-        $this->couleur = $couleur;
+        $this->lpec = $lpec;
 
         return $this;
     }
@@ -234,6 +235,11 @@ class Vehicule
         }
 
         return $this;
+    }
+
+    public function getEtat(): ?int
+    {
+        return $this->etat;
     }
 
     

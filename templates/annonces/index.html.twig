@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+	<h1>Annonces index</h1>
+
+	<table class="table">
+
+		<tbody>
+			{% for annonce in annonces|batch(3) %}
+				<tr>
+					{% for a in annonce %}
+						<td>
+							{{ a.Type }}
+							<div class="col-md-6 col-xl-3">
+								<div class="card m-b-10" style="width: 450px; height: 500px;">
+									<div class="card-body row">
+
+										<div class="col-6 card-title align-self-center mb-0">
+											<h5>La ville de depart :</h5>
+											<h5>{{ a.villeDep}}</h5>
+											<h5>La ville d'arrivee :</h5>
+											<h5>{{ a.villeArr}}</h5>
+											<h5>La Date de depart :</h5>
+											<h5>{{ a.DateDep}}</h5>
+											<h5>La Date d'arrivee :</h5>
+											<h5>{{ a.DateArr}}</h5>
+											<h5>Description :</h5>
+											<h5>{{ a.Description}}</h5>
+										</div>
+									</div>
+									<div class="float-right btn-group btn-group-sm" style="width: 75px; height: 35px;">
+										<a href="{{ path('app_annonces_show', {'id': a.id}) }}" class="btn btn-primary tooltips" data-placement="top" data-toggle="tooltip" data-original-title="Edit">
+											<i class="fa fa-pencil"></i>
+										</a>
+										<a href="{{ path('app_annonces_delete', {'id': a.id}) }}" class="btn btn-secondary tooltips" data-placement="top" data-toggle="tooltip" data-original-title="Delete">
+											<i class="fa fa-times"></i>
+										</a>
+									</div>
+								</div>
+							</div>
+						</td>
+					{% endfor %}
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+	<a href="{{ path('app_annonces_new') }}">Create new</a>
+{% endblock %}

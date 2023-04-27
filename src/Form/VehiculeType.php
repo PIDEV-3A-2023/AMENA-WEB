@@ -10,7 +10,6 @@ use Symfony\Component\Validator\Constraints\File;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-
 class VehiculeType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
@@ -25,7 +24,9 @@ class VehiculeType extends AbstractType
                     'Velo' => 'Velo'
                 ],
             ])
-            ->add('immat')
+            ->add('immat', null, [
+                'label' => 'Matricule'
+            ])
             ->add('etat',ChoiceType::class, [
                 'choices'  => [
                     'etat' => null,
@@ -37,7 +38,9 @@ class VehiculeType extends AbstractType
             ->add('chevaux')
             ->add('marque')
             ->add('modele')
-            ->add('couleur')
+            ->add('lpec', null, [
+                'label' => 'Lieu de prise en charge'
+            ])
             ->add('prix')
             ->add('img',FileType::class,[
                 'label' => 'image',
@@ -58,11 +61,11 @@ class VehiculeType extends AbstractType
                             'image/jpeg',
                             'image/png',
                         ],
-                        'mimeTypesMessage' => 'Please upload a valid Image document',
+                        'mimeTypesMessage' => 'Veuillez télécharger un image valide',
                     ])
                 ],
             ])
-            ->add('save',SubmitType::class)
+            ->add('Enregistrer',SubmitType::class)
             ;
     }
 

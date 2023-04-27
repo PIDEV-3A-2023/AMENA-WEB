@@ -16,8 +16,9 @@ class CompetitionController extends AbstractController
     #[Route('/', name: 'app_competition_index', methods: ['GET'])]
     public function index(CompetitionRepository $competitionRepository): Response
     {
+       $competition = $competitionRepository->findBy([],['id' =>'DESC']);
         return $this->render('competition/index.html.twig', [
-            'competitions' => $competitionRepository->findAll(),
+            'competitions' => $competition,
         ]);
     }
 
@@ -29,9 +30,18 @@ class CompetitionController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $data = $form->getData();
+            $valeur1 = $data->getDateDeb(); 
+            $valeur2 = $data->getDateFin(); 
+            if($valeur1 > $valeur2) {
+                return $this->renderForm('competition/new.html.twig', [
+                    'competition' => $competition,
+                    'form' => $form,
+                ]);
+            } 
+            return $this->redirectToRoute('app_competition_index', [], Response::HTTP_SEE_OTHER);
             $competitionRepository->save($competition, true);
 
-            return $this->redirectToRoute('app_competition_index', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('competition/new.html.twig', [
@@ -75,4 +85,32 @@ class CompetitionController extends AbstractController
 
         return $this->redirectToRoute('app_competition_index', [], Response::HTTP_SEE_OTHER);
     }
+    
+    
+    /*soooort*/
+    #[Route('/sort-by-nbp', name: 'app_competition_sort_by_nbp', methods: ['GET'])]
+public function sortByNbp(CompetitionRepository $competitionRepository): Response
+{
+    $competitions = $competitionRepository->findAll();
+    usort($competitions, function($a, $b) {
+        return $a->getNbp() <=> $b->getNbp();
+    });
+    return $this->render('competition/sorted.html.twig', [
+        'competitions' => $competitions,
+    ]);
+}
+
+/*soort*/
+/*#[Route('/sort', name: 'app_competition_sort')]
+public function sort(CompetitionRepository $competitionRepository): Response
+{
+    $competitions = $competitionRepository->findAll();
+    usort($competitions, function ($a, $b) {
+        return count($a->getParticipants()) <=> count($b->getParticipants());
+    });
+
+    return $this->render('competition/sorted_list.html.twig', [
+        'competitions' => $competitions,
+    ]);
+}*/
 }

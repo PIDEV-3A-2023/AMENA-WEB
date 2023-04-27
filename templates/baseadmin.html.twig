@@ -30,60 +30,40 @@
 <div class="wrapper">
 		<nav id="sidebar" class="sidebar js-sidebar">
 			<div class="sidebar-content js-simplebar">
-				<a class="sidebar-brand" href="/">
-<img src="{{ asset('back/assets/img/logo.png') }}" alt="" style="width:80px; height:80px;">          <span class="align-middle">Amena</span>
+				<a class="sidebar-brand" href="index.html">
+          <span class="align-middle">Amena</span>
         </a>
 
 				<ul class="sidebar-nav">
 					<li class="sidebar-header">
 						Pages
 					</li>
-
-
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="#">
-              <i class="align-middle" data-feather="user"></i> <span class="align-middle">Profil</span>
+			<li class="sidebar-item">
+						<a class="sidebar-link" href="{{ url('app_reservation_index') }}">
+              <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard location</span>
             </a>
 					</li>
-
-
 					<li class="sidebar-item">
-						<a class="sidebar-link" href="#">
-              <i class="align-middle" data-feather="user-plus"></i> <span class="align-middle">Utilisateurs</span>
+						<a class="sidebar-link" href="{{ url('app_user_index') }}">
+              <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard user</span>
             </a>
 					</li>
-
 					<li class="sidebar-item">
-						<a class="sidebar-link" href="ui-buttons.html">
-              <i class="align-middle" data-feather="square"></i> <span class="align-middle">Annonces</span>
+						<a class="sidebar-link" href="{{ url('app_vehicule_index') }}">
+              <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard vehicule</span>
             </a>
 					</li>
 
 					<li class="sidebar-item">
-						<a class="sidebar-link" href="/colis/">
-              <i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Colis</span>
+						<a class="sidebar-link" href="pages-profile.html">
+              <i class="align-middle" data-feather="user"></i> <span class="align-middle">Profile</span>
             </a>
 					</li>
 
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="ui-cards.html">
-              <i class="align-middle" data-feather="grid"></i> <span class="align-middle">Véhicules</span>
-            </a>
-					</li>
 
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="{{ url('app_competition_index') }}">
-              <i class="align-middle" data-feather="align-left"></i> <span class="align-middle">Gamification</span>
-            </a>
-					</li>
+				</ul>
 
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="icons-feather.html">
-              <i class="align-middle" data-feather="coffee"></i> <span class="align-middle">Statistiques</span>
-            </a>
-					</li>
-
-			</div>
+			
 		</nav>
 
 		<div class="main">
@@ -232,16 +212,16 @@
               </a>
 
 							<a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
-                <img src="{{asset('back/assets/img/avatars/avatar.jpg')}}" class="avatar img-fluid rounded me-1" alt="Charles Hall" /> <span class="text-dark">Nom</span>
+                <img src="{{asset('back/assets/img/avatars/avatar.jpg')}}" class="avatar img-fluid rounded me-1" alt="Charles Hall" /> <span class="text-dark">Charles Hall</span>
               </a>
 							<div class="dropdown-menu dropdown-menu-end">
-								<a class="dropdown-item" href="pages-profile.html"><i class="align-middle me-1" data-feather="user"></i> Profil</a>
-								<a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="pie-chart"></i> ..</a>
+								<a class="dropdown-item" href="pages-profile.html"><i class="align-middle me-1" data-feather="user"></i> Profile</a>
+								<a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="pie-chart"></i> Analytics</a>
 								<div class="dropdown-divider"></div>
 								<a class="dropdown-item" href="index.html"><i class="align-middle me-1" data-feather="settings"></i> Settings & Privacy</a>
 								<a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="help-circle"></i> Help Center</a>
 								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="#">Déconnexion</a>
+								<a class="dropdown-item" href="#">Log out</a>
 							</div>
 						</li>
 					</ul>
@@ -250,44 +230,20 @@
 
     <main class="content">
 		{% block body %}
-
-
+        
+        
         {% endblock %}
 </main>
 
 			<footer class="footer">
-				<div class="container-fluid">
-					<div class="row text-muted">
-						<div class="col-6 text-start">
-							<p class="mb-0">
-								<a class="text-muted" href="https://adminkit.io/" target="_blank"><strong>Amena</strong></a> - <a class="text-muted" href="https://adminkit.io/" target="_blank"><strong></strong></a>								&copy;
-							</p>
-						</div>
-						<div class="col-6 text-end">
-							<ul class="list-inline">
-								<li class="list-inline-item">
-									<a class="text-muted" href="https://adminkit.io/" target="_blank">Support</a>
-								</li>
-								<li class="list-inline-item">
-									<a class="text-muted" href="https://adminkit.io/" target="_blank">Help Center</a>
-								</li>
-								<li class="list-inline-item">
-									<a class="text-muted" href="https://adminkit.io/" target="_blank">Privacy</a>
-								</li>
-								<li class="list-inline-item">
-									<a class="text-muted" href="https://adminkit.io/" target="_blank">Terms</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
+			
 			</footer>
 		</div>
 	</div>
 
 
         {% block javascripts %}
-
+			
 			{{ encore_entry_script_tags('app') }}
             <script src="{{asset('back/assets/js/app.js')}}"></script>
 		{% endblock %}

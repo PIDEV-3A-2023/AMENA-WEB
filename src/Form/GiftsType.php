@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use App\Entity\Gifts;
+use App\Entity\Competition;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -10,6 +11,10 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Validator\Constraints\File;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Gregwar\CaptchaBundle\Type\CaptchaType;
+
 class GiftsType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
@@ -18,7 +23,8 @@ class GiftsType extends AbstractType
             ->add('name',TextType::class,[
                 'label'=>'Nom'
             ])
-            ->add('description')
+            ->add('description',TextareaType::class,[
+            ])
             ->add('value',TextType::class,[
                 'label'=>'Valeur'
             ])
@@ -46,7 +52,13 @@ class GiftsType extends AbstractType
                     ])
                 ],
             ])
+           /*   ->add('competition', EntityType::class, [
+                'label' => 'Compétition',
+                'class' => Competition::class,
+                'choice_label' => 'title', // Affiche le nom de la compétition dans la liste
+            ])*/
             ->add('idC')
+          ->add('captcha',CaptchaType::class)
             ->add('save',SubmitType::class)
 
         ;

@@ -47,6 +47,35 @@
 
 	</head>
 	<body>
+	{% for flash_message in app.flashes('success') %}
+    <div class="alert alert-success alert-dismissible fade show" role="alert" id="flash-message">
+        <div class="d-flex align-items-center">
+            <i class="bi bi-check-circle-fill me-2"></i>
+            <span>{{ flash_message }}</span>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+{% endfor %}
+{% for flash_message in app.flashes('error') %}
+<div class="alert alert-danger alert-dismissible fade show" role="alert" id="flash-message">
+<div class="d-flex align-items-center">
+<i class="bi bi-exclamation-triangle-fill me-2"></i>
+<span>{{ flash_message }}</span>
+</div>
+<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endfor %}
+
+
+<script>
+    // Masquer automatiquement le message de succès après 3 secondes
+    setTimeout(function() {
+        var flashMessage = document.getElementById('flash-message');
+        if (flashMessage !== null) {
+            flashMessage.remove();
+        }
+    }, 3000);
+</script>
     <!-- ======= Header ======= -->
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
@@ -54,7 +83,7 @@
       <a href="index.html" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="front/assets/img/logo.png" alt=""> -->
-        <h1 class="d-flex align-items-center">Nova</h1>
+        <h1 class="d-flex align-items-center">Amena</h1>
       </a>
 
       <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
@@ -85,7 +114,7 @@
               <li><a >Dropdown 4</a></li>
             </ul>
           </li>
-          <li><a href="contact.html" class="active">Contact</a></li>
+          <li><a href="contact.html" class="active">Gamification</a></li>
         </ul>
       </nav><!-- .navbar -->
 
@@ -96,15 +125,16 @@
     <div class="breadcrumbs d-flex align-items-center" style="background-image: url('assets/img/contact-header.jpg');">
       <div class="container position-relative d-flex flex-column align-items-center">
 
-        <h2>Contact</h2>
-        <ol>
-          <li><a href="index.html">Home</a></li>
-          <li>Contact</li>
-        </ol>
-
+        <h2>Gamification</h2>
       </div>
     </div><!-- End Breadcrumbs -->
    <main id="main">
+   {% for message in app.session.flashbag.get('success') %}
+    <div class="alert alert-success" role="alert">
+        <i class="fas fa-check-circle mr-2"></i>{{ message }}
+    </div>
+{% endfor %}
+ 
 		{% block body %}{% endblock %}
         </main><!-- End #main -->
 		<!-- ======= Footer ======= -->

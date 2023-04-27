@@ -1,147 +1,507 @@
 <?php
 
 namespace App\Entity;
-
+use App\Entity\Colis;
+use App\Repository\UserRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
+use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 
-/**
- * User
- *
- * @ORM\Table(name="user")
- * @ORM\Entity
- */
-class User
+#[ORM\Entity(repositoryClass: UserRepository::class)]
+#[UniqueEntity(fields: ['email'], message: 'There is already an account with this email')]
+class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="id", type="integer", nullable=false)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
-     */
-    private $id;
+    #[ORM\Id]
+    #[ORM\GeneratedValue]
+    #[ORM\Column]
+    private ?int $id = null;
+
+    #[ORM\Column(length: 180, unique: true)]
+    #[Assert\NotBlank(message: 'L\'adresse e-mail est obligatoire')]
+    #[Assert\Regex(
+        pattern: '/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/',
+        message: 'L\'adresse e-mail doit être valide et contenir un nom de domaine valide'
+    )]
+    private ?string $email = null;
+
+    #[ORM\Column]
+    private array $roles = [];
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="nom", type="string", length=255, nullable=false)
+     * @var string The hashed password
      */
-    private $nom;
+    #[ORM\Column(nullable: true)]
+    private ?string $password = null;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="prenom", type="string", length=255, nullable=false)
-     */
-    private $prenom;
+    #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message: 'Le nom est obligatoire')]
+    #[Assert\Length(
+        min: 2,
+        minMessage: 'Le nom doit comporter au moins {{ limit }} caractères'
+    )]
+    private ?string $nom = null;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="adress", type="string", length=255, nullable=false)
-     */
-    private $adress;
+    #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message: 'Le prenom est obligatoire')]
+    #[Assert\Length(
+        min: 2,
+        minMessage: 'Le prenom doit comporter au moins {{ limit }} caractères'
+    )]
+    private ?string $prenom = null;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="cin", type="string", length=255, nullable=false)
-     */
-    private $cin;
+    #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message: 'L\'adresse est obligatoire')]
+    #[Assert\Length(
+        min: 2,
+        minMessage: 'L\'adresse doit comporter au moins {{ limit }} caractères'
+    )]
+    private ?string $adress = null;
 
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="dateNaissance", type="date", nullable=false)
-     */
-    private $datenaissance;
+    #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message: 'Le numéro de CIN est obligatoire')]
+    #[Assert\Length(
+        min: 8,
+        minMessage: 'Le numéro de CIN doit comporter au moins {{ limit }} caractères'
+    )]
+    private ?string $cin = null;
 
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="dateCreationC", type="date", nullable=false)
-     */
-    private $datecreationc;
+    #[ORM\Column(type: Types::DATE_MUTABLE)]
+    private ?\DateTimeInterface $date_naissance = null;
 
-    /**
-     * @var bool
-     *
-     * @ORM\Column(name="status", type="boolean", nullable=false)
-     */
-    private $status;
+    #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
+    private ?\DateTimeInterface $date_creation_c = null;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="role", type="string", length=255, nullable=false)
-     */
-    private $role;
+    #[ORM\Column]
+    private ?bool $status = null;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="motPass", type="string", length=255, nullable=false)
-     */
-    private $motpass;
+    #[ORM\Column(length: 255)]
+    private ?string $token = null;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="email", type="string", length=255, nullable=false)
-     */
-    private $email;
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $score = null;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="Token", type="string", length=255, nullable=false)
-     */
-    private $token;
+    #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message: 'Le numéro de téléphone est obligatoire')]
+    #[Assert\Regex(
+        pattern: '/^\+216\d{8}$/',
+        message: 'Le numéro de téléphone doit commencer par +216 et être suivi de 8 chiffres'
+    )]
+    private ?string $numtel = null;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="score", type="string", length=8, nullable=false)
-     */
-    private $score;
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $image = null;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="numtel", type="string", length=11, nullable=false)
-     */
-    private $numtel;
+    #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
+    private ?\DateTimeInterface $compte_ex = null;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="image", type="string", length=255, nullable=false)
-     */
-    private $image;
+    #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
+    private ?\DateTimeInterface $token_ex = null;
 
-    /**
-     * @var \DateTime|null
-     *
-     * @ORM\Column(name="Compte_ex", type="datetime", nullable=true)
-     */
-    private $compteEx;
+    #[ORM\OneToMany(mappedBy: 'receiverId', targetEntity: Message::class, orphanRemoval: true)]
+    private Collection $receiverId;
 
-    /**
-     * @var \DateTime|null
-     *
-     * @ORM\Column(name="token_ex", type="datetime", nullable=true)
-     */
-    private $tokenEx;
+    #[ORM\OneToMany(mappedBy: 'senderId', targetEntity: Message::class, orphanRemoval: true)]
+    private Collection $senderId;
 
-    #[ORM\ManyToMany(targetEntity: Reservation::class, mappedBy: 'idTrans')]
-    private Collection $reservations;
+    #[ORM\OneToMany(mappedBy: 'idu', targetEntity: Validation::class, orphanRemoval: true)]
+    private Collection $validations;
 
     public function __construct()
     {
+        $this->receiverId = new ArrayCollection();
+        $this->senderId = new ArrayCollection();
+        $this->validations = new ArrayCollection();
         $this->reservations = new ArrayCollection();
+        $this->appointments = new ArrayCollection();
+        $this->competitions = new ArrayCollection();
+        $this->gifts = new ArrayCollection();
     }
+
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
+
+    public function getEmail(): ?string
+    {
+        return $this->email;
+    }
+
+    public function setEmail(string $email): self
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    /**
+     * A visual identifier that represents this user.
+     *
+     * @see UserInterface
+     */
+    public function getUserIdentifier(): string
+    {
+        return (string) $this->email;
+    }
+
+    /**
+     * @deprecated since Symfony 5.3, use getUserIdentifier instead
+     */
+    public function getUsername(): string
+    {
+        return (string) $this->email;
+    }
+
+    /**
+     * @see UserInterface
+     */
+    public function getRoles(): array
+    {
+        $roles = $this->roles;
+        // guarantee every user at least has ROLE_USER
+        $roles[] = 'ROLE_USER';
+
+        return array_unique($roles);
+    }
+
+    public function setRoles(array $roles): self
+    {
+        $this->roles = $roles;
+
+        return $this;
+    }
+
+    /**
+     * @see PasswordAuthenticatedUserInterface
+     */
+    public function getPassword(): string
+    {
+        return $this->password;
+    }
+
+    public function setPassword(string $password): self
+    {
+        $this->password = $password;
+
+        return $this;
+    }
+
+    /**
+     * Returning a salt is only needed, if you are not using a modern
+     * hashing algorithm (e.g. bcrypt or sodium) in your security.yaml.
+     *
+     * @see UserInterface
+     */
+    public function getSalt(): ?string
+    {
+        return null;
+    }
+
+    /**
+     * @see UserInterface
+     */
+    public function eraseCredentials()
+    {
+        // If you store any temporary, sensitive data on the user, clear it here
+        // $this->plainPassword = null;
+    }
+
+    public function getNom(): ?string
+    {
+        return $this->nom;
+    }
+
+    public function setNom(string $nom): self
+    {
+        $this->nom = $nom;
+
+        return $this;
+    }
+
+    public function getPrenom(): ?string
+    {
+        return $this->prenom;
+    }
+
+    public function setPrenom(string $prenom): self
+    {
+        $this->prenom = $prenom;
+
+        return $this;
+    }
+
+    public function getAdress(): ?string
+    {
+        return $this->adress;
+    }
+
+    public function setAdress(string $adress): self
+    {
+        $this->adress = $adress;
+
+        return $this;
+    }
+
+    public function getCin(): ?string
+    {
+        return $this->cin;
+    }
+
+    public function setCin(string $cin): self
+    {
+        $this->cin = $cin;
+
+        return $this;
+    }
+
+    public function getDateNaissance(): ?\DateTimeInterface
+    {
+        return $this->date_naissance;
+    }
+
+    public function setDateNaissance(\DateTimeInterface $date_naissance): self
+    {
+        $this->date_naissance = $date_naissance;
+
+        return $this;
+    }
+
+    public function getDateCreationC(): ?\DateTimeInterface
+    {
+        return $this->date_creation_c;
+    }
+
+    public function setDateCreationC(?\DateTimeInterface $date_creation_c): self
+    {
+        $this->date_creation_c = $date_creation_c;
+
+        return $this;
+    }
+
+    public function isStatus(): ?bool
+    {
+        return $this->status;
+    }
+
+    public function setStatus(bool $status): self
+    {
+        $this->status = $status;
+
+        return $this;
+    }
+
+    public function getToken(): ?string
+    {
+        return $this->token;
+    }
+
+    public function setToken(string $token): self
+    {
+        $this->token = $token;
+
+        return $this;
+    }
+
+    public function getScore(): ?string
+    {
+        return $this->score;
+    }
+
+    public function setScore(?string $score): self
+    {
+        $this->score = $score;
+
+        return $this;
+    }
+
+    public function getNumtel(): ?string
+    {
+        return $this->numtel;
+    }
+
+    public function setNumtel(string $numtel): self
+    {
+        $this->numtel = $numtel;
+
+        return $this;
+    }
+
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    public function setImage(?string $image): self
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    public function getCompteEx(): ?\DateTimeInterface
+    {
+        return $this->compte_ex;
+    }
+
+    public function setCompteEx(?\DateTimeInterface $compte_ex): self
+    {
+        $this->compte_ex = $compte_ex;
+
+        return $this;
+    }
+
+    public function getTokenEx(): ?\DateTimeInterface
+    {
+        return $this->token_ex;
+    }
+
+    public function setTokenEx(?\DateTimeInterface $token_ex): self
+    {
+        $this->token_ex = $token_ex;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Message>
+     */
+    public function getReceiverId(): Collection
+    {
+        return $this->receiverId;
+    }
+
+    public function addReceiverId(Message $receiverId): self
+    {
+        if (!$this->receiverId->contains($receiverId)) {
+            $this->receiverId->add($receiverId);
+            $receiverId->setReceiverId($this);
+        }
+
+        return $this;
+    }
+
+    public function removeReceiverId(Message $receiverId): self
+    {
+        if ($this->receiverId->removeElement($receiverId)) {
+            // set the owning side to null (unless already changed)
+            if ($receiverId->getReceiverId() === $this) {
+                $receiverId->setReceiverId(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Message>
+     */
+    public function getSenderId(): Collection
+    {
+        return $this->senderId;
+    }
+
+    public function addSenderId(Message $senderId): self
+    {
+        if (!$this->senderId->contains($senderId)) {
+            $this->senderId->add($senderId);
+            $senderId->setSenderId($this);
+        }
+
+        return $this;
+    }
+
+    public function removeSenderId(Message $senderId): self
+    {
+        if ($this->senderId->removeElement($senderId)) {
+            // set the owning side to null (unless already changed)
+            if ($senderId->getSenderId() === $this) {
+                $senderId->setSenderId(null);
+            }
+        }
+
+        return $this;
+    }public function __toString()
+    {
+        return $this->getNom();
+    }
+
+    /**
+     * @return Collection<int, Validation>
+     */
+    public function getValidations(): Collection
+    {
+        return $this->validations;
+    }
+
+    public function addValidation(Validation $validation): self
+    {
+        if (!$this->validations->contains($validation)) {
+            $this->validations->add($validation);
+            $validation->setIdu($this);
+        }
+
+        return $this;
+    }
+
+    public function removeValidation(Validation $validation): self
+    {
+        if ($this->validations->removeElement($validation)) {
+            // set the owning side to null (unless already changed)
+            if ($validation->getIdu() === $this) {
+                $validation->setIdu(null);
+            }
+        }
+
+        return $this;
+    }
+    /**
+     * @return Collection<int, Colis>
+     */
+    public function getColis(): Collection
+    {
+        return $this->colis;
+    }
+
+    public function addColi(Colis $coli): self
+    {
+        if (!$this->colis->contains($coli)) {
+            $this->colis->add($coli);
+            $coli->setIdU($this);
+        }
+
+        return $this;
+    }
+
+    public function removeColi(Colis $coli): self
+    {
+        if ($this->colis->removeElement($coli)) {
+            // set the owning side to null (unless already changed)
+            if ($coli->getIdU() === $this) {
+                $coli->setIdU(null);
+            }
+        }
+
+        return $this;
+    }
+    #[ORM\OneToMany(mappedBy: 'id_u', targetEntity: Colis::class)]
+    private Collection $colis;
+
+    #[ORM\OneToMany(mappedBy: 'idTrans', targetEntity: Reservation::class)]
+    private Collection $reservations;
+
+    #[ORM\OneToMany(mappedBy: 'user', targetEntity: Appointment::class)]
+    private Collection $appointments;
+
+    #[ORM\ManyToMany(targetEntity: Competition::class, mappedBy: 'userPart')]
+    private Collection $competitions;
+
+    #[ORM\OneToMany(mappedBy: 'user', targetEntity: Gifts::class)]
+    private Collection $gifts;
 
     /**
      * @return Collection<int, Reservation>
@@ -155,7 +515,7 @@ class User
     {
         if (!$this->reservations->contains($reservation)) {
             $this->reservations->add($reservation);
-            $reservation->addIdTran($this);
+            $reservation->setIdTrans($this);
         }
 
         return $this;
@@ -164,11 +524,99 @@ class User
     public function removeReservation(Reservation $reservation): self
     {
         if ($this->reservations->removeElement($reservation)) {
-            $reservation->removeIdTran($this);
+            // set the owning side to null (unless already changed)
+            if ($reservation->getIdTrans() === $this) {
+                $reservation->setIdTrans(null);
+            }
         }
 
         return $this;
     }
 
+    /**
+     * @return Collection<int, Appointment>
+     */
+    public function getAppointments(): Collection
+    {
+        return $this->appointments;
+    }
 
+    public function addAppointment(Appointment $appointment): self
+    {
+        if (!$this->appointments->contains($appointment)) {
+            $this->appointments->add($appointment);
+            $appointment->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeAppointment(Appointment $appointment): self
+    {
+        if ($this->appointments->removeElement($appointment)) {
+            // set the owning side to null (unless already changed)
+            if ($appointment->getUser() === $this) {
+                $appointment->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Competition>
+     */
+    public function getCompetitions(): Collection
+    {
+        return $this->competitions;
+    }
+
+    public function addCompetition(Competition $competition): self
+    {
+        if (!$this->competitions->contains($competition)) {
+            $this->competitions->add($competition);
+            $competition->addUserPart($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCompetition(Competition $competition): self
+    {
+        if ($this->competitions->removeElement($competition)) {
+            $competition->removeUserPart($this);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Gifts>
+     */
+    public function getGifts(): Collection
+    {
+        return $this->gifts;
+    }
+
+    public function addGift(Gifts $gift): self
+    {
+        if (!$this->gifts->contains($gift)) {
+            $this->gifts->add($gift);
+            $gift->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeGift(Gifts $gift): self
+    {
+        if ($this->gifts->removeElement($gift)) {
+            // set the owning side to null (unless already changed)
+            if ($gift->getUser() === $this) {
+                $gift->setUser(null);
+            }
+        }
+
+        return $this;
+    }
 }

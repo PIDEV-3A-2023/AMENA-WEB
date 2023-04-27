@@ -35,15 +35,37 @@ class Evaluation
      */
     private $note;
 
-    /**
-     * @var \User
-     *
-     * @ORM\ManyToOne(targetEntity="User")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="idClient", referencedColumnName="id")
-     * })
-     */
-    private $idclient;
+
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
+
+    public function getIdtransporteur(): ?int
+    {
+        return $this->idtransporteur;
+    }
+
+    public function setIdtransporteur(int $idtransporteur): self
+    {
+        $this->idtransporteur = $idtransporteur;
+
+        return $this;
+    }
+
+    public function getNote(): ?float
+    {
+        return $this->note;
+    }
+
+    public function setNote(float $note): self
+    {
+        $this->note = $note;
+
+        return $this;
+    }
+
+    
 
 
 }

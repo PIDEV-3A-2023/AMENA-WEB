@@ -1,6 +1,9 @@
 <?php
 
 namespace App\Entity;
+use App\Form\EntityType;
+use Symfony\Component\Form\AbstractType;
+use App\Entity\Competition;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -16,24 +19,27 @@ class Gifts
     private ?int $id=null;
 
     #[Assert\NotBlank(message:"Le nom ne doit pas être vide")]
-    #[Assert\Length(max:15,maxMessage:"La longueur maximale du nom est 15")]
+    #[Assert\Length(max:20,maxMessage:"La longueur maximale du nom est 20")]
     #[ORM\Column(length:100)]
     private ?String $name=null;
 
     #[ORM\Column(length:100)]
     #[Assert\NotBlank(message:"La description ne doit pas être vide")]
-    #[Assert\Length(max:50,maxMessage:"La longueur maximale du description est 50")]
+    #[Assert\Length(max:150,maxMessage:"La longueur maximale du description est 150")]
     private ?String $description=null;
 
     #[ORM\Column(length:100)]
     #[Assert\NotBlank(message:"La valeur ne doit pas être vide")]
     private ?String  $value=null;
 
-    #[ORM\Column(length:100)]
-    private ?String $photo="http://localhost/img/bb.png";
+    #[ORM\Column(length:100,name : 'photo')]
+    private ?String $photo=null;
 
     #[ORM\ManyToOne(inversedBy: 'gifts')]
     private ?Competition $idC = null;
+
+    #[ORM\ManyToOne(inversedBy: 'gifts')]
+    private ?User $user = null;
 
    
     public function getId(): ?int
@@ -103,5 +109,17 @@ class Gifts
     public function __toString(): string
     {
         return 'bla bla';
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): self
+    {
+        $this->user = $user;
+
+        return $this;
     }
 }

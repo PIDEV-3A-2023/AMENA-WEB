@@ -19,14 +19,17 @@ class Reservation
     #[ORM\Column(name : 'idRes')]
     private ?int $id = null;
 
+
+    #[Assert\NotBlank(message:"La date debut ne doit pas etre vide")]
     #[ORM\Column(type: Types::DATE_MUTABLE)]
     private ?\DateTimeInterface $date_deb = null;
 
+    #[Assert\NotBlank(message:"La date fin ne doit pas etre vide")]
     #[ORM\Column(type: Types::DATE_MUTABLE)]
     private ?\DateTimeInterface $date_fin = null;
 
     #[ORM\Column]
-    #[Assert\NotBlank(message:"Le somme ne doit pas être vide")]
+    //#[Assert\NotBlank(message:"Le somme ne doit pas être vide")]
     private ?float $somme = null;
 
     #[ORM\Column(length: 30)]
@@ -35,6 +38,9 @@ class Reservation
     #[ORM\ManyToOne(inversedBy: 'reservations')]
     #[ORM\JoinColumn(nullable: false,name:"idV")]
     private ?Vehicule $idVeh = null;
+
+    #[ORM\ManyToOne(inversedBy: 'reservations')]
+    private ?User $idTrans = null;
 
     
 
@@ -104,6 +110,7 @@ class Reservation
         return $this->id;
     }
 
+    
     public function getIdVeh(): ?Vehicule
     {
         return $this->idVeh;
@@ -115,4 +122,17 @@ class Reservation
 
         return $this;
     }
+
+    public function getIdTrans(): ?User
+    {
+        return $this->idTrans;
+    }
+
+    public function setIdTrans(?User $idTrans): self
+    {
+        $this->idTrans = $idTrans;
+
+        return $this;
+    }
+    
 }

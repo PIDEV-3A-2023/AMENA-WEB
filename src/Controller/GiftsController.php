@@ -9,6 +9,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Doctrine\ORM\EntityManagerInterface;
+use App\Form\EntityType;
 
 #[Route('/gifts')]
 class GiftsController extends AbstractController
@@ -16,20 +18,21 @@ class GiftsController extends AbstractController
     #[Route('/', name: 'app_gifts_index', methods: ['GET'])]
     public function index(GiftsRepository $giftsRepository): Response
     {
+        $gift = $giftsRepository->findBy([],['id' =>'DESC']);
         return $this->render('gifts/index.html.twig', [
-            'gifts' => $giftsRepository->findAll(),
+            'gifts' => $gift,
         ]);
     }
 
     #[Route('/new', name: 'app_gifts_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, GiftsRepository $giftsRepository): Response
+    public function new(Request $request, GiftsRepository $giftsRepository,EntityManagerInterface $entityManager): Response
     {
         $gift = new Gifts();
         $form = $this->createForm(GiftsType::class, $gift);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-           /* $image = $form->get('photo')->getData();   
+           $image = $form->get('photo')->getData();   
             
  
             if ($image) {
@@ -41,9 +44,9 @@ class GiftsController extends AbstractController
                 );
             dump($image);
                 
-            $gift->setPhoto('http://localhost/img/'.$fichier);}*/
-            $giftsRepository->save($gift, true);
-
+            $gift->setPhoto('http://localhost/img/'.$fichier);}
+                $entityManager->persist($gift);
+                $entityManager->flush();
             return $this->redirectToRoute('app_gifts_index', [], Response::HTTP_SEE_OTHER);
         }
 
@@ -88,4 +91,8 @@ class GiftsController extends AbstractController
 
         return $this->redirectToRoute('app_gifts_index', [], Response::HTTP_SEE_OTHER);
     }
+    
+    
+
+     
 }

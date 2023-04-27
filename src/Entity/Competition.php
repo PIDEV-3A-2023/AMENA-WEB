@@ -21,7 +21,7 @@ class Competition
 
     #[Assert\NotBlank(message:"Le titre ne doit pas être vide")]
     #[Assert\Length(max:10,maxMessage:"La longueur maximale du titre est 10")]
-    #[ORM\Column(length:100)]
+    #[ORM\Column(length:150)]
     private ?String $title=null;
 
     #[Assert\NotBlank(message:"La date de début ne doit pas être vide")]
@@ -49,9 +49,13 @@ class Competition
     #[ORM\OneToMany(mappedBy: 'idC', targetEntity: Gifts::class)]
     private Collection $gifts;
 
+    #[ORM\ManyToMany(targetEntity: User::class, inversedBy: 'competitions')]
+    private Collection $userPart;
+
     public function __construct()
     {
         $this->gifts = new ArrayCollection();
+        $this->userPart = new ArrayCollection();
     }
 
 
@@ -163,6 +167,31 @@ class Competition
     }
     public function __toString(): string
     {
-        return $this->getId();
+        return $this->getTitle();
     }
+
+    /**
+     * @return Collection<int, User>
+     */
+    public function getUserPart(): Collection
+    {
+        return $this->userPart;
+    }
+
+    public function addUserPart(User $userPart): self
+    {
+        if (!$this->userPart->contains($userPart)) {
+            $this->userPart->add($userPart);
+        }
+
+        return $this;
+    }
+
+    public function removeUserPart(User $userPart): self
+    {
+        $this->userPart->removeElement($userPart);
+
+        return $this;
+    }
+    
 }

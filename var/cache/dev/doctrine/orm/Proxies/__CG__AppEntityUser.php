@@ -67,10 +67,10 @@ class User extends \App\Entity\User implements \Doctrine\ORM\Proxy\Proxy
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\User' . "\0" . 'id', '' . "\0" . 'App\\Entity\\User' . "\0" . 'nom', '' . "\0" . 'App\\Entity\\User' . "\0" . 'prenom', '' . "\0" . 'App\\Entity\\User' . "\0" . 'adress', '' . "\0" . 'App\\Entity\\User' . "\0" . 'cin', '' . "\0" . 'App\\Entity\\User' . "\0" . 'datenaissance', '' . "\0" . 'App\\Entity\\User' . "\0" . 'datecreationc', '' . "\0" . 'App\\Entity\\User' . "\0" . 'status', '' . "\0" . 'App\\Entity\\User' . "\0" . 'role', '' . "\0" . 'App\\Entity\\User' . "\0" . 'motpass', '' . "\0" . 'App\\Entity\\User' . "\0" . 'email', '' . "\0" . 'App\\Entity\\User' . "\0" . 'token', '' . "\0" . 'App\\Entity\\User' . "\0" . 'score', '' . "\0" . 'App\\Entity\\User' . "\0" . 'numtel', '' . "\0" . 'App\\Entity\\User' . "\0" . 'image', '' . "\0" . 'App\\Entity\\User' . "\0" . 'compteEx', '' . "\0" . 'App\\Entity\\User' . "\0" . 'tokenEx'];
+            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\User' . "\0" . 'id', '' . "\0" . 'App\\Entity\\User' . "\0" . 'email', '' . "\0" . 'App\\Entity\\User' . "\0" . 'roles', '' . "\0" . 'App\\Entity\\User' . "\0" . 'password', '' . "\0" . 'App\\Entity\\User' . "\0" . 'nom', '' . "\0" . 'App\\Entity\\User' . "\0" . 'prenom', '' . "\0" . 'App\\Entity\\User' . "\0" . 'adress', '' . "\0" . 'App\\Entity\\User' . "\0" . 'cin', '' . "\0" . 'App\\Entity\\User' . "\0" . 'date_naissance', '' . "\0" . 'App\\Entity\\User' . "\0" . 'date_creation_c', '' . "\0" . 'App\\Entity\\User' . "\0" . 'status', '' . "\0" . 'App\\Entity\\User' . "\0" . 'token', '' . "\0" . 'App\\Entity\\User' . "\0" . 'score', '' . "\0" . 'App\\Entity\\User' . "\0" . 'numtel', '' . "\0" . 'App\\Entity\\User' . "\0" . 'image', '' . "\0" . 'App\\Entity\\User' . "\0" . 'compte_ex', '' . "\0" . 'App\\Entity\\User' . "\0" . 'token_ex', '' . "\0" . 'App\\Entity\\User' . "\0" . 'receiverId', '' . "\0" . 'App\\Entity\\User' . "\0" . 'senderId', '' . "\0" . 'App\\Entity\\User' . "\0" . 'validations', '' . "\0" . 'App\\Entity\\User' . "\0" . 'colis', '' . "\0" . 'App\\Entity\\User' . "\0" . 'reservations', '' . "\0" . 'App\\Entity\\User' . "\0" . 'appointments', '' . "\0" . 'App\\Entity\\User' . "\0" . 'competitions', '' . "\0" . 'App\\Entity\\User' . "\0" . 'gifts'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\User' . "\0" . 'id', '' . "\0" . 'App\\Entity\\User' . "\0" . 'nom', '' . "\0" . 'App\\Entity\\User' . "\0" . 'prenom', '' . "\0" . 'App\\Entity\\User' . "\0" . 'adress', '' . "\0" . 'App\\Entity\\User' . "\0" . 'cin', '' . "\0" . 'App\\Entity\\User' . "\0" . 'datenaissance', '' . "\0" . 'App\\Entity\\User' . "\0" . 'datecreationc', '' . "\0" . 'App\\Entity\\User' . "\0" . 'status', '' . "\0" . 'App\\Entity\\User' . "\0" . 'role', '' . "\0" . 'App\\Entity\\User' . "\0" . 'motpass', '' . "\0" . 'App\\Entity\\User' . "\0" . 'email', '' . "\0" . 'App\\Entity\\User' . "\0" . 'token', '' . "\0" . 'App\\Entity\\User' . "\0" . 'score', '' . "\0" . 'App\\Entity\\User' . "\0" . 'numtel', '' . "\0" . 'App\\Entity\\User' . "\0" . 'image', '' . "\0" . 'App\\Entity\\User' . "\0" . 'compteEx', '' . "\0" . 'App\\Entity\\User' . "\0" . 'tokenEx'];
+        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\User' . "\0" . 'id', '' . "\0" . 'App\\Entity\\User' . "\0" . 'email', '' . "\0" . 'App\\Entity\\User' . "\0" . 'roles', '' . "\0" . 'App\\Entity\\User' . "\0" . 'password', '' . "\0" . 'App\\Entity\\User' . "\0" . 'nom', '' . "\0" . 'App\\Entity\\User' . "\0" . 'prenom', '' . "\0" . 'App\\Entity\\User' . "\0" . 'adress', '' . "\0" . 'App\\Entity\\User' . "\0" . 'cin', '' . "\0" . 'App\\Entity\\User' . "\0" . 'date_naissance', '' . "\0" . 'App\\Entity\\User' . "\0" . 'date_creation_c', '' . "\0" . 'App\\Entity\\User' . "\0" . 'status', '' . "\0" . 'App\\Entity\\User' . "\0" . 'token', '' . "\0" . 'App\\Entity\\User' . "\0" . 'score', '' . "\0" . 'App\\Entity\\User' . "\0" . 'numtel', '' . "\0" . 'App\\Entity\\User' . "\0" . 'image', '' . "\0" . 'App\\Entity\\User' . "\0" . 'compte_ex', '' . "\0" . 'App\\Entity\\User' . "\0" . 'token_ex', '' . "\0" . 'App\\Entity\\User' . "\0" . 'receiverId', '' . "\0" . 'App\\Entity\\User' . "\0" . 'senderId', '' . "\0" . 'App\\Entity\\User' . "\0" . 'validations', '' . "\0" . 'App\\Entity\\User' . "\0" . 'colis', '' . "\0" . 'App\\Entity\\User' . "\0" . 'reservations', '' . "\0" . 'App\\Entity\\User' . "\0" . 'appointments', '' . "\0" . 'App\\Entity\\User' . "\0" . 'competitions', '' . "\0" . 'App\\Entity\\User' . "\0" . 'gifts'];
     }
 
     /**
@@ -195,6 +195,116 @@ class User extends \App\Entity\User implements \Doctrine\ORM\Proxy\Proxy
     /**
      * {@inheritDoc}
      */
+    public function getEmail(): ?string
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getEmail', []);
+
+        return parent::getEmail();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setEmail(string $email): \App\Entity\User
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setEmail', [$email]);
+
+        return parent::setEmail($email);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getUserIdentifier(): string
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getUserIdentifier', []);
+
+        return parent::getUserIdentifier();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getUsername(): string
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getUsername', []);
+
+        return parent::getUsername();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getRoles(): array
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getRoles', []);
+
+        return parent::getRoles();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setRoles(array $roles): \App\Entity\User
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setRoles', [$roles]);
+
+        return parent::setRoles($roles);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getPassword(): string
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getPassword', []);
+
+        return parent::getPassword();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setPassword(string $password): \App\Entity\User
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setPassword', [$password]);
+
+        return parent::setPassword($password);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getSalt(): ?string
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getSalt', []);
+
+        return parent::getSalt();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function eraseCredentials()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'eraseCredentials', []);
+
+        return parent::eraseCredentials();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
     public function getNom(): ?string
     {
 
@@ -283,45 +393,45 @@ class User extends \App\Entity\User implements \Doctrine\ORM\Proxy\Proxy
     /**
      * {@inheritDoc}
      */
-    public function getDatenaissance(): ?\DateTimeInterface
+    public function getDateNaissance(): ?\DateTimeInterface
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getDatenaissance', []);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getDateNaissance', []);
 
-        return parent::getDatenaissance();
+        return parent::getDateNaissance();
     }
 
     /**
      * {@inheritDoc}
      */
-    public function setDatenaissance(\DateTimeInterface $datenaissance): \App\Entity\User
+    public function setDateNaissance(\DateTimeInterface $date_naissance): \App\Entity\User
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setDatenaissance', [$datenaissance]);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setDateNaissance', [$date_naissance]);
 
-        return parent::setDatenaissance($datenaissance);
+        return parent::setDateNaissance($date_naissance);
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getDatecreationc(): ?\DateTimeInterface
+    public function getDateCreationC(): ?\DateTimeInterface
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getDatecreationc', []);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getDateCreationC', []);
 
-        return parent::getDatecreationc();
+        return parent::getDateCreationC();
     }
 
     /**
      * {@inheritDoc}
      */
-    public function setDatecreationc(\DateTimeInterface $datecreationc): \App\Entity\User
+    public function setDateCreationC(?\DateTimeInterface $date_creation_c): \App\Entity\User
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setDatecreationc', [$datecreationc]);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setDateCreationC', [$date_creation_c]);
 
-        return parent::setDatecreationc($datecreationc);
+        return parent::setDateCreationC($date_creation_c);
     }
 
     /**
@@ -344,72 +454,6 @@ class User extends \App\Entity\User implements \Doctrine\ORM\Proxy\Proxy
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'setStatus', [$status]);
 
         return parent::setStatus($status);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getRole(): ?string
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getRole', []);
-
-        return parent::getRole();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function setRole(string $role): \App\Entity\User
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setRole', [$role]);
-
-        return parent::setRole($role);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getMotpass(): ?string
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getMotpass', []);
-
-        return parent::getMotpass();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function setMotpass(string $motpass): \App\Entity\User
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setMotpass', [$motpass]);
-
-        return parent::setMotpass($motpass);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getEmail(): ?string
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getEmail', []);
-
-        return parent::getEmail();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function setEmail(string $email): \App\Entity\User
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setEmail', [$email]);
-
-        return parent::setEmail($email);
     }
 
     /**
@@ -448,7 +492,7 @@ class User extends \App\Entity\User implements \Doctrine\ORM\Proxy\Proxy
     /**
      * {@inheritDoc}
      */
-    public function setScore(string $score): \App\Entity\User
+    public function setScore(?string $score): \App\Entity\User
     {
 
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'setScore', [$score]);
@@ -492,7 +536,7 @@ class User extends \App\Entity\User implements \Doctrine\ORM\Proxy\Proxy
     /**
      * {@inheritDoc}
      */
-    public function setImage(string $image): \App\Entity\User
+    public function setImage(?string $image): \App\Entity\User
     {
 
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'setImage', [$image]);
@@ -514,12 +558,12 @@ class User extends \App\Entity\User implements \Doctrine\ORM\Proxy\Proxy
     /**
      * {@inheritDoc}
      */
-    public function setCompteEx(?\DateTimeInterface $compteEx): \App\Entity\User
+    public function setCompteEx(?\DateTimeInterface $compte_ex): \App\Entity\User
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setCompteEx', [$compteEx]);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setCompteEx', [$compte_ex]);
 
-        return parent::setCompteEx($compteEx);
+        return parent::setCompteEx($compte_ex);
     }
 
     /**
@@ -536,12 +580,78 @@ class User extends \App\Entity\User implements \Doctrine\ORM\Proxy\Proxy
     /**
      * {@inheritDoc}
      */
-    public function setTokenEx(?\DateTimeInterface $tokenEx): \App\Entity\User
+    public function setTokenEx(?\DateTimeInterface $token_ex): \App\Entity\User
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setTokenEx', [$tokenEx]);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setTokenEx', [$token_ex]);
 
-        return parent::setTokenEx($tokenEx);
+        return parent::setTokenEx($token_ex);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getReceiverId(): \Doctrine\Common\Collections\Collection
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getReceiverId', []);
+
+        return parent::getReceiverId();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function addReceiverId(\App\Entity\Message $receiverId): \App\Entity\User
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addReceiverId', [$receiverId]);
+
+        return parent::addReceiverId($receiverId);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function removeReceiverId(\App\Entity\Message $receiverId): \App\Entity\User
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeReceiverId', [$receiverId]);
+
+        return parent::removeReceiverId($receiverId);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getSenderId(): \Doctrine\Common\Collections\Collection
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getSenderId', []);
+
+        return parent::getSenderId();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function addSenderId(\App\Entity\Message $senderId): \App\Entity\User
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addSenderId', [$senderId]);
+
+        return parent::addSenderId($senderId);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function removeSenderId(\App\Entity\Message $senderId): \App\Entity\User
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeSenderId', [$senderId]);
+
+        return parent::removeSenderId($senderId);
     }
 
     /**
@@ -553,6 +663,204 @@ class User extends \App\Entity\User implements \Doctrine\ORM\Proxy\Proxy
         $this->__initializer__ && $this->__initializer__->__invoke($this, '__toString', []);
 
         return parent::__toString();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getValidations(): \Doctrine\Common\Collections\Collection
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getValidations', []);
+
+        return parent::getValidations();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function addValidation(\App\Entity\Validation $validation): \App\Entity\User
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addValidation', [$validation]);
+
+        return parent::addValidation($validation);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function removeValidation(\App\Entity\Validation $validation): \App\Entity\User
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeValidation', [$validation]);
+
+        return parent::removeValidation($validation);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getColis(): \Doctrine\Common\Collections\Collection
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getColis', []);
+
+        return parent::getColis();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function addColi(\App\Entity\Colis $coli): \App\Entity\User
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addColi', [$coli]);
+
+        return parent::addColi($coli);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function removeColi(\App\Entity\Colis $coli): \App\Entity\User
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeColi', [$coli]);
+
+        return parent::removeColi($coli);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getReservations(): \Doctrine\Common\Collections\Collection
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getReservations', []);
+
+        return parent::getReservations();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function addReservation(\App\Entity\Reservation $reservation): \App\Entity\User
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addReservation', [$reservation]);
+
+        return parent::addReservation($reservation);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function removeReservation(\App\Entity\Reservation $reservation): \App\Entity\User
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeReservation', [$reservation]);
+
+        return parent::removeReservation($reservation);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getAppointments(): \Doctrine\Common\Collections\Collection
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getAppointments', []);
+
+        return parent::getAppointments();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function addAppointment(\App\Entity\Appointment $appointment): \App\Entity\User
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addAppointment', [$appointment]);
+
+        return parent::addAppointment($appointment);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function removeAppointment(\App\Entity\Appointment $appointment): \App\Entity\User
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeAppointment', [$appointment]);
+
+        return parent::removeAppointment($appointment);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getCompetitions(): \Doctrine\Common\Collections\Collection
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getCompetitions', []);
+
+        return parent::getCompetitions();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function addCompetition(\App\Entity\Competition $competition): \App\Entity\User
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addCompetition', [$competition]);
+
+        return parent::addCompetition($competition);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function removeCompetition(\App\Entity\Competition $competition): \App\Entity\User
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeCompetition', [$competition]);
+
+        return parent::removeCompetition($competition);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getGifts(): \Doctrine\Common\Collections\Collection
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getGifts', []);
+
+        return parent::getGifts();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function addGift(\App\Entity\Gifts $gift): \App\Entity\User
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addGift', [$gift]);
+
+        return parent::addGift($gift);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function removeGift(\App\Entity\Gifts $gift): \App\Entity\User
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeGift', [$gift]);
+
+        return parent::removeGift($gift);
     }
 
 }

@@ -18,7 +18,7 @@ class VehiculeController extends AbstractController
     {
         $vehicules = $entityManager
             ->getRepository(Vehicule::class)
-            ->findAll();
+            ->findBy([],['idV' => 'DESC']) ;
 
         return $this->render('vehicule/index.html.twig', [
             'vehicules' => $vehicules,
@@ -93,4 +93,5 @@ class VehiculeController extends AbstractController
 
         return $this->redirectToRoute('app_vehicule_index', [], Response::HTTP_SEE_OTHER);
     }
+  
 }

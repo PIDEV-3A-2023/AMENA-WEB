@@ -8,6 +8,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
 class CompetitionType extends AbstractType
 {
@@ -18,16 +19,18 @@ class CompetitionType extends AbstractType
                 'label' => ' Titre'])
             ->add('dateDeb')
             ->add('dateFin')
-            ->add('type')
-            ->add('nbp', TextType::class, [
-                'label' => 'Nombre Participants',
-                'disabled' => true,
-                'required' => false,
+            ->add('type', ChoiceType::class, [
+                'choices' => [
+                    'Type 1' => 1,
+                    'Type 2' => 2,
+                    'Type 3' => 3
+                ],
+                'label' => 'Type'
             ])
-
             ->add('save',SubmitType::class)
 
         ;
+       
     }
 
     public function configureOptions(OptionsResolver $resolver): void

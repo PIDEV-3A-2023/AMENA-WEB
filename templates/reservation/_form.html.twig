@@ -1,5 +1,27 @@
-{% form_theme form 'bootstrap_5_layout.html.twig' %}
-<div class="offset-3 col-3">
-{{ form(form,{'attr': {'novalidate': 'novalidate'}} ) }}
+{% extends 'base.html.twig' %}
 
-</div>
+{% form_theme form 'bootstrap_5_layout.html.twig' %}
+{% block body %}
+    {{ form_start(form, {'attr': {'id': 'reservation-form'}}) }}
+    <input class="date  type="date" name="mydate">
+    <input type="date" name="mydate">       
+
+    <div class="mb-3">
+        {{ form_label(form.date_deb) }}
+        {{ form_widget(form.date_deb) }}
+        {{ form_errors(form.date_deb) }}
+    </div>
+
+    <div class="mb-3">
+        {{ form_label(form.date_fin) }}
+        {{ form_widget(form.date_fin) }}
+        {{ form_errors(form.date_fin) }}
+    </div>
+
+    {{ form_widget(form.Reserver, { 'label': 'Réserver', 'attr': {'class': 'btn btn-primary'} }) }}
+
+    {{ form_end(form) }}
+{% endblock %}
+
+
+

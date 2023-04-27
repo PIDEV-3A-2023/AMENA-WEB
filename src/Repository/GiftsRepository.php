@@ -38,6 +38,15 @@ class GiftsRepository extends ServiceEntityRepository
             $this->getEntityManager()->flush();
         }
     }
+    public function findTitleById($idC)
+    {
+        $queryBuilder = $this->createQueryBuilder('e');
+        $queryBuilder->select('e.title')
+            ->where('e.idC = :id')
+            ->setParameter('id', $idc);
+
+        return $queryBuilder->getQuery()->getSingleScalarResult();
+    }
 
 //    /**
 //     * @return Gifts[] Returns an array of Gifts objects
