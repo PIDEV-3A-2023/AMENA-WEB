@@ -27,13 +27,6 @@ class VehiculeType extends AbstractType
             ->add('immat', null, [
                 'label' => 'Matricule'
             ])
-            ->add('etat',ChoiceType::class, [
-                'choices'  => [
-                    'etat' => null,
-                    'Disponible' => 0,
-                    'Reservé' => 1,
-                ],
-            ])
             ->add('kilometrage')
             ->add('chevaux')
             ->add('marque')

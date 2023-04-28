@@ -65,7 +65,7 @@ class Colis
     {
        /* $this->annonces = new ArrayCollection();*/
         $this->dateExpedition = new \DateTimeImmutable('now');
-        $this->statut = 'en attente';
+        $this->statut = 'En attente';
     }
 
 

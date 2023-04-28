@@ -134,24 +134,18 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
           <li><a href=\"portfolio.html\">Portfolio</a></li>
           <li><a href=\"team.html\">Team</a></li>
           <li><a href=\"blog.html\">Blog</a></li>
-          <li class=\"dropdown\"><a ><span>Dropdown</span> <i class=\"bi bi-chevron-down dropdown-indicator\"></i></a>
+          <li class=\"dropdown\"><a ><span>Location des vehicules</span> <i class=\"bi bi-chevron-down dropdown-indicator\"></i></a>
             <ul>
-              <li><a >Dropdown 1</a></li>
-              <li class=\"dropdown\"><a ><span>Deep Dropdown</span> <i class=\"bi bi-chevron-down dropdown-indicator\"></i></a>
-                <ul>
-                  <li><a >Deep Dropdown 1</a></li>
-                  <li><a >Deep Dropdown 2</a></li>
-                  <li><a >Deep Dropdown 3</a></li>
-                  <li><a >Deep Dropdown 4</a></li>
-                  <li><a >Deep Dropdown 5</a></li>
-                </ul>
-              </li>
-              <li><a >Dropdown 2</a></li>
-              <li><a >Dropdown 3</a></li>
-              <li><a >Dropdown 4</a></li>
+          \t  <li><a href=\"";
+        // line 92
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getUrl("app_front_reservation");
+        echo "\" class=\"active\">Liste des vehicules</a></li>
+          \t  <li><a href=\"";
+        // line 93
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getUrl("app_interface_Mesreservation");
+        echo "\" class=\"active\">Mes locations</a></li>
             </ul>
           </li>
-          <li><a href=\"contact.html\" class=\"active\">Location des vehicules</a></li>
         </ul>
       </nav><!-- .navbar -->
 
@@ -167,14 +161,14 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
     </div><!-- End Breadcrumbs -->
    <main id=\"main\">
    ";
-        // line 122
+        // line 110
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 122, $this->source); })()), "session", [], "any", false, false, false, 122), "flashbag", [], "any", false, false, false, 122), "get", [0 => "success"], "method", false, false, false, 122));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 110, $this->source); })()), "session", [], "any", false, false, false, 110), "flashbag", [], "any", false, false, false, 110), "get", [0 => "success"], "method", false, false, false, 110));
         foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
-            // line 123
+            // line 111
             echo "    <div class=\"alert alert-success\" role=\"alert\">
         <i class=\"fas fa-check-circle mr-2\"></i>";
-            // line 124
+            // line 112
             echo twig_escape_filter($this->env, $context["message"], "html", null, true);
             echo "
     </div>
@@ -183,12 +177,12 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 127
+        // line 115
         echo " 
 \t\t";
-        // line 128
+        // line 116
         $this->displayBlock('body', $context, $blocks);
-        // line 129
+        // line 117
         echo "        </main><!-- End #main -->
 \t\t<!-- ======= Footer ======= -->
 \t\t<footer id=\"footer\" class=\"footer\">
@@ -315,9 +309,9 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
 
 \t\t<div id=\"preloader\"></div>
 \t\t";
-        // line 254
+        // line 242
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 268
+        // line 256
         echo "\t</body>
 </html>";
         
@@ -381,7 +375,7 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
 
     }
 
-    // line 128
+    // line 116
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -399,7 +393,7 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
 
     }
 
-    // line 254
+    // line 242
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -409,39 +403,39 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 255
+        // line 243
         echo "\t\t\t";
         echo twig_escape_filter($this->env, $this->env->getFunction('encore_entry_script_tags')->getCallable()("app"), "html", null, true);
         echo "
 \t\t\t<!-- Vendor JS Files -->
 \t\t\t<script src=\"";
-        // line 257
+        // line 245
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"), "html", null, true);
         echo "\"></script>
 \t\t\t<script src=\"";
-        // line 258
+        // line 246
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front/assets/vendor/aos/aos.js"), "html", null, true);
         echo "\"></script>
 \t\t\t<script src=\"";
-        // line 259
+        // line 247
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front/assets/vendor/glightbox/js/glightbox.min.js"), "html", null, true);
         echo "\"></script>
 \t\t\t<script src=\"";
-        // line 260
+        // line 248
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front/assets/vendor/swiper/swiper-bundle.min.js"), "html", null, true);
         echo "\"></script>
 \t\t\t<script src=\"";
-        // line 261
+        // line 249
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front/assets/vendor/isotope-layout/isotope.pkgd.min.js"), "html", null, true);
         echo "\"></script>
 \t\t\t<script src=\"";
-        // line 262
+        // line 250
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front/assets/vendor/php-email-form/validate.js"), "html", null, true);
         echo "\"></script>
 
 \t\t\t<!-- Template Main JS File -->
 \t\t\t<script src=\"";
-        // line 265
+        // line 253
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front/assets/js/main.js"), "html", null, true);
         echo "\"></script>
 
@@ -466,7 +460,7 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
 
     public function getDebugInfo()
     {
-        return array (  445 => 265,  439 => 262,  435 => 261,  431 => 260,  427 => 259,  423 => 258,  419 => 257,  413 => 255,  403 => 254,  385 => 128,  372 => 43,  364 => 38,  360 => 37,  356 => 36,  352 => 35,  348 => 34,  342 => 32,  332 => 31,  321 => 268,  319 => 254,  192 => 129,  190 => 128,  187 => 127,  178 => 124,  175 => 123,  171 => 122,  106 => 59,  95 => 54,  90 => 51,  86 => 50,  80 => 46,  78 => 31,  46 => 1,);
+        return array (  439 => 253,  433 => 250,  429 => 249,  425 => 248,  421 => 247,  417 => 246,  413 => 245,  407 => 243,  397 => 242,  379 => 116,  366 => 43,  358 => 38,  354 => 37,  350 => 36,  346 => 35,  342 => 34,  336 => 32,  326 => 31,  315 => 256,  313 => 242,  186 => 117,  184 => 116,  181 => 115,  172 => 112,  169 => 111,  165 => 110,  145 => 93,  141 => 92,  106 => 59,  95 => 54,  90 => 51,  86 => 50,  80 => 46,  78 => 31,  46 => 1,);
     }
 
     public function getSourceContext()
@@ -560,24 +554,12 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
           <li><a href=\"portfolio.html\">Portfolio</a></li>
           <li><a href=\"team.html\">Team</a></li>
           <li><a href=\"blog.html\">Blog</a></li>
-          <li class=\"dropdown\"><a ><span>Dropdown</span> <i class=\"bi bi-chevron-down dropdown-indicator\"></i></a>
+          <li class=\"dropdown\"><a ><span>Location des vehicules</span> <i class=\"bi bi-chevron-down dropdown-indicator\"></i></a>
             <ul>
-              <li><a >Dropdown 1</a></li>
-              <li class=\"dropdown\"><a ><span>Deep Dropdown</span> <i class=\"bi bi-chevron-down dropdown-indicator\"></i></a>
-                <ul>
-                  <li><a >Deep Dropdown 1</a></li>
-                  <li><a >Deep Dropdown 2</a></li>
-                  <li><a >Deep Dropdown 3</a></li>
-                  <li><a >Deep Dropdown 4</a></li>
-                  <li><a >Deep Dropdown 5</a></li>
-                </ul>
-              </li>
-              <li><a >Dropdown 2</a></li>
-              <li><a >Dropdown 3</a></li>
-              <li><a >Dropdown 4</a></li>
+          \t  <li><a href=\"{{ url('app_front_reservation') }}\" class=\"active\">Liste des vehicules</a></li>
+          \t  <li><a href=\"{{ url('app_interface_Mesreservation') }}\" class=\"active\">Mes locations</a></li>
             </ul>
           </li>
-          <li><a href=\"contact.html\" class=\"active\">Location des vehicules</a></li>
         </ul>
       </nav><!-- .navbar -->
 

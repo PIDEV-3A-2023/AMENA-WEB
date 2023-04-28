@@ -24,6 +24,8 @@
       <parameter key="SwiftmailerBundle">Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle</parameter>
       <parameter key="SymfonyCastsResetPasswordBundle">SymfonyCasts\Bundle\ResetPassword\SymfonyCastsResetPasswordBundle</parameter>
       <parameter key="DoctrineFixturesBundle">Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle</parameter>
+      <parameter key="MercurySeriesFlashyBundle">MercurySeries\FlashyBundle\MercurySeriesFlashyBundle</parameter>
+      <parameter key="KnpPaginatorBundle">Knp\Bundle\PaginatorBundle\KnpPaginatorBundle</parameter>
     </parameter>
     <parameter key="kernel.bundles_metadata" type="collection">
       <parameter key="FrameworkBundle" type="collection">
@@ -85,6 +87,14 @@
       <parameter key="DoctrineFixturesBundle" type="collection">
         <parameter key="path">C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\doctrine\doctrine-fixtures-bundle</parameter>
         <parameter key="namespace">Doctrine\Bundle\FixturesBundle</parameter>
+      </parameter>
+      <parameter key="MercurySeriesFlashyBundle" type="collection">
+        <parameter key="path">C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\mercuryseries\flashy-bundle\src</parameter>
+        <parameter key="namespace">MercurySeries\FlashyBundle</parameter>
+      </parameter>
+      <parameter key="KnpPaginatorBundle" type="collection">
+        <parameter key="path">C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\knplabs\knp-paginator-bundle</parameter>
+        <parameter key="namespace">Knp\Bundle\PaginatorBundle</parameter>
       </parameter>
     </parameter>
     <parameter key="kernel.charset">UTF-8</parameter>
@@ -279,6 +289,11 @@
       <parameter key="default">swiftmailer.mailer.default</parameter>
     </parameter>
     <parameter key="swiftmailer.default_mailer">default</parameter>
+    <parameter key="knp_paginator.template.pagination">@KnpPaginator/Pagination/sliding.html.twig</parameter>
+    <parameter key="knp_paginator.template.filtration">@KnpPaginator/Pagination/filtration.html.twig</parameter>
+    <parameter key="knp_paginator.template.sortable">@KnpPaginator/Pagination/sortable_link.html.twig</parameter>
+    <parameter key="knp_paginator.page_range">5</parameter>
+    <parameter key="knp_paginator.page_limit">null</parameter>
     <parameter key="data_collector.templates" type="collection">
       <parameter key="data_collector.request" type="collection">
         <parameter>request</parameter>
@@ -545,6 +560,9 @@
       <tag name="form.type"/>
     </service>
     <service id="App\Form\ResetPasswordRequestFormType" class="App\Form\ResetPasswordRequestFormType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\SearchForm" class="App\Form\SearchForm" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
     <service id="App\Form\User1Type" class="App\Form\User1Type" autowire="true" autoconfigure="true">
@@ -1400,6 +1418,7 @@
         <argument>App\Form\RegistrationFormType</argument>
         <argument>App\Form\ReservationType</argument>
         <argument>App\Form\ResetPasswordRequestFormType</argument>
+        <argument>App\Form\SearchForm</argument>
         <argument>App\Form\User1Type</argument>
         <argument>App\Form\UserType</argument>
         <argument>App\Form\ValidationType</argument>
@@ -1883,6 +1902,7 @@
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\security-core/Resources/translations\security.ar.xlf</argument>
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.ar.xlf</argument>
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.ar.xlf</argument>
+            <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.ar.xliff</argument>
           </argument>
           <argument key="az" type="collection">
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\validator/Resources/translations\validators.az.xlf</argument>
@@ -1898,6 +1918,7 @@
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\validator/Resources/translations\validators.bg.xlf</argument>
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\form/Resources/translations\validators.bg.xlf</argument>
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\security-core/Resources/translations\security.bg.xlf</argument>
+            <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.bg.xliff</argument>
           </argument>
           <argument key="bs" type="collection">
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\validator/Resources/translations\validators.bs.xlf</argument>
@@ -1910,6 +1931,7 @@
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\security-core/Resources/translations\security.ca.xlf</argument>
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.ca.xlf</argument>
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.ca.xlf</argument>
+            <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.ca.xliff</argument>
           </argument>
           <argument key="cs" type="collection">
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\validator/Resources/translations\validators.cs.xlf</argument>
@@ -1917,6 +1939,7 @@
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\security-core/Resources/translations\security.cs.xlf</argument>
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.cs.xlf</argument>
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.cs.xlf</argument>
+            <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.cs.xliff</argument>
           </argument>
           <argument key="cy" type="collection">
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\validator/Resources/translations\validators.cy.xlf</argument>
@@ -1925,6 +1948,7 @@
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\validator/Resources/translations\validators.da.xlf</argument>
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\form/Resources/translations\validators.da.xlf</argument>
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\security-core/Resources/translations\security.da.xlf</argument>
+            <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.da.xliff</argument>
           </argument>
           <argument key="de" type="collection">
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\validator/Resources/translations\validators.de.xlf</argument>
@@ -1932,6 +1956,7 @@
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\security-core/Resources/translations\security.de.xlf</argument>
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.de.xlf</argument>
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.de.xlf</argument>
+            <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.de.xliff</argument>
           </argument>
           <argument key="el" type="collection">
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\validator/Resources/translations\validators.el.xlf</argument>
@@ -1944,6 +1969,7 @@
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\security-core/Resources/translations\security.en.xlf</argument>
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.en.xlf</argument>
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.en.xlf</argument>
+            <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.en.xliff</argument>
           </argument>
           <argument key="es" type="collection">
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\validator/Resources/translations\validators.es.xlf</argument>
@@ -1951,6 +1977,7 @@
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\security-core/Resources/translations\security.es.xlf</argument>
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.es.xlf</argument>
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.es.xlf</argument>
+            <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.es.xliff</argument>
           </argument>
           <argument key="et" type="collection">
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\validator/Resources/translations\validators.et.xlf</argument>
@@ -1961,11 +1988,13 @@
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\validator/Resources/translations\validators.eu.xlf</argument>
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\form/Resources/translations\validators.eu.xlf</argument>
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\security-core/Resources/translations\security.eu.xlf</argument>
+            <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.eu.xliff</argument>
           </argument>
           <argument key="fa" type="collection">
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\validator/Resources/translations\validators.fa.xlf</argument>
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\form/Resources/translations\validators.fa.xlf</argument>
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\security-core/Resources/translations\security.fa.xlf</argument>
+            <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.fa.xliff</argument>
           </argument>
           <argument key="fi" type="collection">
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\validator/Resources/translations\validators.fi.xlf</argument>
@@ -1973,6 +2002,7 @@
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\security-core/Resources/translations\security.fi.xlf</argument>
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.fi.xlf</argument>
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.fi.xlf</argument>
+            <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.fi.xliff</argument>
           </argument>
           <argument key="fr" type="collection">
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\validator/Resources/translations\validators.fr.xlf</argument>
@@ -1980,6 +2010,7 @@
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\security-core/Resources/translations\security.fr.xlf</argument>
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.fr.xlf</argument>
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.fr.xlf</argument>
+            <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.fr.xliff</argument>
           </argument>
           <argument key="gl" type="collection">
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\validator/Resources/translations\validators.gl.xlf</argument>
@@ -1995,6 +2026,7 @@
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\validator/Resources/translations\validators.hr.xlf</argument>
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\form/Resources/translations\validators.hr.xlf</argument>
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\security-core/Resources/translations\security.hr.xlf</argument>
+            <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.hr.xliff</argument>
           </argument>
           <argument key="hu" type="collection">
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\validator/Resources/translations\validators.hu.xlf</argument>
@@ -2002,6 +2034,7 @@
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\security-core/Resources/translations\security.hu.xlf</argument>
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.hu.xlf</argument>
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.hu.xlf</argument>
+            <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.hu.xliff</argument>
           </argument>
           <argument key="hy" type="collection">
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\validator/Resources/translations\validators.hy.xlf</argument>
@@ -2013,6 +2046,7 @@
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\form/Resources/translations\validators.id.xlf</argument>
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\security-core/Resources/translations\security.id.xlf</argument>
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.id.xlf</argument>
+            <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.id.xliff</argument>
           </argument>
           <argument key="it" type="collection">
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\validator/Resources/translations\validators.it.xlf</argument>
@@ -2020,6 +2054,7 @@
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\security-core/Resources/translations\security.it.xlf</argument>
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.it.xlf</argument>
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.it.xlf</argument>
+            <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.it.xliff</argument>
           </argument>
           <argument key="ja" type="collection">
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\validator/Resources/translations\validators.ja.xlf</argument>
@@ -2027,6 +2062,7 @@
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\security-core/Resources/translations\security.ja.xlf</argument>
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.ja.xlf</argument>
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.ja.xlf</argument>
+            <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.ja.xliff</argument>
           </argument>
           <argument key="lb" type="collection">
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\validator/Resources/translations\validators.lb.xlf</argument>
@@ -2037,6 +2073,7 @@
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\validator/Resources/translations\validators.lt.xlf</argument>
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\form/Resources/translations\validators.lt.xlf</argument>
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\security-core/Resources/translations\security.lt.xlf</argument>
+            <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.lt.xliff</argument>
           </argument>
           <argument key="lv" type="collection">
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\validator/Resources/translations\validators.lv.xlf</argument>
@@ -2064,6 +2101,7 @@
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\security-core/Resources/translations\security.nl.xlf</argument>
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle+intl-icu.nl.xlf</argument>
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle+intl-icu.nl.xlf</argument>
+            <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.nl.xliff</argument>
           </argument>
           <argument key="nn" type="collection">
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\validator/Resources/translations\validators.nn.xlf</argument>
@@ -2074,6 +2112,7 @@
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\validator/Resources/translations\validators.no.xlf</argument>
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\form/Resources/translations\validators.no.xlf</argument>
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\security-core/Resources/translations\security.no.xlf</argument>
+            <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.no.xliff</argument>
           </argument>
           <argument key="pl" type="collection">
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\validator/Resources/translations\validators.pl.xlf</argument>
@@ -2081,6 +2120,7 @@
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\security-core/Resources/translations\security.pl.xlf</argument>
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.pl.xlf</argument>
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.pl.xlf</argument>
+            <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.pl.xliff</argument>
           </argument>
           <argument key="pt" type="collection">
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\validator/Resources/translations\validators.pt.xlf</argument>
@@ -2093,12 +2133,14 @@
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\validator/Resources/translations\validators.pt_BR.xlf</argument>
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\form/Resources/translations\validators.pt_BR.xlf</argument>
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\security-core/Resources/translations\security.pt_BR.xlf</argument>
+            <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.pt_BR.xliff</argument>
           </argument>
           <argument key="ro" type="collection">
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\validator/Resources/translations\validators.ro.xlf</argument>
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\form/Resources/translations\validators.ro.xlf</argument>
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\security-core/Resources/translations\security.ro.xlf</argument>
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.ro.xlf</argument>
+            <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.ro.xliff</argument>
           </argument>
           <argument key="ru" type="collection">
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\validator/Resources/translations\validators.ru.xlf</argument>
@@ -2106,6 +2148,7 @@
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\security-core/Resources/translations\security.ru.xlf</argument>
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.ru.xlf</argument>
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.ru.xlf</argument>
+            <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.ru.xliff</argument>
           </argument>
           <argument key="sk" type="collection">
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\validator/Resources/translations\validators.sk.xlf</argument>
@@ -2138,6 +2181,7 @@
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\validator/Resources/translations\validators.sv.xlf</argument>
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\form/Resources/translations\validators.sv.xlf</argument>
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\security-core/Resources/translations\security.sv.xlf</argument>
+            <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.sv.xliff</argument>
           </argument>
           <argument key="th" type="collection">
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\validator/Resources/translations\validators.th.xlf</argument>
@@ -2155,6 +2199,7 @@
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\security-core/Resources/translations\security.tr.xlf</argument>
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.tr.xlf</argument>
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.tr.xlf</argument>
+            <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.tr.xliff</argument>
           </argument>
           <argument key="uk" type="collection">
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\validator/Resources/translations\validators.uk.xlf</argument>
@@ -2162,6 +2207,7 @@
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\security-core/Resources/translations\security.uk.xlf</argument>
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.uk.xlf</argument>
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.uk.xlf</argument>
+            <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.uk.xliff</argument>
           </argument>
           <argument key="ur" type="collection">
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\validator/Resources/translations\validators.ur.xlf</argument>
@@ -2192,6 +2238,12 @@
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.sr.xlf</argument>
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.sr.xlf</argument>
           </argument>
+          <argument key="ky" type="collection">
+            <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.ky.xliff</argument>
+          </argument>
+          <argument key="sw" type="collection">
+            <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.sw.xliff</argument>
+          </argument>
         </argument>
         <argument key="scanned_directories" type="collection">
           <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\validator/Resources/translations</argument>
@@ -2199,6 +2251,7 @@
           <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\security-core/Resources/translations</argument>
           <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations</argument>
           <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations</argument>
+          <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\knplabs\knp-paginator-bundle/translations</argument>
           <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers/translations</argument>
           <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\framework-bundle/translations</argument>
           <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\doctrine\doctrine-bundle/translations</argument>
@@ -2213,6 +2266,7 @@
           <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\sensio\framework-extra-bundle\src/translations</argument>
           <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\swiftmailer-bundle/translations</argument>
           <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\doctrine\doctrine-fixtures-bundle/translations</argument>
+          <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\mercuryseries\flashy-bundle\src/translations</argument>
         </argument>
         <argument key="cache_vary" type="collection">
           <argument key="scanned_directories" type="collection">
@@ -2221,6 +2275,7 @@
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\security-core/Resources/translations</argument>
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfonycasts\verify-email-bundle\src/Resources/translations</argument>
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfonycasts\reset-password-bundle\src/Resources/translations</argument>
+            <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\knplabs\knp-paginator-bundle/translations</argument>
             <argument>translations</argument>
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\framework-bundle/translations</argument>
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\doctrine\doctrine-bundle/translations</argument>
@@ -2235,6 +2290,7 @@
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\sensio\framework-extra-bundle\src/translations</argument>
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\swiftmailer-bundle/translations</argument>
             <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\doctrine\doctrine-fixtures-bundle/translations</argument>
+            <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\mercuryseries\flashy-bundle\src/translations</argument>
           </argument>
         </argument>
       </argument>
@@ -2504,6 +2560,14 @@
         <argument type="collection">
           <argument type="service_closure" id="security.context_listener.0"/>
           <argument>onKernelResponse</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListener">
+        <argument>kernel.request</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="knp_paginator.subscriber.sliding_pagination"/>
+          <argument>onKernelRequest</argument>
         </argument>
         <argument>0</argument>
       </call>
@@ -3050,6 +3114,46 @@
           <argument>onTerminate</argument>
         </argument>
         <argument>0</argument>
+      </call>
+      <call method="addListener">
+        <argument>knp_pager.before</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="knp_paginator.subscriber.paginate"/>
+          <argument>before</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListener">
+        <argument>knp_pager.pagination</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="knp_paginator.subscriber.paginate"/>
+          <argument>pagination</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListener">
+        <argument>knp_pager.before</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="knp_paginator.subscriber.sortable"/>
+          <argument>before</argument>
+        </argument>
+        <argument>1</argument>
+      </call>
+      <call method="addListener">
+        <argument>knp_pager.before</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="knp_paginator.subscriber.filtration"/>
+          <argument>before</argument>
+        </argument>
+        <argument>1</argument>
+      </call>
+      <call method="addListener">
+        <argument>knp_pager.pagination</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="knp_paginator.subscriber.sliding_pagination"/>
+          <argument>pagination</argument>
+        </argument>
+        <argument>1</argument>
       </call>
       <call method="addListener">
         <argument>Symfony\Component\Security\Http\Event\CheckPassportEvent</argument>
@@ -3642,7 +3746,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension">
-      <argument type="service" id=".service_locator.0Fv4hMK"/>
+      <argument type="service" id=".service_locator.LVv3G8J"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -5149,6 +5253,9 @@
       <call method="addExtension">
         <argument type="service" id="twig.extension.webprofiler"/>
       </call>
+      <call method="addExtension">
+        <argument type="service" id="knp_paginator.twig.extension.pagination"/>
+      </call>
       <call method="addGlobal">
         <argument>app</argument>
         <argument type="service" id="twig.app_variable"/>
@@ -5255,6 +5362,22 @@
       <call method="addPath">
         <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\symfony\swiftmailer-bundle/Resources/views</argument>
         <argument>!Swiftmailer</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\mercuryseries\flashy-bundle\src/Resources/views</argument>
+        <argument>MercurySeriesFlashy</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\mercuryseries\flashy-bundle\src/Resources/views</argument>
+        <argument>!MercurySeriesFlashy</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\knplabs\knp-paginator-bundle/templates</argument>
+        <argument>KnpPaginator</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers\vendor\knplabs\knp-paginator-bundle/templates</argument>
+        <argument>!KnpPaginator</argument>
       </call>
       <call method="addPath">
         <argument>C:\Users\klair\OneDrive\Bureau\web integré\digidreamers/templates</argument>
@@ -6798,6 +6921,59 @@
     <service id="doctrine.fixtures.purger.orm_purger_factory" class="Doctrine\Bundle\FixturesBundle\Purger\ORMPurgerFactory">
       <tag name="doctrine.fixtures.purger_factory" alias="default"/>
     </service>
+    <service id="mercuryseries_flashy.flashy_notifier" class="MercurySeries\FlashyBundle\FlashyNotifier" public="true">
+      <argument type="service" id="mercuryseries_flashy.symfony_session_store"/>
+      <argument>mercuryseries_flashy_notification</argument>
+    </service>
+    <service id="mercuryseries_flashy.symfony_session_store" class="MercurySeries\FlashyBundle\SymfonySessionStore">
+      <argument type="service" id="request_stack"/>
+    </service>
+    <service id="knp_paginator" class="Knp\Component\Pager\Paginator" public="true" lazy="true">
+      <tag name="proxy" interface="Knp\Component\Pager\PaginatorInterface"/>
+      <argument type="service" id="debug.event_dispatcher"/>
+      <argument type="service" id="request_stack"/>
+      <call method="setDefaultPaginatorOptions">
+        <argument type="collection">
+          <argument key="pageParameterName">page</argument>
+          <argument key="sortFieldParameterName">sort</argument>
+          <argument key="sortDirectionParameterName">direction</argument>
+          <argument key="filterFieldParameterName">filterField</argument>
+          <argument key="filterValueParameterName">filterValue</argument>
+          <argument key="distinct">true</argument>
+          <argument key="pageOutOfRange">ignore</argument>
+          <argument key="defaultLimit">10</argument>
+        </argument>
+      </call>
+    </service>
+    <service id="knp_paginator.subscriber.paginate" class="Knp\Component\Pager\Event\Subscriber\Paginate\PaginationSubscriber">
+      <tag name="kernel.event_subscriber"/>
+    </service>
+    <service id="knp_paginator.subscriber.sortable" class="Knp\Component\Pager\Event\Subscriber\Sortable\SortableSubscriber">
+      <tag name="kernel.event_subscriber"/>
+    </service>
+    <service id="knp_paginator.subscriber.filtration" class="Knp\Component\Pager\Event\Subscriber\Filtration\FiltrationSubscriber">
+      <tag name="kernel.event_subscriber"/>
+    </service>
+    <service id="knp_paginator.subscriber.sliding_pagination" class="Knp\Bundle\PaginatorBundle\Subscriber\SlidingPaginationSubscriber">
+      <tag name="kernel.event_subscriber"/>
+      <tag name="kernel.event_listener" event="kernel.request" method="onKernelRequest"/>
+      <tag name="container.hot_path"/>
+      <argument type="collection">
+        <argument key="defaultPaginationTemplate">@KnpPaginator/Pagination/sliding.html.twig</argument>
+        <argument key="defaultSortableTemplate">@KnpPaginator/Pagination/sortable_link.html.twig</argument>
+        <argument key="defaultFiltrationTemplate">@KnpPaginator/Pagination/filtration.html.twig</argument>
+        <argument key="defaultPageRange">5</argument>
+        <argument key="defaultPageLimit">null</argument>
+      </argument>
+    </service>
+    <service id="knp_paginator.helper.processor" class="Knp\Bundle\PaginatorBundle\Helper\Processor">
+      <argument type="service" id="router.default"/>
+      <argument type="service" id="translator.data_collector"/>
+    </service>
+    <service id="knp_paginator.twig.extension.pagination" class="Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension">
+      <tag name="twig.extension"/>
+      <argument type="service" id="knp_paginator.helper.processor"/>
+    </service>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\AccueilController" class="App\Controller\AccueilController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\AccueilController" class="App\Controller\AccueilController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\AccueilController" class="App\Controller\AccueilController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -6877,6 +7053,8 @@
     <service id=".abstract.instanceof.App\Form\ReservationType" class="App\Form\ReservationType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ResetPasswordRequestFormType" class="App\Form\ResetPasswordRequestFormType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\ResetPasswordRequestFormType" class="App\Form\ResetPasswordRequestFormType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\SearchForm" class="App\Form\SearchForm" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\SearchForm" class="App\Form\SearchForm" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\User1Type" class="App\Form\User1Type" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\User1Type" class="App\Form\User1Type" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\UserType" class="App\Form\UserType" autowire="true" abstract="true"/>
@@ -7352,17 +7530,46 @@
         <argument key="cadeauxRepository" type="service_closure" id="App\Repository\GiftsRepository"/>
       </argument>
     </service>
+    <service id=".service_locator.Y4dGdmc" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="flashy" type="service_closure" id="mercuryseries_flashy.flashy_notifier"/>
+        <argument key="reservation" type="service_closure" id=".errored..service_locator.Y4dGdmc.App\Entity\Reservation"/>
+        <argument key="reservationRepository" type="service_closure" id="App\Repository\ReservationRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.jtI7Unb" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="reservation" type="service_closure" id=".errored..service_locator.jtI7Unb.App\Entity\Reservation"/>
+      </argument>
+    </service>
     <service id=".service_locator.aKM6MDa" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
       </argument>
     </service>
-    <service id=".service_locator.PASA0hs" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.P_TsidZ" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="reservationRepository" type="service_closure" id="App\Repository\ReservationRepository"/>
-        <argument key="vehicule" type="service_closure" id=".errored..service_locator.PASA0hs.App\Entity\Vehicule"/>
+        <argument key="vehiculeRepository" type="service_closure" id="App\Repository\VehiculeRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.tuLzBbr" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="VehiculeRepository" type="service_closure" id="App\Repository\VehiculeRepository"/>
+        <argument key="reservationRepository" type="service_closure" id="App\Repository\ReservationRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.QHuNGIY" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="flashy" type="service_closure" id="mercuryseries_flashy.flashy_notifier"/>
+        <argument key="reservationRepository" type="service_closure" id="App\Repository\ReservationRepository"/>
+        <argument key="vehicule" type="service_closure" id=".errored..service_locator.QHuNGIY.App\Entity\Vehicule"/>
       </argument>
     </service>
     <service id=".service_locator.CwbG2lJ" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -7431,16 +7638,13 @@
         <argument key="userPasswordHasher" type="service_closure" id="security.user_password_hasher"/>
       </argument>
     </service>
-    <service id=".service_locator.VddRp04" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.0zzjZP2" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="paginator" type="service_closure" id="knp_paginator"/>
         <argument key="reservationRepository" type="service_closure" id="App\Repository\ReservationRepository"/>
-      </argument>
-    </service>
-    <service id=".service_locator.jtI7Unb" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="reservation" type="service_closure" id=".errored..service_locator.jtI7Unb.App\Entity\Reservation"/>
+        <argument key="userRepository" type="service_closure" id="App\Repository\UserRepository"/>
+        <argument key="vehiculeRepository" type="service_closure" id="App\Repository\VehiculeRepository"/>
       </argument>
     </service>
     <service id=".service_locator.mxLQRmV" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -7485,10 +7689,20 @@
         <argument key="validation" type="service_closure" id=".errored..service_locator.Q1EeZWh.App\Entity\Validation"/>
       </argument>
     </service>
-    <service id=".service_locator.pB20uqv" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.7J6ZkRF" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="vehicule" type="service_closure" id=".errored..service_locator.pB20uqv.App\Entity\Vehicule"/>
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+        <argument key="paginator" type="service_closure" id="knp_paginator"/>
+        <argument key="reservationRepository" type="service_closure" id="App\Repository\ReservationRepository"/>
+        <argument key="vehiculeRepository" type="service_closure" id="App\Repository\VehiculeRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.fUnhcYR" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="reservationRepository" type="service_closure" id="App\Repository\ReservationRepository"/>
+        <argument key="vehicule" type="service_closure" id=".errored..service_locator.fUnhcYR.App\Entity\Vehicule"/>
       </argument>
     </service>
     <service id=".service_locator.iVJ8gI9" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -7498,7 +7712,7 @@
         <argument key="vehicule" type="service_closure" id=".errored..service_locator.iVJ8gI9.App\Entity\Vehicule"/>
       </argument>
     </service>
-    <service id=".service_locator.jw8LPMD" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.GoI2mGG" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\AdminColisController::delete" type="service_closure" id=".service_locator.S8.Ozi0"/>
@@ -7533,8 +7747,12 @@
         <argument key="App\Controller\DocumentexpeditionController::show" type="service_closure" id=".service_locator.Q3jtqTx"/>
         <argument key="App\Controller\FrontCompetitionController::afficherCadeaux" type="service_closure" id=".service_locator.qobE8FD"/>
         <argument key="App\Controller\FrontCompetitionController::index" type="service_closure" id=".service_locator.4LxtSay"/>
-        <argument key="App\Controller\FrontReservationController::detaille" type="service_closure" id=".service_locator.PASA0hs"/>
+        <argument key="App\Controller\FrontReservationController::annuler" type="service_closure" id=".service_locator.Y4dGdmc"/>
+        <argument key="App\Controller\FrontReservationController::detaille" type="service_closure" id=".service_locator.QHuNGIY"/>
         <argument key="App\Controller\FrontReservationController::index" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\FrontReservationController::mesRes" type="service_closure" id=".service_locator.P_TsidZ"/>
+        <argument key="App\Controller\FrontReservationController::new" type="service_closure" id=".service_locator.tuLzBbr"/>
+        <argument key="App\Controller\FrontReservationController::usersDataDownload" type="service_closure" id=".service_locator.jtI7Unb"/>
         <argument key="App\Controller\GiftsController::delete" type="service_closure" id=".service_locator.ooFOLHe"/>
         <argument key="App\Controller\GiftsController::edit" type="service_closure" id=".service_locator.ooFOLHe"/>
         <argument key="App\Controller\GiftsController::index" type="service_closure" id=".service_locator.CwbG2lJ"/>
@@ -7548,11 +7766,12 @@
         <argument key="App\Controller\MessageController::new" type="service_closure" id=".service_locator.7B8MPwp"/>
         <argument key="App\Controller\MessageController::show" type="service_closure" id=".service_locator.MjFFzS6"/>
         <argument key="App\Controller\RegistrationController::register" type="service_closure" id=".service_locator.YU8H6ve"/>
+        <argument key="App\Controller\ReservationController::confirmer" type="service_closure" id=".service_locator.Y4dGdmc"/>
         <argument key="App\Controller\ReservationController::delete" type="service_closure" id=".service_locator.mxLQRmV"/>
         <argument key="App\Controller\ReservationController::edit" type="service_closure" id=".service_locator.mxLQRmV"/>
-        <argument key="App\Controller\ReservationController::index" type="service_closure" id=".service_locator.VddRp04"/>
-        <argument key="App\Controller\ReservationController::new" type="service_closure" id=".service_locator.VddRp04"/>
+        <argument key="App\Controller\ReservationController::index" type="service_closure" id=".service_locator.0zzjZP2"/>
         <argument key="App\Controller\ReservationController::show" type="service_closure" id=".service_locator.jtI7Unb"/>
+        <argument key="App\Controller\ReservationController::terminer" type="service_closure" id=".service_locator.Y4dGdmc"/>
         <argument key="App\Controller\ResetPasswordController::request" type="service_closure" id=".service_locator.pXhSQsU"/>
         <argument key="App\Controller\ResetPasswordController::reset" type="service_closure" id=".service_locator.kdKsWx5"/>
         <argument key="App\Controller\UserController::delete" type="service_closure" id=".service_locator.Q1F27w5"/>
@@ -7566,9 +7785,9 @@
         <argument key="App\Controller\ValidationController::show" type="service_closure" id=".service_locator.Q1EeZWh"/>
         <argument key="App\Controller\VehiculeController::delete" type="service_closure" id=".service_locator.iVJ8gI9"/>
         <argument key="App\Controller\VehiculeController::edit" type="service_closure" id=".service_locator.iVJ8gI9"/>
-        <argument key="App\Controller\VehiculeController::index" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\VehiculeController::index" type="service_closure" id=".service_locator.7J6ZkRF"/>
         <argument key="App\Controller\VehiculeController::new" type="service_closure" id=".service_locator.aKM6MDa"/>
-        <argument key="App\Controller\VehiculeController::show" type="service_closure" id=".service_locator.pB20uqv"/>
+        <argument key="App\Controller\VehiculeController::show" type="service_closure" id=".service_locator.fUnhcYR"/>
         <argument key="App\Kernel::loadRoutes" type="service_closure" id=".service_locator.xUrKPVU"/>
         <argument key="App\Kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.xUrKPVU"/>
         <argument key="kernel::loadRoutes" type="service_closure" id=".service_locator.xUrKPVU"/>
@@ -7605,8 +7824,12 @@
         <argument key="App\Controller\DocumentexpeditionController:show" type="service_closure" id=".service_locator.Q3jtqTx"/>
         <argument key="App\Controller\FrontCompetitionController:afficherCadeaux" type="service_closure" id=".service_locator.qobE8FD"/>
         <argument key="App\Controller\FrontCompetitionController:index" type="service_closure" id=".service_locator.4LxtSay"/>
-        <argument key="App\Controller\FrontReservationController:detaille" type="service_closure" id=".service_locator.PASA0hs"/>
+        <argument key="App\Controller\FrontReservationController:annuler" type="service_closure" id=".service_locator.Y4dGdmc"/>
+        <argument key="App\Controller\FrontReservationController:detaille" type="service_closure" id=".service_locator.QHuNGIY"/>
         <argument key="App\Controller\FrontReservationController:index" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\FrontReservationController:mesRes" type="service_closure" id=".service_locator.P_TsidZ"/>
+        <argument key="App\Controller\FrontReservationController:new" type="service_closure" id=".service_locator.tuLzBbr"/>
+        <argument key="App\Controller\FrontReservationController:usersDataDownload" type="service_closure" id=".service_locator.jtI7Unb"/>
         <argument key="App\Controller\GiftsController:delete" type="service_closure" id=".service_locator.ooFOLHe"/>
         <argument key="App\Controller\GiftsController:edit" type="service_closure" id=".service_locator.ooFOLHe"/>
         <argument key="App\Controller\GiftsController:index" type="service_closure" id=".service_locator.CwbG2lJ"/>
@@ -7620,11 +7843,12 @@
         <argument key="App\Controller\MessageController:new" type="service_closure" id=".service_locator.7B8MPwp"/>
         <argument key="App\Controller\MessageController:show" type="service_closure" id=".service_locator.MjFFzS6"/>
         <argument key="App\Controller\RegistrationController:register" type="service_closure" id=".service_locator.YU8H6ve"/>
+        <argument key="App\Controller\ReservationController:confirmer" type="service_closure" id=".service_locator.Y4dGdmc"/>
         <argument key="App\Controller\ReservationController:delete" type="service_closure" id=".service_locator.mxLQRmV"/>
         <argument key="App\Controller\ReservationController:edit" type="service_closure" id=".service_locator.mxLQRmV"/>
-        <argument key="App\Controller\ReservationController:index" type="service_closure" id=".service_locator.VddRp04"/>
-        <argument key="App\Controller\ReservationController:new" type="service_closure" id=".service_locator.VddRp04"/>
+        <argument key="App\Controller\ReservationController:index" type="service_closure" id=".service_locator.0zzjZP2"/>
         <argument key="App\Controller\ReservationController:show" type="service_closure" id=".service_locator.jtI7Unb"/>
+        <argument key="App\Controller\ReservationController:terminer" type="service_closure" id=".service_locator.Y4dGdmc"/>
         <argument key="App\Controller\ResetPasswordController:request" type="service_closure" id=".service_locator.pXhSQsU"/>
         <argument key="App\Controller\ResetPasswordController:reset" type="service_closure" id=".service_locator.kdKsWx5"/>
         <argument key="App\Controller\UserController:delete" type="service_closure" id=".service_locator.Q1F27w5"/>
@@ -7638,9 +7862,9 @@
         <argument key="App\Controller\ValidationController:show" type="service_closure" id=".service_locator.Q1EeZWh"/>
         <argument key="App\Controller\VehiculeController:delete" type="service_closure" id=".service_locator.iVJ8gI9"/>
         <argument key="App\Controller\VehiculeController:edit" type="service_closure" id=".service_locator.iVJ8gI9"/>
-        <argument key="App\Controller\VehiculeController:index" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\VehiculeController:index" type="service_closure" id=".service_locator.7J6ZkRF"/>
         <argument key="App\Controller\VehiculeController:new" type="service_closure" id=".service_locator.aKM6MDa"/>
-        <argument key="App\Controller\VehiculeController:show" type="service_closure" id=".service_locator.pB20uqv"/>
+        <argument key="App\Controller\VehiculeController:show" type="service_closure" id=".service_locator.fUnhcYR"/>
         <argument key="kernel:loadRoutes" type="service_closure" id=".service_locator.xUrKPVU"/>
         <argument key="kernel:registerContainerConfiguration" type="service_closure" id=".service_locator.xUrKPVU"/>
       </argument>
@@ -7704,7 +7928,7 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.0Fv4hMK" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.LVv3G8J" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Form\AnnoncesType" type="service_closure" id="App\Form\AnnoncesType"/>
@@ -7718,6 +7942,7 @@
         <argument key="App\Form\RegistrationFormType" type="service_closure" id="App\Form\RegistrationFormType"/>
         <argument key="App\Form\ReservationType" type="service_closure" id="App\Form\ReservationType"/>
         <argument key="App\Form\ResetPasswordRequestFormType" type="service_closure" id="App\Form\ResetPasswordRequestFormType"/>
+        <argument key="App\Form\SearchForm" type="service_closure" id="App\Form\SearchForm"/>
         <argument key="App\Form\User1Type" type="service_closure" id="App\Form\User1Type"/>
         <argument key="App\Form\UserType" type="service_closure" id="App\Form\UserType"/>
         <argument key="App\Form\ValidationType" type="service_closure" id="App\Form\ValidationType"/>
@@ -8386,12 +8611,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.jw8LPMD"/>
+      <argument type="service" id=".service_locator.GoI2mGG"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.jw8LPMD"/>
+      <argument type="service" id=".service_locator.GoI2mGG"/>
     </service>
     <service id="debug.traced.messenger.bus.default.inner" class="Symfony\Component\Messenger\MessageBus">
       <argument type="iterator">
@@ -8421,15 +8646,16 @@
     <service id=".errored..service_locator.5KifnRw.App\Entity\Competition" class="App\Entity\Competition"/>
     <service id=".errored..service_locator.Q3jtqTx.App\Entity\Documentexpedition" class="App\Entity\Documentexpedition"/>
     <service id=".errored..service_locator.aAfibv8.App\Entity\Documentexpedition" class="App\Entity\Documentexpedition"/>
-    <service id=".errored..service_locator.PASA0hs.App\Entity\Vehicule" class="App\Entity\Vehicule"/>
+    <service id=".errored..service_locator.Y4dGdmc.App\Entity\Reservation" class="App\Entity\Reservation"/>
+    <service id=".errored..service_locator.jtI7Unb.App\Entity\Reservation" class="App\Entity\Reservation"/>
+    <service id=".errored..service_locator.QHuNGIY.App\Entity\Vehicule" class="App\Entity\Vehicule"/>
     <service id=".errored..service_locator.QaH6cEm.App\Entity\Gifts" class="App\Entity\Gifts"/>
     <service id=".errored..service_locator.ooFOLHe.App\Entity\Gifts" class="App\Entity\Gifts"/>
     <service id=".errored..service_locator.MjFFzS6.App\Entity\Message" class="App\Entity\Message"/>
     <service id=".errored..service_locator.UoAUkAt.App\Entity\Message" class="App\Entity\Message"/>
-    <service id=".errored..service_locator.jtI7Unb.App\Entity\Reservation" class="App\Entity\Reservation"/>
     <service id=".errored..service_locator.mxLQRmV.App\Entity\Reservation" class="App\Entity\Reservation"/>
     <service id=".errored..service_locator.Q1EeZWh.App\Entity\Validation" class="App\Entity\Validation"/>
-    <service id=".errored..service_locator.pB20uqv.App\Entity\Vehicule" class="App\Entity\Vehicule"/>
+    <service id=".errored..service_locator.fUnhcYR.App\Entity\Vehicule" class="App\Entity\Vehicule"/>
     <service id=".errored..service_locator.iVJ8gI9.App\Entity\Vehicule" class="App\Entity\Vehicule"/>
     <service id=".console.command.about.lazy" class="Symfony\Component\Console\Command\LazyCommand">
       <argument>about</argument>
@@ -9396,9 +9622,12 @@
     <service id="Swift_Mailer" alias="swiftmailer.mailer.default"/>
     <service id="Swift_Transport" alias="swiftmailer.mailer.default.transport.spool"/>
     <service id="SymfonyCasts\Bundle\ResetPassword\ResetPasswordHelperInterface" alias="symfonycasts.reset_password.helper"/>
+    <service id="mercuryseries_flashy.session_store" alias="mercuryseries_flashy.symfony_session_store"/>
+    <service id="MercurySeries\FlashyBundle\FlashyNotifier" alias="mercuryseries_flashy.flashy_notifier"/>
+    <service id="Knp\Component\Pager\PaginatorInterface" alias="knp_paginator"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.jw8LPMD"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.GoI2mGG"/>
     <service id="session" alias=".session.do-not-use" public="true">
       <deprecated package="symfony/framework-bundle" version="5.3">The "%alias_id%" service and "SessionInterface" alias are deprecated, use "$requestStack-&gt;getSession()" instead.</deprecated>
     </service>
@@ -9423,15 +9652,21 @@
     <service id=".service_locator.h8Jkkd2" alias="messenger.retry_strategy_locator"/>
     <service id=".service_locator.0GV1BZZ" alias=".service_locator.gSv9zYw"/>
     <service id=".service_locator.5dpM5lT" alias=".service_locator.aAfibv8"/>
+    <service id=".service_locator.mUSIDKi" alias=".service_locator.Y4dGdmc"/>
+    <service id=".service_locator.YMcHQ.E" alias=".service_locator.tuLzBbr"/>
+    <service id=".service_locator.8JMmvft" alias=".service_locator.QHuNGIY"/>
     <service id=".service_locator.O4Ni9GK" alias=".service_locator.Fyts_Do"/>
     <service id=".service_locator.vEbnrl2" alias=".service_locator.7B8MPwp"/>
     <service id=".service_locator.riGN6sa" alias=".service_locator.YU8H6ve"/>
+    <service id=".service_locator.j8CWICQ" alias=".service_locator.0zzjZP2"/>
     <service id=".service_locator.pFaEqBs" alias=".service_locator.001ztJT"/>
     <service id=".service_locator.zilqhMR" alias=".service_locator.Q1EeZWh"/>
+    <service id=".service_locator.4xGU7nC" alias=".service_locator.7J6ZkRF"/>
+    <service id=".service_locator.PASA0hs" alias=".service_locator.fUnhcYR"/>
     <service id=".service_locator.gPjNq68" alias=".service_locator.iVJ8gI9"/>
-    <service id=".service_locator.egSluJN" alias=".service_locator.jw8LPMD"/>
+    <service id=".service_locator.VVq3JnE" alias=".service_locator.GoI2mGG"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
-    <service id=".service_locator.J_d6.Xk" alias=".service_locator.0Fv4hMK"/>
+    <service id=".service_locator.LrSyZih" alias=".service_locator.LVv3G8J"/>
     <service id=".service_locator.nk0lT0X" alias=".service_locator.1kmbKC8"/>
     <service id=".service_locator.O24_MAy" alias=".service_locator.yY.p4P7"/>
     <service id=".service_locator.0ghLsew" alias=".service_locator.mx0UMmY"/>
@@ -9474,8 +9709,12 @@
     <service id=".service_locator.hze_3qY" alias=".service_locator.Q3jtqTx"/>
     <service id=".service_locator.fAffx4c" alias=".service_locator.aAfibv8"/>
     <service id=".service_locator.hKMGLuy" alias=".service_locator.qobE8FD"/>
+    <service id=".service_locator.B6Vvrfe" alias=".service_locator.Y4dGdmc"/>
+    <service id=".service_locator.UKRTTGm" alias=".service_locator.jtI7Unb"/>
     <service id=".service_locator.bInR.ll" alias=".service_locator.aKM6MDa"/>
-    <service id=".service_locator.nPbNxS1" alias=".service_locator.PASA0hs"/>
+    <service id=".service_locator.efqYapc" alias=".service_locator.P_TsidZ"/>
+    <service id=".service_locator.bekD_ba" alias=".service_locator.tuLzBbr"/>
+    <service id=".service_locator.JkNMvxJ" alias=".service_locator.QHuNGIY"/>
     <service id=".service_locator.wYQt8jb" alias=".service_locator.CwbG2lJ"/>
     <service id=".service_locator.sKg70GA" alias=".service_locator.Fyts_Do"/>
     <service id=".service_locator.kpjuilJ" alias=".service_locator.QaH6cEm"/>
@@ -9486,15 +9725,15 @@
     <service id=".service_locator.2yFtcCD" alias=".service_locator.MjFFzS6"/>
     <service id=".service_locator.oO5ERaa" alias=".service_locator.UoAUkAt"/>
     <service id=".service_locator.DoCD.2o" alias=".service_locator.YU8H6ve"/>
-    <service id=".service_locator.W5YGkuw" alias=".service_locator.VddRp04"/>
-    <service id=".service_locator.UKRTTGm" alias=".service_locator.jtI7Unb"/>
+    <service id=".service_locator.Viz3gf1" alias=".service_locator.0zzjZP2"/>
     <service id=".service_locator.IUVlptD" alias=".service_locator.mxLQRmV"/>
     <service id=".service_locator.vmloCRj" alias=".service_locator.pXhSQsU"/>
     <service id=".service_locator.Gf4Gasx" alias=".service_locator.kdKsWx5"/>
     <service id=".service_locator.z7AlSxk" alias=".service_locator.aIvvw8v"/>
     <service id=".service_locator..LnKcTa" alias=".service_locator.001ztJT"/>
     <service id=".service_locator.yhUZf7r" alias=".service_locator.Q1EeZWh"/>
-    <service id=".service_locator.9bJ6zHz" alias=".service_locator.pB20uqv"/>
+    <service id=".service_locator.0JMian5" alias=".service_locator.7J6ZkRF"/>
+    <service id=".service_locator.Z5LKNR9" alias=".service_locator.fUnhcYR"/>
     <service id=".service_locator.yYnJCZj" alias=".service_locator.iVJ8gI9"/>
     <service id=".service_locator.A740LBW" alias=".service_locator.mx0UMmY"/>
     <service id=".service_locator.L0rFhJm" alias=".service_locator.GVyCdgr"/>

@@ -28,6 +28,7 @@
 						  * Author: BootstrapMade.com
 						  * License: https://bootstrapmade.com/license/
 						  ======================================================== -->
+		 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.3.0/main.min.css" integrity="sha256-uq9PNlMzB+1h01Ij9cx7zeE2OR2pLAfRw3uUUOOPKdA=" crossorigin="anonymous">
 		{% block stylesheets %}
 			{{ encore_entry_link_tags('app') }}
 			<!-- Vendor CSS Files -->
@@ -47,24 +48,12 @@
 
 	</head>
 	<body>
-	{% for flash_message in app.flashes('success') %}
-    <div class="alert alert-success alert-dismissible fade show" role="alert" id="flash-message">
-        <div class="d-flex align-items-center">
-            <i class="bi bi-check-circle-fill me-2"></i>
-            <span>{{ flash_message }}</span>
-        </div>
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
-{% endfor %}
+			<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.3.0/main.min.js" 
+			integrity="sha256-DBxkGZLxKsLKhz054qUpBqtotG00r9AELGpSigJujLg=" crossorigin="anonymous"></script>
+
+	
 
 <script>
-    // Masquer automatiquement le message de succès après 3 secondes
-    setTimeout(function() {
-        var flashMessage = document.getElementById('flash-message');
-        if (flashMessage !== null) {
-            flashMessage.remove();
-        }
-    }, 3000);
 </script>
     <!-- ======= Header ======= -->
   <header id="header" class="header d-flex align-items-center fixed-top">
@@ -87,24 +76,12 @@
           <li><a href="portfolio.html">Portfolio</a></li>
           <li><a href="team.html">Team</a></li>
           <li><a href="blog.html">Blog</a></li>
-          <li class="dropdown"><a ><span>Dropdown</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+          <li class="dropdown"><a ><span>Location des vehicules</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
-              <li><a >Dropdown 1</a></li>
-              <li class="dropdown"><a ><span>Deep Dropdown</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-                <ul>
-                  <li><a >Deep Dropdown 1</a></li>
-                  <li><a >Deep Dropdown 2</a></li>
-                  <li><a >Deep Dropdown 3</a></li>
-                  <li><a >Deep Dropdown 4</a></li>
-                  <li><a >Deep Dropdown 5</a></li>
-                </ul>
-              </li>
-              <li><a >Dropdown 2</a></li>
-              <li><a >Dropdown 3</a></li>
-              <li><a >Dropdown 4</a></li>
+          	  <li><a href="{{ url('app_front_reservation') }}" class="active">Liste des vehicules</a></li>
+          	  <li><a href="{{ url('app_interface_Mesreservation') }}" class="active">Mes locations</a></li>
             </ul>
           </li>
-          <li><a href="contact.html" class="active">Location des vehicules</a></li>
         </ul>
       </nav><!-- .navbar -->
 
@@ -119,13 +96,8 @@
       </div>
     </div><!-- End Breadcrumbs -->
    <main id="main">
-   {% for message in app.session.flashbag.get('success') %}
-    <div class="alert alert-success" role="alert">
-        <i class="fas fa-check-circle mr-2"></i>{{ message }}
-    </div>
-{% endfor %}
- 
 		{% block body %}{% endblock %}
+
         </main><!-- End #main -->
 		<!-- ======= Footer ======= -->
 		<footer id="footer" class="footer">

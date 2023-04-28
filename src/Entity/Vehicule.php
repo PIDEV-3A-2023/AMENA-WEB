@@ -66,6 +66,7 @@ class Vehicule
 
     public function __construct()
     {
+        $this->etat = 0 ; 
         $this->reservations = new ArrayCollection();
     }
 
@@ -204,7 +205,7 @@ class Vehicule
     
     public function __toString(): string
     {
-        return $this->immat;
+        return $this->marque ;
     }
 
     /**
@@ -241,6 +242,8 @@ class Vehicule
     {
         return $this->etat;
     }
+
+  
 
     
 

@@ -1,40 +1,101 @@
 {% extends 'baseadmin.html.twig' %}
 
-{% block title %}Reservation index{% endblock %}
+{% block title %}Mes Reservations{% endblock %}
+
+		{% block stylesheets %}
+
+			{{ encore_entry_link_tags('app') }}
+			<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+   			 <link rel="stylesheet" href="{{ asset('bundles/mercuryseriesflashy/css/flashy.css') }}">
+{{parent()}}
+	<link href="{{asset('front/assets/css/mesRes.css')}}" rel="stylesheet">
+		{% endblock %}
 
 {% block body %}
-    <h1>Liste des locations</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Date debut</th>
-                <th>Date fin</th>
-                <th>Somme</th>
-                <th>Etat</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for reservation in reservations %}
-            <tr>
-                <td>{{ reservation.dateDeb ? reservation.dateDeb|date('Y-m-d') : '' }}</td>
-                <td>{{ reservation.dateFin ? reservation.dateFin|date('Y-m-d') : '' }}</td>
-                <td>{{ reservation.somme }}</td>
-                <td>{{ reservation.etat }}</td>
-                <td>
-                    <a href="{{ path('app_reservation_show', {'id': reservation.id}) }}">Afficher</a>
-                    <a href="{{ path('app_reservation_edit', {'id': reservation.id}) }}">Modifier</a>
-                    <a href="{{ path('app_reservation_download', {'id': reservation.id}) }}">Recu</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="6">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+<div class="event-schedule-area-two bg-color pad100">
+    <div class="container">
+       
+        <!-- row end-->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade active show" id="home" role="tabpanel">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                         <th class="text-center" scope="col">Etat</th>
+                                          <th scope="col">client</th>
+                                          <th scope="col">Vehicule</th>
+                                        <th scope="col">Informations</th>
+                                        <th class="text-center" scope="col">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                {% for reservationAndVehicule in reservationsAndVehicules |reverse%}
+                                    <tr class="inner-box">
+                                         <th scope="row">
+                                            <div class="event-date">
+                                                {{reservationAndVehicule.reservation.etat}}
+                                            </div>
+                                        </th>
+                                            <td>
+                                            <div class="event-img">
+                                                <img src="{{reservationAndVehicule.user.image }}" alt="" />
+                                            </div>
+                                        </td>
+                                             <td>
+                                            <div class="event-img">
+                                        <a href="{{ path('app_vehicule_show', {'idV': reservationAndVehicule.vehicule.idV}) }}">
+                                         <img src="{{reservationAndVehicule.vehicule.img }}" alt="" />
+                                        </a>   
+                                      </div>
+                                        </td>
+                                        <td>
+                                            <div class="event-wrap">
+                                                <h4>{{reservationAndVehicule.vehicule.marque}}  {{reservationAndVehicule.vehicule.modele}}</h4>
+                                                 <h4>{{reservationAndVehicule.vehicule.lpec}}</h4>
+                                                  <h4>{{reservationAndVehicule.reservation.somme}}dt</h4>                                                 
+                                                    </div>
+                                                    <div class="time">
+                                                        <span>{{reservationAndVehicule.reservation.dateDeb ? reservationAndVehicule.reservation.dateDeb|date('Y-m-d') : ''}} - {{reservationAndVehicule.reservation.dateFin ? reservationAndVehicule.reservation.dateFin|date('Y-m-d') : ''}} </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="primary-btn">
+                                                <a class="btn btn-primary" href="{{ path('app_reservation_confirme', {'id': reservationAndVehicule.reservation.id}) }}">Confirmer</a>
+                                                <a class="btn btn-primary" href="{{ path('app_reservation_terminer', {'id': reservationAndVehicule.reservation.id}) }}">Terminer</a>
+                                                <a class="btn btn-primary" href="{{ path('app_reservation_download', {'id': reservationAndVehicule.reservation.id}) }}">Facture</a>
+                                            
+                                            </div>
+                                        </td>
+                                    </tr>
+                                         {% endfor %}  
+                                             {{ knp_pagination_render(reservationsAndVehicules) }} 
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                   
+                    
+                </div>    
+            </div>
+            <!-- /col end-->
+        </div>
+        <!-- /row end-->
+    </div>
+</div>
 
-    <a href="{{ path('app_reservation_new') }}">Ajouter location</a>
+{% block javascripts %}
+			 <script src="//code.jquery.com/jquery.js"></script>
+   			 <script src="{{ asset('bundles/mercuryseriesflashy/js/flashy.js') }}"></script>
+			{{ encore_entry_script_tags('app') }}
 {% endblock %}
+{{ include('@MercurySeriesFlashy/flashy.html.twig') }}
+{% endblock %}
+
+
+

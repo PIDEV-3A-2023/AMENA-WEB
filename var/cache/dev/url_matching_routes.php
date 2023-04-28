@@ -24,6 +24,8 @@ return [
         '/front/competition' => [[['_route' => 'app_front_competition', '_controller' => 'App\\Controller\\FrontCompetitionController::index'], null, null, null, false, false, null]],
         '/front/competition/cadeaux' => [[['_route' => 'app_front_cadeaucompetition', '_controller' => 'App\\Controller\\FrontCompetitionController::afficherCadeaux'], null, null, null, false, false, null]],
         '/front/reservation' => [[['_route' => 'app_front_reservation', '_controller' => 'App\\Controller\\FrontReservationController::index'], null, null, null, false, false, null]],
+        '/front/reservation/MesReservations' => [[['_route' => 'app_interface_Mesreservation', '_controller' => 'App\\Controller\\FrontReservationController::mesRes'], null, null, null, false, false, null]],
+        '/new' => [[['_route' => 'app_reservation_new', '_controller' => 'App\\Controller\\FrontReservationController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/gifts' => [[['_route' => 'app_gifts_index', '_controller' => 'App\\Controller\\GiftsController::index'], null, ['GET' => 0], null, true, false, null]],
         '/gifts/new' => [[['_route' => 'app_gifts_new', '_controller' => 'App\\Controller\\GiftsController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/login' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\LoginController::index'], null, null, null, false, false, null]],
@@ -34,8 +36,6 @@ return [
         '/message/new' => [[['_route' => 'app_message_new', '_controller' => 'App\\Controller\\MessageController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/register' => [[['_route' => 'app_register', '_controller' => 'App\\Controller\\RegistrationController::register'], null, null, null, false, false, null]],
         '/reservation' => [[['_route' => 'app_reservation_index', '_controller' => 'App\\Controller\\ReservationController::index'], null, ['GET' => 0], null, true, false, null]],
-        '/reservation/download' => [[['_route' => 'app_reservation_download', '_controller' => 'App\\Controller\\ReservationController::usersDataDownload'], null, null, null, false, false, null]],
-        '/reservation/new' => [[['_route' => 'app_reservation_new', '_controller' => 'App\\Controller\\ReservationController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/reset-password' => [[['_route' => 'app_forgot_password_request', '_controller' => 'App\\Controller\\ResetPasswordController::request'], null, null, null, false, false, null]],
         '/reset-password/check-email' => [[['_route' => 'app_check_email', '_controller' => 'App\\Controller\\ResetPasswordController::checkEmail'], null, null, null, false, false, null]],
         '/security' => [[['_route' => 'app_security', '_controller' => 'App\\Controller\\SecurityController::index'], null, null, null, false, false, null]],
@@ -93,56 +93,65 @@ return [
                     .'|/edit(*:317)'
                     .'|(*:325)'
                 .')'
-                .'|/front/reservation/([^/]++)(*:361)'
+                .'|/front/reservation/(?'
+                    .'|MesReservations/([^/]++)(?'
+                        .'|/\\#(*:386)'
+                        .'|(*:394)'
+                    .')'
+                    .'|([^/]++)(*:411)'
+                .')'
                 .'|/gifts/([^/]++)(?'
-                    .'|(*:387)'
-                    .'|/edit(*:400)'
-                    .'|(*:408)'
+                    .'|(*:438)'
+                    .'|/edit(*:451)'
+                    .'|(*:459)'
                 .')'
                 .'|/message/([^/]++)(?'
-                    .'|(*:437)'
-                    .'|/edit(*:450)'
-                    .'|(*:458)'
+                    .'|(*:488)'
+                    .'|/edit(*:501)'
+                    .'|(*:509)'
                 .')'
                 .'|/rese(?'
                     .'|rvation/([^/]++)(?'
-                        .'|(*:494)'
-                        .'|/edit(*:507)'
-                        .'|(*:515)'
+                        .'|/(?'
+                            .'|\\#(*:551)'
+                            .'|c(*:560)'
+                            .'|edit(*:572)'
+                        .')'
+                        .'|(*:581)'
                     .')'
-                    .'|t\\-password/reset(?:/([^/]++))?(*:555)'
+                    .'|t\\-password/reset(?:/([^/]++))?(*:621)'
                 .')'
                 .'|/user/([^/]++)(?'
-                    .'|/edit(*:586)'
-                    .'|(*:594)'
+                    .'|/edit(*:652)'
+                    .'|(*:660)'
                 .')'
                 .'|/v(?'
                     .'|alidation/([^/]++)(?'
                         .'|/(?'
-                            .'|new(*:636)'
-                            .'|edit(*:648)'
+                            .'|new(*:702)'
+                            .'|edit(*:714)'
                         .')'
-                        .'|(*:657)'
+                        .'|(*:723)'
                     .')'
                     .'|ehicule/([^/]++)(?'
-                        .'|(*:685)'
-                        .'|/edit(*:698)'
-                        .'|(*:706)'
+                        .'|(*:751)'
+                        .'|/edit(*:764)'
+                        .'|(*:772)'
                     .')'
                 .')'
                 .'|/_(?'
-                    .'|error/(\\d+)(?:\\.([^/]++))?(*:747)'
-                    .'|wdt/([^/]++)(*:767)'
+                    .'|error/(\\d+)(?:\\.([^/]++))?(*:813)'
+                    .'|wdt/([^/]++)(*:833)'
                     .'|profiler/([^/]++)(?'
                         .'|/(?'
-                            .'|search/results(*:813)'
-                            .'|router(*:827)'
+                            .'|search/results(*:879)'
+                            .'|router(*:893)'
                             .'|exception(?'
-                                .'|(*:847)'
-                                .'|\\.css(*:860)'
+                                .'|(*:913)'
+                                .'|\\.css(*:926)'
                             .')'
                         .')'
-                        .'|(*:870)'
+                        .'|(*:936)'
                     .')'
                 .')'
             .')/?$}sDu',
@@ -167,35 +176,41 @@ return [
         304 => [[['_route' => 'app_documentexpedition_show', '_controller' => 'App\\Controller\\DocumentexpeditionController::show'], ['id'], ['GET' => 0], null, false, true, null]],
         317 => [[['_route' => 'app_documentexpedition_edit', '_controller' => 'App\\Controller\\DocumentexpeditionController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
         325 => [[['_route' => 'app_documentexpedition_delete', '_controller' => 'App\\Controller\\DocumentexpeditionController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        361 => [[['_route' => 'app_interface_reservation', '_controller' => 'App\\Controller\\FrontReservationController::detaille'], ['idV'], null, null, false, true, null]],
-        387 => [[['_route' => 'app_gifts_show', '_controller' => 'App\\Controller\\GiftsController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        400 => [[['_route' => 'app_gifts_edit', '_controller' => 'App\\Controller\\GiftsController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        408 => [[['_route' => 'app_gifts_delete', '_controller' => 'App\\Controller\\GiftsController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        437 => [[['_route' => 'app_message_show', '_controller' => 'App\\Controller\\MessageController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        450 => [[['_route' => 'app_message_edit', '_controller' => 'App\\Controller\\MessageController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        458 => [[['_route' => 'app_message_delete', '_controller' => 'App\\Controller\\MessageController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        494 => [[['_route' => 'app_reservation_show', '_controller' => 'App\\Controller\\ReservationController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        507 => [[['_route' => 'app_reservation_edit', '_controller' => 'App\\Controller\\ReservationController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        515 => [[['_route' => 'app_reservation_delete', '_controller' => 'App\\Controller\\ReservationController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        555 => [[['_route' => 'app_reset_password', 'token' => null, '_controller' => 'App\\Controller\\ResetPasswordController::reset'], ['token'], null, null, false, true, null]],
-        586 => [[['_route' => 'app_user_edit', '_controller' => 'App\\Controller\\UserController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        594 => [[['_route' => 'app_user_delete', '_controller' => 'App\\Controller\\UserController::delete'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
-        636 => [[['_route' => 'app_validation_new', '_controller' => 'App\\Controller\\ValidationController::new'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        648 => [[['_route' => 'app_validation_edit', '_controller' => 'App\\Controller\\ValidationController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        657 => [
+        386 => [[['_route' => 'app_reservation_annuler', '_controller' => 'App\\Controller\\FrontReservationController::annuler'], ['id'], null, null, false, false, null]],
+        394 => [[['_route' => 'app_reservation_download', '_controller' => 'App\\Controller\\FrontReservationController::usersDataDownload'], ['id'], null, null, false, true, null]],
+        411 => [[['_route' => 'app_interface_reservation', '_controller' => 'App\\Controller\\FrontReservationController::detaille'], ['idV'], null, null, false, true, null]],
+        438 => [[['_route' => 'app_gifts_show', '_controller' => 'App\\Controller\\GiftsController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        451 => [[['_route' => 'app_gifts_edit', '_controller' => 'App\\Controller\\GiftsController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        459 => [[['_route' => 'app_gifts_delete', '_controller' => 'App\\Controller\\GiftsController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        488 => [[['_route' => 'app_message_show', '_controller' => 'App\\Controller\\MessageController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        501 => [[['_route' => 'app_message_edit', '_controller' => 'App\\Controller\\MessageController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        509 => [[['_route' => 'app_message_delete', '_controller' => 'App\\Controller\\MessageController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        551 => [[['_route' => 'app_reservation_terminer', '_controller' => 'App\\Controller\\ReservationController::terminer'], ['id'], null, null, false, false, null]],
+        560 => [[['_route' => 'app_reservation_confirme', '_controller' => 'App\\Controller\\ReservationController::confirmer'], ['id'], null, null, false, false, null]],
+        572 => [[['_route' => 'app_reservation_edit', '_controller' => 'App\\Controller\\ReservationController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        581 => [
+            [['_route' => 'app_reservation_show', '_controller' => 'App\\Controller\\ReservationController::show'], ['id'], ['GET' => 0], null, false, true, null],
+            [['_route' => 'app_reservation_delete', '_controller' => 'App\\Controller\\ReservationController::delete'], ['id'], ['POST' => 0], null, false, true, null],
+        ],
+        621 => [[['_route' => 'app_reset_password', 'token' => null, '_controller' => 'App\\Controller\\ResetPasswordController::reset'], ['token'], null, null, false, true, null]],
+        652 => [[['_route' => 'app_user_edit', '_controller' => 'App\\Controller\\UserController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        660 => [[['_route' => 'app_user_delete', '_controller' => 'App\\Controller\\UserController::delete'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+        702 => [[['_route' => 'app_validation_new', '_controller' => 'App\\Controller\\ValidationController::new'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        714 => [[['_route' => 'app_validation_edit', '_controller' => 'App\\Controller\\ValidationController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        723 => [
             [['_route' => 'app_validation_show', '_controller' => 'App\\Controller\\ValidationController::show'], ['id'], ['GET' => 0], null, false, true, null],
             [['_route' => 'app_validation_delete', '_controller' => 'App\\Controller\\ValidationController::delete'], ['id'], ['POST' => 0], null, false, true, null],
         ],
-        685 => [[['_route' => 'app_vehicule_show', '_controller' => 'App\\Controller\\VehiculeController::show'], ['idV'], ['GET' => 0], null, false, true, null]],
-        698 => [[['_route' => 'app_vehicule_edit', '_controller' => 'App\\Controller\\VehiculeController::edit'], ['idV'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        706 => [[['_route' => 'app_vehicule_delete', '_controller' => 'App\\Controller\\VehiculeController::delete'], ['idV'], ['POST' => 0], null, false, true, null]],
-        747 => [[['_route' => '_preview_error', '_controller' => 'error_controller::preview', '_format' => 'html'], ['code', '_format'], null, null, false, true, null]],
-        767 => [[['_route' => '_wdt', '_controller' => 'web_profiler.controller.profiler::toolbarAction'], ['token'], null, null, false, true, null]],
-        813 => [[['_route' => '_profiler_search_results', '_controller' => 'web_profiler.controller.profiler::searchResultsAction'], ['token'], null, null, false, false, null]],
-        827 => [[['_route' => '_profiler_router', '_controller' => 'web_profiler.controller.router::panelAction'], ['token'], null, null, false, false, null]],
-        847 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
-        860 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
-        870 => [
+        751 => [[['_route' => 'app_vehicule_show', '_controller' => 'App\\Controller\\VehiculeController::show'], ['idV'], ['GET' => 0], null, false, true, null]],
+        764 => [[['_route' => 'app_vehicule_edit', '_controller' => 'App\\Controller\\VehiculeController::edit'], ['idV'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        772 => [[['_route' => 'app_vehicule_delete', '_controller' => 'App\\Controller\\VehiculeController::delete'], ['idV'], ['POST' => 0], null, false, true, null]],
+        813 => [[['_route' => '_preview_error', '_controller' => 'error_controller::preview', '_format' => 'html'], ['code', '_format'], null, null, false, true, null]],
+        833 => [[['_route' => '_wdt', '_controller' => 'web_profiler.controller.profiler::toolbarAction'], ['token'], null, null, false, true, null]],
+        879 => [[['_route' => '_profiler_search_results', '_controller' => 'web_profiler.controller.profiler::searchResultsAction'], ['token'], null, null, false, false, null]],
+        893 => [[['_route' => '_profiler_router', '_controller' => 'web_profiler.controller.router::panelAction'], ['token'], null, null, false, false, null]],
+        913 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
+        926 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
+        936 => [
             [['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

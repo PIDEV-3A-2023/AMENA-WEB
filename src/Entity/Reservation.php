@@ -9,6 +9,7 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use DateTime;
 
 #[ORM\Table(name : '`reservation`')]
 #[ORM\Entity(repositoryClass: ReservationRepository::class)]
@@ -33,7 +34,7 @@ class Reservation
     private ?float $somme = null;
 
     #[ORM\Column(length: 30)]
-    private ?string $etat = "en cours";
+    private ?string $etat = "En attente";
 
     #[ORM\ManyToOne(inversedBy: 'reservations')]
     #[ORM\JoinColumn(nullable: false,name:"idV")]
@@ -42,9 +43,11 @@ class Reservation
     #[ORM\ManyToOne(inversedBy: 'reservations')]
     private ?User $idTrans = null;
 
-    
-
-
+    public function __construct()
+    {
+        $this->date_deb = new DateTime();
+        $this->date_fin = new DateTime();
+    }
     
 
     public function getDateDeb(): ?\DateTimeInterface

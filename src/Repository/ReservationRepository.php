@@ -39,21 +39,50 @@ class ReservationRepository extends ServiceEntityRepository
         }
     }
 
-//    /**
-//     * @return Reservation[] Returns an array of Reservation objects
-//     */
-//    public function findByExampleField($value): array
-//    {
-//        return $this->createQueryBuilder('r')
-//            ->andWhere('r.exampleField = :val')
-//            ->setParameter('val', $value)
+    /**
+     * @return Reservation[] Returns an array of Reservation objects
+     */
+    public function findByUser($value): array
+    {
+        return $this->createQueryBuilder('r')
+            ->andWhere('r.idTrans = :val')
+            ->setParameter('val', $value)
 //            ->orderBy('r.id', 'ASC')
 //            ->setMaxResults(10)
-//            ->getQuery()
-//            ->getResult()
-//        ;
-//    }
+            ->getQuery()
+            ->getResult()
+        ;
+    }
 
+    /**
+     * @return Reservation[] Returns an array of Reservation objects
+     */
+    public function findOrder(): array
+    {
+        return $this->createQueryBuilder('r')
+            ->orderBy('CASE WHEN r.etat = :etat THEN 0 ELSE 1 END', 'DESC')
+            ->addOrderBy('r.id', 'ASC')
+            ->setParameter('etat', 'En attente')
+            ->getQuery()
+            ->getResult();
+    }
+    
+        /**
+     * @return Reservation[] Returns an array of Reservation objects
+     */
+    public function findByVehiculeResCon($value): array
+    {
+        return $this->createQueryBuilder('r')
+            ->andWhere('r.idVeh = :vehiculeId')
+            ->setParameter('vehiculeId', $value)
+            ->andWhere('r.etat = :etat')
+            ->setParameter('etat', 'Confirmée')
+            // ->orderBy('r.id', 'ASC')
+            // ->setMaxResults(10)
+            ->getQuery()
+            ->getResult();
+    }
+    
 //    public function findOneBySomeField($value): ?Reservation
 //    {
 //        return $this->createQueryBuilder('r')

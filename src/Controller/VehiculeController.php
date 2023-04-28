@@ -9,13 +9,51 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Repository\ReservationRepository;
+use Knp\Component\Pager\PaginatorInterface;
+use App\Repository\VehiculeRepository;
+use Dompdf\Dompdf;
+use Dompdf\Options; 
 
 #[Route('/vehicule')]
 class VehiculeController extends AbstractController
 {
     #[Route('/', name: 'app_vehicule_index', methods: ['GET'])]
-    public function index(EntityManagerInterface $entityManager): Response
+    public function index(EntityManagerInterface $entityManager,ReservationRepository $reservationRepository,VehiculeRepository $vehiculeRepository,PaginatorInterface $paginator): Response
     {
+        $valeur = new \DateTime('now');
+        $reservations = $reservationRepository->findBy([], ['id' => 'DESC']);
+    $reservationAndVehicules = [];
+    foreach($reservations as $tabreservation){
+        $tabreservation->getDateDeb()->modify('+1 day');
+        $tabreservation->getDateFin()->modify('-1 day');
+
+        if( $tabreservation->getEtat()=="Confirmée" && $valeur >= $tabreservation->getDateDeb() && $valeur <= $tabreservation->getDateFin()) 
+                {                            
+                    $veh = $vehiculeRepository->findOneById($tabreservation->getIdVeh()) ;
+                    $veh->setEtat(1); 
+                    $vehiculeRepository->save($veh, true);
+                }  
+                else
+                {
+                    $veh = $vehiculeRepository->findOneById($tabreservation->getIdVeh()) ;
+                    $veh->setEtat(0); 
+                    $vehiculeRepository->save($veh, true);
+                   }         
+        }
+    
+    foreach ($reservations as $reservation) {
+        $valeurfin = $reservation->getDateFin();
+        $valeurdeb = $reservation->getDateDeb();
+        $diff = $valeurfin->diff($valeur);
+        if ($diff->format('%R') === '+' && $reservation->getEtat()=="Confirmée")
+        {
+            $reservation->setEtat("En retard");
+            $reservationRepository->save($reservation, true); 
+        }
+      
+    }
+
         $vehicules = $entityManager
             ->getRepository(Vehicule::class)
             ->findBy([],['idV' => 'DESC']) ;
@@ -58,10 +96,34 @@ class VehiculeController extends AbstractController
     }
 
     #[Route('/{idV}', name: 'app_vehicule_show', methods: ['GET'])]
-    public function show(Vehicule $vehicule): Response
+    public function show(Vehicule $vehicule,ReservationRepository $reservationRepository): Response
     {
+        
+        $tabreservations = $reservationRepository->findByVehiculeResCon($vehicule->getIdV());
+        $res = [];
+
+        foreach($tabreservations as $tabreservation){
+            $endDate = $tabreservation->getDateFin();
+            $endDate->modify('+1 day');
+            $endDateStr = $endDate->format('Y-m-d');
+            
+            $res[] = [              
+                'id' => $tabreservation->getId(),
+                'start' => $tabreservation->getDateDeb()->format('Y-m-d'),
+                'end' => $endDateStr,
+                'title' => 'Reservé',
+                'description' => 'Reservé',
+                'backgroundColor' => '#ff949f',
+                'borderColor' => '#ff0000',
+                'textColor' => '#ffffff',
+                'allDay' => true,
+            ];
+        }
+        $data = json_encode($res);
+
         return $this->render('vehicule/show.html.twig', [
-            'vehicule' => $vehicule,
+            'vehicule' => $vehicule,'data' => $data,
+
         ]);
     }
 
