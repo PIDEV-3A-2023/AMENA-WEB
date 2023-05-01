@@ -25,6 +25,7 @@
       <parameter key="SymfonyCastsResetPasswordBundle">SymfonyCasts\Bundle\ResetPassword\SymfonyCastsResetPasswordBundle</parameter>
       <parameter key="KnpPaginatorBundle">Knp\Bundle\PaginatorBundle\KnpPaginatorBundle</parameter>
       <parameter key="EndroidQrCodeBundle">Endroid\QrCodeBundle\EndroidQrCodeBundle</parameter>
+      <parameter key="KarserRecaptcha3Bundle">Karser\Recaptcha3Bundle\KarserRecaptcha3Bundle</parameter>
     </parameter>
     <parameter key="kernel.bundles_metadata" type="collection">
       <parameter key="FrameworkBundle" type="collection">
@@ -90,6 +91,10 @@
       <parameter key="EndroidQrCodeBundle" type="collection">
         <parameter key="path">C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\endroid\qr-code-bundle\src</parameter>
         <parameter key="namespace">Endroid\QrCodeBundle</parameter>
+      </parameter>
+      <parameter key="KarserRecaptcha3Bundle" type="collection">
+        <parameter key="path">C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\karser\karser-recaptcha3-bundle</parameter>
+        <parameter key="namespace">Karser\Recaptcha3Bundle</parameter>
       </parameter>
     </parameter>
     <parameter key="kernel.charset">UTF-8</parameter>
@@ -229,6 +234,7 @@
     <parameter key="env(VAR_DUMPER_SERVER)">127.0.0.1:9912</parameter>
     <parameter key="twig.form.resources" type="collection">
       <parameter>form_div_layout.html.twig</parameter>
+      <parameter>@KarserRecaptcha3/Form/karser_recaptcha3_widget.html.twig</parameter>
     </parameter>
     <parameter key="twig.default_path">C:\Users\aymen\Desktop\gitprojet\digidreamers/templates</parameter>
     <parameter key="web_profiler.debug_toolbar.intercept_redirects">false</parameter>
@@ -289,6 +295,11 @@
     <parameter key="knp_paginator.template.sortable">@KnpPaginator/Pagination/sortable_link.html.twig</parameter>
     <parameter key="knp_paginator.page_range">5</parameter>
     <parameter key="knp_paginator.page_limit">null</parameter>
+    <parameter key="karser_recaptcha3.site_key">%env(RECAPTCHA3_KEY)%</parameter>
+    <parameter key="karser_recaptcha3.secret_key">%env(RECAPTCHA3_SECRET)%</parameter>
+    <parameter key="karser_recaptcha3.score_threshold">0.5</parameter>
+    <parameter key="karser_recaptcha3.enabled">true</parameter>
+    <parameter key="karser_recaptcha3.host">www.google.com</parameter>
     <parameter key="data_collector.templates" type="collection">
       <parameter key="data_collector.request" type="collection">
         <parameter>request</parameter>
@@ -387,6 +398,13 @@
       <tag name="controller.service_arguments"/>
       <tag name="routing.route_loader"/>
     </service>
+    <service id="App\Controller\ActivateAccountController" class="App\Controller\ActivateAccountController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.mx0UMmY.App\Controller\ActivateAccountController"/>
+      </call>
+    </service>
     <service id="App\Controller\AdminController" class="App\Controller\AdminController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -409,6 +427,20 @@
         <argument type="service" id=".service_locator.mx0UMmY.App\Controller\ColisController"/>
       </call>
     </service>
+    <service id="App\Controller\ErrorController" class="App\Controller\ErrorController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.mx0UMmY.App\Controller\ErrorController"/>
+      </call>
+    </service>
+    <service id="App\Controller\EvaluationController" class="App\Controller\EvaluationController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.mx0UMmY.App\Controller\EvaluationController"/>
+      </call>
+    </service>
     <service id="App\Controller\LoginController" class="App\Controller\LoginController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -422,6 +454,13 @@
       <argument type="service" id="security.helper"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.mx0UMmY.App\Controller\MessageController"/>
+      </call>
+    </service>
+    <service id="App\Controller\ReclamationsController" class="App\Controller\ReclamationsController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.mx0UMmY.App\Controller\ReclamationsController"/>
       </call>
     </service>
     <service id="App\Controller\RegistrationController" class="App\Controller\RegistrationController" public="true" autowire="true" autoconfigure="true">
@@ -468,6 +507,9 @@
         <argument type="service" id=".service_locator.mx0UMmY.App\Controller\VehiculeController"/>
       </call>
     </service>
+    <service id="App\Form\ActivateAccountType" class="App\Form\ActivateAccountType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
     <service id="App\Form\AnnoncesType" class="App\Form\AnnoncesType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
@@ -478,6 +520,9 @@
       <tag name="form.type"/>
     </service>
     <service id="App\Form\MessageType" class="App\Form\MessageType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\ReclamationsType" class="App\Form\ReclamationsType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
     <service id="App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" autoconfigure="true">
@@ -507,6 +552,10 @@
       <argument type="service" id="doctrine"/>
     </service>
     <service id="App\Repository\MessageRepository" class="App\Repository\MessageRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\ReclamationsRepository" class="App\Repository\ReclamationsRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
@@ -1311,12 +1360,15 @@
         <argument>Symfony\Component\Form\Extension\Core\Type</argument>
         <argument>App\Form</argument>
         <argument>Symfony\Bridge\Doctrine\Form\Type</argument>
+        <argument>Karser\Recaptcha3Bundle\Form</argument>
       </argument>
       <argument type="collection">
+        <argument>App\Form\ActivateAccountType</argument>
         <argument>App\Form\AnnoncesType</argument>
         <argument>App\Form\ChangePasswordFormType</argument>
         <argument>App\Form\ColisType</argument>
         <argument>App\Form\MessageType</argument>
+        <argument>App\Form\ReclamationsType</argument>
         <argument>App\Form\RegistrationFormType</argument>
         <argument>App\Form\ResetPasswordRequestFormType</argument>
         <argument>App\Form\User1Type</argument>
@@ -1328,6 +1380,7 @@
         <argument>Symfony\Component\Form\Extension\Core\Type\FileType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\ColorType</argument>
         <argument>Symfony\Bridge\Doctrine\Form\Type\EntityType</argument>
+        <argument>Karser\Recaptcha3Bundle\Form\Recaptcha3Type</argument>
       </argument>
       <argument type="collection">
         <argument>Symfony\Component\Form\Extension\Core\Type\TransformationFailureExtension</argument>
@@ -2166,6 +2219,7 @@
           <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\sensio\framework-extra-bundle\src/translations</argument>
           <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\swiftmailer-bundle/translations</argument>
           <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\endroid\qr-code-bundle\src/translations</argument>
+          <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\karser\karser-recaptcha3-bundle/translations</argument>
         </argument>
         <argument key="cache_vary" type="collection">
           <argument key="scanned_directories" type="collection">
@@ -2189,6 +2243,7 @@
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\sensio\framework-extra-bundle\src/translations</argument>
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\symfony\swiftmailer-bundle/translations</argument>
             <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\endroid\qr-code-bundle\src/translations</argument>
+            <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\karser\karser-recaptcha3-bundle/translations</argument>
           </argument>
         </argument>
       </argument>
@@ -3644,7 +3699,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension">
-      <argument type="service" id=".service_locator.AreSYUU"/>
+      <argument type="service" id=".service_locator.VqOVRaJ"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -3786,7 +3841,7 @@
       <factory class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" method="create"/>
     </service>
     <service id="validator.validator_factory" class="Symfony\Component\Validator\ContainerConstraintValidatorFactory">
-      <argument type="service" id=".service_locator.19_mNxd"/>
+      <argument type="service" id=".service_locator.sTIRclW"/>
     </service>
     <service id="validator.expression" class="Symfony\Component\Validator\Constraints\ExpressionValidator">
       <tag name="validator.constraint_validator" alias="validator.expression"/>
@@ -4533,7 +4588,7 @@
     <service id="doctrine.orm.configuration" class="Doctrine\ORM\Configuration" abstract="true"/>
     <service id="doctrine.orm.entity_manager.abstract" class="Doctrine\ORM\EntityManager" lazy="true" abstract="true"/>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory">
-      <argument type="service" id=".service_locator.iVem_KE"/>
+      <argument type="service" id=".service_locator.sznl_bF"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -5281,6 +5336,14 @@
         <argument>!KnpPaginator</argument>
       </call>
       <call method="addPath">
+        <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\karser\karser-recaptcha3-bundle/Resources/views</argument>
+        <argument>KarserRecaptcha3</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers\vendor\karser\karser-recaptcha3-bundle/Resources/views</argument>
+        <argument>!KarserRecaptcha3</argument>
+      </call>
+      <call method="addPath">
         <argument>C:\Users\aymen\Desktop\gitprojet\digidreamers/templates</argument>
       </call>
       <call method="addPath">
@@ -5722,30 +5785,7 @@
         </service>
       </argument>
     </service>
-    <service id="security.access_map" class="Symfony\Component\Security\Http\AccessMap">
-      <call method="add">
-        <argument type="service" id=".security.request_matcher.5dJADCx"/>
-        <argument type="collection">
-          <argument>ROLE_ADMIN</argument>
-        </argument>
-        <argument>null</argument>
-      </call>
-      <call method="add">
-        <argument type="service" id=".security.request_matcher.5dJADCx"/>
-        <argument type="collection">
-          <argument>IS_AUTHENTICATED_FULLY</argument>
-          <argument>ROLE_ADMIN</argument>
-        </argument>
-        <argument>null</argument>
-      </call>
-      <call method="add">
-        <argument type="service" id=".security.request_matcher.k4QsZh_"/>
-        <argument type="collection">
-          <argument>ROLE_USER</argument>
-        </argument>
-        <argument>null</argument>
-      </call>
-    </service>
+    <service id="security.access_map" class="Symfony\Component\Security\Http\AccessMap"/>
     <service id="security.context_listener" class="Symfony\Component\Security\Http\Firewall\ContextListener">
       <tag name="monolog.logger" channel="security"/>
       <argument type="service" id="security.untracked_token_storage"/>
@@ -6322,12 +6362,6 @@
         <argument key="security.firewall.map.context.dev" type="service_closure" id="security.firewall.map.context.dev"/>
         <argument key="security.firewall.map.context.main" type="service_closure" id="security.firewall.map.context.main"/>
       </argument>
-    </service>
-    <service id=".security.request_matcher.5dJADCx" class="Symfony\Component\HttpFoundation\RequestMatcher">
-      <argument>^/admin</argument>
-    </service>
-    <service id=".security.request_matcher.k4QsZh_" class="Symfony\Component\HttpFoundation\RequestMatcher">
-      <argument>^/api/(post|comment)/\d+$</argument>
     </service>
     <service id="security.command.user_password_encoder" class="Symfony\Bundle\SecurityBundle\Command\UserPasswordEncoderCommand">
       <tag name="console.command" command="security:encode-password"/>
@@ -6966,6 +7000,39 @@
         <argument>false</argument>
       </call>
     </service>
+    <service id="karser_recaptcha3.host_provider" class="Karser\Recaptcha3Bundle\Services\HostProvider">
+      <argument>www.google.com</argument>
+    </service>
+    <service id="karser_recaptcha3.form.type" class="Karser\Recaptcha3Bundle\Form\Recaptcha3Type">
+      <tag name="form.type"/>
+      <argument>%env(RECAPTCHA3_KEY)%</argument>
+      <argument>www.google.com</argument>
+      <argument>true</argument>
+    </service>
+    <service id="karser_recaptcha3.validator" class="Karser\Recaptcha3Bundle\Validator\Constraints\Recaptcha3Validator">
+      <tag name="validator.constraint_validator" alias="karser_recaptcha3_validator"/>
+      <argument type="service" id="karser_recaptcha3.google.recaptcha"/>
+      <argument>true</argument>
+      <argument type="service" id="karser_recaptcha3.ip_resolver"/>
+    </service>
+    <service id="karser_recaptcha3.ip_resolver" class="Karser\Recaptcha3Bundle\Services\IpResolver">
+      <argument type="service" id="request_stack"/>
+    </service>
+    <service id="karser_recaptcha3.google.recaptcha" class="ReCaptcha\ReCaptcha">
+      <argument>%env(RECAPTCHA3_SECRET)%</argument>
+      <argument type="service" id="karser_recaptcha3.google.request_method.curl_post"/>
+      <call method="setScoreThreshold">
+        <argument>0.5</argument>
+      </call>
+    </service>
+    <service id="karser_recaptcha3.google.request_method.curl_post" class="ReCaptcha\RequestMethod\CurlPost">
+      <argument type="service" id="karser_recaptcha3.google.request_method.curl"/>
+      <argument type="expression">service('karser_recaptcha3.host_provider').getVerifyUrl()</argument>
+    </service>
+    <service id="karser_recaptcha3.google.request_method.curl" class="ReCaptcha\RequestMethod\Curl"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ActivateAccountController" class="App\Controller\ActivateAccountController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ActivateAccountController" class="App\Controller\ActivateAccountController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ActivateAccountController" class="App\Controller\ActivateAccountController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\AdminController" class="App\Controller\AdminController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\AdminController" class="App\Controller\AdminController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\AdminController" class="App\Controller\AdminController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -6975,12 +7042,21 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ColisController" class="App\Controller\ColisController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ColisController" class="App\Controller\ColisController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\ColisController" class="App\Controller\ColisController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ErrorController" class="App\Controller\ErrorController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ErrorController" class="App\Controller\ErrorController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ErrorController" class="App\Controller\ErrorController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\EvaluationController" class="App\Controller\EvaluationController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\EvaluationController" class="App\Controller\EvaluationController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\EvaluationController" class="App\Controller\EvaluationController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\LoginController" class="App\Controller\LoginController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\LoginController" class="App\Controller\LoginController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\LoginController" class="App\Controller\LoginController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\MessageController" class="App\Controller\MessageController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\MessageController" class="App\Controller\MessageController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\MessageController" class="App\Controller\MessageController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ReclamationsController" class="App\Controller\ReclamationsController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ReclamationsController" class="App\Controller\ReclamationsController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ReclamationsController" class="App\Controller\ReclamationsController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\RegistrationController" class="App\Controller\RegistrationController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\RegistrationController" class="App\Controller\RegistrationController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\RegistrationController" class="App\Controller\RegistrationController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -6999,6 +7075,8 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\VehiculeController" class="App\Controller\VehiculeController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\VehiculeController" class="App\Controller\VehiculeController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\VehiculeController" class="App\Controller\VehiculeController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ActivateAccountType" class="App\Form\ActivateAccountType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\ActivateAccountType" class="App\Form\ActivateAccountType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\AnnoncesType" class="App\Form\AnnoncesType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\AnnoncesType" class="App\Form\AnnoncesType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ChangePasswordFormType" class="App\Form\ChangePasswordFormType" autowire="true" abstract="true"/>
@@ -7007,6 +7085,8 @@
     <service id=".abstract.instanceof.App\Form\ColisType" class="App\Form\ColisType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\MessageType" class="App\Form\MessageType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\MessageType" class="App\Form\MessageType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ReclamationsType" class="App\Form\ReclamationsType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\ReclamationsType" class="App\Form\ReclamationsType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ResetPasswordRequestFormType" class="App\Form\ResetPasswordRequestFormType" autowire="true" abstract="true"/>
@@ -7025,6 +7105,8 @@
     <service id=".abstract.instanceof.App\Repository\ColisRepository" class="App\Repository\ColisRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\MessageRepository" class="App\Repository\MessageRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\MessageRepository" class="App\Repository\MessageRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ReclamationsRepository" class="App\Repository\ReclamationsRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\ReclamationsRepository" class="App\Repository\ReclamationsRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ReservationRepository" class="App\Repository\ReservationRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\ReservationRepository" class="App\Repository\ReservationRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ResetPasswordRequestRepository" class="App\Repository\ResetPasswordRequestRepository" autowire="true" abstract="true"/>
@@ -7374,15 +7456,22 @@
         <argument key="loader" type="service_closure" id=".errored..service_locator.xUrKPVU.Symfony\Component\Config\Loader\LoaderInterface"/>
       </argument>
     </service>
+    <service id=".service_locator.aKM6MDa" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+      </argument>
+    </service>
     <service id=".service_locator.i9GOSYV" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="Normalizer" type="service_closure" id="serializer"/>
       </argument>
     </service>
-    <service id=".service_locator.Q1F27w5" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.Sfu.weJ" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="paginator" type="service_closure" id="knp_paginator"/>
         <argument key="userRepository" type="service_closure" id="App\Repository\UserRepository"/>
       </argument>
     </service>
@@ -7415,10 +7504,25 @@
         <argument key="userRepository" type="service_closure" id="App\Repository\UserRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.Tr_CAXc" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.GPGtF8v" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+        <argument key="user" type="service_closure" id=".errored..service_locator.GPGtF8v.App\Entity\User"/>
+      </argument>
+    </service>
+    <service id=".service_locator.4SAVf4b" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="annoncesRepository" type="service_closure" id="App\Repository\AnnoncesRepository"/>
+        <argument key="paginator" type="service_closure" id="knp_paginator"/>
+      </argument>
+    </service>
+    <service id=".service_locator.7CqYoho" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="annoncesRepository" type="service_closure" id="App\Repository\AnnoncesRepository"/>
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
       </argument>
     </service>
     <service id=".service_locator.ECpDOfk" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -7493,6 +7597,32 @@
         <argument key="messageRepository" type="service_closure" id="App\Repository\MessageRepository"/>
       </argument>
     </service>
+    <service id=".service_locator.oklBR90" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="reclamationsRepository" type="service_closure" id="App\Repository\ReclamationsRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.u5xdy.N" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+        <argument key="reclamationsRepository" type="service_closure" id="App\Repository\ReclamationsRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.oEfCGgo" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="reclamation" type="service_closure" id=".errored..service_locator.oEfCGgo.App\Entity\Reclamations"/>
+      </argument>
+    </service>
+    <service id=".service_locator.A_QYMNR" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="reclamation" type="service_closure" id=".errored..service_locator.A_QYMNR.App\Entity\Reclamations"/>
+        <argument key="reclamationsRepository" type="service_closure" id="App\Repository\ReclamationsRepository"/>
+      </argument>
+    </service>
     <service id=".service_locator.YU8H6ve" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -7529,10 +7659,10 @@
         <argument key="userRepository" type="service_closure" id="App\Repository\UserRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.aKM6MDa" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.Q1F27w5" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+        <argument key="userRepository" type="service_closure" id="App\Repository\UserRepository"/>
       </argument>
     </service>
     <service id=".service_locator.Q1EeZWh" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -7555,19 +7685,21 @@
         <argument key="vehicule" type="service_closure" id=".errored..service_locator.iVJ8gI9.App\Entity\Vehicule"/>
       </argument>
     </service>
-    <service id=".service_locator.4IJyzFY" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.vm19NCT" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Controller\ActivateAccountController::activate" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\AdminController::blockUser" type="service_closure" id=".service_locator.GPGtF8v"/>
         <argument key="App\Controller\AdminController::delete" type="service_closure" id=".service_locator.9uW928t"/>
         <argument key="App\Controller\AdminController::edit" type="service_closure" id=".service_locator.bsljZSk"/>
-        <argument key="App\Controller\AdminController::index" type="service_closure" id=".service_locator.Q1F27w5"/>
+        <argument key="App\Controller\AdminController::index" type="service_closure" id=".service_locator.Sfu.weJ"/>
         <argument key="App\Controller\AdminController::new" type="service_closure" id=".service_locator.D0T2yQY"/>
         <argument key="App\Controller\AdminController::searchStudentx" type="service_closure" id=".service_locator.i9GOSYV"/>
         <argument key="App\Controller\AdminController::show" type="service_closure" id=".service_locator.4T4EJFR"/>
         <argument key="App\Controller\AnnoncesController::delete" type="service_closure" id=".service_locator.CjLvgM8"/>
         <argument key="App\Controller\AnnoncesController::edit" type="service_closure" id=".service_locator.CjLvgM8"/>
-        <argument key="App\Controller\AnnoncesController::index" type="service_closure" id=".service_locator.Tr_CAXc"/>
-        <argument key="App\Controller\AnnoncesController::new" type="service_closure" id=".service_locator.Tr_CAXc"/>
+        <argument key="App\Controller\AnnoncesController::index" type="service_closure" id=".service_locator.4SAVf4b"/>
+        <argument key="App\Controller\AnnoncesController::new" type="service_closure" id=".service_locator.7CqYoho"/>
         <argument key="App\Controller\AnnoncesController::show" type="service_closure" id=".service_locator.ECpDOfk"/>
         <argument key="App\Controller\ColisController::delete" type="service_closure" id=".service_locator.S8.Ozi0"/>
         <argument key="App\Controller\ColisController::edit" type="service_closure" id=".service_locator.S8.Ozi0"/>
@@ -7581,6 +7713,11 @@
         <argument key="App\Controller\MessageController::mrecu" type="service_closure" id=".service_locator.tQUwO87"/>
         <argument key="App\Controller\MessageController::new" type="service_closure" id=".service_locator.7B8MPwp"/>
         <argument key="App\Controller\MessageController::show" type="service_closure" id=".service_locator.MjFFzS6"/>
+        <argument key="App\Controller\ReclamationsController::delete" type="service_closure" id=".service_locator.A_QYMNR"/>
+        <argument key="App\Controller\ReclamationsController::edit" type="service_closure" id=".service_locator.A_QYMNR"/>
+        <argument key="App\Controller\ReclamationsController::index" type="service_closure" id=".service_locator.oklBR90"/>
+        <argument key="App\Controller\ReclamationsController::new" type="service_closure" id=".service_locator.u5xdy.N"/>
+        <argument key="App\Controller\ReclamationsController::show" type="service_closure" id=".service_locator.oEfCGgo"/>
         <argument key="App\Controller\RegistrationController::register" type="service_closure" id=".service_locator.YU8H6ve"/>
         <argument key="App\Controller\ResetPasswordController::request" type="service_closure" id=".service_locator.pXhSQsU"/>
         <argument key="App\Controller\ResetPasswordController::reset" type="service_closure" id=".service_locator.kdKsWx5"/>
@@ -7604,16 +7741,18 @@
         <argument key="App\Kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.xUrKPVU"/>
         <argument key="kernel::loadRoutes" type="service_closure" id=".service_locator.xUrKPVU"/>
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.xUrKPVU"/>
+        <argument key="App\Controller\ActivateAccountController:activate" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\AdminController:blockUser" type="service_closure" id=".service_locator.GPGtF8v"/>
         <argument key="App\Controller\AdminController:delete" type="service_closure" id=".service_locator.9uW928t"/>
         <argument key="App\Controller\AdminController:edit" type="service_closure" id=".service_locator.bsljZSk"/>
-        <argument key="App\Controller\AdminController:index" type="service_closure" id=".service_locator.Q1F27w5"/>
+        <argument key="App\Controller\AdminController:index" type="service_closure" id=".service_locator.Sfu.weJ"/>
         <argument key="App\Controller\AdminController:new" type="service_closure" id=".service_locator.D0T2yQY"/>
         <argument key="App\Controller\AdminController:searchStudentx" type="service_closure" id=".service_locator.i9GOSYV"/>
         <argument key="App\Controller\AdminController:show" type="service_closure" id=".service_locator.4T4EJFR"/>
         <argument key="App\Controller\AnnoncesController:delete" type="service_closure" id=".service_locator.CjLvgM8"/>
         <argument key="App\Controller\AnnoncesController:edit" type="service_closure" id=".service_locator.CjLvgM8"/>
-        <argument key="App\Controller\AnnoncesController:index" type="service_closure" id=".service_locator.Tr_CAXc"/>
-        <argument key="App\Controller\AnnoncesController:new" type="service_closure" id=".service_locator.Tr_CAXc"/>
+        <argument key="App\Controller\AnnoncesController:index" type="service_closure" id=".service_locator.4SAVf4b"/>
+        <argument key="App\Controller\AnnoncesController:new" type="service_closure" id=".service_locator.7CqYoho"/>
         <argument key="App\Controller\AnnoncesController:show" type="service_closure" id=".service_locator.ECpDOfk"/>
         <argument key="App\Controller\ColisController:delete" type="service_closure" id=".service_locator.S8.Ozi0"/>
         <argument key="App\Controller\ColisController:edit" type="service_closure" id=".service_locator.S8.Ozi0"/>
@@ -7627,6 +7766,11 @@
         <argument key="App\Controller\MessageController:mrecu" type="service_closure" id=".service_locator.tQUwO87"/>
         <argument key="App\Controller\MessageController:new" type="service_closure" id=".service_locator.7B8MPwp"/>
         <argument key="App\Controller\MessageController:show" type="service_closure" id=".service_locator.MjFFzS6"/>
+        <argument key="App\Controller\ReclamationsController:delete" type="service_closure" id=".service_locator.A_QYMNR"/>
+        <argument key="App\Controller\ReclamationsController:edit" type="service_closure" id=".service_locator.A_QYMNR"/>
+        <argument key="App\Controller\ReclamationsController:index" type="service_closure" id=".service_locator.oklBR90"/>
+        <argument key="App\Controller\ReclamationsController:new" type="service_closure" id=".service_locator.u5xdy.N"/>
+        <argument key="App\Controller\ReclamationsController:show" type="service_closure" id=".service_locator.oEfCGgo"/>
         <argument key="App\Controller\RegistrationController:register" type="service_closure" id=".service_locator.YU8H6ve"/>
         <argument key="App\Controller\ResetPasswordController:request" type="service_closure" id=".service_locator.pXhSQsU"/>
         <argument key="App\Controller\ResetPasswordController:reset" type="service_closure" id=".service_locator.kdKsWx5"/>
@@ -7650,15 +7794,17 @@
         <argument key="kernel:registerContainerConfiguration" type="service_closure" id=".service_locator.xUrKPVU"/>
       </argument>
     </service>
-    <service id=".service_locator.19_mNxd" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.sTIRclW" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="Karser\Recaptcha3Bundle\Validator\Constraints\Recaptcha3Validator" type="service_closure" id="karser_recaptcha3.validator"/>
         <argument key="Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntityValidator" type="service_closure" id="doctrine.orm.validator.unique"/>
         <argument key="Symfony\Component\Security\Core\Validator\Constraints\UserPasswordValidator" type="service_closure" id="security.validator.user_password"/>
         <argument key="Symfony\Component\Validator\Constraints\EmailValidator" type="service_closure" id="validator.email"/>
         <argument key="Symfony\Component\Validator\Constraints\ExpressionValidator" type="service_closure" id="validator.expression"/>
         <argument key="Symfony\Component\Validator\Constraints\NotCompromisedPasswordValidator" type="service_closure" id="validator.not_compromised_password"/>
         <argument key="doctrine.orm.validator.unique" type="service_closure" id="doctrine.orm.validator.unique"/>
+        <argument key="karser_recaptcha3_validator" type="service_closure" id="karser_recaptcha3.validator"/>
         <argument key="security.validator.user_password" type="service_closure" id="security.validator.user_password"/>
         <argument key="validator.expression" type="service_closure" id="validator.expression"/>
       </argument>
@@ -7709,19 +7855,22 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.AreSYUU" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.VqOVRaJ" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Form\ActivateAccountType" type="service_closure" id="App\Form\ActivateAccountType"/>
         <argument key="App\Form\AnnoncesType" type="service_closure" id="App\Form\AnnoncesType"/>
         <argument key="App\Form\ChangePasswordFormType" type="service_closure" id="App\Form\ChangePasswordFormType"/>
         <argument key="App\Form\ColisType" type="service_closure" id="App\Form\ColisType"/>
         <argument key="App\Form\MessageType" type="service_closure" id="App\Form\MessageType"/>
+        <argument key="App\Form\ReclamationsType" type="service_closure" id="App\Form\ReclamationsType"/>
         <argument key="App\Form\RegistrationFormType" type="service_closure" id="App\Form\RegistrationFormType"/>
         <argument key="App\Form\ResetPasswordRequestFormType" type="service_closure" id="App\Form\ResetPasswordRequestFormType"/>
         <argument key="App\Form\User1Type" type="service_closure" id="App\Form\User1Type"/>
         <argument key="App\Form\UserType" type="service_closure" id="App\Form\UserType"/>
         <argument key="App\Form\ValidationType" type="service_closure" id="App\Form\ValidationType"/>
         <argument key="App\Form\VehiculeType" type="service_closure" id="App\Form\VehiculeType"/>
+        <argument key="Karser\Recaptcha3Bundle\Form\Recaptcha3Type" type="service_closure" id="karser_recaptcha3.form.type"/>
         <argument key="Symfony\Bridge\Doctrine\Form\Type\EntityType" type="service_closure" id="form.type.entity"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\ChoiceType" type="service_closure" id="form.type.choice"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\ColorType" type="service_closure" id="form.type.color"/>
@@ -7807,12 +7956,13 @@
         <argument key="doctrine.orm.messenger.doctrine_schema_subscriber" type="service_closure" id="doctrine.orm.messenger.doctrine_schema_subscriber"/>
       </argument>
     </service>
-    <service id=".service_locator.iVem_KE" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.sznl_bF" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Repository\AnnoncesRepository" type="service_closure" id="App\Repository\AnnoncesRepository"/>
         <argument key="App\Repository\ColisRepository" type="service_closure" id="App\Repository\ColisRepository"/>
         <argument key="App\Repository\MessageRepository" type="service_closure" id="App\Repository\MessageRepository"/>
+        <argument key="App\Repository\ReclamationsRepository" type="service_closure" id="App\Repository\ReclamationsRepository"/>
         <argument key="App\Repository\ReservationRepository" type="service_closure" id="App\Repository\ReservationRepository"/>
         <argument key="App\Repository\ResetPasswordRequestRepository" type="service_closure" id="App\Repository\ResetPasswordRequestRepository"/>
         <argument key="App\Repository\UserRepository" type="service_closure" id="App\Repository\UserRepository"/>
@@ -8086,6 +8236,12 @@
         <argument key="twig" type="service_closure" id="twig" on-invalid="ignore"/>
       </argument>
     </service>
+    <service id=".service_locator.mx0UMmY.App\Controller\ActivateAccountController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\ActivateAccountController"/>
+      <argument>App\Controller\ActivateAccountController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.mx0UMmY" method="withContext"/>
+    </service>
     <service id=".service_locator.mx0UMmY.App\Controller\AdminController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\AdminController"/>
       <argument>App\Controller\AdminController</argument>
@@ -8104,6 +8260,18 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.mx0UMmY" method="withContext"/>
     </service>
+    <service id=".service_locator.mx0UMmY.App\Controller\ErrorController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\ErrorController"/>
+      <argument>App\Controller\ErrorController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.mx0UMmY" method="withContext"/>
+    </service>
+    <service id=".service_locator.mx0UMmY.App\Controller\EvaluationController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\EvaluationController"/>
+      <argument>App\Controller\EvaluationController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.mx0UMmY" method="withContext"/>
+    </service>
     <service id=".service_locator.mx0UMmY.App\Controller\LoginController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\LoginController"/>
       <argument>App\Controller\LoginController</argument>
@@ -8113,6 +8281,12 @@
     <service id=".service_locator.mx0UMmY.App\Controller\MessageController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\MessageController"/>
       <argument>App\Controller\MessageController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.mx0UMmY" method="withContext"/>
+    </service>
+    <service id=".service_locator.mx0UMmY.App\Controller\ReclamationsController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\ReclamationsController"/>
+      <argument>App\Controller\ReclamationsController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.mx0UMmY" method="withContext"/>
     </service>
@@ -8334,12 +8508,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.4IJyzFY"/>
+      <argument type="service" id=".service_locator.vm19NCT"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.4IJyzFY"/>
+      <argument type="service" id=".service_locator.vm19NCT"/>
     </service>
     <service id="debug.traced.messenger.bus.default.inner" class="Symfony\Component\Messenger\MessageBus">
       <argument type="iterator">
@@ -8362,12 +8536,15 @@
     <service id=".errored..service_locator.4T4EJFR.App\Entity\User" class="App\Entity\User"/>
     <service id=".errored..service_locator.bsljZSk.App\Entity\User" class="App\Entity\User"/>
     <service id=".errored..service_locator.9uW928t.App\Entity\User" class="App\Entity\User"/>
+    <service id=".errored..service_locator.GPGtF8v.App\Entity\User" class="App\Entity\User"/>
     <service id=".errored..service_locator.ECpDOfk.App\Entity\Annonces" class="App\Entity\Annonces"/>
     <service id=".errored..service_locator.CjLvgM8.App\Entity\Annonces" class="App\Entity\Annonces"/>
     <service id=".errored..service_locator.tkJC0R2.App\Entity\Colis" class="App\Entity\Colis"/>
     <service id=".errored..service_locator.S8.Ozi0.App\Entity\Colis" class="App\Entity\Colis"/>
     <service id=".errored..service_locator.MjFFzS6.App\Entity\Message" class="App\Entity\Message"/>
     <service id=".errored..service_locator.UoAUkAt.App\Entity\Message" class="App\Entity\Message"/>
+    <service id=".errored..service_locator.oEfCGgo.App\Entity\Reclamations" class="App\Entity\Reclamations"/>
+    <service id=".errored..service_locator.A_QYMNR.App\Entity\Reclamations" class="App\Entity\Reclamations"/>
     <service id=".errored..service_locator.Q1EeZWh.App\Entity\Validation" class="App\Entity\Validation"/>
     <service id=".errored..service_locator.pB20uqv.App\Entity\Vehicule" class="App\Entity\Vehicule"/>
     <service id=".errored..service_locator.iVJ8gI9.App\Entity\Vehicule" class="App\Entity\Vehicule"/>
@@ -9339,9 +9516,11 @@
     <service id="Endroid\QrCode\Builder\BuilderInterface" alias="Endroid\QrCode\Builder\Builder"/>
     <service id="Endroid\QrCode\Builder\BuilderRegistryInterface" alias="Endroid\QrCode\Builder\BuilderRegistry"/>
     <service id="Endroid\QrCode\Builder\BuilderInterface $defaultQrCodeBuilder" alias="endroid_qr_code.default_builder"/>
+    <service id="Karser\Recaptcha3Bundle\Validator\Constraints\Recaptcha3Validator" alias="karser_recaptcha3.validator"/>
+    <service id="karser_recaptcha3.google.request_method" alias="karser_recaptcha3.google.request_method.curl_post"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.4IJyzFY"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.vm19NCT"/>
     <service id="session" alias=".session.do-not-use" public="true">
       <deprecated package="symfony/framework-bundle" version="5.3">The "%alias_id%" service and "SessionInterface" alias are deprecated, use "$requestStack-&gt;getSession()" instead.</deprecated>
     </service>
@@ -9365,17 +9544,20 @@
     <service id=".service_locator.80edgLI" alias="messenger.receiver_locator"/>
     <service id=".service_locator.h8Jkkd2" alias="messenger.retry_strategy_locator"/>
     <service id=".service_locator.0GV1BZZ" alias=".service_locator.gSv9zYw"/>
+    <service id=".service_locator.haRM76D" alias=".service_locator.Sfu.weJ"/>
     <service id=".service_locator.oYdWrmM" alias=".service_locator.D0T2yQY"/>
     <service id=".service_locator.jYO2.AM" alias=".service_locator.bsljZSk"/>
+    <service id=".service_locator.b76MKMg" alias=".service_locator.GPGtF8v"/>
     <service id=".service_locator.vEbnrl2" alias=".service_locator.7B8MPwp"/>
+    <service id=".service_locator.cPmHE4M" alias=".service_locator.u5xdy.N"/>
     <service id=".service_locator.riGN6sa" alias=".service_locator.YU8H6ve"/>
     <service id=".service_locator.pc.B9w." alias=".service_locator._yIf3yV"/>
     <service id=".service_locator.pFaEqBs" alias=".service_locator.001ztJT"/>
     <service id=".service_locator.zilqhMR" alias=".service_locator.Q1EeZWh"/>
     <service id=".service_locator.gPjNq68" alias=".service_locator.iVJ8gI9"/>
-    <service id=".service_locator.A8ZcZS9" alias=".service_locator.4IJyzFY"/>
-    <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
-    <service id=".service_locator.OxvPipC" alias=".service_locator.AreSYUU"/>
+    <service id=".service_locator.W2PiPwy" alias=".service_locator.vm19NCT"/>
+    <service id=".service_locator.olGN41B" alias=".service_locator.sTIRclW"/>
+    <service id=".service_locator.1z6wJzC" alias=".service_locator.VqOVRaJ"/>
     <service id=".service_locator.nk0lT0X" alias=".service_locator.1kmbKC8"/>
     <service id=".service_locator.O24_MAy" alias=".service_locator.yY.p4P7"/>
     <service id=".service_locator.0ghLsew" alias=".service_locator.mx0UMmY"/>
@@ -9401,13 +9583,16 @@
     <service id="messenger.bus.default" alias="debug.traced.messenger.bus.default"/>
     <service id="doctrine.orm.default_metadata_driver" alias=".doctrine.orm.default_metadata_driver"/>
     <service id=".service_locator.uo5c0SP" alias=".service_locator.xUrKPVU"/>
+    <service id=".service_locator.bInR.ll" alias=".service_locator.aKM6MDa"/>
     <service id=".service_locator.5kp8gXO" alias=".service_locator.i9GOSYV"/>
-    <service id=".service_locator.HO7.gFw" alias=".service_locator.Q1F27w5"/>
+    <service id=".service_locator.xoYlCRC" alias=".service_locator.Sfu.weJ"/>
     <service id=".service_locator._243469" alias=".service_locator.D0T2yQY"/>
     <service id=".service_locator.Zp0NSXM" alias=".service_locator.4T4EJFR"/>
     <service id=".service_locator.MgzX1Qf" alias=".service_locator.bsljZSk"/>
     <service id=".service_locator.S89QQxH" alias=".service_locator.9uW928t"/>
-    <service id=".service_locator.pYjUS3E" alias=".service_locator.Tr_CAXc"/>
+    <service id=".service_locator.O99ujjA" alias=".service_locator.GPGtF8v"/>
+    <service id=".service_locator.2xKo5tm" alias=".service_locator.4SAVf4b"/>
+    <service id=".service_locator.ZqwPee9" alias=".service_locator.7CqYoho"/>
     <service id=".service_locator.Lf1y6gR" alias=".service_locator.ECpDOfk"/>
     <service id=".service_locator.vKdUTAa" alias=".service_locator.CjLvgM8"/>
     <service id=".service_locator.jcCblf." alias=".service_locator.XnXXhVu"/>
@@ -9419,12 +9604,16 @@
     <service id=".service_locator.vumS3I0" alias=".service_locator.7B8MPwp"/>
     <service id=".service_locator.2yFtcCD" alias=".service_locator.MjFFzS6"/>
     <service id=".service_locator.oO5ERaa" alias=".service_locator.UoAUkAt"/>
+    <service id=".service_locator.aB68ljE" alias=".service_locator.oklBR90"/>
+    <service id=".service_locator.d9xVeaX" alias=".service_locator.u5xdy.N"/>
+    <service id=".service_locator.rGX4QRF" alias=".service_locator.oEfCGgo"/>
+    <service id=".service_locator.qGNQUCI" alias=".service_locator.A_QYMNR"/>
     <service id=".service_locator.DoCD.2o" alias=".service_locator.YU8H6ve"/>
     <service id=".service_locator.vmloCRj" alias=".service_locator.pXhSQsU"/>
     <service id=".service_locator.Gf4Gasx" alias=".service_locator.kdKsWx5"/>
     <service id=".service_locator.yelrjaX" alias=".service_locator._yIf3yV"/>
     <service id=".service_locator..LnKcTa" alias=".service_locator.001ztJT"/>
-    <service id=".service_locator.bInR.ll" alias=".service_locator.aKM6MDa"/>
+    <service id=".service_locator.HO7.gFw" alias=".service_locator.Q1F27w5"/>
     <service id=".service_locator.yhUZf7r" alias=".service_locator.Q1EeZWh"/>
     <service id=".service_locator.9bJ6zHz" alias=".service_locator.pB20uqv"/>
     <service id=".service_locator.yYnJCZj" alias=".service_locator.iVJ8gI9"/>

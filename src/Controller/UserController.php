@@ -22,6 +22,7 @@ use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 use Symfony\Component\Security\Csrf\TokenGenerator\TokenGeneratorInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 
+
 #[Route('/user')]
 class UserController extends AbstractController
 
@@ -29,13 +30,14 @@ class UserController extends AbstractController
     #[Route('/', name: 'app_user_index', methods: ['GET'])]
     public function index(Request $request, ManagerRegistry $registry, PaginatorInterface $paginator, UserRepository $userRepository): Response
     {
-        $query = $request->query->get('q');
-
-        $users = $registry->getRepository(User::class)
-            ->findBySearchQuery($query);
-        $pagination = $paginator->paginate(
-            $users, /* query NOT result */
-            $request->query->getInt('page', 1), /*page number*/
+        $queryBuilder = $userRepository->createQueryBuilder('u')
+        ->where('u.roles LIKE :role')
+        ->setParameter('role', '%"ROLE_TRANSPORTEUR"%')
+        ->orderBy('u.id', 'DESC');
+    $users = $queryBuilder->getQuery()->getResult();
+    $pagination = $paginator->paginate(
+        $queryBuilder,
+        $request->query->getInt('page', 1), /*page number*/
             4 /*limit per page*/
         );
         return $this->render('user/index.html.twig', ['users' => $users, 'pagination' => $pagination]);
@@ -47,6 +49,7 @@ class UserController extends AbstractController
         $repository = $this->getDoctrine()->getRepository(User::class);
         $requestString = $request->get('searchValue');
         $users = $repository->findBySearchQuerya($requestString);
+        
         $jsonContent = $Normalizer->normalize($users, 'json', ['groups' => 'user']);
         $retour = json_encode($jsonContent);
         return new Response($retour);

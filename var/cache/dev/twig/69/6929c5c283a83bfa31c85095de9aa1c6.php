@@ -98,39 +98,36 @@ class __TwigTemplate_b0e8195a442e286a60dcad1f1a75b8fe extends Template
         echo "
 
 \t<div class=\"container-fluid p-0\">
-
-\t\t<input type=\"text\" id=\"search\" class=\"form-control\" placeholder=\"Search\"><br>
-\t\t<a class=\"btn btn-secondary\" href=\"";
-        // line 29
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_new");
-        echo "\">Register</a>
-\t\t<h1 class=\"h3 mb-3\">Transporteur</h1>
+";
+        // line 27
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_FULLY")) {
+            // line 28
+            echo "\t\t<input type=\"text\" id=\"search\" class=\"form-control\" placeholder=\"Search\"><br>
+\t\t";
+        }
+        // line 30
+        echo "\t";
+        // line 31
+        echo "\t\t<h1 class=\"h3 mb-3\">Transporteur</h1>
 \t\t<div class=\"row\" id=\"alldiv\">
 
 \t\t\t";
-        // line 33
+        // line 34
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["pagination"]) || array_key_exists("pagination", $context) ? $context["pagination"] : (function () { throw new RuntimeError('Variable "pagination" does not exist.', 33, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["pagination"]) || array_key_exists("pagination", $context) ? $context["pagination"] : (function () { throw new RuntimeError('Variable "pagination" does not exist.', 34, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["u"]) {
-            // line 34
+            // line 35
             echo "
 \t\t\t\t<div class=\"card col-5 offset-3 m-1 p-5\">
 
 \t\t\t\t\t<div class=\"card-body row\">
 \t\t\t\t\t\t<div class=\"col-6\">
 \t\t\t\t\t\t\t<img src=\"";
-            // line 39
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["u"], "image", [], "any", false, false, false, 39), "html", null, true);
-            echo "\" alt=\"Admin\" class=\"rounded-circle p-1 bg-primary\" width=\"180\" height=\"180\">
+            // line 40
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["u"], "image", [], "any", false, false, false, 40), "html", null, true);
+            echo "\" alt=\"Admin\" class=\"rounded-circle p-1 bg-primary\" width=\"200\" height=\"200\">
 \t\t\t\t\t\t\t<div class=\"portfolio-info\">
-\t\t\t\t\t\t\t\t<h4>";
-            // line 41
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["u"], "id", [], "any", false, false, false, 41), "html", null, true);
-            echo "fix</h4>
-\t\t\t\t\t\t\t\t<p>";
-            // line 42
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["u"], "id", [], "any", false, false, false, 42), "html", null, true);
-            echo " fix</p>
+\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t<a href=\"";
             // line 43
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["u"], "image", [], "any", false, false, false, 43), "html", null, true);
@@ -150,17 +147,13 @@ class __TwigTemplate_b0e8195a442e286a60dcad1f1a75b8fe extends Template
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["u"], "nom", [], "any", false, false, false, 52), "html", null, true);
             echo "</h5>
 \t\t\t\t\t\t\t<p class=\"m-0\">
-\t\t\t\t\t\t\t\t";
-            // line 54
-            if (twig_get_attribute($this->env, $this->source, ($context["user"] ?? null), "roles", [], "any", true, true, false, 54)) {
-                // line 55
-                echo "\t\t\t\t\t\t\t\t\t<p class=\"m-0\">";
-                ((twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 55, $this->source); })()), "roles", [], "any", false, false, false, 55)) ? (print (twig_escape_filter($this->env, json_encode(twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 55, $this->source); })()), "roles", [], "any", false, false, false, 55)), "html", null, true))) : (print ("")));
-                echo "</p>
-\t\t\t\t\t\t\t\t";
-            }
-            // line 57
-            echo "\t\t\t\t\t\t\t</p>
+\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t\t\t<p class=\"m-0\">";
+            // line 55
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["u"], "roles", [], "any", false, false, false, 55), 0, [], "array", false, false, false, 55), "html", null, true);
+            echo "</p>
+\t\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t</p>
 \t\t\t\t\t\t</div>
 \t\t\t\t\t</div>
 \t\t\t\t\t<ul class=\"list-group list-group-flush\">
@@ -323,9 +316,11 @@ class __TwigTemplate_b0e8195a442e286a60dcad1f1a75b8fe extends Template
         $this->displayParentBlock("javascripts", $context, $blocks);
         echo "
 
+\t<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js\"></script>
 
-<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js\"></script>
-<script>
+";
+        // line 167
+        echo "<script>
 \t\$(document).ready(function () {
 \$(\"#search\").keyup(function () {
 var value = \$(this).val();
@@ -333,7 +328,7 @@ console.log(\"value : \" + value)
 
 \$.ajax({
 url: \"";
-        // line 173
+        // line 174
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_admin_search");
         echo "\",
 
@@ -353,13 +348,9 @@ if (retour) {
 
 \$('#t tbody#searchtab').append('<tr><td>' + obj.id + '</td><td> ' + obj.email + ' </td><td>' + obj.roles + '</td><td>' + obj.password + '</td><td>' + obj.nom + '</td><td>' + obj.prenom + '</td><td>' + obj.adress + '</td><td>' + obj.cin + '</td><td>' + obj.dateNaissance + '</td><td>' + obj.dateCreationC + '</td><td>' + obj.status + '</td><td>' + obj.token + '</td><td>' + obj.score + '</td><td>' + obj.numtel + '</td><td>' + obj.image + '</td><td>' + obj.compteEx + '</td><td>' + obj.tokenEx + '</td><td><a href=\"' + obj.id + 'edit/\">modifier</a> </br><a\thref=\"' + obj.id + 'delete/\">supprimer</a></td></tr>');
 \$('#searchdiv').append('<div class=\"card col-5 offset-3 m-1 p-5\" ><div class=\"card-body row\"><div class=\"col-6\"><img src=\"' + obj.image + '\" alt=\"Admin\" class=\"rounded-circle p-1 bg-primary\" width=\"180\" height=\"180\"></div><div class=\"col-6 card-title align-self-center mb-0\"><h5>' + obj.nom + '</h5></div></div><ul class=\"list-group list-group-flush\"><li class=\"list-group-item\"><i class=\"fa fa-envelope float-right\"></i>Email :<a href=\"#\">' + obj.email + '</a></li><li class=\"list-group-item\"><i class=\"fa fa-phone float-right\"></i>Phone : ' + obj.numtel + '</li></ul><div class=\"float-right btn-group btn-group-sm\"><a href=\" ";
-        // line 190
+        // line 191
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_show", ["id" => "+obj.id+"]);
-        echo "\" class=\"btn btn-outline-primary\">Profil<i class=\"fa fa-pencil\"><i class=\"fa fa-pencil\"></i></i></a><a href=\" ";
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_edit", ["id" => "+obj.id+"]);
-        echo "\" class=\"btn btn-outline-primary\">Edit<i class=\"fa fa-pencil\"><i class=\"fa fa-pencil\"></i></i></a><a href=\" ";
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_delete", ["id" => "+obj.id+"]);
-        echo "\" class=\"btn btn-outline-primary\">Delete<i class=\"fa fa-pencil\"><i class=\"fa fa-pencil\"></i></i></a><a href=\" ";
+        echo "\" class=\"btn btn-outline-primary\">Profil<i class=\"fa fa-pencil\"></i></a><a href=\" ";
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_message_new", ["id" => "+obj.id+"]);
         echo "\" class=\"btn btn-outline-primary\">Message<i class=\"fa fa-pencil\"></i></a></div></div>');
 });
@@ -411,7 +402,7 @@ console.log(\"test\")
 
     public function getDebugInfo()
     {
-        return array (  357 => 190,  337 => 173,  323 => 162,  313 => 161,  298 => 156,  287 => 151,  282 => 149,  275 => 145,  269 => 142,  263 => 139,  259 => 137,  255 => 136,  219 => 103,  214 => 100,  198 => 90,  195 => 89,  186 => 72,  178 => 67,  171 => 63,  163 => 57,  157 => 55,  155 => 54,  150 => 52,  136 => 43,  132 => 42,  128 => 41,  123 => 39,  116 => 34,  112 => 33,  105 => 29,  98 => 24,  90 => 6,  80 => 5,  60 => 2,  37 => 1,);
+        return array (  352 => 191,  332 => 174,  323 => 167,  316 => 162,  306 => 161,  291 => 156,  280 => 151,  275 => 149,  268 => 145,  262 => 142,  256 => 139,  252 => 137,  248 => 136,  212 => 103,  207 => 100,  191 => 90,  188 => 89,  179 => 72,  171 => 67,  164 => 63,  153 => 55,  147 => 52,  133 => 43,  127 => 40,  120 => 35,  116 => 34,  111 => 31,  109 => 30,  105 => 28,  103 => 27,  98 => 24,  90 => 6,  80 => 5,  60 => 2,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -442,9 +433,10 @@ console.log(\"test\")
 
 
 \t<div class=\"container-fluid p-0\">
-
+{% if is_granted('IS_AUTHENTICATED_FULLY') %}
 \t\t<input type=\"text\" id=\"search\" class=\"form-control\" placeholder=\"Search\"><br>
-\t\t<a class=\"btn btn-secondary\" href=\"{{ path('app_user_new') }}\">Register</a>
+\t\t{% endif %}
+\t{# \t<a class=\"btn btn-secondary\" href=\"{{ path('app_user_new') }}\">Register</a> #}
 \t\t<h1 class=\"h3 mb-3\">Transporteur</h1>
 \t\t<div class=\"row\" id=\"alldiv\">
 
@@ -454,10 +446,9 @@ console.log(\"test\")
 
 \t\t\t\t\t<div class=\"card-body row\">
 \t\t\t\t\t\t<div class=\"col-6\">
-\t\t\t\t\t\t\t<img src=\"{{u.image}}\" alt=\"Admin\" class=\"rounded-circle p-1 bg-primary\" width=\"180\" height=\"180\">
+\t\t\t\t\t\t\t<img src=\"{{u.image}}\" alt=\"Admin\" class=\"rounded-circle p-1 bg-primary\" width=\"200\" height=\"200\">
 \t\t\t\t\t\t\t<div class=\"portfolio-info\">
-\t\t\t\t\t\t\t\t<h4>{{u.id}}fix</h4>
-\t\t\t\t\t\t\t\t<p>{{u.id}} fix</p>
+\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t<a href=\"{{u.image}}\" title=\"{{u.nom}}\" data-gallery=\"portfolio-gallery-product\" class=\"glightbox preview-link\">
 \t\t\t\t\t\t\t\t\t<i class=\"bi bi-zoom-in\"></i>
 \t\t\t\t\t\t\t\t</a>
@@ -469,9 +460,9 @@ console.log(\"test\")
 \t\t\t\t\t\t<div class=\"col-6 card-title align-self-center mb-0\">
 \t\t\t\t\t\t\t<h5>{{ u.nom}}</h5>
 \t\t\t\t\t\t\t<p class=\"m-0\">
-\t\t\t\t\t\t\t\t{% if user.roles is defined %}
-\t\t\t\t\t\t\t\t\t<p class=\"m-0\">{{ user.roles ? user.roles|json_encode : '' }}</p>
-\t\t\t\t\t\t\t\t{% endif %}
+\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t\t\t<p class=\"m-0\">{{ u.roles[0] }}</p>
+\t\t\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t</p>
 \t\t\t\t\t\t</div>
 \t\t\t\t\t</div>
@@ -579,9 +570,10 @@ console.log(\"test\")
 </div>{% endblock %}{% block javascripts %}
 {{ parent() }}
 
+\t<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js\"></script>
 
-<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js\"></script>
-<script>
+{# <script src=\"{{asset('front/assets/js/search.js')}}\"></script>
+ #}<script>
 \t\$(document).ready(function () {
 \$(\"#search\").keyup(function () {
 var value = \$(this).val();
@@ -605,7 +597,7 @@ if (retour) {
 // \$('#alldiv').hide();
 
 \$('#t tbody#searchtab').append('<tr><td>' + obj.id + '</td><td> ' + obj.email + ' </td><td>' + obj.roles + '</td><td>' + obj.password + '</td><td>' + obj.nom + '</td><td>' + obj.prenom + '</td><td>' + obj.adress + '</td><td>' + obj.cin + '</td><td>' + obj.dateNaissance + '</td><td>' + obj.dateCreationC + '</td><td>' + obj.status + '</td><td>' + obj.token + '</td><td>' + obj.score + '</td><td>' + obj.numtel + '</td><td>' + obj.image + '</td><td>' + obj.compteEx + '</td><td>' + obj.tokenEx + '</td><td><a href=\"' + obj.id + 'edit/\">modifier</a> </br><a\thref=\"' + obj.id + 'delete/\">supprimer</a></td></tr>');
-\$('#searchdiv').append('<div class=\"card col-5 offset-3 m-1 p-5\" ><div class=\"card-body row\"><div class=\"col-6\"><img src=\"' + obj.image + '\" alt=\"Admin\" class=\"rounded-circle p-1 bg-primary\" width=\"180\" height=\"180\"></div><div class=\"col-6 card-title align-self-center mb-0\"><h5>' + obj.nom + '</h5></div></div><ul class=\"list-group list-group-flush\"><li class=\"list-group-item\"><i class=\"fa fa-envelope float-right\"></i>Email :<a href=\"#\">' + obj.email + '</a></li><li class=\"list-group-item\"><i class=\"fa fa-phone float-right\"></i>Phone : ' + obj.numtel + '</li></ul><div class=\"float-right btn-group btn-group-sm\"><a href=\" {{ path('app_user_show', {'id': '+obj.id+'}) }}\" class=\"btn btn-outline-primary\">Profil<i class=\"fa fa-pencil\"><i class=\"fa fa-pencil\"></i></i></a><a href=\" {{ path('app_user_edit', {'id': '+obj.id+'}) }}\" class=\"btn btn-outline-primary\">Edit<i class=\"fa fa-pencil\"><i class=\"fa fa-pencil\"></i></i></a><a href=\" {{ path('app_user_delete', {'id': '+obj.id+'}) }}\" class=\"btn btn-outline-primary\">Delete<i class=\"fa fa-pencil\"><i class=\"fa fa-pencil\"></i></i></a><a href=\" {{ path('app_message_new', {'id': '+obj.id+'} ) }}\" class=\"btn btn-outline-primary\">Message<i class=\"fa fa-pencil\"></i></a></div></div>');
+\$('#searchdiv').append('<div class=\"card col-5 offset-3 m-1 p-5\" ><div class=\"card-body row\"><div class=\"col-6\"><img src=\"' + obj.image + '\" alt=\"Admin\" class=\"rounded-circle p-1 bg-primary\" width=\"180\" height=\"180\"></div><div class=\"col-6 card-title align-self-center mb-0\"><h5>' + obj.nom + '</h5></div></div><ul class=\"list-group list-group-flush\"><li class=\"list-group-item\"><i class=\"fa fa-envelope float-right\"></i>Email :<a href=\"#\">' + obj.email + '</a></li><li class=\"list-group-item\"><i class=\"fa fa-phone float-right\"></i>Phone : ' + obj.numtel + '</li></ul><div class=\"float-right btn-group btn-group-sm\"><a href=\" {{ path('app_user_show', {'id': '+obj.id+'}) }}\" class=\"btn btn-outline-primary\">Profil<i class=\"fa fa-pencil\"></i></a><a href=\" {{ path('app_message_new', {'id': '+obj.id+'} ) }}\" class=\"btn btn-outline-primary\">Message<i class=\"fa fa-pencil\"></i></a></div></div>');
 });
 } else {
 \$('#t tbody#all').show();

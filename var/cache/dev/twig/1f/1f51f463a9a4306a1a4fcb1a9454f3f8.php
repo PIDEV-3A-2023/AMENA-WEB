@@ -102,6 +102,18 @@ class __TwigTemplate_2cf989a1c29020707f84d094e32bb023 extends Template
 \t\t\t\t\t\t<li>
 \t\t\t\t\t\t\t<a href=\"/web/blog\">Blog</a>
 \t\t\t\t\t\t</li>
+\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t";
+        // line 72
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
+            // line 73
+            echo "\t\t\t\t\t\t\t\t<a href='";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_admin_index");
+            echo "'>Espace Admin ?</a>
+\t\t\t\t\t\t\t";
+        }
+        // line 75
+        echo "\t\t\t\t\t\t</li>
 \t\t\t\t\t\t<li class=\"dropdown\">
 \t\t\t\t\t\t\t<a>
 \t\t\t\t\t\t\t\t<span>Gestion</span>
@@ -133,152 +145,192 @@ class __TwigTemplate_2cf989a1c29020707f84d094e32bb023 extends Template
 
 \t\t\t\t\t\t\t</ul>
 \t\t\t\t\t\t</li>
-\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t<a href=\"/logout/\" class=\"active\">logout</a>
+\t\t\t\t\t\t<ul>
+\t\t\t\t\t\t\t";
+        // line 108
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_FULLY")) {
+            // line 109
+            echo "\t\t\t\t\t\t\t\t<li class=\"dropdown\">
+\t\t\t\t\t\t\t\t\t<a>
+\t\t\t\t\t\t\t\t\t\t<span>Account</span>
+\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-chevron-down dropdown-indicator\"></i>
+\t\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t\t\t<ul>
+
+
+\t\t\t\t\t\t\t\t\t\t<li class=\"sidebar-item\">
+\t\t\t\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"";
+            // line 118
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_show");
+            echo "\">
+
+\t\t\t\t\t\t\t\t\t\t\t\tProfil</a>
+\t\t\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t<li class=\"sidebar-item\">
+\t\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"";
+            // line 125
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_edit", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 125, $this->source); })()), "user", [], "any", false, false, false, 125), "id", [], "any", false, false, false, 125)]), "html", null, true);
+            echo "\">
+
+\t\t\t\t\t\t\t\t\t\tSettings
+\t\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t\t\t<a href=\"/logout/\" class=\"active\">logout</a>
+\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t";
+            // line 136
+            echo "\t\t\t\t\t\t\t</ul>
 \t\t\t\t\t\t</li>
-\t\t\t\t\t</ul>
-\t\t\t\t</nav>
-\t\t\t\t<!-- .navbar -->
+\t\t\t\t\t\t<li></li>
+\t\t\t\t\t\t<li></li>
+
+\t\t\t\t\t";
+        } else {
+            // line 142
+            echo "\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t<a href='";
+            // line 143
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
+            echo "'>login</a>
+\t\t\t\t\t\t</li>
+\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t<a href=\"";
+            // line 146
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_new");
+            echo "\">Register</a>
+
+\t\t\t\t\t\t</li>
+\t\t\t\t\t";
+        }
+        // line 150
+        echo "\t\t\t\t</ul>
+\t\t\t</ul>
+\t\t</nav>
+\t\t<!-- .navbar -->
+\t</body>
+</html></div></header><!-- End Header --><main id=\"main\"> ";
+        // line 155
+        $this->displayBlock('body', $context, $blocks);
+        echo "</main><!-- End #main --><!-- ======= Footer ======= --><footer id=\"footer\" class=\"footer\" style=\"margin-top:38%\">
+
+<div class=\"footer-content\">
+\t<div class=\"container\">
+\t\t<div class=\"row gy-4\">
+\t\t\t<div class=\"col-lg-5 col-md-12 footer-info\">
+\t\t\t\t<a href=\"index.html\" class=\"logo d-flex align-items-center\">
+\t\t\t\t\t<span>Amena</span>
+\t\t\t\t</a>
+\t\t\t\t<p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
+\t\t\t\t<div class=\"social-links d-flex  mt-3\">
+\t\t\t\t\t<a class=\"twitter\">
+\t\t\t\t\t\t<i class=\"bi bi-twitter\"></i>
+\t\t\t\t\t</a>
+\t\t\t\t\t<a class=\"facebook\">
+\t\t\t\t\t\t<i class=\"bi bi-facebook\"></i>
+\t\t\t\t\t</a>
+\t\t\t\t\t<a class=\"instagram\">
+\t\t\t\t\t\t<i class=\"bi bi-instagram\"></i>
+\t\t\t\t\t</a>
+\t\t\t\t\t<a class=\"linkedin\">
+\t\t\t\t\t\t<i class=\"bi bi-linkedin\"></i>
+\t\t\t\t\t</a>
+\t\t\t\t</div>
+\t\t\t</div>
+
+\t\t\t<div class=\"col-lg-2 col-6 footer-links\">
+\t\t\t\t<h4>Useful Links</h4>
+\t\t\t\t<ul>
+\t\t\t\t\t<li>
+\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
+\t\t\t\t\t\t<a>Home</a>
+\t\t\t\t\t</li>
+\t\t\t\t\t<li>
+\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
+\t\t\t\t\t\t<a>About us</a>
+\t\t\t\t\t</li>
+\t\t\t\t\t<li>
+\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
+\t\t\t\t\t\t<a>Services</a>
+\t\t\t\t\t</li>
+\t\t\t\t\t<li>
+\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
+\t\t\t\t\t\t<a>Terms of service</a>
+\t\t\t\t\t</li>
+\t\t\t\t\t<li>
+\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
+\t\t\t\t\t\t<a>Privacy policy</a>
+\t\t\t\t\t</li>
+\t\t\t\t</ul>
+\t\t\t</div>
+
+\t\t\t<div class=\"col-lg-2 col-6 footer-links\">
+\t\t\t\t<h4>Our Services</h4>
+\t\t\t\t<ul>
+\t\t\t\t\t<li>
+\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
+\t\t\t\t\t\t<a>Web Design</a>
+\t\t\t\t\t</li>
+\t\t\t\t\t<li>
+\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
+\t\t\t\t\t\t<a>Web Development</a>
+\t\t\t\t\t</li>
+\t\t\t\t\t<li>
+\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
+\t\t\t\t\t\t<a>Product Management</a>
+\t\t\t\t\t</li>
+\t\t\t\t\t<li>
+\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
+\t\t\t\t\t\t<a>Marketing</a>
+\t\t\t\t\t</li>
+\t\t\t\t\t<li>
+\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
+\t\t\t\t\t\t<a>Graphic Design</a>
+\t\t\t\t\t</li>
+\t\t\t\t</ul>
+\t\t\t</div>
+
+\t\t\t<div class=\"col-lg-3 col-md-12 footer-contact text-center text-md-start\">
+\t\t\t\t<h4>Contact Us</h4>
+\t\t\t\t<p>
+\t\t\t\t\tA108 Adam Street
+\t\t\t\t\t<br>
+\t\t\t\t\tNew York, NY 535022<br>
+\t\t\t\t\tUnited States
+\t\t\t\t\t<br><br>
+\t\t\t\t\t<strong>Phone:</strong>
+\t\t\t\t\t+1 5589 55488 55<br>
+\t\t\t\t\t<strong>Email:</strong>
+\t\t\t\t\tinfo@example.com<br>
+\t\t\t\t</p>
 
 \t\t\t</div>
-\t\t</header>
-\t\t<!-- End Header -->
 
+\t\t</div>
+\t</div>
+</div>
 
-\t\t<main id=\"main\"> ";
-        // line 114
-        $this->displayBlock('body', $context, $blocks);
-        // line 115
-        echo "\t\t\t</main>
-\t\t\t<!-- End #main -->
-\t\t\t<!-- ======= Footer ======= -->
-\t\t\t<footer id=\"footer\" class=\"footer\" style=\"margin-top:38%\">
-
-\t\t\t\t<div class=\"footer-content\">
-\t\t\t\t\t<div class=\"container\">
-\t\t\t\t\t\t<div class=\"row gy-4\">
-\t\t\t\t\t\t\t<div class=\"col-lg-5 col-md-12 footer-info\">
-\t\t\t\t\t\t\t\t<a href=\"index.html\" class=\"logo d-flex align-items-center\">
-\t\t\t\t\t\t\t\t\t<span>Amena</span>
-\t\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t\t<p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
-\t\t\t\t\t\t\t\t<div class=\"social-links d-flex  mt-3\">
-\t\t\t\t\t\t\t\t\t<a class=\"twitter\">
-\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-twitter\"></i>
-\t\t\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t\t\t<a class=\"facebook\">
-\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-facebook\"></i>
-\t\t\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t\t\t<a class=\"instagram\">
-\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-instagram\"></i>
-\t\t\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t\t\t<a class=\"linkedin\">
-\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-linkedin\"></i>
-\t\t\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t</div>
-
-\t\t\t\t\t\t\t<div class=\"col-lg-2 col-6 footer-links\">
-\t\t\t\t\t\t\t\t<h4>Useful Links</h4>
-\t\t\t\t\t\t\t\t<ul>
-\t\t\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
-\t\t\t\t\t\t\t\t\t\t<a>Home</a>
-\t\t\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
-\t\t\t\t\t\t\t\t\t\t<a>About us</a>
-\t\t\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
-\t\t\t\t\t\t\t\t\t\t<a>Services</a>
-\t\t\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
-\t\t\t\t\t\t\t\t\t\t<a>Terms of service</a>
-\t\t\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
-\t\t\t\t\t\t\t\t\t\t<a>Privacy policy</a>
-\t\t\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t\t</ul>
-\t\t\t\t\t\t\t</div>
-
-\t\t\t\t\t\t\t<div class=\"col-lg-2 col-6 footer-links\">
-\t\t\t\t\t\t\t\t<h4>Our Services</h4>
-\t\t\t\t\t\t\t\t<ul>
-\t\t\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
-\t\t\t\t\t\t\t\t\t\t<a>Web Design</a>
-\t\t\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
-\t\t\t\t\t\t\t\t\t\t<a>Web Development</a>
-\t\t\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
-\t\t\t\t\t\t\t\t\t\t<a>Product Management</a>
-\t\t\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
-\t\t\t\t\t\t\t\t\t\t<a>Marketing</a>
-\t\t\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
-\t\t\t\t\t\t\t\t\t\t<a>Graphic Design</a>
-\t\t\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t\t</ul>
-\t\t\t\t\t\t\t</div>
-
-\t\t\t\t\t\t\t<div class=\"col-lg-3 col-md-12 footer-contact text-center text-md-start\">
-\t\t\t\t\t\t\t\t<h4>Contact Us</h4>
-\t\t\t\t\t\t\t\t<p>
-\t\t\t\t\t\t\t\t\tA108 Adam Street
-\t\t\t\t\t\t\t\t\t<br>
-\t\t\t\t\t\t\t\t\tNew York, NY 535022<br>
-\t\t\t\t\t\t\t\t\tUnited States
-\t\t\t\t\t\t\t\t\t<br><br>
-\t\t\t\t\t\t\t\t\t<strong>Phone:</strong>
-\t\t\t\t\t\t\t\t\t+1 5589 55488 55<br>
-\t\t\t\t\t\t\t\t\t<strong>Email:</strong>
-\t\t\t\t\t\t\t\t\tinfo@example.com<br>
-\t\t\t\t\t\t\t\t</p>
-
-\t\t\t\t\t\t\t</div>
-
-\t\t\t\t\t\t</div>
-\t\t\t\t\t</div>
-\t\t\t\t</div>
-
-\t\t\t\t<div class=\"footer-legal\">
-\t\t\t\t\t<div class=\"container\">
-\t\t\t\t\t\t<div class=\"copyright\">
-\t\t\t\t\t\t\t&copy; Copyright
-\t\t\t\t\t\t\t<strong>
-\t\t\t\t\t\t\t\t<span>Amena</span>
-\t\t\t\t\t\t\t</strong>. All Rights Reserved
-\t\t\t\t\t\t</div>
-\t\t\t\t\t\t<div class=\"credits\">
-\t\t\t\t\t\t\tDesigned by<a href=\"https://bootstrapmade.com/\">
-\t\t\t\t\t\t\t\tBootstrapMade</a>
-\t\t\t\t\t\t</div>
-\t\t\t\t\t</div>
-\t\t\t\t</div>
-\t\t\t</footer>
-\t\t\t<!-- End Footer -->
-\t\t\t<!-- End Footer -->
-
-\t\t\t<a class=\"scroll-top d-flex align-items-center justify-content-center\">
-\t\t\t\t<i class=\"bi bi-arrow-up-short\"></i>
-\t\t\t</a>
-
-\t\t\t<div id=\"preloader\"></div>
-\t\t\t";
-        // line 239
+<div class=\"footer-legal\">
+\t<div class=\"container\">
+\t\t<div class=\"copyright\">
+\t\t\t&copy; Copyright
+\t\t\t<strong>
+\t\t\t\t<span>Amena</span>
+\t\t\t</strong>. All Rights Reserved
+\t\t</div>
+\t\t<div class=\"credits\">
+\t\t\tDesigned by<a href=\"https://bootstrapmade.com/\">
+\t\t\t\tBootstrapMade</a>
+\t\t</div>
+\t</div>
+</div></footer><!-- End Footer --><!-- End Footer --><a class=\"scroll-top d-flex align-items-center justify-content-center\">
+<i class=\"bi bi-arrow-up-short\"></i></a><div id=\"preloader\"></div>";
+        // line 267
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 253
-        echo "\t\t</body>
-\t</html>
+        // line 278
+        echo "</body></html>
 ";
         
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
@@ -341,7 +393,7 @@ class __TwigTemplate_2cf989a1c29020707f84d094e32bb023 extends Template
 
     }
 
-    // line 114
+    // line 155
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -359,7 +411,7 @@ class __TwigTemplate_2cf989a1c29020707f84d094e32bb023 extends Template
 
     }
 
-    // line 239
+    // line 267
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -369,43 +421,40 @@ class __TwigTemplate_2cf989a1c29020707f84d094e32bb023 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 240
-        echo "\t\t\t\t";
+        // line 268
         echo twig_escape_filter($this->env, $this->env->getFunction('encore_entry_script_tags')->getCallable()("app"), "html", null, true);
         echo "
-\t\t\t\t<!-- Vendor JS Files -->
-\t\t\t\t<script src=\"";
-        // line 242
+<!-- Vendor JS Files -->
+<script src=\"";
+        // line 270
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"), "html", null, true);
         echo "\"></script>
-\t\t\t\t<script src=\"";
-        // line 243
+<script src=\"";
+        // line 271
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front/assets/vendor/aos/aos.js"), "html", null, true);
         echo "\"></script>
-\t\t\t\t<script src=\"";
-        // line 244
+<script src=\"";
+        // line 272
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front/assets/vendor/glightbox/js/glightbox.min.js"), "html", null, true);
         echo "\"></script>
-\t\t\t\t<script src=\"";
-        // line 245
+<script src=\"";
+        // line 273
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front/assets/vendor/swiper/swiper-bundle.min.js"), "html", null, true);
         echo "\"></script>
-\t\t\t\t<script src=\"";
-        // line 246
+<script src=\"";
+        // line 274
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front/assets/vendor/isotope-layout/isotope.pkgd.min.js"), "html", null, true);
         echo "\"></script>
-\t\t\t\t<script src=\"";
-        // line 247
+<script src=\"";
+        // line 275
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front/assets/vendor/php-email-form/validate.js"), "html", null, true);
         echo "\"></script>
 
-\t\t\t\t<!-- Template Main JS File -->
-\t\t\t\t<script src=\"";
-        // line 250
+<!-- Template Main JS File -->
+<script src=\"";
+        // line 278
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front/assets/js/main.js"), "html", null, true);
-        echo "\"></script>
-
-\t\t\t";
+        echo "\"></script>";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -419,9 +468,14 @@ class __TwigTemplate_2cf989a1c29020707f84d094e32bb023 extends Template
         return "base.html.twig";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  405 => 250,  399 => 247,  395 => 246,  391 => 245,  387 => 244,  383 => 243,  379 => 242,  373 => 240,  363 => 239,  345 => 114,  332 => 35,  324 => 30,  320 => 29,  316 => 28,  312 => 27,  308 => 26,  302 => 24,  292 => 23,  280 => 253,  278 => 239,  152 => 115,  150 => 114,  72 => 38,  70 => 23,  46 => 1,);
+        return array (  456 => 278,  450 => 275,  446 => 274,  442 => 273,  438 => 272,  434 => 271,  430 => 270,  425 => 268,  415 => 267,  397 => 155,  384 => 35,  376 => 30,  372 => 29,  368 => 28,  364 => 27,  360 => 26,  354 => 24,  344 => 23,  333 => 278,  331 => 267,  216 => 155,  209 => 150,  202 => 146,  196 => 143,  193 => 142,  185 => 136,  174 => 125,  164 => 118,  153 => 109,  151 => 108,  116 => 75,  110 => 73,  108 => 72,  72 => 38,  70 => 23,  46 => 1,);
     }
 
     public function getSourceContext()
@@ -496,6 +550,11 @@ class __TwigTemplate_2cf989a1c29020707f84d094e32bb023 extends Template
 \t\t\t\t\t\t<li>
 \t\t\t\t\t\t\t<a href=\"/web/blog\">Blog</a>
 \t\t\t\t\t\t</li>
+\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t{% if is_granted('ROLE_ADMIN') %}
+\t\t\t\t\t\t\t\t<a href='{{ path('app_admin_index') }}'>Espace Admin ?</a>
+\t\t\t\t\t\t\t{% endif %}
+\t\t\t\t\t\t</li>
 \t\t\t\t\t\t<li class=\"dropdown\">
 \t\t\t\t\t\t\t<a>
 \t\t\t\t\t\t\t\t<span>Gestion</span>
@@ -527,159 +586,178 @@ class __TwigTemplate_2cf989a1c29020707f84d094e32bb023 extends Template
 
 \t\t\t\t\t\t\t</ul>
 \t\t\t\t\t\t</li>
-\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t<a href=\"/logout/\" class=\"active\">logout</a>
+\t\t\t\t\t\t<ul>
+\t\t\t\t\t\t\t{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+\t\t\t\t\t\t\t\t<li class=\"dropdown\">
+\t\t\t\t\t\t\t\t\t<a>
+\t\t\t\t\t\t\t\t\t\t<span>Account</span>
+\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-chevron-down dropdown-indicator\"></i>
+\t\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t\t\t<ul>
+
+
+\t\t\t\t\t\t\t\t\t\t<li class=\"sidebar-item\">
+\t\t\t\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"{{ path('app_user_show') }}\">
+
+\t\t\t\t\t\t\t\t\t\t\t\tProfil</a>
+\t\t\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t<li class=\"sidebar-item\">
+\t\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"{{ path('app_user_edit', {'id': app.user.id }) }}\">
+
+\t\t\t\t\t\t\t\t\t\tSettings
+\t\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t\t\t<a href=\"/logout/\" class=\"active\">logout</a>
+\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t{# <li>
+\t\t\t\t\t\t\t\t\t<a>Deep Dropdown 5</a>
+\t\t\t\t\t\t\t\t</li> #}
+\t\t\t\t\t\t\t</ul>
 \t\t\t\t\t\t</li>
-\t\t\t\t\t</ul>
-\t\t\t\t</nav>
-\t\t\t\t<!-- .navbar -->
+\t\t\t\t\t\t<li></li>
+\t\t\t\t\t\t<li></li>
+
+\t\t\t\t\t{% else %}
+\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t<a href='{{ path('app_login') }}'>login</a>
+\t\t\t\t\t\t</li>
+\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t<a href=\"{{ path('app_user_new') }}\">Register</a>
+
+\t\t\t\t\t\t</li>
+\t\t\t\t\t{% endif %}
+\t\t\t\t</ul>
+\t\t\t</ul>
+\t\t</nav>
+\t\t<!-- .navbar -->
+\t</body>
+</html></div></header><!-- End Header --><main id=\"main\"> {% block body %}{% endblock %}</main><!-- End #main --><!-- ======= Footer ======= --><footer id=\"footer\" class=\"footer\" style=\"margin-top:38%\">
+
+<div class=\"footer-content\">
+\t<div class=\"container\">
+\t\t<div class=\"row gy-4\">
+\t\t\t<div class=\"col-lg-5 col-md-12 footer-info\">
+\t\t\t\t<a href=\"index.html\" class=\"logo d-flex align-items-center\">
+\t\t\t\t\t<span>Amena</span>
+\t\t\t\t</a>
+\t\t\t\t<p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
+\t\t\t\t<div class=\"social-links d-flex  mt-3\">
+\t\t\t\t\t<a class=\"twitter\">
+\t\t\t\t\t\t<i class=\"bi bi-twitter\"></i>
+\t\t\t\t\t</a>
+\t\t\t\t\t<a class=\"facebook\">
+\t\t\t\t\t\t<i class=\"bi bi-facebook\"></i>
+\t\t\t\t\t</a>
+\t\t\t\t\t<a class=\"instagram\">
+\t\t\t\t\t\t<i class=\"bi bi-instagram\"></i>
+\t\t\t\t\t</a>
+\t\t\t\t\t<a class=\"linkedin\">
+\t\t\t\t\t\t<i class=\"bi bi-linkedin\"></i>
+\t\t\t\t\t</a>
+\t\t\t\t</div>
+\t\t\t</div>
+
+\t\t\t<div class=\"col-lg-2 col-6 footer-links\">
+\t\t\t\t<h4>Useful Links</h4>
+\t\t\t\t<ul>
+\t\t\t\t\t<li>
+\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
+\t\t\t\t\t\t<a>Home</a>
+\t\t\t\t\t</li>
+\t\t\t\t\t<li>
+\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
+\t\t\t\t\t\t<a>About us</a>
+\t\t\t\t\t</li>
+\t\t\t\t\t<li>
+\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
+\t\t\t\t\t\t<a>Services</a>
+\t\t\t\t\t</li>
+\t\t\t\t\t<li>
+\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
+\t\t\t\t\t\t<a>Terms of service</a>
+\t\t\t\t\t</li>
+\t\t\t\t\t<li>
+\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
+\t\t\t\t\t\t<a>Privacy policy</a>
+\t\t\t\t\t</li>
+\t\t\t\t</ul>
+\t\t\t</div>
+
+\t\t\t<div class=\"col-lg-2 col-6 footer-links\">
+\t\t\t\t<h4>Our Services</h4>
+\t\t\t\t<ul>
+\t\t\t\t\t<li>
+\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
+\t\t\t\t\t\t<a>Web Design</a>
+\t\t\t\t\t</li>
+\t\t\t\t\t<li>
+\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
+\t\t\t\t\t\t<a>Web Development</a>
+\t\t\t\t\t</li>
+\t\t\t\t\t<li>
+\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
+\t\t\t\t\t\t<a>Product Management</a>
+\t\t\t\t\t</li>
+\t\t\t\t\t<li>
+\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
+\t\t\t\t\t\t<a>Marketing</a>
+\t\t\t\t\t</li>
+\t\t\t\t\t<li>
+\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
+\t\t\t\t\t\t<a>Graphic Design</a>
+\t\t\t\t\t</li>
+\t\t\t\t</ul>
+\t\t\t</div>
+
+\t\t\t<div class=\"col-lg-3 col-md-12 footer-contact text-center text-md-start\">
+\t\t\t\t<h4>Contact Us</h4>
+\t\t\t\t<p>
+\t\t\t\t\tA108 Adam Street
+\t\t\t\t\t<br>
+\t\t\t\t\tNew York, NY 535022<br>
+\t\t\t\t\tUnited States
+\t\t\t\t\t<br><br>
+\t\t\t\t\t<strong>Phone:</strong>
+\t\t\t\t\t+1 5589 55488 55<br>
+\t\t\t\t\t<strong>Email:</strong>
+\t\t\t\t\tinfo@example.com<br>
+\t\t\t\t</p>
 
 \t\t\t</div>
-\t\t</header>
-\t\t<!-- End Header -->
 
+\t\t</div>
+\t</div>
+</div>
 
-\t\t<main id=\"main\"> {% block body %}{% endblock %}
-\t\t\t</main>
-\t\t\t<!-- End #main -->
-\t\t\t<!-- ======= Footer ======= -->
-\t\t\t<footer id=\"footer\" class=\"footer\" style=\"margin-top:38%\">
+<div class=\"footer-legal\">
+\t<div class=\"container\">
+\t\t<div class=\"copyright\">
+\t\t\t&copy; Copyright
+\t\t\t<strong>
+\t\t\t\t<span>Amena</span>
+\t\t\t</strong>. All Rights Reserved
+\t\t</div>
+\t\t<div class=\"credits\">
+\t\t\tDesigned by<a href=\"https://bootstrapmade.com/\">
+\t\t\t\tBootstrapMade</a>
+\t\t</div>
+\t</div>
+</div></footer><!-- End Footer --><!-- End Footer --><a class=\"scroll-top d-flex align-items-center justify-content-center\">
+<i class=\"bi bi-arrow-up-short\"></i></a><div id=\"preloader\"></div>{% block javascripts %}
+{{ encore_entry_script_tags('app') }}
+<!-- Vendor JS Files -->
+<script src=\"{{asset('front/assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}\"></script>
+<script src=\"{{asset('front/assets/vendor/aos/aos.js')}}\"></script>
+<script src=\"{{asset('front/assets/vendor/glightbox/js/glightbox.min.js')}}\"></script>
+<script src=\"{{asset('front/assets/vendor/swiper/swiper-bundle.min.js')}}\"></script>
+<script src=\"{{asset('front/assets/vendor/isotope-layout/isotope.pkgd.min.js')}}\"></script>
+<script src=\"{{asset('front/assets/vendor/php-email-form/validate.js')}}\"></script>
 
-\t\t\t\t<div class=\"footer-content\">
-\t\t\t\t\t<div class=\"container\">
-\t\t\t\t\t\t<div class=\"row gy-4\">
-\t\t\t\t\t\t\t<div class=\"col-lg-5 col-md-12 footer-info\">
-\t\t\t\t\t\t\t\t<a href=\"index.html\" class=\"logo d-flex align-items-center\">
-\t\t\t\t\t\t\t\t\t<span>Amena</span>
-\t\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t\t<p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
-\t\t\t\t\t\t\t\t<div class=\"social-links d-flex  mt-3\">
-\t\t\t\t\t\t\t\t\t<a class=\"twitter\">
-\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-twitter\"></i>
-\t\t\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t\t\t<a class=\"facebook\">
-\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-facebook\"></i>
-\t\t\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t\t\t<a class=\"instagram\">
-\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-instagram\"></i>
-\t\t\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t\t\t<a class=\"linkedin\">
-\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-linkedin\"></i>
-\t\t\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t</div>
-
-\t\t\t\t\t\t\t<div class=\"col-lg-2 col-6 footer-links\">
-\t\t\t\t\t\t\t\t<h4>Useful Links</h4>
-\t\t\t\t\t\t\t\t<ul>
-\t\t\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
-\t\t\t\t\t\t\t\t\t\t<a>Home</a>
-\t\t\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
-\t\t\t\t\t\t\t\t\t\t<a>About us</a>
-\t\t\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
-\t\t\t\t\t\t\t\t\t\t<a>Services</a>
-\t\t\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
-\t\t\t\t\t\t\t\t\t\t<a>Terms of service</a>
-\t\t\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
-\t\t\t\t\t\t\t\t\t\t<a>Privacy policy</a>
-\t\t\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t\t</ul>
-\t\t\t\t\t\t\t</div>
-
-\t\t\t\t\t\t\t<div class=\"col-lg-2 col-6 footer-links\">
-\t\t\t\t\t\t\t\t<h4>Our Services</h4>
-\t\t\t\t\t\t\t\t<ul>
-\t\t\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
-\t\t\t\t\t\t\t\t\t\t<a>Web Design</a>
-\t\t\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
-\t\t\t\t\t\t\t\t\t\t<a>Web Development</a>
-\t\t\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
-\t\t\t\t\t\t\t\t\t\t<a>Product Management</a>
-\t\t\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
-\t\t\t\t\t\t\t\t\t\t<a>Marketing</a>
-\t\t\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-dash\"></i>
-\t\t\t\t\t\t\t\t\t\t<a>Graphic Design</a>
-\t\t\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t\t</ul>
-\t\t\t\t\t\t\t</div>
-
-\t\t\t\t\t\t\t<div class=\"col-lg-3 col-md-12 footer-contact text-center text-md-start\">
-\t\t\t\t\t\t\t\t<h4>Contact Us</h4>
-\t\t\t\t\t\t\t\t<p>
-\t\t\t\t\t\t\t\t\tA108 Adam Street
-\t\t\t\t\t\t\t\t\t<br>
-\t\t\t\t\t\t\t\t\tNew York, NY 535022<br>
-\t\t\t\t\t\t\t\t\tUnited States
-\t\t\t\t\t\t\t\t\t<br><br>
-\t\t\t\t\t\t\t\t\t<strong>Phone:</strong>
-\t\t\t\t\t\t\t\t\t+1 5589 55488 55<br>
-\t\t\t\t\t\t\t\t\t<strong>Email:</strong>
-\t\t\t\t\t\t\t\t\tinfo@example.com<br>
-\t\t\t\t\t\t\t\t</p>
-
-\t\t\t\t\t\t\t</div>
-
-\t\t\t\t\t\t</div>
-\t\t\t\t\t</div>
-\t\t\t\t</div>
-
-\t\t\t\t<div class=\"footer-legal\">
-\t\t\t\t\t<div class=\"container\">
-\t\t\t\t\t\t<div class=\"copyright\">
-\t\t\t\t\t\t\t&copy; Copyright
-\t\t\t\t\t\t\t<strong>
-\t\t\t\t\t\t\t\t<span>Amena</span>
-\t\t\t\t\t\t\t</strong>. All Rights Reserved
-\t\t\t\t\t\t</div>
-\t\t\t\t\t\t<div class=\"credits\">
-\t\t\t\t\t\t\tDesigned by<a href=\"https://bootstrapmade.com/\">
-\t\t\t\t\t\t\t\tBootstrapMade</a>
-\t\t\t\t\t\t</div>
-\t\t\t\t\t</div>
-\t\t\t\t</div>
-\t\t\t</footer>
-\t\t\t<!-- End Footer -->
-\t\t\t<!-- End Footer -->
-
-\t\t\t<a class=\"scroll-top d-flex align-items-center justify-content-center\">
-\t\t\t\t<i class=\"bi bi-arrow-up-short\"></i>
-\t\t\t</a>
-
-\t\t\t<div id=\"preloader\"></div>
-\t\t\t{% block javascripts %}
-\t\t\t\t{{ encore_entry_script_tags('app') }}
-\t\t\t\t<!-- Vendor JS Files -->
-\t\t\t\t<script src=\"{{asset('front/assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}\"></script>
-\t\t\t\t<script src=\"{{asset('front/assets/vendor/aos/aos.js')}}\"></script>
-\t\t\t\t<script src=\"{{asset('front/assets/vendor/glightbox/js/glightbox.min.js')}}\"></script>
-\t\t\t\t<script src=\"{{asset('front/assets/vendor/swiper/swiper-bundle.min.js')}}\"></script>
-\t\t\t\t<script src=\"{{asset('front/assets/vendor/isotope-layout/isotope.pkgd.min.js')}}\"></script>
-\t\t\t\t<script src=\"{{asset('front/assets/vendor/php-email-form/validate.js')}}\"></script>
-
-\t\t\t\t<!-- Template Main JS File -->
-\t\t\t\t<script src=\"{{asset('front/assets/js/main.js')}}\"></script>
-
-\t\t\t{% endblock %}
-\t\t</body>
-\t</html>
+<!-- Template Main JS File -->
+<script src=\"{{asset('front/assets/js/main.js')}}\"></script>{% endblock %}</body></html>
 ", "base.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\base.html.twig");
     }
 }

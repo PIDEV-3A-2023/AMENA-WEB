@@ -13,6 +13,8 @@ use Symfony\Component\Form\FormError;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use Knp\Component\Pager\PaginatorInterface;
+
 
 #[Route('/admin')]
 class AdminController extends AbstractController
@@ -29,74 +31,94 @@ class AdminController extends AbstractController
         return new Response($retour);
     }
 
-
     #[Route('/', name: 'app_admin_index', methods: ['GET'])]
-    public function index(UserRepository $userRepository): Response
+    public function index(UserRepository $userRepository, Request $request, PaginatorInterface $paginator): Response
     {
         $user = $this->getUser();
         if ($user && $user->getRoles()[0] == "ROLE_ADMIN") {
-
-
+            $query = $userRepository->createQueryBuilder('u')
+                ->orderBy('u.id', 'DESC')
+                ->getQuery();
+            $pagination = $paginator->paginate(
+                $query,
+                $request->query->getInt('page', 1),
+                10 // <-- Number of items per page
+            );
             return $this->render('admin/index.html.twig', [
-                'users' => $userRepository->findAll(),
+                'users' => $pagination,
             ]);
-        }
+        } 
     }
-
     #[Route('/new', name: 'app_admin_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, UserRepository $userRepository,UserPasswordHasherInterface $userPasswordHasher,EntityManagerInterface $entityManager): Response
+    public function new(Request $request, UserRepository $userRepository, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager): Response
     {
         function generateToken($length = 32)
         {
             return base64_encode(random_bytes($length));
         }
-        
-        $user=$this->getUser();
-        if($user && $user->getRoles()[0]=="ROLE_ADMIN"){
-        $user = new User();
-        $form = $this->createForm(User1Type::class, $user);
-        $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $password = $form->get('password')->getData();
-            if (empty($password)) {
-                $form->get('password')->addError(new FormError('Veuillez entrer un mot de passe.'));
-                return $this->renderForm('user/new.html.twig', [
-                    'user' => $user,
-                    'form' => $form,
-                ]);
+        $user = $this->getUser();
+        if ($user && $user->getRoles()[0] == "ROLE_ADMIN") {
+            $user = new User();
+            $form = $this->createForm(User1Type::class, $user);
+            $form->handleRequest($request);
+
+            if ($form->isSubmitted() && $form->isValid()) {
+                $password = $form->get('password')->getData();
+                if (empty($password)) {
+                    $form->get('password')->addError(new FormError('Veuillez entrer un mot de passe.'));
+                    return $this->renderForm('user/new.html.twig', [
+                        'user' => $user,
+                        'form' => $form,
+                    ]);
+                }
+
+
+                $token = generateToken();
+                $user->setToken($token);
+                $user->setScore("00");
+                $user->setCompteEx(new \DateTime());
+                $user->setDatecreationc(new \DateTime());
+                $user->setTokenEx(new \DateTime());
+                $roles = [];
+                $roles = $form->get('roles')->getData();
+                $user->setRoles($roles);
+                $user->setPassword(
+                    $userPasswordHasher->hashPassword(
+                        $user,
+                        $form->get('password')->getData()
+                    )
+                );
+
+                $image = $form->get('image')->getData();
+
+
+                if ($image) {
+                    $fichier = md5(uniqid()) . '.' . $image->guessExtension();
+
+                    $image->move(
+                        $this->getParameter('images_directory'),
+                        $fichier
+                    );
+                    dump($image);
+
+                    $user->setImage('http://localhost/img/' . $fichier);
+                }
+
+                $entityManager->persist($user);
+                $entityManager->flush();
+                $entityManager->persist($user);
+                $entityManager->flush();
+                $userRepository->save($user, true);
+
+                return $this->redirectToRoute('app_admin_index', [], Response::HTTP_SEE_OTHER);
             }
 
-            
-            $token = generateToken();
-            $user->setToken($token);
-            $user->setScore("00");
-            $user->setCompteEx(new \DateTime());
-            $user->setDatecreationc(new \DateTime());
-            $user->setTokenEx(new \DateTime());
-            $roles = [];
-            $roles = $form->get('roles')->getData();
-            $user->setRoles($roles);
-            $user->setPassword(
-                $userPasswordHasher->hashPassword(
-                    $user,
-                    $form->get('password')->getData()
-                )
-            );
-
-            $image = $form->get('image')->getData();
-            $entityManager->persist($user);
-            $entityManager->flush();
-            $userRepository->save($user, true);
-
-            return $this->redirectToRoute('app_admin_index', [], Response::HTTP_SEE_OTHER);
+            return $this->renderForm('admin/new.html.twig', [
+                'user' => $user,
+                'form' => $form,
+            ]);
         }
-
-        return $this->renderForm('admin/new.html.twig', [
-            'user' => $user,
-            'form' => $form,
-        ]);
-    }
     }
     #[Route('/{id}', name: 'app_admin_show', methods: ['GET'])]
 
@@ -108,7 +130,7 @@ class AdminController extends AbstractController
     }
 
     #[Route('/edit/{id}', name: 'app_admin_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, User $user, UserRepository $userRepository,EntityManagerInterface $entityManager): Response
+    public function edit(Request $request, User $user, UserRepository $userRepository, EntityManagerInterface $entityManager): Response
     {
         $form = $this->createForm(User1Type::class, $user);
         $form->handleRequest($request);
@@ -149,5 +171,22 @@ class AdminController extends AbstractController
         }
 
         return $this->redirectToRoute('app_admin_index', [], Response::HTTP_SEE_OTHER);
+    }
+
+
+    #[Route('/{id}/block', name: 'app_admin_block_user', methods: ['GET'])]
+    public function blockUser(Request $request, User $user, EntityManagerInterface $entityManager): Response
+    {
+        $isBlocked = $request->request->get('isBlocked');
+        if ($isBlocked === 'true') {
+            $user->setStatus(true);
+        } else {
+            $user->setStatus(false);
+        }
+
+        $entityManager->persist($user);
+        $entityManager->flush();
+
+        return $this->redirectToRoute('app_admin_index');
     }
 }

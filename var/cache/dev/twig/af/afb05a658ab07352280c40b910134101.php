@@ -40,14 +40,16 @@ class __TwigTemplate_e2afd2a217eb2b307566ff44ba681878 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "annonces/_delete_form.html.twig"));
 
         // line 1
-        echo "<form method=\"post\" action=\"";
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_annonces_delete", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["annonce"]) || array_key_exists("annonce", $context) ? $context["annonce"] : (function () { throw new RuntimeError('Variable "annonce" does not exist.', 1, $this->source); })()), "id", [], "any", false, false, false, 1)]), "html", null, true);
-        echo "\" onsubmit=\"return confirm('Are you sure you want to delete this item?');\">
-    <input type=\"hidden\" name=\"_token\" value=\"";
+        echo "
+<form method=\"post\" action=\"";
         // line 2
-        echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken(("delete" . twig_get_attribute($this->env, $this->source, (isset($context["annonce"]) || array_key_exists("annonce", $context) ? $context["annonce"] : (function () { throw new RuntimeError('Variable "annonce" does not exist.', 2, $this->source); })()), "id", [], "any", false, false, false, 2))), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_annonces_delete", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["annonce"]) || array_key_exists("annonce", $context) ? $context["annonce"] : (function () { throw new RuntimeError('Variable "annonce" does not exist.', 2, $this->source); })()), "id", [], "any", false, false, false, 2)]), "html", null, true);
+        echo "\" onsubmit=\"return confirm('étes vous sure de vouloir supprimer cette annonce?');\">
+    <input type=\"hidden\" name=\"_token\" value=\"";
+        // line 3
+        echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken(("delete" . twig_get_attribute($this->env, $this->source, (isset($context["annonce"]) || array_key_exists("annonce", $context) ? $context["annonce"] : (function () { throw new RuntimeError('Variable "annonce" does not exist.', 3, $this->source); })()), "id", [], "any", false, false, false, 3))), "html", null, true);
         echo "\">
-    <button class=\"btn\">Delete</button>
+   <button type=\"submit\" class=\"btn btn-danger\">Supprimer</button>
 </form>
 ";
         
@@ -70,14 +72,15 @@ class __TwigTemplate_e2afd2a217eb2b307566ff44ba681878 extends Template
 
     public function getDebugInfo()
     {
-        return array (  48 => 2,  43 => 1,);
+        return array (  50 => 3,  46 => 2,  43 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("<form method=\"post\" action=\"{{ path('app_annonces_delete', {'id': annonce.id}) }}\" onsubmit=\"return confirm('Are you sure you want to delete this item?');\">
+        return new Source("
+<form method=\"post\" action=\"{{ path('app_annonces_delete', {'id': annonce.id}) }}\" onsubmit=\"return confirm('étes vous sure de vouloir supprimer cette annonce?');\">
     <input type=\"hidden\" name=\"_token\" value=\"{{ csrf_token('delete' ~ annonce.id) }}\">
-    <button class=\"btn\">Delete</button>
+   <button type=\"submit\" class=\"btn btn-danger\">Supprimer</button>
 </form>
 ", "annonces/_delete_form.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\annonces\\_delete_form.html.twig");
     }

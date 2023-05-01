@@ -112,14 +112,11 @@ class __TwigTemplate_0ec2e6845fdc248926e026b0cae9b4c6 extends Template
 \t<!-- End Breadcrumbs -->
 
 
-\t<section class=\"contact-form-area section-bg  pt-115 pb-120 fix\" src=\"";
-        // line 43
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front/assets/img/babva.jpg"), "html", null, true);
-        echo "\">
+\t<section class=\"contact-form-area section-bg  pt-115 pb-120 fix\">
 \t\t<img src=\"";
         // line 44
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front/assets/img/bac2.jpg"), "html", null, true);
-        echo "\" class=\"background--page\" alt=\"...\" width=\"50%\" height=\"100%\">
+        echo "\" class=\"background--page\" alt=\"...\" width=\"60%\" height=\"90%\">
 
 \t\t<div class=\"container\" style=\"margin-top:-44%;margin-left:25%;\">
 \t\t\t<div
@@ -134,9 +131,9 @@ class __TwigTemplate_0ec2e6845fdc248926e026b0cae9b4c6 extends Template
 \t\t\t\t\t\t\t\tclass=\"col-lg-12\">
 \t\t\t\t\t\t\t\t<!-- Section Tittle -->
 \t\t\t\t\t\t\t\t<div class=\"section-tittle mb-50\">
-\t\t\t\t\t\t\t\t\t<span>Get a Qote For Free</span>
+\t\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t<h2>S’inscrire</h2>
-\t\t\t\t\t\t\t\t\t<p>Rejoignez Amena aujourd’hui.</p>
+\t\t\t\t\t\t\t\t\t<p><h2>Rejoignez Amena aujourd’hui.</h2></p>
 \t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t</div>
@@ -339,7 +336,7 @@ class __TwigTemplate_0ec2e6845fdc248926e026b0cae9b4c6 extends Template
 
     public function getDebugInfo()
     {
-        return array (  319 => 154,  304 => 141,  296 => 135,  292 => 134,  288 => 133,  280 => 128,  276 => 127,  272 => 126,  268 => 125,  255 => 115,  251 => 114,  247 => 113,  238 => 107,  234 => 106,  230 => 105,  221 => 99,  217 => 98,  213 => 97,  204 => 91,  200 => 90,  196 => 89,  192 => 88,  188 => 87,  184 => 86,  175 => 80,  171 => 79,  167 => 78,  158 => 72,  154 => 71,  150 => 70,  121 => 44,  117 => 43,  97 => 25,  95 => 24,  92 => 23,  82 => 22,  62 => 19,  51 => 15,  49 => 17,  36 => 15,);
+        return array (  316 => 154,  301 => 141,  293 => 135,  289 => 134,  285 => 133,  277 => 128,  273 => 127,  269 => 126,  265 => 125,  252 => 115,  248 => 114,  244 => 113,  235 => 107,  231 => 106,  227 => 105,  218 => 99,  214 => 98,  210 => 97,  201 => 91,  197 => 90,  193 => 89,  189 => 88,  185 => 87,  181 => 86,  172 => 80,  168 => 79,  164 => 78,  155 => 72,  151 => 71,  147 => 70,  118 => 44,  97 => 25,  95 => 24,  92 => 23,  82 => 22,  62 => 19,  51 => 15,  49 => 17,  36 => 15,);
     }
 
     public function getSourceContext()
@@ -386,8 +383,8 @@ class __TwigTemplate_0ec2e6845fdc248926e026b0cae9b4c6 extends Template
 \t<!-- End Breadcrumbs -->
 
 
-\t<section class=\"contact-form-area section-bg  pt-115 pb-120 fix\" src=\"{{ asset('front/assets/img/babva.jpg') }}\">
-\t\t<img src=\"{{ asset('front/assets/img/bac2.jpg') }}\" class=\"background--page\" alt=\"...\" width=\"50%\" height=\"100%\">
+\t<section class=\"contact-form-area section-bg  pt-115 pb-120 fix\">
+\t\t<img src=\"{{ asset('front/assets/img/bac2.jpg') }}\" class=\"background--page\" alt=\"...\" width=\"60%\" height=\"90%\">
 
 \t\t<div class=\"container\" style=\"margin-top:-44%;margin-left:25%;\">
 \t\t\t<div
@@ -402,9 +399,9 @@ class __TwigTemplate_0ec2e6845fdc248926e026b0cae9b4c6 extends Template
 \t\t\t\t\t\t\t\tclass=\"col-lg-12\">
 \t\t\t\t\t\t\t\t<!-- Section Tittle -->
 \t\t\t\t\t\t\t\t<div class=\"section-tittle mb-50\">
-\t\t\t\t\t\t\t\t\t<span>Get a Qote For Free</span>
+\t\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t<h2>S’inscrire</h2>
-\t\t\t\t\t\t\t\t\t<p>Rejoignez Amena aujourd’hui.</p>
+\t\t\t\t\t\t\t\t\t<p><h2>Rejoignez Amena aujourd’hui.</h2></p>
 \t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t</div>

@@ -1,42 +1,63 @@
 <?php
 
 namespace App\Entity;
+namespace App\Entity;
+use App\Entity\Colis;
+use App\Entity\User;
 
 use App\Repository\AnnoncesRepository;
 use Doctrine\ORM\Mapping as ORM;
-use App\Entity\User;
+
+use Symfony\Component\Validator\Constraints as Assert;
 #[ORM\Table(name: '`annonces`')]
 #[ORM\Entity(repositoryClass: AnnoncesRepository::class)]
 class Annonces
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
-    #[ORM\Column(name:'id')]
+    #[ORM\Column(name:'id_annonce')]
     private ?int $id = null;
-
+    
+    #[Assert\NotBlank(message: "veuillez selectionner le type .")]
     #[ORM\Column(length: 255)]
     private ?string $type = null;
 
+    
+    #[Assert\NotEqual(propertyPath: "ville_arr" ,message:"La ville d'arrivée doit être différente de la ville de départ.")]
+    #[Assert\NotBlank(message: "veuillez selectionner la ville de depart .")]
     #[ORM\Column(length: 255)]
     private ?string $ville_dep = null;
 
+    #[Assert\NotBlank(message: "veuillez selectionner la ville d'arrivée .")]
     #[ORM\Column(length: 255)]
     private ?string $ville_arr = null;
-
+   
+    #[Assert\NotBlank(message: "La date doit être renseignée.")]
+    #[Assert\Regex('/^\d{4}-\d{2}-\d{2}$/',message: "La date de départ doit être au format YYYY-MM-DD.")]
     #[ORM\Column(length: 255)]
     private ?string $date_dep = null;
 
+    #[Assert\NotBlank(message: "La date doit être renseignée.")]
+    #[Assert\Regex('/^\d{4}-\d{2}-\d{2}$/',message: "La date de départ doit être au format YYYY-MM-DD.")]
+    #[Assert\GreaterThan(propertyPath: "date_dep", message: "La date d'arrivée doit être après la date de départ.")]
     #[ORM\Column(length: 255)]
     private ?string $date_arr = null;
-
+    
+    #[Assert\NotBlank(message: "La description doit être renseignée.")]
     #[ORM\Column]
     private ?int $prix = null;
 
+    #[Assert\NotBlank(message: "La description doit être renseignée.")]
+    #[Assert\Length(min: 11, minMessage: "La description doit contenir au moins 11 caractères.")]
     #[ORM\Column(length: 255)]
     private ?string $description = null;
 
  
 
+
+    #[ORM\ManyToOne(inversedBy: 'annonces')]
+    #[ORM\JoinColumn(nullable: false, name: "ida_U")]
+    private ?User $ida_U ;
 
 
     
@@ -75,7 +96,7 @@ class Annonces
 
         return $this;
     }
-
+    
     public function getVilleArr(): ?string
     {
         return $this->ville_arr;
@@ -136,7 +157,17 @@ class Annonces
         return $this;
     }
 
+    public function getIdaU(): ?User
+    {
+        return $this->ida_U;
+    }
 
+    public function setIdaU(?User $ida_U): self
+    {
+        $this->ida_U = $ida_U;
+
+        return $this;
+    }
 
     public function getIdColis(): ?Colis
     {

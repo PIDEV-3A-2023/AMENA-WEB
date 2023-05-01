@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Entity;
-
+use App\Form\UserType;
 use App\Entity\Colis;
 use App\Repository\UserRepository;
 use Doctrine\Common\Collections\ArrayCollection;

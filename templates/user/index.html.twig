@@ -24,9 +24,10 @@
 
 
 	<div class="container-fluid p-0">
-
+{% if is_granted('IS_AUTHENTICATED_FULLY') %}
 		<input type="text" id="search" class="form-control" placeholder="Search"><br>
-		<a class="btn btn-secondary" href="{{ path('app_user_new') }}">Register</a>
+		{% endif %}
+	{# 	<a class="btn btn-secondary" href="{{ path('app_user_new') }}">Register</a> #}
 		<h1 class="h3 mb-3">Transporteur</h1>
 		<div class="row" id="alldiv">
 
@@ -36,10 +37,9 @@
 
 					<div class="card-body row">
 						<div class="col-6">
-							<img src="{{u.image}}" alt="Admin" class="rounded-circle p-1 bg-primary" width="180" height="180">
+							<img src="{{u.image}}" alt="Admin" class="rounded-circle p-1 bg-primary" width="200" height="200">
 							<div class="portfolio-info">
-								<h4>{{u.id}}fix</h4>
-								<p>{{u.id}} fix</p>
+								
 								<a href="{{u.image}}" title="{{u.nom}}" data-gallery="portfolio-gallery-product" class="glightbox preview-link">
 									<i class="bi bi-zoom-in"></i>
 								</a>
@@ -51,9 +51,9 @@
 						<div class="col-6 card-title align-self-center mb-0">
 							<h5>{{ u.nom}}</h5>
 							<p class="m-0">
-								{% if user.roles is defined %}
-									<p class="m-0">{{ user.roles ? user.roles|json_encode : '' }}</p>
-								{% endif %}
+							
+											<p class="m-0">{{ u.roles[0] }}</p>
+										
 							</p>
 						</div>
 					</div>
@@ -161,9 +161,10 @@
 </div>{% endblock %}{% block javascripts %}
 {{ parent() }}
 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script>
+{# <script src="{{asset('front/assets/js/search.js')}}"></script>
+ #}<script>
 	$(document).ready(function () {
 $("#search").keyup(function () {
 var value = $(this).val();
@@ -187,7 +188,7 @@ $('#t tbody#all').hide();
 // $('#alldiv').hide();
 
 $('#t tbody#searchtab').append('<tr><td>' + obj.id + '</td><td> ' + obj.email + ' </td><td>' + obj.roles + '</td><td>' + obj.password + '</td><td>' + obj.nom + '</td><td>' + obj.prenom + '</td><td>' + obj.adress + '</td><td>' + obj.cin + '</td><td>' + obj.dateNaissance + '</td><td>' + obj.dateCreationC + '</td><td>' + obj.status + '</td><td>' + obj.token + '</td><td>' + obj.score + '</td><td>' + obj.numtel + '</td><td>' + obj.image + '</td><td>' + obj.compteEx + '</td><td>' + obj.tokenEx + '</td><td><a href="' + obj.id + 'edit/">modifier</a> </br><a	href="' + obj.id + 'delete/">supprimer</a></td></tr>');
-$('#searchdiv').append('<div class="card col-5 offset-3 m-1 p-5" ><div class="card-body row"><div class="col-6"><img src="' + obj.image + '" alt="Admin" class="rounded-circle p-1 bg-primary" width="180" height="180"></div><div class="col-6 card-title align-self-center mb-0"><h5>' + obj.nom + '</h5></div></div><ul class="list-group list-group-flush"><li class="list-group-item"><i class="fa fa-envelope float-right"></i>Email :<a href="#">' + obj.email + '</a></li><li class="list-group-item"><i class="fa fa-phone float-right"></i>Phone : ' + obj.numtel + '</li></ul><div class="float-right btn-group btn-group-sm"><a href=" {{ path('app_user_show', {'id': '+obj.id+'}) }}" class="btn btn-outline-primary">Profil<i class="fa fa-pencil"><i class="fa fa-pencil"></i></i></a><a href=" {{ path('app_user_edit', {'id': '+obj.id+'}) }}" class="btn btn-outline-primary">Edit<i class="fa fa-pencil"><i class="fa fa-pencil"></i></i></a><a href=" {{ path('app_user_delete', {'id': '+obj.id+'}) }}" class="btn btn-outline-primary">Delete<i class="fa fa-pencil"><i class="fa fa-pencil"></i></i></a><a href=" {{ path('app_message_new', {'id': '+obj.id+'} ) }}" class="btn btn-outline-primary">Message<i class="fa fa-pencil"></i></a></div></div>');
+$('#searchdiv').append('<div class="card col-5 offset-3 m-1 p-5" ><div class="card-body row"><div class="col-6"><img src="' + obj.image + '" alt="Admin" class="rounded-circle p-1 bg-primary" width="180" height="180"></div><div class="col-6 card-title align-self-center mb-0"><h5>' + obj.nom + '</h5></div></div><ul class="list-group list-group-flush"><li class="list-group-item"><i class="fa fa-envelope float-right"></i>Email :<a href="#">' + obj.email + '</a></li><li class="list-group-item"><i class="fa fa-phone float-right"></i>Phone : ' + obj.numtel + '</li></ul><div class="float-right btn-group btn-group-sm"><a href=" {{ path('app_user_show', {'id': '+obj.id+'}) }}" class="btn btn-outline-primary">Profil<i class="fa fa-pencil"></i></a><a href=" {{ path('app_message_new', {'id': '+obj.id+'} ) }}" class="btn btn-outline-primary">Message<i class="fa fa-pencil"></i></a></div></div>');
 });
 } else {
 $('#t tbody#all').show();

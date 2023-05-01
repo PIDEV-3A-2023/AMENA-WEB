@@ -25,79 +25,55 @@ class AnnoncesType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
+        
+           $villes = [
+            'Ariana',
+            'Béja',
+            'Ben Arous',
+            'Bizerte',
+            'Gabès',
+            'Gafsa',
+            'Jendouba',
+            'Kairouan',
+            'Kasserine',
+            'Kébili',
+            'Le Kef',
+            'Mahdia',
+            'La Manouba',
+            'Médenine',
+            'Monastir',
+            'Nabeul',
+            'Sfax',
+            'Sidi Bouzid',
+            'Siliana',
+            'Sousse',
+            'Tataouine',
+            'Tozeur',
+            'Tunis',
+            'Zaghouan',
+        ];
         $builder
         ->add('type', ChoiceType::class, [
             'choices' => [
-                'Annonce' => 'annonce',
+                'Offre' => 'offre',
                 'Demande' => 'demande',
             ],
-            'constraints' => [
-                new NotBlank(['message' => 'Please select a type.']),
-                new Choice([
-                    'choices' => ['annonce', 'demande'],
-                    'message' => 'Please select a valid type (either "annonce" or "demande").',
-                ]),
-            ],
+            
         ])
-        ->add('ville_dep', TextType::class, [
-            'constraints' => [
-                new NotBlank(['message' => 'Veuillez entrer une ville de départ.']),
-                new Choice([
-                    'choices' => ['Ariana', 'Ben Arous', 'Tunis', 'Manouba'],
-                    'message' => 'Veuillez sélectionner une ville de la Tunisie valide.',
-                ]),
-            ],
+        ->add('ville_dep',ChoiceType::class, [
+                'choices' => array_combine($villes, $villes),
+                'placeholder' => 'Sélectionnez une ville de départ',
+            ])
+        ->add('ville_arr', ChoiceType::class, [
+            'choices' => array_combine($villes, $villes),
+            'placeholder' => 'Sélectionnez une ville de départ',
         ])
-        ->add('ville_arr', TextType::class, [
-            'constraints' => [
-                new NotBlank(['message' => 'Veuillez entrer une ville d\'arrivée.']),
-                new Choice([
-                    'choices' => ['Ariana', 'Ben Arous', 'Tunis', 'Manouba'],
-                    'message' => 'Veuillez sélectionner une ville de la Tunisie valide.',
-                ]),
-            ],
-        ])
-            ->add('date_dep', TextType::class, [
-                'constraints' => [
-                    new NotBlank(['message' => 'Veuillez entrer une date d\'epart.']),
-                    new DateTime([
-                        'format' => 'Y-m-d',
-                        'message' => 'La date de départ doit être une date valide au format YYYY-MM-DD.',
-                    ]),
-                ],
-            ])
-            ->add('date_arr', TextType::class, [
-                'constraints' => [
-                    new NotBlank(['message' => 'Veuillez entrer une date d\'arrivée.']),
-                    new DateTime([
-                        'format' => 'Y-m-d',
-                        'message' => 'La date d\'arrivée doit être une date valide au format YYYY-MM-DD.',
-                    ]),
-                ],
-            ])
-            ->add('prix', NumberType::class, [
-                'constraints' => [
-                    new NotNull(['message' => 'Please enter a price.']),
-                    new GreaterThan([
-                        'value' => 0,
-                        'message' => 'The price must be greater than 0.',
-                    ]),
-                ],
-            ])
-            ->add('description', TextareaType::class, [
-                'constraints' => [
-                    new NotBlank(['message' => 'Please enter a description.']),
-                    new Length([
-                        'min' => 10,
-                        'max' => 20,
-                        'minMessage' => 'The description should have at least {{ limit }} characters.',
-                        'maxMessage' => 'The description should have at most {{ limit }} characters.',
-                    ]),
-                ],
-            ])
-            ->add('ida_U')
-            ->add('idColis')
-            ->add('save', SubmitType::class);
+        ->add('date_dep')
+        ->add('date_arr')
+        ->add('prix')
+        ->add('description')
+        ->add('idColis')
+        ->add('Enregistrer', SubmitType::class);
         ;
     }
 

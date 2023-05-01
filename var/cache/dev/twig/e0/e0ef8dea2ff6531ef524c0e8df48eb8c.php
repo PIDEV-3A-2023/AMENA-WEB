@@ -152,15 +152,11 @@ class __TwigTemplate_007095311f744c8f818c028d4884577b extends Template
         }
         // line 40
         echo "\t\t\t\t\t\t\t\t\t</p>
-\t\t\t\t\t\t\t\t\t<p class=\"text-muted font-size-sm\">Bay Area, San Francisco, CA</p>
-\t\t\t\t\t\t\t\t\t<a href=\"";
-        // line 42
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_validation_new", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 42, $this->source); })()), "id", [], "any", false, false, false, 42)]), "html", null, true);
-        echo "\" class=\"btn btn-outline-primary\">valider</a>
+\t\t\t\t\t\t\t\t\t
 
 \t\t\t\t\t\t\t\t\t<a href=\"";
-        // line 44
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_message_new", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 44, $this->source); })()), "id", [], "any", false, false, false, 44)]), "html", null, true);
+        // line 43
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_message_new", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 43, $this->source); })()), "id", [], "any", false, false, false, 43)]), "html", null, true);
         echo "\" class=\"btn btn-outline-primary\">Message</a>
 \t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t</div>
@@ -169,7 +165,7 @@ class __TwigTemplate_007095311f744c8f818c028d4884577b extends Template
 \t\t\t\t\t<div class=\"card mt-3\">
 \t\t\t\t\t\t<ul
 \t\t\t\t\t\t\tclass=\"list-group list-group-flush\">";
-        // line 71
+        // line 70
         echo "\t\t\t\t\t\t</ul>
 \t\t\t\t\t</div>
 \t\t\t\t</div>
@@ -182,8 +178,8 @@ class __TwigTemplate_007095311f744c8f818c028d4884577b extends Template
 \t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t<div class=\"col-sm-9 text-secondary\">
 \t\t\t\t\t\t\t\t\t";
-        // line 82
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 82, $this->source); })()), "nom", [], "any", false, false, false, 82), "html", null, true);
+        // line 81
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 81, $this->source); })()), "nom", [], "any", false, false, false, 81), "html", null, true);
         echo "
 \t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t</div>
@@ -194,8 +190,8 @@ class __TwigTemplate_007095311f744c8f818c028d4884577b extends Template
 \t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t<div class=\"col-sm-9 text-secondary\">
 \t\t\t\t\t\t\t\t\t";
-        // line 91
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 91, $this->source); })()), "email", [], "any", false, false, false, 91), "html", null, true);
+        // line 90
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 90, $this->source); })()), "email", [], "any", false, false, false, 90), "html", null, true);
         echo "
 \t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t</div>
@@ -206,8 +202,8 @@ class __TwigTemplate_007095311f744c8f818c028d4884577b extends Template
 \t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t<div class=\"col-sm-9 text-secondary\">
 \t\t\t\t\t\t\t\t\t";
-        // line 100
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 100, $this->source); })()), "numtel", [], "any", false, false, false, 100), "html", null, true);
+        // line 99
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 99, $this->source); })()), "numtel", [], "any", false, false, false, 99), "html", null, true);
         echo "
 \t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t</div>
@@ -218,8 +214,8 @@ class __TwigTemplate_007095311f744c8f818c028d4884577b extends Template
 \t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t<div class=\"col-sm-9 text-secondary\">
 \t\t\t\t\t\t\t\t\t";
-        // line 109
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 109, $this->source); })()), "adress", [], "any", false, false, false, 109), "html", null, true);
+        // line 108
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 108, $this->source); })()), "adress", [], "any", false, false, false, 108), "html", null, true);
         echo "
 \t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t</div>
@@ -230,15 +226,15 @@ class __TwigTemplate_007095311f744c8f818c028d4884577b extends Template
 \t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t<div class=\"col-sm-9 text-secondary\">
 \t\t\t\t\t\t\t\t\t";
-        // line 118
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 118, $this->source); })()), "cin", [], "any", false, false, false, 118), "html", null, true);
+        // line 117
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 117, $this->source); })()), "cin", [], "any", false, false, false, 117), "html", null, true);
         echo "
 \t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t<hr>
 \t\t\t\t\t\t\t<div class=\"row\">
 \t\t\t\t\t\t\t\t";
-        // line 127
+        // line 126
         echo "\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t</div>
 \t\t\t\t\t</div>
@@ -333,7 +329,7 @@ class __TwigTemplate_007095311f744c8f818c028d4884577b extends Template
 
     public function getDebugInfo()
     {
-        return array (  242 => 127,  234 => 118,  222 => 109,  210 => 100,  198 => 91,  186 => 82,  173 => 71,  163 => 44,  158 => 42,  154 => 40,  148 => 38,  146 => 37,  141 => 35,  136 => 33,  123 => 24,  118 => 11,  108 => 10,  95 => 7,  90 => 6,  80 => 5,  60 => 3,  37 => 1,);
+        return array (  238 => 126,  230 => 117,  218 => 108,  206 => 99,  194 => 90,  182 => 81,  169 => 70,  159 => 43,  154 => 40,  148 => 38,  146 => 37,  141 => 35,  136 => 33,  123 => 24,  118 => 11,  108 => 10,  95 => 7,  90 => 6,  80 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -378,8 +374,7 @@ class __TwigTemplate_007095311f744c8f818c028d4884577b extends Template
 \t\t\t\t\t\t\t\t\t\t\t<p class=\"m-0\">{{ user.roles[0] }}</p>
 \t\t\t\t\t\t\t\t\t\t{% endif %}
 \t\t\t\t\t\t\t\t\t</p>
-\t\t\t\t\t\t\t\t\t<p class=\"text-muted font-size-sm\">Bay Area, San Francisco, CA</p>
-\t\t\t\t\t\t\t\t\t<a href=\"{{ path('app_validation_new', {'id': user.id} )}}\" class=\"btn btn-outline-primary\">valider</a>
+\t\t\t\t\t\t\t\t\t
 
 \t\t\t\t\t\t\t\t\t<a href=\"{{ path('app_message_new', {'id': user.id} )}}\" class=\"btn btn-outline-primary\">Message</a>
 \t\t\t\t\t\t\t\t</div>

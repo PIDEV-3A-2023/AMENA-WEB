@@ -1,71 +1,60 @@
 <?php
 
 namespace App\Entity;
+use App\Entity\User;
+
 
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * Evaluation
- *
- * @ORM\Table(name="evaluation", indexes={@ORM\Index(name="fk_ev", columns={"idClient"})})
- * @ORM\Entity
- */
+
+#[ORM\Table(name: '`evaluation`')]
+
 class Evaluation
 {
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="id", type="integer", nullable=false)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
-     */
-    private $id;
+    #[ORM\Id]
+    #[ORM\GeneratedValue]
+    #[ORM\Column(name:'id')]
+    private ?int $id = null;
+    
+    
 
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="idTransporteur", type="integer", nullable=false)
-     */
-    private $idtransporteur;
+    #[ORM\ManyToOne(inversedBy: 'evaluation')]
+    #[ORM\JoinColumn(nullable: false, name: "idTransporteur")]
+    private ?User $idTransporteur ;
 
-    /**
-     * @var float
-     *
-     * @ORM\Column(name="note", type="float", precision=10, scale=0, nullable=false)
-     */
-    private $note;
 
+
+    #[ORM\Column]
+    private ?int $note = null;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getIdtransporteur(): ?int
+    public function getNote(): ?int
     {
-        return $this->idtransporteur;
+        return $this->Note;
     }
 
-    public function setIdtransporteur(int $idtransporteur): self
-    {
-        $this->idtransporteur = $idtransporteur;
-
-        return $this;
-    }
-
-    public function getNote(): ?float
-    {
-        return $this->note;
-    }
-
-    public function setNote(float $note): self
+    public function setNote(int $note): self
     {
         $this->note = $note;
 
         return $this;
     }
 
-    
+   
+    public function getIdTransporteur(): ?User
+    {
+        return $this->idTransporteur;
+    }
 
+    public function setIdTransporteur(?User $idTransporteur): self
+    {
+        $this->idTransporteur = $idTransporteur;
 
+        return $this;
+    }
+   
 }
