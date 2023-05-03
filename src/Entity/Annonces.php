@@ -42,7 +42,7 @@ class Annonces
     #[ORM\JoinColumn(nullable: false, name: "ida_U")]
     private ?User $ida_U = null;
 
-    #[ORM\ManyToOne(inversedBy: 'annonces')]
+    /*#[ORM\ManyToOne(inversedBy: 'annonces')]
     private ?Colis $idColis = null;
 
     /*#[ORM\ManyToOne]
@@ -163,7 +163,7 @@ class Annonces
     }
 */
 
-   public function getIdColis(): ?Colis
+   /*public function getIdColis(): ?Colis
    {
        return $this->idColis;
    }
@@ -173,7 +173,7 @@ class Annonces
        $this->idColis = $idColis;
 
        return $this;
-   }
+   }*/
     
 
    

@@ -14,12 +14,14 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Twilio\Rest\Client;
 
 #[Route('/documentexpedition')]
 class DocumentexpeditionController extends AbstractController
 {
     private $pdfService;
-
+    private const ACCOUNT_SID = 'AC0643a8413f76b0e5bdd8ea93378281d0';
+    private const AUTH_TOKEN = '9c3b779ca3e6d698085acc81b4b78a1d';
     public function __construct(Pdf $pdfService)
     {
         $this->pdfService = $pdfService;
@@ -27,22 +29,24 @@ class DocumentexpeditionController extends AbstractController
 
     #[Route('/', name: 'app_documentexpedition_index', methods: ['GET'])]
     public function index(DocumentexpeditionRepository $documentexpeditionRepository, ColisRepository $colisRepository): Response
-    {
-        $shipments = $colisRepository->findShipmentsWithDates();
-        $events = [];
-        foreach ($shipments as $shipment) {
-            // Ajouter le lien vers la page de détails du colis dans la description de l'événement de livraison
-            $events[] = [
-                'title' => 'livraison numéro #' . $shipment['id'],
-                'start' => $shipment['dateExpedition']->format('Y-m-d'),
-                'url' => $this->generateUrl('app_documentexpedition_colis_show', ['id' => $shipment['id']]) // Route vers la page de détails du colis
-            ];
-        }
-        return $this->render('documentexpedition/index.html.twig', [
-            'documentexpeditions' => $documentexpeditionRepository->findBy([], ['id' => 'DESC']),
-            'events' => json_encode($events)
-        ]);
+{
+    // Creation de la requête pour récupérer les colis avec le statut 'en attente'
+    $shipments = $colisRepository->findBy(['statut' => 'en attente']); 
+    $events = [];
+    foreach ($shipments as $shipment) {
+        // Ajouter le lien vers la page de détails du colis dans la description de l'événement de livraison
+        $events[] = [
+            'title' => 'livraison numéro #' . $shipment->getId(),
+            'start' => $shipment->getDateExpedition()->format('Y-m-d'),
+            // Route vers la page de détails du colis
+            'url' => $this->generateUrl('app_documentexpedition_colis_show', ['id' => $shipment->getId()]) 
+        ];
     }
+    return $this->render('documentexpedition/index.html.twig', [
+        'documentexpeditions' => $documentexpeditionRepository->findBy([], ['id' => 'DESC']),
+        'events' => json_encode($events)
+    ]);
+}
 
 #[Route('/new', name: 'app_documentexpedition_new', methods: ['GET', 'POST'])]
 public function new(Request $request, DocumentexpeditionRepository $colisRepository): Response
@@ -124,6 +128,32 @@ return $this->renderForm('documentexpedition/new.html.twig', [
 
     return new JsonResponse($events);
 }*/
+#[Route('/colis/confirmer/{id}', name: 'livraison_confirm')]
+public function handleConfirmation(Colis $coli): Response
+    {
+        // Initialisation de la bibliothèque Twilio avec votre SID et Auth Token
+        $twilio = new Client(self::ACCOUNT_SID, self::AUTH_TOKEN);
+
+        // Envoi du SMS
+        $message = $twilio->messages->create(
+            '+21625363115', // numéro de téléphone du destinataire
+            [
+                'from' => '+12766630621', // numéro de téléphone Twilio
+                'body' => 'Bonjour, Votre colis est livré :) merci d\'avoir utiliser AMENA !',
+            ]
+        );
+
+        $this->addFlash('success', 'Le message a été envoyé avec succès ! SID : ' . $message->sid);
+
+
+        // Mettre à jour le statut de la livraison dans la base de données
+        $coli->setStatut('livré');
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->persist($coli);
+        $entityManager->flush();
+
+        return $this->redirectToRoute('app_documentexpedition_index', ['id' => $coli->getId()]);
+    }
 
 #[Route('/colis/{id}', name: 'app_documentexpedition_colis_show', methods: ['GET'])]
 public function showcolis(Colis $coli): Response
@@ -164,7 +194,8 @@ public function printAction(Request $request, $id)
         ]);
 
         $snappy = $this->pdfService;
-        $snappy->setOption('enable-local-file-access', true); // Ajout de l'option 'enable-local-file-access'
+        // Ajout de l'option 'enable-local-file-access' pour ajouter l'acces des images
+        $snappy->setOption('enable-local-file-access', true); 
         $filename = 'document_exp_'.$id.'.pdf';
         
         return new PdfResponse(
@@ -172,6 +203,8 @@ public function printAction(Request $request, $id)
             $filename
         );
     } 
+
+
 
 }
 

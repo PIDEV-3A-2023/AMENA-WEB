@@ -38,6 +38,25 @@ class ColisRepository extends ServiceEntityRepository
             $this->getEntityManager()->flush();
         }
     }
+    public function countMonth(string $month): int
+    {
+        return $this->createQueryBuilder('c')
+            ->select('COUNT(c.id)')
+            ->where('MONTH(c.datelivraison) = :month')
+            ->setParameter('month', $month)
+            ->getQuery()
+            ->getSingleScalarResult();
+    }
+    public function findShipmentsWithDates(): array
+{
+    $entityManager = $this->getEntityManager();
+    $query = $entityManager->createQuery(
+        'SELECT c.id, c.dateExpedition
+        FROM App\Entity\Colis c'
+    );
+    return $query->getResult();
+}
+}
 
 //    /**
 //     * @return Colis[] Returns an array of Colis objects
@@ -63,4 +82,4 @@ class ColisRepository extends ServiceEntityRepository
 //            ->getOneOrNullResult()
 //        ;
 //    }
-}
+

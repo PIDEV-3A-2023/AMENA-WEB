@@ -2,30 +2,30 @@
 
 namespace App\Form;
 
-use App\Entity\Colis;
+use App\Entity\Competition;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
-class ColisType extends AbstractType
+class CompetitionType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('nomExpediteur')
-            ->add('adresseExpediteur')
-            ->add('nomDestinataire')
-            ->add('adresseDestinataire')
-            ->add('poids')
-            ->add('Enregistrer',SubmitType::class)
+            ->add('title')
+            ->add('dateDeb')
+            ->add('dateFin')
+            ->add('type')
+            ->add('nbp')
+            ->add('id_uc')
+            ->add('userPart')
         ;
     }
 
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => Colis::class,
+            'data_class' => Competition::class,
         ]);
     }
 }
