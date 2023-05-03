@@ -75,7 +75,6 @@ public function findBySearchQuery($query)
 
         return $qb->getQuery()->getResult();
     } 
-<<<<<<< Updated upstream
     public function findBySearchQueryR($query)
     {
         $qb = $this->createQueryBuilder('u')
@@ -91,8 +90,6 @@ public function findBySearchQuery($query)
         return $qb->getQuery()->getResult();
     } 
 
-=======
->>>>>>> Stashed changes
 
 public function findBySearchQuerya($nsc){
     return $this->createQueryBuilder('user')

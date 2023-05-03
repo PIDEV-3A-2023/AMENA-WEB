@@ -1,11 +1,8 @@
 <?php
 
 namespace App\Controller;
-<<<<<<< Updated upstream
 
-=======
 use App\Entity\User;
->>>>>>> Stashed changes
 use App\Entity\Reclamations;
 use App\Form\ReclamationsType;
 use App\Repository\ReclamationsRepository;

@@ -26,11 +26,8 @@ class __TwigTemplate_ddf7ab817dc98d240f91fc7d7eb59dc8 extends Template
 
         $this->blocks = [
             'title' => [$this, 'block_title'],
-<<<<<<< Updated upstream
             'head' => [$this, 'block_head'],
             'stylesheets' => [$this, 'block_stylesheets'],
-=======
->>>>>>> Stashed changes
             'body' => [$this, 'block_body'],
         ];
     }
@@ -70,12 +67,8 @@ class __TwigTemplate_ddf7ab817dc98d240f91fc7d7eb59dc8 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-<<<<<<< Updated upstream
         echo "Reset your password
 ";
-=======
-        echo "Reset your password";
->>>>>>> Stashed changes
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -84,7 +77,6 @@ class __TwigTemplate_ddf7ab817dc98d240f91fc7d7eb59dc8 extends Template
 
     }
 
-<<<<<<< Updated upstream
     // line 6
     public function block_head($context, array $blocks = [])
     {
@@ -134,9 +126,6 @@ class __TwigTemplate_ddf7ab817dc98d240f91fc7d7eb59dc8 extends Template
     }
 
     // line 14
-=======
-    // line 5
->>>>>>> Stashed changes
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -146,7 +135,6 @@ class __TwigTemplate_ddf7ab817dc98d240f91fc7d7eb59dc8 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-<<<<<<< Updated upstream
         // line 15
         echo "\t<br>
 \t<br>
@@ -184,31 +172,6 @@ class __TwigTemplate_ddf7ab817dc98d240f91fc7d7eb59dc8 extends Template
 \t\t</div>
 \t</div>
 
-=======
-        // line 6
-        echo "<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-    <h1>Reset your password</h1>
-
-    ";
-        // line 15
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["resetForm"]) || array_key_exists("resetForm", $context) ? $context["resetForm"] : (function () { throw new RuntimeError('Variable "resetForm" does not exist.', 15, $this->source); })()), 'form_start');
-        echo "
-        ";
-        // line 16
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["resetForm"]) || array_key_exists("resetForm", $context) ? $context["resetForm"] : (function () { throw new RuntimeError('Variable "resetForm" does not exist.', 16, $this->source); })()), "plainPassword", [], "any", false, false, false, 16), 'row');
-        echo "
-        <button class=\"btn btn-primary\">Reset password</button>
-    ";
-        // line 18
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["resetForm"]) || array_key_exists("resetForm", $context) ? $context["resetForm"] : (function () { throw new RuntimeError('Variable "resetForm" does not exist.', 18, $this->source); })()), 'form_end');
-        echo "
->>>>>>> Stashed changes
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -230,18 +193,13 @@ class __TwigTemplate_ddf7ab817dc98d240f91fc7d7eb59dc8 extends Template
 
     public function getDebugInfo()
     {
-<<<<<<< Updated upstream
         return array (  168 => 36,  161 => 32,  155 => 29,  139 => 15,  129 => 14,  116 => 9,  111 => 8,  91 => 7,  81 => 6,  61 => 3,  38 => 1,);
-=======
-        return array (  108 => 18,  103 => 16,  99 => 15,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
->>>>>>> Stashed changes
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %}
 
-<<<<<<< Updated upstream
 {% block title %}Reset your password
 {% endblock %}
 
@@ -281,24 +239,6 @@ class __TwigTemplate_ddf7ab817dc98d240f91fc7d7eb59dc8 extends Template
 \t\t</div>
 \t</div>
 
-=======
-{% block title %}Reset your password{% endblock %}
-
-{% block body %}
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-    <h1>Reset your password</h1>
-
-    {{ form_start(resetForm) }}
-        {{ form_row(resetForm.plainPassword) }}
-        <button class=\"btn btn-primary\">Reset password</button>
-    {{ form_end(resetForm) }}
->>>>>>> Stashed changes
 {% endblock %}
 ", "reset_password/reset.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\reset_password\\reset.html.twig");
     }

@@ -80,8 +80,6 @@ return [[
 '[C]App%5CController%5CAdminController%23edit' => 1,
 'App%5CController%5CAdminController%23delete' => 0,
 '[C]App%5CController%5CAdminController%23delete' => 1,
-'App%5CController%5CAdminController%23blockUser' => 0,
-'[C]App%5CController%5CAdminController%23blockUser' => 1,
 'App%5CController%5CAnnoncesController' => 0,
 '[C]App%5CController%5CAnnoncesController' => 1,
 'App%5CController%5CAnnoncesController%23index' => 0,
@@ -114,13 +112,8 @@ return [[
 '[C]App%5CController%5CColisController%24security' => 1,
 'App%5CController%5CErrorController' => 0,
 '[C]App%5CController%5CErrorController' => 1,
-<<<<<<< Updated upstream
-'App%5CController%5CErrorController%23show' => 0,
-'[C]App%5CController%5CErrorController%23show' => 1,
-=======
 'App%5CController%5CErrorController%23index' => 0,
 '[C]App%5CController%5CErrorController%23index' => 1,
->>>>>>> Stashed changes
 'App%5CController%5CEvaluationController' => 0,
 '[C]App%5CController%5CEvaluationController' => 1,
 'App%5CController%5CEvaluationController%23evaluation' => 2,
@@ -217,6 +210,22 @@ return [[
 '[C]App%5CController%5CUserController%23edit' => 1,
 'App%5CController%5CUserController%23delete' => 0,
 '[C]App%5CController%5CUserController%23delete' => 1,
+'App%5CController%5CUsermobilController' => 0,
+'[C]App%5CController%5CUsermobilController' => 1,
+'App%5CController%5CUsermobilController%23index' => 0,
+'[C]App%5CController%5CUsermobilController%23index' => 1,
+'App%5CController%5CUsermobilController%23searchStudentx' => 0,
+'[C]App%5CController%5CUsermobilController%23searchStudentx' => 1,
+'App%5CController%5CUsermobilController%23new' => 0,
+'[C]App%5CController%5CUsermobilController%23new' => 1,
+'App%5CController%5CUsermobilController%23show' => 0,
+'[C]App%5CController%5CUsermobilController%23show' => 1,
+'App%5CController%5CUsermobilController%23showp' => 0,
+'[C]App%5CController%5CUsermobilController%23showp' => 1,
+'App%5CController%5CUsermobilController%23edit' => 0,
+'[C]App%5CController%5CUsermobilController%23edit' => 1,
+'App%5CController%5CUsermobilController%23delete' => 0,
+'[C]App%5CController%5CUsermobilController%23delete' => 1,
 'App%5CController%5CValidationController' => 0,
 '[C]App%5CController%5CValidationController' => 1,
 'App%5CController%5CValidationController%23index' => 0,
@@ -1455,11 +1464,7 @@ return [[
 ], [
 
 0 => [],
-<<<<<<< Updated upstream
-1 => 1682690095,
-=======
-1 => 1682605874,
->>>>>>> Stashed changes
+1 => 1683126904,
 2 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [

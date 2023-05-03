@@ -40,24 +40,30 @@ class __TwigTemplate_4a93c3611c0c2088d5f91ab084a7d4b4 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "evaluation.html.twig"));
 
         // line 1
-        echo "
+        echo "<<<<<<< Updated upstream
+
+=======
+>>>>>>> Stashed changes
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset=\"UTF-8\">
         <title>Evaluation d'un transporteur</title>
         <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css\">
+<<<<<<< Updated upstream
         
         <link href=\"";
-        // line 9
+        // line 13
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front/assets/css/cc.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
+=======
+>>>>>>> Stashed changes
     </head>
     <body>
         <div class=\"container\">
             <div class=\"row\">
                 <form action=\"";
-        // line 14
+        // line 20
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("evaluation");
         echo "\" method=\"post\">
                     <div>
@@ -75,12 +81,19 @@ class __TwigTemplate_4a93c3611c0c2088d5f91ab084a7d4b4 extends Template
                     <span class='result'>0</span>
                     <input type=\"hidden\" name=\"rating\">
                     <div>
+<<<<<<< Updated upstream
                     
+=======
+>>>>>>> Stashed changes
                         <input type=\"submit\" name=\"add\">
                     </div>
                 </form>
             </div>
+<<<<<<< Updated upstream
         </div> 
+=======
+        </div>
+>>>>>>> Stashed changes
         <script src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js\"></script>
         <script src=\"https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js\"></script>
         <script>
@@ -116,20 +129,26 @@ class __TwigTemplate_4a93c3611c0c2088d5f91ab084a7d4b4 extends Template
 
     public function getDebugInfo()
     {
-        return array (  61 => 14,  53 => 9,  43 => 1,);
+        return array (  67 => 20,  57 => 13,  43 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("
+        return new Source("<<<<<<< Updated upstream
+
+=======
+>>>>>>> Stashed changes
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset=\"UTF-8\">
         <title>Evaluation d'un transporteur</title>
         <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css\">
+<<<<<<< Updated upstream
         
         <link href=\"{{asset('front/assets/css/cc.css')}}\" rel=\"stylesheet\">
+=======
+>>>>>>> Stashed changes
     </head>
     <body>
         <div class=\"container\">
@@ -150,12 +169,19 @@ class __TwigTemplate_4a93c3611c0c2088d5f91ab084a7d4b4 extends Template
                     <span class='result'>0</span>
                     <input type=\"hidden\" name=\"rating\">
                     <div>
+<<<<<<< Updated upstream
                     
+=======
+>>>>>>> Stashed changes
                         <input type=\"submit\" name=\"add\">
                     </div>
                 </form>
             </div>
+<<<<<<< Updated upstream
         </div> 
+=======
+        </div>
+>>>>>>> Stashed changes
         <script src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js\"></script>
         <script src=\"https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js\"></script>
         <script>

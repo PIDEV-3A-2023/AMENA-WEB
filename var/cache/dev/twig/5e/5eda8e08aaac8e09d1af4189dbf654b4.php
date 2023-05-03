@@ -12,13 +12,8 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-<<<<<<<< Updated upstream:var/cache/dev/twig/5e/5eda8e08aaac8e09d1af4189dbf654b4.php
 /* user/back/show.html.twig */
 class __TwigTemplate_ee3238cd83aa15713cd91760ca46d95c extends Template
-========
-/* user/show.html.twig */
-class __TwigTemplate_007095311f744c8f818c028d4884577b extends Template
->>>>>>>> Stashed changes:var/cache/dev/twig/e0/e0ef8dea2ff6531ef524c0e8df48eb8c.php
 {
     private $source;
     private $macros = [];
@@ -239,9 +234,14 @@ class __TwigTemplate_007095311f744c8f818c028d4884577b extends Template
 \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t<hr>
 \t\t\t\t\t\t\t<div class=\"row\">
-\t\t\t\t\t\t\t\t";
-        // line 127
-        echo "\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t<div class=\"col-sm-12\">
+
+\t\t\t\t\t\t\t\t\t<a class=\"btn btn-info \" target=\"__blank\" href=\"";
+        // line 125
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 125, $this->source); })()), "id", [], "any", false, false, false, 125)]), "html", null, true);
+        echo "\">Edit</a>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t</div>
 \t\t\t\t\t</div>
 
@@ -335,11 +335,7 @@ class __TwigTemplate_007095311f744c8f818c028d4884577b extends Template
 
     public function getDebugInfo()
     {
-<<<<<<<< Updated upstream:var/cache/dev/twig/5e/5eda8e08aaac8e09d1af4189dbf654b4.php
         return array (  241 => 125,  231 => 118,  219 => 109,  207 => 100,  195 => 91,  183 => 82,  170 => 71,  158 => 42,  154 => 40,  148 => 38,  146 => 37,  141 => 35,  136 => 33,  123 => 24,  118 => 11,  108 => 10,  95 => 7,  90 => 6,  80 => 5,  60 => 3,  37 => 1,);
-========
-        return array (  242 => 127,  234 => 118,  222 => 109,  210 => 100,  198 => 91,  186 => 82,  173 => 71,  163 => 44,  158 => 42,  154 => 40,  148 => 38,  146 => 37,  141 => 35,  136 => 33,  123 => 24,  118 => 11,  108 => 10,  95 => 7,  90 => 6,  80 => 5,  60 => 3,  37 => 1,);
->>>>>>>> Stashed changes:var/cache/dev/twig/e0/e0ef8dea2ff6531ef524c0e8df48eb8c.php
     }
 
     public function getSourceContext()
@@ -466,10 +462,10 @@ class __TwigTemplate_007095311f744c8f818c028d4884577b extends Template
 \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t<hr>
 \t\t\t\t\t\t\t<div class=\"row\">
-\t\t\t\t\t\t\t\t{# <div class=\"col-sm-12\">
+\t\t\t\t\t\t\t\t<div class=\"col-sm-12\">
 
 \t\t\t\t\t\t\t\t\t<a class=\"btn btn-info \" target=\"__blank\" href=\"{{ path('app_user_edit', {'id': user.id}) }}\">Edit</a>
-\t\t\t\t\t\t\t\t</div> #}
+\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t</div>
 \t\t\t\t\t</div>
@@ -544,10 +540,6 @@ class __TwigTemplate_007095311f744c8f818c028d4884577b extends Template
 
 
 {% endblock %}
-<<<<<<<< Updated upstream:var/cache/dev/twig/5e/5eda8e08aaac8e09d1af4189dbf654b4.php
 ", "user/back/show.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\user\\back\\show.html.twig");
-========
-", "user/show.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\user\\show.html.twig");
->>>>>>>> Stashed changes:var/cache/dev/twig/e0/e0ef8dea2ff6531ef524c0e8df48eb8c.php
     }
 }

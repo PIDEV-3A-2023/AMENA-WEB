@@ -15,10 +15,7 @@ class EvaluationController extends AbstractController
      */
     public function evaluation(Request $request): Response
     {
-<<<<<<< Updated upstream
         
-=======
->>>>>>> Stashed changes
         if ($request->isMethod('post')) {
             $name = $request->request->get('name');
             $rating = $request->request->get('rating');

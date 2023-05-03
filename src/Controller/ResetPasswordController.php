@@ -150,7 +150,7 @@ class ResetPasswordController extends AbstractController
         }
 
        
-        $mailer->send($email); */
+        /*$mailer->send($email); */
 
         $email = (new Email())
         ->from('aymen.zouaoui@esprit.tn')

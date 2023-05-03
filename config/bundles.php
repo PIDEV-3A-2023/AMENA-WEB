@@ -17,8 +17,5 @@ return [
     SymfonyCasts\Bundle\ResetPassword\SymfonyCastsResetPasswordBundle::class => ['all' => true],
     Knp\Bundle\PaginatorBundle\KnpPaginatorBundle::class => ['all' => true],
     Endroid\QrCodeBundle\EndroidQrCodeBundle::class => ['all' => true],
-<<<<<<< Updated upstream
     Karser\Recaptcha3Bundle\KarserRecaptcha3Bundle::class => ['all' => true],
-=======
->>>>>>> Stashed changes
 ];
