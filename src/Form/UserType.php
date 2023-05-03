@@ -23,15 +23,17 @@ class UserType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('email',EmailType::class)
+            ->add('email', EmailType::class)
+
             ->add('roles', ChoiceType::class, [
                 'choices' => [
-                    'ROLE_ADMIN' => 'ROLE_ADMIN',
+                  
                     'ROLE_USER' => 'ROLE_USER',
+                    'ROLE_TRANSPORTEUR' => 'ROLE_TRANSPORTEUR',
                     // add more roles here as needed
                 ],
                 'multiple' => true, // set this to false to allow only one option to be selected
-                'expanded' => false,
+                'expanded' => true, // set this to true to display checkboxes
             ])
             ->add('password', PasswordType::class, [
                 'required' => false,
@@ -54,17 +56,17 @@ class UserType extends AbstractType
                 'label' => 'Password',
                 'help' => 'Leave this field empty if you don\'t want to change your password',
             ])
-            
+
             ->add('nom')
             ->add('prenom')
             ->add('adress')
             ->add('cin')
-            ->add('date_naissance',DateType::class,)
-            
+            ->add('date_naissance', DateType::class,)
+
             ->add('status')
-         
+
             ->add('score')
-            ->add('numtel',TelType::class)
+            ->add('numtel', TelType::class)
             ->add('image', FileType::class, [
                 'label' => 'image',
 
@@ -89,12 +91,11 @@ class UserType extends AbstractType
                 ],
             ])
 
-         
-           
-            
-            
-            ->add('save', SubmitType::class);
-        ;
+
+
+
+
+            ->add('save', SubmitType::class);;
     }
 
     public function configureOptions(OptionsResolver $resolver): void

@@ -75,4 +75,27 @@ public function findBySearchQuery($query)
 
         return $qb->getQuery()->getResult();
     } 
+    public function findBySearchQueryR($query)
+    {
+        $qb = $this->createQueryBuilder('u')
+            ->where('u.nom LIKE :query')
+            ->orWhere('u.prenom LIKE :query')
+            ->orWhere('u.adress LIKE :query')
+            ->orWhere('u.cin LIKE :query')
+            ->orWhere('u.roles LIKE :ROLE_TRANSPORTEUR')
+            ->orWhere('u.email LIKE :query')
+            ->setParameter('query', '%' . $query . '%')
+            ->setParameter('ROLE_TRANSPORTEUR', 'ROLE_TRANSPORTEUR');
+
+        return $qb->getQuery()->getResult();
+    } 
+
+
+public function findBySearchQuerya($nsc){
+    return $this->createQueryBuilder('user')
+    ->where('user.email LIKE :email')
+    ->setParameter('email', '%'.$nsc.'%')
+    ->getQuery()
+    ->getResult();
+    }
 }

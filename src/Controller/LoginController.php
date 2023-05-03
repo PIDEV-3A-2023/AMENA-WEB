@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Controller;
+use App\Entity\User;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -14,16 +15,16 @@ class LoginController extends AbstractController
     public function index(AuthenticationUtils $authenticationUtils,MailerInterface $mailer): Response
     {
        
-        $email = (new Email())
-        ->from('aymen.zouaoui@esprit.tn')
-        ->to('aymen.zouaoui@esprit.tn')
-        ->subject('Test email')
-        ->text('This is a test email');
-        
-
-    $mailer->send($email);
+      
         $error = $authenticationUtils->getLastAuthenticationError();
         $lastUsername = $authenticationUtils->getLastUsername();
+
+
+         // Get the user object for the entered username
+    $user = $this->getDoctrine()->getRepository(User::class)->findOneBy(['email' => $lastUsername]);
+    
+  
+    
         return $this->render('login/index.html.twig', [
             'last_username' => $lastUsername,
             'error'         => $error,

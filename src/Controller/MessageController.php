@@ -32,7 +32,7 @@ class MessageController extends AbstractController
     }
 
     #[Route('/new', name: 'app_message_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, MessageRepository $messageRepository,EntityManagerInterface $entityManager,): Response
+    public function new(Request $request, MessageRepository $messageRepository,EntityManagerInterface $entityManager): Response
     {$this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         $user = $this->security->getUser();
       

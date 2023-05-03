@@ -1,303 +1,220 @@
-{# {% extends 'baseadmin.html.twig' %}
-
+{% extends 'base.html.twig' %}
 {% block title %}User index
 {% endblock %}
 
 {% block body %}
-	<h1>User index</h1>
-	<!-- ======= Breadcrumbs ======= -->
-	<div class="breadcrumbs d-flex align-items-center" style="background-image: url('assets/img/contact-header.jpg');">
-		<div class="container position-relative d-flex flex-column align-items-center">
-
-			<h2>index</h2>
-			<ol>
-				<li>
-					<a href="index.html">Home</a>
-				</li>
-				<li>Contact</li>
-			</ol>
-
-		</div><form method="get" action="{{ path('app_user_index') }}">
-	<div class="input-group mb-3">
-		<input type="text" name="q" class="form-control" placeholder="Search users...">
-		<div class="input-group-append">
-			<button type="submit" class="btn btn-outline-secondary">Search</button>
-		</div>
-	</div>
-</form>
-
-	</div>
-
-	<!-- End Breadcrumbs -->
-    
-	<table class="table">
-		<thead>
-			<tr>
-				<th>Id</th>
-				<th>Email</th>
-				<th>Roles</th>
-				<th>Password</th>
-				<th>Nom</th>
-				<th>Prenom</th>
-				<th>Adress</th>
-				<th>Cin</th>
-				<th>Date_naissance</th>
-				<th>Date_creation_c</th>
-				<th>Status</th>
-				<th>Token</th>
-				<th>Score</th>
-				<th>Numtel</th>
-				<th>Image</th>
-				<th>Compte_ex</th>
-				<th>Token_ex</th>
-				<th>actions</th>
-			</tr>
-		</thead>
-		<tbody>
-			{% for user in users %}
-				<tr>
-					<td>{{ user.id }}</td>
-					<td>{{ user.email }}</td>
-					<td>{{ user.roles ? user.roles|json_encode : '' }}</td>
-					<td>{{ user.password }}</td>
-					<td>{{ user.nom }}</td>
-					<td>{{ user.prenom }}</td>
-					<td>{{ user.adress }}</td>
-					<td>{{ user.cin }}</td>
-					<td>{{ user.dateNaissance ? user.dateNaissance|date('Y-m-d') : '' }}</td>
-					<td>{{ user.dateCreationC ? user.dateCreationC|date('Y-m-d') : '' }}</td>
-					<td>{{ user.status ? 'Yes' : 'No' }}</td>
-					<td>{{ user.token }}</td>
-					<td>{{ user.score }}</td>
-					<td>{{ user.numtel }}</td>
-					<td>{{ user.image }}</td>
-					<td>{{ user.compteEx ? user.compteEx|date('Y-m-d') : '' }}</td>
-					<td>{{ user.tokenEx ? user.tokenEx|date('Y-m-d') : '' }}</td>
-					<td>
-						<a href="{{ path('app_user_show', {'id': user.id}) }}">show</a>
-						<a href="{{ path('app_user_edit', {'id': user.id}) }}">edit</a>
-					</td>
-				</tr>
-			{% else %}
-				<tr>
-					<td colspan="18">no records found</td>
-				</tr>
-			{% endfor %}
-		</tbody>
-	</table>
- #}
-
-{% extends 'baseadmin.html.twig' %}
-
-<<<<<<< HEAD
-					<div class="row">
-						<div class="col-12" style="overflow-x: scroll">
-							<div class="card" style="width: 4300px;">
-								<div class="card-header">
-									<h5 class="card-title mb-0">Empty card</h5>
-								</div>
-								<div class="card-body">
-                                
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Nom</th>
-                <th>Prenom</th>
-                <th>Adress</th>
-                <th>Cin</th>
-                <th>Datenaissance</th>
-                <th>Datecreationc</th>
-                <th>Status</th>
-                <th>Role</th>
-                <th>Motpass</th>
-                <th>Email</th>
-                <th>Token</th>
-                <th>Score</th>
-                <th>Numtel</th>
-                <th>Image</th>
-                <th>CompteEx</th>
-                <th>TokenEx</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for user in users %}
-            <tr>
-                <td>{{ user.id }}</td>
-                <td>{{ user.nom }}</td>
-                <td>{{ user.prenom }}</td>
-                <td>{{ user.adress }}</td>
-                <td>{{ user.cin }}</td>
-                <td>{{ user.datenaissance ? user.datenaissance|date('Y-m-d') : '' }}</td>
-                <td>{{ user.datecreationc ? user.datecreationc|date('Y-m-d') : '' }}</td>
-                <td>{{ user.status ? 'Yes' : 'No' }}</td>
-                <td>{{ user.role }}</td>
-                <td>{{ user.motpass }}</td>
-                <td>{{ user.email }}</td>
-                <td>{{ user.token }}</td>
-                <td>{{ user.score }}</td>
-                <td>{{ user.numtel }}</td>
-                <td><img style="width:100px;height:100px" src="{{ user.image }}"> </td>
-                <td>{{ user.compteEx ? user.compteEx|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ user.tokenEx ? user.tokenEx|date('Y-m-d H:i:s') : '' }}</td>
-                <td>
-                    <a href="{{ path('app_user_show', {'id': user.id}) }}">show</a>
-                    <a href="{{ path('app_user_edit', {'id': user.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="18">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('app_user_new') }}">Create news</a>
-								</div>
-							</div>
-=======
-{% block title %}User index
-{% endblock %}
-
-{% block body %}
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
 	{#<!-- ======= Breadcrumbs ======= -->
-		<div class="breadcrumbs d-flex align-items-center" style="background-image: url('assets/img/contact-header.jpg');">
-			<div class="container position-relative d-flex flex-column align-items-center">
-		
-				<h2>Contact</h2>
-				<ol>
-					<li><a href="index.html">Home</a></li>
-					<li>Contact</li>
-				</ol>
-		
-			</div>
-		</div><!-- End Breadcrumbs -->#}
+																							<div class="breadcrumbs d-flex align-items-center" style="background-image: url('assets/img/contact-header.jpg');">
+																								<div class="container position-relative d-flex flex-column align-items-center">
+																							
+																									<h2>Contact</h2>
+																									<ol>
+																										<li><a href="index.html">Home</a></li>
+																										<li>Contact</li>
+																									</ol>
+																							
+																								</div>
+																							</div><!-- End Breadcrumbs -->#}
 
-	<form method="get" action="{{ path('app_user_index') }}">
-		<div class="input-group mb-3">
-			<input type="text" name="q" class="form-control" placeholder="Search users...">
-			<div class="input-group-append">
-				<button type="submit" class="btn btn-outline-secondary">Search</button>
-			</div>
-		</div>
-	</form>
 
 	<div class="container-fluid p-0">
-		<a class="btn btn-secondary" href="{{ path('app_user_new') }}">Register</a>
-		<h1 class="h3 mb-3">Blank Page</h1>
+{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+		<input type="text" id="search" class="form-control" placeholder="Search"><br>
+		{% endif %}
+	{# 	<a class="btn btn-secondary" href="{{ path('app_user_new') }}">Register</a> #}
+		<h1 class="h3 mb-3">Transporteur</h1>
+		<div class="row" id="alldiv">
 
-		<div class="row">
-			<div class="col-12" style="overflow-x: scroll">
-				<div class="card" style="width: 1720px;">
+			{% for u in pagination %}
 
-					<div class="card-body">
+				<div class="card col-5 offset-3 m-1 p-5">
 
-						<table class="table">
-							<thead>
-								<tr>
-
-									<th>Nom</th>
-
-								</tr>
-							</thead>
-							<tbody>
-								<div>
-									{% for user in users|batch(3) %}
-										<tr>
-											{% for u in user %}
-												<td>{{ u.nom }}
-													<div class="col-md-6 col-xl-3">
-														<div class="card m-b-10" style="width: 450px; height: 500px;">
-                                                        
-															<div class="card-body row">
-																<div class="col-6">
-																	<img src="{{u.image}}" alt="Admin" class="rounded-circle p-1 bg-primary" width="180" height="180">
-																</div>
-																<div class="col-6 card-title align-self-center mb-0">
-																	<h5>{{ u.nom}}</h5>
-																	<p class="m-0">
-																		{% if user.roles is defined %}
-																			<p class="m-0">{{ user.roles ? user.roles|json_encode : '' }}</p>
-																		{% endif %}
-																	</p>
-																</div>
-															</div>
-															<ul class="list-group list-group-flush">
-																<li class="list-group-item">
-																	<i class="fa fa-envelope float-right"></i>Email :
-																	<a href="#">{{ u.email }}</a>
-																</li>
-																<li class="list-group-item">
-																	<i class="fa fa-phone float-right"></i>Phone :
-																	{{ u.numtel }}
-																</li>
-															</ul>
-															<div class="card-body">
-																<div class="float-right btn-group btn-group-sm" style="width: 75px; height: 35px;">
-																	
-																</div>
-																<div class="float-right btn-group btn-group-sm">
-																	<a href="{{ path('app_user_show', {'id': u.id}) }}" class="btn btn-outline-primary">Profil
-																		<i class="fa fa-pencil">
-																			<i class="fa fa-pencil"></i>
-																		</a>
-
-																		<a href="{{ path('app_user_edit', {'id': u.id}) }}" class="btn btn-outline-primary">Edit
-																			<i class="fa fa-pencil">
-																				<i class="fa fa-pencil"></i>
-																			</a>
-																			<a href="{{ path('app_user_delete', {'id': u.id}) }}" class="btn btn-outline-primary">Delete
-																				<i class="fa fa-pencil">
-																					<i class="fa fa-pencil"></i>
-																				</a>
-																			</div>
-																			<a href="{{ path('app_message_new', {'id': u.id} )}}" class="btn btn-outline-primary">Message
-																				<i class="fa fa-pencil"></i>
-																			</a>
-
-																			<ul class="social-links list-inline mb-0">
-																				<li class="list-inline-item">
-																					<a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="Facebook">
-																						<i class="fa fa-facebook-f"></i>
-																					</a>
-																				</li>
-																				<li class="list-inline-item">
-																					<a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="Twitter">
-																						<i class="fa fa-twitter"></i>
-																					</a>
-																				</li>
-																				<li class="list-inline-item">
-																					<a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="Skype">
-																						<i class="fa fa-skype"></i>
-																					</a>
-																				</li>
-																			</ul>
-																		</div>
-																	</div>
-																</div>
-															</td>
-														{% endfor %}
-													</tr>
-												{% else %}
-													<tr>
-														<td colspan="3">no records found</td>
-													</tr>
-												{% endfor %}
-											</div>
-										</tr>
-									</tbody>
-								</table>
-							</tbody>
->>>>>>> 1b9c83bb09edfda666f414a2ec8b0b82973f62fa
+					<div class="card-body row">
+						<div class="col-6">
+							<img src="{{u.image}}" alt="Admin" class="rounded-circle p-1 bg-primary" width="200" height="200">
+							<div class="portfolio-info">
+								
+								<a href="{{u.image}}" title="{{u.nom}}" data-gallery="portfolio-gallery-product" class="glightbox preview-link">
+									<i class="bi bi-zoom-in"></i>
+								</a>
+								<a href="portfolio-details.html" title="More Details" class="details-link">
+									<i class="bi bi-link-45deg"></i>
+								</a>
+							</div>
+						</div>
+						<div class="col-6 card-title align-self-center mb-0">
+							<h5>{{ u.nom}}</h5>
+							<p class="m-0">
+							
+											<p class="m-0">{{ u.roles[0] }}</p>
+										
+							</p>
 						</div>
 					</div>
+					<ul class="list-group list-group-flush">
+						<li class="list-group-item">
+							<i class="fa fa-envelope float-right"></i>Email :
+							<a href="#">{{ u.email }}</a>
+						</li>
+						<li class="list-group-item">
+							<i class="fa fa-phone float-right"></i>Phone :
+							{{ u.numtel }}
+						</li>
+					</ul>
+
+					<div class="float-right btn-group btn-group-sm">
+						<a href="{{ path('app_user_showp', {'id': u.id}) }}" class="btn btn-outline-primary">Profil
+							<i class="fa fa-user-circle"></i>
+
+						</i>
+					</a>
+
+					{# 
+											<a href="{{ path('app_user_edit', {'id': u.id}) }}" class="btn btn-outline-primary">Edit
+												<i class="fa fa-pencil">
+													
+												</i>
+											</a>
+											<a href="{{ path('app_user_delete', {'id': u.id}) }}" class="btn btn-outline-primary">Delete
+												<i class="fa fa-pencil">
+													
+												</i>
+											</a> #}
+
+					<a href="{{ path('app_message_new', {'id': u.id} )}}" class="btn btn-outline-primary">Message
+						<i class="fa fa-m"></i>
+					</a>
+
 
 				</div>
 			</div>
+
+
+		{% endfor %}
+
+
+		<div class="navigation">
+			{{ knp_pagination_render(pagination) }}
 		</div>
 
 
-		<a href="{{ path('app_user_new') }}">Create new</a>
-	{% endblock %}
+	</div>
+</div>
+
+<div class="row" id="searchdiv"></div>
+<div style="display:none">
+	<table border="1" id="t" class="table table-hover table-dark">
+		<thead class="thead-dark">
+			<tr>
+				<td>Id</td>
+				<td>Email</td>
+				<td>Roles</td>
+				<td>Password</td>
+				<td>Nom</td>
+				<td>Prenom</td>
+				<td>Adress</td>
+				<td>Cin</td>
+				<td>Date_naissance</td>
+				<td>Date_creation_c</td>
+				<td>Status</td>
+				<td>Token</td>
+				<td>Score</td>
+				<td>Numtel</td>
+				<td>Image</td>
+				<td>Compte_ex</td>
+				<td>Token_ex</td>
+				<td>actions</td>
+			</tr>
+		</thead>
+		<tbody id="all">
+			{% for u in pagination %}
+				<tr>
+					<td>
+						{{ u.id }}
+					</td>
+					<td>
+						{{ u.email }}
+					</td>
+					<td>
+						{{ u.password }}
+					</td>
+
+					<td>
+						<a href="{{ path('app_user_edit', {'id':u.id}) }}">
+							modifier</a>
+						<a href="{{ path('app_user_delete', {'id':u.id}) }}">
+							supprimer</a>
+					</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+		<tbody id="searchtab">
+			<td>ss</td>
+		</tbody>
+	</table>
+</div>{% endblock %}{% block javascripts %}
+{{ parent() }}
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+{# <script src="{{asset('front/assets/js/search.js')}}"></script>
+ #}<script>
+	$(document).ready(function () {
+$("#search").keyup(function () {
+var value = $(this).val();
+console.log("value : " + value)
+
+$.ajax({
+url: "{{ path('app_admin_search') }}",
+
+type: 'GET',
+
+data: {
+'searchValue': value
+},
+
+success: function (retour) {
+if (retour) {
+$('#t tbody#searchtab').empty();
+$('#searchdiv').empty();
+$.each(JSON.parse(retour), function (i, obj) {
+$('#t tbody#all').hide();
+// $('#alldiv').hide();
+
+$('#t tbody#searchtab').append('<tr><td>' + obj.id + '</td><td> ' + obj.email + ' </td><td>' + obj.roles + '</td><td>' + obj.password + '</td><td>' + obj.nom + '</td><td>' + obj.prenom + '</td><td>' + obj.adress + '</td><td>' + obj.cin + '</td><td>' + obj.dateNaissance + '</td><td>' + obj.dateCreationC + '</td><td>' + obj.status + '</td><td>' + obj.token + '</td><td>' + obj.score + '</td><td>' + obj.numtel + '</td><td>' + obj.image + '</td><td>' + obj.compteEx + '</td><td>' + obj.tokenEx + '</td><td><a href="' + obj.id + 'edit/">modifier</a> </br><a	href="' + obj.id + 'delete/">supprimer</a></td></tr>');
+$('#searchdiv').append('<div class="card col-5 offset-3 m-1 p-5" ><div class="card-body row"><div class="col-6"><img src="' + obj.image + '" alt="Admin" class="rounded-circle p-1 bg-primary" width="180" height="180"></div><div class="col-6 card-title align-self-center mb-0"><h5>' + obj.nom + '</h5></div></div><ul class="list-group list-group-flush"><li class="list-group-item"><i class="fa fa-envelope float-right"></i>Email :<a href="#">' + obj.email + '</a></li><li class="list-group-item"><i class="fa fa-phone float-right"></i>Phone : ' + obj.numtel + '</li></ul><div class="float-right btn-group btn-group-sm"><a href=" {{ path('app_user_show', {'id': '+obj.id+'}) }}" class="btn btn-outline-primary">Profil<i class="fa fa-pencil"></i></a><a href=" {{ path('app_message_new', {'id': '+obj.id+'} ) }}" class="btn btn-outline-primary">Message<i class="fa fa-pencil"></i></a></div></div>');
+});
+} else {
+$('#t tbody#all').show();
+$('#alldiv').show();
+console.log("test")
+$('#t tbody#searchtab').empty();
+$('#searchdiv').empty();
+$('#t tbody#searchtab').fadeIn('fast');
+$('#searchdiv').fadeIn('fast');
+}
+}
+});
+return false;
+});
+});
+</script>
+
+<script>
+	$("#search").keyup(function () {
+if ($(this).val() === "") {
+console.log("test")
+$('#alldiv').show();
+$('#searchdiv').hide();
+} else {
+$('#alldiv').hide();
+$('#searchdiv').show();
+}
+})
+</script>{% endblock %}

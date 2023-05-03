@@ -145,30 +145,12 @@ class ResetPasswordController extends AbstractController
         try {
             $resetToken = $this->resetPasswordHelper->generateResetToken($user);
         } catch (ResetPasswordExceptionInterface $e) {
-            // If you want to tell the user why a reset email was not sent, uncomment
-            // the lines below and change the redirect to 'app_forgot_password_request'.
-            // Caution: This may reveal if a user is registered or not.
-            //
-            // $this->addFlash('reset_password_error', sprintf(
-            //     '%s - %s',
-            //     $translator->trans(ResetPasswordExceptionInterface::MESSAGE_PROBLEM_HANDLE, [], 'ResetPasswordBundle'),
-            //     $translator->trans($e->getReason(), [], 'ResetPasswordBundle')
-            // ));
-
+          
             return $this->redirectToRoute('app_check_email');
         }
 
-        /* $email = (new TemplatedEmail())
-            ->from(new Address('aymen.zouaoui@esprit.tn', 'Amena'))
-            ->to($user->getEmail())
-            ->subject('Your password reset request')
-            ->htmlTemplate('reset_password/email.html.twig')
-            ->context([
-                'resetToken' => $resetToken,
-            ])
-        ;
-
-        $mailer->send($email); */
+       
+        /*$mailer->send($email); */
 
         $email = (new Email())
         ->from('aymen.zouaoui@esprit.tn')
@@ -260,7 +242,7 @@ class ResetPasswordController extends AbstractController
         Pour changer votre mot de passe, veuillez cliquer sur le bouton suivant :<br><br>
         <a href='http://localhost:8000/reset-password/reset/".$resetToken->getToken()."' bgcolor='#00cea0' style='color:#ffffff;font-size:15px;font-family:Arial,Helvetica,sans-serif;font-weight:bold;text-decoration:none;background-color:#00cea0;border-top:8px solid #00cea0;border-bottom:8px solid #00cea0;border-left:20px solid #00cea0;border-right:20px solid #00cea0;border-radius:3px;display:inline-block;text-transform:uppercase' target='_blank' data-saferedirecturl='https://www.google.com/url?q=http://et.amena.com/f/a/k68z5GP8C0Z1gDYy1dyk9g~~/AAGzbgA~/RgRmIvamP0RSaHR0cHM6Ly93d3cuZXhwYXQuY29tL2ZyL2NoYW5nZS1wYXNzd29yZC82MDhkYTllZTg2OGExZjdkN2RmOGZkOWE1NGVhZTRjM2YwMDk2ZGE0L1cDc3BjQgpkPqZxQGT-b53JUhhheW1lbnpvdWFvdWk5N0BnbWFpbC5jb21YBAAAAAA~&amp;source=gmail&amp;ust=1682031402480000&amp;usg=AOvVaw2wZg19dxIgLxBKb5kvnYpl'>Changer mon mot de passe</a><br><br>
         Le lien ci-dessus est valable pendant quelques heures. Passé ce délai, vous devrez demander un nouveau lien pour pouvoir changer votre mot de passe.<br><br>
-        Nous vous rappelons également votre nom d'utilisateur: <strong>aymen zouaoui19</strong><br><br>
+        Nous vous rappelons également votre nom d'utilisateur: <strong>$user</strong><br><br>
         Si vous n'avez pas demandé un nouveau mot de passe, veuillez ignorer ce message.<br><br>
         A bientôt,<br><br>
         L'équipe amena.com

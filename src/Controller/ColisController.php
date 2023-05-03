@@ -14,9 +14,6 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Security\Core\Security;
 
 #[Route('/colis')]
-/**
- * Summary of ColisController
- */
 class ColisController extends AbstractController
 {
     private $security;
@@ -48,9 +45,7 @@ class ColisController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager->persist($coli);
-        $entityManager->flush();
-        $this->addFlash('success', 'Le colis a été créé avec succès.');
+            $colisRepository->save($coli, true);
 
             return $this->redirectToRoute('app_colis_index', [], Response::HTTP_SEE_OTHER);
         }
@@ -80,7 +75,6 @@ class ColisController extends AbstractController
             $coli->setIdu($user);
             
             $colisRepository->save($coli, true);
-            $this->addFlash('success', 'Le colis a été modifié avec succès.');
 
             return $this->redirectToRoute('app_colis_index', [], Response::HTTP_SEE_OTHER);
         }
@@ -96,24 +90,8 @@ class ColisController extends AbstractController
     {
         if ($this->isCsrfTokenValid('delete'.$coli->getId(), $request->request->get('_token'))) {
             $colisRepository->remove($coli, true);
-        
-            $this->addFlash('success', 'Le colis a été supprimé avec succès.');
-        } else {
-            $this->addFlash('error', 'Une erreur est survenue lors de la suppression du colis.');
         }
-
 
         return $this->redirectToRoute('app_colis_index', [], Response::HTTP_SEE_OTHER);
     }
-    #[Route('/terms', name: 'app_terms')]
-    /**
-     * Summary of terms
-     * @return Response
-     */
-    public function terms(): Response
-    {
-        return $this->render('terms.twig.html');
-    }
 }
-
-

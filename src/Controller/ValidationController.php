@@ -28,86 +28,78 @@ class ValidationController extends AbstractController
         ]);
     }
 
-    #[Route('/new', name: 'app_validation_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, EntityManagerInterface $entityManager): Response
-    {
-        $validation = new Validation();
-        $user = $entityManager->getRepository(User::class)->find($id);
+    #[Route('/{id}/new', name: 'app_validation_new', methods: ['GET', 'POST'])]
+public function new(Request $request, EntityManagerInterface $entityManager,$id): Response
+{
+    $validation = new Validation();
+    $user = $entityManager->getRepository(User::class)->find($id);
+    $validation->setIdu($user);
+
+    $form = $this->createForm(ValidationType::class, $validation);
+    $form->handleRequest($request);
+
+    if ($form->isSubmitted() && $form->isValid()) {
         $validation->setIdu($user);
-        $form = $this->createForm(ValidationType::class, $validation);
-        $form->handleRequest($request);
+        $imageA = $form->get('imagea')->getData();
+        $imageB = $form->get('imageb')->getData();
 
-        if ($form->isSubmitted() && $form->isValid()) {
-
-            if ($form->isSubmitted() && $form->isValid()) {
-                $validation->setIdu($user);
-                $imageA = $form->get('imagea')->getData();
-                $imageB = $form->get('imageb')->getData();
-
-
-                if ($image) {
-                    $fichier = md5(uniqid()) . '.' . $image->guessExtension();
-
-                    $image->move(
-                        $this->getParameter('images_directory'),
-                        $fichier
-                    );
-                    dump($image);
-
-                    $validation->setImagea('http://localhost/img/' . $fichier);
-                }
-                $image = $form->get('imageb')->getData();
-
-
-                if ($image) {
-                    $fichier = md5(uniqid()) . '.' . $image->guessExtension();
-
-                    $image->move(
-                        $this->getParameter('images_directory'),
-                        $fichier
-                    );
-                    dump($image);
-
-                    $validation->setImageb('http://localhost/img/' . $fichier);
-                }
-                $entityManager->persist($validation);
-                $entityManager->flush();
-
-                return $this->redirectToRoute('app_validation_index', [], Response::HTTP_SEE_OTHER);
-            }
-
-            return $this->renderForm('validation/new.html.twig', [
-                'validation' => $validation,
-                'form' => $form,
-            ]);
+        if ($imageA) {
+            $filenameA = md5(uniqid()) . '.' . $imageA->guessExtension();
+            $imageA->move(
+                $this->getParameter('images_directory'),
+                $filenameA
+            );
+            $validation->setImagea('http://localhost/img/' . $filenameA);
         }
+
+        if ($imageB) {
+            $filenameB = md5(uniqid()) . '.' . $imageB->guessExtension();
+            $imageB->move(
+                $this->getParameter('images_directory'),
+                $filenameB
+            );
+            $validation->setImageb('http://localhost/img/' . $filenameB);
+        }
+
+        $entityManager->persist($validation);
+        $entityManager->flush();
+
+        return $this->redirectToRoute('app_validation_index', [], Response::HTTP_SEE_OTHER);
     }
 
+    return $this->renderForm('validation/new.html.twig', [
+        'validation' => $validation,
+        'form' => $form,
+    ]);
+}
+
     #[Route('/{id}', name: 'app_validation_show', methods: ['GET'])]
-    public function show(Validation $validation): Response
+    public function show(Validation $validation,EntityManagerInterface $entityManager): Response
     {
+        $user = $entityManager->getRepository(User::class)->find(240);
         return $this->render('validation/show.html.twig', [
             'validation' => $validation,
+            'user' => $user,
         ]);
     }
 
     #[Route('/{id}/edit', name: 'app_validation_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, Validation $validation, EntityManagerInterface $entityManager): Response
-    {
-        $form = $this->createForm(ValidationType::class, $validation);
-        $form->handleRequest($request);
+public function edit(Request $request, Validation $validation, EntityManagerInterface $entityManager): Response
+{
+    $form = $this->createForm(ValidationType::class, $validation);
+    $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager->flush();
+    if ($form->isSubmitted() && $form->isValid()) {
+        $entityManager->flush();
 
-            return $this->redirectToRoute('app_validation_show', ['id' => $validation->getId()]);
-        }
-
-        return $this->renderForm('validation/edit.html.twig', [
-            'validation' => $validation,
-            'form' => $form,
-        ]);
+        return $this->redirectToRoute('app_validation_show', ['id' => $validation->getId()]);
     }
+
+    return $this->renderForm('validation/edit.html.twig', [
+        'validation' => $validation,
+        'form' => $form,
+    ]);
+}
 
 
     #[Route('/{id}', name: 'app_validation_delete', methods: ['POST'])]
