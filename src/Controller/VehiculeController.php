@@ -3,6 +3,8 @@
 namespace App\Controller;
 
 use App\Entity\Vehicule;
+use App\Entity\Competition;
+
 use App\Form\VehiculeType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -14,10 +16,31 @@ use Knp\Component\Pager\PaginatorInterface;
 use App\Repository\VehiculeRepository;
 use Dompdf\Dompdf;
 use Dompdf\Options; 
+use Symfony\Component\Serializer\SerializerInterface ;
+use Symfony\Component\Serializer\Normalizer\ObjectNormalizer ; 
+use Symfony\Component\Serializer\Serializer;
+use Symfony\Component\Validator\Constraints\Json; 
+use Symfony\Component\HttpFoundation\JsonResponse ; 
+use App\Entity\Reclamation;
+use Symfony\Component\Serializer\Encoder\JsonEncoder;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use App\Repository\CompetitionRepository;
 
 #[Route('/vehicule')]
 class VehiculeController extends AbstractController
 {
+    #[Route("/AllVehicule", name: "list")]
+    public function getVehicules(EntityManagerInterface $entityManager,VehiculeRepository $repo, SerializerInterface $serializer)
+    {
+        $vehicules = $entityManager
+            ->getRepository(Vehicule::class)
+            ->findBy([],['idV' => 'DESC']) ;
+        $json = $serializer->serialize($vehicules, 'json', ['groups' => "vehicules"]);
+        return new Response($json);
+    }
+
+   
+    
     #[Route('/', name: 'app_vehicule_index', methods: ['GET'])]
     public function index(EntityManagerInterface $entityManager,ReservationRepository $reservationRepository,VehiculeRepository $vehiculeRepository,PaginatorInterface $paginator): Response
     {
@@ -155,5 +178,8 @@ class VehiculeController extends AbstractController
 
         return $this->redirectToRoute('app_vehicule_index', [], Response::HTTP_SEE_OTHER);
     }
+
+
+   
   
 }

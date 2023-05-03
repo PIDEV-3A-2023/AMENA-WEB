@@ -7,6 +7,9 @@ use Doctrine\DBAL\Types\Types;
 use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\VehiculeRepository ; 
+use Symfony\Component\Serializer\Annotation\MaxDepth;
+use Symfony\Component\Serializer\Annotation\Groups;
+
 #[ORM\Table(name: '`vehicule`')]
 
 #[ORM\Entity(repositoryClass :VehiculeRepository::class)]
@@ -17,48 +20,59 @@ class Vehicule
    #[ORM\Id]
    #[ORM\GeneratedValue]
    #[ORM\Column (name:"id")]
+   #[Groups("vehicules")]
    private ?int $idV=null;
 
 
     #[ORM\Column(length: 30)]
     #[Assert\NotBlank(message:"Le type ne doit pas être vide")]
+    #[Groups("vehicules")]
     private ?string $type = null ; 
 
     #[ORM\Column(length: 30)]
     #[Assert\NotBlank(message:"L'immatiricule ne doit pas être vide")]
+    #[Groups("vehicules")]
     private ?string $immat = null ; 
 
     #[ORM\Column]
     #[Assert\NotBlank(message:"L'etat ne doit pas être vide")]
+    #[Groups("vehicules")]
     private ?int $etat ;
 
     #[ORM\Column(length: 30)]
     #[Assert\NotBlank(message:"La valeur de la Kilometrage doit être remplie")]
     #[Assert\Positive(message:"La valeur de la Kilometrage doit être positive")]
+    #[Groups("vehicules")]
     private ?string $kilometrage = null ; 
   
     #[ORM\Column]
     #[Assert\NotBlank(message:"La valeur des chevaux ne doit pas être vide")]
     #[Assert\Positive(message:"La valeur des cheveaux doit être positive")]
+    #[Groups("vehicules")]
     private ?int $chevaux=0 ;
 
     #[ORM\Column(length: 30)]
     #[Assert\NotBlank(message:"La valeur de la marque doit être remplie")]
+    #[Groups("vehicules")]
     private ?string $marque = null ;
     
     #[ORM\Column(length: 30)]
     #[Assert\NotBlank(message:"La valeur de la modele doit être remplie")]
+    #[Groups("vehicules")]
     private ?string $modele = null ;
     
     #[ORM\Column(length: 15)]
     #[Assert\NotBlank(message:"La valeur de la lpec doit être remplie")]
+    #[Groups("vehicules")]
     private ?string $lpec = null ;
 
     #[ORM\Column]
     #[Assert\NotBlank(message:"La valeur de la prix doit être remplie")]
+    #[Groups("vehicules")]
     private ?float $prix = null ;
 
     #[ORM\Column(length: 150,name : 'img')]
+    #[Groups("vehicules")]
     private ?string $img = null ;
 
     #[ORM\OneToMany(mappedBy: 'idVeh', targetEntity: Reservation::class)]

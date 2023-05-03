@@ -77,6 +77,7 @@ return [
     'app_validation_show' => [['id'], ['_controller' => 'App\\Controller\\ValidationController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/validation']], [], [], []],
     'app_validation_edit' => [['id'], ['_controller' => 'App\\Controller\\ValidationController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id', true], ['text', '/validation']], [], [], []],
     'app_validation_delete' => [['id'], ['_controller' => 'App\\Controller\\ValidationController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/validation']], [], [], []],
+    'list' => [[], ['_controller' => 'App\\Controller\\VehiculeController::getVehicules'], [], [['text', '/vehicule/AllVehicule']], [], [], []],
     'app_vehicule_index' => [[], ['_controller' => 'App\\Controller\\VehiculeController::index'], [], [['text', '/vehicule/']], [], [], []],
     'app_vehicule_new' => [[], ['_controller' => 'App\\Controller\\VehiculeController::new'], [], [['text', '/vehicule/new']], [], [], []],
     'app_vehicule_show' => [['idV'], ['_controller' => 'App\\Controller\\VehiculeController::show'], [], [['variable', '/', '[^/]++', 'idV', true], ['text', '/vehicule']], [], [], []],

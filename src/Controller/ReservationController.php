@@ -20,6 +20,17 @@ use Knp\Component\Pager\PaginatorInterface;
 #[Route('/reservation')]
 class ReservationController extends AbstractController
 {
+
+    #[Route("/Allreservation", name: "list")]
+    public function getVehicules(EntityManagerInterface $entityManager,ReservationRepository $repo, SerializerInterface $serializer)
+    {
+        $vehicules = $entityManager
+            ->getRepository(Vehicule::class)
+            ->findBy([],['idV' => 'DESC']) ;
+        $json = $serializer->serialize($vehicules, 'json', ['groups' => "vehicules"]);
+        return new Response($json);
+    }
+
     #[Route('/{id}/#', name: 'app_reservation_terminer')]
     public function terminer(ReservationRepository $reservationRepository,Reservation $reservation,FlashyNotifier $flashy)
     {
