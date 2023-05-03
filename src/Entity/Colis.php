@@ -9,7 +9,11 @@ use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
+<<<<<<< HEAD
+#[ORM\Table(name: '`colis`')]
+=======
 #[ORM\Table(name: 'colis')]
+>>>>>>> 1b9c83bb09edfda666f414a2ec8b0b82973f62fa
 #[ORM\Entity(repositoryClass: ColisRepository::class)]
 class Colis
 {
@@ -275,4 +279,8 @@ class Colis
 
         return $this;
     }*/
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 1b9c83bb09edfda666f414a2ec8b0b82973f62fa

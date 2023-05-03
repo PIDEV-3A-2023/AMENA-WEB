@@ -15,8 +15,8 @@ class ValidationType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('imagea', FileType::class, [
-                'label' => 'imagea',
+            ->add('imagea',FileType::class,[
+                'label' => 'image',
 
                 // unmapped means that this field is not associated to any entity property
                 'mapped' => false,
@@ -38,8 +38,8 @@ class ValidationType extends AbstractType
                     ])
                 ],
             ])
-            ->add('imageb', FileType::class, [
-                'label' => 'imageb',
+            ->add('imageb',FileType::class,[
+                'label' => 'image',
 
                 // unmapped means that this field is not associated to any entity property
                 'mapped' => false,
@@ -62,9 +62,15 @@ class ValidationType extends AbstractType
                 ],
             ])
             ->add('valide')
+<<<<<<< HEAD
+            
+            ->add('valider',SubmitType::class)
+        ;
+=======
             /* ->add('idu') */
 
             ->add('valider', SubmitType::class);
+>>>>>>> 1b9c83bb09edfda666f414a2ec8b0b82973f62fa
     }
 
     public function configureOptions(OptionsResolver $resolver): void

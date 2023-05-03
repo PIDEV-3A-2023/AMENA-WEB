@@ -4,7 +4,11 @@
 		<meta charset="utf-8">
 		<meta content="width=device-width, initial-scale=1.0" name="viewport">
 
+<<<<<<< HEAD
+		<title>AMENA</title>
+=======
 		<title>Amena Bootstrap Template - Contact</title>
+>>>>>>> 1b9c83bb09edfda666f414a2ec8b0b82973f62fa
 		<meta content="" name="description">
 		<meta
 		content="" name="keywords">
@@ -39,6 +43,39 @@
 
 	</head>
 	<body>
+<<<<<<< HEAD
+{% for flash_message in app.flashes('success') %}
+    <div class="alert alert-success alert-dismissible fade show" role="alert" id="flash-message">
+        <div class="d-flex align-items-center">
+            <i class="bi bi-check-circle-fill me-2"></i>
+            <span>{{ flash_message }}</span>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+{% endfor %}
+{% for message in app.flashes('error') %}
+    <div class="alert alert-danger" id="flash-message">{{ message }}</div>
+{% endfor %}
+
+<script>
+    // Masquer automatiquement le message de succès après 3 secondes
+    setTimeout(function() {
+        var flashMessage = document.getElementById('flash-message');
+        if (flashMessage !== null) {
+            flashMessage.remove();
+        }
+    }, 3000);
+</script>
+    <!-- ======= Header ======= -->
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="front/assets/img/logo.png" alt=""> -->
+        <h1 class="d-flex align-items-center">Amena</h1>
+      </a>
+=======
 		<!-- ======= Header ======= -->
 		<header id="header" class="header d-flex align-items-center fixed-top" style="margin-bottom:8%;background: rgba(27, 47, 69, 0.9);padding: 15px;">
 			<div class="container-fluid container-xl d-flex align-items-center justify-content-between">
@@ -48,6 +85,7 @@
 					<!-- <img src="front/assets/img/logo.png" alt=""> -->
 						<h1 class="d-flex align-items-center"> Amena</h1>
 				</a>
+>>>>>>> 1b9c83bb09edfda666f414a2ec8b0b82973f62fa
 
 				<i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
 				<i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
@@ -65,6 +103,46 @@
 							<a href="/annonces/">Annonces</a>
 						</li>
 
+<<<<<<< HEAD
+  <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs d-flex align-items-center" style="background-image: url('assets/img/contact-header.jpg');">
+      <div class="container position-relative d-flex flex-column align-items-center">
+
+        <h2>Colis</h2>
+        <ol>
+          <li><a href="index.html">Accueil</a></li>
+          <li>Colis</li>
+        </ol>
+
+      </div>
+    </div><!-- End Breadcrumbs -->
+   <main id="main">
+		{% block body %}{% endblock %}
+        </main><!-- End #main -->
+		<!-- ======= Footer ======= -->
+		<footer id="footer" class="footer">
+
+			<div class="footer-content">
+				<div class="container">
+					<div class="row gy-4">
+						<div class="col-lg-5 col-md-12 footer-info">
+							<a href="index.html" class="logo d-flex align-items-center">
+								<span>Amena</span>
+							</a>
+							<p>Amena est un site qui joue l'intermédiaire entre le client qui veut livrer ses colis en toute sécurité, moins d'argent et de manière plus efficace et avec des livreurs particuliers</p>
+							<div class="social-links d-flex  mt-3">
+								<a  class="twitter">
+									<i class="bi bi-twitter"></i>
+								</a>
+								<a  class="facebook">
+									<i class="bi bi-facebook"></i>
+								</a>
+								<a  class="instagram">
+									<i class="bi bi-instagram"></i>
+								</a>
+								<a  class="linkedin">
+									<i class="bi bi-linkedin"></i>
+=======
 						<li>
 							<a href="/web/blog">Blog</a>
 						</li>
@@ -141,6 +219,7 @@
 							<div class="col-lg-5 col-md-12 footer-info">
 								<a href="index.html" class="logo d-flex align-items-center">
 									<span>Amena</span>
+>>>>>>> 1b9c83bb09edfda666f414a2ec8b0b82973f62fa
 								</a>
 								<p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
 								<div class="social-links d-flex  mt-3">
@@ -159,6 +238,73 @@
 								</div>
 							</div>
 
+<<<<<<< HEAD
+						<div class="col-lg-2 col-6 footer-links">
+							<h4>Liens utiles</h4>
+							<ul>
+								<li>
+									<i class="bi bi-dash"></i>
+									<a >Accueil</a>
+								</li>
+								<li>
+									<i class="bi bi-dash"></i>
+									<a >À propos de nous</a>
+								</li>
+								<li>
+									<i class="bi bi-dash"></i>
+									<a >Services</a>
+								</li>
+								<li>
+									<i class="bi bi-dash"></i>
+									<a href="{{ path('app_terms') }}">Condition d'utilisations</a>
+								</li>
+								<li>
+									<i class="bi bi-dash"></i>
+									<a >Politique de confidentialité</a>
+								</li>
+							</ul>
+						</div>
+
+						<div class="col-lg-2 col-6 footer-links">
+							<h4>Nos Services</h4>
+							<ul>
+								<li>
+									<i class="bi bi-dash"></i>
+									<a >Locations</a>
+								</li>
+								<li>
+									<i class="bi bi-dash"></i>
+									<a >Suivi des colis</a>
+								</li>
+								<li>
+									<i class="bi bi-dash"></i>
+									<a >Annonces</a>
+								</li>
+								<li>
+									<i class="bi bi-dash"></i>
+									<a >Gamification</a>
+								</li>
+								<li>
+									<i class="bi bi-dash"></i>
+									<a >Chatbot</a>
+								</li>
+							</ul>
+						</div>
+
+						<div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+							<h4>Contact Us</h4>
+							<p>
+								EL Ghazella 			
+								<br>
+								Ariena, 5022<br>
+								Tunisie
+								<br><br>
+								<strong>Telephone:</strong>
+								+216 25 363 115<br>
+								<strong>Email:</strong>
+								Contact@amena.com<br>
+							</p>
+=======
 							<div class="col-lg-2 col-6 footer-links">
 								<h4>Useful Links</h4>
 								<ul>
@@ -226,11 +372,28 @@
 								</p>
 
 							</div>
+>>>>>>> 1b9c83bb09edfda666f414a2ec8b0b82973f62fa
 
 						</div>
 					</div>
 				</div>
 
+<<<<<<< HEAD
+			<div class="footer-legal">
+				<div class="container">
+					<div class="copyright">
+						&copy; Copyright
+						<strong>
+							<span>Amena</span>
+						</strong>. Tous les droits sont conservées 
+					</div>
+					<div class="credits">
+						<!-- All the links in the footer should remain intact. -->
+						<!-- You can delete the links only if you purchased the pro version. -->
+						<!-- Licensing information: https://bootstrapmade.com/license/ -->
+						<!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nova-bootstrap-business-template/ -->
+
+=======
 				<div class="footer-legal">
 					<div class="container">
 						<div class="copyright">
@@ -243,6 +406,7 @@
 							Designed by<a href="https://bootstrapmade.com/">
 								BootstrapMade</a>
 						</div>
+>>>>>>> 1b9c83bb09edfda666f414a2ec8b0b82973f62fa
 					</div>
 				</div>
 			</footer>
