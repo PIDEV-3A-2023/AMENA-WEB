@@ -38,6 +38,18 @@
             "./migrations/.gitignore"
         ]
     },
+    "easycorp/easyadmin-bundle": {
+        "version": "4.9999999",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "3.0",
+            "ref": "b131e6cbfe1b898a508987851963fff485986285"
+        }
+    },
+    "knplabs/knp-snappy-bundle": {
+        "version": "dev-master"
+    },
     "phpunit/phpunit": {
         "version": "9.6",
         "recipe": {
@@ -242,6 +254,15 @@
             "./templates/base.html.twig"
         ]
     },
+    "symfony/twilio-notifier": {
+        "version": "5.4",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "5.0",
+            "ref": "eb697fe6a90b4972a4a544b4f7ea56520d29d9e9"
+        }
+    },
     "symfony/validator": {
         "version": "5.4",
         "recipe": {
@@ -278,6 +299,9 @@
         "files": [
             "./config/packages/messenger.yaml"
         ]
+    },
+    "tattali/calendar-bundle": {
+        "version": "dev-master"
     },
     "twig/extra-bundle": {
         "version": "v3.5.1"
