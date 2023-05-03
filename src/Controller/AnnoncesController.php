@@ -64,7 +64,11 @@ class AnnoncesController extends AbstractController
         $censor = new CensorWords;
         $langs = array('fr', 'it', 'en-us', 'en-uk', 'de', 'es','tn');
         $badwords = $censor->setDictionary($langs);
+<<<<<<< Updated upstream
         $censor->setReplaceChar("");
+=======
+        $censor->setReplaceChar("*");
+>>>>>>> Stashed changes
         $censoredString = $censor->censorString($annonce->getDescription());
         $annonce->setDescription($censoredString['clean']);
 

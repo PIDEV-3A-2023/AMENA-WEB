@@ -25,13 +25,21 @@ class __TwigTemplate_34e9de8f519acd1181c1f0b7cf8ed27a extends Template
         $this->source = $this->getSourceContext();
 
         $this->blocks = [
+<<<<<<< Updated upstream
+=======
+            'title' => [$this, 'block_title'],
+>>>>>>> Stashed changes
             'body' => [$this, 'block_body'],
         ];
     }
 
     protected function doGetParent(array $context)
     {
+<<<<<<< Updated upstream
         // line 14
+=======
+        // line 1
+>>>>>>> Stashed changes
         return "base.html.twig";
     }
 
@@ -44,7 +52,11 @@ class __TwigTemplate_34e9de8f519acd1181c1f0b7cf8ed27a extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "admin/edit.html.twig"));
 
+<<<<<<< Updated upstream
         $this->parent = $this->loadTemplate("base.html.twig", "admin/edit.html.twig", 14);
+=======
+        $this->parent = $this->loadTemplate("base.html.twig", "admin/edit.html.twig", 1);
+>>>>>>> Stashed changes
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
@@ -54,7 +66,30 @@ class __TwigTemplate_34e9de8f519acd1181c1f0b7cf8ed27a extends Template
 
     }
 
+<<<<<<< Updated upstream
     // line 16
+=======
+    // line 3
+    public function block_title($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
+
+        echo "Edit User";
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+    }
+
+    // line 5
+>>>>>>> Stashed changes
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -64,6 +99,7 @@ class __TwigTemplate_34e9de8f519acd1181c1f0b7cf8ed27a extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
+<<<<<<< Updated upstream
         // line 17
         echo "<br>
 <br>
@@ -177,6 +213,25 @@ class __TwigTemplate_34e9de8f519acd1181c1f0b7cf8ed27a extends Template
     </div>
   </div>
 </div>
+=======
+        // line 6
+        echo "    <h1>Edit User</h1>
+
+    ";
+        // line 8
+        echo twig_include($this->env, $context, "admin/_form.html.twig", ["button_label" => "Update"]);
+        echo "
+
+    <a href=\"";
+        // line 10
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_admin_index");
+        echo "\">back to list</a>
+
+    ";
+        // line 12
+        echo twig_include($this->env, $context, "admin/_delete_form.html.twig");
+        echo "
+>>>>>>> Stashed changes
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -198,12 +253,20 @@ class __TwigTemplate_34e9de8f519acd1181c1f0b7cf8ed27a extends Template
 
     public function getDebugInfo()
     {
+<<<<<<< Updated upstream
         return array (  175 => 60,  167 => 55,  159 => 50,  152 => 46,  148 => 45,  144 => 44,  140 => 43,  136 => 42,  132 => 41,  128 => 40,  124 => 39,  120 => 38,  116 => 37,  112 => 36,  108 => 35,  104 => 34,  100 => 33,  96 => 32,  92 => 31,  87 => 29,  77 => 24,  68 => 17,  58 => 16,  35 => 14,);
+=======
+        return array (  102 => 12,  97 => 10,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+>>>>>>> Stashed changes
     }
 
     public function getSourceContext()
     {
+<<<<<<< Updated upstream
         return new Source("{# {% extends 'base.html.twig' %}
+=======
+        return new Source("{% extends 'base.html.twig' %}
+>>>>>>> Stashed changes
 
 {% block title %}Edit User{% endblock %}
 
@@ -216,6 +279,7 @@ class __TwigTemplate_34e9de8f519acd1181c1f0b7cf8ed27a extends Template
 
     {{ include('admin/_delete_form.html.twig') }}
 {% endblock %}
+<<<<<<< Updated upstream
  #}{% extends 'base.html.twig' %}
 
 {% block body %}
@@ -267,6 +331,8 @@ class __TwigTemplate_34e9de8f519acd1181c1f0b7cf8ed27a extends Template
   </div>
 </div>
 {% endblock %}
+=======
+>>>>>>> Stashed changes
 ", "admin/edit.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\admin\\edit.html.twig");
     }
 }

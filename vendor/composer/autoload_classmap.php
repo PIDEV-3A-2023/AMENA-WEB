@@ -1489,6 +1489,7 @@ return array(
     'Endroid\\QrCode\\Writer\\WriterInterface' => $vendorDir . '/endroid/qr-code/src/Writer/WriterInterface.php',
     'IntlDateFormatter' => $vendorDir . '/symfony/intl/Resources/stubs/IntlDateFormatter.php',
     'JsonException' => $vendorDir . '/symfony/polyfill-php73/Resources/stubs/JsonException.php',
+<<<<<<< Updated upstream
     'Karser\\Recaptcha3Bundle\\DependencyInjection\\Configuration' => $vendorDir . '/karser/karser-recaptcha3-bundle/DependencyInjection/Configuration.php',
     'Karser\\Recaptcha3Bundle\\DependencyInjection\\KarserRecaptcha3Extension' => $vendorDir . '/karser/karser-recaptcha3-bundle/DependencyInjection/KarserRecaptcha3Extension.php',
     'Karser\\Recaptcha3Bundle\\Form\\Recaptcha3Type' => $vendorDir . '/karser/karser-recaptcha3-bundle/Form/Recaptcha3Type.php',
@@ -1506,6 +1507,8 @@ return array(
     'Karser\\Recaptcha3Bundle\\Tests\\fixtures\\RecaptchaMock' => $vendorDir . '/karser/karser-recaptcha3-bundle/Tests/fixtures/RecaptchaMock.php',
     'Karser\\Recaptcha3Bundle\\Validator\\Constraints\\Recaptcha3' => $vendorDir . '/karser/karser-recaptcha3-bundle/Validator/Constraints/Recaptcha3.php',
     'Karser\\Recaptcha3Bundle\\Validator\\Constraints\\Recaptcha3Validator' => $vendorDir . '/karser/karser-recaptcha3-bundle/Validator/Constraints/Recaptcha3Validator.php',
+=======
+>>>>>>> Stashed changes
     'Knp\\Bundle\\PaginatorBundle\\Definition\\AbstractPaginatorAware' => $vendorDir . '/knplabs/knp-paginator-bundle/src/Definition/AbstractPaginatorAware.php',
     'Knp\\Bundle\\PaginatorBundle\\Definition\\PaginatorAware' => $vendorDir . '/knplabs/knp-paginator-bundle/src/Definition/PaginatorAware.php',
     'Knp\\Bundle\\PaginatorBundle\\Definition\\PaginatorAwareInterface' => $vendorDir . '/knplabs/knp-paginator-bundle/src/Definition/PaginatorAwareInterface.php',
@@ -2443,6 +2446,7 @@ return array(
     'Psr\\Log\\LoggerInterface' => $vendorDir . '/psr/log/src/LoggerInterface.php',
     'Psr\\Log\\LoggerTrait' => $vendorDir . '/psr/log/src/LoggerTrait.php',
     'Psr\\Log\\NullLogger' => $vendorDir . '/psr/log/src/NullLogger.php',
+<<<<<<< Updated upstream
     'ReCaptcha\\ReCaptcha' => $vendorDir . '/google/recaptcha/src/ReCaptcha/ReCaptcha.php',
     'ReCaptcha\\RequestMethod' => $vendorDir . '/google/recaptcha/src/ReCaptcha/RequestMethod.php',
     'ReCaptcha\\RequestMethod\\Curl' => $vendorDir . '/google/recaptcha/src/ReCaptcha/RequestMethod/Curl.php',
@@ -2452,6 +2456,8 @@ return array(
     'ReCaptcha\\RequestMethod\\SocketPost' => $vendorDir . '/google/recaptcha/src/ReCaptcha/RequestMethod/SocketPost.php',
     'ReCaptcha\\RequestParameters' => $vendorDir . '/google/recaptcha/src/ReCaptcha/RequestParameters.php',
     'ReCaptcha\\Response' => $vendorDir . '/google/recaptcha/src/ReCaptcha/Response.php',
+=======
+>>>>>>> Stashed changes
     'ReturnTypeWillChange' => $vendorDir . '/symfony/polyfill-php81/Resources/stubs/ReturnTypeWillChange.php',
     'SebastianBergmann\\CliParser\\AmbiguousOptionException' => $vendorDir . '/sebastian/cli-parser/src/exceptions/AmbiguousOptionException.php',
     'SebastianBergmann\\CliParser\\Exception' => $vendorDir . '/sebastian/cli-parser/src/exceptions/Exception.php',

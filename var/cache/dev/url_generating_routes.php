@@ -22,7 +22,11 @@ return [
     'app_colis_show' => [['id'], ['_controller' => 'App\\Controller\\ColisController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/colis']], [], [], []],
     'app_colis_edit' => [['id'], ['_controller' => 'App\\Controller\\ColisController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id', true], ['text', '/colis']], [], [], []],
     'app_colis_delete' => [['id'], ['_controller' => 'App\\Controller\\ColisController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/colis']], [], [], []],
+<<<<<<< Updated upstream
     'app_error' => [[], ['_controller' => 'App\\Controller\\ErrorController::show'], [], [['text', '/error']], [], [], []],
+=======
+    'app_error' => [[], ['_controller' => 'App\\Controller\\ErrorController::index'], [], [['text', '/error']], [], [], []],
+>>>>>>> Stashed changes
     'evaluation' => [[], ['_controller' => 'App\\Controller\\EvaluationController::evaluation'], [], [['text', '/evaluation']], [], [], []],
     'app_login' => [[], ['_controller' => 'App\\Controller\\LoginController::index'], [], [['text', '/login']], [], [], []],
     'app_message_index' => [[], ['_controller' => 'App\\Controller\\MessageController::index'], [], [['text', '/message/']], [], [], []],

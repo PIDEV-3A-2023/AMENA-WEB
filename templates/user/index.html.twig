@@ -37,9 +37,16 @@
 
 					<div class="card-body row">
 						<div class="col-6">
+<<<<<<< Updated upstream
 							<img src="{{u.image}}" alt="Admin" class="rounded-circle p-1 bg-primary" width="200" height="200">
 							<div class="portfolio-info">
 								
+=======
+							<img src="{{u.image}}" alt="Admin" class="rounded-circle p-1 bg-primary" width="180" height="180">
+							<div class="portfolio-info">
+								<h4>{{u.id}}fix</h4>
+								<p>{{u.id}} fix</p>
+>>>>>>> Stashed changes
 								<a href="{{u.image}}" title="{{u.nom}}" data-gallery="portfolio-gallery-product" class="glightbox preview-link">
 									<i class="bi bi-zoom-in"></i>
 								</a>
@@ -51,9 +58,15 @@
 						<div class="col-6 card-title align-self-center mb-0">
 							<h5>{{ u.nom}}</h5>
 							<p class="m-0">
+<<<<<<< Updated upstream
 							
 											<p class="m-0">{{ u.roles[0] }}</p>
 										
+=======
+								{% if user.roles is defined %}
+									<p class="m-0">{{ user.roles ? user.roles|json_encode : '' }}</p>
+								{% endif %}
+>>>>>>> Stashed changes
 							</p>
 						</div>
 					</div>
@@ -161,10 +174,16 @@
 </div>{% endblock %}{% block javascripts %}
 {{ parent() }}
 
+<<<<<<< Updated upstream
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 {# <script src="{{asset('front/assets/js/search.js')}}"></script>
  #}<script>
+=======
+
+<script src="{{asset('front/assets/js/search.js')}}"></script>
+<script>
+>>>>>>> Stashed changes
 	$(document).ready(function () {
 $("#search").keyup(function () {
 var value = $(this).val();

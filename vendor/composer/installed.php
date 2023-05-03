@@ -217,6 +217,7 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+<<<<<<< Updated upstream
         'google/recaptcha' => array(
             'pretty_version' => '1.3.0',
             'version' => '1.3.0.0',
@@ -235,6 +236,8 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+=======
+>>>>>>> Stashed changes
         'knplabs/knp-components' => array(
             'pretty_version' => 'v3.6.0',
             'version' => '3.6.0.0',

@@ -125,6 +125,7 @@ class __TwigTemplate_b0e8195a442e286a60dcad1f1a75b8fe extends Template
 \t\t\t\t\t\t\t<img src=\"";
             // line 40
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["u"], "image", [], "any", false, false, false, 40), "html", null, true);
+<<<<<<< Updated upstream
             echo "\" alt=\"Admin\" class=\"rounded-circle p-1 bg-primary\" width=\"200\" height=\"200\">
 \t\t\t\t\t\t\t<div class=\"portfolio-info\">
 \t\t\t\t\t\t\t\t
@@ -133,6 +134,23 @@ class __TwigTemplate_b0e8195a442e286a60dcad1f1a75b8fe extends Template
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["u"], "image", [], "any", false, false, false, 43), "html", null, true);
             echo "\" title=\"";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["u"], "nom", [], "any", false, false, false, 43), "html", null, true);
+=======
+            echo "\" alt=\"Admin\" class=\"rounded-circle p-1 bg-primary\" width=\"180\" height=\"180\">
+\t\t\t\t\t\t\t<div class=\"portfolio-info\">
+\t\t\t\t\t\t\t\t<h4>";
+            // line 42
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["u"], "id", [], "any", false, false, false, 42), "html", null, true);
+            echo "fix</h4>
+\t\t\t\t\t\t\t\t<p>";
+            // line 43
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["u"], "id", [], "any", false, false, false, 43), "html", null, true);
+            echo " fix</p>
+\t\t\t\t\t\t\t\t<a href=\"";
+            // line 44
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["u"], "image", [], "any", false, false, false, 44), "html", null, true);
+            echo "\" title=\"";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["u"], "nom", [], "any", false, false, false, 44), "html", null, true);
+>>>>>>> Stashed changes
             echo "\" data-gallery=\"portfolio-gallery-product\" class=\"glightbox preview-link\">
 \t\t\t\t\t\t\t\t\t<i class=\"bi bi-zoom-in\"></i>
 \t\t\t\t\t\t\t\t</a>
@@ -143,6 +161,7 @@ class __TwigTemplate_b0e8195a442e286a60dcad1f1a75b8fe extends Template
 \t\t\t\t\t\t</div>
 \t\t\t\t\t\t<div class=\"col-6 card-title align-self-center mb-0\">
 \t\t\t\t\t\t\t<h5>";
+<<<<<<< Updated upstream
             // line 52
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["u"], "nom", [], "any", false, false, false, 52), "html", null, true);
             echo "</h5>
@@ -154,29 +173,61 @@ class __TwigTemplate_b0e8195a442e286a60dcad1f1a75b8fe extends Template
             echo "</p>
 \t\t\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t</p>
+=======
+            // line 53
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["u"], "nom", [], "any", false, false, false, 53), "html", null, true);
+            echo "</h5>
+\t\t\t\t\t\t\t<p class=\"m-0\">
+\t\t\t\t\t\t\t\t";
+            // line 55
+            if (twig_get_attribute($this->env, $this->source, ($context["user"] ?? null), "roles", [], "any", true, true, false, 55)) {
+                // line 56
+                echo "\t\t\t\t\t\t\t\t\t<p class=\"m-0\">";
+                ((twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 56, $this->source); })()), "roles", [], "any", false, false, false, 56)) ? (print (twig_escape_filter($this->env, json_encode(twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 56, $this->source); })()), "roles", [], "any", false, false, false, 56)), "html", null, true))) : (print ("")));
+                echo "</p>
+\t\t\t\t\t\t\t\t";
+            }
+            // line 58
+            echo "\t\t\t\t\t\t\t</p>
+>>>>>>> Stashed changes
 \t\t\t\t\t\t</div>
 \t\t\t\t\t</div>
 \t\t\t\t\t<ul class=\"list-group list-group-flush\">
 \t\t\t\t\t\t<li class=\"list-group-item\">
 \t\t\t\t\t\t\t<i class=\"fa fa-envelope float-right\"></i>Email :
 \t\t\t\t\t\t\t<a href=\"#\">";
+<<<<<<< Updated upstream
             // line 63
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["u"], "email", [], "any", false, false, false, 63), "html", null, true);
+=======
+            // line 64
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["u"], "email", [], "any", false, false, false, 64), "html", null, true);
+>>>>>>> Stashed changes
             echo "</a>
 \t\t\t\t\t\t</li>
 \t\t\t\t\t\t<li class=\"list-group-item\">
 \t\t\t\t\t\t\t<i class=\"fa fa-phone float-right\"></i>Phone :
 \t\t\t\t\t\t\t";
+<<<<<<< Updated upstream
             // line 67
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["u"], "numtel", [], "any", false, false, false, 67), "html", null, true);
+=======
+            // line 68
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["u"], "numtel", [], "any", false, false, false, 68), "html", null, true);
+>>>>>>> Stashed changes
             echo "
 \t\t\t\t\t\t</li>
 \t\t\t\t\t</ul>
 
 \t\t\t\t\t<div class=\"float-right btn-group btn-group-sm\">
 \t\t\t\t\t\t<a href=\"";
+<<<<<<< Updated upstream
             // line 72
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_showp", ["id" => twig_get_attribute($this->env, $this->source, $context["u"], "id", [], "any", false, false, false, 72)]), "html", null, true);
+=======
+            // line 73
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_showp", ["id" => twig_get_attribute($this->env, $this->source, $context["u"], "id", [], "any", false, false, false, 73)]), "html", null, true);
+>>>>>>> Stashed changes
             echo "\" class=\"btn btn-outline-primary\">Profil
 \t\t\t\t\t\t\t<i class=\"fa fa-user-circle\"></i>
 
@@ -184,11 +235,19 @@ class __TwigTemplate_b0e8195a442e286a60dcad1f1a75b8fe extends Template
 \t\t\t\t\t</a>
 
 \t\t\t\t\t";
+<<<<<<< Updated upstream
             // line 89
             echo "
 \t\t\t\t\t<a href=\"";
             // line 90
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_message_new", ["id" => twig_get_attribute($this->env, $this->source, $context["u"], "id", [], "any", false, false, false, 90)]), "html", null, true);
+=======
+            // line 90
+            echo "
+\t\t\t\t\t<a href=\"";
+            // line 91
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_message_new", ["id" => twig_get_attribute($this->env, $this->source, $context["u"], "id", [], "any", false, false, false, 91)]), "html", null, true);
+>>>>>>> Stashed changes
             echo "\" class=\"btn btn-outline-primary\">Message
 \t\t\t\t\t\t<i class=\"fa fa-m\"></i>
 \t\t\t\t\t</a>
@@ -203,13 +262,22 @@ class __TwigTemplate_b0e8195a442e286a60dcad1f1a75b8fe extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['u'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
+<<<<<<< Updated upstream
         // line 100
+=======
+        // line 101
+>>>>>>> Stashed changes
         echo "
 
 \t\t<div class=\"navigation\">
 \t\t\t";
+<<<<<<< Updated upstream
         // line 103
         echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["pagination"]) || array_key_exists("pagination", $context) ? $context["pagination"] : (function () { throw new RuntimeError('Variable "pagination" does not exist.', 103, $this->source); })()));
+=======
+        // line 104
+        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["pagination"]) || array_key_exists("pagination", $context) ? $context["pagination"] : (function () { throw new RuntimeError('Variable "pagination" does not exist.', 104, $this->source); })()));
+>>>>>>> Stashed changes
         echo "
 \t\t</div>
 
@@ -244,6 +312,7 @@ class __TwigTemplate_b0e8195a442e286a60dcad1f1a75b8fe extends Template
 \t\t</thead>
 \t\t<tbody id=\"all\">
 \t\t\t";
+<<<<<<< Updated upstream
         // line 136
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["pagination"]) || array_key_exists("pagination", $context) ? $context["pagination"] : (function () { throw new RuntimeError('Variable "pagination" does not exist.', 136, $this->source); })()));
@@ -254,23 +323,46 @@ class __TwigTemplate_b0e8195a442e286a60dcad1f1a75b8fe extends Template
 \t\t\t\t\t\t";
             // line 139
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["u"], "id", [], "any", false, false, false, 139), "html", null, true);
+=======
+        // line 137
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["pagination"]) || array_key_exists("pagination", $context) ? $context["pagination"] : (function () { throw new RuntimeError('Variable "pagination" does not exist.', 137, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["u"]) {
+            // line 138
+            echo "\t\t\t\t<tr>
+\t\t\t\t\t<td>
+\t\t\t\t\t\t";
+            // line 140
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["u"], "id", [], "any", false, false, false, 140), "html", null, true);
+>>>>>>> Stashed changes
             echo "
 \t\t\t\t\t</td>
 \t\t\t\t\t<td>
 \t\t\t\t\t\t";
+<<<<<<< Updated upstream
             // line 142
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["u"], "email", [], "any", false, false, false, 142), "html", null, true);
+=======
+            // line 143
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["u"], "email", [], "any", false, false, false, 143), "html", null, true);
+>>>>>>> Stashed changes
             echo "
 \t\t\t\t\t</td>
 \t\t\t\t\t<td>
 \t\t\t\t\t\t";
+<<<<<<< Updated upstream
             // line 145
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["u"], "password", [], "any", false, false, false, 145), "html", null, true);
+=======
+            // line 146
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["u"], "password", [], "any", false, false, false, 146), "html", null, true);
+>>>>>>> Stashed changes
             echo "
 \t\t\t\t\t</td>
 
 \t\t\t\t\t<td>
 \t\t\t\t\t\t<a href=\"";
+<<<<<<< Updated upstream
             // line 149
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["u"], "id", [], "any", false, false, false, 149)]), "html", null, true);
             echo "\">
@@ -278,6 +370,15 @@ class __TwigTemplate_b0e8195a442e286a60dcad1f1a75b8fe extends Template
 \t\t\t\t\t\t<a href=\"";
             // line 151
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_delete", ["id" => twig_get_attribute($this->env, $this->source, $context["u"], "id", [], "any", false, false, false, 151)]), "html", null, true);
+=======
+            // line 150
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["u"], "id", [], "any", false, false, false, 150)]), "html", null, true);
+            echo "\">
+\t\t\t\t\t\t\tmodifier</a>
+\t\t\t\t\t\t<a href=\"";
+            // line 152
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_delete", ["id" => twig_get_attribute($this->env, $this->source, $context["u"], "id", [], "any", false, false, false, 152)]), "html", null, true);
+>>>>>>> Stashed changes
             echo "\">
 \t\t\t\t\t\t\tsupprimer</a>
 \t\t\t\t\t</td>
@@ -287,7 +388,11 @@ class __TwigTemplate_b0e8195a442e286a60dcad1f1a75b8fe extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['u'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
+<<<<<<< Updated upstream
         // line 156
+=======
+        // line 157
+>>>>>>> Stashed changes
         echo "\t\t</tbody>
 \t\t<tbody id=\"searchtab\">
 \t\t\t<td>ss</td>
@@ -302,7 +407,11 @@ class __TwigTemplate_b0e8195a442e286a60dcad1f1a75b8fe extends Template
 
     }
 
+<<<<<<< Updated upstream
     // line 161
+=======
+    // line 162
+>>>>>>> Stashed changes
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -312,6 +421,7 @@ class __TwigTemplate_b0e8195a442e286a60dcad1f1a75b8fe extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
+<<<<<<< Updated upstream
         // line 162
         $this->displayParentBlock("javascripts", $context, $blocks);
         echo "
@@ -321,6 +431,18 @@ class __TwigTemplate_b0e8195a442e286a60dcad1f1a75b8fe extends Template
 ";
         // line 167
         echo "<script>
+=======
+        // line 163
+        $this->displayParentBlock("javascripts", $context, $blocks);
+        echo "
+
+
+<script src=\"";
+        // line 166
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front/assets/js/search.js"), "html", null, true);
+        echo "\"></script>
+<script>
+>>>>>>> Stashed changes
 \t\$(document).ready(function () {
 \$(\"#search\").keyup(function () {
 var value = \$(this).val();
@@ -402,7 +524,11 @@ console.log(\"test\")
 
     public function getDebugInfo()
     {
+<<<<<<< Updated upstream
         return array (  352 => 191,  332 => 174,  323 => 167,  316 => 162,  306 => 161,  291 => 156,  280 => 151,  275 => 149,  268 => 145,  262 => 142,  256 => 139,  252 => 137,  248 => 136,  212 => 103,  207 => 100,  191 => 90,  188 => 89,  179 => 72,  171 => 67,  164 => 63,  153 => 55,  147 => 52,  133 => 43,  127 => 40,  120 => 35,  116 => 34,  111 => 31,  109 => 30,  105 => 28,  103 => 27,  98 => 24,  90 => 6,  80 => 5,  60 => 2,  37 => 1,);
+=======
+        return array (  364 => 191,  344 => 174,  333 => 166,  327 => 163,  317 => 162,  302 => 157,  291 => 152,  286 => 150,  279 => 146,  273 => 143,  267 => 140,  263 => 138,  259 => 137,  223 => 104,  218 => 101,  202 => 91,  199 => 90,  190 => 73,  182 => 68,  175 => 64,  167 => 58,  161 => 56,  159 => 55,  154 => 53,  140 => 44,  136 => 43,  132 => 42,  127 => 40,  120 => 35,  116 => 34,  111 => 31,  109 => 30,  105 => 28,  103 => 27,  98 => 24,  90 => 6,  80 => 5,  60 => 2,  37 => 1,);
+>>>>>>> Stashed changes
     }
 
     public function getSourceContext()
@@ -446,9 +572,16 @@ console.log(\"test\")
 
 \t\t\t\t\t<div class=\"card-body row\">
 \t\t\t\t\t\t<div class=\"col-6\">
+<<<<<<< Updated upstream
 \t\t\t\t\t\t\t<img src=\"{{u.image}}\" alt=\"Admin\" class=\"rounded-circle p-1 bg-primary\" width=\"200\" height=\"200\">
 \t\t\t\t\t\t\t<div class=\"portfolio-info\">
 \t\t\t\t\t\t\t\t
+=======
+\t\t\t\t\t\t\t<img src=\"{{u.image}}\" alt=\"Admin\" class=\"rounded-circle p-1 bg-primary\" width=\"180\" height=\"180\">
+\t\t\t\t\t\t\t<div class=\"portfolio-info\">
+\t\t\t\t\t\t\t\t<h4>{{u.id}}fix</h4>
+\t\t\t\t\t\t\t\t<p>{{u.id}} fix</p>
+>>>>>>> Stashed changes
 \t\t\t\t\t\t\t\t<a href=\"{{u.image}}\" title=\"{{u.nom}}\" data-gallery=\"portfolio-gallery-product\" class=\"glightbox preview-link\">
 \t\t\t\t\t\t\t\t\t<i class=\"bi bi-zoom-in\"></i>
 \t\t\t\t\t\t\t\t</a>
@@ -460,9 +593,15 @@ console.log(\"test\")
 \t\t\t\t\t\t<div class=\"col-6 card-title align-self-center mb-0\">
 \t\t\t\t\t\t\t<h5>{{ u.nom}}</h5>
 \t\t\t\t\t\t\t<p class=\"m-0\">
+<<<<<<< Updated upstream
 \t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t\t\t<p class=\"m-0\">{{ u.roles[0] }}</p>
 \t\t\t\t\t\t\t\t\t\t
+=======
+\t\t\t\t\t\t\t\t{% if user.roles is defined %}
+\t\t\t\t\t\t\t\t\t<p class=\"m-0\">{{ user.roles ? user.roles|json_encode : '' }}</p>
+\t\t\t\t\t\t\t\t{% endif %}
+>>>>>>> Stashed changes
 \t\t\t\t\t\t\t</p>
 \t\t\t\t\t\t</div>
 \t\t\t\t\t</div>
@@ -570,10 +709,16 @@ console.log(\"test\")
 </div>{% endblock %}{% block javascripts %}
 {{ parent() }}
 
+<<<<<<< Updated upstream
 \t<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js\"></script>
 
 {# <script src=\"{{asset('front/assets/js/search.js')}}\"></script>
  #}<script>
+=======
+
+<script src=\"{{asset('front/assets/js/search.js')}}\"></script>
+<script>
+>>>>>>> Stashed changes
 \t\$(document).ready(function () {
 \$(\"#search\").keyup(function () {
 var value = \$(this).val();

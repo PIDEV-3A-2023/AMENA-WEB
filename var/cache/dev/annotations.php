@@ -114,8 +114,13 @@ return [[
 '[C]App%5CController%5CColisController%24security' => 1,
 'App%5CController%5CErrorController' => 0,
 '[C]App%5CController%5CErrorController' => 1,
+<<<<<<< Updated upstream
 'App%5CController%5CErrorController%23show' => 0,
 '[C]App%5CController%5CErrorController%23show' => 1,
+=======
+'App%5CController%5CErrorController%23index' => 0,
+'[C]App%5CController%5CErrorController%23index' => 1,
+>>>>>>> Stashed changes
 'App%5CController%5CEvaluationController' => 0,
 '[C]App%5CController%5CEvaluationController' => 1,
 'App%5CController%5CEvaluationController%23evaluation' => 2,
@@ -1450,7 +1455,11 @@ return [[
 ], [
 
 0 => [],
+<<<<<<< Updated upstream
 1 => 1682690095,
+=======
+1 => 1682605874,
+>>>>>>> Stashed changes
 2 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [

@@ -91,12 +91,24 @@ class __TwigTemplate_a59f7eb0250d68a18d81d0558cf83408 extends Template
 <br>
 <br>
 <br>
+<<<<<<< Updated upstream
 ";
         // line 12
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 12, $this->source); })()), "flashes", [0 => "reset_password_error"], "method", false, false, false, 12));
         foreach ($context['_seq'] as $context["_key"] => $context["flash_error"]) {
             // line 13
+=======
+<br>
+<br>
+
+    ";
+        // line 15
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 15, $this->source); })()), "flashes", [0 => "reset_password_error"], "method", false, false, false, 15));
+        foreach ($context['_seq'] as $context["_key"] => $context["flash_error"]) {
+            // line 16
+>>>>>>> Stashed changes
             echo "        <div class=\"alert alert-danger\" role=\"alert\">";
             echo twig_escape_filter($this->env, $context["flash_error"], "html", null, true);
             echo "</div>
@@ -105,6 +117,7 @@ class __TwigTemplate_a59f7eb0250d68a18d81d0558cf83408 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['flash_error'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
+<<<<<<< Updated upstream
         // line 15
         echo "<div class=\"container\">
     <div class=\"row justify-content-center mt-5\">
@@ -150,6 +163,31 @@ class __TwigTemplate_a59f7eb0250d68a18d81d0558cf83408 extends Template
         </div>
     </div>
 </div>
+=======
+        // line 18
+        echo "    <h1>Reset your password</h1>
+
+    ";
+        // line 20
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["requestForm"]) || array_key_exists("requestForm", $context) ? $context["requestForm"] : (function () { throw new RuntimeError('Variable "requestForm" does not exist.', 20, $this->source); })()), 'form_start');
+        echo "
+        ";
+        // line 21
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["requestForm"]) || array_key_exists("requestForm", $context) ? $context["requestForm"] : (function () { throw new RuntimeError('Variable "requestForm" does not exist.', 21, $this->source); })()), "email", [], "any", false, false, false, 21), 'row');
+        echo "
+        <div>
+            <small>
+                Enter your email address and we will send you a
+                link to reset your password.
+            </small>
+        </div>
+
+        <button class=\"btn btn-primary\">Send password reset email</button>
+    ";
+        // line 30
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["requestForm"]) || array_key_exists("requestForm", $context) ? $context["requestForm"] : (function () { throw new RuntimeError('Variable "requestForm" does not exist.', 30, $this->source); })()), 'form_end');
+        echo "
+>>>>>>> Stashed changes
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -171,7 +209,11 @@ class __TwigTemplate_a59f7eb0250d68a18d81d0558cf83408 extends Template
 
     public function getDebugInfo()
     {
+<<<<<<< Updated upstream
         return array (  148 => 31,  139 => 25,  135 => 24,  130 => 22,  127 => 21,  118 => 19,  114 => 18,  109 => 15,  100 => 13,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+=======
+        return array (  132 => 30,  120 => 21,  116 => 20,  112 => 18,  103 => 16,  99 => 15,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+>>>>>>> Stashed changes
     }
 
     public function getSourceContext()
@@ -187,6 +229,7 @@ class __TwigTemplate_a59f7eb0250d68a18d81d0558cf83408 extends Template
 <br>
 <br>
 <br>
+<<<<<<< Updated upstream
 {% for flash_error in app.flashes('reset_password_error') %}
         <div class=\"alert alert-danger\" role=\"alert\">{{ flash_error }}</div>
     {% endfor %}
@@ -210,6 +253,27 @@ class __TwigTemplate_a59f7eb0250d68a18d81d0558cf83408 extends Template
         </div>
     </div>
 </div>
+=======
+<br>
+<br>
+
+    {% for flash_error in app.flashes('reset_password_error') %}
+        <div class=\"alert alert-danger\" role=\"alert\">{{ flash_error }}</div>
+    {% endfor %}
+    <h1>Reset your password</h1>
+
+    {{ form_start(requestForm) }}
+        {{ form_row(requestForm.email) }}
+        <div>
+            <small>
+                Enter your email address and we will send you a
+                link to reset your password.
+            </small>
+        </div>
+
+        <button class=\"btn btn-primary\">Send password reset email</button>
+    {{ form_end(requestForm) }}
+>>>>>>> Stashed changes
 {% endblock %}
 ", "reset_password/request.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\reset_password\\request.html.twig");
     }

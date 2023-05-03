@@ -95,6 +95,7 @@ class __TwigTemplate_b83e77c6592b3f56f8c16244c6fed51c extends Template
 \t<br>
 \t<br>
 \t<h1>User index</h1>
+<<<<<<< Updated upstream
 
 <div class=\"pagination\">
         ";
@@ -258,10 +259,143 @@ class __TwigTemplate_b83e77c6592b3f56f8c16244c6fed51c extends Template
 \t\t\t\t\t\t\t\t\t\t<td colspan=\"18\">no records found</td>
 \t\t\t\t\t\t\t\t\t</tr>
 \t\t\t\t\t\t\t\t";
+=======
+\t<input type=\"text\" id=\"search\" class=\"form-control\" placeholder=\"Search\"><br>
+\t<table border=\"1\" id=\"t\" class=\"table\">
+\t\t<thead>
+\t\t\t<tr>
+\t\t\t\t<td>Id</td>
+\t\t\t\t<td>Email</td>
+\t\t\t\t<td>Roles</td>
+\t\t\t\t<td>Password</td>
+\t\t\t\t<td>Nom</td>
+\t\t\t\t<td>Prenom</td>
+\t\t\t\t<td>Adress</td>
+\t\t\t\t<td>Cin</td>
+\t\t\t\t<td>Date_naissance</td>
+\t\t\t\t<td>Date_creation_c</td>
+\t\t\t\t<td>Status</td>
+\t\t\t\t<td>Token</td>
+\t\t\t\t<td>Score</td>
+\t\t\t\t<td>Numtel</td>
+\t\t\t\t<td>Image</td>
+\t\t\t\t<td>Compte_ex</td>
+\t\t\t\t<td>Token_ex</td>
+\t\t\t\t<td>actions</td>
+\t\t\t</tr>
+\t\t</thead>
+\t\t<tbody id=\"all\">
+\t\t\t";
+        // line 40
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new RuntimeError('Variable "users" does not exist.', 40, $this->source); })()));
+        $context['_iterated'] = false;
+        foreach ($context['_seq'] as $context["_key"] => $context["user"]) {
+            // line 41
+            echo "
+\t\t\t\t<tr>
+\t\t\t\t\t<td>";
+            // line 43
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 43), "html", null, true);
+            echo "</td>
+\t\t\t\t\t<td>";
+            // line 44
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "email", [], "any", false, false, false, 44), "html", null, true);
+            echo "</td>
+\t\t\t\t\t<td>
+\t\t\t\t\t\t";
+            // line 46
+            if (twig_get_attribute($this->env, $this->source, $context["user"], "roles", [], "any", true, true, false, 46)) {
+                // line 47
+                echo "\t\t\t\t\t\t\t<p class=\"m-0\">";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["user"], "roles", [], "any", false, false, false, 47), 0, [], "array", false, false, false, 47), "html", null, true);
+                echo "</p>
+\t\t\t\t\t\t";
+            }
+            // line 49
+            echo "\t\t\t\t\t</td>
+\t\t\t\t\t<td>";
+            // line 50
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "password", [], "any", false, false, false, 50), "html", null, true);
+            echo "</td>
+\t\t\t\t\t<td>";
+            // line 51
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "nom", [], "any", false, false, false, 51), "html", null, true);
+            echo "</td>
+\t\t\t\t\t<td>";
+            // line 52
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "prenom", [], "any", false, false, false, 52), "html", null, true);
+            echo "</td>
+\t\t\t\t\t<td>";
+            // line 53
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "adress", [], "any", false, false, false, 53), "html", null, true);
+            echo "</td>
+\t\t\t\t\t<td>";
+            // line 54
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "cin", [], "any", false, false, false, 54), "html", null, true);
+            echo "</td>
+\t\t\t\t\t<td>";
+            // line 55
+            ((twig_get_attribute($this->env, $this->source, $context["user"], "dateNaissance", [], "any", false, false, false, 55)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "dateNaissance", [], "any", false, false, false, 55), "Y-m-d"), "html", null, true))) : (print ("")));
+            echo "</td>
+\t\t\t\t\t<td>";
+            // line 56
+            ((twig_get_attribute($this->env, $this->source, $context["user"], "dateCreationC", [], "any", false, false, false, 56)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "dateCreationC", [], "any", false, false, false, 56), "Y-m-d"), "html", null, true))) : (print ("")));
+            echo "</td>
+\t\t\t\t\t<td>";
+            // line 57
+            echo ((twig_get_attribute($this->env, $this->source, $context["user"], "status", [], "any", false, false, false, 57)) ? ("Yes") : ("No"));
+            echo "</td>
+\t\t\t\t\t<td>";
+            // line 58
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "token", [], "any", false, false, false, 58), "html", null, true);
+            echo "</td>
+\t\t\t\t\t<td>";
+            // line 59
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "score", [], "any", false, false, false, 59), "html", null, true);
+            echo "</td>
+\t\t\t\t\t<td>";
+            // line 60
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "numtel", [], "any", false, false, false, 60), "html", null, true);
+            echo "</td>
+\t\t\t\t\t<td>";
+            // line 61
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "image", [], "any", false, false, false, 61), "html", null, true);
+            echo "</td>
+\t\t\t\t\t<td>";
+            // line 62
+            ((twig_get_attribute($this->env, $this->source, $context["user"], "compteEx", [], "any", false, false, false, 62)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "compteEx", [], "any", false, false, false, 62), "Y-m-d"), "html", null, true))) : (print ("")));
+            echo "</td>
+\t\t\t\t\t<td>";
+            // line 63
+            ((twig_get_attribute($this->env, $this->source, $context["user"], "tokenEx", [], "any", false, false, false, 63)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "tokenEx", [], "any", false, false, false, 63), "Y-m-d"), "html", null, true))) : (print ("")));
+            echo "</td>
+\t\t\t\t\t<td>
+\t\t\t\t\t\t<a href=\"";
+            // line 65
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_admin_show", ["id" => twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 65)]), "html", null, true);
+            echo "\">show</a>
+\t\t\t\t\t\t<a href=\"";
+            // line 66
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_admin_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 66)]), "html", null, true);
+            echo "\">edit</a>
+\t\t\t\t\t</td>
+\t\t\t\t</tr>
+\t\t\t";
+            $context['_iterated'] = true;
+        }
+        if (!$context['_iterated']) {
+            // line 70
+            echo "\t\t\t\t<tr>
+\t\t\t\t\t<td colspan=\"18\">no records found</td>
+\t\t\t\t</tr>
+\t\t\t";
+>>>>>>> Stashed changes
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['user'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
+<<<<<<< Updated upstream
         // line 96
         echo "\t\t\t\t\t\t\t</tbody>
 \t\t\t\t\t\t\t<tbody id=\"searchtab\"></tbody>
@@ -272,6 +406,20 @@ class __TwigTemplate_b83e77c6592b3f56f8c16244c6fed51c extends Template
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_admin_new");
         echo "\">Create new</a>
 \t\t\t\t\t";
+=======
+        // line 74
+        echo "\t\t</tbody>
+\t\t<tbody id=\"searchtab\">
+\t\t\t<td>ss</td>
+\t\t</tbody>
+\t</table>
+
+\t<a href=\"";
+        // line 80
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_admin_new");
+        echo "\">Create new</a>
+";
+>>>>>>> Stashed changes
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -280,7 +428,11 @@ class __TwigTemplate_b83e77c6592b3f56f8c16244c6fed51c extends Template
 
     }
 
+<<<<<<< Updated upstream
     // line 102
+=======
+    // line 82
+>>>>>>> Stashed changes
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -290,12 +442,18 @@ class __TwigTemplate_b83e77c6592b3f56f8c16244c6fed51c extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
+<<<<<<< Updated upstream
         // line 103
         echo "\t\t\t\t\t\t";
+=======
+        // line 83
+        echo "\t";
+>>>>>>> Stashed changes
         $this->displayParentBlock("javascripts", $context, $blocks);
         echo "
 
 
+<<<<<<< Updated upstream
 \t\t\t\t\t\t<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js\"></script>
 \t\t\t\t\t\t<script>
 \t\t\t\t\t\t\t\$(document).ready(function () {
@@ -315,17 +473,54 @@ data: {
 'searchValue': value
 },
 
+=======
+\t<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js\"></script>
+\t<script>
+\t\t\$(document).ready(function () {
+\$(\"#search\").keyup(function () { /* La variable value va prendre la valeur insérer dans le
+\t\t\t\t\t\tchamp de texte
+\t\t\t\t\t\tafin d’effectuer la recherche */
+var value = \$(this).val();
+console.log(\"value : \")
+/* Ajax est lancé lors du remplissage du champ texte dont
+\t\t\t\t\t\tl’id est
+\t\t\t\t\t\t« search » pour faire la recherche */
+\$.ajax({ /* l’url est une chaine de caractères contenant
+\t\t\t\t\t\tl’adresse où la requête est
+\t\t\t\t\t\t6
+\t\t\t\t\t\tenvoyée */
+url: \"";
+        // line 101
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_admin_search");
+        echo "\",
+/* La méthode utilisée pour transférer les données est
+\t\t\t\t\t\tGET */
+type: 'GET',
+/*Ici search value va prendre la chaine entrée par un
+\t\t\t\t\t\tutilisateur dans la
+\t\t\t\t\t\tzone de recherche et sera placée après l’url */
+data: {
+'searchValue': value
+},
+/*Cette fonction permet de vider le contenu du tableau
+\t\t\t\t\t\tpour recevoir le
+\t\t\t\t\t\tnouveau contenu*/
+>>>>>>> Stashed changes
 success: function (retour) {
 if (retour) {
 \$('#t tbody#searchtab').empty();
 \$.each(JSON.parse(retour), function (i, obj) {
 \$('#t tbody#all').hide();
 
+<<<<<<< Updated upstream
 \$('#t tbody#searchtab').append('<tr><td> ' + obj.email + ' </td><td>' + obj.roles[0] + '</td><td>' + obj.password + '</td><td>' + obj.nom + '</td><td>' + obj.prenom + '</td><td>' + obj.adress + '</td><td>' + obj.cin + '</td><td>' + obj.dateNaissance + '</td><td>' + obj.dateCreationC + '</td><td>' + obj.status + '</td><td>' + obj.token + '</td><td>' + obj.score + '</td><td>' + obj.numtel + '</td><td>";
         // line 128
         echo "\t<img src=\"";
         echo "+obj.image+";
         echo "\" alt=\"Admin\" class=\"rounded-circle p-1 bg-primary\" width=\"50\" height=\"70\"></td><td>' + obj.compteEx + '</td><td>' + obj.tokenEx + '</td><td><a href=\"' + obj.id + 'edit/\">modifier</a> </br><a\thref=\"' + obj.id + 'delete/\">supprimer</a></td></tr>');
+=======
+\$('#t tbody#searchtab').append('<tr><td>' + obj.id + '</td><td> ' + obj.email + ' </td><td>' + obj.roles + '</td><td>' + obj.password + '</td><td>' + obj.nom + '</td><td>' + obj.prenom + '</td><td>' + obj.adress + '</td><td>' + obj.cin + '</td><td>' + obj.dateNaissance + '</td><td>' + obj.dateCreationC + '</td><td>' + obj.status + '</td><td>' + obj.token + '</td><td>' + obj.score + '</td><td>' + obj.numtel + '</td><td>' + obj.image + '</td><td>' + obj.compteEx + '</td><td>' + obj.tokenEx + '</td><td><a href=\"' + obj.id + 'edit/\">modifier</a> </br><a\thref=\"' + obj.id + 'delete/\">supprimer</a></td></tr>');
+>>>>>>> Stashed changes
 });
 } else {
 \$('#t tbody#all').show();
@@ -337,6 +532,7 @@ if (retour) {
 return false;
 });
 });
+<<<<<<< Updated upstream
 \$(document).ready(function () {
 \$(\"body\").on(\"click\", \"#btn-block\", function () {
 var userId = \$(this).data(\"id\");
@@ -370,6 +566,11 @@ alert(\"Une erreur est survenue lors de la requête AJAX.\");
 
 
 \t\t\t\t\t";
+=======
+\t</script>
+
+";
+>>>>>>> Stashed changes
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -390,7 +591,11 @@ alert(\"Une erreur est survenue lors de la requête AJAX.\");
 
     public function getDebugInfo()
     {
+<<<<<<< Updated upstream
         return array (  326 => 128,  309 => 114,  294 => 103,  284 => 102,  272 => 100,  266 => 96,  257 => 92,  248 => 88,  243 => 87,  237 => 85,  231 => 83,  229 => 82,  223 => 79,  219 => 78,  213 => 76,  209 => 75,  205 => 74,  201 => 73,  197 => 72,  193 => 71,  189 => 70,  185 => 69,  181 => 68,  177 => 67,  173 => 66,  169 => 65,  166 => 64,  160 => 62,  158 => 61,  153 => 59,  148 => 56,  143 => 55,  102 => 17,  90 => 7,  80 => 6,  60 => 3,  37 => 1,);
+=======
+        return array (  285 => 101,  263 => 83,  253 => 82,  241 => 80,  233 => 74,  224 => 70,  215 => 66,  211 => 65,  206 => 63,  202 => 62,  198 => 61,  194 => 60,  190 => 59,  186 => 58,  182 => 57,  178 => 56,  174 => 55,  170 => 54,  166 => 53,  162 => 52,  158 => 51,  154 => 50,  151 => 49,  145 => 47,  143 => 46,  138 => 44,  134 => 43,  130 => 41,  125 => 40,  90 => 7,  80 => 6,  60 => 3,  37 => 1,);
+>>>>>>> Stashed changes
     }
 
     public function getSourceContext()
@@ -409,6 +614,7 @@ alert(\"Une erreur est survenue lors de la requête AJAX.\");
 \t<br>
 \t<br>
 \t<h1>User index</h1>
+<<<<<<< Updated upstream
 
 <div class=\"pagination\">
         {{ knp_pagination_render(users) }}
@@ -516,13 +722,118 @@ data: {
 'searchValue': value
 },
 
+=======
+\t<input type=\"text\" id=\"search\" class=\"form-control\" placeholder=\"Search\"><br>
+\t<table border=\"1\" id=\"t\" class=\"table\">
+\t\t<thead>
+\t\t\t<tr>
+\t\t\t\t<td>Id</td>
+\t\t\t\t<td>Email</td>
+\t\t\t\t<td>Roles</td>
+\t\t\t\t<td>Password</td>
+\t\t\t\t<td>Nom</td>
+\t\t\t\t<td>Prenom</td>
+\t\t\t\t<td>Adress</td>
+\t\t\t\t<td>Cin</td>
+\t\t\t\t<td>Date_naissance</td>
+\t\t\t\t<td>Date_creation_c</td>
+\t\t\t\t<td>Status</td>
+\t\t\t\t<td>Token</td>
+\t\t\t\t<td>Score</td>
+\t\t\t\t<td>Numtel</td>
+\t\t\t\t<td>Image</td>
+\t\t\t\t<td>Compte_ex</td>
+\t\t\t\t<td>Token_ex</td>
+\t\t\t\t<td>actions</td>
+\t\t\t</tr>
+\t\t</thead>
+\t\t<tbody id=\"all\">
+\t\t\t{% for user in users %}
+
+\t\t\t\t<tr>
+\t\t\t\t\t<td>{{ user.id }}</td>
+\t\t\t\t\t<td>{{ user.email }}</td>
+\t\t\t\t\t<td>
+\t\t\t\t\t\t{% if user.roles is defined %}
+\t\t\t\t\t\t\t<p class=\"m-0\">{{ user.roles[0] }}</p>
+\t\t\t\t\t\t{% endif %}
+\t\t\t\t\t</td>
+\t\t\t\t\t<td>{{ user.password }}</td>
+\t\t\t\t\t<td>{{ user.nom }}</td>
+\t\t\t\t\t<td>{{ user.prenom }}</td>
+\t\t\t\t\t<td>{{ user.adress }}</td>
+\t\t\t\t\t<td>{{ user.cin }}</td>
+\t\t\t\t\t<td>{{ user.dateNaissance ? user.dateNaissance|date('Y-m-d') : '' }}</td>
+\t\t\t\t\t<td>{{ user.dateCreationC ? user.dateCreationC|date('Y-m-d') : '' }}</td>
+\t\t\t\t\t<td>{{ user.status ? 'Yes' : 'No' }}</td>
+\t\t\t\t\t<td>{{ user.token }}</td>
+\t\t\t\t\t<td>{{ user.score }}</td>
+\t\t\t\t\t<td>{{ user.numtel }}</td>
+\t\t\t\t\t<td>{{ user.image }}</td>
+\t\t\t\t\t<td>{{ user.compteEx ? user.compteEx|date('Y-m-d') : '' }}</td>
+\t\t\t\t\t<td>{{ user.tokenEx ? user.tokenEx|date('Y-m-d') : '' }}</td>
+\t\t\t\t\t<td>
+\t\t\t\t\t\t<a href=\"{{ path('app_admin_show', {'id': user.id}) }}\">show</a>
+\t\t\t\t\t\t<a href=\"{{ path('app_admin_edit', {'id': user.id}) }}\">edit</a>
+\t\t\t\t\t</td>
+\t\t\t\t</tr>
+\t\t\t{% else %}
+\t\t\t\t<tr>
+\t\t\t\t\t<td colspan=\"18\">no records found</td>
+\t\t\t\t</tr>
+\t\t\t{% endfor %}
+\t\t</tbody>
+\t\t<tbody id=\"searchtab\">
+\t\t\t<td>ss</td>
+\t\t</tbody>
+\t</table>
+
+\t<a href=\"{{ path('app_admin_new') }}\">Create new</a>
+{% endblock %}
+{% block javascripts %}
+\t{{ parent() }}
+
+
+\t<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js\"></script>
+\t<script>
+\t\t\$(document).ready(function () {
+\$(\"#search\").keyup(function () { /* La variable value va prendre la valeur insérer dans le
+\t\t\t\t\t\tchamp de texte
+\t\t\t\t\t\tafin d’effectuer la recherche */
+var value = \$(this).val();
+console.log(\"value : \")
+/* Ajax est lancé lors du remplissage du champ texte dont
+\t\t\t\t\t\tl’id est
+\t\t\t\t\t\t« search » pour faire la recherche */
+\$.ajax({ /* l’url est une chaine de caractères contenant
+\t\t\t\t\t\tl’adresse où la requête est
+\t\t\t\t\t\t6
+\t\t\t\t\t\tenvoyée */
+url: \"{{ path('app_admin_search') }}\",
+/* La méthode utilisée pour transférer les données est
+\t\t\t\t\t\tGET */
+type: 'GET',
+/*Ici search value va prendre la chaine entrée par un
+\t\t\t\t\t\tutilisateur dans la
+\t\t\t\t\t\tzone de recherche et sera placée après l’url */
+data: {
+'searchValue': value
+},
+/*Cette fonction permet de vider le contenu du tableau
+\t\t\t\t\t\tpour recevoir le
+\t\t\t\t\t\tnouveau contenu*/
+>>>>>>> Stashed changes
 success: function (retour) {
 if (retour) {
 \$('#t tbody#searchtab').empty();
 \$.each(JSON.parse(retour), function (i, obj) {
 \$('#t tbody#all').hide();
 
+<<<<<<< Updated upstream
 \$('#t tbody#searchtab').append('<tr><td> ' + obj.email + ' </td><td>' + obj.roles[0] + '</td><td>' + obj.password + '</td><td>' + obj.nom + '</td><td>' + obj.prenom + '</td><td>' + obj.adress + '</td><td>' + obj.cin + '</td><td>' + obj.dateNaissance + '</td><td>' + obj.dateCreationC + '</td><td>' + obj.status + '</td><td>' + obj.token + '</td><td>' + obj.score + '</td><td>' + obj.numtel + '</td><td>{# {{ user.image }} #}\t<img src=\"{{'+obj.image+'}}\" alt=\"Admin\" class=\"rounded-circle p-1 bg-primary\" width=\"50\" height=\"70\"></td><td>' + obj.compteEx + '</td><td>' + obj.tokenEx + '</td><td><a href=\"' + obj.id + 'edit/\">modifier</a> </br><a\thref=\"' + obj.id + 'delete/\">supprimer</a></td></tr>');
+=======
+\$('#t tbody#searchtab').append('<tr><td>' + obj.id + '</td><td> ' + obj.email + ' </td><td>' + obj.roles + '</td><td>' + obj.password + '</td><td>' + obj.nom + '</td><td>' + obj.prenom + '</td><td>' + obj.adress + '</td><td>' + obj.cin + '</td><td>' + obj.dateNaissance + '</td><td>' + obj.dateCreationC + '</td><td>' + obj.status + '</td><td>' + obj.token + '</td><td>' + obj.score + '</td><td>' + obj.numtel + '</td><td>' + obj.image + '</td><td>' + obj.compteEx + '</td><td>' + obj.tokenEx + '</td><td><a href=\"' + obj.id + 'edit/\">modifier</a> </br><a\thref=\"' + obj.id + 'delete/\">supprimer</a></td></tr>');
+>>>>>>> Stashed changes
 });
 } else {
 \$('#t tbody#all').show();
@@ -534,6 +845,7 @@ if (retour) {
 return false;
 });
 });
+<<<<<<< Updated upstream
 \$(document).ready(function () {
 \$(\"body\").on(\"click\", \"#btn-block\", function () {
 var userId = \$(this).data(\"id\");
@@ -567,6 +879,11 @@ alert(\"Une erreur est survenue lors de la requête AJAX.\");
 
 
 \t\t\t\t\t{% endblock %}
+=======
+\t</script>
+
+{% endblock %}
+>>>>>>> Stashed changes
 ", "admin/index.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\admin\\index.html.twig");
     }
 }

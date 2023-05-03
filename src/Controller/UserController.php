@@ -21,7 +21,10 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 use Symfony\Component\Security\Csrf\TokenGenerator\TokenGeneratorInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 
 #[Route('/user')]
 class UserController extends AbstractController
@@ -30,6 +33,7 @@ class UserController extends AbstractController
     #[Route('/', name: 'app_user_index', methods: ['GET'])]
     public function index(Request $request, ManagerRegistry $registry, PaginatorInterface $paginator, UserRepository $userRepository): Response
     {
+<<<<<<< Updated upstream
         $queryBuilder = $userRepository->createQueryBuilder('u')
         ->where('u.roles LIKE :role')
         ->setParameter('role', '%"ROLE_TRANSPORTEUR"%')
@@ -38,6 +42,15 @@ class UserController extends AbstractController
     $pagination = $paginator->paginate(
         $queryBuilder,
         $request->query->getInt('page', 1), /*page number*/
+=======
+        $query = $request->query->get('q');
+
+        $users = $registry->getRepository(User::class)
+        ->findBySearchQuery($query, ['id' => 'DESC']);
+        $pagination = $paginator->paginate(
+            $users, /* query NOT result */
+            $request->query->getInt('page', 1), /*page number*/
+>>>>>>> Stashed changes
             4 /*limit per page*/
         );
         return $this->render('user/index.html.twig', ['users' => $users, 'pagination' => $pagination]);
@@ -49,7 +62,10 @@ class UserController extends AbstractController
         $repository = $this->getDoctrine()->getRepository(User::class);
         $requestString = $request->get('searchValue');
         $users = $repository->findBySearchQuerya($requestString);
+<<<<<<< Updated upstream
         
+=======
+>>>>>>> Stashed changes
         $jsonContent = $Normalizer->normalize($users, 'json', ['groups' => 'user']);
         $retour = json_encode($jsonContent);
         return new Response($retour);

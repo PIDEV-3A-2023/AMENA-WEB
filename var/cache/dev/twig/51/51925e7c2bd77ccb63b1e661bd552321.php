@@ -25,7 +25,10 @@ class __TwigTemplate_227dac9b44e94ce8c921f5198621276b extends Template
         $this->source = $this->getSourceContext();
 
         $this->blocks = [
+<<<<<<< Updated upstream
             'stylesheets' => [$this, 'block_stylesheets'],
+=======
+>>>>>>> Stashed changes
             'title' => [$this, 'block_title'],
             'body' => [$this, 'block_body'],
         ];
@@ -56,6 +59,7 @@ class __TwigTemplate_227dac9b44e94ce8c921f5198621276b extends Template
 
     }
 
+<<<<<<< Updated upstream
     // line 2
     public function block_stylesheets($context, array $blocks = [])
     {
@@ -85,6 +89,9 @@ class __TwigTemplate_227dac9b44e94ce8c921f5198621276b extends Template
     }
 
     // line 7
+=======
+    // line 3
+>>>>>>> Stashed changes
     public function block_title($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -103,7 +110,11 @@ class __TwigTemplate_227dac9b44e94ce8c921f5198621276b extends Template
 
     }
 
+<<<<<<< Updated upstream
     // line 8
+=======
+    // line 5
+>>>>>>> Stashed changes
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -113,21 +124,38 @@ class __TwigTemplate_227dac9b44e94ce8c921f5198621276b extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
+<<<<<<< Updated upstream
         // line 9
         echo "    <h1>Modification d'annonce</h1>
 
     ";
         // line 11
+=======
+        // line 6
+        echo "    <h1>Edit Annonces</h1>
+
+    ";
+        // line 8
+>>>>>>> Stashed changes
         echo twig_include($this->env, $context, "annonces/_form.html.twig", ["button_label" => "Update"]);
         echo "
 
     <a href=\"";
+<<<<<<< Updated upstream
         // line 13
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_annonces_index");
         echo "\"class=\"btn btn-primary\">Retour aux annonces</a>
 
     ";
         // line 15
+=======
+        // line 10
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_annonces_index");
+        echo "\">back to list</a>
+
+    ";
+        // line 12
+>>>>>>> Stashed changes
         echo twig_include($this->env, $context, "annonces/_delete_form.html.twig");
         echo "
 ";
@@ -151,12 +179,17 @@ class __TwigTemplate_227dac9b44e94ce8c921f5198621276b extends Template
 
     public function getDebugInfo()
     {
+<<<<<<< Updated upstream
         return array (  131 => 15,  126 => 13,  121 => 11,  117 => 9,  107 => 8,  88 => 7,  75 => 4,  70 => 3,  60 => 2,  37 => 1,);
+=======
+        return array (  102 => 12,  97 => 10,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+>>>>>>> Stashed changes
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %}
+<<<<<<< Updated upstream
  {% block stylesheets %}
 \t{{parent()}}
 \t<link href=\"{{asset('front/assets/css/cc.css')}}\" rel=\"stylesheet\">
@@ -169,6 +202,17 @@ class __TwigTemplate_227dac9b44e94ce8c921f5198621276b extends Template
     {{ include('annonces/_form.html.twig', {'button_label': 'Update'}) }}
 
     <a href=\"{{ path('app_annonces_index') }}\"class=\"btn btn-primary\">Retour aux annonces</a>
+=======
+
+{% block title %}Edit Annonces{% endblock %}
+
+{% block body %}
+    <h1>Edit Annonces</h1>
+
+    {{ include('annonces/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href=\"{{ path('app_annonces_index') }}\">back to list</a>
+>>>>>>> Stashed changes
 
     {{ include('annonces/_delete_form.html.twig') }}
 {% endblock %}

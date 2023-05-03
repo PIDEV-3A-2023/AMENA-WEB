@@ -151,12 +151,20 @@ class __TwigTemplate_158ac22f2029c60b5c2b8f2c8d712c60 extends Template
     <a href=\"";
         // line 45
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_annonces_index");
+<<<<<<< Updated upstream
         echo "\"class=\"btn btn-primary\">Retour aux annonces</a>
+=======
+        echo "\">back to list</a>
+>>>>>>> Stashed changes
 
     <a href=\"";
         // line 47
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_annonces_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["annonce"]) || array_key_exists("annonce", $context) ? $context["annonce"] : (function () { throw new RuntimeError('Variable "annonce" does not exist.', 47, $this->source); })()), "id", [], "any", false, false, false, 47)]), "html", null, true);
+<<<<<<< Updated upstream
         echo "\"class=\"btn btn-primary\">Modifier</a>
+=======
+        echo "\">edit</a>
+>>>>>>> Stashed changes
 
     ";
         // line 49
@@ -232,9 +240,15 @@ class __TwigTemplate_158ac22f2029c60b5c2b8f2c8d712c60 extends Template
         </tbody>
     </table>
 
+<<<<<<< Updated upstream
     <a href=\"{{ path('app_annonces_index') }}\"class=\"btn btn-primary\">Retour aux annonces</a>
 
     <a href=\"{{ path('app_annonces_edit', {'id': annonce.id}) }}\"class=\"btn btn-primary\">Modifier</a>
+=======
+    <a href=\"{{ path('app_annonces_index') }}\">back to list</a>
+
+    <a href=\"{{ path('app_annonces_edit', {'id': annonce.id}) }}\">edit</a>
+>>>>>>> Stashed changes
 
     {{ include('annonces/_delete_form.html.twig') }}
 {% endblock %}

@@ -13,8 +13,11 @@ use Symfony\Component\Form\FormError;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+<<<<<<< Updated upstream
 use Knp\Component\Pager\PaginatorInterface;
 
+=======
+>>>>>>> Stashed changes
 
 #[Route('/admin')]
 class AdminController extends AbstractController
@@ -31,6 +34,7 @@ class AdminController extends AbstractController
         return new Response($retour);
     }
 
+<<<<<<< Updated upstream
     #[Route('/', name: 'app_admin_index', methods: ['GET'])]
     public function index(UserRepository $userRepository, Request $request, PaginatorInterface $paginator): Response
     {
@@ -51,10 +55,87 @@ class AdminController extends AbstractController
     }
     #[Route('/new', name: 'app_admin_new', methods: ['GET', 'POST'])]
     public function new(Request $request, UserRepository $userRepository, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager): Response
+=======
+
+    #[Route('/', name: 'app_admin_index', methods: ['GET'])]
+    public function index(UserRepository $userRepository): Response
+    {
+        $user = $this->getUser();
+        if ($user && $user->getRoles()[0] == "ROLE_ADMIN") {
+
+
+            return $this->render('admin/index.html.twig', [
+                'users' => $userRepository->findAll(),
+            ]);
+        }
+    }
+
+    #[Route('/new', name: 'app_admin_new', methods: ['GET', 'POST'])]
+    public function new(Request $request, UserRepository $userRepository,UserPasswordHasherInterface $userPasswordHasher,EntityManagerInterface $entityManager): Response
+>>>>>>> Stashed changes
     {
         function generateToken($length = 32)
         {
             return base64_encode(random_bytes($length));
+<<<<<<< Updated upstream
+=======
+        }
+        
+        $user=$this->getUser();
+        if($user && $user->getRoles()[0]=="ROLE_ADMIN"){
+        $user = new User();
+        $form = $this->createForm(User1Type::class, $user);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $password = $form->get('password')->getData();
+            if (empty($password)) {
+                $form->get('password')->addError(new FormError('Veuillez entrer un mot de passe.'));
+                return $this->renderForm('user/new.html.twig', [
+                    'user' => $user,
+                    'form' => $form,
+                ]);
+            }
+
+            
+            $token = generateToken();
+            $user->setToken($token);
+            $user->setScore("00");
+            $user->setCompteEx(new \DateTime());
+            $user->setDatecreationc(new \DateTime());
+            $user->setTokenEx(new \DateTime());
+            $roles = [];
+            $roles = $form->get('roles')->getData();
+            $user->setRoles($roles);
+            $user->setPassword(
+                $userPasswordHasher->hashPassword(
+                    $user,
+                    $form->get('password')->getData()
+                )
+            );
+
+            $image = $form->get('img')->getData();   
+            
+ 
+            if ($image) {
+                $fichier = md5(uniqid()) . '.' . $image->guessExtension();
+ 
+                $image->move(
+                    $this->getParameter('images_directory'),
+                    $fichier 
+                );
+            dump($image);
+                
+            $user->setImage('http://localhost/img/'.$fichier);}
+           
+            $entityManager->persist($user);
+            $entityManager->flush();
+            $entityManager->persist($user);
+            $entityManager->flush();
+            $userRepository->save($user, true);
+
+            return $this->redirectToRoute('app_admin_index', [], Response::HTTP_SEE_OTHER);
+>>>>>>> Stashed changes
         }
 
         $user = $this->getUser();
@@ -130,7 +211,11 @@ class AdminController extends AbstractController
     }
 
     #[Route('/edit/{id}', name: 'app_admin_edit', methods: ['GET', 'POST'])]
+<<<<<<< Updated upstream
     public function edit(Request $request, User $user, UserRepository $userRepository, EntityManagerInterface $entityManager): Response
+=======
+    public function edit(Request $request, User $user, UserRepository $userRepository,EntityManagerInterface $entityManager): Response
+>>>>>>> Stashed changes
     {
         $form = $this->createForm(User1Type::class, $user);
         $form->handleRequest($request);

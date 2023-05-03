@@ -25,7 +25,10 @@ class __TwigTemplate_89282ae1034f5d4b24881508f60c4c43 extends Template
         $this->source = $this->getSourceContext();
 
         $this->blocks = [
+<<<<<<< Updated upstream
             'stylesheets' => [$this, 'block_stylesheets'],
+=======
+>>>>>>> Stashed changes
             'title' => [$this, 'block_title'],
             'body' => [$this, 'block_body'],
         ];
@@ -56,6 +59,7 @@ class __TwigTemplate_89282ae1034f5d4b24881508f60c4c43 extends Template
 
     }
 
+<<<<<<< Updated upstream
     // line 2
     public function block_stylesheets($context, array $blocks = [])
     {
@@ -85,6 +89,9 @@ class __TwigTemplate_89282ae1034f5d4b24881508f60c4c43 extends Template
     }
 
     // line 7
+=======
+    // line 3
+>>>>>>> Stashed changes
     public function block_title($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -103,7 +110,11 @@ class __TwigTemplate_89282ae1034f5d4b24881508f60c4c43 extends Template
 
     }
 
+<<<<<<< Updated upstream
     // line 9
+=======
+    // line 5
+>>>>>>> Stashed changes
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -113,6 +124,7 @@ class __TwigTemplate_89282ae1034f5d4b24881508f60c4c43 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
+<<<<<<< Updated upstream
         // line 10
         echo "<br>
 <br>
@@ -127,6 +139,10 @@ class __TwigTemplate_89282ae1034f5d4b24881508f60c4c43 extends Template
 <h6 class=\"w3-center w3-animate-zoom\">error code:403 forbidden</h6>
 </div>
 </body>
+=======
+        // line 6
+        echo "jjjjjjjjjj
+>>>>>>> Stashed changes
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -148,12 +164,17 @@ class __TwigTemplate_89282ae1034f5d4b24881508f60c4c43 extends Template
 
     public function getDebugInfo()
     {
+<<<<<<< Updated upstream
         return array (  117 => 10,  107 => 9,  88 => 7,  75 => 4,  70 => 3,  60 => 2,  37 => 1,);
+=======
+        return array (  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+>>>>>>> Stashed changes
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %}
+<<<<<<< Updated upstream
 {% block stylesheets %}
 \t{{parent()}}
 \t<link href=\"{{asset('front/assets/css/mm.css')}}\" rel=\"stylesheet\">
@@ -175,6 +196,13 @@ class __TwigTemplate_89282ae1034f5d4b24881508f60c4c43 extends Template
 <h6 class=\"w3-center w3-animate-zoom\">error code:403 forbidden</h6>
 </div>
 </body>
+=======
+
+{% block title %}Hello ErrorController!{% endblock %}
+
+{% block body %}
+jjjjjjjjjj
+>>>>>>> Stashed changes
 {% endblock %}
 ", "error/index.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\error\\index.html.twig");
     }
