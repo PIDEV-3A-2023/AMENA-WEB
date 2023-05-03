@@ -27,6 +27,34 @@
 		
 	</head>
 	<body>
+	{% for flash_message in app.flashes('success') %}
+    <div class="alert alert-success alert-dismissible fade show" role="alert" id="flash-message">
+        <div class="d-flex align-items-center">
+            <i class="bi bi-check-circle-fill me-2"></i>
+            <span>{{ flash_message }}</span>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+{% endfor %}
+{% for flash_message in app.flashes('error') %}
+<div class="alert alert-danger alert-dismissible fade show" role="alert" id="flash-message">
+<div class="d-flex align-items-center">
+<i class="bi bi-exclamation-triangle-fill me-2"></i>
+<span>{{ flash_message }}</span>
+</div>
+<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endfor %}
+
+<script>
+    // Masquer automatiquement le message de succès après 3 secondes
+    setTimeout(function() {
+        var flashMessage = document.getElementById('flash-message');
+        if (flashMessage !== null) {
+            flashMessage.remove();
+        }
+    }, 3000);
+</script>
 <div class="wrapper">
 		<nav id="sidebar" class="sidebar js-sidebar">
 			<div class="sidebar-content js-simplebar">
@@ -40,8 +68,8 @@
 					</li>
 
 					<li class="sidebar-item">
-						<a class="sidebar-link" href="index.html">
-              <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard</span>
+						<a class="sidebar-link" href="{{ path('app_stats_index') }}">
+              <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Tableau de bord</span>
             </a>
 					</li>
 
@@ -53,19 +81,11 @@
 
 					<li class="sidebar-item">
 						<a class="sidebar-link" href="pages-sign-in.html">
-              <i class="align-middle" data-feather="log-in"></i> <span class="align-middle">Sign In</span>
+              <i class="align-middle" data-feather="log-in"></i> <span class="align-middle">Se déconnecter</span>
             </a>
-					</li>
-
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="pages-sign-up.html">
-              <i class="align-middle" data-feather="user-plus"></i> <span class="align-middle">Sign Up</span>
-            </a>
-					</li>
-
 					<li class="sidebar-item active">
-						<a class="sidebar-link" href="pages-blank.html">
-              <i class="align-middle" data-feather="book"></i> <span class="align-middle">Blank</span>
+						<a class="sidebar-link" href="{{ path('app_admin_colis_index') }}">
+              <i class="align-middle" data-feather="book"></i> <span class="align-middle">Gestion Des Colis</span>
             </a>
 					</li>
 
