@@ -82,6 +82,6 @@ class __TwigTemplate_aa2a77f076d54038113db24e5c0afc58 extends Template
 \t<input type=\"hidden\" name=\"_token\" value=\"{{ csrf_token('delete' ~ validation.id) }}\">
 \t<button class=\"btn btn-danger\">Delete</button>
 </form>
-", "validation/_delete_form.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\validation\\_delete_form.html.twig");
+", "validation/_delete_form.html.twig", "C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\templates\\validation\\_delete_form.html.twig");
     }
 }

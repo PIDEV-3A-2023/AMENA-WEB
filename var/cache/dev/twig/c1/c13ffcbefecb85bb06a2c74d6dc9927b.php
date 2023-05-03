@@ -129,6 +129,6 @@ class __TwigTemplate_565699796e2af599b43a21b55f563854 extends Template
     </span>
     {{ title }}
 </a>
-", "@KnpPaginator/Pagination/bootstrap_v5_fa_sortable_link.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\vendor\\knplabs\\knp-paginator-bundle\\templates\\Pagination\\bootstrap_v5_fa_sortable_link.html.twig");
+", "@KnpPaginator/Pagination/bootstrap_v5_fa_sortable_link.html.twig", "C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\vendor\\knplabs\\knp-paginator-bundle\\templates\\Pagination\\bootstrap_v5_fa_sortable_link.html.twig");
     }
 }

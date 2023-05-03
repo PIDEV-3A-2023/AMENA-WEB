@@ -325,6 +325,6 @@ class __TwigTemplate_ccc9e9db25c02851f5095fce88b0146f extends Template
     </ul>
 </div>
 {% endif %}
-", "@KnpPaginator/Pagination/twitter_bootstrap_pagination.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\vendor\\knplabs\\knp-paginator-bundle\\templates\\Pagination\\twitter_bootstrap_pagination.html.twig");
+", "@KnpPaginator/Pagination/twitter_bootstrap_pagination.html.twig", "C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\vendor\\knplabs\\knp-paginator-bundle\\templates\\Pagination\\twitter_bootstrap_pagination.html.twig");
     }
 }

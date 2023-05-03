@@ -413,6 +413,6 @@ class __TwigTemplate_6f078b6f259047631cc4a3fbb70c0381 extends Template
         </div>
     {% endfor %}
 {% endblock %}
-", "@Debug/Profiler/dump.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\vendor\\symfony\\debug-bundle\\Resources\\views\\Profiler\\dump.html.twig");
+", "@Debug/Profiler/dump.html.twig", "C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\vendor\\symfony\\debug-bundle\\Resources\\views\\Profiler\\dump.html.twig");
     }
 }

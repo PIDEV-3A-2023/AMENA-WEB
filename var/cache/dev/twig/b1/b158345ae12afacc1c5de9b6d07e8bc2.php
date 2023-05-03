@@ -79,6 +79,6 @@ class __TwigTemplate_4c9cec190c4f296afc97da31c2dfd031 extends Template
     <input type=\"hidden\" name=\"_token\" value=\"{{ csrf_token('delete' ~ coli.id) }}\">
     <button class=\"btn\">Delete</button>
 </form>
-", "colis/_delete_form.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\colis\\_delete_form.html.twig");
+", "colis/_delete_form.html.twig", "C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\templates\\colis\\_delete_form.html.twig");
     }
 }

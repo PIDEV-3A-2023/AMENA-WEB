@@ -172,6 +172,6 @@ class __TwigTemplate_227dac9b44e94ce8c921f5198621276b extends Template
 
     {{ include('annonces/_delete_form.html.twig') }}
 {% endblock %}
-", "annonces/edit.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\annonces\\edit.html.twig");
+", "annonces/edit.html.twig", "C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\templates\\annonces\\edit.html.twig");
     }
 }

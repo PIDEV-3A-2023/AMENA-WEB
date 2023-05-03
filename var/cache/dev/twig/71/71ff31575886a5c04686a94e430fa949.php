@@ -567,6 +567,6 @@ alert(\"Une erreur est survenue lors de la requête AJAX.\");
 
 
 \t\t\t\t\t{% endblock %}
-", "admin/index.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\admin\\index.html.twig");
+", "admin/index.html.twig", "C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\templates\\admin\\index.html.twig");
     }
 }

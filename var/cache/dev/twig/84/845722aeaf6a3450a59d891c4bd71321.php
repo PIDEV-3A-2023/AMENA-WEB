@@ -293,6 +293,6 @@ class __TwigTemplate_8f91d51fe8c7a7131fc81e601d2bf2f1 extends Template
         </div>
     </div>
 {% endblock %}
-", "annonces/new.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\annonces\\new.html.twig");
+", "annonces/new.html.twig", "C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\templates\\annonces\\new.html.twig");
     }
 }

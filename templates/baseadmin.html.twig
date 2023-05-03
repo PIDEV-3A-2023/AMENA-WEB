@@ -13,7 +13,7 @@
 
 		<link rel="canonical" href="https://demo-basic.adminkit.io/pages-blank.html"/>
 
-		<title>Blank Page | Admin Amena </title>
+		<title>Blank Page | AdminKit Demo</title>
 
 
 		{% block stylesheets %}
@@ -27,49 +27,12 @@
 
 	</head>
 	<body>
-<<<<<<< HEAD
-	{% for flash_message in app.flashes('success') %}
-    <div class="alert alert-success alert-dismissible fade show" role="alert" id="flash-message">
-        <div class="d-flex align-items-center">
-            <i class="bi bi-check-circle-fill me-2"></i>
-            <span>{{ flash_message }}</span>
-        </div>
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
-{% endfor %}
-{% for flash_message in app.flashes('error') %}
-<div class="alert alert-danger alert-dismissible fade show" role="alert" id="flash-message">
-<div class="d-flex align-items-center">
-<i class="bi bi-exclamation-triangle-fill me-2"></i>
-<span>{{ flash_message }}</span>
-</div>
-<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-</div>
-{% endfor %}
-
-<script>
-    // Masquer automatiquement le message de succès après 3 secondes
-    setTimeout(function() {
-        var flashMessage = document.getElementById('flash-message');
-        if (flashMessage !== null) {
-            flashMessage.remove();
-        }
-    }, 3000);
-</script>
-<div class="wrapper">
-		<nav id="sidebar" class="sidebar js-sidebar">
-			<div class="sidebar-content js-simplebar">
-				<a class="sidebar-brand" href="index.html">
-          <span class="align-middle">Admin Amena</span>
-        </a>
-=======
 		<div class="wrapper">
 			<nav id="sidebar" class="sidebar js-sidebar">
 				<div class="sidebar-content js-simplebar">
 					<a class="sidebar-brand" href="index.html">
 						<span class="align-middle">Amena</span>
 					</a>
->>>>>>> 1b9c83bb09edfda666f414a2ec8b0b82973f62fa
 
 					<ul class="sidebar-nav">
 						<li class="sidebar-header">

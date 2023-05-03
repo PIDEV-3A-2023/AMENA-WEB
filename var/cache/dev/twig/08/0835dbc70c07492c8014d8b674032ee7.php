@@ -154,6 +154,6 @@ class __TwigTemplate_a2a36a4b9219c204230df819cb41ff2e extends Template
     </ul>
 </div>
 {% endblock %}
-", "security/index.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\security\\index.html.twig");
+", "security/index.html.twig", "C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\templates\\security\\index.html.twig");
     }
 }

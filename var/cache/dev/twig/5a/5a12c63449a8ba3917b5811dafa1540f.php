@@ -579,6 +579,6 @@ class __TwigTemplate_72e4bb8bb32530d39648a637c44e44fd extends Template
 
 </div>
 {% endblock %}
-", "message/mm.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\message\\mm.html.twig");
+", "message/mm.html.twig", "C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\templates\\message\\mm.html.twig");
     }
 }

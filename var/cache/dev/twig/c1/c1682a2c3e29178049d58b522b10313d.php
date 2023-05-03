@@ -236,6 +236,6 @@ class __TwigTemplate_dba2bdb5c1e1b836124510e61e8ccb49 extends Template
 {% endfor %}
 </tbody>
 </table><a href=\"{{ path('app_reclamations_new') }}\"class=\"btn btn-primary\">Reclamer</a>{% endblock %}
-", "reclamations/index.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\reclamations\\index.html.twig");
+", "reclamations/index.html.twig", "C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\templates\\reclamations\\index.html.twig");
     }
 }

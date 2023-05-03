@@ -527,6 +527,6 @@ class __TwigTemplate_ee3403f997b1ac699457893f4798ea27 extends Template
 
 
 {% endblock %}
-", "user/edit.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\user\\edit.html.twig");
+", "user/edit.html.twig", "C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\templates\\user\\edit.html.twig");
     }
 }

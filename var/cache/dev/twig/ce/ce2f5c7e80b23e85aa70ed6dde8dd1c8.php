@@ -226,6 +226,6 @@ class __TwigTemplate_b807894b78fbb654b652d1bdb7a9dd3a extends Template
         </div>
         <button type=\"submit\" class=\"btn btn-primary\">Activate</button>
     {{ form_end(form) }}
-{% endblock %}", "activate_account/index.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\activate_account\\index.html.twig");
+{% endblock %}", "activate_account/index.html.twig", "C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\templates\\activate_account\\index.html.twig");
     }
 }

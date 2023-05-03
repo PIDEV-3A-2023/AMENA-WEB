@@ -9,13 +9,13 @@
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Nom Expediteur</th>
-                <th>Adresse Expediteur</th>
-                <th>Nom Destinataire</th>
-                <th>Adresse Destinataire</th>
+                <th>NomExpediteur</th>
+                <th>AdresseExpediteur</th>
+                <th>NomDestinataire</th>
+                <th>AdresseDestinataire</th>
                 <th>Poids</th>
                 <th>Statut</th>
-                <th>Date Expedition</th>
+                <th>DateExpedition</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -31,17 +31,17 @@
                 <td>{{ coli.statut }}</td>
                 <td>{{ coli.dateExpedition ? coli.dateExpedition|date('Y-m-d') : '' }}</td>
                 <td>
-                    <a href="{{ path('app_colis_show', {'id': coli.id}) }}">Afficher</a>
-                    <a href="{{ path('app_colis_edit', {'id': coli.id}) }}">Modifier</a>
+                    <a href="{{ path('app_colis_show', {'id': coli.id}) }}">show</a>
+                    <a href="{{ path('app_colis_edit', {'id': coli.id}) }}">edit</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="9">Aucun colis trouvé</td>
+                <td colspan="9">no records found</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('app_colis_new') }}">Ajouter un nouveau colis </a>
+    <a href="{{ path('app_colis_new') }}">Create new</a>
 {% endblock %}

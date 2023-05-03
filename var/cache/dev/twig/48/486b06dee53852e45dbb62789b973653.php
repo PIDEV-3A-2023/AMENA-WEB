@@ -140,6 +140,6 @@ class __TwigTemplate_323c7c95de95fc3c96101c9e1c711db1 extends Template
 
     {{ include('message/_delete_form.html.twig') }}
 {% endblock %}
-", "message/edit.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\message\\edit.html.twig");
+", "message/edit.html.twig", "C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\templates\\message\\edit.html.twig");
     }
 }

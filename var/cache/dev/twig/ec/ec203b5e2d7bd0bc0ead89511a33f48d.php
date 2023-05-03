@@ -507,6 +507,6 @@ class __TwigTemplate_f9fa9b71d584239e4047106011128894 extends Template
 
 \t<a href=\"{{ path('app_message_index') }}\">back to list</a>
 {% endblock %}
-", "message/new.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\message\\new.html.twig");
+", "message/new.html.twig", "C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\templates\\message\\new.html.twig");
     }
 }

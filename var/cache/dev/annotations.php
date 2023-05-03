@@ -80,6 +80,8 @@ return [[
 '[C]App%5CController%5CAdminController%23edit' => 1,
 'App%5CController%5CAdminController%23delete' => 0,
 '[C]App%5CController%5CAdminController%23delete' => 1,
+'App%5CController%5CAdminController%23blockUser' => 0,
+'[C]App%5CController%5CAdminController%23blockUser' => 1,
 'App%5CController%5CAnnoncesController' => 0,
 '[C]App%5CController%5CAnnoncesController' => 1,
 'App%5CController%5CAnnoncesController%23index' => 0,
@@ -1464,7 +1466,7 @@ return [[
 ], [
 
 0 => [],
-1 => 1683126904,
+1 => 1683137427,
 2 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [

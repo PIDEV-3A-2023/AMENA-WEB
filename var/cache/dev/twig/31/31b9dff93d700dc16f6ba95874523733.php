@@ -688,6 +688,6 @@ class __TwigTemplate_ae0ae5688705b4ef051931ac0e695eb4 extends Template
 </main>
 
 <footer class=\"footer\"></footer></div></div>{% block javascripts %}{{ encore_entry_script_tags('app') }}<script src=\"{{asset('back/assets/js/app.js')}}\"></script>{% endblock %}</body></html>
-", "baseadmin.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\baseadmin.html.twig");
+", "baseadmin.html.twig", "C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\templates\\baseadmin.html.twig");
     }
 }

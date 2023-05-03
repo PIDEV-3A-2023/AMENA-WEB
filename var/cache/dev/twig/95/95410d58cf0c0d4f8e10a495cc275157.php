@@ -225,6 +225,6 @@ class __TwigTemplate_aacf98b928e400fb75a621b5d4f1bef4 extends Template
 </div>
 \t
 {% endblock %}
-", "validation/index.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\validation\\index.html.twig");
+", "validation/index.html.twig", "C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\templates\\validation\\index.html.twig");
     }
 }

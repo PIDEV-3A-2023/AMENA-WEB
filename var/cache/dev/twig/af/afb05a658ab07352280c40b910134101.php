@@ -82,6 +82,6 @@ class __TwigTemplate_e2afd2a217eb2b307566ff44ba681878 extends Template
     <input type=\"hidden\" name=\"_token\" value=\"{{ csrf_token('delete' ~ annonce.id) }}\">
    <button type=\"submit\" class=\"btn btn-danger\">Supprimer</button>
 </form>
-", "annonces/_delete_form.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\annonces\\_delete_form.html.twig");
+", "annonces/_delete_form.html.twig", "C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\templates\\annonces\\_delete_form.html.twig");
     }
 }

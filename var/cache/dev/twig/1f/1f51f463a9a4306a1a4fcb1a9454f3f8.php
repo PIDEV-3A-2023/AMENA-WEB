@@ -288,22 +288,6 @@ class __TwigTemplate_2cf989a1c29020707f84d094e32bb023 extends Template
 \t\t\t\t\t</div>
 \t\t\t\t</div>
 
-<<<<<<< HEAD
-\t\t\t<div class=\"footer-legal\">
-\t\t\t\t<div class=\"container\">
-\t\t\t\t\t<div class=\"copyright\">
-\t\t\t\t\t\t&copy; Copyright
-\t\t\t\t\t\t<strong>
-\t\t\t\t\t\t\t<span>Amena</span>
-\t\t\t\t\t\t</strong>. All Rights Reserved
-\t\t\t\t\t</div>
-\t\t\t\t\t<div class=\"credits\">
-\t\t\t\t\t\t<!-- All the links in the footer should remain intact. -->
-\t\t\t\t\t\t<!-- You can delete the links only if you purchased the pro version. -->
-\t\t\t\t\t\t<!-- Licensing information: https://bootstrapmade.com/license/ -->
-\t\t\t\t\t\t<!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nova-bootstrap-business-template/ -->
-\t\t\t\t\t\tDesigned by<a href=\"https://bootstrapmade.com/\"> BootstrapMade</a>
-=======
 \t\t\t\t<div class=\"footer-legal\">
 \t\t\t\t\t<div class=\"container\">
 \t\t\t\t\t\t<div class=\"copyright\">
@@ -316,7 +300,6 @@ class __TwigTemplate_2cf989a1c29020707f84d094e32bb023 extends Template
 \t\t\t\t\t\t\tDesigned by<a href=\"https://bootstrapmade.com/\">
 \t\t\t\t\t\t\t\tBootstrapMade</a>
 \t\t\t\t\t\t</div>
->>>>>>> 1b9c83bb09edfda666f414a2ec8b0b82973f62fa
 \t\t\t\t\t</div>
 \t\t\t\t</div>
 \t\t\t</footer>
@@ -719,22 +702,6 @@ class __TwigTemplate_2cf989a1c29020707f84d094e32bb023 extends Template
 \t\t\t\t\t</div>
 \t\t\t\t</div>
 
-<<<<<<< HEAD
-\t\t\t<div class=\"footer-legal\">
-\t\t\t\t<div class=\"container\">
-\t\t\t\t\t<div class=\"copyright\">
-\t\t\t\t\t\t&copy; Copyright
-\t\t\t\t\t\t<strong>
-\t\t\t\t\t\t\t<span>Amena</span>
-\t\t\t\t\t\t</strong>. All Rights Reserved
-\t\t\t\t\t</div>
-\t\t\t\t\t<div class=\"credits\">
-\t\t\t\t\t\t<!-- All the links in the footer should remain intact. -->
-\t\t\t\t\t\t<!-- You can delete the links only if you purchased the pro version. -->
-\t\t\t\t\t\t<!-- Licensing information: https://bootstrapmade.com/license/ -->
-\t\t\t\t\t\t<!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nova-bootstrap-business-template/ -->
-\t\t\t\t\t\tDesigned by<a href=\"https://bootstrapmade.com/\"> BootstrapMade</a>
-=======
 \t\t\t\t<div class=\"footer-legal\">
 \t\t\t\t\t<div class=\"container\">
 \t\t\t\t\t\t<div class=\"copyright\">
@@ -747,7 +714,6 @@ class __TwigTemplate_2cf989a1c29020707f84d094e32bb023 extends Template
 \t\t\t\t\t\t\tDesigned by<a href=\"https://bootstrapmade.com/\">
 \t\t\t\t\t\t\t\tBootstrapMade</a>
 \t\t\t\t\t\t</div>
->>>>>>> 1b9c83bb09edfda666f414a2ec8b0b82973f62fa
 \t\t\t\t\t</div>
 \t\t\t\t</div>
 \t\t\t</footer>
@@ -775,6 +741,6 @@ class __TwigTemplate_2cf989a1c29020707f84d094e32bb023 extends Template
 \t\t\t{% endblock %}
 \t\t</body>
 \t</html>
-", "base.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\base.html.twig");
+", "base.html.twig", "C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\templates\\base.html.twig");
     }
 }
