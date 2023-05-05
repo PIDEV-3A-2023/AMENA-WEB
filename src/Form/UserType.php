@@ -61,8 +61,14 @@ class UserType extends AbstractType
             ->add('prenom')
             ->add('adress')
             ->add('cin')
-            ->add('date_naissance', DateType::class,)
-
+            ->add('date_naissance',  DateType::class, [
+                'label' => 'Date de naissance',
+                'widget' => 'single_text',
+                'html5' => true,
+                'attr' => [
+                'class' => 'reservation-datefin'
+                ]
+            ])
             ->add('status')
 
             ->add('score')

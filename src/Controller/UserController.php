@@ -2,9 +2,11 @@
 
 namespace App\Controller;
 
+use App\Entity\Evaluation;
 use App\Entity\User;
 use App\Form\UserType;
 use App\Repository\UserRepository;
+use Proxies\__CG__\App\Entity\Colis;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\FormError;
 use Symfony\Component\HttpFoundation\Request;
@@ -16,7 +18,8 @@ use Knp\Component\Pager\PaginatorInterface;
 
 use App\Form\ResetPasswordType;
 use App\Form\ResetRequestType;
-
+use App\Repository\AnnoncesRepository;
+use App\Repository\ColisRepository;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 use Symfony\Component\Security\Csrf\TokenGenerator\TokenGeneratorInterface;
@@ -118,18 +121,51 @@ class UserController extends AbstractController
         $user = $this->getUser();
         /* dump($user);
         die(); */
-        return $this->render('user/show.html.twig', [
+       
+       
+        return $this->render('user/back/show.html.twig', [
             'user' => $user,
         ]);
     }
-    #[Route('/{id}', name: 'app_user_showp', methods: ['GET'])]
+    #[Route('/{id}', name: 'app_user_showp', methods: ['POST', 'GET' ])]
 
 
-    public function showp(User $user): Response
+    public function showp($id, userRepository $userRepository, colisRepository $colisRepository,AnnoncesRepository $annoncesRepository,Request $request): Response
     {
+        $user = $userRepository->find($id);
+
+        $queryBuilder = $colisRepository->createQueryBuilder('u')
+            ->where('u.id_u = :id')
+            ->setParameter('id', $id);
+            
+        $colis = $queryBuilder->getQuery()->getResult();
+        
+        $queryBuilder = $annoncesRepository->createQueryBuilder('u')
+            ->where('u.ida_U = :id')
+            ->setParameter('id', $id);
+            
+        $annnonces = $queryBuilder->getQuery()->getResult();
+     
+        if ($request->isMethod('post')) {
+           
+            $rating = $request->request->get('rating');
+
+            // Faites ici tout ce que vous souhaitez faire avec l'ID du transporteur et la note
+
+            // Vous pouvez par exemple enregistrer la note dans une base de données avec Doctrine ORM :
+             $entityManager = $this->getDoctrine()->getManager();
+             $evaluation = new Evaluation();
+             $evaluation->setIdTransporteur($user);
+             $evaluation->setNote($rating);
+             $user->setScore($user->getScore()+$rating*50);
+             $entityManager->persist($evaluation);
+            $entityManager->flush();
+        }
         return $this->render('user/show.html.twig', [
             'user' => $user,
-        ]);
+            'colis' => $colis,
+            'annnonces' => $annnonces,
+        ]); 
     }
 
     #[Route('/edit/{id}', name: 'app_user_edit', methods: ['GET', 'POST'])]

@@ -39,20 +39,18 @@ class AnnoncesRepository extends ServiceEntityRepository
         }
     }
 
-//    /**
-//     * @return Annonces[] Returns an array of Annonces objects
-//     */
-//    public function findByExampleField($value): array
-//    {
-//        return $this->createQueryBuilder('a')
-//            ->andWhere('a.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->orderBy('a.id', 'ASC')
-//            ->setMaxResults(10)
-//            ->getQuery()
-//            ->getResult()
-//        ;
-//    }
+    /**
+     * @return Annonces[] Returns an array of Annonces objects
+     */
+    public function findByType($value): array
+    {
+        return $this->createQueryBuilder('a')
+            ->andWhere('a.type = :val')
+            ->setParameter('val', $value)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
 
 //    public function findOneBySomeField($value): ?Annonces
 //    {

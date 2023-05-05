@@ -8,19 +8,32 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\File;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 class VehiculeType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('type')
-            ->add('immat')
-            ->add('etat')
+            ->add('type',ChoiceType::class, [
+                'choices'  => [
+                    'type' => null,
+                    'Voiture' => 'Voiture',
+                    'Camion' => 'Camion',
+                    'Moto' => 'Moto',
+                    'Velo' => 'Velo'
+                ],
+            ])
+            ->add('immat', null, [
+                'label' => 'Matricule'
+            ])
             ->add('kilometrage')
             ->add('chevaux')
             ->add('marque')
             ->add('modele')
-            ->add('couleur')
+            ->add('lpec', null, [
+                'label' => 'Lieu de prise en charge'
+            ])
             ->add('prix')
             ->add('img',FileType::class,[
                 'label' => 'image',
@@ -41,11 +54,12 @@ class VehiculeType extends AbstractType
                             'image/jpeg',
                             'image/png',
                         ],
-                        'mimeTypesMessage' => 'Please upload a valid Image document',
+                        'mimeTypesMessage' => 'Veuillez télécharger un image valide',
                     ])
                 ],
             ])
-        ;
+            ->add('Enregistrer',SubmitType::class)
+            ;
     }
 
     public function configureOptions(OptionsResolver $resolver): void

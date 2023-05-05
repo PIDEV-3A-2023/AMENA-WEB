@@ -4,71 +4,103 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
-
+use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\VehiculeRepository ; 
-#[ORM\Table(name: '`vehicule`')]
+use Symfony\Component\Serializer\Annotation\MaxDepth;
+use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
+#[ORM\Table(name: '`vehicule`')]
+#[UniqueEntity(fields: ['immat'], message: 'There is already vehicule with this immat')]
 #[ORM\Entity(repositoryClass :VehiculeRepository::class)]
 class Vehicule
 {
-   
- 
+
+
    #[ORM\Id]
    #[ORM\GeneratedValue]
    #[ORM\Column (name:"id")]
-   private ?int $idv=null;
+   #[Groups("vehicules")]
+   private ?int $idV=null;
 
 
     #[ORM\Column(length: 30)]
+    #[Assert\NotBlank(message:"Le type ne doit pas être vide")]
+    #[Groups("vehicules")]
     private ?string $type = null ; 
 
     #[ORM\Column(length: 30)]
+    #[Assert\NotBlank(message:"L'immatiricule ne doit pas être vide")]
+    #[Groups("vehicules")]
     private ?string $immat = null ; 
 
     #[ORM\Column]
-    private ?bool $etat=false ;
+    #[Assert\NotBlank(message:"L'etat ne doit pas être vide")]
+    #[Groups("vehicules")]
+    private ?int $etat ;
 
     #[ORM\Column(length: 30)]
+    #[Assert\NotBlank(message:"La valeur de la Kilometrage doit être remplie")]
+    #[Assert\Positive(message:"La valeur de la Kilometrage doit être positive")]
+    #[Groups("vehicules")]
     private ?string $kilometrage = null ; 
   
     #[ORM\Column]
+    #[Assert\NotBlank(message:"La valeur des chevaux ne doit pas être vide")]
+    #[Assert\Positive(message:"La valeur des cheveaux doit être positive")]
+    #[Groups("vehicules")]
     private ?int $chevaux=0 ;
 
     #[ORM\Column(length: 30)]
+    #[Assert\NotBlank(message:"La valeur de la marque doit être remplie")]
+    #[Groups("vehicules")]
     private ?string $marque = null ;
     
     #[ORM\Column(length: 30)]
+    #[Assert\NotBlank(message:"La valeur de la modele doit être remplie")]
+    #[Groups("vehicules")]
     private ?string $modele = null ;
     
     #[ORM\Column(length: 15)]
-    private ?string $couleur = null ;
+    #[Assert\NotBlank(message:"La valeur de la lpec doit être remplie")]
+    #[Groups("vehicules")]
+    private ?string $lpec = null ;
 
-   
     #[ORM\Column]
+    #[Assert\NotBlank(message:"La valeur de la prix doit être remplie")]
+    #[Groups("vehicules")]
     private ?float $prix = null ;
 
-    #[ORM\Column(length: 150)]
+    #[ORM\Column(length: 150,name : 'img')]
+    #[Groups("vehicules")]
     private ?string $img = null ;
 
-    #[ORM\OneToMany(mappedBy: 'idre', targetEntity: Reservation::class)]
+    #[ORM\OneToMany(mappedBy: 'idVeh', targetEntity: Reservation::class)]
     private Collection $reservations;
 
     public function __construct()
     {
+        $this->etat = 0 ; 
         $this->reservations = new ArrayCollection();
     }
- 
 
-    public function getIdv(): ?int
+    
+    
+
+
+   
+
+
+    public function getidV(): ?int
     {
-        return $this->idv;
+        return $this->idV;
     }
 
     public function getType(): ?string
     {
         return $this->type;
-    }
+}
 
     public function setType(string $type): self
     {
@@ -89,12 +121,12 @@ class Vehicule
         return $this;
     }
 
-    public function isEtat(): ?bool
+    public function isEtat(): ?int
     {
         return $this->etat;
     }
 
-    public function setEtat(bool $etat): self
+    public function setEtat(int $etat): self
     {
         $this->etat = $etat;
 
@@ -149,14 +181,14 @@ class Vehicule
         return $this;
     }
 
-    public function getCouleur(): ?string
+    public function getlpec(): ?string
     {
-        return $this->couleur;
+        return $this->lpec;
     }
 
-    public function setCouleur(string $couleur): self
+    public function setlpec(string $lpec): self
     {
-        $this->couleur = $couleur;
+        $this->lpec = $lpec;
 
         return $this;
     }
@@ -185,6 +217,12 @@ class Vehicule
         return $this;
     }
 
+    
+    public function __toString(): string
+    {
+        return $this->marque ;
+    }
+
     /**
      * @return Collection<int, Reservation>
      */
@@ -197,7 +235,7 @@ class Vehicule
     {
         if (!$this->reservations->contains($reservation)) {
             $this->reservations->add($reservation);
-            $reservation->setIdre($this);
+            $reservation->setIdVeh($this);
         }
 
         return $this;
@@ -207,13 +245,21 @@ class Vehicule
     {
         if ($this->reservations->removeElement($reservation)) {
             // set the owning side to null (unless already changed)
-            if ($reservation->getIdre() === $this) {
-                $reservation->setIdre(null);
+            if ($reservation->getIdVeh() === $this) {
+                $reservation->setIdVeh(null);
             }
         }
 
         return $this;
     }
 
+    public function getEtat(): ?int
+    {
+        return $this->etat;
+    }
+
+  
+
+    
 
 }

@@ -15,9 +15,11 @@ class EvaluationController extends AbstractController
      */
     public function evaluation(Request $request): Response
     {
-        
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+        $user = $this->getUser();
+      
         if ($request->isMethod('post')) {
-            $name = $request->request->get('name');
+           
             $rating = $request->request->get('rating');
 
             // Faites ici tout ce que vous souhaitez faire avec l'ID du transporteur et la note
@@ -25,7 +27,7 @@ class EvaluationController extends AbstractController
             // Vous pouvez par exemple enregistrer la note dans une base de données avec Doctrine ORM :
              $entityManager = $this->getDoctrine()->getManager();
              $evaluation = new Evaluation();
-             $evaluation->setIdTransporteur($name);
+             $evaluation->setIdTransporteur($user);
              $evaluation->setNote($rating);
              $entityManager->persist($evaluation);
             $entityManager->flush();

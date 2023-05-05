@@ -18,7 +18,11 @@ class ValidationController extends AbstractController
 {
     #[Route('/', name: 'app_validation_index', methods: ['GET'])]
     public function index(EntityManagerInterface $entityManager): Response
-    {
+    {$this->denyAccessUnlessGranted('ROLE_ADMIN');
+
+        // or add an optional message - seen by developers
+        $this->denyAccessUnlessGranted('ROLE_ADMIN', null, 'User tried to access a page without having ROLE_ADMIN');
+    
         $validations = $entityManager
             ->getRepository(Validation::class)
             ->findAll();
@@ -75,7 +79,11 @@ public function new(Request $request, EntityManagerInterface $entityManager,$id)
 
     #[Route('/{id}', name: 'app_validation_show', methods: ['GET'])]
     public function show(Validation $validation,EntityManagerInterface $entityManager): Response
-    {
+    {$this->denyAccessUnlessGranted('ROLE_ADMIN');
+
+        // or add an optional message - seen by developers
+        $this->denyAccessUnlessGranted('ROLE_ADMIN', null, 'User tried to access a page without having ROLE_ADMIN');
+    
         $user = $entityManager->getRepository(User::class)->find(240);
         return $this->render('validation/show.html.twig', [
             'validation' => $validation,
@@ -84,8 +92,13 @@ public function new(Request $request, EntityManagerInterface $entityManager,$id)
     }
 
     #[Route('/{id}/edit', name: 'app_validation_edit', methods: ['GET', 'POST'])]
+    
 public function edit(Request $request, Validation $validation, EntityManagerInterface $entityManager): Response
-{
+{$this->denyAccessUnlessGranted('ROLE_ADMIN');
+
+    // or add an optional message - seen by developers
+    $this->denyAccessUnlessGranted('ROLE_ADMIN', null, 'User tried to access a page without having ROLE_ADMIN');
+
     $form = $this->createForm(ValidationType::class, $validation);
     $form->handleRequest($request);
 
@@ -104,7 +117,11 @@ public function edit(Request $request, Validation $validation, EntityManagerInte
 
     #[Route('/{id}', name: 'app_validation_delete', methods: ['POST'])]
     public function delete(Request $request, Validation $validation, EntityManagerInterface $entityManager): Response
-    {
+    {$this->denyAccessUnlessGranted('ROLE_ADMIN');
+
+        // or add an optional message - seen by developers
+        $this->denyAccessUnlessGranted('ROLE_ADMIN', null, 'User tried to access a page without having ROLE_ADMIN');
+    
         if ($this->isCsrfTokenValid('delete' . $validation->getId(), $request->request->get('_token'))) {
             $entityManager->remove($validation);
             $entityManager->flush();

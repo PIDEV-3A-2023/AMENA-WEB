@@ -6,7 +6,17 @@
 {% endblock %}
 {% block title %}Edit Annonces{% endblock %}
 {% block body %}
-    <h1>Modification d'annonce</h1>
+<div class="breadcrumbs d-flex align-items-center" style="background-image: url('assets/img/contact-header.jpg');">
+      <div class="container position-relative d-flex flex-column align-items-center">
+
+        <h2>Modification d'annonce</h2>
+        <ol>
+          <li><a href="index.html">Accueil</a></li>
+          <li>Annonces</li>
+        </ol>
+
+      </div>
+    </div><!-- End Breadcrumbs -->
 
     {{ include('annonces/_form.html.twig', {'button_label': 'Update'}) }}
 
