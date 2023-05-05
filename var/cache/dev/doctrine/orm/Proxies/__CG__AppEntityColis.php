@@ -67,10 +67,10 @@ class Colis extends \App\Entity\Colis implements \Doctrine\ORM\Proxy\Proxy
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Colis' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Colis' . "\0" . 'nomExpediteur', '' . "\0" . 'App\\Entity\\Colis' . "\0" . 'adresseExpediteur', '' . "\0" . 'App\\Entity\\Colis' . "\0" . 'nomDestinataire', '' . "\0" . 'App\\Entity\\Colis' . "\0" . 'adresseDestinataire', '' . "\0" . 'App\\Entity\\Colis' . "\0" . 'poids', '' . "\0" . 'App\\Entity\\Colis' . "\0" . 'statut', '' . "\0" . 'App\\Entity\\Colis' . "\0" . 'dateExpedition', '' . "\0" . 'App\\Entity\\Colis' . "\0" . 'id_u'];
+            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Colis' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Colis' . "\0" . 'nomExpediteur', '' . "\0" . 'App\\Entity\\Colis' . "\0" . 'adresseExpediteur', '' . "\0" . 'App\\Entity\\Colis' . "\0" . 'nomDestinataire', '' . "\0" . 'App\\Entity\\Colis' . "\0" . 'adresseDestinataire', '' . "\0" . 'App\\Entity\\Colis' . "\0" . 'poids', '' . "\0" . 'App\\Entity\\Colis' . "\0" . 'statut', '' . "\0" . 'App\\Entity\\Colis' . "\0" . 'dateExpedition', '' . "\0" . 'App\\Entity\\Colis' . "\0" . 'id_u', '' . "\0" . 'App\\Entity\\Colis' . "\0" . 'colisRec'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Colis' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Colis' . "\0" . 'nomExpediteur', '' . "\0" . 'App\\Entity\\Colis' . "\0" . 'adresseExpediteur', '' . "\0" . 'App\\Entity\\Colis' . "\0" . 'nomDestinataire', '' . "\0" . 'App\\Entity\\Colis' . "\0" . 'adresseDestinataire', '' . "\0" . 'App\\Entity\\Colis' . "\0" . 'poids', '' . "\0" . 'App\\Entity\\Colis' . "\0" . 'statut', '' . "\0" . 'App\\Entity\\Colis' . "\0" . 'dateExpedition', '' . "\0" . 'App\\Entity\\Colis' . "\0" . 'id_u'];
+        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Colis' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Colis' . "\0" . 'nomExpediteur', '' . "\0" . 'App\\Entity\\Colis' . "\0" . 'adresseExpediteur', '' . "\0" . 'App\\Entity\\Colis' . "\0" . 'nomDestinataire', '' . "\0" . 'App\\Entity\\Colis' . "\0" . 'adresseDestinataire', '' . "\0" . 'App\\Entity\\Colis' . "\0" . 'poids', '' . "\0" . 'App\\Entity\\Colis' . "\0" . 'statut', '' . "\0" . 'App\\Entity\\Colis' . "\0" . 'dateExpedition', '' . "\0" . 'App\\Entity\\Colis' . "\0" . 'id_u', '' . "\0" . 'App\\Entity\\Colis' . "\0" . 'colisRec'];
     }
 
     /**
@@ -377,6 +377,28 @@ class Colis extends \App\Entity\Colis implements \Doctrine\ORM\Proxy\Proxy
         $this->__initializer__ && $this->__initializer__->__invoke($this, '__toString', []);
 
         return parent::__toString();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getColisRec(): ?\App\Entity\ColisRec
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getColisRec', []);
+
+        return parent::getColisRec();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setColisRec(?\App\Entity\ColisRec $colisRec): \App\Entity\Colis
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setColisRec', [$colisRec]);
+
+        return parent::setColisRec($colisRec);
     }
 
 }

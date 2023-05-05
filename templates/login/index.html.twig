@@ -18,27 +18,27 @@
 		<div class="flex-div">
 			<div class="name-content">
 				<h1 class="logo">Amena</h1>
-				<p>Connect with friends and the world around you on Amena.</p>
+				<p>Connectez-vous avec tout le monde qui vous entoure sur Amena.</p>
 			</div>
 			<form action="{{ path('app_login') }}" method="post">
 				<label for="username">Email:</label>
 				<input placeholder="Email or Phone Number" type="text" id="username" name="_username" value="{{ last_username }}"/>
 
-				<label for="password">Password:</label>
+				<label for="password">Mot De Passe:</label>
 				<input
 				placeholder="Password" type="password" id="password" name="_password"/>
 
 				{# If you want to control the URL the user is redirected to on success#}
 
-				<input type="hidden" name="_target_path" value="{{ path('app_user_index') }}"/>
+				<input type="hidden" name="_target_path" value="{{ path('app_securitySussess') }}"/>
 				<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 
 
-				<button type="submit" class="login" style="background-color: #063970">login</button>
+				<button type="submit" class="login" style="background-color: #063970">se connecter</button>
 
-				<a href='{{ path('app_forgot_password_request') }}'">Forgot Password ?</a>
+				<a href='{{ path('app_forgot_password_request') }}'">Oublier mot de passe ?</a>
 				<hr>
-				<button type="button" onclick="window.location.href='{{ path('app_user_new') }}'" class="create-account" style="background-color: #1e81b0; width: 160px;height:36px;">Create </button>
+				<button type="button" onclick="window.location.href='{{ path('app_user_new') }}'" class="create-account" style="background-color: #1e81b0; width: 160px;height:36px;">S'inscrire</button>
 			</form>
 		</div>
 	</div>

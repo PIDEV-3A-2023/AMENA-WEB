@@ -1,22 +1,21 @@
-{% extends 'base.html.twig' %}
+{% extends 'baseadmin.html.twig' %}
 
 {% block title %}Vehicule index{% endblock %}
 
 {% block body %}
-    <h1>Vehicule index</h1>
+    <h1>Liste des vehicules</h1>
 
     <table class="table">
         <thead>
             <tr>
-                <th>Idv</th>
                 <th>Type</th>
-                <th>Immat</th>
+                <th>Matricule</th>
                 <th>Etat</th>
                 <th>Kilometrage</th>
                 <th>Chevaux</th>
                 <th>Marque</th>
                 <th>Modele</th>
-                <th>Couleur</th>
+                <th>Lieu de prise en charge </th>
                 <th>Prix</th>
                 <th>Img</th>
                 <th>actions</th>
@@ -25,21 +24,20 @@
         <tbody>
         {% for vehicule in vehicules %}
             <tr>
-                <td>{{ vehicule.idv }}</td>
                 <td>{{ vehicule.type }}</td>
                 <td>{{ vehicule.immat }}</td>
-                <td>{{ vehicule.etat ? 'Yes' : 'No' }}</td>
+                <td>{{ vehicule.etat ?  'Reservé' :'Disponible'  }}</td>
                 <td>{{ vehicule.kilometrage }}</td>
                 <td>{{ vehicule.chevaux }}</td>
                 <td>{{ vehicule.marque }}</td>
                 <td>{{ vehicule.modele }}</td>
-                <td>{{ vehicule.couleur }}</td>
+                <td>{{ vehicule.lpec }}</td>
                 <td>{{ vehicule.prix }}</td>
-                <td><img style="width:100px;height:100px" src="{{ vehicule.img }}"> </td>
-                
+                <td><img style="width:75px;height:75px" src="{{ vehicule.img }}"> </td>
+
                 <td>
-                    <a href="{{ path('app_vehicule_show', {'idv': vehicule.idv}) }}">show</a>
-                    <a href="{{ path('app_vehicule_edit', {'idv': vehicule.idv}) }}">edit</a>
+                    <a href="{{ path('app_vehicule_show', {'idV': vehicule.idV}) }}">Afficher</a>
+                    <a href="{{ path('app_vehicule_edit', {'idV': vehicule.idV}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
@@ -49,6 +47,5 @@
         {% endfor %}
         </tbody>
     </table>
-
-    <a href="{{ path('app_vehicule_new') }}">Create new</a>
+    <a href="{{ path('app_vehicule_new') }}">Ajouter vehicule</a>
 {% endblock %}

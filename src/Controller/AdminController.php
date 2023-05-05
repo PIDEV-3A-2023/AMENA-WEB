@@ -141,6 +141,9 @@ class AdminController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $roles = [];
+            $roles = $form->get('roles')->getData();
+            $user->setRoles($roles);
             $userRepository->save($user, true);
             $image = $form->get('image')->getData();
 

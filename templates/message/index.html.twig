@@ -1,14 +1,14 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Message index{% endblock %}
+{% block title %}Boite de Receptions {% endblock %}
 
-{% block body %}
-    <h1>Message index</h1>
+{% block body %}<br><br><br><br><br>
+    <h1>Mes Messages</h1>
 
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
+                
                 <th>Content</th>
                 <th>Timestamp</th>
                 <th>senderid</th>
@@ -18,7 +18,7 @@
         <tbody>
         {% for message in messages %}
             <tr>
-                <td>{{ message.id }}</td>
+               
                 <td>{{ message.content }}</td>
                 
                 <td>{{ message.timestamp ? message.timestamp|date('Y-m-d') : '' }}</td>

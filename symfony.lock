@@ -50,6 +50,9 @@
             "ref": "e5a4aa21f2e98d7440ae9aab6b56e307f99dd084"
         }
     },
+    "gregwar/captcha-bundle": {
+        "version": "v2.2.0"
+    },
     "karser/karser-recaptcha3-bundle": {
         "version": "0.1",
         "recipe": {
@@ -64,6 +67,21 @@
     },
     "knplabs/knp-paginator-bundle": {
         "version": "v5.9.0"
+    },
+    "knplabs/knp-snappy-bundle": {
+        "version": "1.9",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "main",
+            "version": "1.5",
+            "ref": "c81bdcf4a9d4e7b1959071457f9608631865d381"
+        },
+        "files": [
+            "./config/packages/knp_snappy.yaml"
+        ]
+    },
+    "mercuryseries/flashy-bundle": {
+        "version": "v5.1.0"
     },
     "phpunit/phpunit": {
         "version": "9.6",

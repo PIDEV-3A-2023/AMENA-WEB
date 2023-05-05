@@ -67,10 +67,10 @@ class User extends \App\Entity\User implements \Doctrine\ORM\Proxy\Proxy
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\User' . "\0" . 'id', '' . "\0" . 'App\\Entity\\User' . "\0" . 'email', '' . "\0" . 'App\\Entity\\User' . "\0" . 'roles', '' . "\0" . 'App\\Entity\\User' . "\0" . 'password', '' . "\0" . 'App\\Entity\\User' . "\0" . 'nom', '' . "\0" . 'App\\Entity\\User' . "\0" . 'prenom', '' . "\0" . 'App\\Entity\\User' . "\0" . 'adress', '' . "\0" . 'App\\Entity\\User' . "\0" . 'cin', '' . "\0" . 'App\\Entity\\User' . "\0" . 'date_naissance', '' . "\0" . 'App\\Entity\\User' . "\0" . 'date_creation_c', '' . "\0" . 'App\\Entity\\User' . "\0" . 'status', '' . "\0" . 'App\\Entity\\User' . "\0" . 'token', '' . "\0" . 'App\\Entity\\User' . "\0" . 'score', '' . "\0" . 'App\\Entity\\User' . "\0" . 'numtel', '' . "\0" . 'App\\Entity\\User' . "\0" . 'image', '' . "\0" . 'App\\Entity\\User' . "\0" . 'compte_ex', '' . "\0" . 'App\\Entity\\User' . "\0" . 'token_ex', '' . "\0" . 'App\\Entity\\User' . "\0" . 'receiverId', '' . "\0" . 'App\\Entity\\User' . "\0" . 'senderId', '' . "\0" . 'App\\Entity\\User' . "\0" . 'validations', '' . "\0" . 'App\\Entity\\User' . "\0" . 'colis'];
+            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\User' . "\0" . 'id', '' . "\0" . 'App\\Entity\\User' . "\0" . 'email', '' . "\0" . 'App\\Entity\\User' . "\0" . 'roles', '' . "\0" . 'App\\Entity\\User' . "\0" . 'password', '' . "\0" . 'App\\Entity\\User' . "\0" . 'nom', '' . "\0" . 'App\\Entity\\User' . "\0" . 'prenom', '' . "\0" . 'App\\Entity\\User' . "\0" . 'adress', '' . "\0" . 'App\\Entity\\User' . "\0" . 'cin', '' . "\0" . 'App\\Entity\\User' . "\0" . 'date_naissance', '' . "\0" . 'App\\Entity\\User' . "\0" . 'date_creation_c', '' . "\0" . 'App\\Entity\\User' . "\0" . 'status', '' . "\0" . 'App\\Entity\\User' . "\0" . 'token', '' . "\0" . 'App\\Entity\\User' . "\0" . 'score', '' . "\0" . 'App\\Entity\\User' . "\0" . 'numtel', '' . "\0" . 'App\\Entity\\User' . "\0" . 'image', '' . "\0" . 'App\\Entity\\User' . "\0" . 'compte_ex', '' . "\0" . 'App\\Entity\\User' . "\0" . 'token_ex', '' . "\0" . 'App\\Entity\\User' . "\0" . 'receiverId', '' . "\0" . 'App\\Entity\\User' . "\0" . 'senderId', '' . "\0" . 'App\\Entity\\User' . "\0" . 'validations', '' . "\0" . 'App\\Entity\\User' . "\0" . 'colis', '' . "\0" . 'App\\Entity\\User' . "\0" . 'reservations', '' . "\0" . 'App\\Entity\\User' . "\0" . 'appointments', '' . "\0" . 'App\\Entity\\User' . "\0" . 'competitions', '' . "\0" . 'App\\Entity\\User' . "\0" . 'gifts', '' . "\0" . 'App\\Entity\\User' . "\0" . 'colisRec'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\User' . "\0" . 'id', '' . "\0" . 'App\\Entity\\User' . "\0" . 'email', '' . "\0" . 'App\\Entity\\User' . "\0" . 'roles', '' . "\0" . 'App\\Entity\\User' . "\0" . 'password', '' . "\0" . 'App\\Entity\\User' . "\0" . 'nom', '' . "\0" . 'App\\Entity\\User' . "\0" . 'prenom', '' . "\0" . 'App\\Entity\\User' . "\0" . 'adress', '' . "\0" . 'App\\Entity\\User' . "\0" . 'cin', '' . "\0" . 'App\\Entity\\User' . "\0" . 'date_naissance', '' . "\0" . 'App\\Entity\\User' . "\0" . 'date_creation_c', '' . "\0" . 'App\\Entity\\User' . "\0" . 'status', '' . "\0" . 'App\\Entity\\User' . "\0" . 'token', '' . "\0" . 'App\\Entity\\User' . "\0" . 'score', '' . "\0" . 'App\\Entity\\User' . "\0" . 'numtel', '' . "\0" . 'App\\Entity\\User' . "\0" . 'image', '' . "\0" . 'App\\Entity\\User' . "\0" . 'compte_ex', '' . "\0" . 'App\\Entity\\User' . "\0" . 'token_ex', '' . "\0" . 'App\\Entity\\User' . "\0" . 'receiverId', '' . "\0" . 'App\\Entity\\User' . "\0" . 'senderId', '' . "\0" . 'App\\Entity\\User' . "\0" . 'validations', '' . "\0" . 'App\\Entity\\User' . "\0" . 'colis'];
+        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\User' . "\0" . 'id', '' . "\0" . 'App\\Entity\\User' . "\0" . 'email', '' . "\0" . 'App\\Entity\\User' . "\0" . 'roles', '' . "\0" . 'App\\Entity\\User' . "\0" . 'password', '' . "\0" . 'App\\Entity\\User' . "\0" . 'nom', '' . "\0" . 'App\\Entity\\User' . "\0" . 'prenom', '' . "\0" . 'App\\Entity\\User' . "\0" . 'adress', '' . "\0" . 'App\\Entity\\User' . "\0" . 'cin', '' . "\0" . 'App\\Entity\\User' . "\0" . 'date_naissance', '' . "\0" . 'App\\Entity\\User' . "\0" . 'date_creation_c', '' . "\0" . 'App\\Entity\\User' . "\0" . 'status', '' . "\0" . 'App\\Entity\\User' . "\0" . 'token', '' . "\0" . 'App\\Entity\\User' . "\0" . 'score', '' . "\0" . 'App\\Entity\\User' . "\0" . 'numtel', '' . "\0" . 'App\\Entity\\User' . "\0" . 'image', '' . "\0" . 'App\\Entity\\User' . "\0" . 'compte_ex', '' . "\0" . 'App\\Entity\\User' . "\0" . 'token_ex', '' . "\0" . 'App\\Entity\\User' . "\0" . 'receiverId', '' . "\0" . 'App\\Entity\\User' . "\0" . 'senderId', '' . "\0" . 'App\\Entity\\User' . "\0" . 'validations', '' . "\0" . 'App\\Entity\\User' . "\0" . 'colis', '' . "\0" . 'App\\Entity\\User' . "\0" . 'reservations', '' . "\0" . 'App\\Entity\\User' . "\0" . 'appointments', '' . "\0" . 'App\\Entity\\User' . "\0" . 'competitions', '' . "\0" . 'App\\Entity\\User' . "\0" . 'gifts', '' . "\0" . 'App\\Entity\\User' . "\0" . 'colisRec'];
     }
 
     /**
@@ -729,6 +729,160 @@ class User extends \App\Entity\User implements \Doctrine\ORM\Proxy\Proxy
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeColi', [$coli]);
 
         return parent::removeColi($coli);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getReservations(): \Doctrine\Common\Collections\Collection
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getReservations', []);
+
+        return parent::getReservations();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function addReservation(\App\Entity\Reservation $reservation): \App\Entity\User
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addReservation', [$reservation]);
+
+        return parent::addReservation($reservation);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function removeReservation(\App\Entity\Reservation $reservation): \App\Entity\User
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeReservation', [$reservation]);
+
+        return parent::removeReservation($reservation);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getAppointments(): \Doctrine\Common\Collections\Collection
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getAppointments', []);
+
+        return parent::getAppointments();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function addAppointment(\App\Entity\Appointment $appointment): \App\Entity\User
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addAppointment', [$appointment]);
+
+        return parent::addAppointment($appointment);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function removeAppointment(\App\Entity\Appointment $appointment): \App\Entity\User
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeAppointment', [$appointment]);
+
+        return parent::removeAppointment($appointment);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getCompetitions(): \Doctrine\Common\Collections\Collection
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getCompetitions', []);
+
+        return parent::getCompetitions();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function addCompetition(\App\Entity\Competition $competition): \App\Entity\User
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addCompetition', [$competition]);
+
+        return parent::addCompetition($competition);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function removeCompetition(\App\Entity\Competition $competition): \App\Entity\User
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeCompetition', [$competition]);
+
+        return parent::removeCompetition($competition);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getGifts(): \Doctrine\Common\Collections\Collection
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getGifts', []);
+
+        return parent::getGifts();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function addGift(\App\Entity\Gifts $gift): \App\Entity\User
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addGift', [$gift]);
+
+        return parent::addGift($gift);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function removeGift(\App\Entity\Gifts $gift): \App\Entity\User
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeGift', [$gift]);
+
+        return parent::removeGift($gift);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getColisRec(): ?\App\Entity\ColisRec
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getColisRec', []);
+
+        return parent::getColisRec();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setColisRec(?\App\Entity\ColisRec $colisRec): \App\Entity\User
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setColisRec', [$colisRec]);
+
+        return parent::setColisRec($colisRec);
     }
 
 }
