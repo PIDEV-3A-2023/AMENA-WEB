@@ -49,7 +49,7 @@ class AdminController extends AbstractController
             return $this->render('admin/index.html.twig', [
                 'users' => $pagination,
             ]);
-        } 
+        }
     }
     #[Route('/new', name: 'app_admin_new', methods: ['GET', 'POST'])]
     public function new(Request $request, UserRepository $userRepository, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager): Response
@@ -141,6 +141,9 @@ class AdminController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $roles = [];
+            $roles = $form->get('roles')->getData();
+            $user->setRoles($roles);
             $userRepository->save($user, true);
             $image = $form->get('image')->getData();
 

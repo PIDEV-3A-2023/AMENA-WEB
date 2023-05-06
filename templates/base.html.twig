@@ -39,13 +39,41 @@
 
 	</head>
 	<body>
+	{% for flash_message in app.flashes('success') %}
+    <div class="alert alert-success alert-dismissible fade show" role="alert" id="flash-message">
+        <div class="d-flex align-items-center">
+            <i class="bi bi-check-circle-fill me-2"></i>
+            <span>{{ flash_message }}</span>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+{% endfor %}
+{% for flash_message in app.flashes('error') %}
+<div class="alert alert-danger alert-dismissible fade show" role="alert" id="flash-message">
+<div class="d-flex align-items-center">
+<i class="bi bi-exclamation-triangle-fill me-2"></i>
+<span>{{ flash_message }}</span>
+</div>
+<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endfor %}
+
+<script>
+    // Masquer automatiquement le message de succès après 3 secondes
+    setTimeout(function() {
+        var flashMessage = document.getElementById('flash-message');
+        if (flashMessage !== null) {
+            flashMessage.remove();
+        }
+    }, 3000);
+</script>
 		<!-- ======= Header ======= -->
 		<header id="header" class="header d-flex align-items-center fixed-top" style="margin-bottom:8%;background: rgba(27, 47, 69, 0.9);padding: 15px;">
 			<div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
-				<a href="index.html" class="logo d-flex align-items-center">
+				<a href="{{path('app_accueil')}}" class="logo d-flex align-items-center">
 					<!-- Uncomment the line below if you also wish to use an image logo -->
-					<!-- <img src="front/assets/img/logo.png" alt=""> -->
+					 <img src="front/assets/img/logo.png" alt="" style =height:200px;> 
 						<h1 class="d-flex align-items-center"> Amena</h1>
 				</a>
 
@@ -55,67 +83,85 @@
 				<nav id="navbar" class="navbar">
 					<ul>
 						<li>
-							<a href="/web/index.html">Home</a>
+							<a  href="{{path('app_accueil')}}">Accueil</a>
 						</li>
 						<li>
-							<a href="/web/about.html">About</a>
+							<a  href="{{path('app_user_index')}}">Liste des transporteurs</a>
+						</li>
+						<li>
+							<a href="{{ path('app_reclamations_new') }}">Reclamer</a>
 						</li>
 
 						<li>
 							<a href="/annonces/">Annonces</a>
 						</li>
-
+						
 						<li>
-							<a href="/web/blog">Blog</a>
+							{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+							{% if app.user.roles[0] == "ROLE_USER" %}
+								<a  href="/colis/">Colis</a>
+							{% endif %}	
+						{% endif %}					
+				
 						</li>
+						{% if is_granted('IS_AUTHENTICATED_FULLY') %}						
+							{% if app.user.roles[0] == "ROLE_TRANSPORTEUR" %}
 						<li>
-							{% if is_granted('ROLE_ADMIN') %}
-								<a href='{{ path('app_admin_index') }}'>Espace Admin ?</a>
-							{% endif %}
+							<a href="/documentexpedition/">Document d'expedition</a>
 						</li>
 						<li class="dropdown">
 							<a>
-								<span>Gestion</span>
+								<span>Location des vehicules</span>
 								<i class="bi bi-chevron-down dropdown-indicator"></i>
 							</a>
 							<ul>
 								<li>
-									<a>Gestion Colis</a>
-								</li>
-								<li class="dropdown">
-									<a>
-										<span>Gestion Vehicules</span>
-										<i class="bi bi-chevron-down dropdown-indicator"></i>
-									</a>
-									<ul>
-										<li><a>Deep Dropdown 1</a></li>
-										<li><a>Deep Dropdown 2</a></li>
-										<li><a>Deep Dropdown 3</a></li>
-										<li><a>Deep Dropdown 4</a></li>
-										<li><a>Deep Dropdown 5</a></li>
-									</ul>
+									<a href="/front/reservation">Reserver vehicule</a>
 								</li>
 								<li>
-									<a>Gestion Annonces</a>
-								</li>
-								<li>
-									<a>Gestion Gamification</a>
-								</li>
-
+									<a href="/front/reservation/MesReservations">Mes reservations</a>
+								</li>							
 							</ul>
 						</li>
-						<ul>
-							{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+						<li class="dropdown">
+							<a>
+								<span>Competition et Cadeaux</span>
+								<i class="bi bi-chevron-down dropdown-indicator"></i>
+							</a>
+							<ul>
 								<li>
-									<a href="/logout/" class="active">logout</a>
+									<a href="/front/competition">Participer a des competition</a>
+								</li>
+								<li>
+									<a href="/front/competition/cadeaux">Voir les cadeaux</a>
+								</li>							
+							</ul>
+						</li>
+							{% endif %}
+							{% endif %}
+
+						<li>
+							{% if is_granted('ROLE_ADMIN') %}
+								<a  href="{{ url('app_stats_index') }}">Espace Admin </a>
+							{% endif %}
+						</li>
+						
+						<ul>
+						<li>
+
+								</li>
+							{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+							 <a href="/user/profil" class="active">Profil</a>
+								<li>
+									<a href="/logout/" class="active">Déconnexion</a>
 
 								</li>
 							{% else %}
 								<li>
-									<a href='{{ path('app_login') }}'>login</a>
+									<a href='{{ path('app_login') }}'>Connexion</a>
 								</li>
 								<li>
-									<a href="{{ path('app_user_new') }}">Register</a>
+									<a href="{{ path('app_user_new') }}">Inscription</a>
 
 								</li>
 							{% endif %}
@@ -127,129 +173,18 @@
 			</div>
 		</header>
 		<!-- End Header -->
+<!--Rayeeeeeen -->
+
+
+
+<!--Rayeeeeeen -->
 
 
 		<main id="main"> {% block body %}{% endblock %}
 			</main>
 			<!-- End #main -->
-			<!-- ======= Footer ======= -->
-			<footer id="footer" class="footer" style="margin-top:38%">
-
-				<div class="footer-content">
-					<div class="container">
-						<div class="row gy-4">
-							<div class="col-lg-5 col-md-12 footer-info">
-								<a href="index.html" class="logo d-flex align-items-center">
-									<span>Amena</span>
-								</a>
-								<p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
-								<div class="social-links d-flex  mt-3">
-									<a class="twitter">
-										<i class="bi bi-twitter"></i>
-									</a>
-									<a class="facebook">
-										<i class="bi bi-facebook"></i>
-									</a>
-									<a class="instagram">
-										<i class="bi bi-instagram"></i>
-									</a>
-									<a class="linkedin">
-										<i class="bi bi-linkedin"></i>
-									</a>
-								</div>
-							</div>
-
-							<div class="col-lg-2 col-6 footer-links">
-								<h4>Useful Links</h4>
-								<ul>
-									<li>
-										<i class="bi bi-dash"></i>
-										<a>Home</a>
-									</li>
-									<li>
-										<i class="bi bi-dash"></i>
-										<a>About us</a>
-									</li>
-									<li>
-										<i class="bi bi-dash"></i>
-										<a>Services</a>
-									</li>
-									<li>
-										<i class="bi bi-dash"></i>
-										<a>Terms of service</a>
-									</li>
-									<li>
-										<i class="bi bi-dash"></i>
-										<a>Privacy policy</a>
-									</li>
-								</ul>
-							</div>
-
-							<div class="col-lg-2 col-6 footer-links">
-								<h4>Our Services</h4>
-								<ul>
-									<li>
-										<i class="bi bi-dash"></i>
-										<a>Web Design</a>
-									</li>
-									<li>
-										<i class="bi bi-dash"></i>
-										<a>Web Development</a>
-									</li>
-									<li>
-										<i class="bi bi-dash"></i>
-										<a>Product Management</a>
-									</li>
-									<li>
-										<i class="bi bi-dash"></i>
-										<a>Marketing</a>
-									</li>
-									<li>
-										<i class="bi bi-dash"></i>
-										<a>Graphic Design</a>
-									</li>
-								</ul>
-							</div>
-
-							<div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
-								<h4>Contact Us</h4>
-								<p>
-									A108 Adam Street
-									<br>
-									New York, NY 535022<br>
-									United States
-									<br><br>
-									<strong>Phone:</strong>
-									+1 5589 55488 55<br>
-									<strong>Email:</strong>
-									info@example.com<br>
-								</p>
-
-							</div>
-
-						</div>
-					</div>
-				</div>
-
-				<div class="footer-legal">
-					<div class="container">
-						<div class="copyright">
-							&copy; Copyright
-							<strong>
-								<span>Amena</span>
-							</strong>. All Rights Reserved
-						</div>
-						<div class="credits">
-							Designed by<a href="https://bootstrapmade.com/">
-								BootstrapMade</a>
-						</div>
-					</div>
-				</div>
-			</footer>
-			<!-- End Footer -->
-			<!-- End Footer -->
-
-			<a class="scroll-top d-flex align-items-center justify-content-center">
+			
+  			<a class="scroll-top d-flex align-items-center justify-content-center">
 				<i class="bi bi-arrow-up-short"></i>
 			</a>
 

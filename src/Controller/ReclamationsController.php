@@ -38,7 +38,7 @@ class ReclamationsController extends AbstractController
             
             $reclamationsRepository->save($reclamation, true);
 
-            return $this->redirectToRoute('app_reclamations_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_accueil', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('reclamations/new.html.twig', [

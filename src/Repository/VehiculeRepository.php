@@ -5,6 +5,7 @@ namespace App\Repository;
 use App\Entity\Vehicule;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Doctrine\ORM\EntityRepository;
 
 /**
  * @extends ServiceEntityRepository<Vehicule>
@@ -39,6 +40,10 @@ class VehiculeRepository extends ServiceEntityRepository
         }
     }
 
+
+
+
+
 //    /**
 //     * @return Vehicule[] Returns an array of Vehicule objects
 //     */
@@ -54,13 +59,13 @@ class VehiculeRepository extends ServiceEntityRepository
 //        ;
 //    }
 
-//    public function findOneBySomeField($value): ?Vehicule
-//    {
-//        return $this->createQueryBuilder('v')
-//            ->andWhere('v.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->getQuery()
-//            ->getOneOrNullResult()
-//        ;
-//    }
+   public function findOneById($value): ?Vehicule
+    {
+        return $this->createQueryBuilder('v')
+           ->andWhere('v.idV= :val')
+           ->setParameter('val', $value)
+           ->getQuery()
+           ->getOneOrNullResult()
+       ;
+  }
 }

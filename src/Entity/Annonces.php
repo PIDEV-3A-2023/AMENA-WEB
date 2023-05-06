@@ -18,7 +18,7 @@ class Annonces
     #[ORM\Column(name:'id_annonce')]
     private ?int $id = null;
     
-    #[Assert\NotBlank(message: "veuillez selectionner le type .")]
+    //#[Assert\NotBlank(message: "veuillez selectionner le type .")]
     #[ORM\Column(length: 255)]
     private ?string $type = null;
 

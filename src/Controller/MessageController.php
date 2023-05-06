@@ -1,10 +1,12 @@
 <?php
 
 namespace App\Controller;
+
 use App\Entity\User;
 use App\Entity\Message;
 use App\Form\MessageType;
 use App\Repository\MessageRepository;
+use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -15,7 +17,8 @@ use Symfony\Component\Validator\Constraints\DateTime;
 
 #[Route('/message')]
 class MessageController extends AbstractController
-{ private $security;
+{
+    private $security;
     public function __construct(Security $security)
     {
         // Avoid calling getUser() in the constructor: auth may not
@@ -24,44 +27,56 @@ class MessageController extends AbstractController
     }
     #[Route('/', name: 'app_message_index', methods: ['GET'])]
     public function index(MessageRepository $messageRepository): Response
-    {$this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+    {
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         $user = $this->security->getUser();
+
+        // Query the MessageRepository for messages where the receiverId matches the user's ID
+        $messages = $messageRepository->findBy([
+            'receiverId' => $user->getId(),
+        ]);
+
+        // Extract the IDs of the messages into a separate array
+        $ids = array_map(function ($message) {
+            return $message->getId();
+        }, $messages);
+
+        // Sort the IDs and re-arrange the messages array accordingly
+        array_multisort($ids, SORT_ASC, $messages);
+
+        // Pass the sorted messages array to the template
         return $this->render('message/index.html.twig', [
-            'messages' => $messageRepository->findAll(),
+            'messages' => $messages,
         ]);
     }
-
-    #[Route('/new', name: 'app_message_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, MessageRepository $messageRepository,EntityManagerInterface $entityManager): Response
-    {$this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+    #[Route('/{id}/new', name: 'app_message_new', methods: ['GET', 'POST'])]
+    public function new(Request $request, MessageRepository $messageRepository, EntityManagerInterface $entityManager, UserRepository $userRepository): Response
+    {
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         $user = $this->security->getUser();
-      
-        
-       
-        $message = new Message();
 
+        $message = new Message();
         $form = $this->createForm(MessageType::class, $message);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-
-
-            var_dump((new \DateTime()));
-            $message->setSenderId($user);
-            
+            $receiverId = $userRepository->find($request->get('id'));
            
-            $message->setTimestamp(new \DateTime()); // Initialize the timestamp property with the current date/time
+            $message->setSenderId($user);
+            $message->setReceiverId($receiverId);
+            $message->setTimestamp(new \DateTime());
             $messageRepository->save($message, true);
+            return $this->redirectToRoute('app_message_index', ['id' => $receiverId->getId()], Response::HTTP_SEE_OTHER);
 
-            return $this->redirectToRoute('app_message_index', [], Response::HTTP_SEE_OTHER);
+         
         }
 
         return $this->renderForm('message/new.html.twig', [
             'message' => $message,
+
             'form' => $form,
         ]);
     }
-
     #[Route('/{id}', name: 'app_message_show', methods: ['GET'])]
     public function show(Message $message): Response
     {
@@ -91,7 +106,7 @@ class MessageController extends AbstractController
     #[Route('/{id}', name: 'app_message_delete', methods: ['POST'])]
     public function delete(Request $request, Message $message, MessageRepository $messageRepository): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$message->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $message->getId(), $request->request->get('_token'))) {
             $messageRepository->remove($message, true);
         }
 
@@ -102,15 +117,15 @@ class MessageController extends AbstractController
 
 
     #[Route('/', name: 'app_message_recu', methods: ['GET'])]
-public function mrecu(MessageRepository $messageRepository): Response
-{
-    $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
-    $user = $this->security->getUser();
+    public function mrecu(MessageRepository $messageRepository): Response
+    {
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+        $user = $this->security->getUser();
 
-    $messages = $messageRepository->findByReceiver($user);
+        $messages = $messageRepository->findByReceiver($user);
 
-    return $this->render('message/index.html.twig', [
-        'messages' => $messages,
-    ]);
-}
+        return $this->render('message/index.html.twig', [
+            'messages' => $messages,
+        ]);
+    }
 }

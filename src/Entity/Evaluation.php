@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 
 #[ORM\Table(name: '`evaluation`')]
-
+#[ORM\Entity(repositoryClass :EvaluationRepository::class)]
 class Evaluation
 {
     #[ORM\Id]
@@ -56,5 +56,11 @@ class Evaluation
 
         return $this;
     }
+
+    public function __toString()
+    {
+        return $this->getNote();
+    }
+
    
 }

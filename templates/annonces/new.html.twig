@@ -6,7 +6,17 @@
 
 {% endblock %}
 {% block body %}
+<div class="breadcrumbs d-flex align-items-center" style="background-image: url('assets/img/contact-header.jpg');">
+      <div class="container position-relative d-flex flex-column align-items-center">
 
+        <h2>Ajouter annonce</h2>
+        <ol>
+          <li><a href="index.html">Accueil</a></li>
+          <li>Ajouter annonce</li>
+        </ol>
+
+      </div>
+    </div><!-- End Breadcrumbs -->
 	<div style="margin-top:8%">
 
 {% if form_errors(form) %}
@@ -27,10 +37,7 @@
                         <form class="requires-validation" novalidate>
 						{{ form_row(form._token) }}
 
-                            <div class="col-md-12">
-                              {{ form_row(form.type) }}
-                            </div>
-
+                            
                             <div class="col-md-12">
                                {{ form_row(form.ville_dep) }}
                             </div>

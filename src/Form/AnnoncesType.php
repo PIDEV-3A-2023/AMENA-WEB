@@ -53,13 +53,6 @@ class AnnoncesType extends AbstractType
             'Zaghouan',
         ];
         $builder
-        ->add('type', ChoiceType::class, [
-            'choices' => [
-                'Offre' => 'offre',
-                'Demande' => 'demande',
-            ],
-            
-        ])
         ->add('ville_dep',ChoiceType::class, [
                 'choices' => array_combine($villes, $villes),
                 'placeholder' => 'Sélectionnez une ville de départ',
@@ -72,7 +65,7 @@ class AnnoncesType extends AbstractType
         ->add('date_arr')
         ->add('prix')
         ->add('description')
-        ->add('idColis')
+        
         ->add('Enregistrer', SubmitType::class);
         ;
     }

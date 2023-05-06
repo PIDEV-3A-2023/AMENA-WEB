@@ -8,6 +8,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -134,10 +135,15 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private Collection $validations;
 
     public function __construct()
-    {
+
+    {   $this->reservations = new ArrayCollection();
         $this->receiverId = new ArrayCollection();
         $this->senderId = new ArrayCollection();
         $this->validations = new ArrayCollection();
+        $this->appointments = new ArrayCollection();
+        $this->competitions = new ArrayCollection();
+        $this->gifts = new ArrayCollection();
+        $this->colis = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -509,4 +515,172 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     }
     #[ORM\OneToMany(mappedBy: 'id_u', targetEntity: Colis::class)]
     private Collection $colis;
+
+
+
+
+
+
+
+    //rayen
+    
+    #[ORM\OneToMany(mappedBy: 'idTrans', targetEntity: Reservation::class)]
+    private Collection $reservations;
+
+    #[ORM\OneToMany(mappedBy: 'user', targetEntity: Appointment::class)]
+    private Collection $appointments;
+
+    /**
+     * @return Collection<int, Reservation>
+     */
+    public function getReservations(): Collection
+    {
+        return $this->reservations;
+    }
+
+    public function addReservation(Reservation $reservation): self
+    {
+        if (!$this->reservations->contains($reservation)) {
+            $this->reservations->add($reservation);
+            $reservation->setIdTrans($this);
+        }
+
+        return $this;
+    }
+
+    public function removeReservation(Reservation $reservation): self
+    {
+        if ($this->reservations->removeElement($reservation)) {
+            // set the owning side to null (unless already changed)
+            if ($reservation->getIdTrans() === $this) {
+                $reservation->setIdTrans(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Appointment>
+     */
+    public function getAppointments(): Collection
+    {
+        return $this->appointments;
+    }
+
+    public function addAppointment(Appointment $appointment): self
+    {
+        if (!$this->appointments->contains($appointment)) {
+            $this->appointments->add($appointment);
+            $appointment->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeAppointment(Appointment $appointment): self
+    {
+        if ($this->appointments->removeElement($appointment)) {
+            // set the owning side to null (unless already changed)
+            if ($appointment->getUser() === $this) {
+                $appointment->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /////////ahlem
+
+    /**
+     * @return Collection<int, Competition>
+     */
+    public function getCompetitions(): Collection
+    {
+        return $this->competitions;
+    }
+
+    public function addCompetition(Competition $competition): self
+    {
+        if (!$this->competitions->contains($competition)) {
+            $this->competitions->add($competition);
+            $competition->addUserPart($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCompetition(Competition $competition): self
+    {
+        if ($this->competitions->removeElement($competition)) {
+            $competition->removeUserPart($this);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Gifts>
+     */
+    public function getGifts(): Collection
+    {
+        return $this->gifts;
+    }
+
+    public function addGift(Gifts $gift): self
+    {
+        if (!$this->gifts->contains($gift)) {
+            $this->gifts->add($gift);
+            $gift->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeGift(Gifts $gift): self
+    {
+        if ($this->gifts->removeElement($gift)) {
+            // set the owning side to null (unless already changed)
+            if ($gift->getUser() === $this) {
+                $gift->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+    #[ORM\ManyToMany(targetEntity: Competition::class, mappedBy: 'userPart')]
+    private Collection $competitions;
+
+    #[ORM\OneToMany(mappedBy: 'user', targetEntity: Gifts::class)]
+    private Collection $gifts;
+
+    #[ORM\OneToOne(mappedBy: 'id_u', cascade: ['persist', 'remove'])]
+    private ?ColisRec $colisRec = null;
+
+    public function getColisRec(): ?ColisRec
+    {
+        return $this->colisRec;
+    }
+
+    public function setColisRec(?ColisRec $colisRec): self
+    {
+        // unset the owning side of the relation if necessary
+        if ($colisRec === null && $this->colisRec !== null) {
+            $this->colisRec->setIdU(null);
+        }
+
+        // set the owning side of the relation if necessary
+        if ($colisRec !== null && $colisRec->getIdU() !== $this) {
+            $colisRec->setIdU($this);
+        }
+
+        $this->colisRec = $colisRec;
+
+        return $this;
+    }
+
+
+   
+   
 }

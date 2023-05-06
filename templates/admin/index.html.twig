@@ -11,20 +11,18 @@
 	<br>
 	<br>
 	<br>
-	<h1>User index</h1>
+	<h1>Liste des utilisateurs</h1>
 
 <div class="pagination">
         {{ knp_pagination_render(users) }}
     </div>
 	<div class="container-fluid p-0">
 
-		<h1 class="h3 mb-3">Blank Page</h1>
 
 		<div class="row">
 			<div class="col-12" style="overflow-x: scroll">
 				<div class="card" style="width: 4300px;">
 					<div class="card-header">
-						<h5 class="card-title mb-0">Empty card</h5>
 					</div>
 					<div class="card-body">
 						<input type="text" id="search" class="form-control" placeholder="Search"><br>
@@ -78,12 +76,12 @@
 										<td>{{ user.compteEx ? user.compteEx|date('Y-m-d') : '' }}</td>
 										<td>{{ user.tokenEx ? user.tokenEx|date('Y-m-d') : '' }}</td>
 										<td>
-
+{# 
 											{% if user.isStatus %}
 												<button id="btn-block" data-id="{{ user.id }}">Débloquer</button>
 											{% else %}
 												<button id="btn-block" data-id="{{ user.id }}">Bloquer</button>
-											{% endif %}
+											{% endif %} #}
 											<a href="{{ path('app_admin_show', {'id': user.id}) }}">show</a>
 											<a href="{{ path('app_admin_edit', {'id': user.id}) }}">edit</a>
 										</td>
