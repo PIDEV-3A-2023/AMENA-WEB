@@ -10,8 +10,35 @@ return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\
             'path' => [
                 '/evaluation',
             ],
+            'methods' => [
+                [],
+            ],
+            'schemes' => [
+                [],
+            ],
             'name' => [
                 'evaluation',
+            ],
+            'requirements' => [
+                [],
+            ],
+            'options' => [
+                [],
+            ],
+            'defaults' => [
+                [],
+            ],
+            'host' => [
+                null,
+            ],
+            'condition' => [
+                null,
+            ],
+            'priority' => [
+                null,
+            ],
+            'env' => [
+                null,
             ],
         ],
     ],
