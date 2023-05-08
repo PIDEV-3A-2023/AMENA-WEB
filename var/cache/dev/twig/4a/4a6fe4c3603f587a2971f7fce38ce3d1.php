@@ -214,6 +214,6 @@ class __TwigTemplate_cf500ca1fe0303f5b626f79fe0f1b1de extends Template
 
    {# <a href=\"{{ path('app_message_new',{'id': message.id}) }}\">Create new</a>  #}
 {% endblock %}
-", "message/index.html.twig", "C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\templates\\message\\index.html.twig");
+", "message/index.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\message\\index.html.twig");
     }
 }

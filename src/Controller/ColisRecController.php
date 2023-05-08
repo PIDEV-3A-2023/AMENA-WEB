@@ -32,8 +32,7 @@ $colisrec->setIdU($user);
 
 $colisRecRepository->save($colisrec, true);
 $annonceRepository->remove($annonce[0],true);
-        return $this->render('annonces/indexfront.html.twig', [
-            'controller_name' => 'ColisRecController',
-        ]);
+$annonces = $annonceRepository->findAll() ;
+        return $this->redirectToRoute('app_annonces_index');
     }
 }

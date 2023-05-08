@@ -298,6 +298,6 @@ class __TwigTemplate_0abfdc1778827fb3903e8a0af7da3fd8 extends Template
     </tr>
 </table>
 </body>
-{% endblock %}", "activate_account/sendmail.html.twig", "C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\templates\\activate_account\\sendmail.html.twig");
+{% endblock %}", "activate_account/sendmail.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\activate_account\\sendmail.html.twig");
     }
 }

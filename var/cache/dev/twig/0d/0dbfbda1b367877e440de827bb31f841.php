@@ -133,6 +133,6 @@ class __TwigTemplate_ad2e9271d25866c0cc3bc2266689c765 extends Template
 
     <a href=\"{{ path('app_competition_index') }}\">Retourner</a>
 {% endblock %}
-", "competition/new.html.twig", "C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\templates\\competition\\new.html.twig");
+", "competition/new.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\competition\\new.html.twig");
     }
 }

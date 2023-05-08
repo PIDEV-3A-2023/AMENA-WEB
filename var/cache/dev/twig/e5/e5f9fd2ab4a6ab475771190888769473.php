@@ -110,6 +110,6 @@ class __TwigTemplate_718877788718ea963194cf3bd3b146fc extends Template
         The requested page couldn't be located. Checkout for any URL
         misspelling or <a href=\"{{ path('homepage') }}\">return to the homepage</a>.
     </p>
-{% endblock %}", "@Twig/Exception/error.html.twig", "C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\templates\\bundles\\TwigBundle\\Exception\\error.html.twig");
+{% endblock %}", "@Twig/Exception/error.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\bundles\\TwigBundle\\Exception\\error.html.twig");
     }
 }

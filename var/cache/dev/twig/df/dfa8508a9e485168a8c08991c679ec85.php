@@ -123,6 +123,6 @@ class __TwigTemplate_86eaefd3ce5e595e81e478cd124a7460 extends Template
 <body>
     {% block body %}{% endblock %}
 </body>
-</html>", "base-pdf.html.twig", "C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\templates\\base-pdf.html.twig");
+</html>", "base-pdf.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\base-pdf.html.twig");
     }
 }

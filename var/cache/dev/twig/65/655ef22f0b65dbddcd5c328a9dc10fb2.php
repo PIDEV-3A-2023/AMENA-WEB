@@ -76,6 +76,6 @@ class __TwigTemplate_751fb0b279e484b60818f9e81920f315 extends Template
         return new Source("{% form_theme form 'bootstrap_5_layout.html.twig' %}
 <div class=\"offset-3 col-3\">
 {{ form(form,{'attr': {'novalidate': 'novalidate'}} ) }}
-</div>", "gifts/_form.html.twig", "C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\templates\\gifts\\_form.html.twig");
+</div>", "gifts/_form.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\gifts\\_form.html.twig");
     }
 }

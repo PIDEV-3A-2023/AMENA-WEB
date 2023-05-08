@@ -80,7 +80,7 @@ class GregwarCaptchaConfig implements \Symfony\Component\Config\Builder\ConfigBu
     }
 
     /**
-     * @default 'C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\vendor\\gregwar\\captcha-bundle\\DependencyInjection/../Generator/Font/captcha.ttf'
+     * @default 'C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\vendor\\gregwar\\captcha-bundle\\DependencyInjection/../Generator/Font/captcha.ttf'
      * @param ParamConfigurator|mixed $value
      * @return $this
      */

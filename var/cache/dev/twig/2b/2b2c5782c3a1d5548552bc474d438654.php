@@ -201,6 +201,6 @@ class __TwigTemplate_344297e0cad20869565e0374d8776beb extends Template
       <p>Aucune question n'a été trouvée.</p>
     {% endif %}
   </div>
-{% endblock %}", "quiz/index.html.twig", "C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\templates\\quiz\\index.html.twig");
+{% endblock %}", "quiz/index.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\quiz\\index.html.twig");
     }
 }

@@ -283,6 +283,6 @@ class __TwigTemplate_03b28e1ed00cba03256cb91b8d4cf0bb extends Template
     </script>
     {{knp_pagination_render(gifts)}}
 {% endblock %}
-", "front_competition/cadeauxcompetition.html.twig", "C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\templates\\front_competition\\cadeauxcompetition.html.twig");
+", "front_competition/cadeauxcompetition.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\front_competition\\cadeauxcompetition.html.twig");
     }
 }

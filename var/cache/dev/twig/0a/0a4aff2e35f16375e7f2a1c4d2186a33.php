@@ -154,6 +154,6 @@ class __TwigTemplate_a3d2c2f31dd76f9be0a143e02887748c extends Template
     </ul>
 </div>
 {% endblock %}
-", "colis_rec/index.html.twig", "C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\templates\\colis_rec\\index.html.twig");
+", "colis_rec/index.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\colis_rec\\index.html.twig");
     }
 }

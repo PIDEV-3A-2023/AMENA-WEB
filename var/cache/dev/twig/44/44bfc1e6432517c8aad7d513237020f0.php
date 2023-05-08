@@ -331,6 +331,6 @@ fetch(url)
 }
   </script>
 {% endfor %}
-{% endblock %}", "map/index.html.twig", "C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\templates\\map\\index.html.twig");
+{% endblock %}", "map/index.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\map\\index.html.twig");
     }
 }

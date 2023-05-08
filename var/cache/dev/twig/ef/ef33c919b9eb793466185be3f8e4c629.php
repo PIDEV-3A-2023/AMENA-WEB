@@ -93,6 +93,6 @@ class __TwigTemplate_4d11895c3efb78cc2c7fd61896b4ef8a extends Template
 {{ form_start(form,{'attr': {'novalidate': 'novalidate'}} ) }}
 {{ form(form,{'attr': {'novalidate': 'novalidate'}} ) }}
 
-</div>", "admin/_form.html.twig", "C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\templates\\admin\\_form.html.twig");
+</div>", "admin/_form.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\admin\\_form.html.twig");
     }
 }

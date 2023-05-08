@@ -49,7 +49,7 @@ class AdminController extends AbstractController
             return $this->render('admin/index.html.twig', [
                 'users' => $pagination,
             ]);
-        }
+        } 
     }
     #[Route('/new', name: 'app_admin_new', methods: ['GET', 'POST'])]
     public function new(Request $request, UserRepository $userRepository, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager): Response

@@ -276,6 +276,6 @@ class __TwigTemplate_6b4fce1772111fd3bc75f68463252422 extends Template
 
     <a href=\"{{ path('app_colis_new') }}\">Ajouter un nouveau colis </a>
 {% endblock %}
-", "colis/index.html.twig", "C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\templates\\colis\\index.html.twig");
+", "colis/index.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\colis\\index.html.twig");
     }
 }

@@ -259,6 +259,6 @@ Cadeaux</a></div>";
 <i class=\"fas fa-gift\" style=\"font-size: 1.5em; margin-right: 10px;\"></i>
 Cadeaux</a></div>{% endblock %}
 
-", "competition/index.html.twig", "C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\templates\\competition\\index.html.twig");
+", "competition/index.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\competition\\index.html.twig");
     }
 }

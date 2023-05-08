@@ -225,6 +225,6 @@ class __TwigTemplate_1fd61bd92e5aa0459db4bf1dc162d314 extends Template
 
     <a href=\"{{ path('app_gifts_new') }}\" class=\"btn btn-outline-light\" style=\"background-color:#00b4d8 \" >+ Nouveau cadeau</a>
 {% endblock %}
-", "gifts/index.html.twig", "C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\templates\\gifts\\index.html.twig");
+", "gifts/index.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\gifts\\index.html.twig");
     }
 }

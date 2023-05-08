@@ -96,6 +96,6 @@ class __TwigTemplate_8f269cd77850b61348195db95806fb5e extends Template
 
 
 
-</div>", "user/_form.html.twig", "C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\templates\\user\\_form.html.twig");
+</div>", "user/_form.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\user\\_form.html.twig");
     }
 }

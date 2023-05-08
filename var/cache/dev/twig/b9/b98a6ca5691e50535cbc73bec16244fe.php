@@ -790,6 +790,6 @@ class __TwigTemplate_729207e169235869cb4948922e02b305 extends Template
 \t\t\t</body>
 \t\t</body>
 \t</html>
-", "baseadmin.html.twig", "C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\templates\\baseadmin.html.twig");
+", "baseadmin.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\baseadmin.html.twig");
     }
 }

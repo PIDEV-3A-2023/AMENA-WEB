@@ -250,6 +250,6 @@ class __TwigTemplate_c12ee2f7ba08fa2c4e1976fd7267bff8 extends Template
   </div>
 </section>
 
-{% endblock %}", "front_competition/index.html.twig", "C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\templates\\front_competition\\index.html.twig");
+{% endblock %}", "front_competition/index.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\front_competition\\index.html.twig");
     }
 }

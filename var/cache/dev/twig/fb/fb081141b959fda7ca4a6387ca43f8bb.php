@@ -428,6 +428,6 @@ class __TwigTemplate_3c219c91f97c4ebf1c88f6d57ce9795a extends Template
       </div>
     </section><!-- End Call To Action Section -->
   </main><!-- End #main -->
-{% endblock %}", "accueil/index.html.twig", "C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\templates\\accueil\\index.html.twig");
+{% endblock %}", "accueil/index.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\accueil\\index.html.twig");
     }
 }

@@ -559,6 +559,6 @@ class __TwigTemplate_58fe53c6f039baf8c912404760f4a663 extends Template
 </div>
 
 {% endblock %}
- ", "statsColis/index.html.twig", "C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\templates\\statsColis\\index.html.twig");
+ ", "statsColis/index.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\statsColis\\index.html.twig");
     }
 }

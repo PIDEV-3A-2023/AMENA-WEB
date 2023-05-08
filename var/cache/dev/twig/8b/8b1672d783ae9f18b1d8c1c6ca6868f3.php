@@ -242,6 +242,6 @@ class __TwigTemplate_e3aca1dc8b0ec77f8627a88fc31df729 extends Template
     </table>
 
 {% endblock %}
-", "admin_annonce/index.html.twig", "C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\templates\\admin_annonce\\index.html.twig");
+", "admin_annonce/index.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\admin_annonce\\index.html.twig");
     }
 }

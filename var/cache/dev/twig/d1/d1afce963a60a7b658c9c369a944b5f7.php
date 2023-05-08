@@ -284,6 +284,6 @@ class __TwigTemplate_423fd568a643d47a0cda047d30af2a42 extends Template
      </div>
      </div>
      </div>
-{% endblock %}", "annonces/indexfront.html.twig", "C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\templates\\annonces\\indexfront.html.twig");
+{% endblock %}", "annonces/indexfront.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\annonces\\indexfront.html.twig");
     }
 }

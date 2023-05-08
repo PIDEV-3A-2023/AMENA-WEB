@@ -160,6 +160,6 @@ class __TwigTemplate_c79928a78cee24a686b91bf475413875 extends Template
             {% endfor %}
         </tbody>
     </table>
-{% endblock %}", "competition/list.html.twig", "C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\templates\\competition\\list.html.twig");
+{% endblock %}", "competition/list.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\competition\\list.html.twig");
     }
 }

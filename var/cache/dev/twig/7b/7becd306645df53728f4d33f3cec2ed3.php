@@ -226,6 +226,6 @@ class __TwigTemplate_da11090face50faae60b42730ddd2e6e extends Template
 {% endfor %}
 </tbody>
 </table>{% endblock %}
-", "reclamations/index.html.twig", "C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\templates\\reclamations\\index.html.twig");
+", "reclamations/index.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\reclamations\\index.html.twig");
     }
 }

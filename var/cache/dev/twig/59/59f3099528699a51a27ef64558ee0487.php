@@ -140,6 +140,6 @@ class __TwigTemplate_971a7cd4e8a2638d33c975c9e099bc2f extends Template
 
     {{ include('admin_annonce/_delete_form.html.twig') }}
 {% endblock %}
-", "admin_annonce/edit.html.twig", "C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\templates\\admin_annonce\\edit.html.twig");
+", "admin_annonce/edit.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\admin_annonce\\edit.html.twig");
     }
 }

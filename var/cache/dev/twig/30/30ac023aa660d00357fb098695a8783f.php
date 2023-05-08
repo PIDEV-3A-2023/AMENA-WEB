@@ -637,6 +637,6 @@ var rating = data.rating;
 \t\t\t\t\t{% endblock %}
 
 \t\t\t\t{% endblock %}
-", "user/show.html.twig", "C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\templates\\user\\show.html.twig");
+", "user/show.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\user\\show.html.twig");
     }
 }

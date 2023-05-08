@@ -165,6 +165,6 @@ type: 'pie',
 data: data,
 });
 </script>
-{% endblock %}", "colis/stats.html.twig", "C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\templates\\colis\\stats.html.twig");
+{% endblock %}", "colis/stats.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\colis\\stats.html.twig");
     }
 }

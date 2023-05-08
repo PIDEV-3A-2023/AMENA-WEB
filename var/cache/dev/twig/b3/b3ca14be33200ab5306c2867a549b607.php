@@ -174,6 +174,6 @@ class __TwigTemplate_52c789277dde39b1fe2a41898724a492 extends Template
     </section><!-- End Terms Section -->
 
 {% endblock %}
-", "terms.html.twig", "C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\templates\\terms.html.twig");
+", "terms.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\terms.html.twig");
     }
 }

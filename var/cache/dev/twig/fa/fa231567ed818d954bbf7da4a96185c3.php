@@ -498,6 +498,6 @@ class __TwigTemplate_b8b9b871fca40f6049d5858179f5a1c6 extends Template
 \t</section>
 \t<a class=\"btn btn-outline-dark\" href=\"{{ path('app_user_index') }}\">back to list</a>
 {% endblock %}
-", "user/new.html.twig", "C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\templates\\user\\new.html.twig");
+", "user/new.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\user\\new.html.twig");
     }
 }

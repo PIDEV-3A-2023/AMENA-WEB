@@ -176,6 +176,6 @@ class __TwigTemplate_4b7d5689096d03a7e31fbc891cdf4063 extends Template
 </div>
 </body>
 {% endblock %}
-", "error/index.html.twig", "C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\templates\\error\\index.html.twig");
+", "error/index.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\error\\index.html.twig");
     }
 }

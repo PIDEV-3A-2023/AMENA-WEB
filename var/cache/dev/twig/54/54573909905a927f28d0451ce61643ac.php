@@ -133,6 +133,6 @@ class __TwigTemplate_553d84562c5ad8125353b790e6285d29 extends Template
 
     <a href=\"{{ path('app_gifts_index') }}\">back to list</a>
 {% endblock %}
-", "gifts/new.html.twig", "C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\templates\\gifts\\new.html.twig");
+", "gifts/new.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\gifts\\new.html.twig");
     }
 }

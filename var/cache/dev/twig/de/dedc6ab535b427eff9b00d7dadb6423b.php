@@ -240,6 +240,6 @@ class __TwigTemplate_e727066beb4ba4b7ca3475831c128326 extends Template
 \t</div>
 
 {% endblock %}
-", "reset_password/reset.html.twig", "C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\templates\\reset_password\\reset.html.twig");
+", "reset_password/reset.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\reset_password\\reset.html.twig");
     }
 }

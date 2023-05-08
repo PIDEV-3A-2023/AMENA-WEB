@@ -216,6 +216,6 @@ class __TwigTemplate_9538a1446917a16ca878a8374d201756 extends Template
 
     {{ include('competition/_delete_form.html.twig') }}
 {% endblock %}
-", "competition/show.html.twig", "C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\templates\\competition\\show.html.twig");
+", "competition/show.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\competition\\show.html.twig");
     }
 }

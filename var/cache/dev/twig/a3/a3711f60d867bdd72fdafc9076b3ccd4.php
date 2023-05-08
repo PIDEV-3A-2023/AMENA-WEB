@@ -648,6 +648,6 @@ class __TwigTemplate_d41c71b225e0e7f0ab0e59103616009d extends Template
 \t</body>
 
 </html>
-", "baseClient.html.twig", "C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\templates\\baseClient.html.twig");
+", "baseClient.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\baseClient.html.twig");
     }
 }

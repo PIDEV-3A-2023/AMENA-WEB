@@ -26,7 +26,11 @@ class AnnoncesController extends AbstractController
         $user = $this->getUser();
     
         if  ($user->getRoles() ==('ROLE_TRANSPORTEUR')) 
-            $annonces = $annoncesRepository->findByType("offre");
+        
+        
+        
+        
+        $annonces = $annoncesRepository->findByType("offre");
         else if ($user->getRoles() ==('ROLE_USER'))
             $annonces = $annoncesRepository->findByType("demande");
         else 
@@ -94,9 +98,9 @@ class AnnoncesController extends AbstractController
             $annoncesRepository->save($annonce, true);
             return $this->redirectToRoute('app_annonces_index', [], Response::HTTP_SEE_OTHER);
         }
-
+        $annonce = $annoncesRepository->findAll() ;
         return $this->renderForm('annonces/new.html.twig', [
-            'annonce' => $annonce,
+            'annonces' => $annonce,
             'form' => $form,
         ]);
     }

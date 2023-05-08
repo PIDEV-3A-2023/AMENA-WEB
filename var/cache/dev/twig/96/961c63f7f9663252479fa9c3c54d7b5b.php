@@ -152,6 +152,6 @@ class __TwigTemplate_49198a739f95f7ba064fc211e0ddc166 extends Template
 
         <button type=\"submit\" class=\"btn\">Register</button>
     {{ form_end(registrationForm) }}
-{% endblock %}", "reservation/frontform.html.twig", "C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\templates\\reservation\\frontform.html.twig");
+{% endblock %}", "reservation/frontform.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\reservation\\frontform.html.twig");
     }
 }

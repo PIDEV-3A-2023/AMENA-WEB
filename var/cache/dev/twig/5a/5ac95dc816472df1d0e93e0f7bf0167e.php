@@ -137,6 +137,6 @@ class __TwigTemplate_feb58b3a811f85b1bc42265dac7f828b extends Template
 
     <a href=\"{{ path('app_admin_colis_index') }}\">Retour à la liste</a>
 {% endblock %}
-", "admin_colis/new.html.twig", "C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\templates\\admin_colis\\new.html.twig");
+", "admin_colis/new.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\admin_colis\\new.html.twig");
     }
 }

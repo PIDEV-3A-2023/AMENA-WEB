@@ -79,6 +79,6 @@ class __TwigTemplate_81536e16a8ee7b8dbbbb349d657fda69 extends Template
     <input type=\"hidden\" name=\"_token\" value=\"{{ csrf_token('delete' ~ documentexpedition.id) }}\">
     <button class=\"btn\">Supprimer</button>
 </form>
-", "documentexpedition/_delete_form.html.twig", "C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\templates\\documentexpedition\\_delete_form.html.twig");
+", "documentexpedition/_delete_form.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\documentexpedition\\_delete_form.html.twig");
     }
 }

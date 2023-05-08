@@ -387,6 +387,6 @@ class __TwigTemplate_8515a481370b4d94c662b74342752edf extends Template
 
 
 
-", "reservation/index.html.twig", "C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\templates\\reservation\\index.html.twig");
+", "reservation/index.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\reservation\\index.html.twig");
     }
 }

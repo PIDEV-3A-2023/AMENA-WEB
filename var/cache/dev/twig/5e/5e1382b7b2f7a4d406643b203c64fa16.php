@@ -140,6 +140,6 @@ class __TwigTemplate_488ebdbba02ca2ee2ab45ce002385e1e extends Template
 
     {{ include('admin_colis/_delete_form.html.twig') }}
 {% endblock %}
-", "admin_colis/edit.html.twig", "C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\templates\\admin_colis\\edit.html.twig");
+", "admin_colis/edit.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\admin_colis\\edit.html.twig");
     }
 }

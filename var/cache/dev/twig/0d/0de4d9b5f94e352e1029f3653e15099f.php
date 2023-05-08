@@ -168,6 +168,6 @@ class __TwigTemplate_19ffc51481799ac42e60db81726859b3 extends Template
         });
       </script>
   </ul>
-{% endblock %}", "colis/map.html.twig", "C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\templates\\colis\\map.html.twig");
+{% endblock %}", "colis/map.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\colis\\map.html.twig");
     }
 }

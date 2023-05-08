@@ -59,6 +59,6 @@ class __TwigTemplate_43533db389f3511eaa52e417a26ab488 extends Template
 
     public function getSourceContext()
     {
-        return new Source("", "web/home.html.twig", "C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\templates\\web\\home.html.twig");
+        return new Source("", "web/home.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\web\\home.html.twig");
     }
 }

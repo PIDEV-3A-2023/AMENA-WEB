@@ -8,6 +8,8 @@ use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use App\Repository\CompetitionRepository ; 
+use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Serializer\Annotation\MaxDepth;
 
 
 #[ORM\Table(name: 'Competition')]
@@ -17,36 +19,44 @@ class Competition
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups("competitions")]
     private ?int $id=null;
 
     #[Assert\NotBlank(message:"Le titre ne doit pas être vide")]
     #[Assert\Length(max:10,maxMessage:"La longueur maximale du titre est 10")]
     #[ORM\Column(length:150)]
+    #[Groups("competitions")]
     private ?String $title=null;
 
     #[Assert\NotBlank(message:"La date de début ne doit pas être vide")]
  //   #[Assert\GreaterThanOrEqual(propertyPath: "dateDeb", message: "La date de début ne peut pas être antérieure à aujourd'hui")]
     //#[Assert\GreaterThan("today")]
     #[ORM\Column(nullable : false,type: Types::DATE_MUTABLE)]
+    #[Groups("competitions")]
     private ?\DateTimeInterface $dateDeb;
 
    // #[Assert\GreaterThan("dateDeb")]
     #[Assert\NotBlank(message:"La date de fin ne doit pas être vide")]
   //  #[Assert\GreaterThan(propertyPath: "dateDeb", message: "La date de fin doit être postérieure à la date de début")]
     #[ORM\Column(nullable : false,type: Types::DATE_MUTABLE)] 
+    #[Groups("competitions")]
     private ?\DateTimeInterface $dateFin;
 
     #[Assert\NotBlank(message:"Le type ne doit pas être vide")]
     #[ORM\Column]
+    #[Groups("competitions")]
     private ?int $type;
 
     #[ORM\Column(nullable : true)]
+    #[Groups("competitions")]
     private ?int $nbp = 0 ;
 
     #[ORM\Column(name : 'id_uc')]
+    #[Groups("competitions")]
     private ?int $id_uc=163 ;
 
     #[ORM\OneToMany(mappedBy: 'idC', targetEntity: Gifts::class)]
+    #[Groups("competitions")]
     private Collection $gifts;
 
     #[ORM\ManyToMany(targetEntity: User::class, inversedBy: 'competitions')]

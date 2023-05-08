@@ -584,6 +584,6 @@ alert(\"Une erreur est survenue lors de la requête AJAX.\");
 \t\t\t\t\t\t</script>
 
 
-\t\t\t\t\t{% endblock %}", "admin_colis/index.html.twig", "C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\templates\\admin_colis\\index.html.twig");
+\t\t\t\t\t{% endblock %}", "admin_colis/index.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\admin_colis\\index.html.twig");
     }
 }

@@ -210,6 +210,6 @@ class __TwigTemplate_09d5040d3fd2dcbc281352dccc6b9913 extends Template
         {% endfor %}
     </div>
 
-{% endblock %}", "competition/cadeauxcompetition.html.twig", "C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\templates\\competition\\cadeauxcompetition.html.twig");
+{% endblock %}", "competition/cadeauxcompetition.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\competition\\cadeauxcompetition.html.twig");
     }
 }

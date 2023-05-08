@@ -627,6 +627,6 @@ console.log(\"test\")
 }
 })
 </script>{% endblock %}
-", "user/index.html.twig", "C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\templates\\user\\index.html.twig");
+", "user/index.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\user\\index.html.twig");
     }
 }

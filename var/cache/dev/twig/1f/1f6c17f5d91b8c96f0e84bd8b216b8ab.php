@@ -379,6 +379,6 @@ class __TwigTemplate_190a61c2926070a462f1303a84ef73ed extends Template
 </div>
 
 
-{% endblock %}", "annonces/indexback.html.twig", "C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\templates\\annonces\\indexback.html.twig");
+{% endblock %}", "annonces/indexback.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\annonces\\indexback.html.twig");
     }
 }

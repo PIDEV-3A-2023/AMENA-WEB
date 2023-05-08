@@ -205,6 +205,6 @@ class __TwigTemplate_2ae88eeea0ee805515bd7ff92e294220 extends Template
 
     {{ include('gifts/_delete_form.html.twig') }}
 {% endblock %}
-", "gifts/show.html.twig", "C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\templates\\gifts\\show.html.twig");
+", "gifts/show.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\gifts\\show.html.twig");
     }
 }

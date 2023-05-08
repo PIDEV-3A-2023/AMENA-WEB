@@ -102,6 +102,6 @@ class __TwigTemplate_dac55da9fa5f9f1621dee72fa3f667f4 extends Template
         flashy(\"{{ message.message }}\", \"{{ message.link }}\");
     </script>
 {% endfor %}
-", "@MercurySeriesFlashy/flashy.html.twig", "C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\vendor\\mercuryseries\\flashy-bundle\\src\\Resources\\views\\flashy.html.twig");
+", "@MercurySeriesFlashy/flashy.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\vendor\\mercuryseries\\flashy-bundle\\src\\Resources\\views\\flashy.html.twig");
     }
 }

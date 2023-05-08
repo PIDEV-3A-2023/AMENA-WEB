@@ -321,6 +321,6 @@ class __TwigTemplate_52dd9d2dd32d8da39526283ac9270625 extends Template
     <link href=\"{{asset('front/assets/vendor/remixicon/remixicon.css')}}\" rel=\"stylesheet\">
     <link href=\"{{asset('front/assets/css/main.css')}}\" rel=\"stylesheet\">
 {% endblock %}
-", "admin_colis/show.html.twig", "C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\templates\\admin_colis\\show.html.twig");
+", "admin_colis/show.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\admin_colis\\show.html.twig");
     }
 }

@@ -56,37 +56,110 @@
 <script>
 </script>
     <!-- ======= Header ======= -->
-  <header id="header" class="header d-flex align-items-center fixed-top">
-    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+  <header id="header" class="header d-flex align-items-center fixed-top" style="margin-bottom:8%;background: rgba(27, 47, 69, 0.9);padding: 15px;">
+			<div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
-      <a href="index.html" class="logo d-flex align-items-center">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="front/assets/img/logo.png" alt=""> -->
-        <h1 class="d-flex align-items-center">Amena</h1>
-      </a>
+				<a href="{{path('app_accueil')}}" class="logo d-flex align-items-center">
+					<!-- Uncomment the line below if you also wish to use an image logo -->
+					 <img src="front/assets/img/logo.png" alt="" style =height:200px;> 
+						<h1 class="d-flex align-items-center"> Amena</h1>
+				</a>
 
-      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
-      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+				<i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+				<i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
 
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="team.html">Team</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li class="dropdown"><a ><span>Location des vehicules</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-            <ul>
-          	  <li><a href="{{ url('app_front_reservation') }}" class="active">Liste des vehicules</a></li>
-          	  <li><a href="{{ url('app_interface_Mesreservation') }}" class="active">Mes locations</a></li>
-            </ul>
-          </li>
-        </ul>
-      </nav><!-- .navbar -->
+				<nav id="navbar" class="navbar">
+					<ul>
+						<li>
+							<a  href="{{path('app_accueil')}}">Accueil</a>
+						</li>
+						<li>
+							<a  href="{{path('app_user_index')}}">Liste des transporteurs</a>
+						</li>
+						<li>
+							<a href="{{ path('app_reclamations_new') }}">Reclamer</a>
+						</li>
 
-    </div>
-  </header><!-- End Header -->
+						<li>
+							<a href="/annonces/">Annonces</a>
+						</li>
+						
+						<li>
+							{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+							{% if app.user.roles[0] == "ROLE_USER" %}
+								<a  href="/colis/">Colis</a>
+							{% endif %}	
+						{% endif %}					
+				
+						</li>
+						{% if is_granted('IS_AUTHENTICATED_FULLY') %}						
+							{% if app.user.roles[0] == "ROLE_TRANSPORTEUR" %}
+						<li>
+							<a href="/documentexpedition/">Document d'expedition</a>
+						</li>
+						<li class="dropdown">
+							<a>
+								<span>Location des vehicules</span>
+								<i class="bi bi-chevron-down dropdown-indicator"></i>
+							</a>
+							<ul>
+								<li>
+									<a href="/front/reservation">Reserver vehicule</a>
+								</li>
+								<li>
+									<a href="/front/reservation/MesReservations">Mes reservations</a>
+								</li>							
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a>
+								<span>Competition et Cadeaux</span>
+								<i class="bi bi-chevron-down dropdown-indicator"></i>
+							</a>
+							<ul>
+								<li>
+									<a href="/front/competition">Participer a des competition</a>
+								</li>
+								<li>
+									<a href="/front/competition/cadeaux">Voir les cadeaux</a>
+								</li>							
+							</ul>
+						</li>
+							{% endif %}
+							{% endif %}
+
+						<li>
+							{% if is_granted('ROLE_ADMIN') %}
+								<a  href="{{ url('app_stats_index') }}">Espace Admin </a>
+							{% endif %}
+						</li>
+						
+						<ul>
+						<li>
+
+								</li>
+							{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+							 <a href="/user/profil" class="active">Profil</a>
+								<li>
+									<a href="/logout/" class="active">Déconnexion</a>
+
+								</li>
+							{% else %}
+								<li>
+									<a href='{{ path('app_login') }}'>Connexion</a>
+								</li>
+								<li>
+									<a href="{{ path('app_user_new') }}">Inscription</a>
+
+								</li>
+							{% endif %}
+						</ul>
+					</ul>
+				</nav>
+				<!-- .navbar -->
+
+			</div>
+		</header>
 
   <!-- ======= Breadcrumbs ======= -->
 

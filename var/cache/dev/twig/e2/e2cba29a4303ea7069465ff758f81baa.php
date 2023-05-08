@@ -234,6 +234,6 @@ class __TwigTemplate_3a376fb00eab919bb3feecc64969b042 extends Template
 \t\t<a href=\"{{ path('app_validation_index') }}\">back to list</a>
 \t</div>
 {% endblock %}
-", "validation/new.html.twig", "C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\templates\\validation\\new.html.twig");
+", "validation/new.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\validation\\new.html.twig");
     }
 }

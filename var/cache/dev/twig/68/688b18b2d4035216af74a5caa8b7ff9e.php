@@ -245,6 +245,6 @@ class __TwigTemplate_dfd1e5eabde3cc8130fa9716e6994787 extends Template
   </script>
 </body>
 {% endblock %}
-", "front_competition/showdetailscadeau.html.twig", "C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\templates\\front_competition\\showdetailscadeau.html.twig");
+", "front_competition/showdetailscadeau.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\front_competition\\showdetailscadeau.html.twig");
     }
 }

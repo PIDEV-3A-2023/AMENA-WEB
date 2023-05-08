@@ -309,6 +309,6 @@ class __TwigTemplate_bacebeec7f586c70193c3af5e2a963fa extends Template
         {% endif %}
     </ul>
 {% endif %}
-</nav>", "others/twitter_bootstrap_v4_pagination.html.twig", "C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\templates\\others\\twitter_bootstrap_v4_pagination.html.twig");
+</nav>", "others/twitter_bootstrap_v4_pagination.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\others\\twitter_bootstrap_v4_pagination.html.twig");
     }
 }

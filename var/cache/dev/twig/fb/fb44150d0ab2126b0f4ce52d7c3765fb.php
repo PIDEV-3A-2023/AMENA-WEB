@@ -84,6 +84,6 @@ class __TwigTemplate_e63ba774dc670e05ab27bbf0582508a2 extends Template
     {{ form_widget(form) }}
     <button class=\"btn\">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}
-", "admin_annonce/_form.html.twig", "C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\templates\\admin_annonce\\_form.html.twig");
+", "admin_annonce/_form.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\admin_annonce\\_form.html.twig");
     }
 }

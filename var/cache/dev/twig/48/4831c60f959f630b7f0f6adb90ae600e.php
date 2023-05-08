@@ -272,6 +272,6 @@ class __TwigTemplate_8996d845a911d0198f2a81e45ee671d2 extends Template
 \t{{parent()}}
 \t<link href=\"{{asset('front/assets/css/main2.css')}}\" rel=\"stylesheet\">
 
-{% endblock %}", "front_reservation/index.html.twig", "C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\templates\\front_reservation\\index.html.twig");
+{% endblock %}", "front_reservation/index.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\front_reservation\\index.html.twig");
     }
 }

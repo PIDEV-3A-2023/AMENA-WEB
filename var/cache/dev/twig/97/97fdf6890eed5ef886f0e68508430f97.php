@@ -78,6 +78,6 @@ class __TwigTemplate_dc1a4248c73aea2484ae1daab8b79038 extends Template
 <div class=\"offset-3 col-3\">
 {{ form(form,{'attr': {'novalidate': 'novalidate'}} ) }}
 
-</div>", "reservation/form2.html.twig", "C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\templates\\reservation\\form2.html.twig");
+</div>", "reservation/form2.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\reservation\\form2.html.twig");
     }
 }

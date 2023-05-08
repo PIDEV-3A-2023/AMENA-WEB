@@ -162,6 +162,6 @@ class __TwigTemplate_d85562b0d6f363d6a4f9f1e24e0aa119 extends Template
         </div>
     </div>
 {% endblock %}
-", "chat_gpt/index.html.twig", "C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\templates\\chat_gpt\\index.html.twig");
+", "chat_gpt/index.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\chat_gpt\\index.html.twig");
     }
 }

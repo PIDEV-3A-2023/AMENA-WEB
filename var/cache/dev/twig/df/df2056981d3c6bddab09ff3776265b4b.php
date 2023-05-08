@@ -133,6 +133,6 @@ class __TwigTemplate_1d75c71e43d59ecb00160e01861ee07d extends Template
 
     <a href=\"{{ path('app_admin_annonce_index') }}\">back to list</a>
 {% endblock %}
-", "admin_annonce/new.html.twig", "C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\templates\\admin_annonce\\new.html.twig");
+", "admin_annonce/new.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\admin_annonce\\new.html.twig");
     }
 }

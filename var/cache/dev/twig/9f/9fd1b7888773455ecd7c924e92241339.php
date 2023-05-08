@@ -68,6 +68,6 @@ class __TwigTemplate_aef27d7322a1bdaa60931c5908bbe386 extends Template
 
     public function getSourceContext()
     {
-        return new Source("<img src=\"{{ qr }}\" alt=\"QR code\" style=\"height:50%;width:50%\"  class=\"center\" />", "test_cadeau/index.html.twig", "C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\templates\\test_cadeau\\index.html.twig");
+        return new Source("<img src=\"{{ qr }}\" alt=\"QR code\" style=\"height:50%;width:50%\"  class=\"center\" />", "test_cadeau/index.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\test_cadeau\\index.html.twig");
     }
 }

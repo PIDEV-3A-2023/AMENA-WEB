@@ -140,6 +140,6 @@ class __TwigTemplate_68de9523f405b94e541cd7fb03c4eae3 extends Template
 
     {{ include('competition/_delete_form.html.twig') }}
 {% endblock %}
-", "competition/edit.html.twig", "C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\templates\\competition\\edit.html.twig");
+", "competition/edit.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\competition\\edit.html.twig");
     }
 }

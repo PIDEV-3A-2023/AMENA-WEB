@@ -25,7 +25,7 @@ class MessageController extends AbstractController
         // be complete yet. Instead, store the entire Security object.
         $this->security = $security;
     }
-    #[Route('/', name: 'app_message_index', methods: ['GET'])]
+    #[Route('/{id}', name: 'app_message_index', methods: ['GET'])]
     public function index(MessageRepository $messageRepository): Response
     {
         $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
@@ -60,8 +60,9 @@ class MessageController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $receiverId = $userRepository->find($request->get('id'));
-           
+
+
+            var_dump((new \DateTime()));
             $message->setSenderId($user);
             $message->setReceiverId($receiverId);
             $message->setTimestamp(new \DateTime());

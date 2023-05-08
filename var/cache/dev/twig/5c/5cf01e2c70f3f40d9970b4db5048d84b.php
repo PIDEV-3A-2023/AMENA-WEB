@@ -668,6 +668,6 @@ class __TwigTemplate_323099b0a875df28f2606c3f8e0229fd extends Template
 \t\t\t{% endblock %}
 \t\t</body>
 \t</html>
-", "base.html.twig", "C:\\Users\\aymen\\Desktop\\prositsym\\digidreamers\\templates\\base.html.twig");
+", "base.html.twig", "C:\\Users\\aymen\\Desktop\\gitprojet\\digidreamers\\templates\\base.html.twig");
     }
 }

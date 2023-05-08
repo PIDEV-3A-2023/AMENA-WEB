@@ -21,9 +21,9 @@ class CompetitionType extends AbstractType
             ->add('dateFin')
             ->add('type', ChoiceType::class, [
                 'choices' => [
-                    'Type 1' => 1,
-                    'Type 2' => 2,
-                    'Type 3' => 3
+                    'Quiz' => 1,
+                    'Wheel' => 2,
+                    'Quizz' => 3
                 ],
                 'label' => 'Type'
             ])
