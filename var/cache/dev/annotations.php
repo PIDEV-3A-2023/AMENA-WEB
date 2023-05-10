@@ -2142,7 +2142,7 @@ return [[
 ], [
 
 0 => [],
-1 => 1683558611,
+1 => 1683634447,
 2 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
@@ -2154,35 +2154,8 @@ return [[
                 'path' => [
                     '/evaluation',
                 ],
-                'methods' => [
-                    [],
-                ],
-                'schemes' => [
-                    [],
-                ],
                 'name' => [
                     'evaluation',
-                ],
-                'requirements' => [
-                    [],
-                ],
-                'options' => [
-                    [],
-                ],
-                'defaults' => [
-                    [],
-                ],
-                'host' => [
-                    null,
-                ],
-                'condition' => [
-                    null,
-                ],
-                'priority' => [
-                    null,
-                ],
-                'env' => [
-                    null,
                 ],
             ],
         ],
@@ -2203,37 +2176,13 @@ return [[
                 'path' => [
                     '/logout',
                 ],
+                'name' => [
+                    'app_logout',
+                ],
                 'methods' => [
                     [
                         'GET',
                     ],
-                ],
-                'schemes' => [
-                    [],
-                ],
-                'name' => [
-                    'app_logout',
-                ],
-                'requirements' => [
-                    [],
-                ],
-                'options' => [
-                    [],
-                ],
-                'defaults' => [
-                    [],
-                ],
-                'host' => [
-                    null,
-                ],
-                'condition' => [
-                    null,
-                ],
-                'priority' => [
-                    null,
-                ],
-                'env' => [
-                    null,
                 ],
             ],
         ],

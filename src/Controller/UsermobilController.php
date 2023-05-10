@@ -71,8 +71,16 @@ class UsermobilController extends AbstractController
         $user->setPrenom($req->get('prenom'));
       
       
+      
         $user->setCin($req->get('cin'));
-        $user->setPassword($req->get('password'));
+        $user->setPassword(
+            $userPasswordHasher->hashPassword(
+                $user,
+                $req->get('password' )
+            )
+        );
+        
+      
         $user->setDateNaissance(new \DateTime());
         $roles = [];
        
@@ -82,7 +90,6 @@ class UsermobilController extends AbstractController
         $user->setAdress($req->get('adress'));
       
 
-            
             $user->setImage("http://localhost/img/useravatar.jpg");
             $token = generateToken();
             $user->setToken($token);
@@ -95,7 +102,7 @@ class UsermobilController extends AbstractController
             dump($user->getRoles());
             die("end"); */
            
-
+            
             $em->persist($user);
             $em->flush();
             

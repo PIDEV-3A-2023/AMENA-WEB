@@ -55,8 +55,8 @@ public function indexm(NormalizerInterface $Normalizer, Request $request, Authen
     $lastUsername = $authenticationUtils->getLastUsername();
     // handle the login form submission
     if ($request->isMethod('GET')) {
-    $username = $request->query->get('_username');
-    $password = $request->query->get('_password');
+    $username = $request->query->get('username');
+    $password = $request->query->get('password');
     $user = $userRepository->findBySearchQuery( $username);
     // do something with the username and password
     }
